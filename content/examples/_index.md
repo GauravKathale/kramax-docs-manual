@@ -11,9 +11,9 @@ menu:
 
 ---
 
-Completed the <a href="{{< relref "/get-started" >}}">Getting Started Guides</a>? Now discover what you can build with Fluxnova.
+Completed the <a href="{{< relref "/get-started" >}}">Getting Started Guides</a>? Now discover what you can build with KramaX.
 
-This page collects links to hands-on examples around Fluxnova.
+This page collects links to hands-on examples around KramaX.
 
-* [Examples](https://github.com/finos/fluxnova-examples) (On Github)
+* [Examples](https://github.com/vodafone/kramaX-examples) (On Github)
 * more to come.

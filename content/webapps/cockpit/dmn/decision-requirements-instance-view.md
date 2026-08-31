@@ -13,7 +13,7 @@ menu:
 ---
 
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../../img/cockpit-decision-requirements-definition-instance-view.png" title="Decision Requirements Definition View" >}}

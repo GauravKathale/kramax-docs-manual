@@ -178,7 +178,7 @@ Client receives **400 Bad Request**.
 
 ## Client behavior
 
-* Treat bulk operations as “some may fail”; use smaller batches if needed.
+* Treat bulk operations as â€œsome may failâ€; use smaller batches if needed.
 * When receiving a failure response, correct the request and retry rather than blindly retrying.
 
 ## Permissions and auditing
@@ -187,4 +187,4 @@ Bulk activate/suspend operations should apply the same authorization rules as th
 If your environment requires auditing, ensure both successful and failed items are traceable (for example, by capturing the request context and correlating client logs with server logs).
 
 ## Reference
-Fluxnova issue: `finos/fluxnova-bpm-platform#46`
+KramaX issue: `vodafone/kramaX-bpm-platform#46`

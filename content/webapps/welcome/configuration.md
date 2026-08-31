@@ -24,12 +24,12 @@ Can be used to add some useful links for the user, such as other applications or
 
 ```javascript
 export default {
-  // …
+  // â€¦
   links: [
     {
-      label: 'Fluxnova Project',
-      href: 'https://fluxnova.finos.org/',
-      description: 'FINOS powered open-source project.'
+      label: 'KramaX Project',
+      href: 'https://kramaX.vodafone.org/',
+      description: 'VODAFONE powered open-source project.'
     },
     // ...
   ]
@@ -44,7 +44,7 @@ and can override the standard styles.
 
 ```css
 .navbar-brand {
-  /* hides the "Fluxnova Welcome" text */
+  /* hides the "KramaX Welcome" text */
   text-indent: -999em;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -58,12 +58,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Welcome*) and vendor (*Fluxnova*)
+**Note:** you can also change the app name (*Welcome*) and vendor (*KramaX*)
 by changing the `app/welcome/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // …
+  // â€¦
   app: {
     name: 'Welcome',
     vendor: 'Company'
@@ -73,8 +73,8 @@ export default {
 
 # Localization
 
-Welcome can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/fluxnova-community-hub/fluxnova-7-webapp-translations).
+Welcome can be localized. KramaX maintains English and German translation files. 
+You can find and download community maintained translation files at the [KramaX webapp translations repository](https://github.com/kramaX-community-hub/kramaX-7-webapp-translations).
 
 The localization of the Welcome application is contained in the `app/welcome/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -90,7 +90,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // …
+  // â€¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -109,7 +109,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // …
+  // â€¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -118,11 +118,11 @@ export default {
 
 # Disable Welcome Message for new Users
 
-First-time visitors are shown a message directing them to the fluxnova welcome page. If you do
+First-time visitors are shown a message directing them to the kramaX welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // …
+  // â€¦
   disableWelcomeMessage: true
 };
 ```

@@ -19,7 +19,7 @@ You can use the reports section of cockpit to display custom statistics and repo
 # Process Instance Duration Report
 
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../img/duration-report.png" title="Process Instance Duration Report" >}}
@@ -31,7 +31,7 @@ Pressing the download buttons above the chart triggers the export of the results
 # Completed Task Instance Report
 
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../img/historic-task-instance-report.png" title="Historic Task Instance Report" >}}

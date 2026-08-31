@@ -29,33 +29,33 @@ On the client-side a plugin may include Javascript modules to extend the Cockpit
 The basic skeleton of a Cockpit plugin looks as follows:
 
     cockpit-plugin/
-    ├── src/
-    |   ├── main/
-    |   |   ├── java/
-    |   |   |   └── org/my/plugin/
-    |   |   |       ├── db/
-    |   |   |       |   └── MyDto.java                                    (5)
-    |   |   |       ├── resource/
-    |   |   |       |   ├── MyPluginRootResource.java                     (3)
-    |   |   |       |   └── ...                                           (4)
-    |   |   |       └── MyPlugin.java                                     (1)
-    |   |   └── resources/
-    |   |       ├── META-INF/services/
-    |   |       |   └── org.finos.fluxnova.bpm.cockpit.plugin.spi.CockpitPlugin  (2)
-    |   |       ├── org/my/plugin/queries/                                (6)
-    |   |       |   └── sample.xml
-    |   |       └── plugin-webapp/MyPlugin/                               (7)
-    |   |           └── app/
-    |   |               ├── plugin.js                                     (8)
-    |   |               ├── plugin.css                                    (9)
-    |   |               └── ...
-    |   └── test/
-    |       ├── java/
-    |       |   └── org/my/plugin/
-    |       |       └── MyPluginTest.java
-    |       └── resources/
-    |           └── fluxnova.cfg.xml
-    └── pom.xml
+    â”œâ”€â”€ src/
+    |   â”œâ”€â”€ main/
+    |   |   â”œâ”€â”€ java/
+    |   |   |   â””â”€â”€ org/my/plugin/
+    |   |   |       â”œâ”€â”€ db/
+    |   |   |       |   â””â”€â”€ MyDto.java                                    (5)
+    |   |   |       â”œâ”€â”€ resource/
+    |   |   |       |   â”œâ”€â”€ MyPluginRootResource.java                     (3)
+    |   |   |       |   â””â”€â”€ ...                                           (4)
+    |   |   |       â””â”€â”€ MyPlugin.java                                     (1)
+    |   |   â””â”€â”€ resources/
+    |   |       â”œâ”€â”€ META-INF/services/
+    |   |       |   â””â”€â”€ org.vodafone.kramaX.bpm.cockpit.plugin.spi.CockpitPlugin  (2)
+    |   |       â”œâ”€â”€ org/my/plugin/queries/                                (6)
+    |   |       |   â””â”€â”€ sample.xml
+    |   |       â””â”€â”€ plugin-webapp/MyPlugin/                               (7)
+    |   |           â””â”€â”€ app/
+    |   |               â”œâ”€â”€ plugin.js                                     (8)
+    |   |               â”œâ”€â”€ plugin.css                                    (9)
+    |   |               â””â”€â”€ ...
+    |   â””â”€â”€ test/
+    |       â”œâ”€â”€ java/
+    |       |   â””â”€â”€ org/my/plugin/
+    |       |       â””â”€â”€ MyPluginTest.java
+    |       â””â”€â”€ resources/
+    |           â””â”€â”€ kramaX.cfg.xml
+    â””â”€â”€ pom.xml
 
 As runtime relevant resource it defines
 
@@ -77,7 +77,7 @@ As runtime relevant resource it defines
 9. a css file that contains the style definitions for the client-side plugin. This file must be named `plugin.css` and be located in the `app` directory of the plugin asset directory
 
 {{< note title="Related Example" class="info">}}
-  [How to develop a Cockpit plugin](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes)
+  [How to develop a Cockpit plugin](https://github.com/vodafone/kramaX-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes)
 {{< /note >}}
 
 ## Structure of a Frontend Module
@@ -148,11 +148,11 @@ In this example we deactivate the cancel action in the Cockpit process instance 
 ```
 
 # Legacy Plugins
-Plugins created for Fluxnova.13 or earlier can be included for compatibility. To achieve this, simply prefix your Plugin ID with `legacy-`. The AngularJS module name for the entry module will be `cockpit.plugin.legacy-*`.
+Plugins created for KramaX.13 or earlier can be included for compatibility. To achieve this, simply prefix your Plugin ID with `legacy-`. The AngularJS module name for the entry module will be `cockpit.plugin.legacy-*`.
 
 Please note that all Plugins with this prefix will be included using the 7.13 plugin mechanism. You cannot create new Plugins with IDs starting with `legacy`.
 
-For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.fluxnova.finos.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Fluxnova **7.13** .
+For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.kramaX.vodafone.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of KramaX **7.13** .
 
 # Plugin points
 
@@ -161,7 +161,7 @@ To configure where you place your plugin, enter the ID into the `pluginPoint` at
 
 Plugin Points describe where a Plugin will be rendered and define which additional data is passed into the second argument of the render function.
 
-For more information on creating and configuring your own plugin, please see [How to develop a Cockpit plugin](https://github.com/finos/fluxnova-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes).
+For more information on creating and configuring your own plugin, please see [How to develop a Cockpit plugin](https://github.com/vodafone/kramaX-bpm-examples/tree/master/cockpit/cockpit-fullstack-count-processes).
 
 ## Data
 
@@ -172,7 +172,7 @@ The first argument of the `#result` function is a (`Promise`).
 ### Login Data
 
 **Name:** `cockit.login.data`\
-**REST Endpoint:** `POST /fluxnova/api/admin/auth/user/default/login/cockpit`
+**REST Endpoint:** `POST /kramaX/api/admin/auth/user/default/login/cockpit`
 
 When a user clicks on the **Login** button of the login form, the plugin points `#result` function is called.
 Your [Login Plugin](#login) can react to the data that this data plugin will retrieve.

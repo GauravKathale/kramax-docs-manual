@@ -19,7 +19,7 @@ The required CDI beans for this functionality are currently not available in <a 
 If you add JSF forms as described below, you can easily use them as <br/>
 [external task forms]({{< relref "/user-guide/task-forms/_index.md#external-task-forms" >}}).
 
-A working example can be found in the [examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/usertask/task-form-external-jsf).
+A working example can be found in the [examples repository](https://github.com/vodafone/kramaX-bpm-examples/tree/master/usertask/task-form-external-jsf).
 
 The BPMN process used for this example is shown in the image below:
 
@@ -61,7 +61,7 @@ Create a JSF page in `src/main/webapp/WEB-INF` representing a form used for User
 <f:view>
   <h:head>
     <f:metadata>
-      <f:event type="preRenderView" listener="#{fluxnovaTaskForm.startTaskForm()}" />
+      <f:event type="preRenderView" listener="#{kramaXTaskForm.startTaskForm()}" />
     </f:metadata>
     <title>Task Form: #{task.name}</title>
   </h:head>
@@ -75,19 +75,19 @@ Create a JSF page in `src/main/webapp/WEB-INF` representing a form used for User
       </p>
 
       <h:commandButton id="complete" value="Task Completed"
-          action="#{fluxnovaTaskForm.completeTask()}" />
+          action="#{kramaXTaskForm.completeTask()}" />
     </h:form>
   </h:body>
 </f:view>
 </html>
 ```
 
-Note that you need `fluxnova-engine-cdi` in order to have the `fluxnovaTaskForm` bean available.
+Note that you need `kramaX-engine-cdi` in order to have the `kramaXTaskForm` bean available.
 
 
 # How does this work?
 
-If the user clicks on "Start to work on task" {{< img src="../img/start-task-button.png" title="Start Task Button" >}} in the tasklist, he will follow a link to this form, including the taskId and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `fluxnovaTaskForm` which
+If the user clicks on "Start to work on task" {{< img src="../img/start-task-button.png" title="Start Task Button" >}} in the tasklist, he will follow a link to this form, including the taskId and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaXTaskForm` which
 
  *   starts a conversation,
  *   remembers the callback URL
@@ -97,18 +97,18 @@ For that, you just need to add this code block to the beginning of your JSF view
 
 ```xml
 <f:metadata>
-  <f:event type="preRenderView" listener="#{fluxnovaTaskForm.startTaskForm()}" />
+  <f:event type="preRenderView" listener="#{kramaXTaskForm.startTaskForm()}" />
 </f:metadata>
 ```
 
-Submit the form by calling the `fluxnovaTaskForm` bean again, which:
+Submit the form by calling the `kramaXTaskForm` bean again, which:
 
 *   Completes the task in the process engine, causing the current token to advance in the process
 *   Ends the conversation
 *   Triggers a redirect to the callback URL of the tasklist
 
 ```xml
-<h:commandButton id="complete" value="task completed" action="#{fluxnovaTaskForm.completeTask()}" />
+<h:commandButton id="complete" value="task completed" action="#{kramaXTaskForm.completeTask()}" />
 ```
 
 Note that the command button doesn't have to be on the same form, you might have a whole wizard containing multiple forms in a row before having the `completeTask` button. This will work because of the conversation running in the background.
@@ -116,7 +116,7 @@ Note that the command button doesn't have to be on the same form, you might have
 
 # Access Process Variables
 
-In the forms you can access your own CDI beans as usual and also access the Fluxnova CDI beans. This makes it easy to access process variables, e.g., via the `processVariables` CDI bean:
+In the forms you can access your own CDI beans as usual and also access the KramaX CDI beans. This makes it easy to access process variables, e.g., via the `processVariables` CDI bean:
 
 ```xml
 <h:form id="someForm">
@@ -142,7 +142,7 @@ In the forms you can access your own CDI beans as usual and also access the Flux
       <td></td>
       <td>
         <h:commandButton id="complete" value="Task Completed"
-            action="#{fluxnovaTaskForm.completeTask()}" />
+            action="#{kramaXTaskForm.completeTask()}" />
       </td>
     </tr>
   </table>
@@ -164,14 +164,14 @@ The same mechanism can be used to start a new process instance:
 
 <f:view>
   <f:metadata>
-    <f:event type="preRenderView" listener="#{fluxnovaTaskForm.startProcessInstanceByKeyForm()}" />
+    <f:event type="preRenderView" listener="#{kramaXTaskForm.startProcessInstanceByKeyForm()}" />
   </f:metadata>
   <h:head>
-    <title>Start Process: #{fluxnovaTaskForm.processDefinition.name}</title>
+    <title>Start Process: #{kramaXTaskForm.processDefinition.name}</title>
   </h:head>
   <h:body>
-    <h1>#{fluxnovaTaskForm.processDefinition.name}</h1>
-    <p>Start a new process instance in version: #{fluxnovaTaskForm.processDefinition.version}</p>
+    <h1>#{kramaXTaskForm.processDefinition.name}</h1>
+    <p>Start a new process instance in version: #{kramaXTaskForm.processDefinition.version}</p>
     <h:form id="someForm">
       <p>
         Here you see the actual form to start a new process instance, normally
@@ -192,7 +192,7 @@ The same mechanism can be used to start a new process instance:
           <td></td>
           <td>
             <h:commandButton id="start" value="Start Process Instance"
-                action="#{fluxnovaTaskForm.completeProcessInstanceForm()}" />
+                action="#{kramaXTaskForm.completeProcessInstanceForm()}" />
           </td>
         </tr>
       </table>
@@ -204,7 +204,7 @@ The same mechanism can be used to start a new process instance:
 
 {{< img src="../img/startFormExample.png" title="Start Form Example" >}}
 
-If the user clicks on "Start a process instance" {{< img src="../img/start-process-button.png" title="Start Process Button" >}} in the tasklist and chooses the process your start form is assigned to, he will follow a link to this form, including the processDefinitionKey and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `fluxnovaTaskForm` which:
+If the user clicks on "Start a process instance" {{< img src="../img/start-process-button.png" title="Start Process Button" >}} in the tasklist and chooses the process your start form is assigned to, he will follow a link to this form, including the processDefinitionKey and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaXTaskForm` which:
 
 *   Starts a conversation
 *   Remembers the callback URL to the centralized tasklist
@@ -213,7 +213,7 @@ You need to add this code block to the beginning of your JSF view:
 
 ```xml
 <f:metadata>
-  <f:event type="preRenderView" listener="#{fluxnovaTaskForm.startProcessInstanceByIdForm()}" />
+  <f:event type="preRenderView" listener="#{kramaXTaskForm.startProcessInstanceByIdForm()}" />
 </f:metadata>
 ```
 
@@ -224,7 +224,7 @@ Submitting the start form now:
  * Triggers a redirect to the callback URL of the tasklist
 
 ```xml
-<h:commandButton id="start" value="Start Process Instance" action="#{fluxnovaTaskForm.completeProcessInstanceForm()}" />
+<h:commandButton id="start" value="Start Process Instance" action="#{kramaXTaskForm.completeProcessInstanceForm()}" />
 ```
 
 Note that the command button doesn't have to be on the same form, you might have a whole wizard containing multiple forms in a row before having the `completeProcessInstanceForm` button. This will work because of the conversation running in the background.

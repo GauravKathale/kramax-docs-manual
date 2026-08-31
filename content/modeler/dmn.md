@@ -1,12 +1,12 @@
 ---
 
-title: 'Editing DMN in Fluxnova Modeler'
+title: 'Editing DMN in KramaX Modeler'
 weight: 20
 
 menu:
   main:
     name: "DMN"
-    identifier: "fluxnova-modeler-dmn"
+    identifier: "kramaX-modeler-dmn"
     parent: "modeler"
     pre: "How to model executable DMN 1.3 decision diagrams (DRD) and tables."
 
@@ -18,7 +18,7 @@ menu:
 
 {{< img src="img/create-dmn.png" title="New DMN Diagram" >}}
 
-To start modeling, create a new DMN 1.3 diagram for the Fluxnova Platform by selecting **Create diagram > Create new DMN diagram (Fluxnova Platform)** in the top-level menu.
+To start modeling, create a new DMN 1.3 diagram for the KramaX Platform by selecting **Create diagram > Create new DMN diagram (KramaX Platform)** in the top-level menu.
 
 ## Start Modeling
 
@@ -38,7 +38,7 @@ To save your state of work, click **File > Save File As...** in the top-level me
 
 ## DMN Coverage
 
-The Fluxnova Modeler covers the following elements:
+The KramaX Modeler covers the following elements:
 
 - Decision (Tables and Literal Expressions)
 - Input Data

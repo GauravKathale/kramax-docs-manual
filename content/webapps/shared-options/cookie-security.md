@@ -11,7 +11,7 @@ menu:
     pre: "Get more insights about cookie security settings"
 ---
 
-Fluxnovas Web applications use cookies to preserve user sessions and to prevent CSRF attacks. This page explains how these cookies should be configured to increase the security.
+KramaXs Web applications use cookies to preserve user sessions and to prevent CSRF attacks. This page explains how these cookies should be configured to increase the security.
 
 The Web applications set the following cookies:
 
@@ -26,7 +26,7 @@ This section describes the purpose of security-related cookie properties. You ca
 [Secure and HttpOnly](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)
 as well as 
 [SameSite cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#samesite_attribute)
-in Mozilla’s Developer Guide.
+in Mozillaâ€™s Developer Guide.
 
 ### Secure
 
@@ -48,7 +48,7 @@ When enabling the <code>SameSite</code> flag, the browser only sends the cookie 
 
 {{< note title="Heads-up!" class="info" >}}
 The standard related to <code>SameSite</code> recently changed. Most current browser versions treat cookies without <code>SameSite</code> attributes as 'SameSite=Lax'.
-Have a look at [SameSite cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#samesite_attribute) in Mozilla’s Developer Guide.
+Have a look at [SameSite cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#samesite_attribute) in Mozillaâ€™s Developer Guide.
 {{< /note >}}
 
 ## What are the limitations?
@@ -84,7 +84,7 @@ The following table shows the default configuration of the Web applications.
   <tr>
     <td><code>HttpOnly</code></td>
     <td><code>true</code></td>
-    <td>–</td>
+    <td>â€“</td>
   </tr>
   <tr>
     <td><code>Secure</code></td>

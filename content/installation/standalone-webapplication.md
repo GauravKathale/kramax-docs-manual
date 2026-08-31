@@ -13,6 +13,6 @@ menu:
 ---
 
 
-Fluxnova.19 is the last release providing support for Standalone Web Application Distribution.
+KramaX.19 is the last release providing support for Standalone Web Application Distribution.
 
-Please consider migrating to [another supported]({{< relref "/introduction/downloading-fluxnova.md#download-the-runtime" >}}) setup.
+Please consider migrating to [another supported]({{< relref "/introduction/downloading-kramaX.md#download-the-runtime" >}}) setup.

@@ -1,6 +1,6 @@
 ---
 
-title: "Fluxnova Security Guide"
+title: "KramaX Security Guide"
 weight: 80
 
 menu:
@@ -10,4 +10,4 @@ menu:
     
 ---
 
-This page describes Fluxnova (also referred to as the 'software')  from a security perspective. It has the parts:
+This page describes KramaX (also referred to as the 'software')  from a security perspective. It has the parts:

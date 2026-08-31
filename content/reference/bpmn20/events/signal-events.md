@@ -150,7 +150,7 @@ When a token arrives at the signal intermediate catching event, it will wait the
 </intermediateCatchEvent>
 ```
 
-## Fluxnova Extensions
+## KramaX Extensions
 
 The following extensions are supported for the Signal Intermediate Catching Event:
 
@@ -297,7 +297,7 @@ In addition to passing process variables to the signal-catching process instance
 
 The business key "camunda:in" element can be used in combination with the process variable passing "camunda:in" elements.
 
-## Fluxnova Extensions
+## KramaX Extensions
 
 The following extensions are supported for the Signal Intermediate and End Throwing Events:
 
@@ -324,4 +324,4 @@ The following extensions are supported for the Signal Intermediate and End Throw
 
 # Additional Resources
 
-*   [Signal Events](http://fluxnova.finos.org/bpmn/reference.html#events-signal) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+*   [Signal Events](http://kramaX.vodafone.org/bpmn/reference.html#events-signal) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)

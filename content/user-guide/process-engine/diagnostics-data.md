@@ -12,8 +12,8 @@ menu:
 
 
 
-Diagnostics data is constantly collected and can be collected only by you. This allows you to access the collected data through the Java and REST APIs of Fluxnova.
-Being able to easily access the collected data is helpful when asking for help in our {{< forumref >}} or when opening issues in our issue tracker as it contains many of the information that are usually necessary to understand your Fluxnova setup.
+Diagnostics data is constantly collected and can be collected only by you. This allows you to access the collected data through the Java and REST APIs of KramaX.
+Being able to easily access the collected data is helpful when asking for help in our {{< forumref >}} or when opening issues in our issue tracker as it contains many of the information that are usually necessary to understand your KramaX setup.
 
 ## How to access the data
 
@@ -45,7 +45,7 @@ Below you find the full list of data the diagnostic collector collects, followed
 The "General Data" category contains information about the process engine:
 
 * Installation - an id that is stored as process engine configuration property
-* Product name - the name of the product (i.e., `Fluxnova BPM Runtime`)
+* Product name - the name of the product (i.e., `KramaX BPM Runtime`)
 * Product version - the version of the process engine (i.e., `1.X.Y`)
 
 ### Meta and environment data
@@ -54,7 +54,7 @@ The "Meta/Environment Data" category contains information about the environmenta
 * Database vendor and version
 * Application server vendor and version
 * JDK vendor and version
-* Used Fluxnova Web Applications
+* Used KramaX Web Applications
 
 The application server information cannot be obtained in an embedded process engine setup where no web application (e.g. Tasklist, Cockpit, REST application) is deployed and used.
 
@@ -67,7 +67,7 @@ The "Usage Data" category contains information about the used features and compo
 * Commands count - the count of executed commands after the last retrieved data. It could be from the previous 24 hours if the data have been reported then, and the process engine has not been closed during that time. Whenever the process engine is shutdown, the currently collected data is reported immediately.
 * Metrics count - the collected metrics are number of root process instance executions started, number of activity instances started or also known as flow node instances, and number of executed decision instances and elements.
 The counts are collected from the start of the engine or the last reported time if the engine is already running for more than 24 hours.
-* Fluxnova integration - a flag that shows if any of the Fluxnova integrations are used: Spring boot starter, Fluxnova Platform Run, WildFly subsystem or Fluxnova ejb service (e.g. WebSphere/WebLogic Application servers).
+* KramaX integration - a flag that shows if any of the KramaX integrations are used: Spring boot starter, KramaX Platform Run, WildFly subsystem or KramaX ejb service (e.g. WebSphere/WebLogic Application servers).
 
 ### Example
 
@@ -75,7 +75,7 @@ The counts are collected from the start of the engine or the last reported time 
 {
     "installation": "8343cc7a-8ad1-42d4-97d2-43452c0bdfa3",
     "product": {
-      "name": "Fluxnova BPM Runtime",
+      "name": "KramaX BPM Runtime",
       "version": "1.0.0",
       "internals": {
         "database": {  
@@ -101,9 +101,9 @@ The counts are collected from the start of the engine or the last reported time 
           "executed-decision-elements": { "count": 732 }
         },
         "data-collection-start-date": "2022-11-320T15:53:20.386+0100",
-        "fluxnova-integration": [
+        "kramaX-integration": [
           "spring-boot-starter",
-          "fluxnova-bpm-run"
+          "kramaX-bpm-run"
         ],
         "webapps": [
           "cockpit",
@@ -116,5 +116,5 @@ The counts are collected from the start of the engine or the last reported time 
 
 ## Source code 
 
-In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/finos/fluxnova-bpm-platform/blob/master/engine/src/main/java/org/finos/fluxnova/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `master` version of the feature.
+In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/vodafone/kramaX-bpm-platform/blob/master/engine/src/main/java/org/vodafone/kramaX/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `master` version of the feature.
 

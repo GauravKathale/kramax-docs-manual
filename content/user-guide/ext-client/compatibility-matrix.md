@@ -11,13 +11,13 @@ menu:
 
 ---
 
-Each version of Fluxnova is bound to a specific version of the **External Task Clients**.
+Each version of KramaX is bound to a specific version of the **External Task Clients**.
 
-  Fluxnova and its compatible **Java** External Task Client always share the same version.
+  KramaX and its compatible **Java** External Task Client always share the same version.
 
 <table class="table table-striped">
   <tr>
-    <th>Fluxnova version</th>
+    <th>KramaX version</th>
     <th>NodeJS client</th>
   </tr>
   <tr>
@@ -30,5 +30,5 @@ Each version of Fluxnova is bound to a specific version of the **External Task C
   </tr>
 </table>
 
-Only these default combinations are recommended (and supported) by Fluxnova. Nevertheless, each version of the External
-Task Clients can be combined with newer patch versions of the Fluxnova Workflow Engine.
+Only these default combinations are recommended (and supported) by KramaX. Nevertheless, each version of the External
+Task Clients can be combined with newer patch versions of the KramaX Workflow Engine.

@@ -66,7 +66,7 @@ runtimeService.signal(execution.getId());
 ```
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
@@ -97,6 +97,6 @@ runtimeService.signal(execution.getId());
 
 # Additional Resources
 
-* [Tasks](http://fluxnova.finos.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+* [Tasks](http://kramaX.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)
 * [Message Receive Events]({{< relref "/reference/bpmn20/events/message-events.md" >}})
 * {{< restref page="signalExecution" tag="Execution" text="Trigger a subscription via REST" >}}

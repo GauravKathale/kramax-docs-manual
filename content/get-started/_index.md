@@ -1,6 +1,6 @@
 ---
 
-title: "Get Started with Fluxnova"
+title: "Get Started with KramaX"
 weight: 20
 
 menu:
@@ -10,4 +10,4 @@ menu:
     
 ---
 
-There are different ways to get started with Fluxnova. Choose from the following guides:
+There are different ways to get started with KramaX. Choose from the following guides:

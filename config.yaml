@@ -1,8 +1,8 @@
 ---
 baseURL: "/"
 locale: "en-us"
-title: "Fluxnova documentation"
-theme: "fluxnova"
+title: "KramaX documentation"
+theme: "kramaX"
 
 markup:
   goldmark:
@@ -23,21 +23,21 @@ params:
   version: "3.0"
 #  versionAlias: "develop"
   forum:
-    url: "https://github.com/finos/fluxnova-modeler/discussions"
-    name: "Fluxnova Forum"
+    url: "https://github.com/vodafone/kramaX-modeler/discussions"
+    name: "KramaX Forum"
 
   # base URLs with optional version number in path using placeholder %s
-  openApiBaseURL: "https://docs.fluxnova.finos.org/rest/fluxnova-bpm-platform/%s"
-  javadocsBaseURL: "https://docs.fluxnova.finos.org/javadocs/%s"
+  openApiBaseURL: "https://docs.kramaX.vodafone.org/rest/kramaX-bpm-platform/%s"
+  javadocsBaseURL: "https://docs.kramaX.vodafone.org/javadocs/%s"
   
   github:
-    repositoryName: "finos/fluxnova-docs-manual"
+    repositoryName: "vodafone/kramaX-docs-manual"
     branch: "main"    
 
   algolia:
     appId: "PV6E60X9LQ"
     apiKey: "c8ee829e838a908d2aa9b1a6c1f786e3"
-    indexName: "fluxnova-finos-docs"
+    indexName: "kramaX-vodafone-docs"
 
 outputs:
   home:

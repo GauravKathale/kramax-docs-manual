@@ -1,6 +1,6 @@
 ---
 
-title: "Install Fluxnova"
+title: "Install KramaX"
 weight: 40
 
 menu:
@@ -11,7 +11,7 @@ menu:
     
 ---
 
-These documents contain information about how to install different components and distributions of Fluxnova.
+These documents contain information about how to install different components and distributions of KramaX.
 
 {{< note title="Supported Environments" class="info" >}}
 Before installing a distribution, first check the list of [Supported Environments]({{< relref "/introduction/supported-environments.md" >}}).

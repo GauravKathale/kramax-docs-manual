@@ -70,7 +70,7 @@ In both cases the same tasks are executed. However, there are differences betwee
 These two differences can help you decide whether a boundary event or an embedded subprocess is better suited for solving a particular process modeling / implementation problem.
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
@@ -101,4 +101,4 @@ These two differences can help you decide whether a boundary event or an embedde
 
 # Additional Resources
 
-*   [Event subprocess](http://fluxnova.finos.org/bpmn/reference.html#activities-event-subprocess) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+*   [Event subprocess](http://kramaX.vodafone.org/bpmn/reference.html#activities-event-subprocess) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)

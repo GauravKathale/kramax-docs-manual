@@ -28,12 +28,12 @@ TBD
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< relref "/introduction/downloading-fluxnova.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
+This section is applicable if you installed the [Full Distribution]({{< relref "/introduction/downloading-kramaX.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
 
 Please note that the following procedure may differ for cluster scenarios. 
 
 * Shut down the server
-* Exchange Fluxnova libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your server.
+* Exchange KramaX libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your server.
 * Restart the server
 
 # Application With Embedded Process Engine

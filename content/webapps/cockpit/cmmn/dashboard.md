@@ -13,7 +13,7 @@ menu:
 
 ---
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Fluxnova, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
 {{< /enterprise >}}
 
 The CMMN Cases dashboard of Cockpit is the entry point for case monitoring. It comes with a pre-installed plugin, which lets you see deployed case definitions. Additional [plugins]({{< relref "/webapps/cockpit/extend/plugins.md" >}}) can be added to the cases dashboard.

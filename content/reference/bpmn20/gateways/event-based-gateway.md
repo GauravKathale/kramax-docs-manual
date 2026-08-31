@@ -65,7 +65,7 @@ The corresponding xml looks like this:
 ```
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
@@ -95,4 +95,4 @@ The corresponding xml looks like this:
 
 # Additional Resources
 
-*   [Event-based Gateways](http://fluxnova.finos.org/bpmn/reference.html#gateways-event-based-gateways) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+*   [Event-based Gateways](http://kramaX.vodafone.org/bpmn/reference.html#gateways-event-based-gateways) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)

@@ -33,7 +33,7 @@ object must be strings representing date formats in accordance with
 
 ```javascript
 export default {
-  // …
+  // â€¦
   "dateFormat": {
     "monthName": "MMM",
     "long":   "LLLL"
@@ -44,8 +44,8 @@ export default {
 
 # Localization
 
-Tasklist can be localized. Fluxnova maintains English and German translation files. 
-You can find and download community maintained translation files at the [Fluxnova webapp translations repository](https://github.com/finos/fluxnova-webapp-translations).
+Tasklist can be localized. KramaX maintains English and German translation files. 
+You can find and download community maintained translation files at the [KramaX webapp translations repository](https://github.com/vodafone/kramaX-webapp-translations).
 
 The localization of Tasklist is contained in the `app/tasklist/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -61,7 +61,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // …
+  // â€¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -83,14 +83,14 @@ Add your files to the `customScripts` property of the `app/tasklist/scripts/conf
 
 ```javascript
 export default {
-  // …
+  // â€¦
   customScripts: 
     ['custom-module/module.js']
 }
 ```
-This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the Fluxnova webapp .war file.
+This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the KramaX webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples/tree/master/tasklist/cats-plugin).
+You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [KramaX examples repository](https://github.com/vodafone/kramaX-bpm-examples/tree/master/tasklist/cats-plugin).
 
 
 
@@ -111,7 +111,7 @@ and can override the standard styles.
 
 ```css
 .navbar-brand {
-  /* hides the "Fluxnova Tasklist" text */
+  /* hides the "KramaX Tasklist" text */
   text-indent: -999em;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -125,12 +125,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Tasklist*) and vendor (*Fluxnova*)
+**Note:** you can also change the app name (*Tasklist*) and vendor (*KramaX*)
 by changing the `app/tasklist/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // …
+  // â€¦
   app: {
     name: 'Todos',
     vendor: 'Company'
@@ -145,7 +145,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // …
+  // â€¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -154,11 +154,11 @@ export default {
 
 # Disable Welcome Message for new Users
 
-First-time visitors are shown a message directing them to the fluxnova welcome page. If you do
+First-time visitors are shown a message directing them to the kramaX welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // …
+  // â€¦
   disableWelcomeMessage: true
 }
 ```
@@ -175,7 +175,7 @@ process instance id and by task id.
 
 ```javascript
 export default {
-  // …
+  // â€¦
   assignProcessInstanceIdToTaskComment: true
 }
 ```
@@ -188,14 +188,14 @@ using [less](http://lesscss.org/) to change the overall appearance of Tasklist.
 If you want to customize the interface with `less`, you should probably start by having a look
 at the variables defined in the following files:
 
- - `node_modules/fluxnova-commons-ui/node_modules/bootstrap/less/variables.less`
+ - `node_modules/kramaX-commons-ui/node_modules/bootstrap/less/variables.less`
    defines the original Bootstrap variables
- - `node_modules/fluxnova-commons-ui/resources/less/cam-variables.less`
+ - `node_modules/kramaX-commons-ui/resources/less/cam-variables.less`
    overrides some Bootstrap variables (above) and add some custom ones
 
 ## Compiling with Grunt
 
-From within the `fluxnova-bpm-webapp` directory:
+From within the `kramaX-bpm-webapp` directory:
 
 ```sh
 grunt build:tasklist

@@ -35,7 +35,7 @@ A terminate event is modeled as an end event with an additional definition eleme
 ```
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
@@ -62,4 +62,4 @@ A terminate event is modeled as an end event with an additional definition eleme
 
 ## Additional Resources
 
-* [Terminate Events](http://fluxnova.finos.org/bpmn/reference.html#events-termination) in the [BPMN 2.0 Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html)
+* [Terminate Events](http://kramaX.vodafone.org/bpmn/reference.html#events-termination) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)

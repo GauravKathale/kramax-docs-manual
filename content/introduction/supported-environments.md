@@ -11,9 +11,9 @@ menu:
 ---
 
 
-Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our QA infrastructure in the following environments.
+Run KramaX in every Java-runnable environment. KramaX is supported with our QA infrastructure in the following environments.
 {{< note title="Supported Environments" class="info" >}}
-  Please note that the environments listed in this section depend on the version of Fluxnova. Please select the corresponding version of this documentation to see the environment that fits to your version of Fluxnova. e.g., [supported environments for version 1.0](http://docs.fluxnova.finos.org/1.0/guides/user-guide/#introduction-supported-environments)
+  Please note that the environments listed in this section depend on the version of KramaX. Please select the corresponding version of this documentation to see the environment that fits to your version of KramaX. e.g., [supported environments for version 1.0](http://docs.kramaX.vodafone.org/1.0/guides/user-guide/#introduction-supported-environments)
 {{< /note >}}
 
 
@@ -22,14 +22,14 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 ## Application-Embedded Process Engine
 
 * All Java application servers
-* Fluxnova Spring Boot Starter: Embedded Tomcat
+* KramaX Spring Boot Starter: Embedded Tomcat
   * [Supported versions]({{< relref "/user-guide/spring-boot-integration/version-compatibility.md" >}})
   * [Deployment scenarios]({{< relref "/user-guide/spring-boot-integration/_index.md#supported-deployment-scenarios" >}})
-* Fluxnova Engine Quarkus Extension
+* KramaX Engine Quarkus Extension
   * [Supported versions]({{< relref "/user-guide/quarkus-integration/version-compatibility.md" >}})
   * [Deployment scenarios]({{< relref "/user-guide/quarkus-integration/_index.md#supported-deployment-scenarios" >}})
 
-## Container-Managed Process Engine and Fluxnova Cockpit, Tasklist, Admin
+## Container-Managed Process Engine and KramaX Cockpit, Tasklist, Admin
 
 * Apache Tomcat 11.0
 * JBoss EAP 8.0
@@ -46,8 +46,8 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 * PostgreSQL 15 / 16 / 17 / 18
 * Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16 / 17
 * Microsoft SQL Server 2017 / 2019 / 2022 (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
-* Microsoft Azure SQL with Fluxnova-supported SQL Server compatibility levels 
-  (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-fluxnova" >}})): 
+* Microsoft Azure SQL with KramaX-supported SQL Server compatibility levels 
+  (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-kramaX" >}})): 
   * SQL Server on Azure Virtual Machines
   * Azure SQL Managed Instance
   * Azure SQL Database
@@ -55,7 +55,7 @@ Run Fluxnova in every Java-runnable environment. Fluxnova is supported with our 
 
 ## Database Clustering & Replication
 
-Clustered or replicated databases are supported given the following conditions. The communication between Fluxnova and the database cluster has to match with the corresponding non-clustered / non-replicated configuration. It is especially important that the configuration of the database cluster guarantees the equivalent behavior of READ-COMMITTED isolation level.
+Clustered or replicated databases are supported given the following conditions. The communication between KramaX and the database cluster has to match with the corresponding non-clustered / non-replicated configuration. It is especially important that the configuration of the database cluster guarantees the equivalent behavior of READ-COMMITTED isolation level.
 
 
 # Web Browser
@@ -70,18 +70,18 @@ Clustered or replicated databases are supported given the following conditions. 
 * Java 11 / 17 / 21 (Compatibility is tested with Eclipse Temurin JDK)
 
 
-# Fluxnova Modeler
+# KramaX Modeler
 
-[Supported environments for Fluxnova Modeler -Windows ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742061267)  
-[Supported environments for Fluxnova Modeler -Mac ](https://github.com/finos/fluxnova-modeler/actions/runs/22626886127/artifacts/5742038638)  
+[Supported environments for KramaX Modeler -Windows ](https://github.com/vodafone/kramaX-modeler/actions/runs/22626886127/artifacts/5742061267)  
+[Supported environments for KramaX Modeler -Mac ](https://github.com/vodafone/kramaX-modeler/actions/runs/22626886127/artifacts/5742038638)  
 
 # Maintenance Policy
 
-Check our [Announcements page](https://github.com/finos/fluxnova-bpm-platform/discussions/categories/announcements) for confirmed changes to our supported environments in upcoming releases.
+Check our [Announcements page](https://github.com/vodafone/kramaX-bpm-platform/discussions/categories/announcements) for confirmed changes to our supported environments in upcoming releases.
 
 ## Adding Environments
 
-Whenever a new version of one of the following environments is released, we target support of that new version with the next minor release of Fluxnova. A new released environment has to be available three months before the next Fluxnova minor release to be considered.
+Whenever a new version of one of the following environments is released, we target support of that new version with the next minor release of KramaX. A new released environment has to be available three months before the next KramaX minor release to be considered.
 
 * Java Language (LTS)
 * Spring Boot

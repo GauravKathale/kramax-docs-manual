@@ -10,7 +10,7 @@ menu:
 
 ---
 
-In Fluxnova Connect a `Connectors` class exists which automatically detects
+In KramaX Connect a `Connectors` class exists which automatically detects
 every connector in the classpath. It can be used to get the HTTP connector
 instance by its connector ID, which is `http-connector`.
 
@@ -21,7 +21,7 @@ HttpConnector http = Connectors.getConnector(HttpConnector.ID);
 
 # Configure Apache HTTP Client
 
-Fluxnova Connect HTTP client uses the Apache HTTP client to make HTTP requests. Accordingly, it supports the same configuration options.
+KramaX Connect HTTP client uses the Apache HTTP client to make HTTP requests. Accordingly, it supports the same configuration options.
 
 ## Default Configuration
 
@@ -32,14 +32,14 @@ If you want to reconfigure the client going beyond the default configuration opt
 a new connector configurator.
 
 ```java
-package org.finos.fluxnova.connect.example;
+package org.vodafone.kramaX.connect.example;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
-import org.finos.fluxnova.connect.httpclient.HttpConnector;
-import org.finos.fluxnova.connect.httpclient.impl.AbstractHttpConnector;
-import org.finos.fluxnova.connect.spi.ConnectorConfigurator;
+import org.vodafone.kramaX.connect.httpclient.HttpConnector;
+import org.vodafone.kramaX.connect.httpclient.impl.AbstractHttpConnector;
+import org.vodafone.kramaX.connect.spi.ConnectorConfigurator;
 
 public class HttpConnectorConfigurator implements ConnectorConfigurator<HttpConnector> {
 
@@ -62,16 +62,16 @@ public class HttpConnectorConfigurator implements ConnectorConfigurator<HttpConn
 ```
 
 To enable auto detection of your new configurator please add a file called
-`org.finos.fluxnova.connect.spi.ConnectorConfigurator` to your
+`org.vodafone.kramaX.connect.spi.ConnectorConfigurator` to your
 `resources/META-INF/services` directory with class name as content. For more
 information see the [extending Connect]({{< relref "/reference/connect/extending-connect.md" >}}) section.
 
 ```
-org.finos.fluxnova.connect.example.HttpConnectorConfigurator
+org.vodafone.kramaX.connect.example.HttpConnectorConfigurator
 ```
 
 {{< note title="Apache HTTP Client 5.x Migration" class="info" >}}
-Starting from Fluxnova 2.0.0, the Connect HTTP connector uses Apache HTTP Client 5.x. While the high-level Connect API remains the same, custom configurations and extensions need to use the new HttpClient 5.x packages (`org.apache.hc.client5.*` and `org.apache.hc.core5.*`) instead of the previous 4.x packages (`org.apache.http.*`).
+Starting from KramaX 2.0.0, the Connect HTTP connector uses Apache HTTP Client 5.x. While the high-level Connect API remains the same, custom configurations and extensions need to use the new HttpClient 5.x packages (`org.apache.hc.client5.*` and `org.apache.hc.core5.*`) instead of the previous 4.x packages (`org.apache.http.*`).
 {{< /note >}}
 
 # Requests
@@ -86,7 +86,7 @@ A simple GET request:
 ```java
 http.createRequest()
   .get()
-  .url("http://fluxnova.finos.org")
+  .url("http://kramaX.vodafone.org")
   .execute();
 ```
 
@@ -95,7 +95,7 @@ A POST request with a content type and payload set:
 ```java
 http.createRequest()
   .post()
-  .url("http://fluxnova.finos.org")
+  .url("http://kramaX.vodafone.org")
   .contentType("text/plain")
   .payload("Hello World!")
   .execute();
@@ -114,7 +114,7 @@ available.
 HttpResponse response = http.createRequest()
   .get()
   .header("Accept", "application/json")
-  .url("http://fluxnova.finos.org")
+  .url("http://kramaX.vodafone.org")
   .execute();
 ```
 
@@ -127,7 +127,7 @@ To activate the handling of these errors without additional scripting, set the `
 HttpResponse response = http.createRequest()
   .get()
   .configOption("throw-http-error", "TRUE")
-  .url("http://fluxnova.finos.org")
+  .url("http://kramaX.vodafone.org")
   .execute();
 ```
 
@@ -165,7 +165,7 @@ This can be used as follows:
 ```java
 HttpRequest request = http.createRequest();
 request.setRequestParameter("method", "GET");
-request.setRequestParameter("url", "http://fluxnova.finos.org");
+request.setRequestParameter("url", "http://kramaX.vodafone.org");
 request.setRequestParameter("payload", "hello world!");
 ```
 

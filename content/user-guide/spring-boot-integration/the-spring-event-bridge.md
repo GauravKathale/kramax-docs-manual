@@ -11,17 +11,17 @@ menu:
 ---
 
 
-The process engine can be hooked-up to the Spring event bus. We call this the "Spring Eventing Bridge". This allows us to be notified of process events using standard Spring eventing mechanisms. By default, the Spring eventing is enabled by a engine plugin. The eventing is controlled by four `fluxnova.bpm.eventing` properties. These are:
+The process engine can be hooked-up to the Spring event bus. We call this the "Spring Eventing Bridge". This allows us to be notified of process events using standard Spring eventing mechanisms. By default, the Spring eventing is enabled by a engine plugin. The eventing is controlled by four `kramaX.bpm.eventing` properties. These are:
 
 ```
-fluxnova.bpm.eventing.execution=true
-fluxnova.bpm.eventing.history=true
-fluxnova.bpm.eventing.task=true
-fluxnova.bpm.eventing.skippable=true
+kramaX.bpm.eventing.execution=true
+kramaX.bpm.eventing.history=true
+kramaX.bpm.eventing.task=true
+kramaX.bpm.eventing.skippable=true
 ```
 
-The first three properties control three event streams for execution, task and history events respectively. The last property `fluxnova.bpm.eventing.skippable` is responsible
-for the registration of the event listeners. If its value is `true`, the execution of the listners can be skipped via API or in Fluxnova Cockpit by activating "skip listners" flag. Otherwise, the listeners are registered as built-in listeners and are executed unconditionally.
+The first three properties control three event streams for execution, task and history events respectively. The last property `kramaX.bpm.eventing.skippable` is responsible
+for the registration of the event listeners. If its value is `true`, the execution of the listners can be skipped via API or in KramaX Cockpit by activating "skip listners" flag. Otherwise, the listeners are registered as built-in listeners and are executed unconditionally.
 
 Listeners can subscribe to streams of mutable or immutable event objects. The latter of those are particularly useful
 in asynchronous listener scenarios - e.g. when using `TransactionalEventListener`.
@@ -37,9 +37,9 @@ The following example gives an overview of how process events can be received in
 providing Spring beans with annotated methods instead of implementing the `TaskListener` and `ExecutionListener` interfaces.
 
 ```java
-import org.finos.fluxnova.bpm.engine.delegate.DelegateExecution;
-import org.finos.fluxnova.bpm.engine.delegate.DelegateTask;
-import org.finos.fluxnova.bpm.engine.impl.history.event.HistoryEvent;
+import org.vodafone.kramaX.bpm.engine.delegate.DelegateExecution;
+import org.vodafone.kramaX.bpm.engine.delegate.DelegateTask;
+import org.vodafone.kramaX.bpm.engine.impl.history.event.HistoryEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 

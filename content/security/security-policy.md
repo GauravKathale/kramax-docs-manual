@@ -10,5 +10,5 @@ menu:
     parent: "security-guide"
 
 ---
-For information on our Fluxnova Security Policy, visit the [FINOS Security Vulnerabilities Responsible Disclosure Policy](https://community.finos.org/docs/governance/software-projects/cve-responsible-disclosure/). 
+For information on our KramaX Security Policy, visit the [VODAFONE Security Vulnerabilities Responsible Disclosure Policy](https://community.vodafone.org/docs/governance/software-projects/cve-responsible-disclosure/). 
 

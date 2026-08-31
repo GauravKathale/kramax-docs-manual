@@ -11,4 +11,4 @@ menu:
 ---
 
 
-The Fluxnova Web Applications come with several common configuration options. These options cover the operation on all the available Fluxnova web applications.
+The KramaX Web Applications come with several common configuration options. These options cover the operation on all the available KramaX web applications.

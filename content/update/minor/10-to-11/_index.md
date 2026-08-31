@@ -18,15 +18,15 @@ menu:
 This guide uses a number of variables to denote common path names and constants:
 
 *`$DATABASE` expresses the target database platform, e.g., DB2, MySql, etc.
-*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged Fluxnova distribution, e.g., `fluxnova-bpm-tomcat-$PLATFORM_VERSION.zip` or `fluxnova-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
-*`$PLATFORM_VERSION` denotes the version of Fluxnova you want to install, e.g., `7.1.0`.
+*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged KramaX distribution, e.g., `kramaX-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaX-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
+*`$PLATFORM_VERSION` denotes the version of KramaX you want to install, e.g., `7.1.0`.
 
 {{< /note >}}
 
 
 # Migrate Your Database
 
-For migration from **Fluxnova.0** to **Fluxnova.1**, the provided update scripts that match your database have to be executed.
+For migration from **KramaX.0** to **KramaX.1**, the provided update scripts that match your database have to be executed.
 With a pre-packaged distribution, the update scripts are located in the folder `$DISTRIBUTION_PATH/sql/upgrade`.
 
 Check for [available database patch scripts]({{< relref "/update/patch-level.md#database-patches" >}}) for an overview of available sql patch scripts  to see if there are any for your current version.
@@ -36,11 +36,11 @@ Regardless of the version you are migrating from, the main update script is `$DA
 
 # Migrate Your Process Application
 
-To migrate your process application from Fluxnova.0 to Fluxnova.1, you need to follow these steps:
+To migrate your process application from KramaX.0 to KramaX.1, you need to follow these steps:
 
-* If you use `@Inject` with TaskForm, you have to add a `@Named("...")` annotation to the `@Inject` annotation due to backward-compatibility of `fluxnova.taskForm`.
-  There you have two choices: If you are using `fluxnova.taskForm` in your process application and don't want to update all your jsf pages and beans you should use `@Named("fluxnova.taskForm")`,
-  otherwise you should use `@Named("fluxnovaTaskForm")`. Your application server should write an error or a warning if you use the wrong one. So be careful! However, we recommend that you use the annotation `@Named("fluxnovaTaskForm")`.
+* If you use `@Inject` with TaskForm, you have to add a `@Named("...")` annotation to the `@Inject` annotation due to backward-compatibility of `kramaX.taskForm`.
+  There you have two choices: If you are using `kramaX.taskForm` in your process application and don't want to update all your jsf pages and beans you should use `@Named("kramaX.taskForm")`,
+  otherwise you should use `@Named("kramaXTaskForm")`. Your application server should write an error or a warning if you use the wrong one. So be careful! However, we recommend that you use the annotation `@Named("kramaXTaskForm")`.
 
 
 # Migrate the Server
@@ -49,7 +49,7 @@ To migrate your process application from Fluxnova.0 to Fluxnova.1, you need to f
 
 ### Update the JBoss Application Server
 
-Fluxnova.1 ships with a new version of the JBoss AS 7, namely, 7.2.0.
+KramaX.1 ships with a new version of the JBoss AS 7, namely, 7.2.0.
 The preferred update steps are:
 
 * copy all your custom modules / subsystems to the new JBoss server directory

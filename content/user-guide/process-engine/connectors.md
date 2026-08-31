@@ -11,7 +11,7 @@ menu:
 ---
 
 
-With the dependency [fluxnova-connect](https://github.com/finos/fluxnova-bpm-platform/tree/master/connect), the process engine supports simple
+With the dependency [kramaX-connect](https://github.com/vodafone/kramaX-bpm-platform/tree/master/connect), the process engine supports simple
 connectors. Currently the following connector implementations exist:
 
 <table class="table">
@@ -29,75 +29,75 @@ connectors. Currently the following connector implementations exist:
   </tr>
 </table>
 
-It is also possible to implement your own custom connector in fluxnova. For more information about extending connectors please visit the [Connector reference]({{< relref "/reference/connect/extending-connect.md" >}}). 
+It is also possible to implement your own custom connector in kramaX. For more information about extending connectors please visit the [Connector reference]({{< relref "/reference/connect/extending-connect.md" >}}). 
 
 
-# Configure Fluxnova Connect
+# Configure KramaX Connect
 
-As Fluxnova Connect is available only partially when using the process engine (check the list below). With a pre-built distribution, Fluxnova Connect is already preconfigured.
+As KramaX Connect is available only partially when using the process engine (check the list below). With a pre-built distribution, KramaX Connect is already preconfigured.
 
 The following `connect` artifacts exist:
 
-* `fluxnova-connect-core`: a jar that contains only the core Connect classes. The artifact already is available as dependency to the process engine. In addition to `fluxnova-connect-core`, single connector implementations like `fluxnova-connect-http-client` and `fluxnova-connect-soap-http-client` exist. These dependencies should be used when the default connectors have to be reconfigured or when custom connector implementations are used.
-* `fluxnova-connect-connectors-all`: a single jar without dependencies that contains the HTTP and SOAP connectors.
-* `fluxnova-engine-plugin-connect`: a process engine plugin to add Connect to Fluxnova.
+* `kramaX-connect-core`: a jar that contains only the core Connect classes. The artifact already is available as dependency to the process engine. In addition to `kramaX-connect-core`, single connector implementations like `kramaX-connect-http-client` and `kramaX-connect-soap-http-client` exist. These dependencies should be used when the default connectors have to be reconfigured or when custom connector implementations are used.
+* `kramaX-connect-connectors-all`: a single jar without dependencies that contains the HTTP and SOAP connectors.
+* `kramaX-engine-plugin-connect`: a process engine plugin to add Connect to KramaX.
 
 
 # Maven Coordinates
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every KramaX project.
 {{< /note >}}
 
 
-## fluxnova-connect-core
+## kramaX-connect-core
 
-`fluxnova-connect-core` contains the core classes of Connect. Additionally, the HTTP and SOAP connectors can be added with the dependencies `fluxnova-connect-http-client` and `fluxnova-connect-soap-http-client`. These artifacts will transitively pull in their dependencies, like Apache HTTP client. For integration with the engine, the artifact `fluxnova-engine-plugin-connect` is needed. Given that the BOM is imported, the Maven coordinates are as follows:
+`kramaX-connect-core` contains the core classes of Connect. Additionally, the HTTP and SOAP connectors can be added with the dependencies `kramaX-connect-http-client` and `kramaX-connect-soap-http-client`. These artifacts will transitively pull in their dependencies, like Apache HTTP client. For integration with the engine, the artifact `kramaX-engine-plugin-connect` is needed. Given that the BOM is imported, the Maven coordinates are as follows:
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.connect</groupId>
-  <artifactId>fluxnova-connect-core</artifactId>
+  <groupId>org.vodafone.kramaX.connect</groupId>
+  <artifactId>kramaX-connect-core</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.connect</groupId>
-  <artifactId>fluxnova-connect-http-client</artifactId>
+  <groupId>org.vodafone.kramaX.connect</groupId>
+  <artifactId>kramaX-connect-http-client</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.connect</groupId>
-  <artifactId>fluxnova-connect-soap-http-client</artifactId>
+  <groupId>org.vodafone.kramaX.connect</groupId>
+  <artifactId>kramaX-connect-soap-http-client</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-plugin-connect</artifactId>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine-plugin-connect</artifactId>
 </dependency>
 ```
 
 
-## fluxnova-connect-connectors-all
+## kramaX-connect-connectors-all
 
-This artifact contains the HTTP and SOAP connectors as well as their dependencies. To avoid conflicts with other versions of these dependencies, the dependencies are relocated to different packages. `fluxnova-connect-connectors-all` has the following Maven coordinates:
+This artifact contains the HTTP and SOAP connectors as well as their dependencies. To avoid conflicts with other versions of these dependencies, the dependencies are relocated to different packages. `kramaX-connect-connectors-all` has the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.connect</groupId>
-  <artifactId>fluxnova-connect-connectors-all</artifactId>
+  <groupId>org.vodafone.kramaX.connect</groupId>
+  <artifactId>kramaX-connect-connectors-all</artifactId>
 </dependency>
 ```
 
 
 ## Configure the Process Engine Plugin
 
-`fluxnova-engine-plugin-connect` contains a class called `org.finos.fluxnova.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
+`kramaX-engine-plugin-connect` contains a class called `org.vodafone.kramaX.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -109,7 +109,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
     ...
     <plugins>
       <plugin>
-        <class>org.finos.fluxnova.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+        <class>org.vodafone.kramaX.connect.plugin.impl.ConnectProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -118,15 +118,15 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 ```
 
 {{< note title="" class="info" >}}
-  When using a pre-built distribution of Fluxnova, the plugin is already pre-configured.
+  When using a pre-built distribution of KramaX, the plugin is already pre-configured.
 {{< /note >}}
 
 
 # Use Connectors
 
-To use a connector, you have to add the Fluxnova extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#fluxnova-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
+To use a connector, you have to add the KramaX extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaX-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaX-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
 
-As an example, a shortened configuration of the Fluxnova SOAP connector implementation is shown. A complete [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples) on GitHub.
+As an example, a shortened configuration of the KramaX SOAP connector implementation is shown. A complete [example](https://github.com/vodafone/kramaX-bpm-examples/tree/master/servicetask/soap-service) can be found in the [KramaX examples repository](https://github.com/vodafone/kramaX-bpm-examples) on GitHub.
 
 ```xml
 <serviceTask id="soapRequest" name="Simple SOAP Request">
@@ -155,4 +155,4 @@ As an example, a shortened configuration of the Fluxnova SOAP connector implemen
 </serviceTask>
 ```
 
-A full [example](https://github.com/finos/fluxnova-bpm-examples/tree/master/servicetask/rest-service) of the REST connector can also be found in the [Fluxnova examples repository](https://github.com/finos/fluxnova-bpm-examples) on GitHub.
+A full [example](https://github.com/vodafone/kramaX-bpm-examples/tree/master/servicetask/rest-service) of the REST connector can also be found in the [KramaX examples repository](https://github.com/vodafone/kramaX-bpm-examples) on GitHub.

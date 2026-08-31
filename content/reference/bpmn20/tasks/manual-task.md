@@ -20,7 +20,7 @@ A Manual Task defines a task that is external to the BPM engine. It is used to m
 ```
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>

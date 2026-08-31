@@ -23,31 +23,31 @@ In order to set up LDAP for the Oracle WebLogic distribution, you have to perfor
 
 ### Add the LDAP Library
 
-Make sure the `fluxnova-identity-ldap-$PLATFORM_VERSION.jar` is present in the `$WLS_DOMAIN_HOME/lib` folder.
+Make sure the `kramaX-identity-ldap-$PLATFORM_VERSION.jar` is present in the `$WLS_DOMAIN_HOME/lib` folder.
 
 
 ### Adjust the Process Engine Configuration
 
-Edit the file `bpm-platform.xml` located inside the fulxnova archive at `fluxnova-oracle-weblogic-ear-$PLATFORM_VERSION.ear/fluxnova-oracle-weblogic-service.jar/META-INF/` and add the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
+Edit the file `bpm-platform.xml` located inside the fulxnova archive at `kramaX-oracle-weblogic-ear-$PLATFORM_VERSION.ear/kramaX-oracle-weblogic-service.jar/META-INF/` and add the [LDAP Identity Provider Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}) and the [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}}).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<bpm-platform xmlns="http://www.fluxnova.finos.org/schema/1.0/BpmPlatform"
+<bpm-platform xmlns="http://www.kramaX.vodafone.org/schema/1.0/BpmPlatform"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.fluxnova.finos.org/schema/1.0/BpmPlatform http://www.fluxnova.finos.org/schema/1.0/BpmPlatform ">
+  xsi:schemaLocation="http://www.kramaX.vodafone.org/schema/1.0/BpmPlatform http://www.kramaX.vodafone.org/schema/1.0/BpmPlatform ">
   ...
   <process-engine name="default"> ...
     <properties>...</properties>
     <plugins>
       <plugin>
-        <class>org.finos.fluxnova.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin</class>
+        <class>org.vodafone.kramaX.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin</class>
         <properties>
 
           <property name="serverUrl">ldap://localhost:4334/</property>
-          <property name="managerDn">uid=jonny,ou=office-berlin,o=fluxnova,c=org</property>
+          <property name="managerDn">uid=jonny,ou=office-berlin,o=kramaX,c=org</property>
           <property name="managerPassword">s3cr3t</property>
 
-          <property name="baseDn">o=fluxnova,c=org</property>
+          <property name="baseDn">o=kramaX,c=org</property>
 
           <property name="userSearchBase"></property>
           <property name="userSearchFilter">(objectclass=person)</property>
@@ -68,7 +68,7 @@ Edit the file `bpm-platform.xml` located inside the fulxnova archive at `fluxnov
         </properties>
       </plugin>
       <plugin>
-        <class>org.finos.fluxnova.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
+        <class>org.vodafone.kramaX.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
         <properties>
           <property name="administratorUserName">admin</property>
         </properties>
@@ -86,9 +86,9 @@ See our user guide for complete documentation on the [LDAP Identity Provider Plu
 ## HAL Resource Caching
 
 If you use LDAP as Indentity Provider, you should consider [activating caching]({{< relref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
-Users and Groups in the Fluxnova webapplication. In order to activate this, add the following
-configuration to the `web.xml` file of Fluxnova webapplication
-(`fluxnova-webapp-wls-$PLATFORM_VERSION.war/WEB-INF/web.xml`):
+Users and Groups in the KramaX webapplication. In order to activate this, add the following
+configuration to the `web.xml` file of KramaX webapplication
+(`kramaX-webapp-wls-$PLATFORM_VERSION.war/WEB-INF/web.xml`):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -99,20 +99,20 @@ configuration to the `web.xml` file of Fluxnova webapplication
   <!-- ... -->
 
   <listener>
-    <listener-class>org.finos.fluxnova.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
+    <listener-class>org.vodafone.kramaX.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
   </listener>
 
   <context-param>
-    <param-name>org.finos.fluxnova.bpm.engine.rest.hal.cache.config</param-name>
+    <param-name>org.vodafone.kramaX.bpm.engine.rest.hal.cache.config</param-name>
     <param-value>
       {
-        "cacheImplementation": "org.finos.fluxnova.bpm.engine.rest.hal.cache.DefaultHalResourceCache",
+        "cacheImplementation": "org.vodafone.kramaX.bpm.engine.rest.hal.cache.DefaultHalResourceCache",
         "caches": {
-          "org.finos.fluxnova.bpm.engine.rest.hal.user.HalUser": {
+          "org.vodafone.kramaX.bpm.engine.rest.hal.user.HalUser": {
             "capacity": 100,
             "secondsToLive": 900
           },
-          "org.finos.fluxnova.bpm.engine.rest.hal.group.HalGroup": {
+          "org.vodafone.kramaX.bpm.engine.rest.hal.group.HalGroup": {
             "capacity": 100,
             "secondsToLive": 900
           }
@@ -151,7 +151,7 @@ Please watch out for the following section:
 <filter>
   <filter-name>HttpHeaderSecurity</filter-name>
   <filter-class>
-    org.finos.fluxnova.bpm.webapp.impl.security.filter.headersec.HttpHeaderSecurityFilter
+    org.vodafone.kramaX.bpm.webapp.impl.security.filter.headersec.HttpHeaderSecurityFilter
   </filter-class>
 </filter>
 
@@ -169,7 +169,7 @@ You can change the default behavior by adding configuration parameters to the se
 <filter>
   <filter-name>HttpHeaderSecurity</filter-name>
   <filter-class>
-    org.finos.fluxnova.bpm.webapp.impl.security.filter.headersec.HttpHeaderSecurityFilter
+    org.vodafone.kramaX.bpm.webapp.impl.security.filter.headersec.HttpHeaderSecurityFilter
   </filter-class>
   
   <init-param>

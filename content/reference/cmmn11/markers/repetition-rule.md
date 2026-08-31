@@ -102,7 +102,7 @@ In our example, the following steps might take place:
 {{< img src="../img/repetition-on-completion/state-4.png" >}}
 8. From now on, no more repetitions of *A* can occur.
 
-The transition in which the repetition rule is evaluated can be changed by a Fluxnova extension attribute named `camunda:repeatOnStandardEvent`. For a task it looks as follows:
+The transition in which the repetition rule is evaluated can be changed by a KramaX extension attribute named `camunda:repeatOnStandardEvent`. For a task it looks as follows:
 
 ```xml
 <definitions>
@@ -196,13 +196,13 @@ In our example, the following steps might take place:
 10. From now on, no more repetitions of *A* or *B* can occur.
 
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
     </td>
   </tr>
   <tr>

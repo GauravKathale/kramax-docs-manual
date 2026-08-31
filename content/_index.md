@@ -1,6 +1,6 @@
 ---
 
-title: "The Fluxnova Manual"
+title: "The KramaX Manual"
 weight: 60
 layout: "single"
 
@@ -11,13 +11,13 @@ menu:
 
 ---
 
-Welcome to the Fluxnova Manual! Fluxnova is a light-weight, open-source platform for Business Process
-Management. The Manual introduces key concepts in Fluxnova, provides installation procedures as well as a
+Welcome to the KramaX Manual! KramaX is a light-weight, open-source platform for Business Process
+Management. The Manual introduces key concepts in KramaX, provides installation procedures as well as a
 comprehensive reference section.
 
 ## Getting Started
 
-The Guide [Get started with Fluxnova]({{< relref "/get-started/quick-start/" >}}) is the quickest and easiest way to get up and running with Fluxnova. Alternatives include:
+The Guide [Get started with KramaX]({{< relref "/get-started/quick-start/" >}}) is the quickest and easiest way to get up and running with KramaX. Alternatives include:
 
 <div class="row">
   <div class="col-xs-6 col-md-4">
@@ -44,7 +44,7 @@ Once you completed a Getting Started Guide, you may find the following topics us
           <a href="{{< relref "/introduction/" >}}">Overview</a>
         </li>
         <li>
-          <a href="{{< relref "/introduction/downloading-fluxnova/" >}}">Download</a>
+          <a href="{{< relref "/introduction/downloading-kramaX/" >}}">Download</a>
         </li>
         <li>
           <a href="{{< relref "/introduction/architecture/" >}}">Architecture</a>
@@ -102,8 +102,8 @@ Once you completed a Getting Started Guide, you may find the following topics us
 
 ## Getting Help
 
-In case you get stuck on a problem make sure to ask for Help in the {{< forumref >}} or on [Stack Overflow](http://stackoverflow.com/questions/tagged/fluxnova)
+In case you get stuck on a problem make sure to ask for Help in the {{< forumref >}} or on [Stack Overflow](http://stackoverflow.com/questions/tagged/kramaX)
 
 ## Community Extensions
 
-A number of [Community Extensions]({{< relref "/introduction/extensions/" >}}) enhance Fluxnova with additional capabilities.
+A number of [Community Extensions]({{< relref "/introduction/extensions/" >}}) enhance KramaX with additional capabilities.

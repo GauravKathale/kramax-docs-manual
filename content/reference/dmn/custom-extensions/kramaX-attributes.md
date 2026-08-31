@@ -7,12 +7,12 @@ menu:
   main:
     identifier: "dmn-ref-extensions-attributes"
     parent: "dmn-ref-extensions"
-    pre: "Reference of Fluxnova Extension Attributes for DMN."
+    pre: "Reference of KramaX Extension Attributes for DMN."
 
-aliases: [reference/dmn11/custom-extensions/fluxnova-attributes/]
+aliases: [reference/dmn11/custom-extensions/kramaX-attributes/]
 ---
 
-The following attributes are extension attributes for the `fluxnova` namespace `http://camunda.org/schema/1.0/dmn`.
+The following attributes are extension attributes for the `kramaX` namespace `http://camunda.org/schema/1.0/dmn`.
 
 # historyTimeToLive
 

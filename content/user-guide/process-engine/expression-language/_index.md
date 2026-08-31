@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Fluxnova supports the Unified Expression Language and the Friendly Enough Expression Language.
+KramaX supports the Unified Expression Language and the Friendly Enough Expression Language.

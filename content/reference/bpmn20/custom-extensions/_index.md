@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Fluxnova extends BPMN with custom Extension Elements and Attributes.
+KramaX extends BPMN with custom Extension Elements and Attributes.

@@ -10,18 +10,18 @@ menu:
 
 ---
 
-The fluxnova-engine Spring Framework integration is located inside a maven module and can be added to apache maven-based projects through the following dependency:
+The kramaX-engine Spring Framework integration is located inside a maven module and can be added to apache maven-based projects through the following dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [Fluxnova BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Fluxnova project.
+  Please import the [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every KramaX project.
 {{< /note >}}
 
-* `fluxnova-engine-spring` maven module for Spring Framework 7
+* `kramaX-engine-spring` maven module for Spring Framework 7
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-spring</artifactId>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine-spring</artifactId>
 </dependency>
 ```
 

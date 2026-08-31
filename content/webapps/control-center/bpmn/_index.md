@@ -12,7 +12,7 @@ menu:
 ---
 
 
-Fluxnova Control Center enables users to monitor, analyze, and perform operational tasks on deployed BPMN processes through a unified interface.
+KramaX Control Center enables users to monitor, analyze, and perform operational tasks on deployed BPMN processes through a unified interface.
 
 Operations on BPMN processes can be executed across multiple levels, providing flexibility and control over process execution and lifecycle management. These levels include:
 

@@ -15,8 +15,8 @@ To enable the [REST API]({{< relref "/reference/rest/_index.md">}}) you can use 
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm.springboot</groupId>
-  <artifactId>fluxnova-bpm-spring-boot-starter-rest</artifactId>
+  <groupId>org.vodafone.kramaX.bpm.springboot</groupId>
+  <artifactId>kramaX-bpm-spring-boot-starter-rest</artifactId>
   <version>{project-version}</version>
 </dependency>
 ```
@@ -30,12 +30,12 @@ spring.jersey.application-path=myapplicationpath
 ```
 
 To modify the configuration or register additional resources, one can provide a bean which extends from 
-`org.finos.fluxnova.bpm.spring.boot.starter.rest.FluxnovaJerseyResourceConfig`:
+`org.vodafone.kramaX.bpm.spring.boot.starter.rest.KramaXJerseyResourceConfig`:
 
 ```java
 @Component
 @ApplicationPath("/engine-rest")
-public class JerseyConfig extends FluxnovaJerseyResourceConfig {
+public class JerseyConfig extends KramaXJerseyResourceConfig {
 
   @Override
   protected void registerAdditionalResources() {

@@ -13,7 +13,7 @@ menu:
 
 
 
-A Service Task is used to invoke services. In Fluxnova this is done by calling Java code or providing a work item for an external worker to complete asynchronously or invoking a logic which is implemented in form of webservices.
+A Service Task is used to invoke services. In KramaX this is done by calling Java code or providing a work item for an external worker to complete asynchronously or invoking a logic which is implemented in form of webservices.
 
 {{< bpmn-symbol type="service-task" >}}
 
@@ -31,7 +31,7 @@ To specify a class that is called during process execution, the fully qualified 
 ```xml
 <serviceTask id="javaService"
              name="My Java Service Task"
-             camunda:class="org.finos.fluxnova.bpm.MyJavaDelegate" />
+             camunda:class="org.vodafone.kramaX.bpm.MyJavaDelegate" />
 ```
 
 Please refer to the [Java Delegate]({{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}) section of the [User Guide]({{< relref "/user-guide/_index.md" >}}) for details on how to implement a Java Delegate.
@@ -92,7 +92,7 @@ To declare a Service Task to be handled externally, the attribute `camunda:type`
            camunda:topic="ShipmentProcessing" />
 ```
 
-# Fluxnova Extensions
+# KramaX Extensions
 
 <table class="table table-striped">
   <tr>
@@ -165,5 +165,5 @@ To declare a Service Task to be handled externally, the attribute `camunda:type`
 
 # Additional Resources
 
-* [Tasks](http://fluxnova.finos.org/bpmn/reference.html#activities-task) in the [BPMN Modeling Reference](http://fluxnova.finos.org/bpmn/reference.html) section
+* [Tasks](http://kramaX.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html) section
 * [How to call a Webservice from BPMN](http://www.bpm-guide.de/2010/12/09/how-to-call-a-webservice-from-bpmn/). Please note that this article is outdated. However, it is still valid regarding how you would call a Web Service using the process engine.

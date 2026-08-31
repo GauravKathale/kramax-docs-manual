@@ -1,6 +1,6 @@
 ---
 
-title: 'Get started with Fluxnova'
+title: 'Get started with KramaX'
 weight: 1
 
 menu:
@@ -8,13 +8,13 @@ menu:
     name: "Quick Start (Java / JS)"
     identifier: "get-started-quick-start"
     parent: "get-started"
-    pre: "Learn how to model a BPMN 2.0 process using the Fluxnova Modeler, adding a Java or JavaScript Worker. Deploy it to the Fluxnova Platform."
+    pre: "Learn how to model a BPMN 2.0 process using the KramaX Modeler, adding a Java or JavaScript Worker. Deploy it to the KramaX Platform."
 
 ---
 
-This tutorial guides you through modeling and implementing your first workflow with the Fluxnova Platform.
-In this guide, you'll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of Fluxnova's ready-to-go task clients.
+This tutorial guides you through modeling and implementing your first workflow with the KramaX Platform.
+In this guide, you'll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of KramaX's ready-to-go task clients.
 
-{{< get-code repo="fluxnova-get-started-quickstart" >}}
+{{< get-code repo="kramaX-get-started-quickstart" >}}
 
 You will be guided through the following six steps:

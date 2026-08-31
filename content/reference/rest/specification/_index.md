@@ -6,11 +6,11 @@ layout: "single"
 
 menu:
   main:
-    name: "Specification ↗"
+    name: "Specification â†—"
     identifier: "rest-api-specification"
     parent: "rest-api"
 
 ---
 
-For the REST API specification.Please visit: [FluxNova REST API Specification](https://fluxnova.finos.org/docs/category//api-spec)
+For the REST API specification.Please visit: [FluxNova REST API Specification](https://kramaX.vodafone.org/docs/category//api-spec)
 

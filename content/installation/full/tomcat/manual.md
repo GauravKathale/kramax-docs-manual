@@ -13,15 +13,15 @@ menu:
 ---
 
 
-This section describes how you can install Fluxnova and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.tomcat/fluxnova-tomcat) to fetch the required Fluxnova modules.
+This section describes how you can install KramaX and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm.tomcat/kramaX-tomcat) to fetch the required KramaX modules.
 
 {{< note title="Reading the Guide" class="info" >}}
 Throughout this guide we will use a number of variables to denote common path names and constants:
 
 * `$TOMCAT_HOME` points to the main directory of the tomcat server.
 * `$TOMCAT_VERSION` denotes the version of Tomcat server.
-* `$PLATFORM_VERSION` denotes the version of Fluxnova you want to install or already have installed, e.g. `1.0.0`.
-* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Fluxnova distribution for Tomcat, e.g. `fluxnova-bpm-tomcat-$PLATFORM_VERSION.zip` or `fluxnova-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
+* `$PLATFORM_VERSION` denotes the version of KramaX you want to install or already have installed, e.g. `1.0.0`.
+* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged KramaX distribution for Tomcat, e.g. `kramaX-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaX-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
 
 {{< /note >}}
 
@@ -36,21 +36,21 @@ The above workaround is not guaranteed to work for cases with bean references be
 
 The following test scenarios fail on Tomcat 11:
 
-* [CallActivityContextSwitchTest](https://github.com/finos/fluxnova-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/finos/fluxnova/bpm/integrationtest/functional/context/CallActivityContextSwitchTest.java)
-* [CdiBeanCallActivityResolutionTest](https://github.com/finos/fluxnova-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/finos/fluxnova/bpm/integrationtest/functional/cdi/CdiBeanCallActivityResolutionTest.java)
+* [CallActivityContextSwitchTest](https://github.com/vodafone/kramaX-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramaX/bpm/integrationtest/functional/context/CallActivityContextSwitchTest.java)
+* [CdiBeanCallActivityResolutionTest](https://github.com/vodafone/kramaX-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramaX/bpm/integrationtest/functional/cdi/CdiBeanCallActivityResolutionTest.java)
 {{< /note >}}
 
 
 # Setup
 
-Before you can install the Fluxnova components, you need to perform a number of required setup steps.
+Before you can install the KramaX components, you need to perform a number of required setup steps.
 
 
 ## Create the Database Schema and Tables
 
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
-* Create a database schema for Fluxnova yourself.
+* Create a database schema for KramaX yourself.
 * Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In Tomcat, this is done in the `bpm-platform.xml`, located in the `$TOMCAT_DISTRIBUTION\server\apache-tomcat-$VERSION\conf\` folder.
@@ -58,12 +58,12 @@ When you create the tables manually, then you have to configure the engine to **
 
 ## Add BPM Bootstrap Server Listener
 
-Add the entry `org.finos.fluxnova.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping Fluxnova as Tomcat is started and stopped.
+Add the entry `org.vodafone.kramaX.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping KramaX as Tomcat is started and stopped.
 
 ```xml
 <Server port="8005" shutdown="SHUTDOWN">
   ...
-  <Listener className="org.finos.fluxnova.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap" />
+  <Listener className="org.vodafone.kramaX.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap" />
   ...
 ```
 
@@ -83,7 +83,7 @@ To configure a JDBC Resource you have to edit the file `$TOMCAT_HOME/conf/server
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               uniqueResourceName="process-engine"
               driverClassName="org.h2.Driver"
-              url="jdbc:h2:./fluxnova-h2-dbs/process-engine;TRACE_LEVEL_FILE=0"
+              url="jdbc:h2:./kramaX-h2-dbs/process-engine;TRACE_LEVEL_FILE=0"
               defaultTransactionIsolation="READ_COMMITTED"
               defaultAutoCommit="false"
               username="sa"
@@ -99,21 +99,21 @@ For more information on the creation of JDBC datasources have a look at the docu
 [11.0](https://tomcat.apache.org/tomcat-11.0-doc/jndi-datasource-examples-howto.html).
 
 
-## Add Fluxnova Services
+## Add KramaX Services
 
 Copy the following blocks from `${TOMCAT_DISTRIBUTION}/server/apache-tomcat-${TOMCAT_VERSION}/conf/server.xml`
   into `${TOMCAT_HOME}/conf/server.xml`:
 
 ```xml
-     <Resource name="global/fluxnova-bpm-platform/process-engine/ProcessEngineService!org.finos.fluxnova.bpm.ProcessEngineService" auth="Container"
-              type="org.finos.fluxnova.bpm.ProcessEngineService"
-              description="Fluxnova Platform Process Engine Service"
-              factory="org.finos.fluxnova.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
+     <Resource name="global/kramaX-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaX.bpm.ProcessEngineService" auth="Container"
+              type="org.vodafone.kramaX.bpm.ProcessEngineService"
+              description="KramaX Platform Process Engine Service"
+              factory="org.vodafone.kramaX.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
 
-    <Resource name="global/fluxnova-bpm-platform/process-engine/ProcessApplicationService!org.finos.fluxnova.bpm.ProcessApplicationService" auth="Container"
-              type="org.finos.fluxnova.bpm.ProcessApplicationService"
-              description="Fluxnova Platform Process Application Service"
-              factory="org.finos.fluxnova.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
+    <Resource name="global/kramaX-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaX.bpm.ProcessApplicationService" auth="Container"
+              type="org.vodafone.kramaX.bpm.ProcessApplicationService"
+              description="KramaX Platform Process Application Service"
+              factory="org.vodafone.kramaX.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
 ```
 
 
@@ -130,9 +130,9 @@ You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<bpm-platform xmlns="http://fluxnova.finos.org/schema/1.0/BpmPlatform"
+<bpm-platform xmlns="http://kramaX.vodafone.org/schema/1.0/BpmPlatform"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://fluxnova.finos.org/schema/1.0/BpmPlatform http://fluxnova.finos.org/schema/1.0/BpmPlatform ">
+  xsi:schemaLocation="http://kramaX.vodafone.org/schema/1.0/BpmPlatform http://kramaX.vodafone.org/schema/1.0/BpmPlatform ">
 
   <job-executor>
     <job-acquisition name="default" />
@@ -140,7 +140,7 @@ You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or
 
   <process-engine name="default">
     <job-acquisition>default</job-acquisition>
-    <configuration>org.finos.fluxnova.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
+    <configuration>org.vodafone.kramaX.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
     <datasource>java:jdbc/ProcessEngine</datasource>
 
     <properties>
@@ -167,27 +167,27 @@ In particular, go to `${TOMCAT_HOME}/webapps/` and remove the directories
 
 # Optional Components
 
-This section describes how to install optional Fluxnova dependencies onto a Tomcat server. None of these are required to work with the core platform.
+This section describes how to install optional KramaX dependencies onto a Tomcat server. None of these are required to work with the core platform.
 
 
 ## Cockpit, Tasklist and Admin
 
 The following steps are required to deploy the applications:
 
-1. Download the Fluxnova web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.webapp/fluxnova-webapp-tomcat).
-    * For [Tomcat 11](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm.webapp/fluxnova-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/fluxnova-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
-2. Copy the war file to `$TOMCAT_HOME/webapps/fluxnova.war`.
+1. Download the KramaX web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm.webapp/kramaX-webapp-tomcat).
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm.webapp/kramaX-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/kramaX-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
+2. Copy the war file to `$TOMCAT_HOME/webapps/kramaX.war`.
    Optionally you may name it differently or extract it to a folder to deploy it to a different context path.
 3. Startup Tomcat.
-4. Access Cockpit and Tasklist via `/fluxnova/app/cockpit` and `/fluxnova/app/tasklist` or under the context path you configured.
+4. Access Cockpit and Tasklist via `/kramaX/app/cockpit` and `/kramaX/app/tasklist` or under the context path you configured.
 
 
 ## REST API
 
 The following steps are required to deploy the REST API:
 
-1. Download the REST API web application archive from our [Artifact Repository](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest).
-    * For [Tomcat 11](https://mvnrepository.com/artifact/org.finos.fluxnova.bpm/fluxnova-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/fluxnova-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
+1. Download the REST API web application archive from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm/kramaX-engine-rest).
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm/kramaX-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/kramaX-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
 2. Copy the war file to `$TOMCAT_HOME/webapps`.
    Optionally you may rename it or extract it to a folder to deploy it to a specific context like `/engine-rest`.
 3. Startup Tomcat.
@@ -196,14 +196,14 @@ The following steps are required to deploy the REST API:
 5. Enable authentication as described in the [REST API documentation]({{< relref "/reference/rest/overview/authentication.md" >}})
 
 
-## Fluxnova Connect Plugin
+## KramaX Connect Plugin
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `fluxnova-engine-plugin-connect-$PLATFORM_VERSION.jar`
-* `fluxnova-commons-utils-$PLATFORM_VERSION.jar`
+* `kramaX-engine-plugin-connect-$PLATFORM_VERSION.jar`
+* `kramaX-commons-utils-$PLATFORM_VERSION.jar`
 
-In order to activate Fluxnova Connect functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
+In order to activate KramaX Connect functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -213,7 +213,7 @@ In order to activate Fluxnova Connect functionality for a process engine, a proc
     <plugins>
       ... existing plugins ...
       <plugin>
-        <class>org.finos.fluxnova.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+        <class>org.vodafone.kramaX.connect.plugin.impl.ConnectProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -223,16 +223,16 @@ In order to activate Fluxnova Connect functionality for a process engine, a proc
 ```
 
 
-## Fluxnova Spin
+## KramaX Spin
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `fluxnova-spin-dataformat-all-$PLATFORM_VERSION.jar`
-* `fluxnova-spin-core-$PLATFORM_VERSION.jar`
-* `fluxnova-engine-plugin-spin-$PLATFORM_VERSION.jar`
-* `fluxnova-commons-utils-$PLATFORM_VERSION.jar`
+* `kramaX-spin-dataformat-all-$PLATFORM_VERSION.jar`
+* `kramaX-spin-core-$PLATFORM_VERSION.jar`
+* `kramaX-engine-plugin-spin-$PLATFORM_VERSION.jar`
+* `kramaX-commons-utils-$PLATFORM_VERSION.jar`
 
-In order to activate Fluxnova Spin functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
+In order to activate KramaX Spin functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -243,7 +243,7 @@ In order to activate Fluxnova Spin functionality for a process engine, a process
     <plugins>
       ... existing plugins ...
       <plugin>
-        <class>org.finos.fluxnova.spin.plugin.impl.SpinProcessEnginePlugin</class>
+        <class>org.vodafone.kramaX.spin.plugin.impl.SpinProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -270,9 +270,9 @@ Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUT
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `fluxnova-template-engines-freemarker-$PLATFORM_VERSION.jar`
+* `kramaX-template-engines-freemarker-$PLATFORM_VERSION.jar`
 * `freemarker-2.3.31.jar`
-* `fluxnova-commons-utils-$PLATFORM_VERSION.jar`
+* `kramaX-commons-utils-$PLATFORM_VERSION.jar`
 
 ## GraalVM JavaScript Integration
 

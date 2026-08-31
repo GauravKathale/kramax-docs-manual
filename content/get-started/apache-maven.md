@@ -8,23 +8,23 @@ menu:
     name: "Maven Coordinates"
     identifier: "get-started-maven"
     parent: "get-started"
-    pre: "The most commonly used Apache Maven Coordinates for Fluxnova."
+    pre: "The most commonly used Apache Maven Coordinates for KramaX."
 
 ---
 
-This page lists the most commonly used Apache Maven Coordinates for Fluxnova.
+This page lists the most commonly used Apache Maven Coordinates for KramaX.
 
-Most Fluxnova artifacts are pushed to [maven central](https://central.sonatype.com/).
+Most KramaX artifacts are pushed to [maven central](https://central.sonatype.com/).
 
 
-# Fluxnova BOM (Bill of Materials)
+# KramaX BOM (Bill of Materials)
 
 ```xml
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.finos.fluxnova.bpm</groupId>
-      <artifactId>fluxnova-bom</artifactId>
+      <groupId>org.vodafone.kramaX.bpm</groupId>
+      <artifactId>kramaX-bom</artifactId>
       <version>1.0.0</version>
       <scope>import</scope>
       <type>pom</type>
@@ -34,48 +34,48 @@ Most Fluxnova artifacts are pushed to [maven central](https://central.sonatype.c
 ```
 
 {{< note title="Use the BOM!" class="info" >}}
-  Please import the Fluxnova BOM if you use multiple Fluxnova projects. The BOM defines versions for all Fluxnova projects. This way it is ensured that no incompatible versions are imported.
+  Please import the KramaX BOM if you use multiple KramaX projects. The BOM defines versions for all KramaX projects. This way it is ensured that no incompatible versions are imported.
 {{< /note >}}
 
 
-# Fluxnova Engine
+# KramaX Engine
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine</artifactId>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine</artifactId>
 </dependency>
 ```
 
 
-# Fluxnova Engine Spring Integration
+# KramaX Engine Spring Integration
 
-The `fluxnova-engine` Spring integration for Spring Framework 7:
-
-```xml
-<dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-spring</artifactId>
-</dependency>
-```
-
-# Fluxnova Engine CDI Integration
+The `kramaX-engine` Spring integration for Spring Framework 7:
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-cdi</artifactId>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine-spring</artifactId>
 </dependency>
 ```
 
-# Fluxnova DMN Engine BOM (Bill of Materials)
-This BOM allows to use the DMN engine standalone without the BPMN engine and the rest of the Fluxnova Platform.
+# KramaX Engine CDI Integration
+
+```xml
+<dependency>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine-cdi</artifactId>
+</dependency>
+```
+
+# KramaX DMN Engine BOM (Bill of Materials)
+This BOM allows to use the DMN engine standalone without the BPMN engine and the rest of the KramaX Platform.
 
 ```xml
 <dependencyManagement>
   <dependency>
-    <groupId>org.finos.fluxnova.bpm.dmn</groupId>
-    <artifactId>fluxnova-engine-dmn-bom</artifactId>
+    <groupId>org.vodafone.kramaX.bpm.dmn</groupId>
+    <artifactId>kramaX-engine-dmn-bom</artifactId>
     <version>1.0.0</version>
     <type>pom</type>
     <scope>import</scope>
@@ -83,14 +83,14 @@ This BOM allows to use the DMN engine standalone without the BPMN engine and the
 </dependencyManagement>
 ```
 
-# Fluxnova DMN
-This dependency allows to use DMN engine standalone without the BPMN engine and the rest of the Fluxnova Platform.
-It is not needed when using `fluxnova-engine` because that already contains the DMN engine.
+# KramaX DMN
+This dependency allows to use DMN engine standalone without the BPMN engine and the rest of the KramaX Platform.
+It is not needed when using `kramaX-engine` because that already contains the DMN engine.
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm.dmn</groupId>
-  <artifactId>fluxnova-engine-dmn</artifactId>
+  <groupId>org.vodafone.kramaX.bpm.dmn</groupId>
+  <artifactId>kramaX-engine-dmn</artifactId>
 </dependency>
 ```
 
@@ -98,22 +98,22 @@ It is not needed when using `fluxnova-engine` because that already contains the 
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm.javaee</groupId>
-  <artifactId>fluxnova-ejb-client</artifactId>
+  <groupId>org.vodafone.kramaX.bpm.javaee</groupId>
+  <artifactId>kramaX-ejb-client</artifactId>
 </dependency>
 ```
 
-# Fluxnova Artifact Storage
+# KramaX Artifact Storage
 
 ## Artifactory
 
-Fluxnova relies on JFrog Artifactory to provide Fluxnova artifacts to users at [artifacts.camunda.com](https://artifacts.camunda.com/). The artifact data is stored in [Amazon S3](https://aws.amazon.com/s3/) storage and gets served by [artifacts.camunda.com](https://artifacts.camunda.com/) via redirects to AWS S3. Users must be able to connect to both endpoints for artifact retrieval.
+KramaX relies on JFrog Artifactory to provide KramaX artifacts to users at [artifacts.camunda.com](https://artifacts.camunda.com/). The artifact data is stored in [Amazon S3](https://aws.amazon.com/s3/) storage and gets served by [artifacts.camunda.com](https://artifacts.camunda.com/) via redirects to AWS S3. Users must be able to connect to both endpoints for artifact retrieval.
 
 ```xml
 <repositories>
   <repository>
-    <id>fluxnova-bpm-nexus</id>
-    <name>fluxnova-bpm-nexus</name>
+    <id>kramaX-bpm-nexus</id>
+    <name>kramaX-bpm-nexus</name>
     <url>
       https://artifacts.camunda.com/artifactory/public/
     </url>
@@ -121,8 +121,8 @@ Fluxnova relies on JFrog Artifactory to provide Fluxnova artifacts to users at [
 </repositories>
 ```
 
-### Browse Fluxnova Artifact Storage
-In order to browse the Fluxnova artifacts, here are the links which you can use.
+### Browse KramaX Artifact Storage
+In order to browse the KramaX artifacts, here are the links which you can use.
 
 https://artifacts.camunda.com/ui/native/camunda-bpm
 
@@ -133,13 +133,13 @@ The files are hosted in AWS S3, therefore, Artifactory rewrites the requests to 
 
 Example:
 ```
-curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/finos/fluxnova/bpm/camunda-engine-rest/7.23.0/camunda-engine-rest-7.23.0.war
+curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramaX/bpm/camunda-engine-rest/7.23.0/camunda-engine-rest-7.23.0.war
 ```
 
-# Other Fluxnova Modules:
+# Other KramaX Modules:
 
 * [DMN Engine]({{< relref "/user-guide/dmn-engine/embed/#maven-coordinates" >}})
-* [Fluxnova Spin]({{< relref "/reference/spin" >}})
-* [Fluxnova Connect]({{< relref "/reference/connect/#maven-coordinates" >}})
+* [KramaX Spin]({{< relref "/reference/spin" >}})
+* [KramaX Connect]({{< relref "/reference/connect/#maven-coordinates" >}})
 * [Templating Engines]({{< relref "/user-guide/process-engine/templating/#install-a-template-engine-for-an-embedded-process-engine" >}})
 * [Spring Boot Integration]({{< relref "/user-guide/spring-boot-integration/" >}})

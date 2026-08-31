@@ -12,7 +12,7 @@ menu:
 
 ---
 
-To evaluate a DMN decision in Fluxnova, it has to be part of
+To evaluate a DMN decision in KramaX, it has to be part of
 a [Deployment]. After a decision has been deployed, it can be referenced
 by its key and version. The platform supports [DMN 1.3] XML files.
 

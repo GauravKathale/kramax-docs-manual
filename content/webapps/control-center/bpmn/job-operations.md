@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The Job Operations functionality in Fluxnova Control Center provides users with the ability to monitor, manage, and recover failed job executions. It offers operational controls for both Job Definitions and individual Jobs, enabling administrators and operators to maintain process execution health and resolve runtime issues efficiently.
+The Job Operations functionality in KramaX Control Center provides users with the ability to monitor, manage, and recover failed job executions. It offers operational controls for both Job Definitions and individual Jobs, enabling administrators and operators to maintain process execution health and resolve runtime issues efficiently.
 
 ## Failed Jobs Overview 
 

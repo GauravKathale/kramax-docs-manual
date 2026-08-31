@@ -11,19 +11,19 @@ menu:
 
 ---
 
-The auto starter uses the  `org.finos.fluxnova.bpm.engine.impl.cfg.ProcessEnginePlugin` mechanism to configure the engine.
+The auto starter uses the  `org.vodafone.kramaX.bpm.engine.impl.cfg.ProcessEnginePlugin` mechanism to configure the engine.
 
 The configuration is divided into _sections_. These _sections_ are represented by the marker interfaces:
 
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaProcessEngineConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaDatasourceConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaHistoryConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaHistoryLevelAutoHandlingConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaJobConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaDeploymentConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaAuthorizationConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaFailedJobConfiguration`
-* `org.finos.fluxnova.bpm.spring.boot.starter.configuration.FluxnovaMetricsConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXProcessEngineConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXDatasourceConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXHistoryConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXHistoryLevelAutoHandlingConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXJobConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXDeploymentConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXAuthorizationConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXFailedJobConfiguration`
+* `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.KramaXMetricsConfiguration`
 
 ## Default Configurations
 
@@ -35,11 +35,11 @@ Sets the process engine name and automatically adds all `ProcessEnginePlugin` be
 
 ### `DefaultDatasourceConfiguration`
 
-Configures the Fluxnova data source and enables [transaction integration]({{< relref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
+Configures the KramaX data source and enables [transaction integration]({{< relref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
 
 If you want to [configure more than one datasource](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources)
 and don't want to use the `@Primary` one for the process engine, then you can create a separate
-data source with name `fluxnovaBpmDataSource` that will be automatically wired with Fluxnova instead.
+data source with name `kramaXBpmDataSource` that will be automatically wired with KramaX instead.
 
 ```java
 @Bean
@@ -49,7 +49,7 @@ public DataSource primaryDataSource() {
   return DataSourceBuilder.create().build();
 }
 
-@Bean(name="fluxnovaBpmDataSource")
+@Bean(name="kramaXBpmDataSource")
 @ConfigurationProperties(prefix="datasource.secondary")
 public DataSource secondaryDataSource() {
   return DataSourceBuilder.create().build();
@@ -57,8 +57,8 @@ public DataSource secondaryDataSource() {
 ```
 
 If you don't want to use the `@Primary` transaction manager, it is possible to create a separate
-transaction manager with the name `fluxnovaBpmTransactionManager` that will be wired with the data
-source used for Fluxnova (either `@Primary` or `fluxnovaBpmDataSource`):
+transaction manager with the name `kramaXBpmTransactionManager` that will be wired with the data
+source used for KramaX (either `@Primary` or `kramaXBpmDataSource`):
 
 ```java
 @Bean
@@ -67,14 +67,14 @@ public PlatformTransactionManager primaryTransactionManager() {
   return new JpaTransactionManager();
 }
 
-@Bean(name="fluxnovaBpmTransactionManager")
-public PlatformTransactionManager fluxnovaTransactionManager(@Qualifier("fluxnovaBpmDataSource") DataSource dataSource) {
+@Bean(name="kramaXBpmTransactionManager")
+public PlatformTransactionManager kramaXTransactionManager(@Qualifier("kramaXBpmDataSource") DataSource dataSource) {
   return new DataSourceTransactionManager(dataSource);
 }
 ```
 
 {{< note title="" class="warning" >}}
-  The wired data source and transaction manager beans must match, i.e. make sure that the transaction manager actually manages the Fluxnova data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
+  The wired data source and transaction manager beans must match, i.e. make sure that the transaction manager actually manages the KramaX data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
 {{< /note >}}
 
 ### `DefaultHistoryConfiguration`
@@ -91,11 +91,11 @@ public HistoryEventHandler customHistoryEventHandler() {
 
 ### `DefaultHistoryLevelAutoHandlingConfiguration`
 
-This configuration is for backwards-compatiblitiy only as Fluxnova supports `history-level auto` by default.
+This configuration is for backwards-compatiblitiy only as KramaX supports `history-level auto` by default.
 
 To have more control over the handling, you can provide your own
 
-- `org.finos.fluxnova.bpm.spring.boot.starter.jdbc.HistoryLevelDeterminator` with name `historyLevelDeterminator`
+- `org.vodafone.kramaX.bpm.spring.boot.starter.jdbc.HistoryLevelDeterminator` with name `historyLevelDeterminator`
 
 IMPORTANT: The default configuration is applied after all other default configurations using the ordering mechanism.
 
@@ -105,26 +105,26 @@ Applies the job execution properties to the process engine.
 
 To have more control over the execution itself, you can provide your own
 
-- `org.finos.fluxnova.bpm.engine.impl.jobexecutor.JobExecutor`
-- `org.springframework.core.task.TaskExecutor` named `fluxnovaTaskExecutor`
+- `org.vodafone.kramaX.bpm.engine.impl.jobexecutor.JobExecutor`
+- `org.springframework.core.task.TaskExecutor` named `kramaXTaskExecutor`
 
 beans.
 
 IMPORTANT: The job executor is not enabled in the configuration.
-This is done after the spring context successfully loaded (see `org.finos.fluxnova.bpm.spring.boot.starter.runlistener`).
+This is done after the spring context successfully loaded (see `org.vodafone.kramaX.bpm.spring.boot.starter.runlistener`).
 
 ### `DefaultDeploymentConfiguration`
 
 If auto deployment is enabled (this is the case by default), all processes found in the classpath are deployed.
-The resource pattern can be changed using properties (see [properties](#fluxnova-engine-properties)).
+The resource pattern can be changed using properties (see [properties](#kramaX-engine-properties)).
 
 ### `DefaultAuthorizationConfiguration`
 
-Applies the authorization configuration to the process engine. If not configured, the `fluxnova` default values are used (see [properties](#fluxnova-engine-properties)).
+Applies the authorization configuration to the process engine. If not configured, the `kramaX` default values are used (see [properties](#kramaX-engine-properties)).
 
 
 {{< note title="" class="info" >}}
-  Starting with **Fluxnova 2.0.0**, the engine validates authorization references by default (see `fluxnova.bpm.authorization.validate-auth-resource-id-exists` below).
+  Starting with **KramaX 2.0.0**, the engine validates authorization references by default (see `kramaX.bpm.authorization.validate-auth-resource-id-exists` below).
 {{< /note >}}
 
 
@@ -134,11 +134,11 @@ Provide a bean implementing one of the marker interfaces. For example to customi
 
 ```java
 @Configuration
-public class MyFluxnovaConfiguration {
+public class MyKramaXConfiguration {
 
 	@Bean
-	public static FluxnovaDatasourceConfiguration fluxnovaDatasourceConfiguration() {
-		return new MyFluxnovaDatasourceConfiguration();
+	public static KramaXDatasourceConfiguration kramaXDatasourceConfiguration() {
+		return new MyKramaXDatasourceConfiguration();
 	}
 
 }
@@ -146,15 +146,15 @@ public class MyFluxnovaConfiguration {
 
 ## Adding Additional Configurations
 
-You just have to provide one or more beans implementing the `org.finos.fluxnova.bpm.engine.impl.cfg.ProcessEnginePlugin` interface
-(or extend from `org.finos.fluxnova.bpm.spring.boot.starter.configuration.impl.AbstractFluxnovaConfiguration`).
+You just have to provide one or more beans implementing the `org.vodafone.kramaX.bpm.engine.impl.cfg.ProcessEnginePlugin` interface
+(or extend from `org.vodafone.kramaX.bpm.spring.boot.starter.configuration.impl.AbstractKramaXConfiguration`).
 The configurations are applied ordered using the spring ordering mechanism (`@Order` annotation and `Ordered` interface).
 So if you want your configuration to be applied before the default configurations, add a `@Order(Ordering.DEFAULT_ORDER - 1)` annotation to your class.
 If you want your configuration to be applied after the default configurations, add a `@Order(Ordering.DEFAULT_ORDER + 1)` annotation to your class.
 
 ```java
 @Configuration
-public class MyFluxnovaConfiguration {
+public class MyKramaXConfiguration {
 
 	@Bean
 	@Order(Ordering.DEFAULT_ORDER + 1)
@@ -188,7 +188,7 @@ or
 
 @Component
 @Order(Ordering.DEFAULT_ORDER + 1)
-public class MyCustomConfiguration extends AbstractFluxnovaConfiguration {
+public class MyCustomConfiguration extends AbstractKramaXConfiguration {
 
 	@Override
 	public void preInit(SpringProcessEngineConfiguration springProcessEngineConfiguration) {
@@ -200,7 +200,7 @@ public class MyCustomConfiguration extends AbstractFluxnovaConfiguration {
 }
 ```
 
-## Fluxnova Engine Properties
+## KramaX Engine Properties
 In addition to the bean-based way of overriding process engine configuration properties, it is also possible
 to set those properties via an <code>application.yaml</code> configuration file. Instructions on how to use it
 can be found in the <a href="{{< relref "/get-started/spring-boot/configuration/">}}>Spring Boot Starter Guide</a>.
@@ -216,16 +216,16 @@ The available properties are as follows:
   </tr>
 <tr><td colspan="4"><b>General</b></td></tr>
 
-<tr><td rowspan="15"><code>fluxnova.bpm</code></td>
+<tr><td rowspan="15"><code>kramaX.bpm</code></td>
 <td><code>.enabled</code></td>
-<td>Switch to disable the Fluxnova auto-configuration. Use to exclude Fluxnova in integration tests.</td>
+<td>Switch to disable the KramaX auto-configuration. Use to exclude KramaX in integration tests.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.process-engine-name</code></td>
 <td>Name of the process engine</td>
-<td>Fluxnova default value</td>
+<td>KramaX default value</td>
 </tr>
 
 <tr>
@@ -243,18 +243,18 @@ The available properties are as follows:
 <tr>
 <td><code>.default-serialization-format</code></td>
 <td>Default serialization format</td>
-<td>Fluxnova default value</td>
+<td>KramaX default value</td>
 </tr>
 
 <tr>
 <td><code>.history-level</code></td>
-<td>Fluxnova history level</td>
+<td>KramaX history level</td>
 <td>FULL</td>
 </tr>
 
 <tr>
 <td><code>.history-level-default</code></td>
-<td>Fluxnova history level to use when <code>history-level</code> is <code>auto</code>, but the level can not determined automatically</td>
+<td>KramaX history level to use when <code>history-level</code> is <code>auto</code>, but the level can not determined automatically</td>
 <td>FULL</td>
 </tr>
 
@@ -303,7 +303,7 @@ The available properties are as follows:
 <tr><td colspan="4"><b>Job Execution</b></td></tr>
 
 <tr>
-<td rowspan="14"><code>fluxnova.bpm.job-execution</code></td>
+<td rowspan="14"><code>kramaX.bpm.job-execution</code></td>
 <td><code>.enabled</code></td>
 <td>If set to <code>false</code>, no JobExecutor bean is created at all. Maybe used for testing.</td>
 <td><code>true</code></td>
@@ -378,7 +378,7 @@ The available properties are as follows:
 <tr><td colspan="4"><b>Datasource</b></td></tr>
 
 <tr>
-<td rowspan="5"><code>fluxnova.bpm.database</code></td>
+<td rowspan="5"><code>kramaX.bpm.database</code></td>
 <td><code>.schema-update</code></td>
 <td>If automatic schema update should be applied, use one of [true, false, create, create-drop, drop-create]</td>
 <td><code>true</code></td>
@@ -392,14 +392,14 @@ The available properties are as follows:
 
 <tr>
 <td><code>.table-prefix</code></td>
-<td>Prefix of the fluxnova database tables. Attention: The table prefix will <b>not</b> be applied if you  are using <code>schema-update</code>!</td>
-<td><i>Fluxnova default value</i></td>
+<td>Prefix of the kramaX database tables. Attention: The table prefix will <b>not</b> be applied if you  are using <code>schema-update</code>!</td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
 <td><code>.schema-name</code></td>
 <td>The dataBase schema name</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
@@ -407,12 +407,12 @@ The available properties are as follows:
 <td>Controls if the engine executes the jdbc statements as Batch or not.
 It has to be disabled for some databases.
 See the <a href="{{<relref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
-<td><i>Fluxnova default value: true</i></td>
+<td><i>KramaX default value: true</i></td>
 </tr>
 
 <tr><td colspan="4"><b>Eventing</b></td></tr>
 <tr>
-<td rowspan="4"><code>fluxnova.bpm.eventing</code></td>
+<td rowspan="4"><code>kramaX.bpm.eventing</code></td>
 <td><code>.execution</code></td>
 <td>Enables eventing of delegate execution events.
 See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
@@ -443,37 +443,37 @@ See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event
 
 <tr><td colspan="4"><b>Management</b></td></tr>
 <tr>
-<td><code>fluxnova.bpm.management</code></td>
-<td><code>.health.fluxnova.enabled</code></td>
-<td>Enables default fluxnova health indicators</td>
+<td><code>kramaX.bpm.management</code></td>
+<td><code>.health.kramaX.enabled</code></td>
+<td>Enables default kramaX health indicators</td>
 <td><code>true</code></td>
 </tr>
 
 <tr><td colspan="4"><b>Metrics</b></td></tr>
 <tr>
-<td rowspan="2"><code>fluxnova.bpm.metrics</code></td>
+<td rowspan="2"><code>kramaX.bpm.metrics</code></td>
 <td><code>.enabled</code></td>
 <td>Enables metrics reporting</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
 <td><code>.db-reporter-activate</code></td>
 <td>Enables db metrics reporting</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr><td colspan="4"><b>Webapp</b></td></tr>
 <tr>
-<td rowspan="3"><code>fluxnova.bpm.webapp</code></td>
+<td rowspan="3"><code>kramaX.bpm.webapp</code></td>
 <td><code>.enabled</code></td>
-<td>Switch to disable the Fluxnova Webapp auto-configuration.</td>
+<td>Switch to disable the KramaX Webapp auto-configuration.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.index-redirect-enabled</code></td>
-<td>Registers a redirect from <code>/</code> to fluxnova's bundled <code>index.html</code>.
+<td>Registers a redirect from <code>/</code> to kramaX's bundled <code>index.html</code>.
 <br/>
 If this property is set to <code>false</code>, the
 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-welcome-page">default</a>
@@ -485,13 +485,13 @@ Spring Boot behaviour is taken into account.</td>
 <td><code>.application-path</code></td>
 <td>Changes the application path of the webapp.
 <br/>
-When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Starter <= 3.4.x is restored.
+When setting to <code>/</code>, the legacy behavior of KramaX Spring Boot Starter <= 3.4.x is restored.
 </td>
-<td><code>/fluxnova</code></td>
+<td><code>/kramaX</code></td>
 </tr>
 
 <tr id="csrf">
-  <td rowspan="10"><code>fluxnova.bpm.webapp.csrf</code></td>
+  <td rowspan="10"><code>kramaX.bpm.webapp.csrf</code></td>
 </tr>
 <tr>
 <td><code>.target-origin</code></td>
@@ -563,7 +563,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 </tr>
 
 <tr id="session-cookie">
-  <td rowspan="6"><code>fluxnova.bpm.webapp.session-cookie</code></td>
+  <td rowspan="6"><code>kramaX.bpm.webapp.session-cookie</code></td>
 </tr>
 <tr>
   <td><code>.enable-secure-cookie</code></td>
@@ -617,7 +617,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 </tr>
 
 <tr id="header-security">
-  <td rowspan="12"><code>fluxnova.bpm.webapp.header-security</code></td>
+  <td rowspan="12"><code>kramaX.bpm.webapp.header-security</code></td>
 </tr>
 <tr>
   <td><code>.xss-protection-disabled</code></td>
@@ -736,7 +736,7 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 </tr>
 
 <tr id="auth-cache">
-  <td rowspan="3"><code>fluxnova.bpm.webapp.auth.cache</code></td>
+  <td rowspan="3"><code>kramaX.bpm.webapp.auth.cache</code></td>
 </tr>
 <tr>
   <td><code>.ttl-enabled</code></td>
@@ -762,9 +762,9 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 
 <tr><td colspan="4"><b>REST API</b></td></tr>
 <tr>
-<td><code>fluxnova.bpm.rest-api.fetch-and-lock</code></td>
+<td><code>kramaX.bpm.rest-api.fetch-and-lock</code></td>
 <td><code>.queue-capacity</code></td>
-<td>Configure the blocking queue limit of long-polling ‘Fetch and Lock’ requests.</td>
+<td>Configure the blocking queue limit of long-polling â€˜Fetch and Lockâ€™ requests.</td>
 <td><code>200</code></td>
 </tr>
 
@@ -777,22 +777,22 @@ When setting to <code>/</code>, the legacy behavior of Fluxnova Spring Boot Star
 
 <tr><td colspan="5"><b>Authorization</b></td></tr>
 <tr>
-<td rowspan="5"><code>fluxnova.bpm.authorization</code></td>
+<td rowspan="5"><code>kramaX.bpm.authorization</code></td>
 <td><code>.enabled</code></td>
 <td>Enables authorization</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
 <td><code>.enabled-for-custom-code</code></td>
 <td>Enables authorization for custom code</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
 <td><code>.authorization-check-revokes</code></td>
 <td>Configures authorization check revokes</td>
-<td><i>Fluxnova default value</i></td>
+<td><i>KramaX default value</i></td>
 </tr>
 
 <tr>
@@ -813,7 +813,7 @@ This validation is performed independently of whether authorization checks are e
 
 <tr><td colspan="4"><b>Admin User</b></td></tr>
 <tr>
-<td rowspan="3"><code>fluxnova.bpm.admin-user</code></td>
+<td rowspan="3"><code>kramaX.bpm.admin-user</code></td>
 <td><code>.id</code></td>
 <td>The username (e.g., 'admin')</td>
 <td>-</td>
@@ -833,7 +833,7 @@ This validation is performed independently of whether authorization checks are e
 
 <tr><td colspan="4"><b>Filter</b></td></tr>
 <tr>
-<td><code>fluxnova.bpm.filter</code></td>
+<td><code>kramaX.bpm.filter</code></td>
 <td><code>.create</code></td>
 <td>Name of a "show all" filter. If set, a new filter is created on start that displays all tasks. Useful for testing on h2 db.</td>
 <td>-</td>
@@ -845,7 +845,7 @@ This validation is performed independently of whether authorization checks are e
   </td>
 </tr>
 <tr>
-  <td rowspan="3"><code>fluxnova.bpm.oauth2.identity-provider</code></td>
+  <td rowspan="3"><code>kramaX.bpm.oauth2.identity-provider</code></td>
   <td><code>.enabled</code></td>
   <td>Enables the OAuth2 identity provider.</td>
   <td><code>true</code></td>
@@ -864,7 +864,7 @@ This validation is performed independently of whether authorization checks are e
   <td><code>,</code> (comma)</td>
 </tr>
 <tr>
-  <td rowspan="2"><code>fluxnova.bpm.oauth2.sso-logout</code></td>
+  <td rowspan="2"><code>kramaX.bpm.oauth2.sso-logout</code></td>
   <td><code>.enabled</code></td>
   <td>Activates the client initiated OIDC logout feature.</td>
   <td><code>false</code></td>
@@ -884,7 +884,7 @@ The method of configuration described above does not cover all process engine pr
 property that is not exposed (i.e. listed above) you can use generic-properties.
 
 ```yaml
-fluxnova:
+kramaX:
   bpm:
     generic-properties:
       properties:
@@ -901,7 +901,7 @@ fluxnova:
 Override configuration using exposed properties:
 
 ```yaml
-fluxnova.bpm:
+kramaX.bpm:
   admin-user:
     id: kermit
     password: superSecret
@@ -914,7 +914,7 @@ fluxnova.bpm:
 Configure authorization validation via exposed properties:
 
 ```yaml
-fluxnova:
+kramaX:
   bpm:
     authorization:
       enabled: true
@@ -924,7 +924,7 @@ fluxnova:
 Override configuration using generic properties:
 
 ```yaml
-fluxnova:
+kramaX:
   bpm:
     generic-properties:
       properties:
@@ -935,7 +935,7 @@ fluxnova:
 
 You can configure the **Session Cookie** for the Spring Boot application via the `application.yaml` configuration file.
 
-Fluxnova Spring Boot Starter versions based on Spring Boot 4.x:
+KramaX Spring Boot Starter versions based on Spring Boot 4.x:
 
 ```yaml
 server:
@@ -947,14 +947,14 @@ server:
 ```
 
 Further details of the session cookie like the `SameSite` flag can be configured via
-[fluxnova.bpm.webapp.session-cookie]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
+[kramaX.bpm.webapp.session-cookie]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
 
 # Configuring Spin DataFormats
 
-The Fluxnova Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
-`fluxnova-spin-dataformat-json-jackson` dependency is detected on the classpath. To include a
+The KramaX Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
+`kramaX-spin-dataformat-json-jackson` dependency is detected on the classpath. To include a
 `DataFormatConfigurator` for the desired Jackson Java 8 module, the appropriate dependency needs
-to be included on the classpath as well. Note that `fluxnova-engine-plugin-spin`
+to be included on the classpath as well. Note that `kramaX-engine-plugin-spin`
 needs to be included as a dependency as well for the auto-configurators to work.
 
 Auto-configuration is currently supported for the following [Jackson Java 8 modules](https://github.com/FasterXML/jackson-modules-java8):
@@ -965,9 +965,9 @@ Auto-configuration is currently supported for the following [Jackson Java 8 modu
 
 {{< note title="Heads Up!" class="warning" >}}
 The Spin Jackson Json DataFormat auto-configuration is disabled when using
-`fluxnova-spin-dataformat-all` as a dependency. The `fluxnova-spin-dataformat-all` artifact shades the
+`kramaX-spin-dataformat-all` as a dependency. The `kramaX-spin-dataformat-all` artifact shades the
 Jackson libraries, which breaks compatibility with the regular Jackson modules. If usage of
-`fluxnova-spin-dataformat-all` is necessary, please use the standard method for
+`kramaX-spin-dataformat-all` is necessary, please use the standard method for
 [Spin Custom DataFormat configuration]({{< relref "/reference/spin/extending-spin.md#custom-dataformats" >}}).
 {{< /note >}}
 
@@ -978,12 +978,12 @@ appropriate version tags, will need to be added in the Spring Boot Application's
  ```xml
 <dependencies>
     <dependency>
-      <groupId>org.finos.fluxnova.bpm</groupId>
-      <artifactId>fluxnova-engine-plugin-spin</artifactId>
+      <groupId>org.vodafone.kramaX.bpm</groupId>
+      <artifactId>kramaX-engine-plugin-spin</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.finos.fluxnova.spin</groupId>
-      <artifactId>fluxnova-spin-dataformat-json-jackson</artifactId>
+      <groupId>org.vodafone.kramaX.spin</groupId>
+      <artifactId>kramaX-spin-dataformat-json-jackson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -997,7 +997,7 @@ configure the Jackson `ObjectMapper`. They can be found [here](https://docs.spri
 
 To provide additional configurations, the following actions need to be performed:
 
-1. Provide a custom implementation of `org.finos.fluxnova.spin.spi.DataFormatConfigurator`;
+1. Provide a custom implementation of `org.vodafone.kramaX.spin.spi.DataFormatConfigurator`;
 1. Add the appropriate key-value pair of the fully qualified classnames of the interface and the
    implementation to the `META-INF/spring.factories` file;
-1. Ensure that the artifact containing the configurator is reachable from Spin’s classloader.
+1. Ensure that the artifact containing the configurator is reachable from Spinâ€™s classloader.

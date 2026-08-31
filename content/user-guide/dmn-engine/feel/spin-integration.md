@@ -12,7 +12,7 @@ menu:
 
 ---
 
-This page documents how Fluxnova Spin can be used together with the Scala FEEL Engine. Furthermore, 
+This page documents how KramaX Spin can be used together with the Scala FEEL Engine. Furthermore, 
 it is shown how Spin data types are mapped to FEEL data types, as well as some rules when the 
 former data structures are transformed into the latter.
 
@@ -20,7 +20,7 @@ former data structures are transformed into the latter.
 
 The Spin integration for the FEEL Engine is implemented into the 
 [Spin Process Engine Plugin][spin plugin] since it is expected that the Process Engine should be 
-capable of using Spin, if another component of Fluxnova (here, the FEEL Engine) 
+capable of using Spin, if another component of KramaX (here, the FEEL Engine) 
 supports its usage. 
 
 In the case of a standalone DMN Engine setup, the Spin Process Engine Plugin would need to be added 
@@ -31,9 +31,9 @@ The Maven coordinates for the Spin Process Engine Plugin can be found below:
 
 ```xml
 <dependency>
-  <groupId>org.finos.fluxnova.bpm</groupId>
-  <artifactId>fluxnova-engine-plugin-spin</artifactId>
-  <version>${fluxnova.version}</version>
+  <groupId>org.vodafone.kramaX.bpm</groupId>
+  <artifactId>kramaX-engine-plugin-spin</artifactId>
+  <version>${kramaX.version}</version>
 </dependency>
 ```
 
@@ -132,4 +132,4 @@ FEEL context:
 
  
 [type doc]: https://camunda.github.io/feel-scala/1.11/feel-data-types
-[spin plugin]: {{< relref "/user-guide/data-formats/configuring-spin-integration.md#fluxnova-engine-plugin-spin" >}}
+[spin plugin]: {{< relref "/user-guide/data-formats/configuring-spin-integration.md#kramaX-engine-plugin-spin" >}}

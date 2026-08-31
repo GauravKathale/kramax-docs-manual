@@ -7,12 +7,12 @@ menu:
   main:
     identifier: "cmmn-ref-extensions-elements"
     parent: "cmmn-ref-extensions"
-    pre: "Reference of Fluxnova Extension Elements for CMMN."
+    pre: "Reference of KramaX Extension Elements for CMMN."
 
 ---
 
 
-The following elements are extension elements for the `fluxnova` namespace `http://camunda.org/schema/1.0/cmmn`.
+The following elements are extension elements for the `kramaX` namespace `http://camunda.org/schema/1.0/cmmn`.
 
 # caseExecutionListener
 
@@ -34,21 +34,21 @@ The following elements are extension elements for the `fluxnova` namespace `http
     <td></td>
     <td><code>class</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#class" >}}">camunda:class</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#class" >}}">camunda:class</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>expression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#expression" >}}">camunda:expression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#expression" >}}">camunda:expression</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>delegateExpression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
     </td>
   </tr>
   <tr>
@@ -77,8 +77,8 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Child elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#field" >}}">camunda:field</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#script" >}}">camunda:script</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#field" >}}">camunda:field</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#script" >}}">camunda:script</a>
     </td>
   </tr>
 </table>
@@ -113,7 +113,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
 <tr>
   <th>Parent elements</th>
   <td colspan="2">
-    <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#field" >}}">camunda:field</a>
+    <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#field" >}}">camunda:field</a>
   </td>
 </tr>
 <tr>
@@ -159,15 +159,15 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Parent elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#variablelistener" >}}">camunda:variableListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#variablelistener" >}}">camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
   </tr>
   <tr>
     <th>Child elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#expression" >}}">camunda:expression</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#string" >}}">camunda:string</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#expression" >}}">camunda:expression</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#string" >}}">camunda:string</a>
     </td>
   </tr>
 </table>
@@ -335,7 +335,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
     <td></td>
     <td><code>resource</code></td>
     <td>
-      equivalent to <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#resource" >}}">
+      equivalent to <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#resource" >}}">
       camunda:resource</a>
     </td>
   </tr>
@@ -354,7 +354,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Parent elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#variablelistener" >}}">
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#variablelistener" >}}">
         camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
@@ -398,7 +398,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Parent elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#field" >}}">camunda:field</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#field" >}}">camunda:field</a>
     </td>
   </tr>
   <tr>
@@ -429,21 +429,21 @@ The following elements are extension elements for the `fluxnova` namespace `http
     <td></td>
     <td><code>class</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#class" >}}">camunda:class</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#class" >}}">camunda:class</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>expression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#expression" >}}">camunda:expression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#expression" >}}">camunda:expression</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>delegateExpression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
     </td>
   </tr>
   <tr>
@@ -467,8 +467,8 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Child elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#field" >}}">camunda:field</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#script" >}}">camunda:script</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#field" >}}">camunda:field</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#script" >}}">camunda:script</a>
     </td>
   </tr>
 </table>
@@ -493,21 +493,21 @@ The following elements are extension elements for the `fluxnova` namespace `http
     <td></td>
     <td><code>class</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#class" >}}">camunda:class</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#class" >}}">camunda:class</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>expression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#expression" >}}">camunda:expression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#expression" >}}">camunda:expression</a>
     </td>
   </tr>
   <tr>
     <td></td>
     <td><code>delegateExpression</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#delegateexpression" >}}">camunda:delegateExpression</a>
     </td>
   </tr>
   <tr>
@@ -535,8 +535,8 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Child elements</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#field" >}}">camunda:field</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#script" >}}">camunda:script</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#field" >}}">camunda:field</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#script" >}}">camunda:script</a>
     </td>
   </tr>
 </table>
@@ -554,7 +554,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
     <th>Attributes</th>
     <td><code>variableName</code></td>
     <td>
-      see <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-attributes.md#variablename" >}}">camunda:variableName
+      see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#variablename" >}}">camunda:variableName
     </td>
   </tr>
   <tr>
@@ -572,7 +572,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Child element</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#variableevent" >}}">camunda:variableEvent</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#variableevent" >}}">camunda:variableEvent</a>
     </td>
   </tr>
 </table>
@@ -595,7 +595,7 @@ The following elements are extension elements for the `fluxnova` namespace `http
   <tr>
     <th>Parent element</th>
     <td colspan="2">
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/fluxnova-elements.md#variableonpart" >}}">VariableOnPart</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#variableonpart" >}}">VariableOnPart</a>
     </td>
   </tr>
 </table>
