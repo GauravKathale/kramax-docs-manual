@@ -12,16 +12,16 @@ menu:
 ---
 
 Testing BPMN processes, CMMN cases (and also DMN decisions) is just as important as testing code.
-This section explains how to write unit tests and integration tests with Kramaxx and explains some best practice and guidelines.
+This section explains how to write unit tests and integration tests with Kramax and explains some best practice and guidelines.
 
 
 # Unit Tests
 
-Kramaxx provides helper classes to write unit tests for JUnit versions 3, 4 and 5.
+Kramax provides helper classes to write unit tests for JUnit versions 3, 4 and 5.
 
 ## JUnit 5
 
-Kramaxx version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
+Kramax version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
 
 The extensions process engine is configured by the default configuration file called `kramaxx.cfg.xml`, which needs to be placed on the classpath. A custom configuration file can be passed to the extension when creating the `ProcessEngineExtension` object.
 
@@ -236,9 +236,9 @@ You can now see the engine database and use it to understand how and why your un
 {{< img src="img/api-test-debug-h2-tables.png" title="API Test Debugging" >}}
 
 
-# Kramaxx Assertions
+# Kramax Assertions
 
-Additional to normal JUnit assertions, [Kramaxx Assert](https://github.com/vodafone/kramaxx-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
+Additional to normal JUnit assertions, [Kramax Assert](https://github.com/vodafone/kramaxx-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
 
 ```java
 assertThat(processInstance).isWaitingAt("UserTask_InformCustomer");
@@ -247,7 +247,7 @@ assertThat(task()).hasCandidateGroup("Sales").isNotAssigned();
 
 You can find a more extensive guide with examples under [Assert Examples]({{< relref "/user-guide/testing/assert-examples.md" >}}).
 
-To use Kramaxx Assert, add the following dependency to your `pom.xml`:
+To use Kramax Assert, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
@@ -269,23 +269,23 @@ Also, you will have to add the AssertJ library to your dependencies. Make sure t
 </dependency>
 ```
 
-If Kramaxx Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
-[Kramaxx Spring Boot Starter](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
+If Kramax Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
+[Kramax Spring Boot Starter](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
 the AssertJ dependency will be present in your project already.
 
 ## Assertions Version Compatibility
 
-Each version of Kramaxx Assert is bound to a specific version of Kramaxx and AssertJ. Only these default combinations are recommended (and supported) by Kramaxx.
-Nevertheless, each version of Kramaxx Assert can be combined with newer patch versions of the Kramaxx engine, though such combinations must be thoroughly tested before being used in production.
+Each version of Kramax Assert is bound to a specific version of Kramax and AssertJ. Only these default combinations are recommended (and supported) by Kramax.
+Nevertheless, each version of Kramax Assert can be combined with newer patch versions of the Kramax engine, though such combinations must be thoroughly tested before being used in production.
 
-Kramaxx Assert is part of [Kramaxx repository](https://github.com/vodafone/kramaxx-bpm-platform) and uses the same versioning as Kramaxx.
+Kramax Assert is part of [Kramax repository](https://github.com/vodafone/kramaxx-bpm-platform) and uses the same versioning as Kramax.
 
 <table class="table table-striped">
   <tr>
-    <th>Kramaxx Assert artifact</th>
+    <th>Kramax Assert artifact</th>
     <th>AssertJ version</th>
-    <th>Kramaxx Assert version</th>
-    <th>Kramaxx version</th>
+    <th>Kramax Assert version</th>
+    <th>Kramax version</th>
   </tr>
   <tr>
     <td>kramaxx-bpm-assert</td>
@@ -333,9 +333,9 @@ For these versions, use the following Maven coordinates:
 
 There are a couple of well documented and heavily used community extensions that can make testing much more productive and fun.
 
-## Kramaxx Scenario Tests
+## Kramax Scenario Tests
 
-[Kramaxx-bpm-assert-scenario](https://github.com/vodafone/kramaxx-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
+[Kramax-bpm-assert-scenario](https://github.com/vodafone/kramaxx-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
 
 ```java
 @Test
@@ -351,9 +351,9 @@ public void testHappyPath() {
 }
 ```
 
-## Kramaxx Test Coverage
+## Kramax Test Coverage
 
-[Kramaxx-bpm-process-test-coverage](https://github.com/vodafone/kramaxx-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
+[Kramax-bpm-process-test-coverage](https://github.com/vodafone/kramaxx-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
 
 
 # Resolving Beans Without Spring/CDI
@@ -385,7 +385,7 @@ The feature to [start a process instance at a set of activities]({{< relref "/us
 
 ## Scoping Tests
 
-BPMN processes, CMMN cases and DMN decisions do not exist in isolation. Consider the example of a BPMN process: firstly, the process itself is executed by the Kramaxx engine which requires a database. Next, the process is "not just the process". It can contain expressions, scripts and often calls out to custom Java classes which may in turn again call out to services, either locally or remotely. To test the process, all these things need to be present, otherwise the test cannot work.
+BPMN processes, CMMN cases and DMN decisions do not exist in isolation. Consider the example of a BPMN process: firstly, the process itself is executed by the Kramax engine which requires a database. Next, the process is "not just the process". It can contain expressions, scripts and often calls out to custom Java classes which may in turn again call out to services, either locally or remotely. To test the process, all these things need to be present, otherwise the test cannot work.
 
 Setting all of this up just to run a unit test is expensive. This is why, in practice, it makes sense to apply a concept which we call test scoping. Scoping the test means limiting the amount of infrastructure required to run the test. Things outside of the scope of the test are mocked.
 
@@ -393,7 +393,7 @@ Setting all of this up just to run a unit test is expensive. This is why, in pra
 
 This is best explained using an example. Assume you are building a typical Java EE application containing a BPMN process. The process uses Java Expression Language (EL) for conditions, it invokes Java Delegate implementations as CDI beans, these beans may in turn call out to the actual business logic implemented as EJBs. The business logic uses JPA for maintaining additional business objects in a secondary database. It also sends out messages using JMS to interact with external systems and has a nice web UI. The application runs inside a Java EE application server like Wildfly.
 
-To test this application, all components, including the application server itself, need to be present and the external systems need to process the JMS messages. This makes it hard to write focused tests. However, by looking at the process itself, we find that there are many aspects of it that we can test without having the complete infrastructure in place. For example, if the process data is present, the Expression Language conditions can usually be tested without any additional infrastructure. This already allows asserting that the process "takes the right turn" at a gateway given a set of input data. Next, if the EJBs are mocked, the delegation logic can be included in such tests as well. This allows asserting that wiring of the delegation logic is correct, that it performs correct data transformation and mapping and that it invokes the business logic with the correct parameters. Given that the Kramaxx engine can work with an in-memory database, it now becomes possible to test the BPMN process "in isolation", as a unit test and assert its local functional correctness. The same principle can be applied to the next "outer layers" of the system, including the business logic and external systems.
+To test this application, all components, including the application server itself, need to be present and the external systems need to process the JMS messages. This makes it hard to write focused tests. However, by looking at the process itself, we find that there are many aspects of it that we can test without having the complete infrastructure in place. For example, if the process data is present, the Expression Language conditions can usually be tested without any additional infrastructure. This already allows asserting that the process "takes the right turn" at a gateway given a set of input data. Next, if the EJBs are mocked, the delegation logic can be included in such tests as well. This allows asserting that wiring of the delegation logic is correct, that it performs correct data transformation and mapping and that it invokes the business logic with the correct parameters. Given that the Kramax engine can work with an in-memory database, it now becomes possible to test the BPMN process "in isolation", as a unit test and assert its local functional correctness. The same principle can be applied to the next "outer layers" of the system, including the business logic and external systems.
 
 The following drawing shows a schematic representation of what this looks like for our example of a Java EE application:
 

@@ -30,7 +30,7 @@ A container of your choice (e.g., Tomcat, Wildfly or IBM WebSphere) manages the 
 
 ## ProcessEngineConfiguration Bean
 
-The Kramaxx engine uses the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/ProcessEngineConfiguration.html" text="ProcessEngineConfiguration bean" >}} to configure and construct a standalone Process Engine. There are multiple subclasses available that can be used to define the process engine configuration. These classes represent different environments, and set defaults accordingly. It's a best practice to select the class that matches (most of) your environment to minimize the number of properties needed to configure the engine. The following classes are currently available:
+The Kramax engine uses the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/ProcessEngineConfiguration.html" text="ProcessEngineConfiguration bean" >}} to configure and construct a standalone Process Engine. There are multiple subclasses available that can be used to define the process engine configuration. These classes represent different environments, and set defaults accordingly. It's a best practice to select the class that matches (most of) your environment to minimize the number of properties needed to configure the engine. The following classes are currently available:
 
 * `org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration`  
 The process engine is used in a standalone way. The engine itself will take care of the transactions. By default the database will only be checked when the engine boots (an exception is thrown if there is no database schema or the schema version is incorrect).
@@ -102,7 +102,7 @@ This will look for a `kramaxx.cfg.xml` file on the classpath and construct an en
 ```
 If no resource `kramaxx.cfg.xml` is found, the default engine will search for the file `activiti.cfg.xml` as a fallback. If both are missing, the engine stops and prints an error message about the missing configuration resource.
 
-Note that the configuration XML is in fact a Spring configuration. This does not mean that the Kramaxx engine can only be used in a Spring environment! We are simply leveraging the parsing and dependency injection capabilities of Spring internally for building up the engine.
+Note that the configuration XML is in fact a Spring configuration. This does not mean that the Kramax engine can only be used in a Spring environment! We are simply leveraging the parsing and dependency injection capabilities of Spring internally for building up the engine.
 
 The ProcessEngineConfiguration object can also be created programmatically using the configuration file. It is also possible to use a different bean id:
 
@@ -126,7 +126,7 @@ All these `ProcessEngineConfiguration.createXXX()` methods return a `ProcessEngi
 
 ## Configure Process Engine in the bpm-platform.xml
 
-The `bpm-platform.xml` file is used to configure Kramaxx in the following distributions:
+The `bpm-platform.xml` file is used to configure Kramax in the following distributions:
 
 * Apache Tomcat
 * IBM WebSphere Application Server

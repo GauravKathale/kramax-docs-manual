@@ -221,12 +221,12 @@ The value type `object` represents custom Java objects. When such a variable is 
 
 {{< note title="String length restriction" class="warning" >}}
 `string` values are stored in the database in a column of type `(n)varchar`, with a length restriction of 4000 (2000 for Oracle). Depending on the database in use and the
-configured charset, this length restriction can result in different quantities of real characters. Variable value length is not validated inside the Kramaxx engine, but
+configured charset, this length restriction can result in different quantities of real characters. Variable value length is not validated inside the Kramax engine, but
  the values are sent to the database 'as is' and, in case the length restriction is exceeded, a database level exception will be thrown. If validation is needed, 
- it may be implemented separately and must happen before the Kramaxx API to set the variables is called.
+ it may be implemented separately and must happen before the Kramax API to set the variables is called.
 {{< /note >}}
 
-Process variables can be stored in formats like JSON and XML provided by the [Kramaxx Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}). Spin provides serializers for the variables of type `object` such that Java variables can be persisted in these formats to the database. Furthermore, it is possible to store JSON and XML documents directly as a Spin object by the value types `xml` and `json`. Opposed to plain `string` variables, Spin objects provide a fluent API to perform common operations on such documents like reading and writing properties.
+Process variables can be stored in formats like JSON and XML provided by the [Kramax Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}). Spin provides serializers for the variables of type `object` such that Java variables can be persisted in these formats to the database. Furthermore, it is possible to store JSON and XML documents directly as a Spin object by the value types `xml` and `json`. Opposed to plain `string` variables, Spin objects provide a fluent API to perform common operations on such documents like reading and writing properties.
 
 
 ## Object Value Serialization
@@ -254,7 +254,7 @@ execution.setVariable("someVariable", customerDataValue);
 {{< /note >}}
 
 {{< note title="Serializing Objects to XML and JSON" class="info" >}}
-  The [Kramaxx Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}) provides serializers that are capable of serializing object values to XML and JSON. They can be used when it is desired that the serialized objects values can be interpreted by humans or when the serialized value should be meaningful without having the corresponding Java class. When using a pre-built Kramaxx distribution, Kramaxx Spin is already preconfigured and you can try these formats without further configuration.
+  The [Kramax Spin plugin]({{< relref "/user-guide/data-formats/_index.md" >}}) provides serializers that are capable of serializing object values to XML and JSON. They can be used when it is desired that the serialized objects values can be interpreted by humans or when the serialized value should be meaningful without having the corresponding Java class. When using a pre-built Kramax distribution, Kramax Spin is already preconfigured and you can try these formats without further configuration.
 {{< /note >}}
 
 
@@ -287,7 +287,7 @@ Whenever a variable is set in its Java representation, the process engine automa
 
 In cases in which it is important to access a variable's serialized representation or in which the engine has to be hinted to serialize a value in a certain format, the typed-value-based API can be used. In comparison to the Java-Object-based API, it wraps a variable value in a so-called *Typed Value*. Such a typed value allows richer representation of variable values.
 
-In order to easily construct typed values, Kramaxx offers the class `org.vodafone.kramaxx.bpm.engine.variable.Variables`. This class contains static methods that allow creation of single typed values as well as creation of a map of typed values in a fluent way.
+In order to easily construct typed values, Kramax offers the class `org.vodafone.kramaxx.bpm.engine.variable.Variables`. This class contains static methods that allow creation of single typed values as well as creation of a map of typed values in a fluent way.
 
 
 ## Primitive Values
@@ -409,7 +409,7 @@ com.example.Order retrievedOrder = (com.example.Order) retrievedTypedObjectValue
 
 ## JSON and XML Values
 
-The Kramaxx Spin plugin provides an abstraction for JSON and XML documents that facilitate their processing and manipulation. This is often more convenient than storing such documents as plain `string` variables. See the documentation on Kramaxx SPIN for [storing JSON documents]({{< relref "/user-guide/data-formats/json.md#native-json-variable-value" >}}) and [storing XML documents]({{< relref "/user-guide/data-formats/xml.md#native-xml-variable-value" >}}) for details.
+The Kramax Spin plugin provides an abstraction for JSON and XML documents that facilitate their processing and manipulation. This is often more convenient than storing such documents as plain `string` variables. See the documentation on Kramax SPIN for [storing JSON documents]({{< relref "/user-guide/data-formats/json.md#native-json-variable-value" >}}) and [storing XML documents]({{< relref "/user-guide/data-formats/xml.md#native-xml-variable-value" >}}) for details.
 
 ## Transient variables
 
@@ -460,10 +460,10 @@ Which API should you use? The one that fits your purpose best. When you are cert
 
 # Input/Output Variable Mapping
 
-To improve the reusability of source code and business logic, Kramaxx offers input/output
+To improve the reusability of source code and business logic, Kramax offers input/output
 mapping of process variables. This can be used for tasks, events and subprocesses.
 
-In order to use the variable mapping, the Kramaxx extension element [inputOutput][] has to be added
+In order to use the variable mapping, the Kramax extension element [inputOutput][] has to be added
 to the element. It can contain multiple [inputParameter][] and [outputParameter][] elements that
 specify which variables should be mapped. The `name` attribute of an [inputParameter][] denotes
 the variable name inside the activity (a local variable to be created), whereas the `name` attribute of an [outputParameter][]

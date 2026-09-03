@@ -16,7 +16,7 @@ menu:
 * The current business key can be injected via `@Inject @BusinessKey String businessKey`.
 * The current process instance id be injected via `@Inject @ProcessInstanceId String pid`.
 
-Process variables are available for injection. Kramaxx CDI supports
+Process variables are available for injection. Kramax CDI supports
 
 * Type-safe injection of `@BusinessProcessScoped` beans using `@Inject [additional qualifiers] Type fieldName`.
 * Unsafe injection of other process variables using the `@ProcessVariable(name?)` qualifier:

@@ -33,7 +33,7 @@ object must be strings representing date formats in accordance with
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   "dateFormat": {
     "monthName": "MMM",
     "long":   "LLLL"
@@ -44,8 +44,8 @@ export default {
 
 # Localization
 
-Tasklist can be localized. Kramaxx maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramaxx webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
+Tasklist can be localized. Kramax maintains English and German translation files. 
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
 
 The localization of Tasklist is contained in the `app/tasklist/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -61,7 +61,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -83,14 +83,14 @@ Add your files to the `customScripts` property of the `app/tasklist/scripts/conf
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   customScripts: 
     ['custom-module/module.js']
 }
 ```
-This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the Kramaxx webapp .war file.
+This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the Kramax webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Kramaxx examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/tasklist/cats-plugin).
+You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Kramax examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/tasklist/cats-plugin).
 
 
 
@@ -111,7 +111,7 @@ and can override the standard styles.
 
 ```css
 .navbar-brand {
-  /* hides the "Kramaxx Tasklist" text */
+  /* hides the "Kramax Tasklist" text */
   text-indent: -999em;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -125,12 +125,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Tasklist*) and vendor (*Kramaxx*)
+**Note:** you can also change the app name (*Tasklist*) and vendor (*Kramax*)
 by changing the `app/tasklist/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   app: {
     name: 'Todos',
     vendor: 'Company'
@@ -145,7 +145,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -158,7 +158,7 @@ First-time visitors are shown a message directing them to the kramaxx welcome pa
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   disableWelcomeMessage: true
 }
 ```
@@ -175,7 +175,7 @@ process instance id and by task id.
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   assignProcessInstanceIdToTaskComment: true
 }
 ```

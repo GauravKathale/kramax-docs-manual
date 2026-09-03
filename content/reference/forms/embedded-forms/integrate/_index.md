@@ -11,5 +11,5 @@ menu:
 ---
 
 This section explains how to integrate the Forms SDK into a custom HTML 5 Application. (*Note: If
-you are using Kramaxx Tasklist you can skip this section. Kramaxx Tasklist readily integrates the
+you are using Kramax Tasklist you can skip this section. Kramax Tasklist readily integrates the
 Forms SDK.*)

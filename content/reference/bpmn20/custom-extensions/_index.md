@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Kramaxx extends BPMN with custom Extension Elements and Attributes.
+Kramax extends BPMN with custom Extension Elements and Attributes.

@@ -8,7 +8,7 @@ menu:
     name: "Involve Humans"
     parent: "get-started-quick-start"
     identifier: "get-started-quick-start-model"
-    pre: "Learn the basics of integrating user tasks into a Process and how to build forms with Kramaxx."
+    pre: "Learn the basics of integrating user tasks into a Process and how to build forms with Kramax."
 
 ---
 
@@ -17,7 +17,7 @@ In this section, you'll learn how to involve humans in your process by using BPM
 # Add a User Task
 We want to modify our process so that we can involve humans.
 
-To do so, open the process in the Kramaxx Modeler.
+To do so, open the process in the Kramax Modeler.
 
 Select the create/remove space tool (<||>) from the Modeler's left-hand menu, and use it to create space between the Start Event and the "Charge Credit Card" Service Task (click and drag the cursor to the right). 
 
@@ -42,11 +42,11 @@ Select the User Task on the canvas. This will update the selection in the proper
 
 Click on the Tab `Forms` in the properties panel.
 
-This guide uses [Kramaxx Forms]({{< relref "/user-guide/task-forms/#kramaxx-forms" >}}) to add a form to the process. 
+This guide uses [Kramax Forms]({{< relref "/user-guide/task-forms/#kramaxx-forms" >}}) to add a form to the process. 
 We will create a form file called `payment.form`. 
 Set the following fields to link this process to the form you are about to create:
 
-* Type: Kramaxx Forms
+* Type: Kramax Forms
 * Form Ref: payment-form
 * Binding: deployment
 
@@ -83,14 +83,14 @@ Field 3:
 
 {{< img src="../img/modeler-usertask6.png" >}}
 
-Now, select Kramaxx Platform as the execution platform in the lower left corner of the modeler and hit *Apply*.
+Now, select Kramax Platform as the execution platform in the lower left corner of the modeler and hit *Apply*.
 {{< img src="../img/modeler-platform-selection.png" >}}
 Finally, save the form as `payment.form`.
 
 # Deploy the Process
 
 1. Switch back to the process diagram
-2. Click the Deploy button in the Kramaxx Modeler
+2. Click the Deploy button in the Kramax Modeler
 3. In the deployment panel, select the `payment.form` file under *include additional files*
 4. Click *Deploy*
 
@@ -115,7 +115,7 @@ You should now see the *Approve Payment* task in your Tasklist. Select the task 
 
 {{< img src="../img/diagram.png" >}}
 
-To work on the task, select the *Form* tab. Because we defined the variables in the Form Tab in the Kramaxx Modeler, the Tasklist has automatically generated form fields for us.
+To work on the task, select the *Form* tab. Because we defined the variables in the Form Tab in the Kramax Modeler, the Tasklist has automatically generated form fields for us.
 
 {{< img src="../img/task-form-generated.png" >}}
 

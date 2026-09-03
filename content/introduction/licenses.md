@@ -9,9 +9,9 @@ menu:
     parent: "user-guide-introduction"
 
 ---
-# Kramaxx
+# Kramax
 
-Kramaxx is a Java-based framework.
+Kramax is a Java-based framework.
 
 ## License
 
@@ -19,17 +19,17 @@ The entire software is provided under various open source licenses (mainly Apach
 
 ## Third-Party Libraries
 
-Kramaxx includes libraries developed by third parties. See the following resources:
+Kramax includes libraries developed by third parties. See the following resources:
 
-* [Third-Party Libraries][third-party-libraries]: An overview of the dependencies Kramaxx distributes. Additionally, this page points out particularly important third-party licenses to be aware of.
-* [HTML License Book Kramaxx]({{< relref "/introduction/third-party-libraries/kramaxx-bpm-platform-license-book.md" >}}): A list of all dependencies Kramaxx distributes with the Kramaxx artifacts, including their licenses and notices.
+* [Third-Party Libraries][third-party-libraries]: An overview of the dependencies Kramax distributes. Additionally, this page points out particularly important third-party licenses to be aware of.
+* [HTML License Book Kramax]({{< relref "/introduction/third-party-libraries/kramaxx-bpm-platform-license-book.md" >}}): A list of all dependencies Kramax distributes with the Kramax artifacts, including their licenses and notices.
 
 [third-party-libraries]: {{< relref "/introduction/third-party-libraries/_index.md" >}}
 
 
-# Kramaxx Modeler
+# Kramax Modeler
 
-The Kramaxx Modeler is a desktop modeling application.
+The Kramax Modeler is a desktop modeling application.
 
 ## License 
 

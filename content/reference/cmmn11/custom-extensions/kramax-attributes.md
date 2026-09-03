@@ -7,7 +7,7 @@ menu:
   main:
     identifier: "cmmn-ref-extensions-attributes"
     parent: "cmmn-ref-extensions"
-    pre: "Reference of Kramaxx Extension Attributes for CMMN."
+    pre: "Reference of Kramax Extension Attributes for CMMN."
 
 ---
 
@@ -774,7 +774,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
     <td><code>java.lang.String</code></td>
   </tr>
   <tr>
-    <th>Kramaxx extension element</th>
+    <th>Kramax extension element</th>
     <td>
       <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variableonpart" >}}">camunda:variableOnPart</a>
     </td>

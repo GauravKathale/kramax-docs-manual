@@ -13,7 +13,7 @@ menu:
 ---
 
 
-The process engine configuration can be placed in both [processes.xml]({{< relref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and the [bpm-platform.xml]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}) files. If the process engine is configured in either or both of those files, it will be bootstrapped by the Kramaxx infrastructure and be made available through `BpmPlatform.getProcessEngineService().getProcessEngine("name of process engine")`.
+The process engine configuration can be placed in both [processes.xml]({{< relref "/reference/deployment-descriptors/descriptors/processes-xml.md" >}}) and the [bpm-platform.xml]({{< relref "/reference/deployment-descriptors/descriptors/bpm-platform-xml.md" >}}) files. If the process engine is configured in either or both of those files, it will be bootstrapped by the Kramax infrastructure and be made available through `BpmPlatform.getProcessEngineService().getProcessEngine("name of process engine")`.
 
 
 # Example
@@ -729,7 +729,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls if the engine will throw <a href="{{< relref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-kramaxx" >}}">OptimisticLockingException</a>s on UPDATE or DELETE operations for historical data or not.
-        The default is <code><strong>true</strong></code>. To preserve the previous behavior (Ã¢â€°Â¤ 7.9), the flag must be set to <code><strong>false</strong></code>.<br><br>
+        The default is <code><strong>true</strong></code>. To preserve the previous behavior (ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 7.9), the flag must be set to <code><strong>false</strong></code>.<br><br>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
     </td>
   </tr>
@@ -910,7 +910,7 @@ The following is a list with the most commonly used process engine configuration
   <tr id="webappsAuthenticationLoggingEnabled">
     <td><a name="webappsAuthenticationLoggingEnabled"></a><code>webappsAuthenticationLoggingEnabled</code></td>
     <td>Boolean</td>
-    <td>Set to <code>true</code> to enable authentication logging in the Kramaxx web apps (Cockpit, Tasklist, and Admin). When enabled, the Kramaxx web apps will produce log statements in the application log for each user initiated log in and log out event. The name of the logger is <code>org.vodafone.kramaxx.bpm.webapp</code>.
+    <td>Set to <code>true</code> to enable authentication logging in the Kramax web apps (Cockpit, Tasklist, and Admin). When enabled, the Kramax web apps will produce log statements in the application log for each user initiated log in and log out event. The name of the logger is <code>org.vodafone.kramaxx.bpm.webapp</code>.
     </td>
   </tr>
 

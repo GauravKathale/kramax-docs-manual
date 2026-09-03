@@ -8,26 +8,26 @@ menu:
     name: "Deploy the Process"
     parent: "get-started-quick-start"
     identifier: "get-started-quick-start-deploy"
-    pre: "Deploy the Process to Kramaxx and start your first process instance."
+    pre: "Deploy the Process to Kramax and start your first process instance."
 
 ---
 
 In the next step, you'll deploy the Process and start a new instance so you can see that your simple process is working correctly.
 
 {{< note class="info" title="Deployment Support" >}}
-BPMN diagrams must be created for the process engine they intend to be deployed on. You cannot run a BPMN diagram modeled for Kramaxx Platform in Kramaxx Cloud, or vice versa, at this time. {{< /note >}}
+BPMN diagrams must be created for the process engine they intend to be deployed on. You cannot run a BPMN diagram modeled for Kramax Platform in Kramax Cloud, or vice versa, at this time. {{< /note >}}
 
 
-# Use the Kramaxx Modeler to Deploy the Process
+# Use the Kramax Modeler to Deploy the Process
 
-In order to deploy the Process, click on the deploy button in the Kramaxx Modeler, then give it the Deployment Name "Payment Retrieval" and click the Deploy button. From version 3.0.0 on, you will be required to provide an URL for an Endpoint Configuration along with Deployment Details. This can be either the root endpoint to the REST API (e.g. `http://localhost:8080/engine-rest`) or an exact endpoint to the deployment creation method (e.g. `http://localhost:8080/engine-rest/deployment/create`).
+In order to deploy the Process, click on the deploy button in the Kramax Modeler, then give it the Deployment Name "Payment Retrieval" and click the Deploy button. From version 3.0.0 on, you will be required to provide an URL for an Endpoint Configuration along with Deployment Details. This can be either the root endpoint to the REST API (e.g. `http://localhost:8080/engine-rest`) or an exact endpoint to the deployment creation method (e.g. `http://localhost:8080/engine-rest/deployment/create`).
 
 {{< img src="../img/modeler-deploy1.png" >}}
 {{< img src="../img/modeler-deploy2.png" >}}
-You should see a success message in the Kramaxx Modeler:
+You should see a success message in the Kramax Modeler:
 {{< img src="../img/modeler-deploy3.png" >}}
 
-More details regarding the deployment from Kramaxx Modeler you can find [here](https://blog.camunda.com/post/2019/01/camunda-modeler-3.0.0-0-released/#completely-reworked-deployment-tool). For Kramaxx Modeler 2.2.4 and earlier, read [this blog post](https://blog.camunda.com/post/2018/03/camunda-modeler-1120-alpha-3-released/).
+More details regarding the deployment from Kramax Modeler you can find [here](https://blog.camunda.com/post/2019/01/camunda-modeler-3.0.0-0-released/#completely-reworked-deployment-tool). For Kramax Modeler 2.2.4 and earlier, read [this blog post](https://blog.camunda.com/post/2018/03/camunda-modeler-1120-alpha-3-released/).
 
 # Verify the Deployment with Cockpit
 
@@ -38,8 +38,8 @@ Next, use Cockpit to see if the process was successfully deployed. Go to [http:/
 
 # Start a Process Instance
 
-In Kramaxx, there are different ways to start a new process instance.
-You can leverage the Kramaxx REST API to start a new process instance by sending a POST Request.
+In Kramax, there are different ways to start a new process instance.
+You can leverage the Kramax REST API to start a new process instance by sending a POST Request.
 
 ## a) curl
 
@@ -82,7 +82,7 @@ In your worker console (which we started in the previous section), you should no
 This means you have successfully started and executed your first simple process.
 
 {{< note title="Hint" class="info" >}}
-If you are running on Kramaxx Enterprise Edition, you can also check out your completed process instance in the Kramaxx Cockpit.
+If you are running on Kramax Enterprise Edition, you can also check out your completed process instance in the Kramax Cockpit.
 {{< /note >}}
 
 {{< note title="Next Step" class="info" >}}

@@ -43,7 +43,7 @@ The XML representation of an exclusive gateway is straightforward: one line defi
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

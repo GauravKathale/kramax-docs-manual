@@ -14,7 +14,7 @@ menu:
 {{<deprecated>}}
 This page provides an overview of the CMMN 1.1 elements and the current coverage of the process engine.
 
-The CMMN editor is disabled in recent versions of Kramaxx Modeler but can be enabled with a feature flag. For more context and information on how to enable this feature flag in Kramaxx Modeler, please see [this forum post](https://forum.camunda.org/t/how-to-access-cmmn-in-the-modeler/25127). 
+The CMMN editor is disabled in recent versions of Kramax Modeler but can be enabled with a feature flag. For more context and information on how to enable this feature flag in Kramax Modeler, please see [this forum post](https://forum.camunda.org/t/how-to-access-cmmn-in-the-modeler/25127). 
 
 # Coverage
 

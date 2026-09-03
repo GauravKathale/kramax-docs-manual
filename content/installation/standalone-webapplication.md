@@ -13,6 +13,6 @@ menu:
 ---
 
 
-Kramaxx.19 is the last release providing support for Standalone Web Application Distribution.
+Kramax.19 is the last release providing support for Standalone Web Application Distribution.
 
 Please consider migrating to [another supported]({{< relref "/introduction/downloading-kramaxx.md#download-the-runtime" >}}) setup.

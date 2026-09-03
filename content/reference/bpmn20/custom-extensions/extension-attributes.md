@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx BPMN Extension Attributes'
+title: 'Kramax BPMN Extension Attributes'
 weight: 20
 
 menu:
@@ -8,7 +8,7 @@ menu:
     name: "Extension Attributes"
     identifier: "bpmn-extensions-attributes"
     parent: "bpmn-extensions"
-    pre: "Reference of Kramaxx Extension Attributes for BPMN."
+    pre: "Reference of Kramax Extension Attributes for BPMN."
 
 ---
 
@@ -1190,7 +1190,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td>
-      The attribute references a Kramaxx form definition by its key. See <a href="{{< relref "/user-guide/task-forms/_index.md" >}}">task forms</a> for more information.
+      The attribute references a Kramax form definition by its key. See <a href="{{< relref "/user-guide/task-forms/_index.md" >}}">task forms</a> for more information.
     </td>
   </tr>
   <tr>
@@ -1200,7 +1200,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      A <code>java.lang.String</code> or a <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code> which <a href="{{< relref "/webapps/tasklist/_index.md" >}}">Tasklist</a> can evaluate to display the referenced Kramaxx Form, e.g., myKramaxxFormDefinitionKey or ${formKey}.
+      A <code>java.lang.String</code> or a <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code> which <a href="{{< relref "/webapps/tasklist/_index.md" >}}">Tasklist</a> can evaluate to display the referenced Kramax Form, e.g., myKramaxFormDefinitionKey or ${formKey}.
     </td>
   </tr>
   <tr>
@@ -1222,7 +1222,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
       <td>
-      The attribute specifies which Kramaxx form definition version the activity references. If the value is <code>version</code>, the attribute <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefversion" >}}">camunda:formRefVersion</a> is required.
+      The attribute specifies which Kramax form definition version the activity references. If the value is <code>version</code>, the attribute <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefversion" >}}">camunda:formRefVersion</a> is required.
     </td>
   </tr>
   <tr>
@@ -1254,7 +1254,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td>
-      The attribute specifies which Kramaxx form definition version the activity references if the <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefbinding" >}}">camunda:formRefBinding</a>
+      The attribute specifies which Kramax form definition version the activity references if the <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-attributes.md#formrefbinding" >}}">camunda:formRefBinding</a>
       is set to <code>version</code>.
     </td>
   </tr>
@@ -1265,7 +1265,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      A concrete version of all deployed version numbers of the Kramaxx form definition as <code>java.lang.Integer</code> or an expression which evaluates to a <code>java.lang.Integer</code> e.g., <code>${versionToReference}</code>
+      A concrete version of all deployed version numbers of the Kramax form definition as <code>java.lang.Integer</code> or an expression which evaluates to a <code>java.lang.Integer</code> e.g., <code>${versionToReference}</code>
     </td>
   </tr>
   <tr>

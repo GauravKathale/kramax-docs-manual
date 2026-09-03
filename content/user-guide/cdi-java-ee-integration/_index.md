@@ -11,7 +11,7 @@ menu:
 ---
 
 The `kramaxx-engine-cdi` and `kramaxx-engine-cdi-jakarta` modules provide programming model integration with CDI (Context and Dependency Injection).
-CDI is the Jakarta EE/Java EE standard for Dependency Injection. The Kramaxx CDI integration leverages both the configuration of the Kramaxx engine
+CDI is the Jakarta EE/Java EE standard for Dependency Injection. The Kramax CDI integration leverages both the configuration of the Kramax engine
 and the extensibility of CDI. The most prominent features are:
 
  * A custom El-Resolver for resolving CDI beans (including EJBs) from the process.
@@ -31,7 +31,7 @@ Read about the limitations in the [Quarkus Integration]({{< relref "/user-guide/
 To use the `kramaxx-engine-cdi` module inside your application, you must include the following Maven dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
+  Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramax project.
 {{< /note >}}
 
 ```xml

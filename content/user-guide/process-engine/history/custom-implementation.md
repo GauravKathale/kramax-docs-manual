@@ -32,7 +32,7 @@ Exchanging the History Event Handler with a custom implementation allows users t
 {{< /note >}}
 {{< note title="Spring Boot" class="info" >}}
 
-Note that providing your custom `HistoryEventHandler` in a Spring Boot Starter environment works slightly differently. By default, the Kramaxx Spring Boot starter uses a `CompositeHistoryEventHandler` which wraps a list of HistoryEventHandler implementations that you can provide via the `customHistoryEventHandlers` engine configuration property. If you want to override the default `DbHistoryEventHandler`, you have to explicitly set the `enableDefaultDbHistoryEventHandler` engine configuration property to `false`.
+Note that providing your custom `HistoryEventHandler` in a Spring Boot Starter environment works slightly differently. By default, the Kramax Spring Boot starter uses a `CompositeHistoryEventHandler` which wraps a list of HistoryEventHandler implementations that you can provide via the `customHistoryEventHandlers` engine configuration property. If you want to override the default `DbHistoryEventHandler`, you have to explicitly set the `enableDefaultDbHistoryEventHandler` engine configuration property to `false`.
 {{< /note >}}
 
 ## Implement a custom history level

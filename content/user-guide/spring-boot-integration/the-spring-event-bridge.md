@@ -21,7 +21,7 @@ kramaxx.bpm.eventing.skippable=true
 ```
 
 The first three properties control three event streams for execution, task and history events respectively. The last property `kramaxx.bpm.eventing.skippable` is responsible
-for the registration of the event listeners. If its value is `true`, the execution of the listners can be skipped via API or in Kramaxx Cockpit by activating "skip listners" flag. Otherwise, the listeners are registered as built-in listeners and are executed unconditionally.
+for the registration of the event listeners. If its value is `true`, the execution of the listners can be skipped via API or in Kramax Cockpit by activating "skip listners" flag. Otherwise, the listeners are registered as built-in listeners and are executed unconditionally.
 
 Listeners can subscribe to streams of mutable or immutable event objects. The latter of those are particularly useful
 in asynchronous listener scenarios - e.g. when using `TransactionalEventListener`.

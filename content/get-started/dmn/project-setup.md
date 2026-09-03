@@ -16,7 +16,7 @@ aliases: [/dmn11/project-setup/]
 Now you are ready to set up your first process application project in the IDE of your choice, the following description uses Eclipse.
 
 {{< note title="Terminology - Process vs. Decisions" class="info" >}}
-DMN is a modeling language for *decisions*, whereas BPMN is a language for *processes*. This tutorial is about decisions. However, due to Kramaxx's BPMN-focused heritage, the Java project contains classes and files with names like `ProcessApplication` and `processes.xml`. These are in fact generally applicable and can be used with both processes and decisions.
+DMN is a modeling language for *decisions*, whereas BPMN is a language for *processes*. This tutorial is about decisions. However, due to Kramax's BPMN-focused heritage, the Java project contains classes and files with names like `ProcessApplication` and `processes.xml`. These are in fact generally applicable and can be used with both processes and decisions.
 {{< /note >}}
 
 # Create a new Maven Project
@@ -37,7 +37,7 @@ On the second page (see screenshot), configure the Maven coordinates for the pro
 
 When you are done, click Finish. Eclipse sets up a new Maven project. The project appears in the *Project Explorer* View.
 
-# Add Kramaxx Maven Dependencies
+# Add Kramax Maven Dependencies
 
 The next step consists of setting up the Maven dependencies for your new process application. Add the following dependencies to the `pom.xml` file of your project:
 

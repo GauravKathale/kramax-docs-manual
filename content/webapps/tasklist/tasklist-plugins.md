@@ -11,7 +11,7 @@ menu:
 ---
 
 {{< note title="Plugin Compatibility" class="info" >}}
-  Please note that the code of Tasklist plugins might need to be migrated when updating Kramaxx to a higher version (e.g. CSS styles).
+  Please note that the code of Tasklist plugins might need to be migrated when updating Kramax to a higher version (e.g. CSS styles).
 {{< /note >}}
 
 Tasklist uses the concept of plugins to add own functionality without having to extend or hack the Tasklist web application.
@@ -84,11 +84,11 @@ Configure where to place your plugin as shown in the following example:
 
 ```html
 var ViewConfig = [ 'ViewsProvider', function(ViewsProvider) {
-Ã‚Â Ã‚Â ViewsProvider.registerDefaultView('tasklist.task.detail', {
-Ã‚Â Ã‚Â Ã‚Â Ã‚Â id: 'sub-tasks',
-Ã‚Â Ã‚Â Ã‚Â Ã‚Â priority: 20,
-Ã‚Â Ã‚Â Ã‚Â Ã‚Â label: 'Sub Tasks'
-Ã‚Â Ã‚Â });
+Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â ViewsProvider.registerDefaultView('tasklist.task.detail', {
+Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â id: 'sub-tasks',
+Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â priority: 20,
+Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â label: 'Sub Tasks'
+Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â });
 }];
 ```
 

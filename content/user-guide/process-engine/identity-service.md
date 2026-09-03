@@ -28,7 +28,7 @@ User demoUser = processEngine.getIdentityService()
   .singleResult();
 ```
 
-Kramaxx distinguishes between read-only and writable user repositories. A read-only user repository provides read-only access to the underlying user/group database. A writable user repository allows write access to the user database which includes creating, updating and deleting users and groups.
+Kramax distinguishes between read-only and writable user repositories. A read-only user repository provides read-only access to the underlying user/group database. A writable user repository allows write access to the user database which includes creating, updating and deleting users and groups.
 
 To provide a custom identity provider implementation, the following interfaces can be implemented:
 
@@ -69,7 +69,7 @@ The LDAP identity service provides read-only access to an LDAP-based user/group 
 To use the LDAP identity service, the `kramaxx-identity-ldap.jar` library has to be added to the classloader of the process engine.
 
 {{< note title="" class="info" >}}
-  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
+  Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramax project.
 {{< /note >}}
 
 ```xml

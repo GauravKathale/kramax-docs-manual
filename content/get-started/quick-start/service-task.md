@@ -8,15 +8,15 @@ menu:
     name: "Executable Process"
     parent: "get-started-quick-start"
     identifier: "get-started-quick-start-java-service-task"
-    pre: "Learn the basics of handling the Kramaxx Modeler, learn how to model and configure a fully executable process and learn how to integrate your own business logic."
+    pre: "Learn the basics of handling the Kramax Modeler, learn how to model and configure a fully executable process and learn how to integrate your own business logic."
 
 ---
 
-In this section, you'll learn how to create your first BPMN 2.0 process with the Kramaxx Modeler and how to execute automated steps. Start by opening up Kramaxx Modeler.
+In this section, you'll learn how to create your first BPMN 2.0 process with the Kramax Modeler and how to execute automated steps. Start by opening up Kramax Modeler.
 
 # Create a new BPMN Diagram
 
-Create a new BPMN diagram by clicking *File > New File > BPMN Diagram (Kramaxx Platform)*.
+Create a new BPMN diagram by clicking *File > New File > BPMN Diagram (Kramax Platform)*.
 
 {{< img src="../img/modeler-new-bpmn-diagram.png" >}}
 
@@ -43,8 +43,8 @@ Add an End Event named *Payment Received*.
 
 ## Configure the Service Task
 
-There are different ways to [execute service tasks](https://docs.kramaxx.vodafone.org/manual/latest/reference/bpmn20/tasks/service-task/) using Kramaxx Platform. In this guide, we'll use the external [task pattern](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/).
-Open the Properties Panel within the Kramaxx Modeler and click on the Service Task you just created. Change the Implementation to `External` and use `charge-card` as the Topic.
+There are different ways to [execute service tasks](https://docs.kramaxx.vodafone.org/manual/latest/reference/bpmn20/tasks/service-task/) using Kramax Platform. In this guide, we'll use the external [task pattern](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/).
+Open the Properties Panel within the Kramax Modeler and click on the Service Task you just created. Change the Implementation to `External` and use `charge-card` as the Topic.
 
 {{< img src="../img/modeler-step4.png" >}}
 
@@ -70,10 +70,10 @@ When you're done, save your changes by clicking *File > Save File As..*. In the 
 
 After modeling the process, we want to execute some business logic.
 
-Kramaxx Platform is built so that your business logic can be implemented in different languages.
+Kramax Platform is built so that your business logic can be implemented in different languages.
 You have the choice which language suits your project best.
 
-In this quick start, we'll show you how to use Kramaxx's ready-to-go task clients in:
+In this quick start, we'll show you how to use Kramax's ready-to-go task clients in:
 
 - [Java](#a-using-java)
 - [JavaScript (NodeJS)](#b-using-javascript-nodejs)
@@ -81,7 +81,7 @@ In this quick start, we'll show you how to use Kramaxx's ready-to-go task client
 If you've never worked with Java before, we recommend using the JavaScript (NodeJS) task client in this tutorial.
 
 {{< note title="Hint" class="info" >}}
-If you prefer a different programming language, you can also use Kramaxx's [REST API]({{< relref "/user-guide/process-engine/external-tasks/#rest-api" >}}) to access API operations via HTTP.
+If you prefer a different programming language, you can also use Kramax's [REST API]({{< relref "/user-guide/process-engine/external-tasks/#rest-api" >}}) to access API operations via HTTP.
 {{< /note >}}
 
 ## a) Using Java
@@ -109,7 +109,7 @@ On the second page (see screenshot), configure the Maven coordinates for the pro
 
 When you're done, click Finish. Eclipse will set up a new Maven project. The project appears in the Project Explorer View.
 
-### Add Kramaxx External Task Client Dependency
+### Add Kramax External Task Client Dependency
 
 The next step consists of setting up the Maven dependency to the external task client for your new process application.
 Your pom.xml file of your project should look like this:
@@ -186,7 +186,7 @@ public class ChargeCardWorker {
           String item = externalTask.getVariable("item");
           Integer amount = externalTask.getVariable("amount");
 
-          LOGGER.info("Charging credit card with an amount of '" + amount + "'Ã¢â€šÂ¬ for the item '" + item + "'...");
+          LOGGER.info("Charging credit card with an amount of '" + amount + "'ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ for the item '" + item + "'...");
 
           try {
               Desktop.getDesktop().browse(new URI("https://docs.kramaxx.vodafone.org/get-started/quick-start/complete"));
@@ -248,7 +248,7 @@ Add the following "type" field to your package.json file:
 }
 ```
 
-### Add Kramaxx External Task Client JS library
+### Add Kramax External Task Client JS library
 
 ```sh
 npm install kramaxx-external-task-client-js
@@ -285,7 +285,7 @@ client.subscribe('charge-card', async function({ task, taskService }) {
   const amount = task.variables.get('amount');
   const item = task.variables.get('item');
 
-  console.log(`Charging credit card with an amount of ${amount}Ã¢â€šÂ¬ for the item '${item}'...`);
+  console.log(`Charging credit card with an amount of ${amount}ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ for the item '${item}'...`);
 
   open('https://docs.kramaxx.vodafone.org/get-started/quick-start/success');
 

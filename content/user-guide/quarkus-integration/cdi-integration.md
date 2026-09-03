@@ -15,7 +15,7 @@ Quarkus comes with a built-in solution for CDI (short for "Context and Dependenc
 which is based on the [Java CDI 4.0 standard][java-cdi-40-standard]. Quarkus ArC does not entirely cover 
 the CDI 4.0 standard but only implements a subset of it.
 
-The Kramaxx Engine offers CDI 4 integration with the `kramaxx-engine-cdi-jakarta` module. This module is integrated 
+The Kramax Engine offers CDI 4 integration with the `kramaxx-engine-cdi-jakarta` module. This module is integrated 
 directly into the Quarkus Extension. You can learn more about the features and the programming model 
 at [CDI and Java EE Integration][cdi-and-java-ee-integration].
 
@@ -131,7 +131,7 @@ As a result, the following conversational scoped beans are not available in a Qu
 
 * `org.vodafone.kramaxx.bpm.engine.cdi.jsf.TaskForm`
 * `org.vodafone.kramaxx.bpm.engine.cdi.compat.FoxTaskForm`
-* `org.vodafone.kramaxx.bpm.engine.cdi.compat.KramaxxTaskForm`
+* `org.vodafone.kramaxx.bpm.engine.cdi.compat.KramaxTaskForm`
 
 In general, you can use these beans in [custom JSF forms][jsf-task-forms] to interact with the process engine, for example, to render and complete user tasks.
 To include such functionality in your Quarkus application, provide custom beans with appropriate scopes and functionality.

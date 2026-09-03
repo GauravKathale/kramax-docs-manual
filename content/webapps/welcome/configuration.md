@@ -24,10 +24,10 @@ Can be used to add some useful links for the user, such as other applications or
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   links: [
     {
-      label: 'Kramaxx Project',
+      label: 'Kramax Project',
       href: 'https://kramaxx.vodafone.org/',
       description: 'VODAFONE powered open-source project.'
     },
@@ -44,7 +44,7 @@ and can override the standard styles.
 
 ```css
 .navbar-brand {
-  /* hides the "Kramaxx Welcome" text */
+  /* hides the "Kramax Welcome" text */
   text-indent: -999em;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -58,12 +58,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Welcome*) and vendor (*Kramaxx*)
+**Note:** you can also change the app name (*Welcome*) and vendor (*Kramax*)
 by changing the `app/welcome/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   app: {
     name: 'Welcome',
     vendor: 'Company'
@@ -73,8 +73,8 @@ export default {
 
 # Localization
 
-Welcome can be localized. Kramaxx maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramaxx webapp translations repository](https://github.com/kramaxx-community-hub/kramaxx-7-webapp-translations).
+Welcome can be localized. Kramax maintains English and German translation files. 
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/kramaxx-community-hub/kramaxx-7-webapp-translations).
 
 The localization of the Welcome application is contained in the `app/welcome/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -90,7 +90,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -109,7 +109,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -122,7 +122,7 @@ First-time visitors are shown a message directing them to the kramaxx welcome pa
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   disableWelcomeMessage: true
 };
 ```

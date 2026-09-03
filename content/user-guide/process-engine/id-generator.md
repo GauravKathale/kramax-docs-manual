@@ -39,7 +39,7 @@ internally.
   Always use the StrongUuidGenerator for production setups.
 {{< /note >}}
 
-In the [Kramaxx Full Distributions][2], the
+In the [Kramax Full Distributions][2], the
 StrongUuidGenerator is preconfigured and the default Id Generator used by the process engine.
 
 If you use an embedded process engine configuration and configure the process engine using Spring,

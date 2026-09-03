@@ -7,9 +7,9 @@ menu:
   main:
     identifier: "dmn-ref-extensions"
     parent: "dmn-ref"
-    pre: "Custom Extensions supported by Kramaxx"
+    pre: "Custom Extensions supported by Kramax"
 
 aliases: [reference/dmn11/custom-extensions/]
 ---
 
-Kramaxx extends DMN with custom Extension Elements and Attributes defined in the `http://camunda.org/schema/1.0/dmn` namespace.
+Kramax extends DMN with custom Extension Elements and Attributes defined in the `http://camunda.org/schema/1.0/dmn` namespace.

@@ -11,12 +11,12 @@ menu:
 
 ---
 
-This section of the Kramaxx Quarkus extension documentation covers the configuration options for the process engine
+This section of the Kramax Quarkus extension documentation covers the configuration options for the process engine
 within a Quarkus application.
 
-The documentation on the Kramaxx Quarkus Extension Configuration is intended for Quarkus application developers. It 
+The documentation on the Kramax Quarkus Extension Configuration is intended for Quarkus application developers. It 
 requires some knowledge on [Quarkus CDI support][quarkus-cdi], [Quarkus configuration][quarkus-config], as well as
-Kramaxx Process Engine Configuration properties.
+Kramax Process Engine Configuration properties.
 
 ## Process Engine Configuration
 
@@ -82,7 +82,7 @@ A `QuarkusProcessEngineConfiguration` instance provides the following defaults:
       <code>history</code>
     </td>
     <td>
-      Kramaxx Cockpit works best with history level 
+      Kramax Cockpit works best with history level 
       <a href="{{< relref "/user-guide/process-engine/history/history-configuration.md#choose-a-history-level">}}">FULL</a>.
     </td>
     <td><code>full</code></td>
@@ -91,7 +91,7 @@ A `QuarkusProcessEngineConfiguration` instance provides the following defaults:
 </table>
 
 Quarkus allows to configure a Quarkus application via a [MicroProfile Config][mp-config] source. You can read more about 
-configuring a Quarkus application in the [Quarkus configuration][quarkus-config] page. The Kramaxx Quarkus extension 
+configuring a Quarkus application in the [Quarkus configuration][quarkus-config] page. The Kramax Quarkus extension 
 docs use the `application.properties` format in the examples, but you can use any supported Quarkus config source.
 
 You can set any process engine configuration properties under the `quarkus.kramaxx` prefix. The 
@@ -148,7 +148,7 @@ quarkus.kramaxx.job-executor.generic-config.max-wait=65000
 ## Quarkus Extension Configuration
 
 In addition to the general process engine and job executor configuration properties mentioned in the previous 
-sections, the Kramaxx Quarkus extension provides some Quarkus-specific configuration properties. They can be set
+sections, the Kramax Quarkus extension provides some Quarkus-specific configuration properties. They can be set
 through a Quarkus config source, but not through the `QuarkusProcessEngineConfiguration` class. You can find all
 the Quarkus-specific properties in the following table:
 
@@ -194,7 +194,7 @@ the Quarkus-specific properties in the following table:
 The Engine Extension integrates with a JDBC Connection Pool and a Jakarta Transaction Manager provided 
 by [Quarkus][quarkus-datasource]. The latter allows you to integrate your business logic into database 
 transactions of the Engine. Read more about it under [JTA Transaction Integration][jta-transaction-integration]. 
-A datasource is required to run the Kramaxx process engine.
+A datasource is required to run the Kramax process engine.
 
 ### Choose from multiple datasources
 

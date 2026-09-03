@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx BPMN Extension Elements'
+title: 'Kramax BPMN Extension Elements'
 weight: 10
 
 menu:
@@ -8,7 +8,7 @@ menu:
     name: "Extension Elements"
     identifier: "bpmn-extensions-elements"
     parent: "bpmn-extensions"
-    pre: "Reference of Kramaxx Extension Attributes for BPMN."
+    pre: "Reference of Kramax Extension Attributes for BPMN."
 
 ---
 

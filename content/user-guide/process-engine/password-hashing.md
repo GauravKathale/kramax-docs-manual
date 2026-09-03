@@ -10,9 +10,9 @@ menu:
 
 ---
 
-This chapter is about how cryptographic password hashing is done in Kramaxx. In particular, the hashing algorithm that is being used and the salt generation. If you are not familiar with these topics, we recommend reading the articles about [cryptographic hash function](https://en.wikipedia.org/wiki/Cryptographic_hash_function), [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) and [secure password hashing](https://crackstation.net/hashing-security.htm). 
+This chapter is about how cryptographic password hashing is done in Kramax. In particular, the hashing algorithm that is being used and the salt generation. If you are not familiar with these topics, we recommend reading the articles about [cryptographic hash function](https://en.wikipedia.org/wiki/Cryptographic_hash_function), [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) and [secure password hashing](https://crackstation.net/hashing-security.htm). 
 
-Kramaxx uses [SHA-512](https://en.wikipedia.org/wiki/SHA-2) as hash function. If there is a need for another custom hash function, it is possible to plugin a [custom password hashing algorithm](#customize-the-hashing-algorithm) in Kramaxx.
+Kramax uses [SHA-512](https://en.wikipedia.org/wiki/SHA-2) as hash function. If there is a need for another custom hash function, it is possible to plugin a [custom password hashing algorithm](#customize-the-hashing-algorithm) in Kramax.
 
 At salt generation, a random 16-byte per-user value is created, which is generated with [SecureRandom](http://docs.oracle.com/javase/6/docs/api/java/security/SecureRandom.html). It is also possible to [customize the salt generation](#customize-the-salt-generation) if desired.
 
@@ -20,7 +20,7 @@ At salt generation, a random 16-byte per-user value is created, which is generat
 
 If it is necessary to use a more secure hash algorithm, you can provide your own implementation.
 
-You can do this by implementing the `PasswordEncryptor` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package. The interface ensures that all necessary functions for password hashing are implemented. You can have a look at the classes `Base64EncodedHashDigest` and `ShaHashDigest` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramaxx. A template for your own implementation could look as follows:
+You can do this by implementing the `PasswordEncryptor` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package. The interface ensures that all necessary functions for password hashing are implemented. You can have a look at the classes `Base64EncodedHashDigest` and `ShaHashDigest` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
 
 
 ```java
@@ -44,9 +44,9 @@ public class MyPasswordEncryptor implements PasswordEncryptor {
 }
 ```
 
-Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `passwordEncryptor` property to your custom implementation, e.g., `MyPasswordEncryptor`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Kramaxx environment. 
+Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `passwordEncryptor` property to your custom implementation, e.g., `MyPasswordEncryptor`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Kramax environment. 
 
-Note that, even if you have already users created with passwords hashed by other algorithms, e.g., old custom algorithms or the Kramaxx default hash algorithm `SHA-512`, they can still automatically be resolved by the engine although you have added your custom algorithm afterwards. The property `customPasswordChecker` is a list of hashing algorithms to be used to check (older) passwords. The Kramaxx default hashing algorithms are automatically added, so please only add your previous custom `passwordEncryptor` implementation to that list.
+Note that, even if you have already users created with passwords hashed by other algorithms, e.g., old custom algorithms or the Kramax default hash algorithm `SHA-512`, they can still automatically be resolved by the engine although you have added your custom algorithm afterwards. The property `customPasswordChecker` is a list of hashing algorithms to be used to check (older) passwords. The Kramax default hashing algorithms are automatically added, so please only add your previous custom `passwordEncryptor` implementation to that list.
 
 {{< note title="Heads Up!" class="info" >}}
 
@@ -57,7 +57,7 @@ Please do not use your own implementation of a hash function, but rather a stand
 
 # Customize the Salt generation
 
-Similar to the hashing algorithm, the salt generation can be adjusted. First, implement the `SaltGenerator` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest`. This ensures that all necessary functions are implemented. You can have a look at the classes `Base64EncodedSaltGenerator` and `Default16ByteSaltGenerator` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramaxx. A template for your own implementation could look as follows:
+Similar to the hashing algorithm, the salt generation can be adjusted. First, implement the `SaltGenerator` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest`. This ensures that all necessary functions are implemented. You can have a look at the classes `Base64EncodedSaltGenerator` and `Default16ByteSaltGenerator` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
 
 ```java
 public class MyCustomSaltGenerator implements SaltGenerator {
@@ -69,7 +69,7 @@ public class MyCustomSaltGenerator implements SaltGenerator {
 }
 ```
 
-Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `saltGenerator` property to your custom implementation, e.g., `MyCustomSaltGenerator`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Kramaxx environment.
+Once this is done, you can use the process engine configuration to plug in the custom implementation by the setting the `saltGenerator` property to your custom implementation, e.g., `MyCustomSaltGenerator`. See [Process Engine Bootstrapping](../process-engine-bootstrapping) on where you have to set the property for your Kramax environment.
 
 
 

@@ -12,7 +12,7 @@ menu:
     pre: "Restart process instances after termination."
 ---
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of Kramax, it is not available in the community edition.
 {{< /enterprise >}}
 
 

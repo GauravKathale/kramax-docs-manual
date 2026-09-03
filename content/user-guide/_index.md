@@ -10,4 +10,4 @@ menu:
 
 ---
 
-This document targets Developers who want to use Kramaxx Process Engine in their applications.
+This document targets Developers who want to use Kramax Process Engine in their applications.

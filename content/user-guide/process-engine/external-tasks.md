@@ -276,7 +276,7 @@ External task priorities can be specified in the BPMN model as well as overridde
 
 #### Priorities in BPMN XML
 
-External task priorities can be assigned at the process or the activity level. To achieve this, the Kramaxx extension attribute `camunda:taskPriority` can be used.
+External task priorities can be assigned at the process or the activity level. To achieve this, the Kramax extension attribute `camunda:taskPriority` can be used.
 
 For specifying the priority, both constant values and [expressions]({{< relref "/user-guide/process-engine/expression-language.md" >}}) are supported. 
 When using a constant value, the same priority is assigned to all instances of the process or activity. 

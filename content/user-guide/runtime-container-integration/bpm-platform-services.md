@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx Services'
+title: 'Kramax Services'
 weight: 10
 
 menu:

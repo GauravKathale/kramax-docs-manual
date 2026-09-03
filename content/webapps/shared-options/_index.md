@@ -11,4 +11,4 @@ menu:
 ---
 
 
-The Kramaxx Web Applications come with several common configuration options. These options cover the operation on all the available Kramaxx web applications.
+The Kramax Web Applications come with several common configuration options. These options cover the operation on all the available Kramax web applications.

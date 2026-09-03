@@ -11,7 +11,7 @@ menu:
 
 ---
 
-A Send Task is used to send a message. In Kramaxx this is done by calling Java code.
+A Send Task is used to send a message. In Kramax this is done by calling Java code.
 
 The Send Task has the same behavior as a Service Task.
 
@@ -22,7 +22,7 @@ The Send Task has the same behavior as a Service Task.
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

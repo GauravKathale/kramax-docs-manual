@@ -130,7 +130,7 @@ Three optional attributes can be added to the error start event: <code>errorRef<
 
 When process execution arrives at an error end event, the current path of execution is ended and an error is thrown. This error can be caught by a matching intermediate error boundary event. In case no matching error boundary event is found, the execution semantics defaults to the none end event semantics.
 
-## Kramaxx Extensions
+## Kramax Extensions
 
 ### Error Event Definition
 

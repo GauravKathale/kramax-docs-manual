@@ -40,7 +40,7 @@ gives a warning as it is valid BPMN 2.0).
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

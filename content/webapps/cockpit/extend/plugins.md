@@ -29,33 +29,33 @@ On the client-side a plugin may include Javascript modules to extend the Cockpit
 The basic skeleton of a Cockpit plugin looks as follows:
 
     cockpit-plugin/
-    Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ src/
-    |   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ main/
-    |   |   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ java/
-    |   |   |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ org/my/plugin/
-    |   |   |       Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ db/
-    |   |   |       |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ MyDto.java                                    (5)
-    |   |   |       Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ resource/
-    |   |   |       |   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ MyPluginRootResource.java                     (3)
-    |   |   |       |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ ...                                           (4)
-    |   |   |       Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ MyPlugin.java                                     (1)
-    |   |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ resources/
-    |   |       Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ META-INF/services/
-    |   |       |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ org.vodafone.kramaxx.bpm.cockpit.plugin.spi.CockpitPlugin  (2)
-    |   |       Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ org/my/plugin/queries/                                (6)
-    |   |       |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ sample.xml
-    |   |       Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ plugin-webapp/MyPlugin/                               (7)
-    |   |           Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ app/
-    |   |               Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ plugin.js                                     (8)
-    |   |               Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ plugin.css                                    (9)
-    |   |               Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ ...
-    |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ test/
-    |       Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ java/
-    |       |   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ org/my/plugin/
-    |       |       Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ MyPluginTest.java
-    |       Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ resources/
-    |           Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ kramaxx.cfg.xml
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ pom.xml
+    ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ src/
+    |   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ main/
+    |   |   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ java/
+    |   |   |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ org/my/plugin/
+    |   |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ db/
+    |   |   |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ MyDto.java                                    (5)
+    |   |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ resource/
+    |   |   |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ MyPluginRootResource.java                     (3)
+    |   |   |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ ...                                           (4)
+    |   |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ MyPlugin.java                                     (1)
+    |   |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ resources/
+    |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ META-INF/services/
+    |   |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ org.vodafone.kramaxx.bpm.cockpit.plugin.spi.CockpitPlugin  (2)
+    |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ org/my/plugin/queries/                                (6)
+    |   |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ sample.xml
+    |   |       ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ plugin-webapp/MyPlugin/                               (7)
+    |   |           ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ app/
+    |   |               ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ plugin.js                                     (8)
+    |   |               ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ plugin.css                                    (9)
+    |   |               ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ ...
+    |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ test/
+    |       ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ java/
+    |       |   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ org/my/plugin/
+    |       |       ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ MyPluginTest.java
+    |       ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ resources/
+    |           ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ kramaxx.cfg.xml
+    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ pom.xml
 
 As runtime relevant resource it defines
 
@@ -148,11 +148,11 @@ In this example we deactivate the cancel action in the Cockpit process instance 
 ```
 
 # Legacy Plugins
-Plugins created for Kramaxx.13 or earlier can be included for compatibility. To achieve this, simply prefix your Plugin ID with `legacy-`. The AngularJS module name for the entry module will be `cockpit.plugin.legacy-*`.
+Plugins created for Kramax.13 or earlier can be included for compatibility. To achieve this, simply prefix your Plugin ID with `legacy-`. The AngularJS module name for the entry module will be `cockpit.plugin.legacy-*`.
 
 Please note that all Plugins with this prefix will be included using the 7.13 plugin mechanism. You cannot create new Plugins with IDs starting with `legacy`.
 
-For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.kramaxx.vodafone.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Kramaxx **7.13** .
+For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.kramaxx.vodafone.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Kramax **7.13** .
 
 # Plugin points
 

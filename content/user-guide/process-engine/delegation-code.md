@@ -316,7 +316,7 @@ Execution listeners also support using a delegateExpression, similar to a servic
 
 # Task Listener
 
-A task listener is used to execute custom Java logic or an expression upon the occurrence of a certain task-related event. It can only be added in the process definition as a child element of a user task. Note that this also must happen as a child of the BPMN 2.0 extensionElements and in the Kramaxx namespace, since a task listener is a construct specifically for the Kramaxx engine.
+A task listener is used to execute custom Java logic or an expression upon the occurrence of a certain task-related event. It can only be added in the process definition as a child element of a user task. Note that this also must happen as a child of the BPMN 2.0 extensionElements and in the Kramax namespace, since a task listener is a construct specifically for the Kramax engine.
 
 ```xml
   <userTask id="myTask" name="My Task" >
@@ -640,7 +640,7 @@ public class MyJavaDelegate implements JavaDelegate {
 ```
 
 Setting a custom error code via Delegation Code allows your business logic to react to it by getting 
-the code via `ProcessEngineException#getCode` when calling Kramaxx Java API or by evaluating the 
+the code via `ProcessEngineException#getCode` when calling Kramax Java API or by evaluating the 
 `code` property in the response of an [erroneous REST API call]({{< relref "/reference/rest/overview/_index.md#exception-codes" >}}).
 
 If you don't set any code, the engine assigns `0`, which a custom or built-in error code provider can override.

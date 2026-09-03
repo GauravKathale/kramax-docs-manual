@@ -12,7 +12,7 @@ menu:
 
 ---
 
-The Kramaxx DMN engine can be used as a library in a custom application. To achieve this,
+The Kramax DMN engine can be used as a library in a custom application. To achieve this,
 add the `kramaxx-engine-dmn` artifact to the classpath of the application and then
 configure and build a decision engine instance. This section provides the
 required maven coordinates to add the DMN engine as a dependency to your
@@ -20,7 +20,7 @@ project. It then shows how to configure and build a new DMN engine instance.
 
 # Maven Coordinates
 
-The Kramaxx DMN engine is released to Maven Central.
+The Kramax DMN engine is released to Maven Central.
 
 Start by importing the [`kramaxx-engine-dmn` BOM]({{< relref "/get-started/apache-maven/#kramaxx-dmn-engine-bom" >}})
 to ensure correct dependency management.

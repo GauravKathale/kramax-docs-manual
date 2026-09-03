@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Kramaxx supports the Unified Expression Language and the Friendly Enough Expression Language.
+Kramax supports the Unified Expression Language and the Friendly Enough Expression Language.

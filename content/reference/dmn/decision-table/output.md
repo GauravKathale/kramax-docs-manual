@@ -37,8 +37,8 @@ XML element.
 # Output Id
 
 The output id is a unique identifier of the decision table output. It is used
-by Kramaxx to reference the output in the history of
-evaluated decisions. Therefore, it is required by the Kramaxx DMN engine. It is
+by Kramax to reference the output in the history of
+evaluated decisions. Therefore, it is required by the Kramax DMN engine. It is
 set as the `id` attribute of the `output` XML element.
 
 ```xml

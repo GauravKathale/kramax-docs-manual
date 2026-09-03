@@ -15,7 +15,7 @@ To use Spin with the process engine, the following is required:
 1. The Spin libraries must be on the engine's classpath
 1. The Spin process engine plugin must be registered with the process engine
 
-The following sections go into the details of integrating Spin with the process engine. Note that when you use a pre-built Kramaxx distribution, Spin is already integrated.
+The following sections go into the details of integrating Spin with the process engine. Note that when you use a pre-built Kramax distribution, Spin is already integrated.
 
 # Artifacts
 
@@ -23,7 +23,7 @@ There are three types of Spin artifacts as follows.
 
 ## kramaxx-spin-core
 
-`kramaxx-spin-core` is a jar that contains only the core Spin classes. It can be combined with single data format artifacts. Kramaxx provides the artifacts `kramaxx-spin-dataformat-json-jackson` and `kramaxx-spin-dataformat-xml-dom` (`kramaxx-spin-dataformat-xml-dom-jakarta` for Jakarta XML Binding 4.0 support) that implement JSON and XML processing. These artifacts transitively pull in libraries they need. For example, `kramaxx-spin-dataformat-json-jackson` has a dependency to `jackson-databind`.
+`kramaxx-spin-core` is a jar that contains only the core Spin classes. It can be combined with single data format artifacts. Kramax provides the artifacts `kramaxx-spin-dataformat-json-jackson` and `kramaxx-spin-dataformat-xml-dom` (`kramaxx-spin-dataformat-xml-dom-jakarta` for Jakarta XML Binding 4.0 support) that implement JSON and XML processing. These artifacts transitively pull in libraries they need. For example, `kramaxx-spin-dataformat-json-jackson` has a dependency to `jackson-databind`.
 
 ## kramaxx-spin-dataformat-all
 
@@ -62,7 +62,7 @@ The Spin process engine plugin provides the following configuration options:
 
 ## Maven coordinates
 
-Import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
+Import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the right version of Spin that is tested to work with your version of the process engine.
 
 All Spin artifacts have the group id `org.vodafone.kramaxx.spin`, so in order to import `kramaxx-spin-core`, we can write:
 
@@ -83,14 +83,14 @@ Depending on the application and process engine setup, it is recommended to use 
 
 If your application manages its own process engine, then using `kramaxx-engine-plugin-spin` with `kramaxx-spin-core` is the recommended approach. Declare the dependencies in the `compile` scope so that the Spin libraries and their dependencies are added to your application when you bundle it. Configure `org.vodafone.kramaxx.spin.plugin.impl.SpinProcessEnginePlugin` as a process engine plugin according to the [process engine plugin documentation]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}).
 
-## Application with Kramaxx Spring Boot Starter
+## Application with Kramax Spring Boot Starter
 
 Add the dependencies to `kramaxx-engine-plugin-spin` and `kramaxx-spin-core` (along with `kramaxx-spin-dataformat-json-jackson` and `kramaxx-spin-dataformat-xml-dom` as needed) to your application. If you need to use Jakarta XML Binding 4.0 (e.g. Springboot version 3.x.x), use `kramaxx-spin-dataformat-xml-dom-jakarta` instead of `kramaxx-spin-dataformat-xml-dom`.
 The Spin process engine plugin will be automatically registered with the process engine.
 
 ## Shared Process Engine
 
-If you use a shared process engine, Spin is usually installed as a shared library in the application server. Check the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your application server for how to set up Spin with a shared engine. When using a pre-built distribution of Kramaxx, Spin is already pre-configured.
+If you use a shared process engine, Spin is usually installed as a shared library in the application server. Check the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your application server for how to set up Spin with a shared engine. When using a pre-built distribution of Kramax, Spin is already pre-configured.
 
 Depending on the type of application server, `kramaxx-engine-plugin-spin` should be used with either `kramaxx-spin-core` or `kramaxx-spin-dataformat-all`. In the pre-packaged distributions, the following artifacts are used:
 

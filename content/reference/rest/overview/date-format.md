@@ -57,7 +57,7 @@ precision and timezone information. Also, new dates with milliseconds and timezo
 can be submitted to the REST API without losing these details.
 
 {{< note title="Webapps compatibility" class="warning" >}}
-Be aware that, to be able to use the Kramaxx webapps, the date format must correspond to the following:
+Be aware that, to be able to use the Kramax webapps, the date format must correspond to the following:
 
 `yyyy-MM-dd['T'HH:mm[:ss[.SSS[Z]]]]`
 

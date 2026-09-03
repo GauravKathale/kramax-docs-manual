@@ -80,8 +80,8 @@ See our user guide for complete documentation on the [LDAP Identity Provider Plu
 ## HAL Resource Caching
 
 If you use LDAP as Identity Provider, you should consider [activating caching]({{< relref "/reference/rest/overview/hal.md#caching-of-hal-relations" >}}) of
-Users and Groups in the Kramaxx web application. In order to activate this, add the following
-configuration to the `web.xml` file of the Kramaxx web application
+Users and Groups in the Kramax web application. In order to activate this, add the following
+configuration to the `web.xml` file of the Kramax web application
 (`kramaxx-webapp-wildfly-$PLATFORM_VERSION.war/WEB-INF/lib` or `kramaxx-webapp-jboss-$PLATFORM_VERSION.war/WEB-INF/lib`):
 
 ```xml
@@ -123,7 +123,7 @@ configuration to the `web.xml` file of the Kramaxx web application
 ## Add Custom Engine Plugins
  
 1.  Add an additional engine plugin as a module to the folder $WILDFLY_HOME/modules/
-2.  Add the module dependency to the file `$WILDFLY_HOME/modules/org/vodafone/kramaxx/bpm/kramaxx-engine-plugins/main/module.xml` and set the attribute `export="true"` to make sure that the module is visible in the classpath of Kramaxx's subsystem
+2.  Add the module dependency to the file `$WILDFLY_HOME/modules/org/vodafone/kramaxx/bpm/kramaxx-engine-plugins/main/module.xml` and set the attribute `export="true"` to make sure that the module is visible in the classpath of Kramax's subsystem
       ```xml
     <module xmlns="urn:jboss:module:1.0"
             name="org.vodafone.kramaxx.bpm.kramaxx-engine-plugins">
@@ -134,7 +134,7 @@ configuration to the `web.xml` file of the Kramaxx web application
     </module>
       ```
       
-    The `module.xml` file is included in the Kramaxx distribution. If you install Kramaxx on a vanilla WildFly container, this file needs to be created manually.
+    The `module.xml` file is included in the Kramax distribution. If you install Kramax on a vanilla WildFly container, this file needs to be created manually.
 3. [Configure the process engine plugin]({{< relref "/user-guide/runtime-container-integration/jboss.md#extend-a-process-engine-using-process-engine-plugins" >}}) in the standalone.xml/domain.xml configuration file
 
 ## Session Cookie in Webapps

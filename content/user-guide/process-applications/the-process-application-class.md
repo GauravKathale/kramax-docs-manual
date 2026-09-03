@@ -94,7 +94,7 @@ An EJB process application class itself must be deployed as an EJB.
 
 To add an EJB process application to your Java application, you have two options:
 
-* **Bundle the Kramaxx EJB Client**: we provide a generic, reusable EJB process application implementation (named 
+* **Bundle the Kramax EJB Client**: we provide a generic, reusable EJB process application implementation (named 
 `org.vodafone.kramaxx.bpm.application.impl.ejb.DefaultEjbProcessApplication`) bundled as a maven artifact. You can add this
 implementation to your application as a maven dependency. Use the `kramaxx-ejb-client` artifact for Java EE or
 the `kramaxx-ejb-client-jakarta` artifact for Jakarta EE 9+ applications.
@@ -104,12 +104,12 @@ or `JakartaEjbProcessApplication`, you can write a custom subclass of the respec
 Both options are explained in greater detail below.
 
 
-## Bundling the Kramaxx EJB Client Jar
+## Bundling the Kramax EJB Client Jar
 
 The most convenient option for deploying a process application to a Java EE EJB container is by adding the following maven dependency to your maven project:
 
 {{< note title="" class="info" >}}
-  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
+  Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramax project.
 {{< /note >}}
 
 ```xml
@@ -128,13 +128,13 @@ For Jakarta EE 9+ EJB containers, use the following dependency instead:
 </dependency>
 ```
 
-The Kramaxx EJB Client contains a reusable default implementation of the respective EJB process application as a Singleton Session Bean with auto-activation.
+The Kramax EJB Client contains a reusable default implementation of the respective EJB process application as a Singleton Session Bean with auto-activation.
 
 This deployment option requires that your project is a composite deployment (such as a WAR or EAR) since you need to add a library JAR file.
-You could of course use something like the maven shade plugin for adding the class contained in the Kramaxx EJB Client artifact to a JAR-based deployment.
+You could of course use something like the maven shade plugin for adding the class contained in the Kramax EJB Client artifact to a JAR-based deployment.
 
 {{< note title="" class="info" >}}
-  We always recommend using the Kramaxx EJB Client over deploying a custom `EjbProcessApplication` class unless you want to customize the behavior of the `EjbProcessApplication`.
+  We always recommend using the Kramax EJB Client over deploying a custom `EjbProcessApplication` class unless you want to customize the behavior of the `EjbProcessApplication`.
 {{< /note >}}
 
 
@@ -373,7 +373,7 @@ The `SpringProcessApplication` will use the bean name (`id="invoicePa"` in the e
 
 ## Configure a Managed Process Engine Using Spring
 
-If you use a Spring process application, you may want to configure your process engine inside the Spring application context Xml file (as opposed to the processes.xml file). In this case, you must use the `org.vodafone.kramaxx.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` class for creating the process engine object instance. In addition to creating the process engine object, this implementation registers the process engine with the Kramaxx infrastructure so that the process engine is returned by the `ProcessEngineService`. The following is an example of how to configure a managed process engine using Spring.
+If you use a Spring process application, you may want to configure your process engine inside the Spring application context Xml file (as opposed to the processes.xml file). In this case, you must use the `org.vodafone.kramaxx.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` class for creating the process engine object instance. In addition to creating the process engine object, this implementation registers the process engine with the Kramax infrastructure so that the process engine is returned by the `ProcessEngineService`. The following is an example of how to configure a managed process engine using Spring.
 
 ```xml
 <beans xmlns="http://www.springframework.org/schema/beans"

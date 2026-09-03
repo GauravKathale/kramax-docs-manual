@@ -134,7 +134,7 @@ error code to the exception. You can look up the built-in codes in the [Categori
 
 ## Custom codes
 
-Sometimes you may want to assign codes to specific errors Kramaxx hasn't covered so far.
+Sometimes you may want to assign codes to specific errors Kramax hasn't covered so far.
 You can either define custom codes from delegation code or by [registering your custom `ExceptionCodeProvider`](#register-a-custom-code-provider).
 
 ### Delegation code

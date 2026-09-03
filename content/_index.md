@@ -1,6 +1,6 @@
 ---
 
-title: "The Kramaxx Manual"
+title: "The Kramax Manual"
 weight: 60
 layout: "single"
 
@@ -11,13 +11,13 @@ menu:
 
 ---
 
-Welcome to the Kramaxx Manual! Kramaxx is a light-weight, open-source platform for Business Process
-Management. The Manual introduces key concepts in Kramaxx, provides installation procedures as well as a
+Welcome to the Kramax Manual! Kramax is a light-weight, open-source platform for Business Process
+Management. The Manual introduces key concepts in Kramax, provides installation procedures as well as a
 comprehensive reference section.
 
 ## Getting Started
 
-The Guide [Get started with Kramaxx]({{< relref "/get-started/quick-start/" >}}) is the quickest and easiest way to get up and running with Kramaxx. Alternatives include:
+The Guide [Get started with Kramax]({{< relref "/get-started/quick-start/" >}}) is the quickest and easiest way to get up and running with Kramax. Alternatives include:
 
 <div class="row">
   <div class="col-xs-6 col-md-4">
@@ -106,4 +106,4 @@ In case you get stuck on a problem make sure to ask for Help in the {{< forumref
 
 ## Community Extensions
 
-A number of [Community Extensions]({{< relref "/introduction/extensions/" >}}) enhance Kramaxx with additional capabilities.
+A number of [Community Extensions]({{< relref "/introduction/extensions/" >}}) enhance Kramax with additional capabilities.

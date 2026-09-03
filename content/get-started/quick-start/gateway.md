@@ -17,7 +17,7 @@ In this section, you'll learn how to make your process more dynamic by using BPM
 # Add Two Gateways
 We want to modify our process so that it's more dynamic.
 
-To do so, open the process in the Kramaxx Modeler.
+To do so, open the process in the Kramax Modeler.
 
 Next, from the Modeler's left-hand menu, select the gateway shape (diamond) and drag it into position between the Start Event and the Service Task. Use the create space tool again as needed. Move the User Task down and add another Gateway after it. Lastly, adjust the Sequence Flows so that the model looks like this:
 {{< img src="../img/modeler-gateway1.png" >}}
@@ -27,7 +27,7 @@ Now also name the new elements accordingly:
 
 # Configure the Gateways
 
-Next, open the properties panel and select the `<1000 Ã¢â€šÂ¬` Sequence Flow after the Gateway on the canvas. This will update the selection in the properties panel.
+Next, open the properties panel and select the `<1000 ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬` Sequence Flow after the Gateway on the canvas. This will update the selection in the properties panel.
 Scroll to the property named `Condition Type` and change it to `Expression`. Then input `${amount<1000}` as the Expression.
 We are using the [Java Unified Expression Language](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/expression-language/) to evaluate the Gateway.
 
@@ -35,7 +35,7 @@ We are using the [Java Unified Expression Language](https://docs.kramaxx.vodafon
 
 Next, change the Expressions for the other Sequence Flows, too.
 
-For the `>=1000 Ã¢â€šÂ¬` Sequence Flow, use the Expression `${amount>=1000}`:
+For the `>=1000 ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬` Sequence Flow, use the Expression `${amount>=1000}`:
 {{< img src="../img/modeler-gateway4.png" >}}
 
 
@@ -47,7 +47,7 @@ For the `No` Sequence Flow, use the Expression `${!approved}`:
 
 # Deploy the Process
 
-Use the `Deploy` Button in the Kramaxx Modeler to deploy the updated process to Kramaxx.
+Use the `Deploy` Button in the Kramax Modeler to deploy the updated process to Kramax.
 
 # Work on the Task
 

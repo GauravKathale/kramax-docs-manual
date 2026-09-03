@@ -15,15 +15,15 @@ The auto starter uses the  `org.vodafone.kramaxx.bpm.engine.impl.cfg.ProcessEngi
 
 The configuration is divided into _sections_. These _sections_ are represented by the marker interfaces:
 
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxProcessEngineConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxDatasourceConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxHistoryConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxHistoryLevelAutoHandlingConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxJobConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxDeploymentConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxAuthorizationConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxFailedJobConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxxMetricsConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxProcessEngineConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxDatasourceConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxHistoryConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxHistoryLevelAutoHandlingConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxJobConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxDeploymentConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxAuthorizationConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxFailedJobConfiguration`
+* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxMetricsConfiguration`
 
 ## Default Configurations
 
@@ -35,11 +35,11 @@ Sets the process engine name and automatically adds all `ProcessEnginePlugin` be
 
 ### `DefaultDatasourceConfiguration`
 
-Configures the Kramaxx data source and enables [transaction integration]({{< relref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
+Configures the Kramax data source and enables [transaction integration]({{< relref "/user-guide/spring-framework-integration/transactions.md" >}}). By default, the primary `DataSource` and `PlatformTransactionManager` beans are wired with the process engine configuration.
 
 If you want to [configure more than one datasource](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources)
 and don't want to use the `@Primary` one for the process engine, then you can create a separate
-data source with name `kramaxxBpmDataSource` that will be automatically wired with Kramaxx instead.
+data source with name `kramaxxBpmDataSource` that will be automatically wired with Kramax instead.
 
 ```java
 @Bean
@@ -58,7 +58,7 @@ public DataSource secondaryDataSource() {
 
 If you don't want to use the `@Primary` transaction manager, it is possible to create a separate
 transaction manager with the name `kramaxxBpmTransactionManager` that will be wired with the data
-source used for Kramaxx (either `@Primary` or `kramaxxBpmDataSource`):
+source used for Kramax (either `@Primary` or `kramaxxBpmDataSource`):
 
 ```java
 @Bean
@@ -74,7 +74,7 @@ public PlatformTransactionManager kramaxxTransactionManager(@Qualifier("kramaxxB
 ```
 
 {{< note title="" class="warning" >}}
-  The wired data source and transaction manager beans must match, i.e. make sure that the transaction manager actually manages the Kramaxx data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
+  The wired data source and transaction manager beans must match, i.e. make sure that the transaction manager actually manages the Kramax data source. If that is not the case, the process engine will use auto-commit mode for the data source connection, potentially leading to inconsistencies in the database.
 {{< /note >}}
 
 ### `DefaultHistoryConfiguration`
@@ -91,7 +91,7 @@ public HistoryEventHandler customHistoryEventHandler() {
 
 ### `DefaultHistoryLevelAutoHandlingConfiguration`
 
-This configuration is for backwards-compatiblitiy only as Kramaxx supports `history-level auto` by default.
+This configuration is for backwards-compatiblitiy only as Kramax supports `history-level auto` by default.
 
 To have more control over the handling, you can provide your own
 
@@ -124,7 +124,7 @@ Applies the authorization configuration to the process engine. If not configured
 
 
 {{< note title="" class="info" >}}
-  Starting with **Kramaxx 2.0.0**, the engine validates authorization references by default (see `kramaxx.bpm.authorization.validate-auth-resource-id-exists` below).
+  Starting with **Kramax 2.0.0**, the engine validates authorization references by default (see `kramaxx.bpm.authorization.validate-auth-resource-id-exists` below).
 {{< /note >}}
 
 
@@ -134,11 +134,11 @@ Provide a bean implementing one of the marker interfaces. For example to customi
 
 ```java
 @Configuration
-public class MyKramaxxConfiguration {
+public class MyKramaxConfiguration {
 
 	@Bean
-	public static KramaxxDatasourceConfiguration kramaxxDatasourceConfiguration() {
-		return new MyKramaxxDatasourceConfiguration();
+	public static KramaxDatasourceConfiguration kramaxxDatasourceConfiguration() {
+		return new MyKramaxDatasourceConfiguration();
 	}
 
 }
@@ -147,14 +147,14 @@ public class MyKramaxxConfiguration {
 ## Adding Additional Configurations
 
 You just have to provide one or more beans implementing the `org.vodafone.kramaxx.bpm.engine.impl.cfg.ProcessEnginePlugin` interface
-(or extend from `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.impl.AbstractKramaxxConfiguration`).
+(or extend from `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.impl.AbstractKramaxConfiguration`).
 The configurations are applied ordered using the spring ordering mechanism (`@Order` annotation and `Ordered` interface).
 So if you want your configuration to be applied before the default configurations, add a `@Order(Ordering.DEFAULT_ORDER - 1)` annotation to your class.
 If you want your configuration to be applied after the default configurations, add a `@Order(Ordering.DEFAULT_ORDER + 1)` annotation to your class.
 
 ```java
 @Configuration
-public class MyKramaxxConfiguration {
+public class MyKramaxConfiguration {
 
 	@Bean
 	@Order(Ordering.DEFAULT_ORDER + 1)
@@ -188,7 +188,7 @@ or
 
 @Component
 @Order(Ordering.DEFAULT_ORDER + 1)
-public class MyCustomConfiguration extends AbstractKramaxxConfiguration {
+public class MyCustomConfiguration extends AbstractKramaxConfiguration {
 
 	@Override
 	public void preInit(SpringProcessEngineConfiguration springProcessEngineConfiguration) {
@@ -200,7 +200,7 @@ public class MyCustomConfiguration extends AbstractKramaxxConfiguration {
 }
 ```
 
-## Kramaxx Engine Properties
+## Kramax Engine Properties
 In addition to the bean-based way of overriding process engine configuration properties, it is also possible
 to set those properties via an <code>application.yaml</code> configuration file. Instructions on how to use it
 can be found in the <a href="{{< relref "/get-started/spring-boot/configuration/">}}>Spring Boot Starter Guide</a>.
@@ -218,14 +218,14 @@ The available properties are as follows:
 
 <tr><td rowspan="15"><code>kramaxx.bpm</code></td>
 <td><code>.enabled</code></td>
-<td>Switch to disable the Kramaxx auto-configuration. Use to exclude Kramaxx in integration tests.</td>
+<td>Switch to disable the Kramax auto-configuration. Use to exclude Kramax in integration tests.</td>
 <td><code>true</code></td>
 </tr>
 
 <tr>
 <td><code>.process-engine-name</code></td>
 <td>Name of the process engine</td>
-<td>Kramaxx default value</td>
+<td>Kramax default value</td>
 </tr>
 
 <tr>
@@ -243,18 +243,18 @@ The available properties are as follows:
 <tr>
 <td><code>.default-serialization-format</code></td>
 <td>Default serialization format</td>
-<td>Kramaxx default value</td>
+<td>Kramax default value</td>
 </tr>
 
 <tr>
 <td><code>.history-level</code></td>
-<td>Kramaxx history level</td>
+<td>Kramax history level</td>
 <td>FULL</td>
 </tr>
 
 <tr>
 <td><code>.history-level-default</code></td>
-<td>Kramaxx history level to use when <code>history-level</code> is <code>auto</code>, but the level can not determined automatically</td>
+<td>Kramax history level to use when <code>history-level</code> is <code>auto</code>, but the level can not determined automatically</td>
 <td>FULL</td>
 </tr>
 
@@ -393,13 +393,13 @@ The available properties are as follows:
 <tr>
 <td><code>.table-prefix</code></td>
 <td>Prefix of the kramaxx database tables. Attention: The table prefix will <b>not</b> be applied if you  are using <code>schema-update</code>!</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
 <td><code>.schema-name</code></td>
 <td>The dataBase schema name</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
@@ -407,7 +407,7 @@ The available properties are as follows:
 <td>Controls if the engine executes the jdbc statements as Batch or not.
 It has to be disabled for some databases.
 See the <a href="{{<relref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">user guide</a> for further details.</td>
-<td><i>Kramaxx default value: true</i></td>
+<td><i>Kramax default value: true</i></td>
 </tr>
 
 <tr><td colspan="4"><b>Eventing</b></td></tr>
@@ -454,20 +454,20 @@ See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event
 <td rowspan="2"><code>kramaxx.bpm.metrics</code></td>
 <td><code>.enabled</code></td>
 <td>Enables metrics reporting</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
 <td><code>.db-reporter-activate</code></td>
 <td>Enables db metrics reporting</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr><td colspan="4"><b>Webapp</b></td></tr>
 <tr>
 <td rowspan="3"><code>kramaxx.bpm.webapp</code></td>
 <td><code>.enabled</code></td>
-<td>Switch to disable the Kramaxx Webapp auto-configuration.</td>
+<td>Switch to disable the Kramax Webapp auto-configuration.</td>
 <td><code>true</code></td>
 </tr>
 
@@ -485,7 +485,7 @@ Spring Boot behaviour is taken into account.</td>
 <td><code>.application-path</code></td>
 <td>Changes the application path of the webapp.
 <br/>
-When setting to <code>/</code>, the legacy behavior of Kramaxx Spring Boot Starter <= 3.4.x is restored.
+When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starter <= 3.4.x is restored.
 </td>
 <td><code>/kramaxx</code></td>
 </tr>
@@ -764,7 +764,7 @@ When setting to <code>/</code>, the legacy behavior of Kramaxx Spring Boot Start
 <tr>
 <td><code>kramaxx.bpm.rest-api.fetch-and-lock</code></td>
 <td><code>.queue-capacity</code></td>
-<td>Configure the blocking queue limit of long-polling Ã¢â‚¬ËœFetch and LockÃ¢â‚¬â„¢ requests.</td>
+<td>Configure the blocking queue limit of long-polling ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“Fetch and LockÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ requests.</td>
 <td><code>200</code></td>
 </tr>
 
@@ -780,19 +780,19 @@ When setting to <code>/</code>, the legacy behavior of Kramaxx Spring Boot Start
 <td rowspan="5"><code>kramaxx.bpm.authorization</code></td>
 <td><code>.enabled</code></td>
 <td>Enables authorization</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
 <td><code>.enabled-for-custom-code</code></td>
 <td>Enables authorization for custom code</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
 <td><code>.authorization-check-revokes</code></td>
 <td>Configures authorization check revokes</td>
-<td><i>Kramaxx default value</i></td>
+<td><i>Kramax default value</i></td>
 </tr>
 
 <tr>
@@ -935,7 +935,7 @@ kramaxx:
 
 You can configure the **Session Cookie** for the Spring Boot application via the `application.yaml` configuration file.
 
-Kramaxx Spring Boot Starter versions based on Spring Boot 4.x:
+Kramax Spring Boot Starter versions based on Spring Boot 4.x:
 
 ```yaml
 server:
@@ -951,7 +951,7 @@ Further details of the session cookie like the `SameSite` flag can be configured
 
 # Configuring Spin DataFormats
 
-The Kramaxx Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
+The Kramax Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
 `kramaxx-spin-dataformat-json-jackson` dependency is detected on the classpath. To include a
 `DataFormatConfigurator` for the desired Jackson Java 8 module, the appropriate dependency needs
 to be included on the classpath as well. Note that `kramaxx-engine-plugin-spin`
@@ -1000,4 +1000,4 @@ To provide additional configurations, the following actions need to be performed
 1. Provide a custom implementation of `org.vodafone.kramaxx.spin.spi.DataFormatConfigurator`;
 1. Add the appropriate key-value pair of the fully qualified classnames of the interface and the
    implementation to the `META-INF/spring.factories` file;
-1. Ensure that the artifact containing the configurator is reachable from SpinÃ¢â‚¬â„¢s classloader.
+1. Ensure that the artifact containing the configurator is reachable from SpinÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s classloader.

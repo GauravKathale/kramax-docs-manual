@@ -10,7 +10,7 @@ menu:
 
 ---
 
-In Kramaxx Connect a `Connectors` class exists which automatically detects
+In Kramax Connect a `Connectors` class exists which automatically detects
 every connector in the classpath. It can be used to get the HTTP connector
 instance by its connector ID, which is `http-connector`.
 
@@ -21,7 +21,7 @@ HttpConnector http = Connectors.getConnector(HttpConnector.ID);
 
 # Configure Apache HTTP Client
 
-Kramaxx Connect HTTP client uses the Apache HTTP client to make HTTP requests. Accordingly, it supports the same configuration options.
+Kramax Connect HTTP client uses the Apache HTTP client to make HTTP requests. Accordingly, it supports the same configuration options.
 
 ## Default Configuration
 
@@ -71,7 +71,7 @@ org.vodafone.kramaxx.connect.example.HttpConnectorConfigurator
 ```
 
 {{< note title="Apache HTTP Client 5.x Migration" class="info" >}}
-Starting from Kramaxx 2.0.0, the Connect HTTP connector uses Apache HTTP Client 5.x. While the high-level Connect API remains the same, custom configurations and extensions need to use the new HttpClient 5.x packages (`org.apache.hc.client5.*` and `org.apache.hc.core5.*`) instead of the previous 4.x packages (`org.apache.http.*`).
+Starting from Kramax 2.0.0, the Connect HTTP connector uses Apache HTTP Client 5.x. While the high-level Connect API remains the same, custom configurations and extensions need to use the new HttpClient 5.x packages (`org.apache.hc.client5.*` and `org.apache.hc.core5.*`) instead of the previous 4.x packages (`org.apache.http.*`).
 {{< /note >}}
 
 # Requests

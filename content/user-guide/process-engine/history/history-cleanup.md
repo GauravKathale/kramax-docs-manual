@@ -34,7 +34,7 @@ Note: The exact time at which data is removed depends on a couple of configurati
 
 ### Cleanable instances
 
-The following elements of Kramaxx history are cleanable:
+The following elements of Kramax history are cleanable:
 
 * Process Instances
 * Decision Instances
@@ -111,7 +111,7 @@ The *end-time-based cleanup strategy* deletes data whose end time plus TTL has e
 Strengths:
 
 * Changing the TTL of a definition also affects already written history data.
-* Can remove data from any Kramaxx version.
+* Can remove data from any Kramax version.
 
 Limitations:
 

@@ -11,7 +11,7 @@ menu:
 
 ---
 
-Kramaxx provides a Spring Boot Starter for the External Task Client. This allows you to easily add 
+Kramax provides a Spring Boot Starter for the External Task Client. This allows you to easily add 
 the External Task Client to your Spring Boot application by adding the following Maven dependency to 
 your `pom.xml` file:
 ```xml
@@ -199,7 +199,7 @@ Available properties:
     <tr>
       <td><code>base-url</code></td>
       <td>
-        <strong>Mandatory:</strong> Base url of the Kramaxx Runtime
+        <strong>Mandatory:</strong> Base url of the Kramax Runtime
         REST API.
       </td>
       <td></td>

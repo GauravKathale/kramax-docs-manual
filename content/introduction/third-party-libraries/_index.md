@@ -10,7 +10,7 @@ menu:
 
 ---
 
-This section covers third-party libraries and their use in Kramaxx. It provides the license book that lists the third-party dependencies that Kramaxx distributes along with its code.
+This section covers third-party libraries and their use in Kramax. It provides the license book that lists the third-party dependencies that Kramax distributes along with its code.
 
 For legal reference and any other license-related aspects please refer to [Licences]({{< relref "/introduction/licenses.md" >}}).
 

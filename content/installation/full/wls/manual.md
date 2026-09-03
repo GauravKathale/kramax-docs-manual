@@ -13,27 +13,27 @@ menu:
 ---
 
 
-This section will describe how you can install Kramaxx and its components on Oracle WebLogic.
+This section will describe how you can install Kramax and its components on Oracle WebLogic.
 
 {{< note title="Reading this Guide" class="info" >}}
 This guide uses a number of variables to denote common path names and constants.
 
 * `$WLS_DOMAIN_HOME` points to the Oracle WebLogic application server domain directory (typically something like `/opt/oracle/WebLogic/domains/mydomain`).
-* `$PLATFORM_VERSION` denotes the version of Kramaxx you want to or have installed, e.g. `1.X.Y`.
-* `$WLS_DISTRIBUTION` represents the downloaded Kramaxx distribution for the Oracle WebLogic Application Server, e.g., `fuxnova-oracle-wls-$PLATFORM_VERSION.zip`.
+* `$PLATFORM_VERSION` denotes the version of Kramax you want to or have installed, e.g. `1.X.Y`.
+* `$WLS_DISTRIBUTION` represents the downloaded Kramax distribution for the Oracle WebLogic Application Server, e.g., `fuxnova-oracle-wls-$PLATFORM_VERSION.zip`.
 
-The distribution is available at the Kramaxx release page.
+The distribution is available at the Kramax release page.
 You will be asked to enter the credentials you received during the trial or subscription process.
 {{< /note >}}
 
 # Setup
 
-Before you can install the Kramaxx components, you need to perform a number of required setup steps.
+Before you can install the Kramax components, you need to perform a number of required setup steps.
 
 
 ## Resource Configuration
 
-Kramaxx requires a set of resources that need to be configured at the application server level:
+Kramax requires a set of resources that need to be configured at the application server level:
 
 * One or multiple datasources to be used by the engine.
 * A work manager for the job executor.
@@ -43,7 +43,7 @@ Kramaxx requires a set of resources that need to be configured at the applicatio
 
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
-* Create a database schema for Kramaxx yourself.
+* Create a database schema for Kramax yourself.
 * Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In WebLogic, this is done in the `bpm-platform.xml`, located in the `$WLS_HOME\modules\kramaxx-oracle-weblogic-ear-$VERSION.ear\kramaxx-oracle-weblogic-service.jar\META-INF\` folder.
@@ -51,7 +51,7 @@ When you create the tables manually, then you have to configure the engine to **
 
 ## JDBC/Datasource Configuration
 
-Kramaxx uses one or multiple process engines. Use the Oracle WebLogic Server Administration Console for the configuration of the datasources.
+Kramax uses one or multiple process engines. Use the Oracle WebLogic Server Administration Console for the configuration of the datasources.
 The JNDI name of the datasource must be equal to the name used in the datasource-Element of the process engine(s) configured in the bpm-platform.xml.
 
 
@@ -59,7 +59,7 @@ The JNDI name of the datasource must be equal to the name used in the datasource
 
 The default JNDI name is `jdbc/ProcessEngine`
 
-The following screenshot shows the mandatory configuration of a datasource for Kramaxx:
+The following screenshot shows the mandatory configuration of a datasource for Kramax:
 
 {{< img outdated="true" src="../img/datasource-jndi.png" title="JNDI Name" >}}
 
@@ -70,7 +70,7 @@ In this section we explain how to add a datasource using the WebLogic Remote Con
 3. Navigate to the **"Services / Data Sources"** page.
 4. Click the **"New"** Button.
 5. On the next page, enter a name for the datasource.
-6. Enter the required JNDI Name **"jdbc/ProcessEngine"**, which is **mandatory** for Kramaxx.
+6. Enter the required JNDI Name **"jdbc/ProcessEngine"**, which is **mandatory** for Kramax.
 7. Select available target.
 8. In **"Data Source Type"** select **"Generic Data Source"**.
 9. Select your database type in **"Database Type"** field.
@@ -83,12 +83,12 @@ Note that you can configure multiple datasources used by different process engin
 
 # Required Components
 
-The following steps are required to deploy Kramaxx onto an Oracle WebLogic server.
+The following steps are required to deploy Kramax onto an Oracle WebLogic server.
 
 
-## Install Kramaxx Domain Libraries
+## Install Kramax Domain Libraries
 
-The domain libraries include the Kramaxx engine and some utility JARs. The domain libraries must be visible to both Kramaxx as well as all process applications.
+The domain libraries include the Kramax engine and some utility JARs. The domain libraries must be visible to both Kramax as well as all process applications.
 
 The domain libraries can be found in the lib folder of the distribution:
 
@@ -111,9 +111,9 @@ Restart the Oracle WebLogic Server after this operation.
 You can change the location of the domain libraries with the `-Dweblogic.ext.dirs`
 [startup option](https://docs.oracle.com/middleware/12213/wls/START/overview.htm#START-GUID-69C7DB81-B1C5-4BCB-ADCF-2F44B66DD9F8).
 
-## Install Kramaxx Modules
+## Install Kramax Modules
 
-Kramaxx includes one module in the modules folder of the distribution:
+Kramax includes one module in the modules folder of the distribution:
 
 ```
 kramaxx-oracle-wls-$PLATFORM_VERSION.zip
@@ -121,11 +121,11 @@ kramaxx-oracle-wls-$PLATFORM_VERSION.zip
       |-- kramaxx-oracle-weblogic-ear-$PLATFORM_VERSION.ear
 ```
 
-The `kramaxx-oracle-weblogic-ear` is a Jakarta EE 8 application providing the Kramaxx services. It contains an embedded JCA Resource Adapter, the kramaxx-oracle-weblogic-rar, which provides the jobexecutor service to Kramaxx.
+The `kramaxx-oracle-weblogic-ear` is a Jakarta EE 8 application providing the Kramax services. It contains an embedded JCA Resource Adapter, the kramaxx-oracle-weblogic-rar, which provides the jobexecutor service to Kramax.
 It must be installed to your Oracle WebLogic Application Server.
 
 
-## Install the Kramaxx Application
+## Install the Kramax Application
 
 In this section, we explain how the kramaxx-oracle-weblogic-ear module can be installed using the Oracle WebLogic Server Administration Console.
 The installation process is composed of two steps:
@@ -144,11 +144,11 @@ First the `kramaxx-oracle-weblogic-ear-$PLATFORM_VERSION.ear` RAR file must be i
 4. Click the **"New"** button.
 5. Fill in `kramaxx-bpm-platform` in **"Name"** field.
 6. Select available target.
-7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-oracle-weblogic-ear-$PLATFORM_VERSION.ear` from the modules folder of Kramaxx for Oracle WebLogic Application Server distribution.
+7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-oracle-weblogic-ear-$PLATFORM_VERSION.ear` from the modules folder of Kramax for Oracle WebLogic Application Server distribution.
 8. Click **"Create"** button.
 9. Press **"Shopping Card"** button and commit your changes.
 {{< note title="Heads Up!" class="info" >}}
-The names of the [JNDI Bindings for Kramaxx Services]({{< relref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) consist of the name of the enterprise application deployment.
+The names of the [JNDI Bindings for Kramax Services]({{< relref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) consist of the name of the enterprise application deployment.
 
 **Please note:** If you change the name of the enterprise application deployment, the JNDI names change as well.
 {{< /note >}}
@@ -171,7 +171,7 @@ This section describes how to install optional components onto an Oracle WebLogi
 
 ## Cockpit, Tasklist and Admin
 
-The web application archive that contains Kramaxx Cockpit and Tasklist resides under `webapps/kramaxx-webapp-ee-wls-$PLATFORM_VERSION.war` in the Oracle WebLogic Application Server distribution archive.
+The web application archive that contains Kramax Cockpit and Tasklist resides under `webapps/kramaxx-webapp-ee-wls-$PLATFORM_VERSION.war` in the Oracle WebLogic Application Server distribution archive.
 
 In this section we explain how to install the WAR file using the WebLogic Remote Console:
 
@@ -181,7 +181,7 @@ In this section we explain how to install the WAR file using the WebLogic Remote
 4. Click the **"New"** button.
 5. Fill in `kramaxx-webapp` in **"Name"** field.
 6. Select available target.
-7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-webapp-wls-$PLATFORM_VERSION.war` from the modules folder of Kramaxx for Oracle WebLogic Application Server distribution.
+7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-webapp-wls-$PLATFORM_VERSION.war` from the modules folder of Kramax for Oracle WebLogic Application Server distribution.
 8. (optional) If you want to start your application after deployment select **"Start Application"** option in **"On Deployment"** field.
 9. Click **"Create"** button.
 10. Press **"Shopping Card"** button and commit your changes.
@@ -201,7 +201,7 @@ You can check if everything went well by accessing Cockpit, Tasklist and Admin v
 
 ## REST API
 
-The Kramaxx REST API WAR file resides under `webapps/kramaxx-engine-rest-$PLATFORM_VERSION-wls.war` in the Oracle WebLogic Application Server distribution archive.
+The Kramax REST API WAR file resides under `webapps/kramaxx-engine-rest-$PLATFORM_VERSION-wls.war` in the Oracle WebLogic Application Server distribution archive.
 
 In this section we explain how to install the WAR file using the WebLogic Remote Console:
 
@@ -211,7 +211,7 @@ In this section we explain how to install the WAR file using the WebLogic Remote
 4. Click the **"New"** button.
 5. Fill in `kramaxx-rest` in **"Name"** field.
 6. Select available target.
-7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-engine-rest-$PLATFORM_VERSION-wls.war` from the modules folder of Kramaxx for Oracle WebLogic Application Server distribution.
+7. Use upload icon in right corner of **"Source"** field to select the `kramaxx-engine-rest-$PLATFORM_VERSION-wls.war` from the modules folder of Kramax for Oracle WebLogic Application Server distribution.
 8. (optional) If you want to start your application after deployment select **"Start Application"** option in **"On Deployment"** field.
 9. Click **"Create"** button.
 10. Press **"Shopping Card"** button and commit your changes.

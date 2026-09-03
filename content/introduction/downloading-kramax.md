@@ -13,7 +13,7 @@ menu:
 
 # Prerequisites
 
-Before downloading Kramaxx, make sure you have a JRE (Java Runtime Environment), or better, a JDK
+Before downloading Kramax, make sure you have a JRE (Java Runtime Environment), or better, a JDK
 (Java Development Kit) installed. Please check the supported [Java versions]({{< relref "/introduction/supported-environments.md#java" >}}).
 
 [Download JDK][get-jdk]
@@ -21,8 +21,8 @@ Before downloading Kramaxx, make sure you have a JRE (Java Runtime Environment),
 
 # Download the Runtime
 
-Kramaxx is a flexible framework which can be used in different contexts. See [Architecture Overview]({{< relref "/introduction/architecture.md" >}}) for more details. Based on how you want
-to use Kramaxx, you can choose a different distribution or runtime environment like [Spring Boot][run-with-spring-boot] or [Docker][run-with-docker].
+Kramax is a flexible framework which can be used in different contexts. See [Architecture Overview]({{< relref "/introduction/architecture.md" >}}) for more details. Based on how you want
+to use Kramax, you can choose a different distribution or runtime environment like [Spring Boot][run-with-spring-boot] or [Docker][run-with-docker].
 
 * [Download page][community-download-page]
 
@@ -30,7 +30,7 @@ to use Kramaxx, you can choose a different distribution or runtime environment l
 ## Full Distribution
 
 Download the full distribution if you want to use a [shared process engine][shared-engine] or if you
-want to get to know Kramaxx quickly, without any additional setup or installation steps required.
+want to get to know Kramax quickly, without any additional setup or installation steps required.
 
 The full distribution bundles
 
@@ -42,21 +42,21 @@ The full distribution bundles
 {{< note title="Server/Container" class="info" >}}
   If you download the full distribution for an open-source application
   server/container, the container itself is included. For example, if you download the Tomcat
-  distribution, Tomcat itself is included and the Kramaxx binaries (process engine and
+  distribution, Tomcat itself is included and the Kramax binaries (process engine and
   web apps) are pre-installed in the container. This is not true for the the Oracle WebLogic
   and IBM WebSphere downloads; these downloads do not include the application servers themselves.
 {{< /note >}}
 
 {{< note title="Wildfly Application Server" class="info" >}}
-  Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.kramaxx.vodafone.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright Ã‚Â© JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
+  Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.kramaxx.vodafone.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright Ãƒâ€šÃ‚Â© JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
 {{< /note >}}
 
 See the [Installation Guide][installation-guide-full] for additional details.
 
 
-# Download Kramaxx Modeler
+# Download Kramax Modeler
 
-Kramaxx Modeler is a modeling Tool for BPMN 2.0 and DMN 1.3. Kramaxx Modeler can be downloaded
+Kramax Modeler is a modeling Tool for BPMN 2.0 and DMN 1.3. Kramax Modeler can be downloaded
 from the [GitHub releases](https://github.com/vodafone/kramaxx-modeler/releases/latest).
 
 

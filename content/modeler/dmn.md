@@ -1,6 +1,6 @@
 ---
 
-title: 'Editing DMN in Kramaxx Modeler'
+title: 'Editing DMN in Kramax Modeler'
 weight: 20
 
 menu:
@@ -18,7 +18,7 @@ menu:
 
 {{< img src="img/create-dmn.png" title="New DMN Diagram" >}}
 
-To start modeling, create a new DMN 1.3 diagram for the Kramaxx Platform by selecting **Create diagram > Create new DMN diagram (Kramaxx Platform)** in the top-level menu.
+To start modeling, create a new DMN 1.3 diagram for the Kramax Platform by selecting **Create diagram > Create new DMN diagram (Kramax Platform)** in the top-level menu.
 
 ## Start Modeling
 
@@ -38,7 +38,7 @@ To save your state of work, click **File > Save File As...** in the top-level me
 
 ## DMN Coverage
 
-The Kramaxx Modeler covers the following elements:
+The Kramax Modeler covers the following elements:
 
 - Decision (Tables and Literal Expressions)
 - Input Data

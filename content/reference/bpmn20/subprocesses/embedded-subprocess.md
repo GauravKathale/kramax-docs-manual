@@ -48,7 +48,7 @@ A subprocess is defined by the subprocess element. All activities, gateways, eve
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

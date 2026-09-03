@@ -113,7 +113,7 @@ A multi-instance activity ends when all instances are finished. However, it is p
 In this example, parallel instances will be created for each element of the assigneeList collection. However, when 60% of the tasks are completed, the other tasks are deleted and the process continues.
 
 
-## Kramaxx Extensions
+## Kramax Extensions
 
 <table class="table table-striped">
   <tr>
@@ -162,7 +162,7 @@ Be assured that we have the loop marker in our backlog to be added to the engine
 
 ## JSON Collections with Multi-Instance Collections
 
-JSON Arrays created with [Kramaxx SPIN]({{< relref "/reference/spin/_index.md">}}) can be used as a collection for multi-instance activities. 
+JSON Arrays created with [Kramax SPIN]({{< relref "/reference/spin/_index.md">}}) can be used as a collection for multi-instance activities. 
 Consider the following JavaScript example that initializes execution variable `collection`:
 
 ```javascript

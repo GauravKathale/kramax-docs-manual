@@ -37,7 +37,7 @@ Note that the processEngineConfiguration bean uses the {{< javadocref page="org/
 
 # Configure a Container-Managed Process Engine as a Spring Bean
 
-If you want the process engine to be registered with the Kramaxx ProcessEngineService, you must use `org.vodafone.kramaxx.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` instead of the ProcessEngineFactoryBean shown in the example above. You will also need to ensure:
+If you want the process engine to be registered with the Kramax ProcessEngineService, you must use `org.vodafone.kramaxx.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` instead of the ProcessEngineFactoryBean shown in the example above. You will also need to ensure:
 
 1. That none of your webapps include kramaxx-webapp\*.jar within their own lib folder, this should be at a shared level.
 2. That your server.xml contains JNDI entries for the 'ProcessEngineService' and 'ProcessApplicationService' as below:
@@ -51,19 +51,19 @@ If you want the process engine to be registered with the Kramaxx ProcessEngineSe
     <Resource name="java:global/kramaxx-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaxx.bpm.ProcessEngineService"
               auth="Container"
               type="org.vodafone.kramaxx.bpm.ProcessEngineService"
-              description="Kramaxx Platform Process Engine Service"
+              description="Kramax Platform Process Engine Service"
               factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
 
     <Resource name="java:global/kramaxx-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaxx.bpm.ProcessApplicationService"
               auth="Container"
               type="org.vodafone.kramaxx.bpm.ProcessApplicationService"
-              description="Kramaxx Platform Process Application Service"
+              description="Kramax Platform Process Application Service"
               factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
        ...
   </GlobalNamingResources>
 ```
 
-In that case the constructed process engine object is registered with Kramaxx and can be referenced for creating process application deployments and exposed through the runtime container integration.
+In that case the constructed process engine object is registered with Kramax and can be referenced for creating process application deployments and exposed through the runtime container integration.
 
 
 # Configure a Process Engine Plugin

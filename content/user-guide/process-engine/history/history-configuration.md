@@ -51,7 +51,7 @@ ProcessEngine processEngine = ProcessEngineConfiguration
   .buildProcessEngine();
 ```
 
-It can also be set using Spring XML or a deployment descriptor (bpm-platform.xml, processes.xml). When using the Kramaxx Wildfly Subsystem, the property can be set through Wildfly configuration (standalone.xml, domain.xml).
+It can also be set using Spring XML or a deployment descriptor (bpm-platform.xml, processes.xml). When using the Kramax Wildfly Subsystem, the property can be set through Wildfly configuration (standalone.xml, domain.xml).
 
 ```xml
 <property name="history">audit</property>
@@ -60,7 +60,7 @@ It can also be set using Spring XML or a deployment descriptor (bpm-platform.xml
 Note that when using the default history backend, the history level is stored in the database and cannot be changed later.
 
 {{< note title="History levels and Cockpit" class="info" >}}
-[Kramaxx Cockpit]({{< relref "/webapps/cockpit/_index.md" >}}) web application works best with History Level set to `FULL`. "Lower" History Levels will disable certain history-related features.
+[Kramax Cockpit]({{< relref "/webapps/cockpit/_index.md" >}}) web application works best with History Level set to `FULL`. "Lower" History Levels will disable certain history-related features.
 {{< /note >}}
 
 
@@ -398,7 +398,7 @@ events. The reason is that the process engine can be run on multiple cluster nod
 * in a cluster, events happening in a single process instance may be generated on different nodes
   among which the clock may not be synced accurately down to nanoseconds.
 
-To work around this, the Kramaxx engine generates sequence numbers which can be used to *partially*
+To work around this, the Kramax engine generates sequence numbers which can be used to *partially*
 sort history events by their occurrence.
 
 At a BPMN level this means that instances of concurrent activities (example: activities on different

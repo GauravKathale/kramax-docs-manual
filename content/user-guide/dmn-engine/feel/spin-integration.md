@@ -12,7 +12,7 @@ menu:
 
 ---
 
-This page documents how Kramaxx Spin can be used together with the Scala FEEL Engine. Furthermore, 
+This page documents how Kramax Spin can be used together with the Scala FEEL Engine. Furthermore, 
 it is shown how Spin data types are mapped to FEEL data types, as well as some rules when the 
 former data structures are transformed into the latter.
 
@@ -20,7 +20,7 @@ former data structures are transformed into the latter.
 
 The Spin integration for the FEEL Engine is implemented into the 
 [Spin Process Engine Plugin][spin plugin] since it is expected that the Process Engine should be 
-capable of using Spin, if another component of Kramaxx (here, the FEEL Engine) 
+capable of using Spin, if another component of Kramax (here, the FEEL Engine) 
 supports its usage. 
 
 In the case of a standalone DMN Engine setup, the Spin Process Engine Plugin would need to be added 

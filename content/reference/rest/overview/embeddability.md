@@ -24,7 +24,7 @@ Furthermore, the engine classes and Jackson's `com.fasterxml.jackson.jaxrs:jacks
 **Step 1:** Add the REST API to your project as a Maven dependency.
 
 {{< note title="" class="info" >}}
-  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
+  Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramax project.
 {{< /note >}}
 
 ```xml
@@ -55,17 +55,17 @@ public class MyApplication extends Application {
     // add your own classes
     ...
     // add all kramaxx engine rest resources (or just add those that you actually need).
-    classes.addAll(KramaxxRestResources.getResourceClasses());
+    classes.addAll(KramaxRestResources.getResourceClasses());
 
     // mandatory
-    classes.addAll(KramaxxRestResources.getConfigurationClasses());
+    classes.addAll(KramaxRestResources.getConfigurationClasses());
 
     return classes;
   }
 }
 ```
 
-`KramaxxRestResources.getResourceClasses()` contains two JAX-RS resources that serve as the entry points. One of these (`org.vodafone.kramaxx.bpm.engine.rest.impl.NamedProcessEngineRestServiceImpl`) provides all of the REST resources listed in this document on paths beginning with `/engine/{name}` while the other (`org.vodafone.kramaxx.bpm.engine.rest.impl.DefaultProcessEngineRestServiceImpl`) provides access to the default engine's resources on the root path `/`.
+`KramaxRestResources.getResourceClasses()` contains two JAX-RS resources that serve as the entry points. One of these (`org.vodafone.kramaxx.bpm.engine.rest.impl.NamedProcessEngineRestServiceImpl`) provides all of the REST resources listed in this document on paths beginning with `/engine/{name}` while the other (`org.vodafone.kramaxx.bpm.engine.rest.impl.DefaultProcessEngineRestServiceImpl`) provides access to the default engine's resources on the root path `/`.
 
 To restrict the exposed REST resources to specific types (e.g., only process-definition-related methods), a subclass of `org.vodafone.kramaxx.bpm.engine.rest.impl.AbstractProcessEngineRestServiceImpl` can be implemented and registered with the JAX-RS application. Such a subclass can control which resources get exposed by offering JAX-RS-annotated methods. See the sources of `NamedProcessEngineRestServiceImpl` and `DefaultProcessEngineRestServiceImpl` for an example. **Note**: The path to a subresource should always match the path defined in the subresource's interface.
 

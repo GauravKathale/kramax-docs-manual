@@ -8,7 +8,7 @@ menu:
     name: "Model a Process"
     parent: "get-started-spring-boot"
     identifier: "get-started-spring-boot-model"
-    pre: "Learn the basics of handling the Kramaxx Modeler and learn how to model and configure a fully executable process."
+    pre: "Learn the basics of handling the Kramax Modeler and learn how to model and configure a fully executable process."
 
 ---
 
@@ -26,7 +26,7 @@ model and interact with the process from inside our Spring beans. In this sectio
 
 ## Model an Executable BPMN 2.0 Process and Deploy It
 
-Start by modeling an executable process using the Kramaxx Modeler. The process should look as depicted in the screenshot below.
+Start by modeling an executable process using the Kramax Modeler. The process should look as depicted in the screenshot below.
 
 {{< img src="../img/loanApproval.png" >}}
 
@@ -41,16 +41,16 @@ Once it is saved in the application classpath, it will be automatically deployed
 
 ## Create Process Application
 
-We recommend to declare the process application in your Kramaxx Spring Boot application, which gives additional configuration possibilities and will help us in the current demo
+We recommend to declare the process application in your Kramax Spring Boot application, which gives additional configuration possibilities and will help us in the current demo
 to catch the "post-deploy" event to start the process instance at that point.
 
 To declare the process application, just add the `@EnableProcessApplication` annotation on your `WebappExampleProcessApplication` class and put the empty `processes.xml` file in the
-`src/main/resources/META-INF` folder. The file is required by the Kramaxx Engine for every process application, but in our case it will stay empty.
+`src/main/resources/META-INF` folder. The file is required by the Kramax Engine for every process application, but in our case it will stay empty.
 
 ## Start a Process Instance after Process Application has been Deployed
 
 The next step consists of starting a process instance from our process application class. For this, we will process `PostDeployEvent`, which is fired as soon as
-our process application has been deployed to the Kramaxx engine.
+our process application has been deployed to the Kramax engine.
 
 ```java
 ...
@@ -64,7 +64,7 @@ our process application has been deployed to the Kramaxx engine.
 ...
 ```
 
-Note that we can easily inject the Kramaxx engine service via the `@Autowired` annotation.
+Note that we can easily inject the Kramax engine service via the `@Autowired` annotation.
 
 ## Rebuild and test
 

@@ -7,7 +7,7 @@ menu:
   main:
     identifier: "cmmn-ref-extensions-elements"
     parent: "cmmn-ref-extensions"
-    pre: "Reference of Kramaxx Extension Elements for CMMN."
+    pre: "Reference of Kramax Extension Elements for CMMN."
 
 ---
 

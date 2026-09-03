@@ -12,7 +12,7 @@ menu:
 
 For working with XML, the Spin functions `org.vodafone.kramaxx.spin.Spin.S` and `org.vodafone.kramaxx.spin.Spin.XML` can be used as entry points. The latter offers strongly-typed access to Spin's XML API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing XML as well as mapping XML to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary XML format.
 
-The following provides examples on how Kramaxx Spin can be used in the process engine to work with XML data. For illustration purposes, let us assume that a String process variable `customer` containing XML exists. It has the following content:
+The following provides examples on how Kramax Spin can be used in the process engine to work with XML data. For illustration purposes, let us assume that a String process variable `customer` containing XML exists. It has the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -24,7 +24,7 @@ The following provides examples on how Kramaxx Spin can be used in the process e
 </customer>
 ```
 
-Further documentation about the usage of Spin can be found in the [Kramaxx Spin Dataformat Reference]({{< relref "/reference/spin/_index.md" >}}).
+Further documentation about the usage of Spin can be found in the [Kramax Spin Dataformat Reference]({{< relref "/reference/spin/_index.md" >}}).
 
 
 # Expression Language Integration

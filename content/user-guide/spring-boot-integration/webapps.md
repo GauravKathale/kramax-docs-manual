@@ -31,7 +31,7 @@ You can change the application path with the following configuration property in
 kramaxx.bpm.webapp.application-path=/my/application/path
 ```
 
-By default, the starter registers a controller to redirect `/` to Kramaxx's bundled `index.html`.
+By default, the starter registers a controller to redirect `/` to Kramax's bundled `index.html`.
 To disable this, you have to add to your application properties:
 ```properties
 kramaxx.bpm.webapp.index-redirect-enabled=false
@@ -39,11 +39,11 @@ kramaxx.bpm.webapp.index-redirect-enabled=false
 
 ## Error Pages
 
-The default error handling coming with the Spring Boot ('whitelabel' error page) is enabled in the starter. To switch to the Kramaxx error pages (`webjar/META-INF/resources/webjars/kramaxx/error-XYZ-page.html`), please put them to the application folder structure under `/src/main/resources/public/error/XYZ.html`.
+The default error handling coming with the Spring Boot ('whitelabel' error page) is enabled in the starter. To switch to the Kramax error pages (`webjar/META-INF/resources/webjars/kramaxx/error-XYZ-page.html`), please put them to the application folder structure under `/src/main/resources/public/error/XYZ.html`.
 
 ## Building Custom REST APIs
 
-The Kramaxx Web Applications use a `CSRF Prevention Filter` that expects a `CSRF Token` on any 
+The Kramax Web Applications use a `CSRF Prevention Filter` that expects a `CSRF Token` on any 
 modifying request for paths beginning with `/kramaxx/api/` or `/kramaxx/app/`. Any modifying requests 
 mapped to these paths will fail, and the current session will be ended if no CSRF Token is present.
 You can avoid this by registering your resources on different paths or add your resources to the

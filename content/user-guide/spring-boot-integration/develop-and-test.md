@@ -91,18 +91,18 @@ If a static accessor needs to be used (e.g. processEngines.getProcessEngine(name
 ```
 Here, the `kramaxx.bpm.process-engine-name=foo` will set (a unique name) "foo" as the Process Engine name.
 
-## Kramaxx Assertions
+## Kramax Assertions
 
-The [Kramaxx Assertions]({{< relref "/user-guide/testing/_index.md#kramaxx-assertions" >}}) library is 
-integrated with the Kramaxx Spring Boot Starter in
+The [Kramax Assertions]({{< relref "/user-guide/testing/_index.md#kramaxx-assertions" >}}) library is 
+integrated with the Kramax Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 
 ### Using Assertions with Context Caching
 
-Out of the box, the Kramaxx Assertions library tries to use the
+Out of the box, the Kramax Assertions library tries to use the
 default engine or the (single) one that is available. Since when using
 Context Caching multiple engines are used in different contexts, binding
-the correct Process Engine to the Kramaxx Assertions library is required
+the correct Process Engine to the Kramax Assertions library is required
 for both caching and assertions to work correctly. This can be done
 through the following initialization code in the test class:
 

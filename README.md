@@ -1,8 +1,8 @@
 [![VODAFONE - Incubating](https://cdn.jsdelivr.net/gh/vodafone/contrib-toolbox@master/images/badge-incubating.svg)](https://community.vodafone.org/docs/governance/Software-Projects/stages/incubating)
 
-# The Kramaxx Documentation Sources
+# The Kramax Documentation Sources
 
-This repository contains the sources of the Kramaxx documentation.
+This repository contains the sources of the Kramax documentation.
 
 **Important:** _do NOT change the content of `themes/kramaxx` directory directly!_
 Instead, change the [theme](//github.com/vodafone/kramaxx-docs-theme).

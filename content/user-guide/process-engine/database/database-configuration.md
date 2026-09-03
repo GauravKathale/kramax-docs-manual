@@ -9,7 +9,7 @@ menu:
 
 ---
 
-There are two ways to configure the database that the Kramaxx engine will use. The first option is to define the JDBC properties of the database:
+There are two ways to configure the database that the Kramax engine will use. The first option is to define the JDBC properties of the database:
 
 * `jdbcUrl`: JDBC URL of the database.
 * `jdbcDriver`: implementation of the driver for the specific database type.
@@ -64,14 +64,14 @@ Alternatively, a `javax.sql.DataSource` implementation can be used (e.g., DBCP f
     ...
 ```
 
-Note that Kramaxx does not ship with a library that allows to define such a data source. So you have to make sure that the libraries (e.g., from DBCP) are on your classpath.
+Note that Kramax does not ship with a library that allows to define such a data source. So you have to make sure that the libraries (e.g., from DBCP) are on your classpath.
 
 The following properties can be set, regardless of whether you are using the JDBC or data source approach:
 
 * `databaseType`: It's normally not necessary to specify this property as it is automatically analyzed from the database connection meta data. Should only be specified in case automatic detection fails. Possible values: {h2, mysql, oracle, postgres, mssql, db2, mariadb}. This setting will determine which create/drop scripts and queries will be used. See the 'supported databases' section for an overview of which types are supported.</li>
 * `databaseSchemaUpdate`: Allows to set the strategy to handle the database schema on process engine boot and shutdown.
-  * `true` (default): Upon building the process engine, a check is performed whether the Kramaxx tables exist in the database. If they don't exist, they are created. It must be ensured that the version of the DB schema matches the version of the process engine library, unless performing a [Rolling Update]({{< relref "/update/rolling-update.md" >}}). Updates of the database schema have to be done manually as described in the [Update and Migration Guide]({{< relref "/update/_index.md" >}}).
-  * `false`: Does not perform any checks and assumes that the Kramaxx table exist in the database. It must be ensured that the version of the DB schema matches the version of the process engine library, unless performing a [Rolling Update]({{< relref "/update/rolling-update.md" >}}). Updates of the database schema have to be done manually as described in the [Update and Migration Guide]({{< relref "/update/_index.md" >}}).
+  * `true` (default): Upon building the process engine, a check is performed whether the Kramax tables exist in the database. If they don't exist, they are created. It must be ensured that the version of the DB schema matches the version of the process engine library, unless performing a [Rolling Update]({{< relref "/update/rolling-update.md" >}}). Updates of the database schema have to be done manually as described in the [Update and Migration Guide]({{< relref "/update/_index.md" >}}).
+  * `false`: Does not perform any checks and assumes that the Kramax table exist in the database. It must be ensured that the version of the DB schema matches the version of the process engine library, unless performing a [Rolling Update]({{< relref "/update/rolling-update.md" >}}). Updates of the database schema have to be done manually as described in the [Update and Migration Guide]({{< relref "/update/_index.md" >}}).
   * `create-drop`: Creates the schema when the process engine is being created and drops the schema when the process engine is being closed.
 
 {{< note title="Supported Databases" class="info" >}}
@@ -93,7 +93,7 @@ Here are some sample JDBC urls:
 
 ### Business Key
 
-Since the release of Kramaxx.0.0-alpha9, the unique constraint for the business key is removed in the runtime and history tables and the database schema create and drop scripts.
+Since the release of Kramax.0.0-alpha9, the unique constraint for the business key is removed in the runtime and history tables and the database schema create and drop scripts.
 If you rely on the constraint, you can add it manually to your schema by issuing following sql statements:
 
 DB2
@@ -173,7 +173,7 @@ Most database management systems provide four different isolation levels to be s
 * REPEATABLE READS
 * SERIALIZABLE 
 
-The required isolation level to run Kramaxx with is **READ COMMITTED**, which may have a different name according to your database system. Setting the level to REPEATABLE READS is known to cause deadlocks, so one needs to be careful, when changing the isolation level.
+The required isolation level to run Kramax with is **READ COMMITTED**, which may have a different name according to your database system. Setting the level to REPEATABLE READS is known to cause deadlocks, so one needs to be careful, when changing the isolation level.
 
 When initializing the engine, a check is performed in order to determine if the transaction isolation level set for the database is different from the recommended one. If it is, an exception will be thrown.
 
@@ -183,7 +183,7 @@ This behaviour can be disabled by setting the `skipIsolationLevelCheck` flag to 
 
 ## Autocommit Configuration
 
-Kramaxx is designed to operate in a transactional mode. Misconfiguring a datasource with `defaultAutocommit` set to `true` is known to cause data inconsistency, deadlocks, and unexpected runtime behavior.
+Kramax is designed to operate in a transactional mode. Misconfiguring a datasource with `defaultAutocommit` set to `true` is known to cause data inconsistency, deadlocks, and unexpected runtime behavior.
 
 During engine initialization, a check is performed in order to determine if the autocommit set to true. If it is, an exception will be thrown.
 

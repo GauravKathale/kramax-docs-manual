@@ -1,18 +1,18 @@
 ---
 
-title: "Install the Kramaxx Modeler"
+title: "Install the Kramax Modeler"
 weight: 01
 
 menu:
   main:
-    name: "Kramaxx Modeler"
+    name: "Kramax Modeler"
     identifier: "installation-guide-modeler"
     parent: "installation-guide"
-    pre: "Install the Kramaxx Modeler for BPMN 2.0, DMN 1.3 and Kramaxx Forms"
+    pre: "Install the Kramax Modeler for BPMN 2.0, DMN 1.3 and Kramax Forms"
 
 ---
 
-This page explains how to install the Kramaxx Modeler for modeling BPMN 2.0 diagrams, DMN 1.3 decision tables and Kramaxx Forms.
+This page explains how to install the Kramax Modeler for modeling BPMN 2.0 diagrams, DMN 1.3 decision tables and Kramax Forms.
 
 # Requirements
 
@@ -33,19 +33,19 @@ Reported to work on these operating systems, too:
 {{< meta-comment "this is based on our testing environment and the Electron documentation (https://electronjs.org/docs/tutorial/support)" >}}
 
 
-## Matching Kramaxx Process Engine Version
+## Matching Kramax Process Engine Version
 
-For executing BPMN Diagrams created using Kramaxx Modeler, Process Engine version 1.0.0 and above is required.
+For executing BPMN Diagrams created using Kramax Modeler, Process Engine version 1.0.0 and above is required.
 
-For evaluating DMN 1.3 Decisions created using Kramaxx Modeler, Process Engine version 1.0.0 and above is required.
+For evaluating DMN 1.3 Decisions created using Kramax Modeler, Process Engine version 1.0.0 and above is required.
 
-For displaying Kramaxx Forms created using Kramaxx Modeler, Process Engine version 1.0.0 and above is required.
+For displaying Kramax Forms created using Kramax Modeler, Process Engine version 1.0.0 and above is required.
 
 Note that you do not need to install the Process Engine if you do not want to execute the BPMN Diagrams or evaluate DMN Decisions.
 
 # Download
 
-Get the latest release from the [Kramaxx Modeler GitHub releases](https://github.com/vodafone/kramaxx-modeler/releases/latest).
+Get the latest release from the [Kramax Modeler GitHub releases](https://github.com/vodafone/kramaxx-modeler/releases/latest).
 
 Find all available versions on the [releases page](https://github.com/vodafone/kramaxx-modeler/releases).
 
@@ -55,11 +55,11 @@ Unpack the modeler into a location of your choice.
 
 # Run the Application
 
-Run the application via the executable `Kramaxx Modeler.exe` (Windows), `Kramaxx Modeler.app` (Mac) or `kramaxx-modeler` (Linux).
+Run the application via the executable `Kramax Modeler.exe` (Windows), `Kramax Modeler.app` (Mac) or `kramaxx-modeler` (Linux).
 
 # Wire File Associations
 
-On Windows and Linux you must carry out additional steps to register the modeler as the default editor for BPMN, DMN and Kramaxx Form files.
+On Windows and Linux you must carry out additional steps to register the modeler as the default editor for BPMN, DMN and Kramax Form files.
 
 ### Windows
 

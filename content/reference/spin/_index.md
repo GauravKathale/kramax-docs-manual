@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx Spin Dataformat Reference'
+title: 'Kramax Spin Dataformat Reference'
 weight: 60
 
 menu:
@@ -11,7 +11,7 @@ menu:
 
 ---
 
-Kramaxx Spin is a library for simple XML and JSON processing on the JVM (Java
+Kramax Spin is a library for simple XML and JSON processing on the JVM (Java
 Virtual Machine), targeting Java and JVM-based scripting languages such as
 Groovy, JRuby, Jython, JavaScript and Java Expression Language. It provides a
 comprehensible fluent API for working with different data formats through
@@ -20,11 +20,11 @@ lightweight wrapper objects.
 Spin can be used in any Java-based application by adding the following maven
 dependency to your `pom.xml` file:
 
-{{< note title="Kramaxx BOM" >}}
-  If you use Spin in combination with the Kramaxx process engine,
+{{< note title="Kramax BOM" >}}
+  If you use Spin in combination with the Kramax process engine,
   please consult the [process engine user guide on Spin integration]({{< relref "/user-guide/data-formats/configuring-spin-integration/" >}})
   on how to properly integrate Spin with the engine.
-  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the Kramaxx Spin version matching your process engine
+  Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the Kramax Spin version matching your process engine
   version.
 {{< /note >}}
 
@@ -56,4 +56,4 @@ dependency to your `pom.xml` file:
 </dependencies>
 ```
 
-Kramaxx Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Ckramaxx-spin).
+Kramax Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Ckramaxx-spin).

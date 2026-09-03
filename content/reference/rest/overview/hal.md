@@ -147,8 +147,8 @@ LDAP), every request will access this external system which is an
 unnecessary overhead. To reduce such expensive requests, the REST API can be
 configured to use a cache to temporary store such relations.
 
-This caching can be configured in the `web.xml` file of the REST API (or the Kramaxx Web Application in
-case the REST API is embedded into the Kramaxx Web Application).
+This caching can be configured in the `web.xml` file of the REST API (or the Kramax Web Application in
+case the REST API is embedded into the Kramax Web Application).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

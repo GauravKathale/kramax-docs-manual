@@ -1,7 +1,7 @@
 ---
 baseURL: "/"
 locale: "en-us"
-title: "Kramaxx documentation"
+title: "Kramax documentation"
 theme: "kramaxx"
 
 markup:
@@ -24,7 +24,7 @@ params:
 #  versionAlias: "develop"
   forum:
     url: "https://github.com/vodafone/kramaxx-modeler/discussions"
-    name: "Kramaxx Forum"
+    name: "Kramax Forum"
 
   # base URLs with optional version number in path using placeholder %s
   openApiBaseURL: "https://docs.kramaxx.vodafone.org/rest/kramaxx-bpm-platform/%s"

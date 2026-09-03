@@ -1,6 +1,6 @@
 ---
 
-title: "Run Kramaxx using Docker"
+title: "Run Kramax using Docker"
 weight: 20
 
 menu:
@@ -16,18 +16,18 @@ menu:
 
 The Community Edition docker images can be found on [GitHub](https://github.com/vodafone/docker-kramaxx-bpm-platform) and [Docker Hub](https://hub.docker.com/r/kramaxx/kramaxx-bpm-platform/).
 
-## Start Kramaxx Run using Docker
+## Start Kramax Run using Docker
 
-To start [Kramaxx Run]({{< relref "/user-guide/kramaxx-bpm-run.md" >}}) execute the following commands:
+To start [Kramax Run]({{< relref "/user-guide/kramaxx-bpm-run.md" >}}) execute the following commands:
 
 ```shell
 docker pull kramaxx/kramaxx-bpm-platform:run-latest
 docker run -d --name kramaxx -p 8080:8080 kramaxx/kramaxx-bpm-platform:run-latest
 ```
 
-## Start Kramaxx (Tomcat) using Docker
+## Start Kramax (Tomcat) using Docker
 
-To start Kramaxx, execute the following commands:
+To start Kramax, execute the following commands:
 
 ```shell
 docker pull kramaxx/kramaxx-bpm-platform:latest

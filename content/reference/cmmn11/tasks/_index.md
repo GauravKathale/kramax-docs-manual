@@ -10,4 +10,4 @@ menu:
 
 ---
 
-Tasks signify that some kind of work is being performed. CMMN provides different types of Tasks. The following are supported by Kramaxx:
+Tasks signify that some kind of work is being performed. CMMN provides different types of Tasks. The following are supported by Kramax:

@@ -98,7 +98,7 @@ Job priorities can be specified in the BPMN model as well as overridden at runti
 
 ### Priorities in BPMN XML
 
-Job Priorities can be assigned at the process or the activity level. To achieve this the Kramaxx extension attribute `camunda:jobPriority` can be used.
+Job Priorities can be assigned at the process or the activity level. To achieve this the Kramax extension attribute `camunda:jobPriority` can be used.
 
 For specifying the priority, both constant values and [expressions]({{< relref "/user-guide/process-engine/expression-language.md" >}}) are supported. When using a constant value, the same priority is assigned to all instances of the process or activity. Expressions, on the other hand, allow assigning a different priority to each instance of the process or activity. Expression must evaluate to a number in the Java `long` range.
 The concrete value can be the result of a complex calculation and be based on user-provided data (resulting from a task form or other sources).
@@ -427,7 +427,7 @@ By default, a failed job will be retried three times and the retries are perform
 
 The configuration follows the [ISO_8601 standard for repeating time intervals](http://en.wikipedia.org/wiki/ISO_8601#Repeating_intervals). In the example, `R5/PT5M` means that the maximum number of retries is 5 (`R5`) and the delay of retry is 5 minutes (`PT5M`).
 
-The Kramaxx engine allows you to configure this setting for the following specific elements:
+The Kramax engine allows you to configure this setting for the following specific elements:
 
 * [Activities (tasks, call activities, subprocesses)]({{< relref "#use-a-custom-job-retry-configuration-for-activities" >}})
 * [Events]({{< relref "#use-a-custom-job-retry-configuration-for-events" >}})
@@ -436,7 +436,7 @@ The Kramaxx engine allows you to configure this setting for the following specif
 
 #### Use a Custom Job Retry Configuration for Activities 
 
-As soon as the retry configuration is enabled, it can be applied to tasks, call activities, embedded subprocesses and transactions subprocesses. For instance, the job retry in a task can be configured in the Kramaxx engine in the BPMN 2.0 XML as follows:
+As soon as the retry configuration is enabled, it can be applied to tasks, call activities, embedded subprocesses and transactions subprocesses. For instance, the job retry in a task can be configured in the Kramax engine in the BPMN 2.0 XML as follows:
 
 ```xml
 <definitions xmlns:camunda="http://camunda.org/schema/1.0/bpmn">
@@ -621,7 +621,7 @@ In the case of a single, application-embedded process engine, the job executor s
 
 There is a single job table that the engine adds jobs to and the acquisition consumes from. Creating a second embedded engine would therefore create another acquisition thread and execution thread-pool.
 
-In larger deployments however, this quickly leads to a poorly manageable situation. When running Kramaxx on Tomcat or an application server, the platform allows to declare multiple process engines shared by multiple process applications. With respect to job execution, one job acquisition may serve multiple job tables (and thus process engines) and a single thread-pool for execution may be used.
+In larger deployments however, this quickly leads to a poorly manageable situation. When running Kramax on Tomcat or an application server, the platform allows to declare multiple process engines shared by multiple process applications. With respect to job execution, one job acquisition may serve multiple job tables (and thus process engines) and a single thread-pool for execution may be used.
 
 {{< img src="../img/job-executor-multiple-engines.png" title="Multiple Engines" >}}
 
@@ -630,7 +630,7 @@ See the platform-specific information in the [Runtime Container Integration]({{<
 
 Different job acquisitions can also be configured differently, e.g. to meet business requirements like SLAs. For example, the acquisition's timeout when no more executable jobs are present can be configured differently per acquisition.
 
-To which job acquisition a process engine is assigned can be specified in the declaration of the engine, so either in the `processes.xml` deployment descriptor of a process application or in the Kramaxx descriptor. The following is an example configuration that declares a new engine and assigns it to the job acquisition named `default`, which is created when the platform is bootstrapped.
+To which job acquisition a process engine is assigned can be specified in the declaration of the engine, so either in the `processes.xml` deployment descriptor of a process application or in the Kramax descriptor. The following is an example configuration that declares a new engine and assigns it to the job acquisition named `default`, which is created when the platform is bootstrapped.
 
 ```xml
 <process-engine name="newEngine">
@@ -639,12 +639,12 @@ To which job acquisition a process engine is assigned can be specified in the de
 </process-engine>
 ```
 
-Job acquisitions have to be declared in Kramaxx's deployment descriptor, see [the container-specific configuration options]({{< relref "/user-guide/runtime-container-integration/_index.md" >}}).
+Job acquisitions have to be declared in Kramax's deployment descriptor, see [the container-specific configuration options]({{< relref "/user-guide/runtime-container-integration/_index.md" >}}).
 
 
 # Cluster Setups
 
-When running Kramaxx in a cluster, there is a distinction between *homogeneous* and *heterogeneous* setups. We define a cluster as a set of network nodes that all run Kramaxx against the same database (at least for one engine on each node). In the *homogeneous* case, the same process applications (and thus custom classes like JavaDelegates) are deployed to all of the nodes, as depicted below.
+When running Kramax in a cluster, there is a distinction between *homogeneous* and *heterogeneous* setups. We define a cluster as a set of network nodes that all run Kramax against the same database (at least for one engine on each node). In the *homogeneous* case, the same process applications (and thus custom classes like JavaDelegates) are deployed to all of the nodes, as depicted below.
 
 {{< img src="../img/homogeneous-cluster.png" title="Homogeneous Cluster" >}}
 

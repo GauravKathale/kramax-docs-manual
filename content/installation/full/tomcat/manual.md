@@ -13,15 +13,15 @@ menu:
 ---
 
 
-This section describes how you can install Kramaxx and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.tomcat/kramaxx-tomcat) to fetch the required Kramaxx modules.
+This section describes how you can install Kramax and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.tomcat/kramaxx-tomcat) to fetch the required Kramax modules.
 
 {{< note title="Reading the Guide" class="info" >}}
 Throughout this guide we will use a number of variables to denote common path names and constants:
 
 * `$TOMCAT_HOME` points to the main directory of the tomcat server.
 * `$TOMCAT_VERSION` denotes the version of Tomcat server.
-* `$PLATFORM_VERSION` denotes the version of Kramaxx you want to install or already have installed, e.g. `1.0.0`.
-* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Kramaxx distribution for Tomcat, e.g. `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
+* `$PLATFORM_VERSION` denotes the version of Kramax you want to install or already have installed, e.g. `1.0.0`.
+* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Kramax distribution for Tomcat, e.g. `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
 
 {{< /note >}}
 
@@ -43,14 +43,14 @@ The following test scenarios fail on Tomcat 11:
 
 # Setup
 
-Before you can install the Kramaxx components, you need to perform a number of required setup steps.
+Before you can install the Kramax components, you need to perform a number of required setup steps.
 
 
 ## Create the Database Schema and Tables
 
 In the default configuration of the distribution, the database schema and all required tables are automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
-* Create a database schema for Kramaxx yourself.
+* Create a database schema for Kramax yourself.
 * Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you have to configure the engine to **not** create tables at startup by setting the `databaseSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In Tomcat, this is done in the `bpm-platform.xml`, located in the `$TOMCAT_DISTRIBUTION\server\apache-tomcat-$VERSION\conf\` folder.
@@ -58,7 +58,7 @@ When you create the tables manually, then you have to configure the engine to **
 
 ## Add BPM Bootstrap Server Listener
 
-Add the entry `org.vodafone.kramaxx.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping Kramaxx as Tomcat is started and stopped.
+Add the entry `org.vodafone.kramaxx.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping Kramax as Tomcat is started and stopped.
 
 ```xml
 <Server port="8005" shutdown="SHUTDOWN">
@@ -99,7 +99,7 @@ For more information on the creation of JDBC datasources have a look at the docu
 [11.0](https://tomcat.apache.org/tomcat-11.0-doc/jndi-datasource-examples-howto.html).
 
 
-## Add Kramaxx Services
+## Add Kramax Services
 
 Copy the following blocks from `${TOMCAT_DISTRIBUTION}/server/apache-tomcat-${TOMCAT_VERSION}/conf/server.xml`
   into `${TOMCAT_HOME}/conf/server.xml`:
@@ -107,12 +107,12 @@ Copy the following blocks from `${TOMCAT_DISTRIBUTION}/server/apache-tomcat-${TO
 ```xml
      <Resource name="global/kramaxx-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaxx.bpm.ProcessEngineService" auth="Container"
               type="org.vodafone.kramaxx.bpm.ProcessEngineService"
-              description="Kramaxx Platform Process Engine Service"
+              description="Kramax Platform Process Engine Service"
               factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
 
     <Resource name="global/kramaxx-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaxx.bpm.ProcessApplicationService" auth="Container"
               type="org.vodafone.kramaxx.bpm.ProcessApplicationService"
-              description="Kramaxx Platform Process Application Service"
+              description="Kramax Platform Process Application Service"
               factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
 ```
 
@@ -167,14 +167,14 @@ In particular, go to `${TOMCAT_HOME}/webapps/` and remove the directories
 
 # Optional Components
 
-This section describes how to install optional Kramaxx dependencies onto a Tomcat server. None of these are required to work with the core platform.
+This section describes how to install optional Kramax dependencies onto a Tomcat server. None of these are required to work with the core platform.
 
 
 ## Cockpit, Tasklist and Admin
 
 The following steps are required to deploy the applications:
 
-1. Download the Kramaxx web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.webapp/kramaxx-webapp-tomcat).
+1. Download the Kramax web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.webapp/kramaxx-webapp-tomcat).
     * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.webapp/kramaxx-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/kramaxx-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
 2. Copy the war file to `$TOMCAT_HOME/webapps/kramaxx.war`.
    Optionally you may name it differently or extract it to a folder to deploy it to a different context path.
@@ -196,14 +196,14 @@ The following steps are required to deploy the REST API:
 5. Enable authentication as described in the [REST API documentation]({{< relref "/reference/rest/overview/authentication.md" >}})
 
 
-## Kramaxx Connect Plugin
+## Kramax Connect Plugin
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
 * `kramaxx-engine-plugin-connect-$PLATFORM_VERSION.jar`
 * `kramaxx-commons-utils-$PLATFORM_VERSION.jar`
 
-In order to activate Kramaxx Connect functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
+In order to activate Kramax Connect functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -223,7 +223,7 @@ In order to activate Kramaxx Connect functionality for a process engine, a proce
 ```
 
 
-## Kramaxx Spin
+## Kramax Spin
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
@@ -232,7 +232,7 @@ Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUT
 * `kramaxx-engine-plugin-spin-$PLATFORM_VERSION.jar`
 * `kramaxx-commons-utils-$PLATFORM_VERSION.jar`
 
-In order to activate Kramaxx Spin functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
+In order to activate Kramax Spin functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

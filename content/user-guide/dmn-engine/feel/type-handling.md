@@ -24,7 +24,7 @@ documentation about [Supported Data Types in DMN] to learn more about the `typeR
 The FEEL Engine might support more types than listed below. However, this page defines
 which of the types are known for being...
 
-* ...well integrable in Kramaxx
+* ...well integrable in Kramax
 * ...covered by automated tests
 
 ## Supported Variable Value Types
@@ -48,7 +48,7 @@ The variable value types listed in this section can be handled by the FEEL Engin
 * `org.vodafone.kramaxx.spin.json.SpinJsonNode`
 * `org.vodafone.kramaxx.spin.xml.SpinXmlElement`
 
-For more information about the Kramaxx Spin integration, please see the documentation about 
+For more information about the Kramax Spin integration, please see the documentation about 
 [FEEL Engine Spin Integration].
 
 ## Return Types
@@ -56,13 +56,13 @@ For more information about the Kramaxx Spin integration, please see the document
 The table displays:
 
 * Which return value of a FEEL Expression maps to which Java type
-* Which Kramaxx specific variable type is assigned for the respective Java type
+* Which Kramax specific variable type is assigned for the respective Java type
 
 <table class="table table-striped">
   <tr>
     <th>FEEL Expression Example</th>
     <th>FEEL Engine Return Type</th>
-    <th>Kramaxx Variable Type</th>
+    <th>Kramax Variable Type</th>
   </tr>
   <tr>
     <td><code>null</code></td>

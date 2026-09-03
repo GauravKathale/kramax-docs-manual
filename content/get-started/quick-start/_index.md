@@ -1,6 +1,6 @@
 ---
 
-title: 'Get started with Kramaxx'
+title: 'Get started with Kramax'
 weight: 1
 
 menu:
@@ -8,12 +8,12 @@ menu:
     name: "Quick Start (Java / JS)"
     identifier: "get-started-quick-start"
     parent: "get-started"
-    pre: "Learn how to model a BPMN 2.0 process using the Kramaxx Modeler, adding a Java or JavaScript Worker. Deploy it to the Kramaxx Platform."
+    pre: "Learn how to model a BPMN 2.0 process using the Kramax Modeler, adding a Java or JavaScript Worker. Deploy it to the Kramax Platform."
 
 ---
 
-This tutorial guides you through modeling and implementing your first workflow with the Kramaxx Platform.
-In this guide, you'll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of Kramaxx's ready-to-go task clients.
+This tutorial guides you through modeling and implementing your first workflow with the Kramax Platform.
+In this guide, you'll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of Kramax's ready-to-go task clients.
 
 {{< get-code repo="kramaxx-get-started-quickstart" >}}
 

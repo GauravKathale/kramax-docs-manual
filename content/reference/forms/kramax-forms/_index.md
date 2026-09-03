@@ -1,27 +1,27 @@
 ---
 
-title: 'Kramaxx Forms Reference'
+title: 'Kramax Forms Reference'
 weight: 60
 layout: "single"
 
 menu:
   main:
-    name: "Kramaxx Forms"
+    name: "Kramax Forms"
     identifier: "kramaxx-forms-ref"
     parent: "forms-ref"
-    pre: "Forms created with the Kramaxx Modeler embeddable in Tasklist"
+    pre: "Forms created with the Kramax Modeler embeddable in Tasklist"
 ---
 
-Kramaxx Forms allow you to easily design and configure forms and then embed them in the Kramaxx Tasklist.
+Kramax Forms allow you to easily design and configure forms and then embed them in the Kramax Tasklist.
 
-* Kramaxx Forms are created in the Kramaxx Modeler. You can find out how in the [Kramaxx Modeler documentation]({{< relref "/modeler/forms.md" >}}).
-* Kramaxx Forms can easily be embedded in the Kramaxx Tasklist. You can find out how in the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}).
-* Kramaxx Forms are powered by the open source [bpmn-io form-js library](https://github.com/bpmn-io/form-js). Visit the [open source repository](https://github.com/bpmn-io/form-js) to find out how to render a form using plain JavaScript in a custom application (note that this also requires you to to fetch the form from the respective BPMN 2.0 element and provide data as needed to the form).
+* Kramax Forms are created in the Kramax Modeler. You can find out how in the [Kramax Modeler documentation]({{< relref "/modeler/forms.md" >}}).
+* Kramax Forms can easily be embedded in the Kramax Tasklist. You can find out how in the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}).
+* Kramax Forms are powered by the open source [bpmn-io form-js library](https://github.com/bpmn-io/form-js). Visit the [open source repository](https://github.com/bpmn-io/form-js) to find out how to render a form using plain JavaScript in a custom application (note that this also requires you to to fetch the form from the respective BPMN 2.0 element and provide data as needed to the form).
 
 
 # Components
 
-Use the [Kramaxx Modeler]({{< relref "/modeler/forms.md" >}}) to configure your Kramaxx Form. The following form elements are currently supported.
+Use the [Kramax Modeler]({{< relref "/modeler/forms.md" >}}) to configure your Kramax Form. The following form elements are currently supported.
 
 ## Text Field
 
@@ -115,7 +115,7 @@ A text component allowing to display static information to the user.
 
 A text component can be configured using the following configuration properties:
 
-* **Text**: Either **Markdown** or **basic HTML** which will be rendered in the Form. Please note that dangerous HTML elements will not be rendered so to prevent the risk of cross-site scripting using Kramaxx Forms.
+* **Text**: Either **Markdown** or **basic HTML** which will be rendered in the Form. Please note that dangerous HTML elements will not be rendered so to prevent the risk of cross-site scripting using Kramax Forms.
   * **Example for Markdown**:
 
 ```
@@ -178,6 +178,6 @@ A button can be configured using the following configuration properties:
 
 # Mapping components to Process Variables
 
-Each Kramaxx Forms component which allows data manipulation has a **Key** attribute. This attribute is used as an identifier to map data of the respective field (1) during initial loading of the form, and (2) during submission of the form.
+Each Kramax Forms component which allows data manipulation has a **Key** attribute. This attribute is used as an identifier to map data of the respective field (1) during initial loading of the form, and (2) during submission of the form.
 
-When a form is [referenced by a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}) and viewed in the [Kramaxx Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< relref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.
+When a form is [referenced by a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}) and viewed in the [Kramax Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< relref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.

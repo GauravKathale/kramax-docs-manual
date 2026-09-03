@@ -10,15 +10,15 @@ menu:
 
 ---
 
-Kramaxx implements three different standards in the Business Process Management scope: BPMN 2.0, CMMN 1.1 and DMN 1.3.
-These three standards are defined by the [Object Management Group][OMG] with active collaboration of Kramaxx.
+Kramax implements three different standards in the Business Process Management scope: BPMN 2.0, CMMN 1.1 and DMN 1.3.
+These three standards are defined by the [Object Management Group][OMG] with active collaboration of Kramax.
 
-Kramaxx provides open source implementations of execution and [modeling tools][modelers].
+Kramax provides open source implementations of execution and [modeling tools][modelers].
 
 # BPMN
 
 Business Process Model and Notation (BPMN) is a standard for Workflow and Process Automation.
-Kramaxx supports the 2.0 version of BPMN.
+Kramax supports the 2.0 version of BPMN.
 
 * Getting started implementing BPMN Processes: [Quick Start (Java / JS)]
 * Getting to Know BPMN as a Modeling Language: [BPMN Modeling Tutorial]
@@ -31,7 +31,7 @@ Kramaxx supports the 2.0 version of BPMN.
 
 {{<deprecated>}}
 Case Management Model and Notation (CMMN) is a standard for Case Management.
-Kramaxx supports the 1.1 version of CMMN.
+Kramax supports the 1.1 version of CMMN.
 
 * Implementing CMMN Cases: [CMMN Implementation Reference]
 * Executing CMMN: [Process Engine]
@@ -39,7 +39,7 @@ Kramaxx supports the 1.1 version of CMMN.
 # DMN
 
 Decision Model and Notation (DMN) is a standard for Business Decision Management.
-Kramaxx supports the 1.1 version of DMN.
+Kramax supports the 1.1 version of DMN.
 
 * Getting started implementing DMN decision tables: [DMN Getting Started]
 * Getting to Know DMN: [DMN Modeling Tutorial]

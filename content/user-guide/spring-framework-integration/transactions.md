@@ -16,7 +16,7 @@ menu:
 
 The following explains the [SpringTransactionIntegrationTest](https://github.com/vodafone/kramaxx-bpm-platform/blob/{{< minor-version >}}.0/engine-spring/core/src/test/java/org/vodafone/kramaxx/bpm/engine/spring/test/transaction/SpringTransactionIntegrationTest.java) of the core codebase step by step. Below is the Spring configuration file that we use in this example (you can find it in [SpringTransactionIntegrationTest-context.xml](https://github.com/vodafone/kramaxx-bpm-platform/blob/{{< minor-version >}}.0/engine-spring/core/src/test/resources/org/vodafone/kramaxx/bpm/engine/spring/test/transaction/SpringTransactionIntegrationTest-context.xml)). The section shown below contains the `dataSource`, `transactionManager`, `processEngine` and the process engine services.
 
-When passing the DataSource to the `SpringProcessEngineConfiguration` (using property "dataSource"), the Kramaxx engine uses a `org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy` internally, which wraps the passed DataSource. This is done to make sure the SQL connections retrieved from the DataSource and the Spring transactions play well together. This implies that it's no longer needed to proxy the dataSource yourself in Spring configuration, although it's still allowed to pass a `TransactionAwareDataSourceProxy` into the `SpringProcessEngineConfiguration`. In this case no additional wrapping will occur.
+When passing the DataSource to the `SpringProcessEngineConfiguration` (using property "dataSource"), the Kramax engine uses a `org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy` internally, which wraps the passed DataSource. This is done to make sure the SQL connections retrieved from the DataSource and the Spring transactions play well together. This implies that it's no longer needed to proxy the dataSource yourself in Spring configuration, although it's still allowed to pass a `TransactionAwareDataSourceProxy` into the `SpringProcessEngineConfiguration`. In this case no additional wrapping will occur.
 
 Make sure when declaring a `TransactionAwareDataSourceProxy` in Spring configuration yourself, that you don't use it for resources that are already aware of Spring-transactions (e.g., `DataSourceTransactionManager` and `JPATransactionManager` need the un-proxied dataSource).
 
@@ -143,7 +143,7 @@ transaction behavior). This doesn't play well with how the Process Engine
 Context is used to separate transaction data described in detail in
 [Transactions and the Process Engine Context][transactions-and-engine-context]. 
 Due to this, if the inner transaction fails, the changes made by the engine 
-API calls are still committed to the Kramaxx database.
+API calls are still committed to the Kramax database.
 
 A solution for this is to explicitly declare to the Process Engine that
 a new Process Engine Context is to be created, where all the following

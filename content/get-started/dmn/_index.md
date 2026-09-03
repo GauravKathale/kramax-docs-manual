@@ -1,6 +1,6 @@
 ---
 
-title: 'Get started with Kramaxx and DMN 1.3'
+title: 'Get started with Kramax and DMN 1.3'
 weight: 4
 
 menu:
@@ -8,15 +8,15 @@ menu:
     name: "DMN"
     identifier: "get-started-dmn"
     parent: "get-started"
-    pre: "Learn how to create a DMN 1.3 decision table using the Kramaxx Modeler. Package it as a web application and deploy it to an Apache Tomcat Server."
+    pre: "Learn how to create a DMN 1.3 decision table using the Kramax Modeler. Package it as a web application and deploy it to an Apache Tomcat Server."
 
 aliases: [/dmn11/]
 ---
 
-This tutorial guides you through modeling your first DMN 1.3 decision table and executing it with the Kramaxx Platform.
+This tutorial guides you through modeling your first DMN 1.3 decision table and executing it with the Kramax Platform.
 
 {{< note title="Standalone DMN engine" class="info" >}}
-Note that it is also possible to use the DMN engine independently from the Kramaxx Platform. Please refer to the [User Guide]({{< relref "/user-guide/dmn-engine/embed/" >}}) and the [Example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method) for more details.
+Note that it is also possible to use the DMN engine independently from the Kramax Platform. Please refer to the [User Guide]({{< relref "/user-guide/dmn-engine/embed/" >}}) and the [Example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method) for more details.
 {{< /note >}}
 
 {{< get-code repo="kramaxx-get-started-dmn" >}}

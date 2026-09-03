@@ -10,25 +10,25 @@ menu:
 
 ---
 
-This page provides information about logging in Kramaxx.
+This page provides information about logging in Kramax.
 
 # SLF4J
 
-Most Kramaxx modules, including the Kramaxx engine, use [slf4j] as logging "facade". This allows users to direct logging output to the logging "backend" of their choice, such as [logback] or [log4j].
+Most Kramax modules, including the Kramax engine, use [slf4j] as logging "facade". This allows users to direct logging output to the logging "backend" of their choice, such as [logback] or [log4j].
 
 ## Preconfigured Logging with a Shared Process Engine
 
-When installing Kramaxx as a shared process engine in an application server, Kramaxx logging is pre-configured.
+When installing Kramax as a shared process engine in an application server, Kramax logging is pre-configured.
 
 On all application servers except Wildfly, logging is pre-configured using the slf4j-jdk14 bridge.
-This means that Kramaxx effectively re-directs all its logging to Java Util Logging.
+This means that Kramax effectively re-directs all its logging to Java Util Logging.
 Both SLF4J API and the slf4j-jdk14 bridge are available in a shared classpath which means that they are available in the classpath of all applications deployed on these servers.
 
 On Wildfly, logging is directed to the JBoss logging infrastructure. The SLF4J API is not available in the classpath of custom applications by default.
 
 ## Adding a Logging Backend for Embedded Use
 
-When using the Kramaxx Maven modules in a custom application, only the [slf4j] API is pulled in transitively.
+When using the Kramax Maven modules in a custom application, only the [slf4j] API is pulled in transitively.
 If you do not provide any backend, nothing will actually be logged.
 
 In the following, we provide two alternative examples of how to set up logging. See the [SLF4J Documentation][slf4j-backends] for more detailed information on how to add a logging backend.
@@ -271,14 +271,14 @@ The process engine logs on the following categories
   </tr>
   <tr>
     <td><code>org.vodafone.kramaxx.bpm.webapp</code></td>
-    <td>logs events from the Kramaxx web apps (Cockpit, Tasklist, and Admin), like user-initiated log in and log out events and cache validation time information.</td>
+    <td>logs events from the Kramax web apps (Cockpit, Tasklist, and Admin), like user-initiated log in and log out events and cache validation time information.</td>
   </tr>
 </table>
 
 By default, the engine output contains logs with level `ERROR`, `WARNING`, and `INFO`. To enable more log output, e.g. for the purpose of debugging, configure the level of a logger to `DEBUG` or `TRACE`.
 
 {{< note title="Heads Up!" class="warning" >}}
-The output of loggers can change with newer Kramaxx versions.
+The output of loggers can change with newer Kramax versions.
 {{< /note >}}
 
 {{< note title="Heads Up!" class="warning" >}}
@@ -394,7 +394,7 @@ The snippet contains the start and of `RemoveExecutionVariablesCmd`, the flush s
 
 # Legacy: Java Util Logging
 
-Some Kramaxx modules still use Java Util Logging directly.
+Some Kramax modules still use Java Util Logging directly.
 The use of Java Util Logging in these modules is considered deprecated and will be gradually migrated to [slf4j] in future releases.
 
 List of modules still using Java Util Logging:

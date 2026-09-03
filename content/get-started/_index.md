@@ -1,6 +1,6 @@
 ---
 
-title: "Get Started with Kramaxx"
+title: "Get Started with Kramax"
 weight: 20
 
 menu:
@@ -10,4 +10,4 @@ menu:
     
 ---
 
-There are different ways to get started with Kramaxx. Choose from the following guides:
+There are different ways to get started with Kramax. Choose from the following guides:

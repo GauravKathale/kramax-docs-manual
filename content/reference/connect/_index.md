@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx Connector Reference'
+title: 'Kramax Connector Reference'
 weight: 70
 layout: "single"
 
@@ -12,13 +12,13 @@ menu:
 
 ---
 
-Kramaxx Connect provides a simple API for connecting HTTP services and other
+Kramax Connect provides a simple API for connecting HTTP services and other
 things. It aims at two usage scenarios: usage in a generic system such as the
-Kramaxx process engine and standalone usage via API.
+Kramax process engine and standalone usage via API.
 
 # Connectors
 
-Kramaxx Connect provides a HTTP and a SOAP HTTP connector. If you want to
+Kramax Connect provides a HTTP and a SOAP HTTP connector. If you want to
 add an own connector to Connect please have a look at the [extending Connect]({{< relref "/reference/connect/extending-connect.md" >}})
 section. This section also describes the usage of a `ConnectorConfigurator` to
 configure the connector instances.
@@ -36,10 +36,10 @@ connector.addRequestInterceptor(interceptor).createRequest();
 Connect can be used in any Java-based application by adding the following maven
 dependency to your `pom.xml` file:
 
-{{< note title="Kramaxx BOM" class="info" >}}
-If you use other Kramaxx projects please import the
-[Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}})
-to ensure correct versions for every Kramaxx project.
+{{< note title="Kramax BOM" class="info" >}}
+If you use other Kramax projects please import the
+[Kramax BOM]({{< relref "/get-started/apache-maven/" >}})
+to ensure correct versions for every Kramax project.
 {{< /note >}}
 
 ```xml
@@ -70,15 +70,15 @@ to ensure correct versions for every Kramaxx project.
 </dependencies>
 ```
 
-Kramaxx Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramaxx.connect).
+Kramax Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramaxx.connect).
 
 {{< note title="Process engine plugin" class="info" >}}
-If you are using Connect in the Kramaxx process engine, you also need the `kramaxx-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
+If you are using Connect in the Kramax process engine, you also need the `kramaxx-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
 {{< /note >}}
 
 # Logging
 
-Kramaxx Connect uses [kramaxx-commons-logging](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
+Kramax Connect uses [kramaxx-commons-logging](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
 a logging backend. To enable logging a SLF4J implementation has to be part of
 your classpath. For example `slf4j-simple`, `log4j12` or `logback-classic`.
 

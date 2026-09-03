@@ -8,11 +8,11 @@ menu:
     name: "Configuration"
     parent: "get-started-spring-boot"
     identifier: "get-started-spring-boot-congiguration"
-    pre: "Configure your Kramaxx Spring Boot application"
+    pre: "Configure your Kramax Spring Boot application"
 
 ---
 
-The Kramaxx Spring Boot Application created in previous step uses the default and best practice configuration, embedded in a starter. 
+The Kramax Spring Boot Application created in previous step uses the default and best practice configuration, embedded in a starter. 
 There are several ways to customize or override the configuration. The easiest is to provide a set of parameters in the `application.yaml` (or `application.properties`) file. 
 The full list of supported configuration parameters can be found [here]({{< relref "/user-guide/spring-boot-integration/configuration/#kramaxx-engine-properties" >}}).
 
@@ -38,7 +38,7 @@ This configuration will result in the following:
 
 Now you can rebuild and rerun the application again. Don't forget to call `mvn clean` before calling `mvn install` again.
 Now when you open [http://localhost:8080/](http://localhost:8080/) in your browser, it does not ask you for admin user creation, but asks for login and password. 
-You can use "demo/demo", which we configured before, to access the Kramaxx web applications.
+You can use "demo/demo", which we configured before, to access the Kramax web applications.
   
 After you logged in, you can go to Tasklist and see that a filter named "All tasks" was created, though it does not contain any tasks so far.
 

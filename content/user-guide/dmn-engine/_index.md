@@ -10,13 +10,13 @@ menu:
 
 ---
 
-The Kramaxx DMN engine is a Java library which can evaluate DMN decision tables.
+The Kramax DMN engine is a Java library which can evaluate DMN decision tables.
 It implements version 1.3 of the OMG [DMN](http://www.omg.org/spec/DMN/1.3) standard to the extent documented in the [DMN reference].
 
 The DMN engine can be used as library embedded in an
-application or in combination with Kramaxx. This section
+application or in combination with Kramax. This section
 covers how to embed the library and use it to evaluate decisions. For more
-information on the integration in Kramaxx, please see the
+information on the integration in Kramax, please see the
 [corresponding section][platform]. You can read more about the DMN 1.3 standard
 in the [DMN reference].
 

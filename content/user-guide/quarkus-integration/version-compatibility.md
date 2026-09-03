@@ -11,12 +11,12 @@ menu:
 
 ---
 
-Each version of the Kramaxx Engine Quarkus Extension is bound to a specific version of Kramaxx and Quarkus. 
-Only these default combinations are recommended (and supported) by Kramaxx.
+Each version of the Kramax Engine Quarkus Extension is bound to a specific version of Kramax and Quarkus. 
+Only these default combinations are recommended (and supported) by Kramax.
 
 <table class="table table-striped">
   <tr>
-    <th>Kramaxx version</th>
+    <th>Kramax version</th>
     <th>Quarkus version</th>
   </tr>
   <tr>
@@ -30,7 +30,7 @@ Only these default combinations are recommended (and supported) by Kramaxx.
 </table>
 
 In case a certain Quarkus version has a bug, you can override the existing Quarkus version by adding the following
-inside your `pom.xml`. Note that this new Kramaxx/Quarkus version combination should also be supported by Kramaxx.
+inside your `pom.xml`. Note that this new Kramax/Quarkus version combination should also be supported by Kramax.
 
 ```xml
 <dependencyManagement>

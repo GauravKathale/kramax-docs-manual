@@ -30,12 +30,12 @@ spring.jersey.application-path=myapplicationpath
 ```
 
 To modify the configuration or register additional resources, one can provide a bean which extends from 
-`org.vodafone.kramaxx.bpm.spring.boot.starter.rest.KramaxxJerseyResourceConfig`:
+`org.vodafone.kramaxx.bpm.spring.boot.starter.rest.KramaxJerseyResourceConfig`:
 
 ```java
 @Component
 @ApplicationPath("/engine-rest")
-public class JerseyConfig extends KramaxxJerseyResourceConfig {
+public class JerseyConfig extends KramaxJerseyResourceConfig {
 
   @Override
   protected void registerAdditionalResources() {

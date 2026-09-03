@@ -8,16 +8,16 @@ menu:
     name: "Maven Coordinates"
     identifier: "get-started-maven"
     parent: "get-started"
-    pre: "The most commonly used Apache Maven Coordinates for Kramaxx."
+    pre: "The most commonly used Apache Maven Coordinates for Kramax."
 
 ---
 
-This page lists the most commonly used Apache Maven Coordinates for Kramaxx.
+This page lists the most commonly used Apache Maven Coordinates for Kramax.
 
-Most Kramaxx artifacts are pushed to [maven central](https://central.sonatype.com/).
+Most Kramax artifacts are pushed to [maven central](https://central.sonatype.com/).
 
 
-# Kramaxx BOM (Bill of Materials)
+# Kramax BOM (Bill of Materials)
 
 ```xml
 <dependencyManagement>
@@ -34,11 +34,11 @@ Most Kramaxx artifacts are pushed to [maven central](https://central.sonatype.co
 ```
 
 {{< note title="Use the BOM!" class="info" >}}
-  Please import the Kramaxx BOM if you use multiple Kramaxx projects. The BOM defines versions for all Kramaxx projects. This way it is ensured that no incompatible versions are imported.
+  Please import the Kramax BOM if you use multiple Kramax projects. The BOM defines versions for all Kramax projects. This way it is ensured that no incompatible versions are imported.
 {{< /note >}}
 
 
-# Kramaxx Engine
+# Kramax Engine
 
 ```xml
 <dependency>
@@ -48,7 +48,7 @@ Most Kramaxx artifacts are pushed to [maven central](https://central.sonatype.co
 ```
 
 
-# Kramaxx Engine Spring Integration
+# Kramax Engine Spring Integration
 
 The `kramaxx-engine` Spring integration for Spring Framework 7:
 
@@ -59,7 +59,7 @@ The `kramaxx-engine` Spring integration for Spring Framework 7:
 </dependency>
 ```
 
-# Kramaxx Engine CDI Integration
+# Kramax Engine CDI Integration
 
 ```xml
 <dependency>
@@ -68,8 +68,8 @@ The `kramaxx-engine` Spring integration for Spring Framework 7:
 </dependency>
 ```
 
-# Kramaxx DMN Engine BOM (Bill of Materials)
-This BOM allows to use the DMN engine standalone without the BPMN engine and the rest of the Kramaxx Platform.
+# Kramax DMN Engine BOM (Bill of Materials)
+This BOM allows to use the DMN engine standalone without the BPMN engine and the rest of the Kramax Platform.
 
 ```xml
 <dependencyManagement>
@@ -83,8 +83,8 @@ This BOM allows to use the DMN engine standalone without the BPMN engine and the
 </dependencyManagement>
 ```
 
-# Kramaxx DMN
-This dependency allows to use DMN engine standalone without the BPMN engine and the rest of the Kramaxx Platform.
+# Kramax DMN
+This dependency allows to use DMN engine standalone without the BPMN engine and the rest of the Kramax Platform.
 It is not needed when using `kramaxx-engine` because that already contains the DMN engine.
 
 ```xml
@@ -103,11 +103,11 @@ It is not needed when using `kramaxx-engine` because that already contains the D
 </dependency>
 ```
 
-# Kramaxx Artifact Storage
+# Kramax Artifact Storage
 
 ## Artifactory
 
-Kramaxx relies on JFrog Artifactory to provide Kramaxx artifacts to users at [artifacts.camunda.com](https://artifacts.camunda.com/). The artifact data is stored in [Amazon S3](https://aws.amazon.com/s3/) storage and gets served by [artifacts.camunda.com](https://artifacts.camunda.com/) via redirects to AWS S3. Users must be able to connect to both endpoints for artifact retrieval.
+Kramax relies on JFrog Artifactory to provide Kramax artifacts to users at [artifacts.camunda.com](https://artifacts.camunda.com/). The artifact data is stored in [Amazon S3](https://aws.amazon.com/s3/) storage and gets served by [artifacts.camunda.com](https://artifacts.camunda.com/) via redirects to AWS S3. Users must be able to connect to both endpoints for artifact retrieval.
 
 ```xml
 <repositories>
@@ -121,8 +121,8 @@ Kramaxx relies on JFrog Artifactory to provide Kramaxx artifacts to users at [ar
 </repositories>
 ```
 
-### Browse Kramaxx Artifact Storage
-In order to browse the Kramaxx artifacts, here are the links which you can use.
+### Browse Kramax Artifact Storage
+In order to browse the Kramax artifacts, here are the links which you can use.
 
 https://artifacts.camunda.com/ui/native/camunda-bpm
 
@@ -136,10 +136,10 @@ Example:
 curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramaxx/bpm/camunda-engine-rest/7.23.0/camunda-engine-rest-7.23.0.war
 ```
 
-# Other Kramaxx Modules:
+# Other Kramax Modules:
 
 * [DMN Engine]({{< relref "/user-guide/dmn-engine/embed/#maven-coordinates" >}})
-* [Kramaxx Spin]({{< relref "/reference/spin" >}})
-* [Kramaxx Connect]({{< relref "/reference/connect/#maven-coordinates" >}})
+* [Kramax Spin]({{< relref "/reference/spin" >}})
+* [Kramax Connect]({{< relref "/reference/connect/#maven-coordinates" >}})
 * [Templating Engines]({{< relref "/user-guide/process-engine/templating/#install-a-template-engine-for-an-embedded-process-engine" >}})
 * [Spring Boot Integration]({{< relref "/user-guide/spring-boot-integration/" >}})

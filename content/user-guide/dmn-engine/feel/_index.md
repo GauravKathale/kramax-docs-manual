@@ -23,7 +23,7 @@ You can use the Expression Language in the following DMN Notation Elements:
 * [Literal Expressions]
 
 This documentation covers everything integration-specific about the 
-[FEEL Scala Engine][] (opens external link) in the Kramaxx DMN Engine.
+[FEEL Scala Engine][] (opens external link) in the Kramax DMN Engine.
 
 [FEEL Scala Engine]: https://github.com/vodafone/feel-scala
 [input entries]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}

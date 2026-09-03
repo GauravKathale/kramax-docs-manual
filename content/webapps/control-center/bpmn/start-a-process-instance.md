@@ -11,7 +11,7 @@ menu:
 
 ---
 
-Kramaxx Control Center enables users to start a new process instance on demand directly from a selected process definition details view.
+Kramax Control Center enables users to start a new process instance on demand directly from a selected process definition details view.
 
 This feature is typically used for manual triggering, or initiating ad hoc process instances.
 

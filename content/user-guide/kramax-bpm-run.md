@@ -1,6 +1,6 @@
 ---
 
-title: 'Kramaxx Run'
+title: 'Kramax Run'
 weight: 50
 
 menu:
@@ -10,59 +10,59 @@ menu:
 
 ---
 
-This guide gives an introduction to Kramaxx Run, a pre-packaged, lightweight distribution of Kramaxx. Kramaxx Run is easy to configure and does not require Java knowledge.
+This guide gives an introduction to Kramax Run, a pre-packaged, lightweight distribution of Kramax. Kramax Run is easy to configure and does not require Java knowledge.
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Kramaxx is and what it does. Check out the [Get Started guides]({{< relref "/get-started/quick-start/" >}}) if you have never used Kramaxx before. The [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) is also worth looking at if you are completely new to Kramaxx.
+To use this guide, you should at least know what Kramax is and what it does. Check out the [Get Started guides]({{< relref "/get-started/quick-start/" >}}) if you have never used Kramax before. The [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) is also worth looking at if you are completely new to Kramax.
 
-This guide will teach you about Kramaxx Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Kramaxx Run. Head over to the [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) for details on how to install and start Kramaxx Run.
+This guide will teach you about Kramax Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Kramax Run. Head over to the [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) for details on how to install and start Kramax Run.
 
-# What is Kramaxx Run?
+# What is Kramax Run?
 
-Kramaxx Run is a full distribution of Kramaxx. It includes:
+Kramax Run is a full distribution of Kramax. It includes:
 
-* Kramaxx web applications
+* Kramax web applications
   * Cockpit
   * Tasklist
   * Admin
 * [REST API]({{< relref "/reference/rest/overview/_index.md" >}})
 * [An example application](#example-application)
 
-# Starting with Kramaxx Run
+# Starting with Kramax Run
 
-To start with Kramaxx Run, download the [distribution](https://downloads.camunda.cloud/release/camunda-bpm/run/) ([enterprise](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/run/)) and unpacking it. You will find the following structure:
+To start with Kramax Run, download the [distribution](https://downloads.camunda.cloud/release/camunda-bpm/run/) ([enterprise](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/run/)) and unpacking it. You will find the following structure:
 
 ```
 kramaxx-bpm-run
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ configuration/
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ keystore/
-Ã¢â€â€š   Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ put your SSL key store here if you want to use HTTPS
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ resources/
-Ã¢â€â€š   Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ put your BPMN files, forms and scripts here
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ sql/
-Ã¢â€â€š   Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ necessary SQL scripts to prepare your database system
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ userlib/
-Ã¢â€â€š   Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ put your database driver and other required JARs here
-Ã¢â€â€š   Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ default.yml
-Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ production.yml
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ internal/
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ start.bat
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ start.sh
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ shutdown.sh
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ shutdown.bat
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ configuration/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ keystore/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your SSL key store here if you want to use HTTPS
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ resources/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your BPMN files, forms and scripts here
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ sql/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ necessary SQL scripts to prepare your database system
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ userlib/
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your database driver and other required JARs here
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ default.yml
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ production.yml
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ internal/
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ start.bat
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ start.sh
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ shutdown.sh
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ shutdown.bat
 ```
 
 Execute one of the two start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac). After a few seconds, you can 
-access the Kramaxx web apps via http://localhost:8080/kramaxx/app/, the REST API via 
+access the Kramax web apps via http://localhost:8080/kramaxx/app/, the REST API via 
 http://localhost:8080/engine-rest/.
 
-When executing one of the two start scripts without any arguments, Kramaxx Run will start with a default configuration 
-as a detached process. To shut down Kramaxx Run in "detached" mode, use one of the two shutdown scripts (`shutdown.bat` 
+When executing one of the two start scripts without any arguments, Kramax Run will start with a default configuration 
+as a detached process. To shut down Kramax Run in "detached" mode, use one of the two shutdown scripts (`shutdown.bat` 
 for Windows, `shutdown.sh` for Linux/Mac).
 
-By explicitly passing arguments to one of the two Kramaxx Run start scripts, the default detached mode is disabled and
-you can configure Kramaxx Run according to your needs. Furthermore, Kramaxx Run will start as a foreground process
+By explicitly passing arguments to one of the two Kramax Run start scripts, the default detached mode is disabled and
+you can configure Kramax Run according to your needs. Furthermore, Kramax Run will start as a foreground process
 unless the `--detached` argument is explicitly passed to the `start.bat` or `start.sh` script.
 
 ## Start script arguments
@@ -77,7 +77,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
   </tr>
   <tr>
       <td><code>--webapps</code></td>
-      <td>Enables the Kramaxx web apps</td>
+      <td>Enables the Kramax web apps</td>
       <td><code>enabled</code></td>
   </tr>
   <tr>
@@ -98,7 +98,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
   <tr>
       <td><code>--detached</code></td>
       <td>
-        Starts Kramaxx Run as a detached process. This is the default behavior of the start scripts. To disable it, 
+        Starts Kramax Run as a detached process. This is the default behavior of the start scripts. To disable it, 
         explicitly pass a valid argument to the script.
       </td>
       <td><code>enabled</code></td>
@@ -118,40 +118,40 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
   </tr>
 </table>
 
-## Starting Kramaxx Run using Docker
+## Starting Kramax Run using Docker
 
-Kramaxx Run is also available as a Docker image. Please see the Kramaxx Run section of the Kramaxx Docker documentation [here]({{< relref "/installation/docker.md#start-kramaxx-bpm-run-using-docker" >}}) for more details.
+Kramax Run is also available as a Docker image. Please see the Kramax Run section of the Kramax Docker documentation [here]({{< relref "/installation/docker.md#start-kramaxx-bpm-run-using-docker" >}}) for more details.
 
 ## Optional components
 
-By default, Kramaxx Run launches with the web apps, REST API and example modules. If you want to enable only a subset of them, execute the start script through a command-line interface with any of the `--webapps`, `--rest` or `--example` properties to enable the specific modules.
+By default, Kramax Run launches with the web apps, REST API and example modules. If you want to enable only a subset of them, execute the start script through a command-line interface with any of the `--webapps`, `--rest` or `--example` properties to enable the specific modules.
 
 ### Example application
 
-By default, Kramaxx Run deploys and launches an example application on startup.
+By default, Kramax Run deploys and launches an example application on startup.
 When launched, this application creates deployments with multiple BPMN and DMN definitions as well as form resources
 and starts instances of the defined processes.
 
 You can disable the *deployment* of the example application itself by enabling any combination of the other modules with the `--webapps` and `--rest` properties of the start script.
-That way, the example application will not be launched and its resources will not be present on the classpath of Kramaxx Run.
+That way, the example application will not be launched and its resources will not be present on the classpath of Kramax Run.
 
 You can also disable the *launch* of the example application by setting the application property `kramaxx.bpm.run.example.enabled` to `false`
 or removing it from the application properties.
-That way, the example application and its resources will be present on the classpath of Kramaxx Run.
+That way, the example application and its resources will be present on the classpath of Kramax Run.
 However, the example application will not be started.
 
-Disabling the example application with any of those mechanisms will **NOT** delete any deployments or process instances from Kramaxx Run once they are created.
+Disabling the example application with any of those mechanisms will **NOT** delete any deployments or process instances from Kramax Run once they are created.
 You have to delete this data manually through the [web apps]({{< relref "/webapps/cockpit/deployment-view.md#delete" >}}), the 
 {{< restref page="deleteDeployment" text="REST API" tag="Deployment" >}}, or by cleaning the database 
 [configured in the application properties](#database).
 
 ## Choose between default and production configuration
 
-Kramaxx Run ships with two different configuration files which are both located in the `configuration` folder. 
+Kramax Run ships with two different configuration files which are both located in the `configuration` folder. 
 
 * The `default.yml` configuration only contains necessary configuration like the H2 database, a demo user and [CORS](#cross-origin-resource-sharing) for REST calls from a client application.
 * The `production.yml` configuration is intended to provide the recommended properties according to the [Security Instructions]({{< relref "/user-guide/security.md" >}}). 
-  When using Kramaxx Run in a production environment, make sure to base your custom configuration on this one and carefully read through the security instructions.
+  When using Kramax Run in a production environment, make sure to base your custom configuration on this one and carefully read through the security instructions.
 
 By default, Run launches with the `default.yml` configuration. To enable the `production.yml` configuration, execute the start script with the `--production` property.
 Using `--production` disables the example application. It can be enabled by explicitly passing `--example` to the start script.
@@ -159,30 +159,30 @@ However, we do not recommended to use the example application in production.
 
 ## Connect to a Database
 
-Kramaxx Run is pre-configured to use a file-based H2 database for testing. The database schema and all required tables are automatically created when the engine starts up for the first time. If you want to use a custom standalone database, follow these steps:
+Kramax Run is pre-configured to use a file-based H2 database for testing. The database schema and all required tables are automatically created when the engine starts up for the first time. If you want to use a custom standalone database, follow these steps:
 
 1. Make sure your database is among the [supported database systems]({{< relref "/introduction/supported-environments.md#supported-database-products" >}}).
-2. Create a database schema for Kramaxx yourself.
+2. Create a database schema for Kramax yourself.
 3. Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 4. Drop a JDBC driver jar for your database system in the `configuration/userlib` folder.
 5. Add the JDBC URL and login credentials to the configuration file like described [below](#database).
-6. Restart Kramaxx Run
+6. Restart Kramax Run
 
 ## Deploy BPMN Models
 
-In the unpacked distro, you will find a `resources` folder. All files (including BPMN, DMN, CMMN, form, and script files) will be deployed when you start Kramaxx Run.
+In the unpacked distro, you will find a `resources` folder. All files (including BPMN, DMN, CMMN, form, and script files) will be deployed when you start Kramax Run.
 
 You can reference forms and scripts in the BPMN diagram with `embedded:deployment:/my-form.html`, `kramaxx-forms:deployment:/myform.form`, or `deployment:/my-script.js`. The deployment requires adding an extra `/` as a prefix to the filename.
 
 Deployments via the {{< restref page="createDeployment" text="REST API" tag="Deployment" >}} are still possible.
 
-# Configure Kramaxx Run
+# Configure Kramax Run
 
-Just like all the other distros, you can tailor Kramaxx Run to your needs. To do this, you only have to edit one of the [configuration files](#choose-between-default-and-production-configuration) that you can find in the configuration folder.
+Just like all the other distros, you can tailor Kramax Run to your needs. To do this, you only have to edit one of the [configuration files](#choose-between-default-and-production-configuration) that you can find in the configuration folder.
 
 {{< note title="Note:" class="info" >}}
-Kramaxx Run is based on the [Kramaxx Spring Boot Starter](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/spring-boot-starter). 
-All [configuration properties]({{< relref "/user-guide/spring-boot-integration/configuration.md#kramaxx-engine-properties" >}}) from the kramaxx-spring-boot-starter are available to customize Kramaxx Run.
+Kramax Run is based on the [Kramax Spring Boot Starter](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/spring-boot-starter). 
+All [configuration properties]({{< relref "/user-guide/spring-boot-integration/configuration.md#kramaxx-engine-properties" >}}) from the kramaxx-spring-boot-starter are available to customize Kramax Run.
 {{< /note >}}
 
 ## Database
@@ -261,7 +261,7 @@ If you want to allow cross-origin requests to the [REST API]({{< relref "/refere
   </tr>
   <tr>
       <td><code>.allowed-origins</code></td>
-      <td>Origins that are allowed to make CORS requests. Multiple origins can be separated with commas. To support both HTTP authentication and CORS, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSNotSupportingCredentials"><code>allowed-origins</code> must not be</a> <code>\*</code>. To allow Kramaxx Modeler to deploy with authentication, including <code>file://</code> in the allowed origins.</td>
+      <td>Origins that are allowed to make CORS requests. Multiple origins can be separated with commas. To support both HTTP authentication and CORS, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSNotSupportingCredentials"><code>allowed-origins</code> must not be</a> <code>\*</code>. To allow Kramax Modeler to deploy with authentication, including <code>file://</code> in the allowed origins.</td>
       <td><code>\*</code> (all origins, including <code>file://</code>)</td>
   </tr>
   <tr>
@@ -290,7 +290,7 @@ If you want to allow cross-origin requests to the [REST API]({{< relref "/refere
 
 ## REST
 
-Kramaxx Run can be configured to disable the REST endpoint which exposes the WADL file via a property.
+Kramax Run can be configured to disable the REST endpoint which exposes the WADL file via a property.
 
 <table class="table desc-table">
   <tr>
@@ -309,7 +309,7 @@ Kramaxx Run can be configured to disable the REST endpoint which exposes the WAD
 
 ## Deployment
 
-Kramaxx Run also supports configuration options for customizing the deployment.
+Kramax Run also supports configuration options for customizing the deployment.
 
 <table class="table desc-table">
   <tr>
@@ -335,7 +335,7 @@ Kramaxx Run also supports configuration options for customizing the deployment.
 
 ## LDAP Identity Service
 
-Kramaxx can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
+Kramax can manage users and authorizations on its own, but if you want to use an existing LDAP authentication database you can enable the [LDAP Identity Service Plugin]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}})
 which provides read-only access to the LDAP repository.
 
 Find all available configuration properties in the [LDAP Plugin Guide]({{< relref "/user-guide/process-engine/identity-service.md#configuration-properties-of-the-ldap-plugin" >}})
@@ -362,7 +362,7 @@ to ensure the appropriate LDAP user or group gains administrative access. Review
 configuration options in the [Administrator Authorization plugin section]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
 of our documentation.
 
-In the table below, observe the Kramaxx Run-specific properties for the Administrator Authorization plugin.
+In the table below, observe the Kramax Run-specific properties for the Administrator Authorization plugin.
 
 <table class="table desc-table">
   <tr>
@@ -381,23 +381,23 @@ In the table below, observe the Kramaxx Run-specific properties for the Administ
 
 ## Plugin registration
 
-Kramaxx Run supports two types of plugins. 
+Kramax Run supports two types of plugins. 
 
 * [Process engine plugins][engine-plugins] can be used to extend the process engine configuration to add more functionality.
-* [Webapp plugins][cockpit-plugins] are used to extend one of the Kramaxx webapps (i.e. Cockpit, Tasklist, Admin, Welcome).
+* [Webapp plugins][cockpit-plugins] are used to extend one of the Kramax webapps (i.e. Cockpit, Tasklist, Admin, Welcome).
 
-Both types of plugins are supported in Kramaxx Run but have to be registered differently.
+Both types of plugins are supported in Kramax Run but have to be registered differently.
 
 ### Process engine plugin registration
 
-Kramaxx provides a process engine plugin mechanism to enable users to add and adjust
-process engine features by extending the process engine configuration. You can use plugins developed by Kramaxx, or by
+Kramax provides a process engine plugin mechanism to enable users to add and adjust
+process engine features by extending the process engine configuration. You can use plugins developed by Kramax, or by
 third-party developers.
 
 Get more details on how process engine plugins work on the dedicated [process engine plugins][engine-plugins] 
 documentation section.
 
-In the table below, observe the Kramaxx Run-specific properties for registering process engine plugins.
+In the table below, observe the Kramax Run-specific properties for registering process engine plugins.
 
 <table class="table desc-table">
   <tr>
@@ -428,13 +428,13 @@ In the table below, observe the Kramaxx Run-specific properties for registering 
   </tr>
 </table>
 
-Perform the following steps in Kramaxx Run to register process engine plugins:
+Perform the following steps in Kramax Run to register process engine plugins:
 
 1. Find and read the process engine plugin documentation.
   * Find the canonical name of the process engine plugin Java class that implements the `ProcessEnginePlugin` interface.
   * Find out if the process engine plugin provides any configuration parameters. You will be able to configure your plugin using those parameters. If the plugin does not provide any properties, skip this step.
 1. Download the process engine plugin `.jar` file and place it to the `${RUN_HOME}/configuration/userlib/` directory.
-1. In your Kramaxx Run configuration file, add the process engine plugin class and any configuration parameters as 
+1. In your Kramax Run configuration file, add the process engine plugin class and any configuration parameters as 
    list items under the `process-engine-plugins` YAML property.
 
 Once complete, your YAML configuration file should look similar to the following:
@@ -461,7 +461,7 @@ We'll take the following steps:
 1. Place the `kramaxx-bpm-test-first-plugin.jar` archive in 
 the `${RUN_HOME}/configuration/userlib/` directory.
 
-2. Add the following content to your Kramaxx Run YAML configuration file.
+2. Add the following content to your Kramax Run YAML configuration file.
 
 ```yaml
 kramaxx.bpm.run.process-engine-plugins:
@@ -482,22 +482,22 @@ kramaxx.bpm.run.process-engine-plugins:
   - plugin-class: org.vodafone.kramaxx.bpm.run.test.plugins.AnotherPlugin
 ```
 
-3. Start Kramaxx Run. The `TestPlugin` will be read from the YAML configuration and registered with the
+3. Start Kramax Run. The `TestPlugin` will be read from the YAML configuration and registered with the
 process engine.
 
 ### Webapp plugin registration
 
-Kramaxx provides a mechanism to extend the Kramaxx Webapps with your own functionality. You can add plugins at various plugin points. For example, the processes dashboard in Cockpit.
+Kramax provides a mechanism to extend the Kramax Webapps with your own functionality. You can add plugins at various plugin points. For example, the processes dashboard in Cockpit.
 
 A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< relref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
 
-To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Kramaxx Run section](#starting-with-kramaxx-platform-run) of this guide to find out how to navigate the directories of Kramaxx Run.
+To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Kramax Run section](#starting-with-kramaxx-platform-run) of this guide to find out how to navigate the directories of Kramax Run.
 
 ## Example application launch
 
-Kramaxx Run comes with a [demo application](#example-application) that deploys resources and starts process instances.
+Kramax Run comes with a [demo application](#example-application) that deploys resources and starts process instances.
 You can disable the start of that application so it does not create deployments and process instances. The resources of the application
-are however still accessible on the classpath of Kramaxx Run. Consult the [example application section](#example-application) for further details.
+are however still accessible on the classpath of Kramax Run. Consult the [example application section](#example-application) for further details.
 
 <table class="table desc-table">
   <tr>
@@ -516,7 +516,7 @@ are however still accessible on the classpath of Kramaxx Run. Consult the [examp
 
 ## HTTPS
 
-Kramaxx Run supports HTTPS over SSL. To enable it, you will need a valid SSL certificate signed by a trusted provider and stored in a key store file (either .jks or .p12).
+Kramax Run supports HTTPS over SSL. To enable it, you will need a valid SSL certificate signed by a trusted provider and stored in a key store file (either .jks or .p12).
 For testing, we included a self-signed certificate. You should not use this in production. To enable it, add the following properties to your configuration file.
 
 ```yaml
@@ -529,7 +529,7 @@ server:
     key-password: kramaxx
   port: 8443
 ```
-After starting Kramaxx Run, you can access the webapps via https://localhost:8443/kramaxx/app/ and the REST API via https://localhost:8443/engine-rest/.
+After starting Kramax Run, you can access the webapps via https://localhost:8443/kramaxx/app/ and the REST API via https://localhost:8443/engine-rest/.
 
 <table class="table desc-table">
   <tr>
@@ -568,8 +568,8 @@ After starting Kramaxx Run, you can access the webapps via https://localhost:844
 
 ## Logging
 
-Kramaxx provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< relref "/user-guide/logging.md#process-engine" >}}).
-To configure the logging behavior in Kramaxx Run, customize your configuration file with the following properties.
+Kramax provides fine-grained and customizable logging. An overview of the available logging categories can be found in the [Logging User Guide]({{< relref "/user-guide/logging.md#process-engine" >}}).
+To configure the logging behavior in Kramax Run, customize your configuration file with the following properties.
 
 For more information on logging configuration visit the [Spring Boot Logging Guide](https://docs.spring.io/spring-boot/docs/2.4.0/reference/html/spring-boot-features.html#boot-features-logging).
 

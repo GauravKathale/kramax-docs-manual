@@ -18,15 +18,15 @@ menu:
 This guide uses a number of variables to denote common path names and constants:
 
 *`$DATABASE` expresses the target database platform, e.g., DB2, MySql, etc.
-*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged Kramaxx distribution, e.g., `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
-*`$PLATFORM_VERSION` denotes the version of Kramaxx you want to install, e.g., `7.1.0`.
+*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged Kramax distribution, e.g., `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
+*`$PLATFORM_VERSION` denotes the version of Kramax you want to install, e.g., `7.1.0`.
 
 {{< /note >}}
 
 
 # Migrate Your Database
 
-For migration from **Kramaxx.0** to **Kramaxx.1**, the provided update scripts that match your database have to be executed.
+For migration from **Kramax.0** to **Kramax.1**, the provided update scripts that match your database have to be executed.
 With a pre-packaged distribution, the update scripts are located in the folder `$DISTRIBUTION_PATH/sql/upgrade`.
 
 Check for [available database patch scripts]({{< relref "/update/patch-level.md#database-patches" >}}) for an overview of available sql patch scripts  to see if there are any for your current version.
@@ -36,7 +36,7 @@ Regardless of the version you are migrating from, the main update script is `$DA
 
 # Migrate Your Process Application
 
-To migrate your process application from Kramaxx.0 to Kramaxx.1, you need to follow these steps:
+To migrate your process application from Kramax.0 to Kramax.1, you need to follow these steps:
 
 * If you use `@Inject` with TaskForm, you have to add a `@Named("...")` annotation to the `@Inject` annotation due to backward-compatibility of `kramaxx.taskForm`.
   There you have two choices: If you are using `kramaxx.taskForm` in your process application and don't want to update all your jsf pages and beans you should use `@Named("kramaxx.taskForm")`,
@@ -49,7 +49,7 @@ To migrate your process application from Kramaxx.0 to Kramaxx.1, you need to fol
 
 ### Update the JBoss Application Server
 
-Kramaxx.1 ships with a new version of the JBoss AS 7, namely, 7.2.0.
+Kramax.1 ships with a new version of the JBoss AS 7, namely, 7.2.0.
 The preferred update steps are:
 
 * copy all your custom modules / subsystems to the new JBoss server directory

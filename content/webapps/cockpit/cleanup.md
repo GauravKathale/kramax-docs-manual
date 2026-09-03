@@ -13,7 +13,7 @@ menu:
 
 ---
 {{< enterprise >}}
-  Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
+  Please note that this feature is only included in the enterprise edition of Kramax, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../img/cockpit-cleanup-page.png" title="Cockpit Cleanup View" >}}

@@ -13,7 +13,7 @@ menu:
 
 
 
-A Service Task is used to invoke services. In Kramaxx this is done by calling Java code or providing a work item for an external worker to complete asynchronously or invoking a logic which is implemented in form of webservices.
+A Service Task is used to invoke services. In Kramax this is done by calling Java code or providing a work item for an external worker to complete asynchronously or invoking a logic which is implemented in form of webservices.
 
 {{< bpmn-symbol type="service-task" >}}
 
@@ -92,7 +92,7 @@ To declare a Service Task to be handled externally, the attribute `camunda:type`
            camunda:topic="ShipmentProcessing" />
 ```
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

@@ -1,6 +1,6 @@
 ---
 
-title: 'Modeling BPMN in Kramaxx Modeler'
+title: 'Modeling BPMN in Kramax Modeler'
 weight: 70
 
 menu:
@@ -18,10 +18,10 @@ menu:
 
 {{< img src="img/quickstart-1.png" title="New BPMN Diagram" >}}
 
-To start modeling, create a new BPMN 2.0 diagram for the Kramaxx Platform by selecting **Create diagram > Create new BPMN diagram (Kramaxx Platform)** in the top-level menu.
+To start modeling, create a new BPMN 2.0 diagram for the Kramax Platform by selecting **Create diagram > Create new BPMN diagram (Kramax Platform)** in the top-level menu.
 
 {{< note class="info" title="Deployment Support" >}}
-BPMN diagrams must be created for the process engine they intend to be deployed on. You cannot run a BPMN diagram modeled for Kramaxx Platform in Kramaxx Cloud, or vice versa, at this time. {{< /note >}}
+BPMN diagrams must be created for the process engine they intend to be deployed on. You cannot run a BPMN diagram modeled for Kramax Platform in Kramax Cloud, or vice versa, at this time. {{< /note >}}
 
 ## Start Modeling
 
@@ -37,7 +37,7 @@ The demo above shows how to create more BPMN 2.0 elements like lanes, task types
 
 ## BPMN 2.0 Coverage
 
-The Kramaxx Modeler covers all BPMN 2.0 elements for modeling processes and collaborations.
+The Kramax Modeler covers all BPMN 2.0 elements for modeling processes and collaborations.
 
 ## BPMN 2.0 Properties for Execution
 

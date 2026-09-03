@@ -66,7 +66,7 @@ runtimeService.signal(execution.getId());
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

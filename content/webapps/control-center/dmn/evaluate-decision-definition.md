@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The Evaluate Decision Definition feature allows users to execute and validate decision logic directly within Kramaxx Control Center. It provides a simple interface to test decision outcomes by supplying input data and reviewing the resulting output.
+The Evaluate Decision Definition feature allows users to execute and validate decision logic directly within Kramax Control Center. It provides a simple interface to test decision outcomes by supplying input data and reviewing the resulting output.
 
 This functionality is primarily used for verification, debugging, and analysis of decision models.
 

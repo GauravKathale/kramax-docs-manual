@@ -8,14 +8,14 @@ menu:
     name: "Create a Decision Table"
     parent: "get-started-dmn"
     identifier: "get-started-dmn-model"
-    pre: "Learn the basics of handling the Kramaxx Modeler and learn how to create and configure a fully executable decision table."
+    pre: "Learn the basics of handling the Kramax Modeler and learn how to create and configure a fully executable decision table."
 
 aliases: [/dmn11/model/]
 ---
 
-In this section you learn how to create your first [DMN Decision Table]({{< relref "/reference/dmn/decision-table/" >}}) with the Kramaxx Modeler. The table will contain the decision logic about the desired dish for a given season and guest count.
+In this section you learn how to create your first [DMN Decision Table]({{< relref "/reference/dmn/decision-table/" >}}) with the Kramax Modeler. The table will contain the decision logic about the desired dish for a given season and guest count.
 
-Now start up the Kramaxx Modeler.
+Now start up the Kramax Modeler.
 
 # Create a new Decision Diagram
 

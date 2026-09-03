@@ -203,7 +203,7 @@ There are two possible ways to use delegation for variable mapping.
 
 ### Delegate Variable Mapping via Reference
 
-The first one is to set the Kramaxx extension property `variableMappingClass` and reference the implementation of the `DelegateVariableMapping` interface via the whole class name.
+The first one is to set the Kramax extension property `variableMappingClass` and reference the implementation of the `DelegateVariableMapping` interface via the whole class name.
 
 
 ```xml
@@ -228,7 +228,7 @@ The first one is to set the Kramaxx extension property `variableMappingClass` an
 
 ### Delegate Variable Mapping via Expression
 
-The second one is to set the Kramaxx extension property `variableMappingDelegateExpression` with an expression.
+The second one is to set the Kramax extension property `variableMappingDelegateExpression` with an expression.
 This allows to specify an expression that resolves to an object implementing the `DelegateVariableMapping` interface.
 
 ```xml
@@ -339,7 +339,7 @@ An expression also allows using the tenant id of the calling process instance in
 </callActivity>
 ```
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

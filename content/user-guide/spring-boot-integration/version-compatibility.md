@@ -11,20 +11,20 @@ menu:
 
 ---
 
-Each version of the Kramaxx Spring Boot Starter is bound to a specific version of Kramaxx and Spring Boot. 
-Only these default combinations are recommended (and supported) by Kramaxx.
+Each version of the Kramax Spring Boot Starter is bound to a specific version of Kramax and Spring Boot. 
+Only these default combinations are recommended (and supported) by Kramax.
 Other combinations must be thoroughly tested before being used in production.
 
 {{< note title="Heads Up" class="info" >}}
-  Kramaxx and its compatible Spring Boot Starter always share the same version.
-  Also, the Kramaxx version used in the Spring Boot Starter doesn't have to be overridden anymore. Simply pick
-  the version of the Starter that resembles the version of Kramaxx you want to use.
+  Kramax and its compatible Spring Boot Starter always share the same version.
+  Also, the Kramax version used in the Spring Boot Starter doesn't have to be overridden anymore. Simply pick
+  the version of the Starter that resembles the version of Kramax you want to use.
 {{< /note >}}
 
 <table class="table table-striped">
   <tr>
     <th>Spring Boot Starter version</th>
-    <th>Kramaxx version</th>
+    <th>Kramax version</th>
     <th>Spring Boot version</th>
   </tr>
   <tr>

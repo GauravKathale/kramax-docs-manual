@@ -1,6 +1,6 @@
 ---
 
-title: "Kramaxx Security Guide"
+title: "Kramax Security Guide"
 weight: 80
 
 menu:
@@ -10,4 +10,4 @@ menu:
     
 ---
 
-This page describes Kramaxx (also referred to as the 'software')  from a security perspective. It has the parts:
+This page describes Kramax (also referred to as the 'software')  from a security perspective. It has the parts:

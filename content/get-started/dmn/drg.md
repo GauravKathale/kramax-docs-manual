@@ -13,10 +13,10 @@ menu:
 aliases: [/dmn11/drg/]
 ---
 
-In this step, we extend the previous example by a second decision *Beverages* which uses the *Dish* decision table as input. We model this dependency between the decisions within a Decision Requirements Graph (DRG) using the Kramaxx Modeler. Then, we adjust the Application class to evaluate the *Beverages* decision, deploy the web application to Apache Tomcat and verify the result in Cockpit.
+In this step, we extend the previous example by a second decision *Beverages* which uses the *Dish* decision table as input. We model this dependency between the decisions within a Decision Requirements Graph (DRG) using the Kramax Modeler. Then, we adjust the Application class to evaluate the *Beverages* decision, deploy the web application to Apache Tomcat and verify the result in Cockpit.
 
 {{< note title="Decision Requirements Graph vs. Decision Requirements Diagram" class="info" >}}
-The visual representation of a Decision Requirements Graph (DRG) is called Decision Requirements Diagram (DRD). In the context of the Kramaxx Modeler, we name it DRD because we use the visual representation to model the DRG.
+The visual representation of a Decision Requirements Graph (DRG) is called Decision Requirements Diagram (DRD). In the context of the Kramax Modeler, we name it DRD because we use the visual representation to model the DRG.
 {{< /note >}}
 
 # Switch from Decision Table to DRD

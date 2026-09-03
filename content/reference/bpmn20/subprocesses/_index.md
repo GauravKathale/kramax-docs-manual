@@ -10,4 +10,4 @@ menu:
 
 ---
 
-A subprocess in Kramaxx allows modeling based on reusability and grouping. Below are the different types of subprocesses supported by Kramaxx: embedded subprocess, call activity, event subprocess, transaction subprocess, and ad hoc subprocess.
+A subprocess in Kramax allows modeling based on reusability and grouping. Below are the different types of subprocesses supported by Kramax: embedded subprocess, call activity, event subprocess, transaction subprocess, and ad hoc subprocess.

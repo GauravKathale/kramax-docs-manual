@@ -11,15 +11,15 @@ menu:
 ---
 
 
-Kramaxx supports scripting with JSR-223 compatible script engine implementations. Currently we
+Kramax supports scripting with JSR-223 compatible script engine implementations. Currently we
 test the integration for Groovy, JavaScript, JRuby and Jython. To use a scripting engine
 it is necessary to add the corresponding jar to the classpath.
 
 {{< note title="" class="info" >}}
-  We include **GraalVM JavaScript** in the pre-packaged Kramaxx distributions. 
+  We include **GraalVM JavaScript** in the pre-packaged Kramax distributions. 
   Consult [JavaScript Considerations](#javascript-considerations) for further information.
   
-  We include **Groovy** in the pre-packaged Kramaxx distributions.
+  We include **Groovy** in the pre-packaged Kramax distributions.
 {{< /note >}}
 
 The following table provides an overview of the BPMN elements which support the execution of
@@ -113,7 +113,7 @@ runtimeService.startProcessInstanceByKey("process", variables);
 
 # Use Scripts as Execution Listeners
 
-Besides Java code and expression language, Kramaxx also supports the execution of a script
+Besides Java code and expression language, Kramax also supports the execution of a script
 as an execution listener. For general information about execution listeners see the corresponding
 [section]({{< relref "/user-guide/process-engine/delegation-code.md#execution-listener" >}}).
 
@@ -184,7 +184,7 @@ The following example shows usage of scripts as task listeners.
 
 # Use Scripts as Conditions
 
-As an alternative to expression language, Kramaxx allows you to use scripts as
+As an alternative to expression language, Kramax allows you to use scripts as
 `conditionExpression` of conditional sequence flows. To do that, the `language` attribute of the
 `conditionExpression` element has to be set to the desired scripting language. The script source code
 is the text content of the element, as with expression language. Another way to specify the script
@@ -208,7 +208,7 @@ process variable which is available inside the script.
 
 # Use Scripts as inputOutput Parameters
 
-With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramax `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with a script. The following example process uses the Groovy script from the previous example to assign
 the Groovy variable `sum` to the process variable `x` for a Java delegate.
 
@@ -366,7 +366,7 @@ Note that the supported options can differ between versions of the script engine
 You can set system properties either programmatically through `System.setProperty(parameter, value)` or as JVM arguments, 
 for example upon application start on command line via `-Dparameter=value`. Most application servers like Wildfly, 
 Tomcat, Websphere, and Weblogic support providing JVM arguments via environment variables `JAVA_OPTS` or `JAVA_OPTIONS`. 
-Consult your application server's documentation to learn how to pass on JVM arguments. Kramaxx Run supports setting 
+Consult your application server's documentation to learn how to pass on JVM arguments. Kramax Run supports setting 
 JVM arguments via the `JAVA_OPTS` environment variable as well.
 
 ## Custom ScriptEngineResolver
@@ -524,11 +524,11 @@ task = execution.getProcessEngineServices().getTaskService()
 
 # Accessing Process Engine Services using Scripts
 
-Kramaxx's Java API provides access to Kramaxx's process engine services; these services can be accessed using Scripts:
+Kramax's Java API provides access to Kramax's process engine services; these services can be accessed using Scripts:
 
 {{< javadocref page="org/vodafone/kramaxx/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
 
-{{< javadocref page="org/vodafone/kramaxx/bpm/engine/package-summary.html" text="Public Java API of Kramaxx Engine" >}}
+{{< javadocref page="org/vodafone/kramaxx/bpm/engine/package-summary.html" text="Public Java API of Kramax Engine" >}}
 
 Example of creating a BPMN Message that correlates with the message key "work":
 
@@ -560,7 +560,7 @@ system.out.println('This prints to the console');
 # Script Source
 
 The standard way to specify the script source code in the BPMN XML model is to add it directly to
-the XML file. Nonetheless, Kramaxx provides additional ways to specify the script source.
+the XML file. Nonetheless, Kramax provides additional ways to specify the script source.
 
 If you use another scripting language than Expression Language, you can also specify the script
 source as an expression which returns the source code to be executed. This way, the source code can,
@@ -637,7 +637,7 @@ section of the [Custom Extensions]({{< relref "/reference/bpmn20/custom-extensio
 # JavaScript Considerations
 
 JavaScript code execution is part of the Java Runtime (JRE) with the **Nashorn** script engine until Java 14 and thus only there available out of the box.
-We include **GraalVM JavaScript** in the pre-packaged Kramaxx distributions as a replacement regardless of the JRE version.
+We include **GraalVM JavaScript** in the pre-packaged Kramax distributions as a replacement regardless of the JRE version.
 JavaScript code executes on GraalVM JavaScript with preference in the process engine context if this script engine is available.
 If this script engine cannot be found, the process engine defaults to let the JVM select an appropriate script engine.
 

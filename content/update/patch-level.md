@@ -33,7 +33,7 @@ This section is applicable if you installed the [Full Distribution]({{< relref "
 Please note that the following procedure may differ for cluster scenarios. 
 
 * Shut down the server
-* Exchange Kramaxx libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your server.
+* Exchange Kramax libraries, tools and webapps (EAR, RAR, Subsystem (Wildfly), Shared Libs) - essentially, follow the [installation guide]({{< relref "/installation/full/_index.md" >}}) for your server.
 * Restart the server
 
 # Application With Embedded Process Engine

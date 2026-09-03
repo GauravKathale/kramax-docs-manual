@@ -40,4 +40,4 @@ viewer.importXML(xml, function(err) {
 });
 ```
 
-Alternatively, you can use the  [bpmn-viewer widget](https://github.com/vodafone/kramaxx-bpm-platform/blob/master/webapps/frontend/kramaxx-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Kramaxx commons UI.
+Alternatively, you can use the  [bpmn-viewer widget](https://github.com/vodafone/kramaxx-bpm-platform/blob/master/webapps/frontend/kramaxx-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Kramax commons UI.

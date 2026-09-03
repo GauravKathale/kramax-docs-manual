@@ -11,10 +11,10 @@ menu:
 ---
 
 
-Kramaxx supports template engines which are implemented as script engines compatible with
+Kramax supports template engines which are implemented as script engines compatible with
 JSR-223. As a result, templates can be used everywhere where scripts can be used.
 
-In community distributions of Kramaxx, the following template engine is provided out of the
+In community distributions of Kramax, the following template engine is provided out of the
 box:
 
 * [FreeMarker][freemarker]
@@ -43,7 +43,7 @@ application deployment. When using the process engine in a maven `war` project, 
 dependencies must be added as dependencies to the maven `pom.xml` file:
 
 {{< note title="" class="info" >}}
-  The [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
+  The [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
   For the community-driven template engines, please check the Maven coordinates below. 
 {{< /note >}}
 
@@ -93,7 +93,7 @@ classpath. The procedure for this depends on the application server. In Apache T
 libraries have to be added to the shared `lib/` folder.
 
 {{< note title="" class="info" >}}
-  [FreeMarker](http://freemarker.org/) is pre-installed in the Kramaxx pre-packaged distribution.
+  [FreeMarker](http://freemarker.org/) is pre-installed in the Kramax pre-packaged distribution.
 {{< /note >}}
 
 
@@ -101,7 +101,7 @@ libraries have to be added to the shared `lib/` folder.
 
 If the template engine library is in the classpath, you can use templates everywhere in the BPMN
 process where you can [use scripts][use-scripts], for example as a script task or inputOutput mapping.
-The FreeMarker template engine is part of the Kramaxx distribution.
+The FreeMarker template engine is part of the Kramax distribution.
 
 Inside the template, all process variables of the BPMN element scope are available. The
 template can also be loaded from an external resource as described in the [script source
@@ -115,10 +115,10 @@ The following example shows a FreeMarker template, of which the result is saved 
   <script>
     Dear ${customer},
 
-    thank you for working with Kramaxx ${version}.
+    thank you for working with Kramax ${version}.
 
     Greetings,
-    Kramaxx Developers
+    Kramax Developers
   </script>
 </scriptTask>
 ```
@@ -194,7 +194,7 @@ attribute.
 Finally, the input of the transformation must be mapped using the special variable `kramaxx_source`
 using a `<camunda:inputParameter ... />` mapping.
 
-A [full example of the XSLT Template Engine][xslt-example] in Kramaxx can be found in the
+A [full example of the XSLT Template Engine][xslt-example] in Kramax can be found in the
 examples' repository.
 
 

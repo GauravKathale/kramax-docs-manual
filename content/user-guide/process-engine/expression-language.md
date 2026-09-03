@@ -10,7 +10,7 @@ menu:
 
 ---
 
-Kramaxx supports the Unified Expression Language (EL), specified by the [Jakarta Expression
+Kramax supports the Unified Expression Language (EL), specified by the [Jakarta Expression
 Language 4.0 standard][JakartaEL]. To do so, it maintains a custom version of the open source [JUEL][] implementation.
 
 Note, compared to EL 4.0 this JUEL implementation has the following limitations: 
@@ -28,7 +28,7 @@ To get more general information about the usage of Expression Language,
 please read the [official documentation][]. It provides examples that give a good overview of 
 the syntax of expressions.
 
-Within Kramaxx, EL can be used in many circumstances to evaluate small script-like
+Within Kramax, EL can be used in many circumstances to evaluate small script-like
 expressions. The following table provides an overview of the BPMN elements which support
 usage of EL.
 
@@ -86,7 +86,7 @@ usage of EL.
 
 ## Delegation Code
 
-Besides Java code, Kramaxx also supports the evaluation of expressions as delegation code. For
+Besides Java code, Kramax also supports the evaluation of expressions as delegation code. For
 general information about delegation code, see the corresponding
 [section]({{< relref "/user-guide/process-engine/delegation-code.md" >}}).
 
@@ -170,7 +170,7 @@ For usage of expression language on conditional events, see the following exampl
 
 ## inputOutput Parameters
 
-With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramax `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with expression language.
 
 Inside the expression some special variables are available which enable the access of the current
@@ -376,9 +376,9 @@ of the task.
 ```
 
 
-## Built-In Kramaxx Spin Functions
+## Built-In Kramax Spin Functions
 
-If the Kramaxx Spin process engine plugin is activated, the Spin functions `S`,
+If the Kramax Spin process engine plugin is activated, the Spin functions `S`,
 `XML` and `JSON` are also available inside of an expression. See the [Data Formats section][spin-section] for a detailed explanation.
 
 ```xml

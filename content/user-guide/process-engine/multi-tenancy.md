@@ -11,7 +11,7 @@ menu:
 ---
 
 
-*Multi-Tenancy* regards the case in which a single Kramaxx installation should serve more than one tenant. For each tenant, certain guarantees of isolation should be made. For example, one tenant's process instances should not interfere with those of another tenant.
+*Multi-Tenancy* regards the case in which a single Kramax installation should serve more than one tenant. For each tenant, certain guarantees of isolation should be made. For example, one tenant's process instances should not interfere with those of another tenant.
 
 Multi-Tenancy can be achieved in two different ways. One way is to use [one process engine per tenant]({{< relref "#one-process-engine-per-tenant" >}}). The other way is to use just one process engine and associate the data with [tenant identifiers]({{< relref "#single-process-engine-with-tenant-identifiers" >}}). The two ways differ from each other in the level of data isolation, the effort of maintenance and the scalability. A combination of both ways is also possible.
 
@@ -23,7 +23,7 @@ Multi-Tenancy can be achieved with one process engine which uses tenant identifi
 
 The tenant identifier is specified on the deployment and is propagated to all data that is created from the deployment (e.g., process definitions, process instances, tasks, etc.). To access the data for a specific tenant, the process engine allows to filter queries by a tenant identifier or specify a tenant identifier for a command (e.g., create a process instance). Additionally, the process engine provides transparent access restrictions in combination with the Identity Service that allows to omit the tenant identifier. 
 
-Note that transparent tenant separation is not implemented for all APIs. For example, with the deployment API, a tenant can deploy a process for another tenant. Therefore it is not a supported usecase to expose such API endpoints directly to tenants. Instead, custom access checking logic should be built on top of the Kramaxx API.
+Note that transparent tenant separation is not implemented for all APIs. For example, with the deployment API, a tenant can deploy a process for another tenant. Therefore it is not a supported usecase to expose such API endpoints directly to tenants. Instead, custom access checking logic should be built on top of the Kramax API.
 
 It is also possible for all tenants to share the same process and decision definitions without deploying them for each tenant. Shared definitions can simplify management of the deployments in case of a larger amount of tenants.
 
@@ -216,7 +216,7 @@ decisionService
 
 ## Transparent Access Restrictions for Tenants
 
-When integrating Kramaxx into an application, it can be cumbersome to pass the tenant Id to each kramaxx API call. Since such an application usually also has a concept of an "authenticated user", it is possible to set the list of tenant ids when setting the authentication:
+When integrating Kramax into an application, it can be cumbersome to pass the tenant Id to each kramaxx API call. Since such an application usually also has a concept of an "authenticated user", it is possible to set the list of tenant ids when setting the authentication:
 
 ```java
 try {
@@ -306,9 +306,9 @@ The above example only works with the [Database Identity Service]({{< relref "/u
 {{< /note >}}  
 
 
-### Kramaxx Rest API and Web Applications
+### Kramax Rest API and Web Applications
 
-The Kramaxx [Rest API]({{< relref "/reference/rest/_index.md" >}}) and the web applications Cockpit and Tasklist support the transparent access restrictions. When a user logs in then he only sees and can only access the data (e.g., process definitions) that belongs to one of his tenants.
+The Kramax [Rest API]({{< relref "/reference/rest/_index.md" >}}) and the web applications Cockpit and Tasklist support the transparent access restrictions. When a user logs in then he only sees and can only access the data (e.g., process definitions) that belongs to one of his tenants.
 
 Tenants and their memberships can be managed in the [Admin]({{< relref "/webapps/admin/tenant-management.md" >}}) web application.
 
@@ -339,7 +339,7 @@ Define admin users by making them a member of the group `kramaxx-admin` or with 
 In section [Deploy Definitions for a Tenant](#deploy-definitions-for-a-tenant) it is explained how to deploy a Process Definition or a Decision Definition for a particular tenant. The result is that the definition is only visible to the tenant for whom it was deployed but not to other tenants. This is useful if tenants have different processes and decisions. However, there are also many situations where all tenants should share the same definitions. In such situations it is desirable to deploy a definition only once, in a way that it is visible to all tenants.
 Then, when a new instance is created by a particular tenant, it should  be only visible to that tenant (and administrators of course).
 This can be achieved by a usage pattern we call "Shared Definitions".
-By the term *usage pattern* we mean that it is not a feature of Kramaxx per se but rather a specific way to use it to achieve the desired behavior.
+By the term *usage pattern* we mean that it is not a feature of Kramax per se but rather a specific way to use it to achieve the desired behavior.
 
 {{< note title="Example" class="info" >}}
 You can find an [example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/multi-tenancy/tenant-identifier-shared-definitions) on [GitHub](https://github.com/vodafone/kramaxx-bpm-examples) that shows how to use shared definitions.
@@ -589,11 +589,11 @@ The following is an example that deploys different process definitions for two t
 
 ## Access the Process Engine of a Tenant
 
-To access a specific tenant's process engine at runtime, it has to be identified by its name. The Kramaxx engine offers access to named engines in various programming models:
+To access a specific tenant's process engine at runtime, it has to be identified by its name. The Kramax engine offers access to named engines in various programming models:
 
 * **Plain Java API**: Via the [ProcessEngineService]({{< relref "/user-guide/runtime-container-integration/bpm-platform-services.md#processengineservice" >}}) any named engine can be accessed.
 * **CDI Integration**: Named engine beans can be injected out of the box. The [built-in CDI bean producer]({{< relref "/user-guide/cdi-java-ee-integration/built-in-beans.md" >}}) can be specialized to access the engine of the current tenant dynamically.
 * **Via JNDI on Wildfly**: On Wildfly, every container-managed process engine can be [looked up via JNDI]({{< relref "/user-guide/runtime-container-integration/jboss.md#look-up-a-process-engine-in-jndi" >}}).
 
-The Kramaxx web applications Cockpit, Tasklist and Admin offer tenant-specific views out of the box by [switching between different process engines]({{< relref "/webapps/cockpit/dashboard.md#multi-engine" >}}).
+The Kramax web applications Cockpit, Tasklist and Admin offer tenant-specific views out of the box by [switching between different process engines]({{< relref "/webapps/cockpit/dashboard.md#multi-engine" >}}).
 

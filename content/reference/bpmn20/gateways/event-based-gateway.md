@@ -65,7 +65,7 @@ The corresponding xml looks like this:
 ```
 
 
-# Kramaxx Extensions
+# Kramax Extensions
 
 <table class="table table-striped">
   <tr>

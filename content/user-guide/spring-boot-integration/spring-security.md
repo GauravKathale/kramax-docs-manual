@@ -11,13 +11,13 @@ menu:
 ---
 
 
-Kramaxx provides Spring Security OAuth2 integration with the `kramaxx-bpm-spring-boot-starter-security` library.
+Kramax provides Spring Security OAuth2 integration with the `kramaxx-bpm-spring-boot-starter-security` library.
 This library contains the Spring Security and Spring Security OAuth2 dependencies along with
-configuration classes that integrate Spring Security with Kramaxx Webapp's authentication.
+configuration classes that integrate Spring Security with Kramax Webapp's authentication.
 
-This is available both for Spring Boot and Kramaxx Run.
+This is available both for Spring Boot and Kramax Run.
 
-Kramaxx's integration comes with multiple components and configurations. In the next sections you can find more details to each of them.
+Kramax's integration comes with multiple components and configurations. In the next sections you can find more details to each of them.
 
 # Activate OAuth2
 
@@ -32,10 +32,10 @@ In order to enable the Spring Security OAuth2 integration in Spring Boot, add th
 </dependency>
 ```
 
-## Kramaxx Run
+## Kramax Run
 
-Kramaxx Run already contains the required libraries, all you need to do is to activate them.
-In order to enable the Spring Security OAuth2 integration in Kramaxx Run, start Run with an extra `--oauth2` argument:
+Kramax Run already contains the required libraries, all you need to do is to activate them.
+In order to enable the Spring Security OAuth2 integration in Kramax Run, start Run with an extra `--oauth2` argument:
 
 ```shell
 ./start.sh --webapps --rest --oauth2
@@ -43,23 +43,23 @@ In order to enable the Spring Security OAuth2 integration in Kramaxx Run, start 
 
 # Auto Configuration
 
-The Kramaxx integration has two default auto configurations. Depending on the OAuth2 client
+The Kramax integration has two default auto configurations. Depending on the OAuth2 client
 registration in the application properties (`spring.security.oauth2.client.registration`) either the
-`KramaxxSpringSecurityOAuth2AutoConfiguration` or the `KramaxxBpmSpringSecurityDisableAutoConfiguration` will be activated.
+`KramaxSpringSecurityOAuth2AutoConfiguration` or the `KramaxBpmSpringSecurityDisableAutoConfiguration` will be activated.
 
 ## OAuth2 Enabled Configuration
 
 Configuration activates if there is OAuth2 client registration configured. This class configures the Spring
-Security filter chain to secure the Kramaxx Webapps.
+Security filter chain to secure the Kramax Webapps.
 
-Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxxSpringSecurityOAuth2AutoConfiguration.html" text="KramaxxSpringSecurityOAuth2AutoConfiguration" >}}
+Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxSpringSecurityOAuth2AutoConfiguration.html" text="KramaxSpringSecurityOAuth2AutoConfiguration" >}}
 
 ## Spring Security Disabled Auto Configuration
 
 Configuration activates if there is **no** OAuth2 client registration configured. This class configures the Spring
 Security filter chain to a permit all mode.
 
-Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxxBpmSpringSecurityDisableAutoConfiguration.html" text="KramaxxBpmSpringSecurityDisableAutoConfiguration" >}}
+Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxBpmSpringSecurityDisableAutoConfiguration.html" text="KramaxBpmSpringSecurityDisableAutoConfiguration" >}}
 
 # OAuth2 Client Registration
 
@@ -67,16 +67,16 @@ For the client registration, please refer to the official Spring
 Security's [OAuth2 Core Configuration][OAuth2Config] documentation to configure your choice of
 identity provider.
 
-Once there is an OAuth2 client registration configured and the Kramaxx Spring Security OAuth2
+Once there is an OAuth2 client registration configured and the Kramax Spring Security OAuth2
 integration is enabled, the Webapps will use the configured OAuth2 provider for
 authentication.
 
 # User Name Mapping
 
-Kramaxx's integration uses the **name** field from Spring Security's principal object as the User ID
+Kramax's integration uses the **name** field from Spring Security's principal object as the User ID
 in the Webapps.
 
-Spring Security by default uses the subject (`sub`) claim as the principal name. As the User ID in Kramaxx is
+Spring Security by default uses the subject (`sub`) claim as the principal name. As the User ID in Kramax is
 an important part for authorizations, it's important that the right claim is used. 
 
 Spring Security provides a way to change the default attribute used for the username.
@@ -101,17 +101,17 @@ For creating initial authorizations in your application, you have the following 
        lastName: Demo
    ```
 
-  - See [Kramaxx Engine Properties]({{< relref "/user-guide/spring-boot-integration/configuration#kramaxx-engine-properties" >}}) documentation for more details.
+  - See [Kramax Engine Properties]({{< relref "/user-guide/spring-boot-integration/configuration#kramaxx-engine-properties" >}}) documentation for more details.
 2. The [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
 to grant administrator authorizations for a particular OAuth2 user or group.
 
 # OAuth2 Identity Provider
 
-Additionally to the OAuth2 login, Kramaxx also provides support to use groups from OAuth2.
+Additionally to the OAuth2 login, Kramax also provides support to use groups from OAuth2.
 This is achieved with a custom [identity service]({{< relref "/user-guide/process-engine/identity-service.md" >}}), called {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/OAuth2IdentityProvider.html" text="OAuth2IdentityProvider" >}}.
 
 This is a read-only identity provider that configures user's groups from the [Spring Security's granted authorities][Authorities].
-This identity provider also supports the default Kramaxx Database Identity Service as a fallback for authentications for the REST API.
+This identity provider also supports the default Kramax Database Identity Service as a fallback for authentications for the REST API.
 
 The identity provider is activated by default. You can override this with the following properties:
 ```yaml
@@ -148,7 +148,7 @@ Alternatively, you can also define your own [GrantedAuthoritiesMapper][GrantedAu
 
 In Spring Boot this can be done by registering your own `GrantedAuthoritiesMapper` bean.
 
-In Kramaxx Run a JAR file needs to be built and copied into the `userlib` folder.
+In Kramax Run a JAR file needs to be built and copied into the `userlib` folder.
 This needs to contain a [Spring auto configuration][AutoConfig] with the custom granted authorities mapper bean.
 
 ## Configuration
@@ -192,13 +192,13 @@ Due to the fallback to DB Identity Service this provider is still defined as wri
 
 OAuth2 doesn't return information about other users or groups. This means users and even admins can only see their own user and groups on the Admin pages.
 
-Furthermore, it only shows groups from OAuth2 and doesn't show groups configured in Kramaxx database.
+Furthermore, it only shows groups from OAuth2 and doesn't show groups configured in Kramax database.
 
 ## Disabling Identity Provider
 
 With the [above-mentioned property](#configuration), the identity provider can be deactivated.
 Without identity provider OAuth2 is only used for authentication. This means, that the user needs to
-be also configured with the matching User ID in Kramaxx database.
+be also configured with the matching User ID in Kramax database.
 
 If the user is not available or doesn't have sufficient authorizations, they won't be able to access
 the Webapps.
@@ -206,8 +206,8 @@ the Webapps.
 # Logout
 
 We provide support for local and client initiated SSO logout as well.
-In order to support both logouts, the Kramaxx integration also contains a Frontend Plugin that overrides the Webapps default logout behaviour.
-As a consequence, when the Webapp user clicks on the logout, it invokes Spring's logout endpoint (`/logout`) instead of Kramaxx's.
+In order to support both logouts, the Kramax integration also contains a Frontend Plugin that overrides the Webapps default logout behaviour.
+As a consequence, when the Webapp user clicks on the logout, it invokes Spring's logout endpoint (`/logout`) instead of Kramax's.
 
 ## Client Initiated SSO Logout
 
@@ -252,9 +252,9 @@ Currently, it's not possible to change the default Spring logout endpoint, which
 
 # Security Recommendations
 
-Kramaxx's integration heavily relies on Spring Security's OAuth2 support.
+Kramax's integration heavily relies on Spring Security's OAuth2 support.
 
-If you decide to use OAuth2 for login in Kramaxx, we highly recommend to consult and implement the current industry recommended security standards.
+If you decide to use OAuth2 for login in Kramax, we highly recommend to consult and implement the current industry recommended security standards.
 Additionally, also follow the security recommendations specified by your identity provider.
 
 ## Token Lifetime
@@ -313,21 +313,21 @@ spring.security: # 3
    - Alternatively, `okta-spring-security-oauth2` library and its properties could be used too.
 4. Defines the `openid,profile,email,offline_access` scopes.
    - Scopes are provider dependent. `openid` is required usually.
-   - In case of OKTA, `profile` and `email` are useful to access firstname, lastname and email in Kramaxx but not mandatory.
+   - In case of OKTA, `profile` and `email` are useful to access firstname, lastname and email in Kramax but not mandatory.
    - `offline_access` activates the refresh_token grant, not mandatory.
-5. Configures the `preferred_username` as the username attribute, which is also used as the Kramaxx User ID.
+5. Configures the `preferred_username` as the username attribute, which is also used as the Kramax User ID.
 
 # Disable Auto Configuration
 
-If you wish to use Spring Security but without Kramaxx's integration classes, you can do so by
+If you wish to use Spring Security but without Kramax's integration classes, you can do so by
 excluding the two auto configuration classes:
 
 Either with the `@EnableAutoConfiguration` annotation:
 
 ```java
 @EnableAutoConfiguration(exclude={
-    KramaxxSpringSecurityOAuth2AutoConfiguration.class,
-    KramaxxBpmSpringSecurityDisableAutoConfiguration.class
+    KramaxSpringSecurityOAuth2AutoConfiguration.class,
+    KramaxBpmSpringSecurityDisableAutoConfiguration.class
 });
 ```
 
@@ -337,8 +337,8 @@ Or in the application properties:
 spring:
   autoconfigure:
     exclude:
-      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxxSpringSecurityOAuth2AutoConfiguration
-      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxxBpmSpringSecurityDisableAutoConfiguration
+      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxSpringSecurityOAuth2AutoConfiguration
+      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxBpmSpringSecurityDisableAutoConfiguration
 ```
 
 For more information, please refer to Spring's [Disabling Specific Auto-configuration Classes][DisableAutoConfig] documentation.

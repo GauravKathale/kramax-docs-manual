@@ -10,10 +10,10 @@ menu:
 ---
 
 {{< note title="FEEL Support Limitation" class="warning" >}}
-Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Kramaxx.
+Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Kramax.
 {{< /note >}}
 
-Ã¢â‚¬â€¹The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
+ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¹The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
 
 - Side-effect free
 - Simple data model with numbers, dates, strings, lists, and contexts
@@ -22,7 +22,7 @@ Please note that the WildFly and JBoss application servers do not support FEEL o
 
 See the [official specification](https://www.omg.org/spec/DMN/1.0/PDF).
 
-Within Kramaxx, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
+Within Kramax, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
 
 <table class="table desc-table">
   <tr>
@@ -96,7 +96,7 @@ For usage of expression language on conditional events, see the following exampl
 
 ## inputOutput Parameters
 
-With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramax `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with expression language.
 
 For usage of expression language on `inputParameter` mapping, see the following example:
@@ -136,12 +136,12 @@ A conditional sequence flow can directly check a variable value:
 The list of variable types that is supported by FEEL can be found in the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md" >}}">FEEL Engine Type Handling</a> page.
 
 ## Custom Functions
-Kramaxx provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
+Kramax provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
 called in expressions and unary tests. 
 To learn more visit the <a href="{{< relref "/user-guide/dmn-engine/feel/custom-functions" >}}">FEEL Engine Custom Functions</a> page.
 
-## Built-In Kramaxx Spin Functions
-To learn how Kramaxx Spin can be used together with the Scala FEEL Engine visit the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
+## Built-In Kramax Spin Functions
+To learn how Kramax Spin can be used together with the Scala FEEL Engine visit the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
 
 # Plugin Requirements
 

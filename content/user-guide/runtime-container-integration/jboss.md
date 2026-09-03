@@ -1,6 +1,6 @@
 ---
 
-title: 'The Kramaxx WildFly Subsystem'
+title: 'The Kramax WildFly Subsystem'
 weight: 50
 
 menu:
@@ -13,12 +13,12 @@ menu:
 {{< deprecated >}}
 
 {{< note title="Installation Guide" class="info" >}}
-  If you [download a full distribution](http://kramaxx.vodafone.org/download/), the Kramaxx Wildfly subsystem is readily installed into the application server.
+  If you [download a full distribution](http://kramaxx.vodafone.org/download/), the Kramax Wildfly subsystem is readily installed into the application server.
 
-  [Read the installation guide]({{< relref "/installation/full/jboss/_index.md" >}}) to learn how to install the Kramaxx Wildfly subsystem into your Wildfly Server.
+  [Read the installation guide]({{< relref "/installation/full/jboss/_index.md" >}}) to learn how to install the Kramax Wildfly subsystem into your Wildfly Server.
 {{< /note >}}
 
-Kramaxx provides advanced integration for Wildfly in the form of a custom [Wildfly Subsystem](https://docs.wildfly.org/23/Extending_WildFly.html).
+Kramax provides advanced integration for Wildfly in the form of a custom [Wildfly Subsystem](https://docs.wildfly.org/23/Extending_WildFly.html).
 
 The most prominent features are:
 
@@ -26,11 +26,11 @@ The most prominent features are:
 * Configure the process engine in `standalone.xml` / `domain.xml` and administer it though the JBoss Management System.
 * Process Engines are native JBoss Services with service lifecycles and dependencies.
 * Automatic deployment of BPMN 2.0 processes (through the Process Application API).
-* Use a managed Thread Pool for the Job Executor configured through the Kramaxx Subsystem.
+* Use a managed Thread Pool for the Job Executor configured through the Kramax Subsystem.
 
 # Configure the Job Executor in standalone.xml/domain.xml
 
-The configuration of the thread pool used by the Job Executor is done in the Kramaxx subsystem, which also controls the thread pool creation and shutdown.  
+The configuration of the thread pool used by the Job Executor is done in the Kramax subsystem, which also controls the thread pool creation and shutdown.  
 You are able to configure it through the following new configuration elements below the `job-executor` element of the subsystem XML configuration.
 
 Mandatory configuration elements are:  
@@ -52,7 +52,7 @@ For a complete list of all configuration options, please refer to the [Job Execu
 
 
 
-Using the Kramaxx Wildfly subsystem, it is possible to configure and manage the process engine through the JBoss Management Model. The most straightforward way is to add the process engine configuration to the `standalone.xml` file of the Wildfly Server:
+Using the Kramax Wildfly subsystem, it is possible to configure and manage the process engine through the JBoss Management Model. The most straightforward way is to add the process engine configuration to the `standalone.xml` file of the Wildfly Server:
 
 ```xml
 <subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
@@ -167,7 +167,7 @@ You specify the process engine plugins in `standalone.xml`/`domain.xml` for each
 You have to provide the fully qualified classname between the `<class>` tags. Additional properties can be specified using the `<properties>` element.
 The restrictions which apply for [providing a custom process engine configuration class]({{< relref "#provide-a-custom-process-engine-configuration-class" >}}) are also valid for process engine plugins:
 
- * Plugin class must be visible in the classpath for the Kramaxx subsystem.
+ * Plugin class must be visible in the classpath for the Kramax subsystem.
  * Properties map can be used for invoking primitive valued setters (Integer, String, Boolean) that follow the Java Bean conventions.
 
 
@@ -193,7 +193,7 @@ System properties may be set via command line (`-D`option). Read more on express
 
 # Look Up a Process Engine in JNDI
 
-The Kramaxx Wildfly subsystem provides the same [JNDI bindings for the ProcessApplicationService and the ProcessEngineService]({{< relref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) as provided on other containers. In addition, the Kramaxx Wildfly subsystem creates JNDI Bindings for all managed process engines, allowing us to look them up directly.
+The Kramax Wildfly subsystem provides the same [JNDI bindings for the ProcessApplicationService and the ProcessEngineService]({{< relref "/user-guide/runtime-container-integration/jndi-bindings-for-bpmn-platform-services.md" >}}) as provided on other containers. In addition, the Kramax Wildfly subsystem creates JNDI Bindings for all managed process engines, allowing us to look them up directly.
 
 The global JNDI bindings for process engines follow the pattern
 
@@ -307,7 +307,7 @@ The JConsole plugin allows you to inspect the management model graphically and b
    Classpath dependencies are automatically managed for you if you use the [Process Application API]({{< relref "/user-guide/process-applications/_index.md" >}}).
 {{< /note >}}
 
-When using the Kramaxx Wildfly subsystem, the process engine classes are deployed as WildFly module. The module is named
+When using the Kramax Wildfly subsystem, the process engine classes are deployed as WildFly module. The module is named
 `org.vodafone.kramaxx.bpm.kramaxx-engine` and is deployed in the folder `$WILDFLY_HOME/modules/org/vodafone/kramaxx/bpm/kramaxx-engine`.
 
 By default, the application server will not add this module to the classpath of applications. If an application needs to interact with the process engine, we must declare a module dependency in the application. This can be achieved using either an implicit or an explicit module dependency.
@@ -315,7 +315,7 @@ By default, the application server will not add this module to the classpath of 
 
 ## Implicit Module Dependencies with the Process Application API
 
-When using the Process Application API (i.e., when deploying either a servlet process application or an EJB process application), the Kramaxx Wildfly subsystem will detect the `@ProcessApplication` class in the deployment and automatically add a module dependency between the application and the process engine module. As a result, we don't have to declare the dependency ourselves. It is called an [implicit module dependency](https://docs.wildfly.org/23/Developer_Guide.html#Implicit_module_dependencies_for_deployments) because it is not explicitly declared but can be derived by inspecting the application and seeing that it provides a `@ProcessApplication` class.
+When using the Process Application API (i.e., when deploying either a servlet process application or an EJB process application), the Kramax Wildfly subsystem will detect the `@ProcessApplication` class in the deployment and automatically add a module dependency between the application and the process engine module. As a result, we don't have to declare the dependency ourselves. It is called an [implicit module dependency](https://docs.wildfly.org/23/Developer_Guide.html#Implicit_module_dependencies_for_deployments) because it is not explicitly declared but can be derived by inspecting the application and seeing that it provides a `@ProcessApplication` class.
 
 
 ## Explicit Module Dependencies
@@ -351,7 +351,7 @@ As a result, the Application Service will add the process engine module to the c
    Service dependencies are automatically managed for you if you use the [Process Application API]({{< relref "/user-guide/process-applications/_index.md" >}}).
 {{< /note >}}
 
-The Kramaxx Wildfly subsystem manages process engines as JBoss Services in the JBoss Module Service Container. For the Module Service Container to provide the process engine service(s) to the deployed applications, it is important that the dependencies are known. Consider the following example:
+The Kramax Wildfly subsystem manages process engines as JBoss Services in the JBoss Module Service Container. For the Module Service Container to provide the process engine service(s) to the deployed applications, it is important that the dependencies are known. Consider the following example:
 
 {{< img src="../img/jboss-service-dependencies.png" title="JBoss Service Dependencies" >}}
 
@@ -360,7 +360,7 @@ There are three applications deployed and two process engine services exist. App
 
 ## Implicit Service Dependencies
 
-When using the Process Application API (i.e., when deploying either a servlet process application or an EJB process application), the Kramaxx Wildfly subsystem will detect the `@ProcessApplication` class in the deployment and automatically add a service dependency between the process application component and the process engine module. This ensures that the process engine is available when the process application is deployed.
+When using the Process Application API (i.e., when deploying either a servlet process application or an EJB process application), the Kramax Wildfly subsystem will detect the `@ProcessApplication` class in the deployment and automatically add a service dependency between the process application component and the process engine module. This ensures that the process engine is available when the process application is deployed.
 
 
 ## Explicit Service Dependencies

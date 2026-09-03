@@ -16,7 +16,7 @@ available:
 
 # LDAP
 
-If you connect Kramaxx with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service [here]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
+If you connect Kramax with the LDAP identity service, you have read-only access to the users and groups. Create new users and groups via the LDAP system, but not in the admin application. Find more information about how to configure the process engine in order to use the LDAP identity service [here]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
 
 # Logo and header color
 
@@ -26,7 +26,7 @@ and can override the standard styles.
 
 ```css
 .navbar-brand {
-  /* hides the "Kramaxx Admin" text */
+  /* hides the "Kramax Admin" text */
   text-indent: -999em;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -40,12 +40,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Admin*) and vendor (*Kramaxx*)
+**Note:** you can also change the app name (*Admin*) and vendor (*Kramax*)
 by changing the `app/admin/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   app: {
     name: 'Admin',
     vendor: 'Company'
@@ -55,8 +55,8 @@ export default {
 
 # Localization
 
-Admin can be localized. Kramaxx maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramaxx webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
+Admin can be localized. Kramax maintains English and German translation files. 
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
 
 The localization of Admin is contained in the `app/admin/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -71,7 +71,7 @@ If the browser uses a language which is not available, Admin uses the locale def
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -92,12 +92,12 @@ Add your files to the `customScripts` property of the `app/admin/scripts/config.
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   customScripts: 
     ['custom-module/module.js']
 }
 ```
-This includes a `custom-module/module.js` file. The path is relative to the `app/admin` folder in the Kramaxx webapp .war file.
+This includes a `custom-module/module.js` file. The path is relative to the `app/admin` folder in the Kramax webapp .war file.
 
 # Change CSRF cookie name
 
@@ -106,7 +106,7 @@ same origin, the CSRF mechanisms could interfere with each other. To avoid the n
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -115,12 +115,12 @@ export default {
 
 # Disable welcome message for new users
 
-First-time visitors are shown a message directing them to the Kramaxx welcome page. If you do
+First-time visitors are shown a message directing them to the Kramax welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   disableWelcomeMessage: true
 }
 ```
@@ -133,7 +133,7 @@ The default maximum length of a user operation log annotation is 4000 characters
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   userOperationLogAnnotationLength: 4000
 }
 ```
@@ -146,7 +146,7 @@ The task worker metrics (TW) on the metrics page are displayed by default. You c
 
 ```javascript
 export default {
-  // Ã¢â‚¬Â¦
+  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
   alwaysShowUniqueTaskWorkerMetrics: false
 }
 ```

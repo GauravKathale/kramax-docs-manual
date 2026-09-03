@@ -1,6 +1,6 @@
 ---
 
-title: 'Extend and customize Kramaxx Cockpit'
+title: 'Extend and customize Kramax Cockpit'
 weight: 80
 layout: 'section-list'
 
@@ -9,8 +9,8 @@ menu:
     identifier: "user-guide-cockpit-extend"
     parent: "user-guide-cockpit"
     name: "Extending"
-    pre: "Extend and customize Kramaxx Cockpit"
+    pre: "Extend and customize Kramax Cockpit"
 
 ---
 
-It is possible to extend and customize Kramaxx Cockpit.
+It is possible to extend and customize Kramax Cockpit.
