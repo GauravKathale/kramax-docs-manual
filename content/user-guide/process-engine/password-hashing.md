@@ -20,7 +20,7 @@ At salt generation, a random 16-byte per-user value is created, which is generat
 
 If it is necessary to use a more secure hash algorithm, you can provide your own implementation.
 
-You can do this by implementing the `PasswordEncryptor` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package. The interface ensures that all necessary functions for password hashing are implemented. You can have a look at the classes `Base64EncodedHashDigest` and `ShaHashDigest` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
+You can do this by implementing the `PasswordEncryptor` interface from the `org.vodafone.kramax.bpm.engine.impl.digest` package. The interface ensures that all necessary functions for password hashing are implemented. You can have a look at the classes `Base64EncodedHashDigest` and `ShaHashDigest` from the `org.vodafone.kramax.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
 
 
 ```java
@@ -57,7 +57,7 @@ Please do not use your own implementation of a hash function, but rather a stand
 
 # Customize the Salt generation
 
-Similar to the hashing algorithm, the salt generation can be adjusted. First, implement the `SaltGenerator` interface from the `org.vodafone.kramaxx.bpm.engine.impl.digest`. This ensures that all necessary functions are implemented. You can have a look at the classes `Base64EncodedSaltGenerator` and `Default16ByteSaltGenerator` from the `org.vodafone.kramaxx.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
+Similar to the hashing algorithm, the salt generation can be adjusted. First, implement the `SaltGenerator` interface from the `org.vodafone.kramax.bpm.engine.impl.digest`. This ensures that all necessary functions are implemented. You can have a look at the classes `Base64EncodedSaltGenerator` and `Default16ByteSaltGenerator` from the `org.vodafone.kramax.bpm.engine.impl.digest` package to see how this is done in Kramax. A template for your own implementation could look as follows:
 
 ```java
 public class MyCustomSaltGenerator implements SaltGenerator {

@@ -11,16 +11,16 @@ menu:
 ---
 
 
-The process engine can be hooked-up to the Spring event bus. We call this the "Spring Eventing Bridge". This allows us to be notified of process events using standard Spring eventing mechanisms. By default, the Spring eventing is enabled by a engine plugin. The eventing is controlled by four `kramaxx.bpm.eventing` properties. These are:
+The process engine can be hooked-up to the Spring event bus. We call this the "Spring Eventing Bridge". This allows us to be notified of process events using standard Spring eventing mechanisms. By default, the Spring eventing is enabled by a engine plugin. The eventing is controlled by four `kramax.bpm.eventing` properties. These are:
 
 ```
-kramaxx.bpm.eventing.execution=true
-kramaxx.bpm.eventing.history=true
-kramaxx.bpm.eventing.task=true
-kramaxx.bpm.eventing.skippable=true
+kramax.bpm.eventing.execution=true
+kramax.bpm.eventing.history=true
+kramax.bpm.eventing.task=true
+kramax.bpm.eventing.skippable=true
 ```
 
-The first three properties control three event streams for execution, task and history events respectively. The last property `kramaxx.bpm.eventing.skippable` is responsible
+The first three properties control three event streams for execution, task and history events respectively. The last property `kramax.bpm.eventing.skippable` is responsible
 for the registration of the event listeners. If its value is `true`, the execution of the listners can be skipped via API or in Kramax Cockpit by activating "skip listners" flag. Otherwise, the listeners are registered as built-in listeners and are executed unconditionally.
 
 Listeners can subscribe to streams of mutable or immutable event objects. The latter of those are particularly useful
@@ -37,9 +37,9 @@ The following example gives an overview of how process events can be received in
 providing Spring beans with annotated methods instead of implementing the `TaskListener` and `ExecutionListener` interfaces.
 
 ```java
-import org.vodafone.kramaxx.bpm.engine.delegate.DelegateExecution;
-import org.vodafone.kramaxx.bpm.engine.delegate.DelegateTask;
-import org.vodafone.kramaxx.bpm.engine.impl.history.event.HistoryEvent;
+import org.vodafone.kramax.bpm.engine.delegate.DelegateExecution;
+import org.vodafone.kramax.bpm.engine.delegate.DelegateTask;
+import org.vodafone.kramax.bpm.engine.impl.history.event.HistoryEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 

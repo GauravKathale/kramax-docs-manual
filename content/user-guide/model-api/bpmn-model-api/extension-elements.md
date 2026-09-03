@@ -48,7 +48,7 @@ extensionElements.getElementsQuery().filterByType(KramaxFormData.class).singleRe
 
 Additionally, there are some shortcuts to add new extension elements. You can use
 the `namespaceUri` and the `elementName` to add your own extension elements. Or
-you can use the `class` of a known extension element type, e.g., the kramaxx
+you can use the `class` of a known extension element type, e.g., the kramax
 extension elements. The extension element is added to the BPMN element and returned
 so that you can set attributes or add child elements.
 
@@ -60,8 +60,8 @@ KramaxExecutionListener listener = extensionElements.addExtensionElement(KramaxE
 Another helper method exists for the fluent builder API which allows you to add prior defined extension elements.
 
 ```java
-KramaxExecutionListener kramaxxExecutionListener = modelInstance.newInstance(KramaxExecutionListener.class);
-kramaxxExecutionListener.setKramaxClass("org.vodafone.kramaxx.bpm.MyJavaDelegte");
+KramaxExecutionListener kramaxExecutionListener = modelInstance.newInstance(KramaxExecutionListener.class);
+kramaxExecutionListener.setKramaxClass("org.vodafone.kramax.bpm.MyJavaDelegte");
 startEvent.builder()
-  .addExtensionElement(kramaxxExecutionListener);
+  .addExtensionElement(kramaxExecutionListener);
 ```

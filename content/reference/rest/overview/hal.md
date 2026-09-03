@@ -159,24 +159,24 @@ case the REST API is embedded into the Kramax Web Application).
   <!-- ... -->
 
   <listener>
-    <listener-class>org.vodafone.kramaxx.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
+    <listener-class>org.vodafone.kramax.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
   </listener>
 
   <context-param>
-    <param-name>org.vodafone.kramaxx.bpm.engine.rest.hal.cache.config</param-name>
+    <param-name>org.vodafone.kramax.bpm.engine.rest.hal.cache.config</param-name>
     <param-value>
       {
-        "cacheImplementation": "org.vodafone.kramaxx.bpm.engine.rest.hal.cache.DefaultHalResourceCache",
+        "cacheImplementation": "org.vodafone.kramax.bpm.engine.rest.hal.cache.DefaultHalResourceCache",
         "caches": {
-          "org.vodafone.kramaxx.bpm.engine.rest.hal.user.HalUser": {
+          "org.vodafone.kramax.bpm.engine.rest.hal.user.HalUser": {
             "capacity": 100,
             "secondsToLive": 900
           },
-          "org.vodafone.kramaxx.bpm.engine.rest.hal.group.HalGroup": {
+          "org.vodafone.kramax.bpm.engine.rest.hal.group.HalGroup": {
             "capacity": 100,
             "secondsToLive": 900
           },
-          "org.vodafone.kramaxx.bpm.engine.rest.hal.processDefinition.HalProcessDefinition": {
+          "org.vodafone.kramax.bpm.engine.rest.hal.processDefinition.HalProcessDefinition": {
             "capacity": 100,
             "secondsToLive": 600
           }
@@ -197,12 +197,12 @@ used:
 
 ```xml
 <listener>
-  <listener-class>org.vodafone.kramaxx.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
+  <listener-class>org.vodafone.kramax.bpm.engine.rest.hal.cache.HalRelationCacheBootstrap</listener-class>
 </listener>
 ```
 
 It is configured by the context parameter
-`org.vodafone.kramaxx.bpm.engine.rest.hal.cache.config`. The configuration is provided
+`org.vodafone.kramax.bpm.engine.rest.hal.cache.config`. The configuration is provided
 as JSON and consists of two properties:
 
 <table class="table table-striped">
@@ -214,9 +214,9 @@ as JSON and consists of two properties:
     <td>cacheImplementation</td>
     <td>
       The class which is used as cache. The class has to implement the
-      <code>org.vodafone.kramaxx.bpm.engine.rest.cache.Cache</code> interface.
+      <code>org.vodafone.kramax.bpm.engine.rest.cache.Cache</code> interface.
       A simple default implementation is provided by the
-      <code>org.vodafone.kramaxx.bpm.engine.rest.hal.cache.DefaultHalResourceCache</code> class.
+      <code>org.vodafone.kramax.bpm.engine.rest.hal.cache.DefaultHalResourceCache</code> class.
     </td>
   </tr>
   <tr>
@@ -256,9 +256,9 @@ options:
 
 ## List of Resources Which Support Caching
 
-* Case Definition: `org.vodafone.kramaxx.bpm.engine.rest.hal.caseDefinition.HalCaseDefinition`
-* Group: `org.vodafone.kramaxx.bpm.engine.rest.hal.group.HalGroup`
-* Identity Links (of a Task): `org.vodafone.kramaxx.bpm.engine.rest.hal.identitylink.HalIdentityLink`
-* Process Definition: `org.vodafone.kramaxx.bpm.engine.rest.hal.processDefinition.HalProcessDefinition`
-* Task: `org.vodafone.kramaxx.bpm.engine.rest.hal.task.HalTask`
-* User: `org.vodafone.kramaxx.bpm.engine.rest.hal.user.HalUser`
+* Case Definition: `org.vodafone.kramax.bpm.engine.rest.hal.caseDefinition.HalCaseDefinition`
+* Group: `org.vodafone.kramax.bpm.engine.rest.hal.group.HalGroup`
+* Identity Links (of a Task): `org.vodafone.kramax.bpm.engine.rest.hal.identitylink.HalIdentityLink`
+* Process Definition: `org.vodafone.kramax.bpm.engine.rest.hal.processDefinition.HalProcessDefinition`
+* Task: `org.vodafone.kramax.bpm.engine.rest.hal.task.HalTask`
+* User: `org.vodafone.kramax.bpm.engine.rest.hal.user.HalUser`

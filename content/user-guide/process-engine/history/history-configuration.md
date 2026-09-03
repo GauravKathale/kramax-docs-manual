@@ -36,7 +36,7 @@ The history level controls the amount of data the process engine provides via th
     * Historic External Task Log CREATED, DELETED, FAILED, SUCCESSFUL: fired as an external task has been created, deleted or an external task execution has been reported to fail or succeed.
 * `AUTO`: The level `auto` is useful if you are planning to run multiple engines on the same database. In that case, all engines have to use the same history level. Instead of manually keeping your configurations in sync, use the level `auto` and the engine determines the level already configured in the database automatically. If none is found, the default value `audit` is used. Keep in mind: If you are planning to use custom history levels, you have to register the custom levels for every configuration, otherwise an exception is thrown.
 
-If you need to customize the amount of history events logged, you can provide a custom implementation {{< javadocref page="org/vodafone/kramaxx/bpm/engine/impl/history/producer/HistoryEventProducer.html" text="HistoryEventProducer" >}} and wire it in the process engine configuration.
+If you need to customize the amount of history events logged, you can provide a custom implementation {{< javadocref page="org/vodafone/kramax/bpm/engine/impl/history/producer/HistoryEventProducer.html" text="HistoryEventProducer" >}} and wire it in the process engine configuration.
 
 In case of specific needs, you can also create a [custom history level]({{< relref "/user-guide/process-engine/history/custom-implementation.md#implement-a-custom-history-level">}}).
 
@@ -117,7 +117,7 @@ The HistoryService exposes the methods `createHistoricProcessInstanceQuery()`,
 `createHistoricExternalTaskLogQuery` and `createHistoricIdentityLinkLogQuery()`
 which can be used for querying history.
 
-Below are a few examples which show some of the possibilities of the query API for history. Full description of the possibilities can be found in the Javadocs, in the `org.vodafone.kramaxx.bpm.engine.history` package.
+Below are a few examples which show some of the possibilities of the query API for history. Full description of the possibilities can be found in the Javadocs, in the `org.vodafone.kramax.bpm.engine.history` package.
 
 **HistoricProcessInstanceQuery**
 
@@ -325,7 +325,7 @@ historyService
   .duration(PeriodUnit.MONTH);
 ```
 
-The supported periods so far are `MONTH` and `QUARTER` from `org.vodafone.kramaxx.bpm.engine.query.PeriodUnit`.
+The supported periods so far are `MONTH` and `QUARTER` from `org.vodafone.kramax.bpm.engine.query.PeriodUnit`.
 
 To narrow down the report query, one can use the following methods from ``HistoricProcessInstanceReport``:
 

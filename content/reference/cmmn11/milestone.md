@@ -75,7 +75,7 @@ milestoneInstance.isCompleted(); // true if milestone occurred
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>
     </td>
   </tr>
 </table>

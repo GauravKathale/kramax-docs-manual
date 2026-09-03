@@ -14,6 +14,6 @@ menu:
 
 Kramax Modeler is a desktop application for modeling BPMN and DMN. It allows you to model files located directly on your local file system.
 
-{{< img src="img/kramaxx-modeler.png" title="Kramax Modeler" >}}
+{{< img src="img/kramax-modeler.png" title="Kramax Modeler" >}}
 
-This is a guide to get you started with modeling BPMN diagrams and DMN decision tables. Make sure to [Install the Kramax Modeler]({{< relref "/installation/kramaxx-modeler.md" >}}) first.
+This is a guide to get you started with modeling BPMN diagrams and DMN decision tables. Make sure to [Install the Kramax Modeler]({{< relref "/installation/kramax-modeler.md" >}}) first.

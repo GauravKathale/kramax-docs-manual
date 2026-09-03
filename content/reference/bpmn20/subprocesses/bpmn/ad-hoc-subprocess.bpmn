@@ -6,7 +6,7 @@
              xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
              xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"
              id="adhoc-collapsed-diagram"
-             targetNamespace="http://www.kramaxx.org/bpmn20">
+             targetNamespace="http://www.kramax.org/bpmn20">
   <collaboration id="collaboration1">
     <participant id="participant1" name="Process" processRef="process1"/>
   </collaboration>

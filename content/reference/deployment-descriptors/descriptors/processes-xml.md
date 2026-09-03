@@ -19,7 +19,7 @@ See the [processes.xml]({{< relref "/user-guide/process-applications/the-process
 
 # Xml Schema Namespace
 
-The namespace for the processes.xml file is `http://www.camunda.org/schema/1.0/ProcessApplication`. The XSD file can be found in the `kramaxx-engine.jar` file.
+The namespace for the processes.xml file is `http://www.camunda.org/schema/1.0/ProcessApplication`. The XSD file can be found in the `kramax-engine.jar` file.
 
 
 # Empty processes.xml

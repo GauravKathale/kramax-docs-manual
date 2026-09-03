@@ -35,7 +35,7 @@ DecisionService decisionService = processEngine.getDecisionService();
 
 `ProcessEngines.getDefaultProcessEngine()` will initialize and build a process engine the first time it is called and afterwards always returns the same process engine. Proper creation and closing of all process engines can be done with `ProcessEngines.init()` and `ProcessEngines.destroy()`.
 
-The ProcessEngines class will scan for all kramaxx.cfg.xml and activiti.cfg.xml files. For all `kramaxx.cfg.xml` files, the process engine will be built in the typical way:
+The ProcessEngines class will scan for all kramax.cfg.xml and activiti.cfg.xml files. For all `kramax.cfg.xml` files, the process engine will be built in the typical way:
 
 ```java
 ProcessEngineConfiguration
@@ -153,7 +153,7 @@ Make sure to return all results without any limitation when calling <code>[Query
 The possibility to retrieve an unlimited list is important to make sure that the REST API works appropriately since a few endpoints
 rely on retrieving unlimited results.
 
-[javadocs-query-unlimited-list]: {{< javadocref_url page="org/vodafone/kramaxx/bpm/engine/query/Query.html#unlimitedList--" >}}
+[javadocs-query-unlimited-list]: {{< javadocref_url page="org/vodafone/kramax/bpm/engine/query/Query.html#unlimitedList--" >}}
 
 ## Paginated Queries
 

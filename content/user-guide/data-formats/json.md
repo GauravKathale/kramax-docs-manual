@@ -10,7 +10,7 @@ menu:
 
 ---
 
-For working with JSON, the Spin functions `org.vodafone.kramaxx.spin.Spin.S` and `org.vodafone.kramaxx.spin.Spin.JSON` can be used as entry points. The latter offers strongly-typed access to Spin's JSON API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing JSON as well as mapping JSON to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary JSON format.
+For working with JSON, the Spin functions `org.vodafone.kramax.spin.Spin.S` and `org.vodafone.kramax.spin.Spin.JSON` can be used as entry points. The latter offers strongly-typed access to Spin's JSON API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing JSON as well as mapping JSON to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary JSON format.
 
 The following provides examples on how Kramax Spin can be used in the process engine to work with JSON data. For illustration purposes, let us assume that a String process variable `customer` containing JSON exists. It has the following content:
 

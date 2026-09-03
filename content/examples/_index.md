@@ -15,5 +15,5 @@ Completed the <a href="{{< relref "/get-started" >}}">Getting Started Guides</a>
 
 This page collects links to hands-on examples around Kramax.
 
-* [Examples](https://github.com/vodafone/kramaxx-examples) (On Github)
+* [Examples](https://github.com/vodafone/kramax-examples) (On Github)
 * more to come.

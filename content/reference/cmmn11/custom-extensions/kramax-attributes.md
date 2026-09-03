@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/cmmn`.
+The following attributes are extension attributes for the `kramax` namespace `http://camunda.org/schema/1.0/cmmn`.
 
 # assignee
 
@@ -24,7 +24,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -56,7 +56,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -87,7 +87,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -129,7 +129,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Constraints</th>
     <td colspan="2">
-      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#caseversion" >}}">camunda:caseVersion</a> is required, see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#casebinding" >}}">Case Binding</a> for more information.
+      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#caseversion" >}}">camunda:caseVersion</a> is required, see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#casebinding" >}}">Case Binding</a> for more information.
     </td>
   </tr>
   <tr>
@@ -155,7 +155,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -186,7 +186,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -222,7 +222,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      Fully qualified Java class name of a class which implements a <a href="{{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}">Java Delegate</a> interface, e.g., <code>org.vodafone.kramaxx.bpm.MyJavaDelegate</code>
+      Fully qualified Java class name of a class which implements a <a href="{{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}">Java Delegate</a> interface, e.g., <code>org.vodafone.kramax.bpm.MyJavaDelegate</code>
     </td>
   </tr>
   <tr>
@@ -232,7 +232,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>CMMN 1.1 Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
   </tr>
@@ -260,7 +260,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Constraints</th>
     <td colspan="2">
-      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#decisionversion" >}}">camunda:decisionVersion</a> is required.
+      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#decisionversion" >}}">camunda:decisionVersion</a> is required.
     </td>
   </tr>
   <tr>
@@ -286,7 +286,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -317,7 +317,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -348,7 +348,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -363,7 +363,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>CMMN 1.1 Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
   </tr>
@@ -381,7 +381,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -413,7 +413,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -428,7 +428,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>CMMN 1.1 Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
   </tr>
@@ -502,7 +502,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td>
-      The attribute references which <a href="{{< relref "/user-guide/process-engine/decisions/bpmn-cmmn.md#predefined-mapping-of-the-decision-result" >}}">built-in Decision Result Mapper</a> is used to pass the result of an evaluated decision to a case variable. It should be used in combination with <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#resultvariable" >}}">camunda:resultVariable</a>.
+      The attribute references which <a href="{{< relref "/user-guide/process-engine/decisions/bpmn-cmmn.md#predefined-mapping-of-the-decision-result" >}}">built-in Decision Result Mapper</a> is used to pass the result of an evaluated decision to a case variable. It should be used in combination with <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#resultvariable" >}}">camunda:resultVariable</a>.
     </td>
   </tr>
   <tr>
@@ -538,7 +538,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -580,7 +580,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Constraints</th>
     <td colspan="2">
-      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processversion" >}}">camunda:processVersion</a> is required, see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processbinding" >}}">Process Binding</a> for more information.
+      If the value is set to <code>version</code> the attribute <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#processversion" >}}">camunda:processVersion</a> is required, see <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#processbinding" >}}">Process Binding</a> for more information.
     </td>
   </tr>
   <tr>
@@ -606,7 +606,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -637,7 +637,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -705,7 +705,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -723,7 +723,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>CMMN 1.1 Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>,
       camunda:caseExecutionListener
     </td>
   </tr>
@@ -735,7 +735,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td>
-      The attribute specifies the case variable in which the returned decision result is saved. It can be used in combination with <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#mapdecisionresult" >}}">camunda:mapDecisionResult</a> to define a decision result mapping.
+      The attribute specifies the case variable in which the returned decision result is saved. It can be used in combination with <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#mapdecisionresult" >}}">camunda:mapDecisionResult</a> to define a decision result mapping.
     </td>
   </tr>
   <tr>
@@ -766,7 +766,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td>
-      The variable name that is attached to element <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variableonpart" >}}">camunda:variableOnPart</a> for which the sentry listens. Sentry is evaluated when the variable event transition occurs.
+      The variable name that is attached to element <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variableonpart" >}}">camunda:variableOnPart</a> for which the sentry listens. Sentry is evaluated when the variable event transition occurs.
     </td>
   </tr>
   <tr>
@@ -776,7 +776,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Kramax extension element</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variableonpart" >}}">camunda:variableOnPart</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variableonpart" >}}">camunda:variableOnPart</a>
     </td>
   </tr>
 </table>

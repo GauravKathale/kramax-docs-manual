@@ -12,7 +12,7 @@ menu:
 
 ---
 
-The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/bpmn`.
+The following attributes are extension attributes for the `kramax` namespace `http://camunda.org/schema/1.0/bpmn`.
 
 
 # connector
@@ -21,7 +21,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Description</th>
     <td colspan="2">
-      The configuration of a kramaxx connector.
+      The configuration of a kramax connector.
     </td>
   </tr>
   <tr>
@@ -1237,7 +1237,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
     <td></td>
     <td colspan="2">
       If the parent <code>camunda:properties</code> element is directly added as an extension element,
-      for example by the kramaxx Modeler, only the attributes <code>name</code> and <code>value</code>
+      for example by the kramax Modeler, only the attributes <code>name</code> and <code>value</code>
       are used.
     </td>
   </tr>

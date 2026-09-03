@@ -41,7 +41,7 @@ Known issues with batch processing:
 ## Example database configuration
 
 ```xml
-<property name="jdbcUrl" value="jdbc:h2:mem:kramaxx;DB_CLOSE_DELAY=1000" />
+<property name="jdbcUrl" value="jdbc:h2:mem:kramax;DB_CLOSE_DELAY=1000" />
 <property name="jdbcDriver" value="org.h2.Driver" />
 <property name="jdbcUsername" value="sa" />
 <property name="jdbcPassword" value="" />
@@ -52,13 +52,13 @@ Alternatively, a `javax.sql.DataSource` implementation can be used (e.g., DBCP f
 ```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" >
   <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-  <property name="url" value="jdbc:mysql://localhost:3306/kramaxx?sendFractionalSeconds=false" />
-  <property name="username" value="kramaxx" />
-  <property name="password" value="kramaxx" />
+  <property name="url" value="jdbc:mysql://localhost:3306/kramax?sendFractionalSeconds=false" />
+  <property name="username" value="kramax" />
+  <property name="password" value="kramax" />
   <property name="defaultAutoCommit" value="false" />
 </bean>
 
-<bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+<bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration">
 
     <property name="dataSource" ref="dataSource" />
     ...
@@ -80,13 +80,13 @@ The following properties can be set, regardless of whether you are using the JDB
 
 Here are some sample JDBC urls:
 
-* H2: `jdbc:h2:tcp://localhost/kramaxx`
-* MySQL: `jdbc:mysql://localhost:3306/kramaxx?autoReconnect=true&sendFractionalSeconds=false`
+* H2: `jdbc:h2:tcp://localhost/kramax`
+* MySQL: `jdbc:mysql://localhost:3306/kramax?autoReconnect=true&sendFractionalSeconds=false`
 * Oracle: `jdbc:oracle:thin:@localhost:1521:xe`
-* PostgreSQL: `jdbc:postgresql://localhost:5432/kramaxx`
-* DB2: `jdbc:db2://localhost:50000/kramaxx`
-* MSSQL: `jdbc:sqlserver://localhost:1433/kramaxx`
-* MariaDB: `jdbc:mariadb://localhost:3306/kramaxx`
+* PostgreSQL: `jdbc:postgresql://localhost:5432/kramax`
+* DB2: `jdbc:db2://localhost:50000/kramax`
+* MSSQL: `jdbc:sqlserver://localhost:1433/kramax`
+* MariaDB: `jdbc:mariadb://localhost:3306/kramax`
 
 
 ## Additional Database Schema Configuration
@@ -190,7 +190,7 @@ During engine initialization, a check is performed in order to determine if the 
 To disable `defaultAutocommit` verification you can bypass the exception using the `skipAutoCommitCheck` property. While this prevents the engine from failing at startup, a warning will still be logged.
 
 ```xml
-<bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+<bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration">
   <property name="dataSource" ref="dataSource" />
   <property name="skipAutoCommitCheck" value="true" />
     ...

@@ -79,5 +79,5 @@ A subprocess is defined by the subprocess element. All activities, gateways, eve
 
 # Additional Resources
 
-*   [Subprocesses](http://kramaxx.vodafone.org/bpmn/reference.html#activities-subprocess) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Subprocesses](http://kramax.vodafone.org/bpmn/reference.html#activities-subprocess) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 

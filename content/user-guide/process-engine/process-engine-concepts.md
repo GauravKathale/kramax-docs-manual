@@ -16,12 +16,12 @@ This section explains some core process engine concepts that are used in both th
 
 # Process Definitions
 
-A process definition defines the structure of a process. You could say that the process definition *is* the process. Kramax uses [BPMN 2.0](http://kramaxx.vodafone.org/bpmn/tutorial.html) as its primary modeling language for modeling process definitions.
+A process definition defines the structure of a process. You could say that the process definition *is* the process. Kramax uses [BPMN 2.0](http://kramax.vodafone.org/bpmn/tutorial.html) as its primary modeling language for modeling process definitions.
 
 {{< note title="BPMN 2.0 Reference" class="info" >}}
   Kramax comes with two BPMN 2.0 References:
 
-* The [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html#!/reference) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial](http://kramaxx.vodafone.org/bpmn/tutorial.html) as well.)
+* The [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html#!/reference) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial](http://kramax.vodafone.org/bpmn/tutorial.html) as well.)
 * The [BPMN 2.0 Implementation Reference]({{< relref "/reference/bpmn20/_index.md" >}}) covers the implementation of the individual BPMN 2.0 constructs Kramax. You should consult this reference if you want to implement and execute BPMN processes.
 {{< /note >}}
 

@@ -44,7 +44,7 @@ Once you completed a Getting Started Guide, you may find the following topics us
           <a href="{{< relref "/introduction/" >}}">Overview</a>
         </li>
         <li>
-          <a href="{{< relref "/introduction/downloading-kramaxx/" >}}">Download</a>
+          <a href="{{< relref "/introduction/downloading-kramax/" >}}">Download</a>
         </li>
         <li>
           <a href="{{< relref "/introduction/architecture/" >}}">Architecture</a>
@@ -102,7 +102,7 @@ Once you completed a Getting Started Guide, you may find the following topics us
 
 ## Getting Help
 
-In case you get stuck on a problem make sure to ask for Help in the {{< forumref >}} or on [Stack Overflow](http://stackoverflow.com/questions/tagged/kramaxx)
+In case you get stuck on a problem make sure to ask for Help in the {{< forumref >}} or on [Stack Overflow](http://stackoverflow.com/questions/tagged/kramax)
 
 ## Community Extensions
 

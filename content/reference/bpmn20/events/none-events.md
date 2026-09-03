@@ -41,7 +41,7 @@ This can be a good hook to monitor some KPI's, basically by adding an execution 
 ```xml
 <intermediateThrowEvent id="noneEvent">
   <extensionElements>
-    <camunda:executionListener class="org.vodafone.kramaxx.bpm.engine.test.bpmn.event.IntermediateNoneEventTest$MyExecutionListener" event="start" />
+    <camunda:executionListener class="org.vodafone.kramax.bpm.engine.test.bpmn.event.IntermediateNoneEventTest$MyExecutionListener" event="start" />
   </extensionElements>
 </intermediateThrowEvent>
 ```

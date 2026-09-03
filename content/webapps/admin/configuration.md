@@ -45,7 +45,7 @@ by changing the `app/admin/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Admin',
     vendor: 'Company'
@@ -56,7 +56,7 @@ export default {
 # Localization
 
 Admin can be localized. Kramax maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramax-webapp-translations).
 
 The localization of Admin is contained in the `app/admin/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -71,7 +71,7 @@ If the browser uses a language which is not available, Admin uses the locale def
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -92,7 +92,7 @@ Add your files to the `customScripts` property of the `app/admin/scripts/config.
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   customScripts: 
     ['custom-module/module.js']
 }
@@ -106,7 +106,7 @@ same origin, the CSRF mechanisms could interfere with each other. To avoid the n
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -120,7 +120,7 @@ not want this message to be shown, you can disable it by adjusting the `config.j
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 }
 ```
@@ -133,7 +133,7 @@ The default maximum length of a user operation log annotation is 4000 characters
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   userOperationLogAnnotationLength: 4000
 }
 ```
@@ -146,7 +146,7 @@ The task worker metrics (TW) on the metrics page are displayed by default. You c
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   alwaysShowUniqueTaskWorkerMetrics: false
 }
 ```
@@ -161,14 +161,14 @@ using [less](http://lesscss.org/) to change the overall appearance of Admin.
 To customize the interface with `less`, start by having a look
 at the variables defined in the following files:
 
- - `node_modules/kramaxx-commons-ui/node_modules/bootstrap/less/variables.less`
+ - `node_modules/kramax-commons-ui/node_modules/bootstrap/less/variables.less`
    defines the original Bootstrap variables
- - `node_modules/kramaxx-commons-ui/resources/less/cam-variables.less`
+ - `node_modules/kramax-commons-ui/resources/less/cam-variables.less`
    overrides some Bootstrap variables (above) and add some custom ones
 
 ## Compiling with Grunt
 
-From within the `kramaxx-bpm-webapp` directory:
+From within the `kramax-bpm-webapp` directory:
 
 ```sh
 grunt build:admin

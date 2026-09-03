@@ -32,7 +32,7 @@ and payload.
 
 ```java
 connector.createRequest()
-  .url("http://kramaxx.vodafone.org/soap")
+  .url("http://kramax.vodafone.org/soap")
   .soapAction("doIt")
   .contentType("application/soap+xml")
   .payload(soap_envelope)
@@ -46,7 +46,7 @@ available.
 
 ```java
 connector.createRequest()
-  .url("http://kramaxx.vodafone.org/soap")
+  .url("http://kramax.vodafone.org/soap")
   .soapAction("doIt")
   .contentType("application/soap+xml")
   .header("Accept", "application/xml")
@@ -88,7 +88,7 @@ This can be used as follows:
 ```java
 HttpRequest request = http.createRequest();
 request.setRequestParameter("method", "GET");
-request.setRequestParameter("url", "http://kramaxx.vodafone.org");
+request.setRequestParameter("url", "http://kramax.vodafone.org");
 request.setRequestParameter("payload", "hello world!");
 ```
 

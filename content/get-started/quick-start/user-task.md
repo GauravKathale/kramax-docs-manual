@@ -42,7 +42,7 @@ Select the User Task on the canvas. This will update the selection in the proper
 
 Click on the Tab `Forms` in the properties panel.
 
-This guide uses [Kramax Forms]({{< relref "/user-guide/task-forms/#kramaxx-forms" >}}) to add a form to the process. 
+This guide uses [Kramax Forms]({{< relref "/user-guide/task-forms/#kramax-forms" >}}) to add a form to the process. 
 We will create a form file called `payment.form`. 
 Set the following fields to link this process to the form you are about to create:
 
@@ -99,7 +99,7 @@ Finally, save the form as `payment.form`.
 
 # Work on the Task
 
-Go to Tasklist ([http://localhost:8080/kramaxx/app/tasklist/](http://localhost:8080/kramaxx/app/tasklist/)) and log in with the credentials "demo / demo".
+Go to Tasklist ([http://localhost:8080/kramax/app/tasklist/](http://localhost:8080/kramax/app/tasklist/)) and log in with the credentials "demo / demo".
 Click on the {{< glyphicon name="list-alt" text=" Start process" >}} button to start a process instance. This opens a dialog where you can select *Payment Retrieval* from the list. Now you can set variables for the process instance using a generic form.
 
 {{< img src="../img/start-form-generic.png" >}}
@@ -123,4 +123,4 @@ To work on the task, select the *Form* tab. Because we defined the variables in 
 Next, we'll make the process more dynamic and only show a User Task in certain situations. Let's have a look how you can [add Gateways to your Process]({{< relref "/get-started/quick-start/gateway/" >}}).
 {{< /note >}}
 
-{{< get-tag repo="kramaxx-get-started-quickstart" tag="Step-3" >}}
+{{< get-tag repo="kramax-get-started-quickstart" tag="Step-3" >}}

@@ -636,7 +636,7 @@ In addition to **Create**, **Update**, **Read**, and **Delete**, the following p
 * Create Batch Set Variables
 * Create Batch Correlate Messages
 
-GRANT and REVOKE authorizations with "Create Batch ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦" permissions precede over Create.
+GRANT and REVOKE authorizations with "Create Batch ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦" permissions precede over Create.
 
 ## Default Read Variable Permissions
 When the `enforceSpecificVariablePermission` process engine configuration is enabled, in order to read variables, the user needs to be granted the following permissions:
@@ -921,14 +921,14 @@ The following table gives an overview of the features that the system permission
 
 Kramax has no explicit concept of "administrator" beyond it being a user who has been granted all authorizations on all resources.
 
-## The "kramaxx-admin" Group
+## The "kramax-admin" Group
 
-When downloading the Kramax distribution, the invoice example application creates a group with id `kramaxx-admin` and grants all authorizations on all resources to this group.
+When downloading the Kramax distribution, the invoice example application creates a group with id `kramax-admin` and grants all authorizations on all resources to this group.
 
-In absense of the demo application, this task is performed by the [Kramax Admin Web Application]({{< relref "/webapps/admin/user-management.md#initial-user-setup" >}}). If the Kramax webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `kramaxx-admin` group is created and granted all permissions on all resources. 
+In absense of the demo application, this task is performed by the [Kramax Admin Web Application]({{< relref "/webapps/admin/user-management.md#initial-user-setup" >}}). If the Kramax webapplication is started for the first time and no user exists in the database, it asks you to perform the "initial setup". In this process, the `kramax-admin` group is created and granted all permissions on all resources. 
 
 {{< note title="LDAP" class="info" >}}
-The group "kramaxx-admin" is not created when using LDAP (since LDAP is only accessed in a read-only way). Also see the below section on the administrator authorization plugin.
+The group "kramax-admin" is not created when using LDAP (since LDAP is only accessed in a read-only way). Also see the below section on the administrator authorization plugin.
 {{< /note >}}
 
 ## The Administrator Authorization Plugin
@@ -944,7 +944,7 @@ The following is an example of how to configure the administrator authorization 
   ...
   <plugins>
     <plugin>
-      <class>org.vodafone.kramaxx.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
+      <class>org.vodafone.kramax.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
       <properties>
         <property name="administratorUserName">admin</property>
       </properties>

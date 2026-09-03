@@ -44,4 +44,4 @@ If you installed the default Kramax webapps and demo content, Kramax was configu
 
 # Administrator Account
 
-Users who belong to the group *kramaxx-admin* (default set by the invoice receipt demo process application) have administrator privileges. There must be at least one member in this group, otherwise the [initial setup screen]({{< relref "#initial-user-setup" >}}) appears. Besides user- and groupmanagement, as administrator you are able to define authorization rules for a variety of resources. See the chapter on [Authorizations]({{< relref "/webapps/admin/authorization-management.md" >}}) for more details.
+Users who belong to the group *kramax-admin* (default set by the invoice receipt demo process application) have administrator privileges. There must be at least one member in this group, otherwise the [initial setup screen]({{< relref "#initial-user-setup" >}}) appears. Besides user- and groupmanagement, as administrator you are able to define authorization rules for a variety of resources. See the chapter on [Authorizations]({{< relref "/webapps/admin/authorization-management.md" >}}) for more details.

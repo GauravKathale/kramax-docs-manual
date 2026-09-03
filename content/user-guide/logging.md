@@ -73,8 +73,8 @@ Add a file named `logback.xml`. Example configuration:
     </encoder>
   </appender>
 
-  <!-- kramaxx -->
-  <logger name="org.vodafone.kramaxx" level="info" />
+  <!-- kramax -->
+  <logger name="org.vodafone.kramax" level="info" />
 
   <!-- common dependencies -->
   <logger name="org.apache.ibatis" level="info" />
@@ -146,43 +146,43 @@ The process engine logs on the following categories
     <th>Description</th>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.application</code></td>
+    <td><code>org.vodafone.kramax.bpm.application</code></td>
     <td>logs details for the deployed process application on the engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.container</code></td>
+    <td><code>org.vodafone.kramax.bpm.container</code></td>
     <td>logs container operations in the engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.bpmn.behavior</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.bpmn.behavior</code></td>
     <td>logs operations performed on bpmn activities</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.bpmn.parser</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.bpmn.parser</code></td>
     <td>logs events that occur during the parsing of the bpmn models</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.cfg</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.cfg</code></td>
     <td>logs process engine configuration's initialization details</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.cmd</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.cmd</code></td>
     <td>logs the start and end of all commands that the engine performs</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.cmmn.behavior</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.cmmn.behavior</code></td>
     <td>logs exceptions that occur during cmmn execution for incompatible cmmn behavior</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.cmmn.operation</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.cmmn.operation</code></td>
     <td>logs exceptions during execution of cmmn operations</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.cmmn.transformer</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.cmmn.transformer</code></td>
     <td>logs cmmn transformer operations performed by the engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.context</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.context</code></td>
     <td>
       command context logs including executing atomic operations and bpmn stack traces during exceptions<br/>
       You can override the default <code>DEBUG</code> log level for bpmn stack traces, see the
@@ -190,87 +190,87 @@ The process engine logs on the following categories
     </td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.core</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.core</code></td>
     <td>logs engine's core operations, e.g. performing atomic operations</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.dmn</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.dmn</code></td>
     <td>logs exceptions that occur during decision evaluation</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.dmn.feel</code></td>
+    <td><code>org.vodafone.kramax.bpm.dmn.feel</code></td>
     <td>logs events that occur during decision evaluation with the JUEL FEEL Engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.dmn.feel.scala</code></td>
+    <td><code>org.vodafone.kramax.bpm.dmn.feel.scala</code></td>
     <td>logs events that occur during decision evaluation with the Scala FEEL Engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.feel.FeelEngine</code></td>
+    <td><code>org.vodafone.kramax.feel.FeelEngine</code></td>
     <td>logs events that occur during expression evaluation with the Scala FEEL Engine</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.externaltask</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.externaltask</code></td>
     <td>logger for the external task</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.identity</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.identity</code></td>
     <td>logger of the <code>IdentityService</code>, for example logs information whether a user is locked</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.incident</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.incident</code></td>
     <td>logs details during incident processing</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.jobexecutor</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.jobexecutor</code></td>
     <td>logs operations performed by the job executor, such as job acquisition</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.metrics</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.metrics</code></td>
     <td>logs details regarding the engine metrics</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.migration</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.migration</code></td>
     <td>logs exceptions that occur during process migration</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.persistence</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.persistence</code></td>
     <td>logs the identity of all entities that the engine inserts/deletes/updates in the database</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.plugin.admin</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.plugin.admin</code></td>
     <td>logs authorization details for administrators if <code>AdministratorAuthorizationPlugin</code> is enabled</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.pvm</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.pvm</code></td>
     <td>logs the Process Virtual Machine (PVM) operations, e.g. entering/leaving an activity, creating/destroying a scope</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.rest.exception</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.rest.exception</code></td>
     <td>logs the exceptions thrown in the REST API</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.script</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.script</code></td>
     <td>logs script processing details, e.g. evaluating, compiling</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.security</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.security</code></td>
     <td>logs exceptions that occur during password hashing</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.test</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.test</code></td>
     <td>logger used in the engine tests</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.tx</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.tx</code></td>
     <td>logs transaction details, e.g. commits and rollbacks</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.engine.util</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.util</code></td>
     <td>logs engine utility operations like xml parsing, reading streams, class loading issues, parsing intervals/duration, etc.</td>
   </tr>
   <tr>
-    <td><code>org.vodafone.kramaxx.bpm.webapp</code></td>
+    <td><code>org.vodafone.kramax.bpm.webapp</code></td>
     <td>logs events from the Kramax web apps (Cockpit, Tasklist, and Admin), like user-initiated log in and log out events and cache validation time information.</td>
   </tr>
 </table>
@@ -293,18 +293,18 @@ In this section, common scenarios are listed where increasing the engine log lev
 
 #### Database statements
 
-To check the database statements performed by the engine in most of the cases, it will be sufficient to increase the level of `org.vodafone.kramaxx.bpm.engine.persistence` and `org.vodafone.kramaxx.bpm.engine.impl.persistence.entity` loggers.
+To check the database statements performed by the engine in most of the cases, it will be sufficient to increase the level of `org.vodafone.kramax.bpm.engine.persistence` and `org.vodafone.kramax.bpm.engine.impl.persistence.entity` loggers.
 On level `DEBUG`, they log all SQL statements with their parameters. When set to `TRACE`, the results of the statements are logged in addition. Note if a query has many results, the log output will be large.
 
 However, some of the statements are not covered by only these two loggers. The full list to see all of the engine database statements is:
 
-* `org.vodafone.kramaxx.bpm.engine.persistence`
-* `org.vodafone.kramaxx.bpm.engine.impl.persistence.entity`
-* `org.vodafone.kramaxx.bpm.engine.impl.history.event`
-* `org.vodafone.kramaxx.bpm.engine.impl.batch`
-* `org.vodafone.kramaxx.bpm.engine.impl.cmmn.entity`
-* `org.vodafone.kramaxx.bpm.engine.impl.dmn.entity.repository`
-* `org.vodafone.kramaxx.bpm.engine.history`
+* `org.vodafone.kramax.bpm.engine.persistence`
+* `org.vodafone.kramax.bpm.engine.impl.persistence.entity`
+* `org.vodafone.kramax.bpm.engine.impl.history.event`
+* `org.vodafone.kramax.bpm.engine.impl.batch`
+* `org.vodafone.kramax.bpm.engine.impl.cmmn.entity`
+* `org.vodafone.kramax.bpm.engine.impl.dmn.entity.repository`
+* `org.vodafone.kramax.bpm.engine.history`
 
 Here is an example of how the server log will look like:
 
@@ -319,11 +319,11 @@ Here is an example of how the server log will look like:
 25-Nov-2019 15:17:17.076 FINE [thread-2] o.a.i.l.j.BaseJdbcLogger.debug ==> Parameters: 2(Integer), Dev-Department(String), DEV(String), development(String), 1(Integer)
 ```
 
-To enable the logging for a specific database entity, please provide the namespace of the MyBatis mapper ([all mappers](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/engine/src/main/resources/org/vodafone/kramaxx/bpm/engine/impl/mapping/entity)). Usually it is the full class name of that entity, e.g.:
+To enable the logging for a specific database entity, please provide the namespace of the MyBatis mapper ([all mappers](https://github.com/vodafone/kramax-bpm-platform/tree/master/engine/src/main/resources/org/vodafone/kramax/bpm/engine/impl/mapping/entity)). Usually it is the full class name of that entity, e.g.:
 
-* `org.vodafone.kramaxx.bpm.engine.impl.batch.BatchEntity`
-* `org.vodafone.kramaxx.bpm.engine.impl.persistence.entity.JobEntity`
-* `org.vodafone.kramaxx.bpm.engine.impl.persistence.entity.VariableInstanceEntity`
+* `org.vodafone.kramax.bpm.engine.impl.batch.BatchEntity`
+* `org.vodafone.kramax.bpm.engine.impl.persistence.entity.JobEntity`
+* `org.vodafone.kramax.bpm.engine.impl.persistence.entity.VariableInstanceEntity`
 
 For further information please visit the [MyBatis documentation](https://mybatis.org/mybatis-3/logging.html) about logging..
 
@@ -331,15 +331,15 @@ For further information please visit the [MyBatis documentation](https://mybatis
 
 To investigate the Job Execution behavior, as a start switch the level of the following loggers to `DEBUG`:
 
-* `org.vodafone.kramaxx.bpm.engine.impl.persistence.entity.JobEntity` - logs the job execution statements
-* `org.vodafone.kramaxx.bpm.engine.jobexecutor` - further job execution logs such as job acquisition and execution operations
-* `org.vodafone.kramaxx.bpm.engine.cmd` - the start/end of commands will help to determinate in which command the job is being executed
+* `org.vodafone.kramax.bpm.engine.impl.persistence.entity.JobEntity` - logs the job execution statements
+* `org.vodafone.kramax.bpm.engine.jobexecutor` - further job execution logs such as job acquisition and execution operations
+* `org.vodafone.kramax.bpm.engine.cmd` - the start/end of commands will help to determinate in which command the job is being executed
 
 The server log will contain logs similar to:
 
 ```plaintext
-25-Nov-2019 15:45:27.613 INFO [main] o.c.c.l.BaseLogger.logInfo ENGINE-14014 Starting up the JobExecutor[org.vodafone.kramaxx.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor].
-25-Nov-2019 15:45:27.615 INFO [Thread-6] o.c.c.l.BaseLogger.logInfo ENGINE-14018 JobExecutor[org.vodafone.kramaxx.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] starting to acquire jobs
+25-Nov-2019 15:45:27.613 INFO [main] o.c.c.l.BaseLogger.logInfo ENGINE-14014 Starting up the JobExecutor[org.vodafone.kramax.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor].
+25-Nov-2019 15:45:27.615 INFO [Thread-6] o.c.c.l.BaseLogger.logInfo ENGINE-14018 JobExecutor[org.vodafone.kramax.bpm.engine.impl.jobexecutor.RuntimeContainerJobExecutor] starting to acquire jobs
 25-Nov-2019 15:45:27.619 FINE [Thread-6] o.c.c.l.BaseLogger.logDebug ENGINE-13005 Starting command -------------------- AcquireJobsCmd ----------------------
 25-Nov-2019 15:45:27.620 FINE [Thread-6] o.c.c.l.BaseLogger.logDebug ENGINE-13009 opening new command context
 25-Nov-2019 15:45:27.689 FINE [Thread-6] o.a.i.l.j.BaseJdbcLogger.debug ==>  Preparing: select RES.ID_, RES.REV_, RES.DUEDATE_, RES.PROCESS_INSTANCE_ID_, RES.EXCLUSIVE_ from ACT_RU_JOB RES where (RES.RETRIES_ > 0) and ( RES.DUEDATE_ is null or RES.DUEDATE_ <= ? ) and (RES.LOCK_OWNER_ is null or RES.LOCK_EXP_TIME_ < ?) and RES.SUSPENSION_STATE_ = 1 and (RES.DEPLOYMENT_ID_ is null ) and ( ( RES.EXCLUSIVE_ = 1 and not exists( select J2.ID_ from ACT_RU_JOB J2 where J2.PROCESS_INSTANCE_ID_ = RES.PROCESS_INSTANCE_ID_ -- from the same proc. inst. and (J2.EXCLUSIVE_ = 1) -- also exclusive and (J2.LOCK_OWNER_ is not null and J2.LOCK_EXP_TIME_ >= ?) -- in progress ) ) or RES.EXCLUSIVE_ = 0 ) LIMIT ? OFFSET ?
@@ -358,10 +358,10 @@ Find more information for Diagnosing the Job Executor in this blog post - [The J
 The engine logging will provide further insights in case of deadlock issues by increasing the level of the command and the persistence loggers.
 First, determine the resource involved in the deadlock, then try to narrow down, which are the two transactions blocking each other:
 
-* `org.vodafone.kramaxx.bpm.engine.persistence` - the persistence logger will log all the identity of engine entities to find the involved resources causing the deadlock
-* `org.vodafone.kramaxx.bpm.engine.cmd` - the command output will help to determinate the scope of the involved transactions which are causing the deadlock
+* `org.vodafone.kramax.bpm.engine.persistence` - the persistence logger will log all the identity of engine entities to find the involved resources causing the deadlock
+* `org.vodafone.kramax.bpm.engine.cmd` - the command output will help to determinate the scope of the involved transactions which are causing the deadlock
 
-When the issue occurs for a specific entity (e.g. `VariableInstance`), consider enabling the logger of that entity as well (`org.vodafone.kramaxx.bpm.engine.impl.persistence.entity.VariableInstanceEntity`).
+When the issue occurs for a specific entity (e.g. `VariableInstance`), consider enabling the logger of that entity as well (`org.vodafone.kramax.bpm.engine.impl.persistence.entity.VariableInstanceEntity`).
 Then the output will include the statements of these entities to observe the changes which are performed.
 Here is a sample of what traces the server log file will contain when increasing the level of these loggers.
 
@@ -399,13 +399,13 @@ The use of Java Util Logging in these modules is considered deprecated and will 
 
 List of modules still using Java Util Logging:
 
-* kramaxx-ejb-service
-* kramaxx-ejb-client
-* kramaxx-jobexecutor-ra
-* kramaxx-jobexecutor-rar
-* kramaxx-engine-cdi
-* kramaxx-engine-spring
-* kramaxx-engine-rest
+* kramax-ejb-service
+* kramax-ejb-client
+* kramax-jobexecutor-ra
+* kramax-jobexecutor-rar
+* kramax-engine-cdi
+* kramax-engine-spring
+* kramax-engine-rest
 * Wildfly Subsystems
 
 [slf4j]: http://www.slf4j.org/

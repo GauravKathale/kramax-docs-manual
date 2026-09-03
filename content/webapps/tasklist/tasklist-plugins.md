@@ -19,7 +19,7 @@ Tasklist uses the concept of plugins to add own functionality without having to 
 For further details about the concepts behind plugins, please read the [Cockpit plugins section]({{< relref "/webapps/cockpit/extend/plugins.md" >}}).
 
 {{< note title="Difference between Cockpit and Tasklist plugins:" class="warning">}}
-  * To publish the plugin with Tasklist, its class name must be put into a file called ```org.vodafone.kramaxx.bpm.tasklist.plugin.spi.TasklistPlugin``` that resides in the directory ```META-INF/services```.
+  * To publish the plugin with Tasklist, its class name must be put into a file called ```org.vodafone.kramax.bpm.tasklist.plugin.spi.TasklistPlugin``` that resides in the directory ```META-INF/services```.
   * The plugin mechanism of Tasklist does not allow to provide additional SQL queries by using [MyBatis](http://www.mybatis.org/) mappings.
 {{< /note >}}
 
@@ -84,15 +84,15 @@ Configure where to place your plugin as shown in the following example:
 
 ```html
 var ViewConfig = [ 'ViewsProvider', function(ViewsProvider) {
-Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â ViewsProvider.registerDefaultView('tasklist.task.detail', {
-Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â id: 'sub-tasks',
-Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â priority: 20,
-Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â label: 'Sub Tasks'
-Ãƒâ€šÃ‚Â Ãƒâ€šÃ‚Â });
+ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ViewsProvider.registerDefaultView('tasklist.task.detail', {
+ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â id: 'sub-tasks',
+ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â priority: 20,
+ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â label: 'Sub Tasks'
+ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â });
 }];
 ```
 
 For more information on creating and configuring your own plugin, please have a look at the following examples:
 
-* [How to build the server side](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/webapps/assembly/src/main/java/org/vodafone/kramaxx/bpm/tasklist/impl/plugin)
-* [How to build the client side](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/webapps/frontend/ui/tasklist/plugins/standaloneTask/app)
+* [How to build the server side](https://github.com/vodafone/kramax-bpm-platform/tree/master/webapps/assembly/src/main/java/org/vodafone/kramax/bpm/tasklist/impl/plugin)
+* [How to build the client side](https://github.com/vodafone/kramax-bpm-platform/tree/master/webapps/frontend/ui/tasklist/plugins/standaloneTask/app)

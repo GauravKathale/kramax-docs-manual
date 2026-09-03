@@ -15,7 +15,7 @@ The process engine configuration can be extended through process engine plugins.
 extension to the [process engine configuration]({{< relref "/user-guide/process-engine/process-engine-bootstrapping.md" >}}).
 
 A plugin must provide an implementation of the 
-{{< javadocref page="org/vodafone/kramaxx/bpm/engine/impl/cfg/ProcessEnginePlugin.html" text="ProcessEnginePlugin" >}} interface.
+{{< javadocref page="org/vodafone/kramax/bpm/engine/impl/cfg/ProcessEnginePlugin.html" text="ProcessEnginePlugin" >}} interface.
 
 
 # Configure Process Engine Plugins
@@ -25,7 +25,7 @@ Process engine plugins can be configured
 * in the [Kramax Deployment Descriptors]({{< relref "/reference/deployment-descriptors/_index.md" >}}) (bpm-platform.xml/processes.xml),
 * in the [Wildfly configuration file]({{< relref "/user-guide/runtime-container-integration/jboss.md" >}}) (standalone.xml/domain.xml),
 * using [Spring Beans XML]({{< relref "/user-guide/spring-framework-integration/_index.md#configure-a-process-engine-plugin-in-spring" >}}),
-* in the [Kramax Run YAML configuration files]({{< relref "/user-guide/kramaxx-bpm-run.md#process-engine-plugin-registration" >}})
+* in the [Kramax Run YAML configuration files]({{< relref "/user-guide/kramax-bpm-run.md#process-engine-plugin-registration" >}})
 * programatically.
 
 The following is an example of how to configure a process engine plugin in a bpm-platform.xml file:
@@ -42,12 +42,12 @@ The following is an example of how to configure a process engine plugin in a bpm
 
   <process-engine name="default">
     <job-acquisition>default</job-acquisition>
-    <configuration>org.vodafone.kramaxx.bpm.engine.impl.cfg.JtaProcessEngineConfiguration</configuration>
+    <configuration>org.vodafone.kramax.bpm.engine.impl.cfg.JtaProcessEngineConfiguration</configuration>
     <datasource>jdbc/ProcessEngine</datasource>
 
     <plugins>
       <plugin>
-        <class>org.vodafone.kramaxx.bpm.engine.MyCustomProcessEnginePlugin</class>
+        <class>org.vodafone.kramax.bpm.engine.MyCustomProcessEnginePlugin</class>
         <properties>
           <property name="boost">10</property>
           <property name="maxPerformance">true</property>

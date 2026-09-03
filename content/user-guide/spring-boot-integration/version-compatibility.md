@@ -47,8 +47,8 @@ Other combinations must be thoroughly tested before being used in production.
 \* For these versions, use the following Maven coordinates:
 ```
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter</artifactId>
   <version>1.x</version> <!-- set correct version here -->
 </dependency>
 ```
@@ -56,8 +56,8 @@ Other combinations must be thoroughly tested before being used in production.
 \*\* For these versions, use the following Maven coordinates:
 ```
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension.springboot</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension.springboot</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter</artifactId>
   <version>2.x</version> <!-- set correct version here -->
 </dependency>
 ```
@@ -65,8 +65,8 @@ Other combinations must be thoroughly tested before being used in production.
 \*\* For these versions, use the following Maven coordinates:
 ```
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension.springboot</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension.springboot</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter</artifactId>
   <version>3.x</version> <!-- set correct version here -->
 </dependency>
 ```
@@ -74,8 +74,8 @@ Other combinations must be thoroughly tested before being used in production.
 \*\*\* For these versions, use the following Maven coordinates:
 ```
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension.springboot</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension.springboot</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter</artifactId>
   <version>4.x</version> <!-- set correct version here -->
 </dependency>
 ```

@@ -5,7 +5,7 @@ weight: 50
 
 menu:
   main:
-    identifier: "kramaxx-bpm-run-guide"
+    identifier: "kramax-bpm-run-guide"
     parent: "user-guide"
 
 ---
@@ -14,9 +14,9 @@ This guide gives an introduction to Kramax Run, a pre-packaged, lightweight dist
 
 # Prerequisites and audience
 
-To use this guide, you should at least know what Kramax is and what it does. Check out the [Get Started guides]({{< relref "/get-started/quick-start/" >}}) if you have never used Kramax before. The [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) is also worth looking at if you are completely new to Kramax.
+To use this guide, you should at least know what Kramax is and what it does. Check out the [Get Started guides]({{< relref "/get-started/quick-start/" >}}) if you have never used Kramax before. The [Installation guide]({{< relref "/installation/kramax-bpm-run.md" >}}) is also worth looking at if you are completely new to Kramax.
 
-This guide will teach you about Kramax Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Kramax Run. Head over to the [Installation guide]({{< relref "/installation/kramaxx-bpm-run.md" >}}) for details on how to install and start Kramax Run.
+This guide will teach you about Kramax Run and how to configure it. It can serve as a reference page for configuration and operation options. It will not give you a step-by-step guide on how to install Kramax Run. Head over to the [Installation guide]({{< relref "/installation/kramax-bpm-run.md" >}}) for details on how to install and start Kramax Run.
 
 # What is Kramax Run?
 
@@ -34,27 +34,27 @@ Kramax Run is a full distribution of Kramax. It includes:
 To start with Kramax Run, download the [distribution](https://downloads.camunda.cloud/release/camunda-bpm/run/) ([enterprise](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/run/)) and unpacking it. You will find the following structure:
 
 ```
-kramaxx-bpm-run
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ configuration/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ keystore/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your SSL key store here if you want to use HTTPS
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ resources/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your BPMN files, forms and scripts here
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ sql/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ necessary SQL scripts to prepare your database system
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ userlib/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ put your database driver and other required JARs here
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ default.yml
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ production.yml
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ internal/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ start.bat
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ start.sh
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ shutdown.sh
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ shutdown.bat
+kramax-bpm-run
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ configuration/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ keystore/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ put your SSL key store here if you want to use HTTPS
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ resources/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ put your BPMN files, forms and scripts here
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ sql/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ necessary SQL scripts to prepare your database system
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ userlib/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ put your database driver and other required JARs here
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ default.yml
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡   ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ production.yml
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ internal/
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ start.bat
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ start.sh
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ shutdown.sh
+ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ shutdown.bat
 ```
 
 Execute one of the two start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac). After a few seconds, you can 
-access the Kramax web apps via http://localhost:8080/kramaxx/app/, the REST API via 
+access the Kramax web apps via http://localhost:8080/kramax/app/, the REST API via 
 http://localhost:8080/engine-rest/.
 
 When executing one of the two start scripts without any arguments, Kramax Run will start with a default configuration 
@@ -120,7 +120,7 @@ The start scripts (`start.bat` for Windows, `start.sh` for Linux/Mac) accept the
 
 ## Starting Kramax Run using Docker
 
-Kramax Run is also available as a Docker image. Please see the Kramax Run section of the Kramax Docker documentation [here]({{< relref "/installation/docker.md#start-kramaxx-bpm-run-using-docker" >}}) for more details.
+Kramax Run is also available as a Docker image. Please see the Kramax Run section of the Kramax Docker documentation [here]({{< relref "/installation/docker.md#start-kramax-bpm-run-using-docker" >}}) for more details.
 
 ## Optional components
 
@@ -135,7 +135,7 @@ and starts instances of the defined processes.
 You can disable the *deployment* of the example application itself by enabling any combination of the other modules with the `--webapps` and `--rest` properties of the start script.
 That way, the example application will not be launched and its resources will not be present on the classpath of Kramax Run.
 
-You can also disable the *launch* of the example application by setting the application property `kramaxx.bpm.run.example.enabled` to `false`
+You can also disable the *launch* of the example application by setting the application property `kramax.bpm.run.example.enabled` to `false`
 or removing it from the application properties.
 That way, the example application and its resources will be present on the classpath of Kramax Run.
 However, the example application will not be started.
@@ -172,7 +172,7 @@ Kramax Run is pre-configured to use a file-based H2 database for testing. The da
 
 In the unpacked distro, you will find a `resources` folder. All files (including BPMN, DMN, CMMN, form, and script files) will be deployed when you start Kramax Run.
 
-You can reference forms and scripts in the BPMN diagram with `embedded:deployment:/my-form.html`, `kramaxx-forms:deployment:/myform.form`, or `deployment:/my-script.js`. The deployment requires adding an extra `/` as a prefix to the filename.
+You can reference forms and scripts in the BPMN diagram with `embedded:deployment:/my-form.html`, `kramax-forms:deployment:/myform.form`, or `deployment:/my-script.js`. The deployment requires adding an extra `/` as a prefix to the filename.
 
 Deployments via the {{< restref page="createDeployment" text="REST API" tag="Deployment" >}} are still possible.
 
@@ -181,8 +181,8 @@ Deployments via the {{< restref page="createDeployment" text="REST API" tag="Dep
 Just like all the other distros, you can tailor Kramax Run to your needs. To do this, you only have to edit one of the [configuration files](#choose-between-default-and-production-configuration) that you can find in the configuration folder.
 
 {{< note title="Note:" class="info" >}}
-Kramax Run is based on the [Kramax Spring Boot Starter](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/spring-boot-starter). 
-All [configuration properties]({{< relref "/user-guide/spring-boot-integration/configuration.md#kramaxx-engine-properties" >}}) from the kramaxx-spring-boot-starter are available to customize Kramax Run.
+Kramax Run is based on the [Kramax Spring Boot Starter](https://github.com/vodafone/kramax-bpm-platform/tree/master/spring-boot-starter). 
+All [configuration properties]({{< relref "/user-guide/spring-boot-integration/configuration.md#kramax-engine-properties" >}}) from the kramax-spring-boot-starter are available to customize Kramax Run.
 {{< /note >}}
 
 ## Database
@@ -231,7 +231,7 @@ To add authentication to requests against the [REST API]({{< relref "/reference/
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.auth</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.auth</code></td>
       <td><code>.enabled</code></td>
       <td>Switch to enable basic authentication for requests to the REST API.</td>
       <td><code>false</code></td>
@@ -254,7 +254,7 @@ If you want to allow cross-origin requests to the [REST API]({{< relref "/refere
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.cors</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.cors</code></td>
       <td><code>.enabled</code></td>
       <td>Switch to enable CORS.</td>
       <td><code>false</code></td>
@@ -300,7 +300,7 @@ Kramax Run can be configured to disable the REST endpoint which exposes the WADL
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.rest</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.rest</code></td>
       <td><code>.disable-wadl</code></td>
       <td>Disables the REST endpoint <code>/application.wadl</code>. Web Application Description Language (WADL) is an XML description of the deployed RESTful web application.</td>
       <td><code>false</code></td>
@@ -319,7 +319,7 @@ Kramax Run also supports configuration options for customizing the deployment.
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.deployment</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.deployment</code></td>
       <td><code>.deploy-changed-only</code></td>
       <td>
           <ul>
@@ -348,7 +348,7 @@ Find all available configuration properties in the [LDAP Plugin Guide]({{< relre
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.ldap</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.ldap</code></td>
       <td><code>.enabled</code></td>
       <td>Switch to enable the LDAP identity service plugin.</td>
       <td><code>false</code></td>
@@ -372,7 +372,7 @@ In the table below, observe the Kramax Run-specific properties for the Administr
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.admin-auth</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.admin-auth</code></td>
       <td><code>.enabled</code></td>
       <td>Switch to enable the Administrator Authorization plugin.</td>
       <td><code>false</code></td>
@@ -407,13 +407,13 @@ In the table below, observe the Kramax Run-specific properties for registering p
       <th>Default value</th>
   </tr>
   <tr>
-      <td><code>kramaxx.bpm.run</code></td>
+      <td><code>kramax.bpm.run</code></td>
       <td><code>.process-engine-plugins</code></td>
       <td>Define your process engine plugin configurations under this YAML property.</td>
       <td>Empty <code>List</code></td>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.process-engine-plugins</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.process-engine-plugins</code></td>
       <td><code>.plugin-class</code></td>
       <td>Part of a <code>process-engine-plugins</code> list item. Defines the process engine plugin class.</td>
       <td>none</td>
@@ -440,7 +440,7 @@ Perform the following steps in Kramax Run to register process engine plugins:
 Once complete, your YAML configuration file should look similar to the following:
 
 ```yaml
-  kramaxx.bpm.run.process-engine-plugins:
+  kramax.bpm.run.process-engine-plugins:
     - plugin-class: canonical.name.of.the.PluginClass
 ```
 
@@ -449,23 +449,23 @@ Once complete, your YAML configuration file should look similar to the following
 Let's say that you want to register a process engine plugin called `TestPlugin`. The following information is 
 available:
 
-* The plugin is provided in a `.jar` archive called `kramaxx-bpm-test-plugin.jar`. 
+* The plugin is provided in a `.jar` archive called `kramax-bpm-test-plugin.jar`. 
 * The name of the Java class that implements the `ProcessEnginePlugin` interface is `TestPlugin`. The canonical name of this class is 
-`org.vodafone.kramaxx.bpm.run.test.plugins.TestPlugin`.
+`org.vodafone.kramax.bpm.run.test.plugins.TestPlugin`.
 * The `TestPlugin` exposes the following two configuration parameters:
   * `parameterOne` - a `String` value
   * `parameterTwo` - a `Boolean` value
 
 We'll take the following steps:
 
-1. Place the `kramaxx-bpm-test-first-plugin.jar` archive in 
+1. Place the `kramax-bpm-test-first-plugin.jar` archive in 
 the `${RUN_HOME}/configuration/userlib/` directory.
 
 2. Add the following content to your Kramax Run YAML configuration file.
 
 ```yaml
-kramaxx.bpm.run.process-engine-plugins:
-  - plugin-class: org.vodafone.kramaxx.bpm.run.test.plugins.TestPlugin
+kramax.bpm.run.process-engine-plugins:
+  - plugin-class: org.vodafone.kramax.bpm.run.test.plugins.TestPlugin
     plugin-parameters:
       parameterOne: valueOne
       parameterTwo: true
@@ -477,9 +477,9 @@ Some process engine plugins don't have configuration parameters. For these, you 
 YAML property, like so:
 
 ```yaml
-kramaxx.bpm.run.process-engine-plugins:
-  - plugin-class: org.vodafone.kramaxx.bpm.run.test.plugins.TestPlugin
-  - plugin-class: org.vodafone.kramaxx.bpm.run.test.plugins.AnotherPlugin
+kramax.bpm.run.process-engine-plugins:
+  - plugin-class: org.vodafone.kramax.bpm.run.test.plugins.TestPlugin
+  - plugin-class: org.vodafone.kramax.bpm.run.test.plugins.AnotherPlugin
 ```
 
 3. Start Kramax Run. The `TestPlugin` will be read from the YAML configuration and registered with the
@@ -491,7 +491,7 @@ Kramax provides a mechanism to extend the Kramax Webapps with your own functiona
 
 A webapp plugin is a maven jar project that provides a server-side and a client-side extension to the webapp. You can find more information about how to structure your plugins [here]({{< relref "/webapps/cockpit/extend/plugins.md#the-nature-of-a-cockpit-plugin" >}}).
 
-To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Kramax Run section](#starting-with-kramaxx-platform-run) of this guide to find out how to navigate the directories of Kramax Run.
+To register a webapp plugin, simply drop the jar file into the `configuration/userlib` folder. See [the Starting with Kramax Run section](#starting-with-kramax-platform-run) of this guide to find out how to navigate the directories of Kramax Run.
 
 ## Example application launch
 
@@ -507,7 +507,7 @@ are however still accessible on the classpath of Kramax Run. Consult the [exampl
       <th>Default value</th>
   </tr>
   <tr>
-      <td rowspan="15"><code>kramaxx.bpm.run.example</code></td>
+      <td rowspan="15"><code>kramax.bpm.run.example</code></td>
       <td><code>.enabled</code></td>
       <td>Switch to enable the example application.</td>
       <td><code>false</code></td>
@@ -523,13 +523,13 @@ For testing, we included a self-signed certificate. You should not use this in p
 server:
   ssl:
     key-store: classpath:keystore.p12
-    key-store-password: kramaxx
+    key-store-password: kramax
     key-store-type: pkcs12
-    key-alias: kramaxx
-    key-password: kramaxx
+    key-alias: kramax
+    key-password: kramax
   port: 8443
 ```
-After starting Kramax Run, you can access the webapps via https://localhost:8443/kramaxx/app/ and the REST API via https://localhost:8443/engine-rest/.
+After starting Kramax Run, you can access the webapps via https://localhost:8443/kramax/app/ and the REST API via https://localhost:8443/engine-rest/.
 
 <table class="table desc-table">
   <tr>
@@ -594,7 +594,7 @@ For more information on logging configuration visit the [Spring Boot Logging Gui
   </tr>
   <tr>
       <td><code>.file.name</code></td>
-      <td>Specify a log file location. (e.g. <code>logs/kramaxx-bpm-run-log.txt</code>)</td>
+      <td>Specify a log file location. (e.g. <code>logs/kramax-bpm-run-log.txt</code>)</td>
       <td><code>-</code></td>
   </tr>
 </table>

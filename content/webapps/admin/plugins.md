@@ -20,7 +20,7 @@ Admin uses the concept of plugins to add own functionality without having to ext
 For further details about the concepts behind plugins, please read the [Cockpit plugins section]({{< relref "/webapps/cockpit/extend/plugins.md" >}}).
 
 {{< note title="Difference between Cockpit and Admin plugins:" class="warning">}}
-  * To publish the plugin with Admin, its class name must be put into a file called ```org.vodafone.kramaxx.bpm.admin.plugin.spi.AdminPlugin``` that resides in the directory ```META-INF/services```.
+  * To publish the plugin with Admin, its class name must be put into a file called ```org.vodafone.kramax.bpm.admin.plugin.spi.AdminPlugin``` that resides in the directory ```META-INF/services```.
   * The plugin mechanism of Admin does not allow to provide additional SQL queries by using [MyBatis](http://www.mybatis.org/) mappings.
 {{< /note >}}
 
@@ -57,4 +57,4 @@ properties: {
 }
 ```
 
-You can find examples of [Admin dashboard plugins here](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/webapps/frontend/ui/admin/plugins/base/app/views/dashboard).
+You can find examples of [Admin dashboard plugins here](https://github.com/vodafone/kramax-bpm-platform/tree/master/webapps/frontend/ui/admin/plugins/base/app/views/dashboard).

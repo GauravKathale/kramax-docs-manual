@@ -13,7 +13,7 @@ menu:
 # Manual Download
 
 The Forms SDK library can be downloaded from
-[Github](https://github.com/kramaxx/bower-kramaxx-bpm-sdk-js/releases).
+[Github](https://github.com/kramax/bower-kramax-bpm-sdk-js/releases).
 
 
 # Bower
@@ -21,7 +21,7 @@ The Forms SDK library can be downloaded from
 Alternatively, the Forms SDK can be installed using the Bower package manager:
 
 ```
-bower install kramaxx-bpm-sdk-js --save
+bower install kramax-bpm-sdk-js --save
 ```
 
 
@@ -42,12 +42,12 @@ Next, you need to add the JavaScript Library to the page.
 
 ```html
 <script src="jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="kramaxx-bpm-sdk.min.js" type="text/javascript"></script>
+<script src="kramax-bpm-sdk.min.js" type="text/javascript"></script>
 ```
 
 Or, with AngularJS Support:
 
 ```html
 <script src="angular.min.js" type="text/javascript"></script>
-<script src="kramaxx-bpm-sdk-angular.js" type="text/javascript"></script>
+<script src="kramax-bpm-sdk-angular.js" type="text/javascript"></script>
 ```

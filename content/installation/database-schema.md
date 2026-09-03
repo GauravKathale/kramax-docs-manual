@@ -15,7 +15,7 @@ menu:
 This document will guide you through the installation and update of the Kramax [database schema]({{< relref "/user-guide/process-engine/database/database-schema.md" >}}) used by the process engine.
 Regardless of the [architecture of your application setup]({{< relref "/introduction/architecture.md" >}}), the process engine always requires this database schema.
 In a production environment, we recommend setting up this schema yourself and reference the prepared database instance in your application configuration.
-Consult the installation guide related to your setup to configure the database for a [remote engine]({{< relref "/installation/kramaxx-bpm-run.md" >}}), [shared engine]({{< relref "/installation/full/_index.md" >}}), or [embedded engine]({{< relref "/installation/spring-boot.md" >}}) accordingly.
+Consult the installation guide related to your setup to configure the database for a [remote engine]({{< relref "/installation/kramax-bpm-run.md" >}}), [shared engine]({{< relref "/installation/full/_index.md" >}}), or [embedded engine]({{< relref "/installation/spring-boot.md" >}}) accordingly.
 
 This guide will not detail how to set up an instance of your target database or how to create a schema object on it.
 Consult the documentation of your target database on how to do that.
@@ -44,12 +44,12 @@ Kramax comes with a maintained changelog file that Liquibase can consume.
 This changelog defines which SQL statements to execute on a database.
 You can find the changelog and its referenced resources on our [Artifact Repository].
 Select the respective version (`$PLATFORM_VERSION`) and download the resources as a `zip` or `tar.gz` file.
-Open the `kramaxx-sql-scripts-$PLATFORM_VERSION/liquibase` folder to find the changelog. 
+Open the `kramax-sql-scripts-$PLATFORM_VERSION/liquibase` folder to find the changelog. 
 In case you are using a [pre-packaged distribution], the Liquibase resources already reside in the `sql/liquibase` folder of the distribution.
 
 The `liquibase` folder contains the following resources:
 
-* `kramaxx-changelog.xml`
+* `kramax-changelog.xml`
 * `baseline` directory
 
 Liquibases uses these resources in combination with the scripts in the `upgrade` folder next to the `liquibase` folder to install the schema.
@@ -57,7 +57,7 @@ Liquibases uses these resources in combination with the scripts in the `upgrade`
 Perform the following steps to install the database schema on your database instance:
 
 1. Setup Liquibase, e.g. by [downloading Liquibase CLI](https://www.liquibase.org/download)
-1. Run Liquibase's [update command](https://docs.liquibase.com/commands/community/update.html) referencing the `kramaxx-changelog.xml`.
+1. Run Liquibase's [update command](https://docs.liquibase.com/commands/community/update.html) referencing the `kramax-changelog.xml`.
 You can pass on the connection details to your database instance via parameters as described in the Liquibase documentation or [create a properties file](https://docs.liquibase.com/workflows/liquibase-community/creating-config-properties.html).
 
 Liquibase creates two additional tables to keep track of the changes that have been applied to your database.
@@ -78,7 +78,7 @@ Furthermore, if you have defined a specific prefix for the entities of your data
 To install the database schema required for Kramax, we provide a set of scripts with prepared DDL statements.
 Those scripts create all required tables and default indices. You can find the provided SQL scripts on our [Artifact Repository]. 
 Select the respective version (`$PLATFORM_VERSION`) and download the scripts as a `zip` or `tar.gz` file.
-Open the `kramaxx-sql-scripts-$PLATFORM_VERSION/create` folder to find all available scripts. 
+Open the `kramax-sql-scripts-$PLATFORM_VERSION/create` folder to find all available scripts. 
 In case you are using a [pre-packaged distribution], the SQL scripts already reside in the `sql/create` folder of the distribution.
 
 The `create` folder contains the following SQL scripts:
@@ -118,9 +118,9 @@ Based on that changelog and the tracking tables, Liquibase determines which chan
 Perform the following steps to update the database schema on your database instance:
 
 1. Select the respective version you want to update to (`$Y`) on our [Artifact Repository] and download the resources as a `zip` or `tar.gz` file.
-Open the `kramaxx-sql-scripts-$Y/liquibase` folder to find the changelog file.
+Open the `kramax-sql-scripts-$Y/liquibase` folder to find the changelog file.
 In case you are using a [pre-packaged distribution], the Liquibase resources already reside in the `sql/liquibase` folder of the distribution with version `$Y`.
-1. Run Liquibase's [update command](https://docs.liquibase.com/commands/community/update.html) referencing the new `kramaxx-changelog.xml` of version `$Y`.
+1. Run Liquibase's [update command](https://docs.liquibase.com/commands/community/update.html) referencing the new `kramax-changelog.xml` of version `$Y`.
 Liquibase takes care of determining the necessary changes and applying them to your database according to the new changelog.
 You can pass on the connection details to your database instance via parameters as described in the Liquibase documentation or [create a properties file](https://docs.liquibase.com/workflows/liquibase-community/creating-config-properties.html).
 1. We highly recommend updating to the latest patch version that is within the bounds of the new minor version you are updating to (`$Y`).
@@ -146,7 +146,7 @@ Perform the following steps to migrate your manual installation to Liquibase:
 1. Setup Liquibase, e.g. by [downloading Liquibase CLI](https://www.liquibase.org/download)
 1. Identify your current database schema version. You can extract this information from the `ACT_GE_SCHEMA_LOG` table.
 Find the row with the highest value in the `ID_` column and use the value of this row's `VERSION_` column.
-1. Run Liquibase's [changelogSyncToTag command](https://docs.liquibase.com/commands/community/changelogsynctotag.html) referencing the `kramaxx-changelog.xml` and using your current database schema version as the tag.
+1. Run Liquibase's [changelogSyncToTag command](https://docs.liquibase.com/commands/community/changelogsynctotag.html) referencing the `kramax-changelog.xml` and using your current database schema version as the tag.
 You can pass on the connection details to your database instance via parameters as described in the Liquibase documentation or [create a properties file](https://docs.liquibase.com/workflows/liquibase-community/creating-config-properties.html).
 
 Liquibase uses this information to create the tracking tables and mark all changesets until the tag you defined as executed.
@@ -161,7 +161,7 @@ Follow the outlined procedure to perform this update:
 1. Check for [available database patch scripts](#patch-level-update") for your database that are within the bounds of your update path.
 You can find the scripts on our [Artifact Repository].
 Select the respective version you want to update to (`$Y`) and download the scripts as a `zip` or `tar.gz` file.
-Open the `kramaxx-sql-scripts-$Y/upgrade` folder to find all available scripts. 
+Open the `kramax-sql-scripts-$Y/upgrade` folder to find all available scripts. 
 In case you are using a [pre-packaged distribution], the SQL scripts already reside in the `sql/upgrade` folder of the distribution with version `$Y`.
 We highly recommend executing these patches before updating.
 Execute those related to your database type (`$DATABASENAME`) in ascending order by version number.
@@ -621,7 +621,7 @@ Therefore, the procedure for patch-level updates is equivalent to that for [mino
 
 You can find the necessary scripts on our [Artifact Repository].
 Select the respective patch version you want to update to (`$Y`) and download the scripts as a `zip` or `tar.gz` file.
-Open the `kramaxx-sql-scripts-$Y/upgrade` folder to find all available patch scripts.
+Open the `kramax-sql-scripts-$Y/upgrade` folder to find all available patch scripts.
 In case you are using a [pre-packaged distribution], the SQL scripts reside in the `sql/upgrade` folder of the distribution you want to update to.
 
 The patch scripts are named `$DATABASENAME_engine_$MINOR_patch_$A_to_$B`, with `$A` being the patch level version to update from, `$B` the patch level to update to, and `$MINOR` the minor version they are on, e.g., `7.16`.
@@ -629,5 +629,5 @@ If you do choose to apply a database patch, then you must apply all patch script
 
 <strong>Note:</strong> Some patches are provided for multiple versions. It is not required to execute them more than once. See the description of the [patch version list](#patch-level-update) for information on duplicate fixes.
 
-[Artifact Repository]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramaxx/bpm/distro/camunda-sql-scripts/
-[pre-packaged distribution]: {{< relref "/introduction/downloading-kramaxx.md#full-distribution" >}}
+[Artifact Repository]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramax/bpm/distro/camunda-sql-scripts/
+[pre-packaged distribution]: {{< relref "/introduction/downloading-kramax.md#full-distribution" >}}

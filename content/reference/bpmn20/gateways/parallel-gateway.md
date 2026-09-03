@@ -118,4 +118,4 @@ Note that a parallel gateway does not need to be 'balanced' (i.e., a matching nu
 
 # Additional Resources
 
-*   [Parallel Gateways](http://kramaxx.vodafone.org/bpmn/reference.html#gateways-parallel-gateways) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Parallel Gateways](http://kramax.vodafone.org/bpmn/reference.html#gateways-parallel-gateways) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)

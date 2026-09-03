@@ -15,14 +15,14 @@ A BPMN process diagram is a formidable place to visualize information around you
 
 In our web applications [Cockpit]({{< relref "/webapps/cockpit/_index.md" >}}) and [Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), we use [bpmn.io](http://bpmn.io/), a toolkit for rendering BPMN 2.0 process models directly in the browser. It allows adding additional information to the diagram and includes ways for user interaction. Although bpmn.io is still under development, its API is rather stable.
 
-The previous JavaScript BPMN renderer can still be found at [kramaxx-bpmn.js](https://github.com/vodafone/kramaxx-bpmn.js), but it is not actively developed anymore.
+The previous JavaScript BPMN renderer can still be found at [kramax-bpmn.js](https://github.com/vodafone/kramax-bpmn.js), but it is not actively developed anymore.
 
 {{< img src="../img/process-diagram-bpmn-js.png" title="Process Diagram Rendering" >}}
 
 
 # bpmn.io Diagram Renderer
 
-To render a process diagram, you need to retrieve the diagram XML via the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/RepositoryService.html" text="Java-" >}} or {{< restref page="getProcessDefinitionBpmn20XmlByKey" text="REST API" tag="Process-Definition" >}}. The following example shows how to render the process XML using bpmn.io. For more documentation regarding the annotation of the diagram and user interaction, please refer to the [bpmn.io](https://github.com/bpmn-io/bpmn-js) page.
+To render a process diagram, you need to retrieve the diagram XML via the {{< javadocref page="org/vodafone/kramax/bpm/engine/RepositoryService.html" text="Java-" >}} or {{< restref page="getProcessDefinitionBpmn20XmlByKey" text="REST API" tag="Process-Definition" >}}. The following example shows how to render the process XML using bpmn.io. For more documentation regarding the annotation of the diagram and user interaction, please refer to the [bpmn.io](https://github.com/bpmn-io/bpmn-js) page.
 
 ```javascript
 var BpmnViewer = require('bpmn-js');
@@ -40,4 +40,4 @@ viewer.importXML(xml, function(err) {
 });
 ```
 
-Alternatively, you can use the  [bpmn-viewer widget](https://github.com/vodafone/kramaxx-bpm-platform/blob/master/webapps/frontend/kramaxx-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Kramax commons UI.
+Alternatively, you can use the  [bpmn-viewer widget](https://github.com/vodafone/kramax-bpm-platform/blob/master/webapps/frontend/kramax-commons-ui/lib/widgets/bpmn-viewer/cam-widget-bpmn-viewer.html) from the Kramax commons UI.

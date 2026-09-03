@@ -106,7 +106,7 @@ Object value = decisionResult
 It also provides methods to get typed output entries like
 `getSingleEntryTyped()`. Please refer to the [User Guide][Typed Value API] for
 details about typed values. A complete list of all methods can be found in the
-{{< javadocref page="org/vodafone/kramaxx/bpm/dmn/engine/DmnDecisionResult"
+{{< javadocref page="org/vodafone/kramax/bpm/dmn/engine/DmnDecisionResult"
 text="Java Docs" >}}.
 
 The decision result is available in the local scope of the executing task as a
@@ -268,7 +268,7 @@ listener which is attached to the decision task.
 <decisionTask id="decisionTask" decisionRef="myDecision">
   <extensionElements>
     <camunda:caseExecutionListener event="complete"
-      class="org.vodafone.kramaxx.bpm.example.MyDecisionResultListener" />
+      class="org.vodafone.kramax.bpm.example.MyDecisionResultListener" />
   </extensionElements>
 </decisionTask>
 ```
@@ -391,7 +391,7 @@ These APIs are **not** part of the [public API]({{< relref "/introduction/public
 
 It is possible to add own functions which can be used inside JUEL expressions.
 Therefore a new {{< javadocref
-page="?org/vodafone/kramaxx/bpm/engine/impl/javax/el/FunctionMapper.html"
+page="?org/vodafone/kramax/bpm/engine/impl/javax/el/FunctionMapper.html"
 text="FunctionMapper" >}} has to be implemented. The function mapper than
 has to be added to the process engine configuration after it was
 initialized.

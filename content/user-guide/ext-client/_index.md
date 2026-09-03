@@ -11,8 +11,8 @@ menu:
 
 ---
 
-The **Kramax External Task Client** allows you to set up remote service tasks for your workflow. There is a supported [Java](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/clients/java)
-as well as [JavaScript](https://github.com/vodafone/kramaxx-external-task-client-js) implementation.
+The **Kramax External Task Client** allows you to set up remote service tasks for your workflow. There is a supported [Java](https://github.com/vodafone/kramax-bpm-platform/tree/master/clients/java)
+as well as [JavaScript](https://github.com/vodafone/kramax-external-task-client-js) implementation.
 
 ## Features
 * Complete External Tasks
@@ -63,7 +63,7 @@ Workflow Engine. Each fetched External Task is marked with a temporary lock. Lik
 certain External Task in the meanwhile. A lock is valid for the specified period of time and can be extended.
 
 When setting up a new topic subscription, it is mandatory to specify the topic name and a handler function.
-Once a topic has been subscribed, the client can start receiving work items by polling the process engineÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s API.
+Once a topic has been subscribed, the client can start receiving work items by polling the process engineÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s API.
 
 ### Handler
 Handlers can be used to implement custom methods which are invoked whenever an External Task is fetched and locked successfully.
@@ -163,7 +163,7 @@ For more details, please check the documentation related to the client of intere
 ### Accessing the internal Apache HttpClientBuilder
 
 If there is a need to even further customize the communication of the client, you can get access to
-the Apache `HttpClientBuilder` using the `{{< javadocref page="org/vodafone/kramaxx/bpm/client/ExternalTaskClientBuilder.html" text="ExternalTaskClientBuilder" >}}`'s `customizeHttpClient` method.
+the Apache `HttpClientBuilder` using the `{{< javadocref page="org/vodafone/kramax/bpm/client/ExternalTaskClientBuilder.html" text="ExternalTaskClientBuilder" >}}`'s `customizeHttpClient` method.
 The method accepts a `Consumer` as parameter that gives you access to the internal Apache `HttpClientBuilder`:
 
 ```java
@@ -178,8 +178,8 @@ ExternalTaskClient.create()
 
 ## Examples
 
-Complete examples of how to set up the different External Task Clients can be found on GitHub ([Java](https://github.com/vodafone/kramaxx-bpm-examples/tree/{{< minor-version >}}/clients/java),
-[JavaScript](https://github.com/vodafone/kramaxx-external-task-client-js/tree/master/examples)).
+Complete examples of how to set up the different External Task Clients can be found on GitHub ([Java](https://github.com/vodafone/kramax-bpm-examples/tree/{{< minor-version >}}/clients/java),
+[JavaScript](https://github.com/vodafone/kramax-external-task-client-js/tree/master/examples)).
 
 ## External task throughput
 

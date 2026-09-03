@@ -324,4 +324,4 @@ The following extensions are supported for the Signal Intermediate and End Throw
 
 # Additional Resources
 
-*   [Signal Events](http://kramaxx.vodafone.org/bpmn/reference.html#events-signal) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Signal Events](http://kramax.vodafone.org/bpmn/reference.html#events-signal) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)

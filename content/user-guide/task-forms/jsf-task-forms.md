@@ -19,7 +19,7 @@ The required CDI beans for this functionality are currently not available in <a 
 If you add JSF forms as described below, you can easily use them as <br/>
 [external task forms]({{< relref "/user-guide/task-forms/_index.md#external-task-forms" >}}).
 
-A working example can be found in the [examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/usertask/task-form-external-jsf).
+A working example can be found in the [examples repository](https://github.com/vodafone/kramax-bpm-examples/tree/master/usertask/task-form-external-jsf).
 
 The BPMN process used for this example is shown in the image below:
 
@@ -61,7 +61,7 @@ Create a JSF page in `src/main/webapp/WEB-INF` representing a form used for User
 <f:view>
   <h:head>
     <f:metadata>
-      <f:event type="preRenderView" listener="#{kramaxxTaskForm.startTaskForm()}" />
+      <f:event type="preRenderView" listener="#{kramaxTaskForm.startTaskForm()}" />
     </f:metadata>
     <title>Task Form: #{task.name}</title>
   </h:head>
@@ -75,19 +75,19 @@ Create a JSF page in `src/main/webapp/WEB-INF` representing a form used for User
       </p>
 
       <h:commandButton id="complete" value="Task Completed"
-          action="#{kramaxxTaskForm.completeTask()}" />
+          action="#{kramaxTaskForm.completeTask()}" />
     </h:form>
   </h:body>
 </f:view>
 </html>
 ```
 
-Note that you need `kramaxx-engine-cdi` in order to have the `kramaxxTaskForm` bean available.
+Note that you need `kramax-engine-cdi` in order to have the `kramaxTaskForm` bean available.
 
 
 # How does this work?
 
-If the user clicks on "Start to work on task" {{< img src="../img/start-task-button.png" title="Start Task Button" >}} in the tasklist, he will follow a link to this form, including the taskId and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaxxTaskForm` which
+If the user clicks on "Start to work on task" {{< img src="../img/start-task-button.png" title="Start Task Button" >}} in the tasklist, he will follow a link to this form, including the taskId and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaxTaskForm` which
 
  *   starts a conversation,
  *   remembers the callback URL
@@ -97,18 +97,18 @@ For that, you just need to add this code block to the beginning of your JSF view
 
 ```xml
 <f:metadata>
-  <f:event type="preRenderView" listener="#{kramaxxTaskForm.startTaskForm()}" />
+  <f:event type="preRenderView" listener="#{kramaxTaskForm.startTaskForm()}" />
 </f:metadata>
 ```
 
-Submit the form by calling the `kramaxxTaskForm` bean again, which:
+Submit the form by calling the `kramaxTaskForm` bean again, which:
 
 *   Completes the task in the process engine, causing the current token to advance in the process
 *   Ends the conversation
 *   Triggers a redirect to the callback URL of the tasklist
 
 ```xml
-<h:commandButton id="complete" value="task completed" action="#{kramaxxTaskForm.completeTask()}" />
+<h:commandButton id="complete" value="task completed" action="#{kramaxTaskForm.completeTask()}" />
 ```
 
 Note that the command button doesn't have to be on the same form, you might have a whole wizard containing multiple forms in a row before having the `completeTask` button. This will work because of the conversation running in the background.
@@ -142,7 +142,7 @@ In the forms you can access your own CDI beans as usual and also access the Kram
       <td></td>
       <td>
         <h:commandButton id="complete" value="Task Completed"
-            action="#{kramaxxTaskForm.completeTask()}" />
+            action="#{kramaxTaskForm.completeTask()}" />
       </td>
     </tr>
   </table>
@@ -164,14 +164,14 @@ The same mechanism can be used to start a new process instance:
 
 <f:view>
   <f:metadata>
-    <f:event type="preRenderView" listener="#{kramaxxTaskForm.startProcessInstanceByKeyForm()}" />
+    <f:event type="preRenderView" listener="#{kramaxTaskForm.startProcessInstanceByKeyForm()}" />
   </f:metadata>
   <h:head>
-    <title>Start Process: #{kramaxxTaskForm.processDefinition.name}</title>
+    <title>Start Process: #{kramaxTaskForm.processDefinition.name}</title>
   </h:head>
   <h:body>
-    <h1>#{kramaxxTaskForm.processDefinition.name}</h1>
-    <p>Start a new process instance in version: #{kramaxxTaskForm.processDefinition.version}</p>
+    <h1>#{kramaxTaskForm.processDefinition.name}</h1>
+    <p>Start a new process instance in version: #{kramaxTaskForm.processDefinition.version}</p>
     <h:form id="someForm">
       <p>
         Here you see the actual form to start a new process instance, normally
@@ -192,7 +192,7 @@ The same mechanism can be used to start a new process instance:
           <td></td>
           <td>
             <h:commandButton id="start" value="Start Process Instance"
-                action="#{kramaxxTaskForm.completeProcessInstanceForm()}" />
+                action="#{kramaxTaskForm.completeProcessInstanceForm()}" />
           </td>
         </tr>
       </table>
@@ -204,7 +204,7 @@ The same mechanism can be used to start a new process instance:
 
 {{< img src="../img/startFormExample.png" title="Start Form Example" >}}
 
-If the user clicks on "Start a process instance" {{< img src="../img/start-process-button.png" title="Start Process Button" >}} in the tasklist and chooses the process your start form is assigned to, he will follow a link to this form, including the processDefinitionKey and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaxxTaskForm` which:
+If the user clicks on "Start a process instance" {{< img src="../img/start-process-button.png" title="Start Process Button" >}} in the tasklist and chooses the process your start form is assigned to, he will follow a link to this form, including the processDefinitionKey and the callback URL (the URL to access the central tasklist) as GET-Parameters. Accessing this form will trigger the special CDI bean `kramaxTaskForm` which:
 
 *   Starts a conversation
 *   Remembers the callback URL to the centralized tasklist
@@ -213,7 +213,7 @@ You need to add this code block to the beginning of your JSF view:
 
 ```xml
 <f:metadata>
-  <f:event type="preRenderView" listener="#{kramaxxTaskForm.startProcessInstanceByIdForm()}" />
+  <f:event type="preRenderView" listener="#{kramaxTaskForm.startProcessInstanceByIdForm()}" />
 </f:metadata>
 ```
 
@@ -224,7 +224,7 @@ Submitting the start form now:
  * Triggers a redirect to the callback URL of the tasklist
 
 ```xml
-<h:commandButton id="start" value="Start Process Instance" action="#{kramaxxTaskForm.completeProcessInstanceForm()}" />
+<h:commandButton id="start" value="Start Process Instance" action="#{kramaxTaskForm.completeProcessInstanceForm()}" />
 ```
 
 Note that the command button doesn't have to be on the same form, you might have a whole wizard containing multiple forms in a row before having the `completeProcessInstanceForm` button. This will work because of the conversation running in the background.

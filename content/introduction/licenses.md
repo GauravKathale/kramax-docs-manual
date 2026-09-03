@@ -22,7 +22,7 @@ The entire software is provided under various open source licenses (mainly Apach
 Kramax includes libraries developed by third parties. See the following resources:
 
 * [Third-Party Libraries][third-party-libraries]: An overview of the dependencies Kramax distributes. Additionally, this page points out particularly important third-party licenses to be aware of.
-* [HTML License Book Kramax]({{< relref "/introduction/third-party-libraries/kramaxx-bpm-platform-license-book.md" >}}): A list of all dependencies Kramax distributes with the Kramax artifacts, including their licenses and notices.
+* [HTML License Book Kramax]({{< relref "/introduction/third-party-libraries/kramax-bpm-platform-license-book.md" >}}): A list of all dependencies Kramax distributes with the Kramax artifacts, including their licenses and notices.
 
 [third-party-libraries]: {{< relref "/introduction/third-party-libraries/_index.md" >}}
 

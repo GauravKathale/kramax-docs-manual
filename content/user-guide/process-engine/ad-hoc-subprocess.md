@@ -18,9 +18,9 @@ To interact with an ad hoc subprocess at runtime, you need to find its execution
 
 ```java
 import java.util.*;
-import org.vodafone.kramaxx.bpm.engine.RuntimeService;
-import org.vodafone.kramaxx.bpm.engine.runtime.Execution;
-import org.vodafone.kramaxx.bpm.engine.runtime.ProcessInstance;
+import org.vodafone.kramax.bpm.engine.RuntimeService;
+import org.vodafone.kramax.bpm.engine.runtime.Execution;
+import org.vodafone.kramax.bpm.engine.runtime.ProcessInstance;
 
 RuntimeService runtimeService = processEngine.getRuntimeService();
 
@@ -43,7 +43,7 @@ The `adHocSubProcess` activity ID refers to the `id` attribute of the `<bpmn:adH
 
 Kramax ad hoc subprocesses support **parallel ordering only**. When an ad hoc subprocess is active, multiple child activities can execute concurrently.
 
-The `ordering` attribute is optional and defaults to `"Parallel"`. A value of `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â runtime activation is always parallel.
+The `ordering` attribute is optional and defaults to `"Parallel"`. A value of `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â runtime activation is always parallel.
 
 To enforce sequential execution between specific activities, use optional sequence flows to connect them within the ad hoc subprocess. For example:
 
@@ -53,7 +53,7 @@ To enforce sequential execution between specific activities, use optional sequen
   <bpmn:userTask id="Task_B" name="Task B" />
   <bpmn:userTask id="Task_C" name="Task C" />
   
-  <!-- Enforce Task_A ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ Task_C sequence -->
+  <!-- Enforce Task_A ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Task_C sequence -->
   <bpmn:sequenceFlow id="Flow_1" sourceRef="Task_A" targetRef="Task_C" />
 </bpmn:adHocSubProcess>
 ```
@@ -117,7 +117,7 @@ POST /engine-rest/execution/{id}/ad-hoc-activities/trigger
 
 Returns `204 No Content` on successful trigger.
 
-Validation is all-or-nothing: if any entry is invalid ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â a duplicate or unknown activity ID, an activity that is not startable or is already active, or variables supplied for an activity not listed in the request ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the whole request fails with `400 Bad Request` and no activities are started. The same response is returned if the execution is not currently waiting in an ad hoc subprocess.
+Validation is all-or-nothing: if any entry is invalid ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â a duplicate or unknown activity ID, an activity that is not startable or is already active, or variables supplied for an activity not listed in the request ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â the whole request fails with `400 Bad Request` and no activities are started. The same response is returned if the execution is not currently waiting in an ad hoc subprocess.
 
 # Manual Completion
 
@@ -180,9 +180,9 @@ By default, activities specified in the `activeTasksCollection` property are aut
 ```xml
 <bpmn:adHocSubProcess id="AdHocProc" ordering="Parallel">
   <bpmn:extensionElements>
-    <kramaxx:properties>
-      <kramaxx:property name="activeTasksCollection" value="Task_A,Task_B" />
-    </kramaxx:properties>
+    <kramax:properties>
+      <kramax:property name="activeTasksCollection" value="Task_A,Task_B" />
+    </kramax:properties>
   </bpmn:extensionElements>
   ...
 </bpmn:adHocSubProcess>
@@ -193,7 +193,7 @@ In this example, both `Task_A` and `Task_B` are automatically activated when the
 The `activeTasksCollection` value can also be an expression or variable reference that resolves to a `String` of comma-separated activity IDs or a `Collection` of activity IDs:
 
 ```xml
-<kramaxx:property name="activeTasksCollection" value="${taskList}" />
+<kramax:property name="activeTasksCollection" value="${taskList}" />
 ```
 
 Only *starter activities* can be listed: activities of a startable type (tasks of any type, call activities, embedded subprocesses, and transactions) that have no incoming sequence flow inside the ad hoc subprocess. Listing any other activity, or a value that resolves to something other than a `String` or `Collection`, causes the subprocess to fail on entry with an error.
@@ -225,13 +225,13 @@ If the `completionCondition` evaluates to `false`, the ad hoc subprocess remains
 
 # Automatic Completion
 
-When no `completionCondition` is defined, the optional `kramaxx:autoComplete` extension attribute (default: `true`) controls whether the ad hoc subprocess completes automatically:
+When no `completionCondition` is defined, the optional `kramax:autoComplete` extension attribute (default: `true`) controls whether the ad hoc subprocess completes automatically:
 
-- **`true`** (default) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â The subprocess completes automatically once at least one contained activity has been started and no activities are active anymore
-- **`false`** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â The subprocess stays open even after all activities have finished; it must be completed explicitly via `completeAdHocSubProcess()` or the corresponding REST endpoint
+- **`true`** (default) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â The subprocess completes automatically once at least one contained activity has been started and no activities are active anymore
+- **`false`** ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â The subprocess stays open even after all activities have finished; it must be completed explicitly via `completeAdHocSubProcess()` or the corresponding REST endpoint
 
 ```xml
-<bpmn:adHocSubProcess id="AdHocProc" kramaxx:autoComplete="false">
+<bpmn:adHocSubProcess id="AdHocProc" kramax:autoComplete="false">
   ...
 </bpmn:adHocSubProcess>
 ```
@@ -240,7 +240,7 @@ Setting `autoComplete="false"` is useful when activities are triggered on demand
 
 Note the following:
 
-- `autoComplete` must be specified as an attribute on the `adHocSubProcess` element (the `camunda:autoComplete` alias is also accepted). Supplying it as a `kramaxx:property` extension property fails at deployment
+- `autoComplete` must be specified as an attribute on the `adHocSubProcess` element (the `camunda:autoComplete` alias is also accepted). Supplying it as a `kramax:property` extension property fails at deployment
 - The value must be a valid boolean (`true` or `false`); any other value fails at deployment
 - A defined `completionCondition` is still evaluated as usual, regardless of the `autoComplete` setting
 
@@ -248,8 +248,8 @@ Note the following:
 
 The `cancelRemainingInstances` attribute (default: `true`) controls what happens to active child activities when the completion condition is met:
 
-- **`true`** (default) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â All still-active child activities are cancelled and the subprocess completes immediately
-- **`false`** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Active child activities are not cancelled; the subprocess defers completion until all of them have finished
+- **`true`** (default) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â All still-active child activities are cancelled and the subprocess completes immediately
+- **`false`** ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Active child activities are not cancelled; the subprocess defers completion until all of them have finished
 
 The attribute also affects manual completion via `completeAdHocSubProcess()`: with `true`, active child activities are cancelled; with `false`, the call fails while child activities are still active.
 

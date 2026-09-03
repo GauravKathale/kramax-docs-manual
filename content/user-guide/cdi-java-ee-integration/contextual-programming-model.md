@@ -24,7 +24,7 @@ if the conversation context is not active.
 # Associate a conversation with a process instance
 
 When resolving `@BusinessProcessScoped` beans or injecting process variables, we rely on an existing association between an active CDI scope and a process instance.
-The Kramax CDI integration provides the `org.vodafone.kramaxx.bpm.engine.cdi.BusinessProcess` bean for controlling the association, most prominently:
+The Kramax CDI integration provides the `org.vodafone.kramax.bpm.engine.cdi.BusinessProcess` bean for controlling the association, most prominently:
 
 * The `startProcessBy*(...)`-methods, mirroring the respective methods exposed by the `RuntimeService` allowing to start and subsequently associate a business process.
 * The `resumeProcessById(String processInstanceId)`, allowing to associate the process instance with the provided Id.
@@ -46,7 +46,7 @@ The following JSF2 snippet begins a new conversation and associates it with a us
 # Declaratively controlling the process
 
 Kramax CDI allows declaratively starting process instances and completing tasks using annotations. 
-The `@org.vodafone.kramaxx.bpm.engine.cdi.annotation.StartProcess` annotation allows to start a process instance either by "key" or by "name". 
+The `@org.vodafone.kramax.bpm.engine.cdi.annotation.StartProcess` annotation allows to start a process instance either by "key" or by "name". 
 Note that the process instance is started after the annotated method returns. Example:
 
 ```java
@@ -58,7 +58,7 @@ public String submitRequest(BusinessTripRequest request) {
 ```
 
 Depending on the configuration of the Kramax engine, the code of the annotated method and the starting of the process
-instance will be combined in the same transaction. The `@org.vodafone.kramaxx.bpm.engine.cdi.annotation.CompleteTask`-annotation
+instance will be combined in the same transaction. The `@org.vodafone.kramax.bpm.engine.cdi.annotation.CompleteTask`-annotation
 works in the same way:
 
 ```java

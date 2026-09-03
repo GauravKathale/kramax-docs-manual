@@ -202,7 +202,7 @@ In our example, the following steps might take place:
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#repeatonstandardevent" >}}">camunda:repeatOnStandardEvent</a>
     </td>
   </tr>
   <tr>

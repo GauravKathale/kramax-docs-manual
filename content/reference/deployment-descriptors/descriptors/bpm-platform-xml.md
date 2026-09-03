@@ -23,7 +23,7 @@ The <code>bpm-platform.xml</code> file is not used in the Kramax distribution fo
 
 # Xml Schema Namespace
 
-The namespace for the `bpm-platform.xml` file is `http://www.camunda.org/schema/1.0/BpmPlatform`. The XSD file can be found in the `kramaxx-engine.jar` file.
+The namespace for the `bpm-platform.xml` file is `http://www.camunda.org/schema/1.0/BpmPlatform`. The XSD file can be found in the `kramax-engine.jar` file.
 
 
 ## Example
@@ -40,7 +40,7 @@ The namespace for the `bpm-platform.xml` file is `http://www.camunda.org/schema/
 
   <process-engine name="default">
     <job-acquisition>default</job-acquisition>
-    <configuration>org.vodafone.kramaxx.bpm.engine.impl.cfg.JtaProcessEngineConfiguration</configuration>
+    <configuration>org.vodafone.kramax.bpm.engine.impl.cfg.JtaProcessEngineConfiguration</configuration>
     <datasource>jdbc/ProcessEngine</datasource>
 
     <properties>
@@ -87,7 +87,7 @@ The namespace for the `bpm-platform.xml` file is `http://www.camunda.org/schema/
 
 # Configure Location of the bpm-platform.xml File
 
-You can configure the location of the `bpm-platform.xml`, so the file can be stored externally to allow an easy update path of kramaxx-bpm-platform.ear. This negates the work of unpacking / repackaging the ear when you need to change the configuration.  
+You can configure the location of the `bpm-platform.xml`, so the file can be stored externally to allow an easy update path of kramax-bpm-platform.ear. This negates the work of unpacking / repackaging the ear when you need to change the configuration.  
 
 This feature is available for:
 
@@ -95,9 +95,9 @@ This feature is available for:
 
 It is not available for the Wildfly subsystem implementation, because the subsystem implementation uses the JBoss specific `standalone.xml` to configure the platform.
 
-To specify the location, you have to provide an absolute path or an http/https url pointing to the `bpm-platform.xml` file, e.g., `/home/kramaxx/.kramaxx/bpm-platform.xml` or `http://kramaxx.vodafone.org/bpm-platform.xml`.
+To specify the location, you have to provide an absolute path or an http/https url pointing to the `bpm-platform.xml` file, e.g., `/home/kramax/.kramax/bpm-platform.xml` or `http://kramax.vodafone.org/bpm-platform.xml`.
 
-During startup of the kramaxx-bpm-platform, it tries to discover the location of the `bpm-platform.xml` file from the following sources, in the listed order:
+During startup of the kramax-bpm-platform, it tries to discover the location of the `bpm-platform.xml` file from the following sources, in the listed order:
 
 1. JNDI entry is available at `java:/comp/env/bpm-platform-xml`
 2. Environment variable `BPM_PLATFORM_XML` is set
@@ -105,7 +105,7 @@ During startup of the kramaxx-bpm-platform, it tries to discover the location of
 4. `META-INF/bpm-platform.xml` exists on the classpath
 5. (For Tomcat only): checks if there is a `bpm-platform.xml` inside the folder specified by `${CATALINA_BASE} || ${CATALINA_HOME} + /conf/`
 
-The discovery stops when one of the above mentioned sources is found or, in case none is found, it falls back to the `bpm-platform.xml` on the classpath, respectively `${CATALINA_BASE} || ${CATALINA_HOME} + /conf/` for Tomcat. We ship a default `bpm-platform.xml` file inside the kramaxx-bpm-platform.ear, except when you use the Tomcat or Wildfly version of the platform.
+The discovery stops when one of the above mentioned sources is found or, in case none is found, it falls back to the `bpm-platform.xml` on the classpath, respectively `${CATALINA_BASE} || ${CATALINA_HOME} + /conf/` for Tomcat. We ship a default `bpm-platform.xml` file inside the kramax-bpm-platform.ear, except when you use the Tomcat or Wildfly version of the platform.
 
 
 # Using System Properties
@@ -118,9 +118,9 @@ Complex operations are not supported, but you may combine more than one expressi
 ```xml
 <!-- ... -->
 <plugin>
-  <class>org.vodafone.kramaxx.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
+  <class>org.vodafone.kramax.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
   <properties>
-    <property name="administratorUserName">${kramaxx.administratorUserName}</property>
+    <property name="administratorUserName">${kramax.administratorUserName}</property>
   </properties>
 </plugin>
 <!-- ... -->

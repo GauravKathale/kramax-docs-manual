@@ -20,7 +20,7 @@ This guide uses a number of variables to denote common path names and constants:
 
 * `$WILDFLY_HOME` points to the JBoss EAP/WildFly application server main directory.
 * `$WILDFLY_VERSION` denotes the version of WildFly application server.
-* `$WILDFLY_DISTRIBUTION` represents the downloaded pre-packaged Kramax distribution for WildFly, e.g. `kramaxx-bpm-wildfly-$PLATFORM_VERSION.zip` or `kramaxx-bpm-wildfly-$PLATFORM_VERSION.tar.gz`.
+* `$WILDFLY_DISTRIBUTION` represents the downloaded pre-packaged Kramax distribution for WildFly, e.g. `kramax-bpm-wildfly-$PLATFORM_VERSION.zip` or `kramax-bpm-wildfly-$PLATFORM_VERSION.tar.gz`.
 * `$PLATFORM_VERSION` denotes the version of Kramax you want to install or already have installed, e.g. `1.0.0`.
 {{< /note >}}
 
@@ -30,7 +30,7 @@ Download the Kramax WildFly distribution.
 
 ### Copy Modules
 
-Copy the modules from the `modules/` folder of the Kramax distribution, or extract the `kramaxx-wildfly-modules` archive, to the `$WILDFLY_HOME/modules/` of your WildFly application server.
+Copy the modules from the `modules/` folder of the Kramax distribution, or extract the `kramax-wildfly-modules` archive, to the `$WILDFLY_HOME/modules/` of your WildFly application server.
 
 {{< note title="Replace H2 Database" >}}
 The WildFly distribution ships a different version of the H2 database than the one that is shipped with WildFly itself.
@@ -55,7 +55,7 @@ Add the Kramax subsystem as extension:
 <server xmlns="urn:jboss:domain:20.0">
   <extensions>
     ...
-    <extension module="org.vodafone.kramaxx.bpm.wildfly.kramaxx-wildfly-subsystem"/>
+    <extension module="org.vodafone.kramax.bpm.wildfly.kramax-wildfly-subsystem"/>
 ```
 
 Configure the thread pool for the Kramax Job Executor:
@@ -80,7 +80,7 @@ Shown values are the default ones.
 The below example also configures the default process engine.
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramax.bpm.jboss:1.1">
   <process-engines>
     <process-engine name="default" default="true">
       <datasource>java:jboss/datasources/ProcessEngine</datasource>
@@ -130,7 +130,7 @@ typically `bin`.
 <datasource jta="true" enabled="true" use-java-context="true" use-ccm="true"
             jndi-name="java:jboss/datasources/ProcessEngine"
             pool-name="ProcessEngine">
-  <connection-url>jdbc:h2:./kramaxx-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+  <connection-url>jdbc:h2:./kramax-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
   <driver>h2</driver>
   <security user-name="sa" password="sa"/>
 </datasource>
@@ -151,13 +151,13 @@ This section describes how to install optional dependencies. None of these are r
 The following steps are required to deploy the web application:
 
 1. Download the Kramax web application that contains the web applications from our Maven Artifactory.
-    The name of the artifact is `$PLATFORM_VERSION/kramaxx-webapp-wildfly-$PLATFORM_VERSION.war`.
+    The name of the artifact is `$PLATFORM_VERSION/kramax-webapp-wildfly-$PLATFORM_VERSION.war`.
    
-2. Optionally, you may change the context path to which the application will be deployed (default is `/kramaxx`).
+2. Optionally, you may change the context path to which the application will be deployed (default is `/kramax`).
     Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
 3. Copy the war file to `$WILDFLY_HOME/standalone/deployments`.
 4. Startup WildFly.
-5. Access Cockpit, Tasklist, and Admin via `/kramaxx/app/cockpit`, `/kramaxx/app/tasklist` and `/kramaxx/app/admin`, or under the context path you configured.
+5. Access Cockpit, Tasklist, and Admin via `/kramax/app/cockpit`, `/kramax/app/tasklist` and `/kramax/app/admin`, or under the context path you configured.
 
 
 ### REST API
@@ -165,7 +165,7 @@ The following steps are required to deploy the web application:
 The following steps are required to deploy the REST API:
 
 1. Download the REST API web application archive from our Maven Artifactory.
-    * https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm/kramaxx-engine-rest-jakarta/, the name of the artifact is `$PLATFORM_VERSION/kramaxx-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
+    * https://mvnrepository.com/artifact/org.vodafone.kramax.bpm/kramax-engine-rest-jakarta/, the name of the artifact is `$PLATFORM_VERSION/kramax-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
    
 2. Optionally, you may change the context path to which the REST API will be deployed (default is `/engine-rest`).
    Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
@@ -180,13 +180,13 @@ The following steps are required to deploy the REST API:
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaxx/bpm/kramaxx-engine-plugin-connect`
-* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
+* `org/vodafone/kramax/bpm/kramax-engine-plugin-connect`
+* `org/vodafone/kramax/commons/kramax-commons-utils`
 
 To activate Kramax Connect functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramax.bpm.jboss:1.1">
   ...
   <process-engines>
     <process-engine name="default" default="true">
@@ -194,7 +194,7 @@ To activate Kramax Connect functionality for a process engine, a process engine 
       <plugins>
         ... existing plugins ...
         <plugin>
-          <class>org.vodafone.kramaxx.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+          <class>org.vodafone.kramax.connect.plugin.impl.ConnectProcessEnginePlugin</class>
         </plugin>
       </plugins>
       ...
@@ -213,11 +213,11 @@ You can use the Kramax Spin plugin to extend the engine functionality to de-/ser
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaxx/spin/kramaxx-spin-core`
-* `org/vodafone/kramaxx/spin/kramaxx-spin-dataformat-json-jackson`
-* `org/vodafone/kramaxx/spin/kramaxx-spin-dataformat-xml-dom-jakarta`
-* `org/vodafone/kramaxx/bpm/kramaxx-engine-plugin-spin`
-* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
+* `org/vodafone/kramax/spin/kramax-spin-core`
+* `org/vodafone/kramax/spin/kramax-spin-dataformat-json-jackson`
+* `org/vodafone/kramax/spin/kramax-spin-dataformat-xml-dom-jakarta`
+* `org/vodafone/kramax/bpm/kramax-engine-plugin-spin`
+* `org/vodafone/kramax/commons/kramax-commons-utils`
 * `com/fasterxml/jackson/core/jackson-core`
 * `com/fasterxml/jackson/core/jackson-databind`
 * `com/fasterxml/jackson/core/jackson-annotations`
@@ -226,7 +226,7 @@ Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTI
 In order to activate Kramax Spin functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramax.bpm.jboss:1.1">
   ...
   <process-engines>
     <process-engine name="default" default="true">
@@ -234,7 +234,7 @@ In order to activate Kramax Spin functionality for a process engine, a process e
       <plugins>
         ... existing plugins ...
         <plugin>
-          <class>org.vodafone.kramaxx.spin.plugin.impl.SpinProcessEnginePlugin</class>
+          <class>org.vodafone.kramax.spin.plugin.impl.SpinProcessEnginePlugin</class>
         </plugin>
       </plugins>
       ...
@@ -260,7 +260,7 @@ See one of the following ways to fix this:
 2. Exclude implicitly added JAX-RS dependencies.
  * Add a `jboss-deployment-structure.xml` file to you application in the WEB-INF folder.
  * Exclude the JAX-RS subsystem and add the Jackson dependencies, with the version which is used by the Kramax Spin Plugin.
- * This solution is also shown in the [Jackson Annotation Example for WildFly](https://github.com/vodafone/kramaxx-bpm-examples/blob/master/wildfly/jackson-annotations) in the Kramax example repository.
+ * This solution is also shown in the [Jackson Annotation Example for WildFly](https://github.com/vodafone/kramax-bpm-examples/blob/master/wildfly/jackson-annotations) in the Kramax example repository.
 
 
 #### Problem With Deployments Using the REST API
@@ -278,10 +278,10 @@ Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTI
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaxx/template-engines/kramaxx-template-engines-freemarker`
+* `org/vodafone/kramax/template-engines/kramax-template-engines-freemarker`
 * `org/freemarker/freemarker`
-* `org/vodafone/kramaxx/commons/kramaxx-commons-logging`
-* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
+* `org/vodafone/kramax/commons/kramax-commons-logging`
+* `org/vodafone/kramax/commons/kramax-commons-utils`
 
 ### GraalVM JavaScript Integration
 

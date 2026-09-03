@@ -144,18 +144,18 @@ To evaluate a referenced decision, the integration of the Kramax DMN engine is u
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#decisionbinding" >}}">camunda:decisionBinding</a>,
-            <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#decisiontenantid" >}}">camunda:decisionTenantId</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#decisionversion" >}}">camunda:decisionVersion</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#mapdecisionresult" >}}">camunda:mapDecisionResult</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#resultvariable" >}}">camunda:resultVariable</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#decisionbinding" >}}">camunda:decisionBinding</a>,
+            <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#decisiontenantid" >}}">camunda:decisionTenantId</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#decisionversion" >}}">camunda:decisionVersion</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#mapdecisionresult" >}}">camunda:mapDecisionResult</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#resultvariable" >}}">camunda:resultVariable</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>
     </td>
   </tr>
   <tr>

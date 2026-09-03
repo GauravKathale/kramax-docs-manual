@@ -11,19 +11,19 @@ menu:
 
 ---
 
-The auto starter uses the  `org.vodafone.kramaxx.bpm.engine.impl.cfg.ProcessEnginePlugin` mechanism to configure the engine.
+The auto starter uses the  `org.vodafone.kramax.bpm.engine.impl.cfg.ProcessEnginePlugin` mechanism to configure the engine.
 
 The configuration is divided into _sections_. These _sections_ are represented by the marker interfaces:
 
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxProcessEngineConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxDatasourceConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxHistoryConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxHistoryLevelAutoHandlingConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxJobConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxDeploymentConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxAuthorizationConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxFailedJobConfiguration`
-* `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.KramaxMetricsConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxProcessEngineConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxDatasourceConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxHistoryConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxHistoryLevelAutoHandlingConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxJobConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxDeploymentConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxAuthorizationConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxFailedJobConfiguration`
+* `org.vodafone.kramax.bpm.spring.boot.starter.configuration.KramaxMetricsConfiguration`
 
 ## Default Configurations
 
@@ -39,7 +39,7 @@ Configures the Kramax data source and enables [transaction integration]({{< relr
 
 If you want to [configure more than one datasource](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources)
 and don't want to use the `@Primary` one for the process engine, then you can create a separate
-data source with name `kramaxxBpmDataSource` that will be automatically wired with Kramax instead.
+data source with name `kramaxBpmDataSource` that will be automatically wired with Kramax instead.
 
 ```java
 @Bean
@@ -49,7 +49,7 @@ public DataSource primaryDataSource() {
   return DataSourceBuilder.create().build();
 }
 
-@Bean(name="kramaxxBpmDataSource")
+@Bean(name="kramaxBpmDataSource")
 @ConfigurationProperties(prefix="datasource.secondary")
 public DataSource secondaryDataSource() {
   return DataSourceBuilder.create().build();
@@ -57,8 +57,8 @@ public DataSource secondaryDataSource() {
 ```
 
 If you don't want to use the `@Primary` transaction manager, it is possible to create a separate
-transaction manager with the name `kramaxxBpmTransactionManager` that will be wired with the data
-source used for Kramax (either `@Primary` or `kramaxxBpmDataSource`):
+transaction manager with the name `kramaxBpmTransactionManager` that will be wired with the data
+source used for Kramax (either `@Primary` or `kramaxBpmDataSource`):
 
 ```java
 @Bean
@@ -67,8 +67,8 @@ public PlatformTransactionManager primaryTransactionManager() {
   return new JpaTransactionManager();
 }
 
-@Bean(name="kramaxxBpmTransactionManager")
-public PlatformTransactionManager kramaxxTransactionManager(@Qualifier("kramaxxBpmDataSource") DataSource dataSource) {
+@Bean(name="kramaxBpmTransactionManager")
+public PlatformTransactionManager kramaxTransactionManager(@Qualifier("kramaxBpmDataSource") DataSource dataSource) {
   return new DataSourceTransactionManager(dataSource);
 }
 ```
@@ -95,7 +95,7 @@ This configuration is for backwards-compatiblitiy only as Kramax supports `histo
 
 To have more control over the handling, you can provide your own
 
-- `org.vodafone.kramaxx.bpm.spring.boot.starter.jdbc.HistoryLevelDeterminator` with name `historyLevelDeterminator`
+- `org.vodafone.kramax.bpm.spring.boot.starter.jdbc.HistoryLevelDeterminator` with name `historyLevelDeterminator`
 
 IMPORTANT: The default configuration is applied after all other default configurations using the ordering mechanism.
 
@@ -105,26 +105,26 @@ Applies the job execution properties to the process engine.
 
 To have more control over the execution itself, you can provide your own
 
-- `org.vodafone.kramaxx.bpm.engine.impl.jobexecutor.JobExecutor`
-- `org.springframework.core.task.TaskExecutor` named `kramaxxTaskExecutor`
+- `org.vodafone.kramax.bpm.engine.impl.jobexecutor.JobExecutor`
+- `org.springframework.core.task.TaskExecutor` named `kramaxTaskExecutor`
 
 beans.
 
 IMPORTANT: The job executor is not enabled in the configuration.
-This is done after the spring context successfully loaded (see `org.vodafone.kramaxx.bpm.spring.boot.starter.runlistener`).
+This is done after the spring context successfully loaded (see `org.vodafone.kramax.bpm.spring.boot.starter.runlistener`).
 
 ### `DefaultDeploymentConfiguration`
 
 If auto deployment is enabled (this is the case by default), all processes found in the classpath are deployed.
-The resource pattern can be changed using properties (see [properties](#kramaxx-engine-properties)).
+The resource pattern can be changed using properties (see [properties](#kramax-engine-properties)).
 
 ### `DefaultAuthorizationConfiguration`
 
-Applies the authorization configuration to the process engine. If not configured, the `kramaxx` default values are used (see [properties](#kramaxx-engine-properties)).
+Applies the authorization configuration to the process engine. If not configured, the `kramax` default values are used (see [properties](#kramax-engine-properties)).
 
 
 {{< note title="" class="info" >}}
-  Starting with **Kramax 2.0.0**, the engine validates authorization references by default (see `kramaxx.bpm.authorization.validate-auth-resource-id-exists` below).
+  Starting with **Kramax 2.0.0**, the engine validates authorization references by default (see `kramax.bpm.authorization.validate-auth-resource-id-exists` below).
 {{< /note >}}
 
 
@@ -137,7 +137,7 @@ Provide a bean implementing one of the marker interfaces. For example to customi
 public class MyKramaxConfiguration {
 
 	@Bean
-	public static KramaxDatasourceConfiguration kramaxxDatasourceConfiguration() {
+	public static KramaxDatasourceConfiguration kramaxDatasourceConfiguration() {
 		return new MyKramaxDatasourceConfiguration();
 	}
 
@@ -146,8 +146,8 @@ public class MyKramaxConfiguration {
 
 ## Adding Additional Configurations
 
-You just have to provide one or more beans implementing the `org.vodafone.kramaxx.bpm.engine.impl.cfg.ProcessEnginePlugin` interface
-(or extend from `org.vodafone.kramaxx.bpm.spring.boot.starter.configuration.impl.AbstractKramaxConfiguration`).
+You just have to provide one or more beans implementing the `org.vodafone.kramax.bpm.engine.impl.cfg.ProcessEnginePlugin` interface
+(or extend from `org.vodafone.kramax.bpm.spring.boot.starter.configuration.impl.AbstractKramaxConfiguration`).
 The configurations are applied ordered using the spring ordering mechanism (`@Order` annotation and `Ordered` interface).
 So if you want your configuration to be applied before the default configurations, add a `@Order(Ordering.DEFAULT_ORDER - 1)` annotation to your class.
 If you want your configuration to be applied after the default configurations, add a `@Order(Ordering.DEFAULT_ORDER + 1)` annotation to your class.
@@ -216,7 +216,7 @@ The available properties are as follows:
   </tr>
 <tr><td colspan="4"><b>General</b></td></tr>
 
-<tr><td rowspan="15"><code>kramaxx.bpm</code></td>
+<tr><td rowspan="15"><code>kramax.bpm</code></td>
 <td><code>.enabled</code></td>
 <td>Switch to disable the Kramax auto-configuration. Use to exclude Kramax in integration tests.</td>
 <td><code>true</code></td>
@@ -303,7 +303,7 @@ The available properties are as follows:
 <tr><td colspan="4"><b>Job Execution</b></td></tr>
 
 <tr>
-<td rowspan="14"><code>kramaxx.bpm.job-execution</code></td>
+<td rowspan="14"><code>kramax.bpm.job-execution</code></td>
 <td><code>.enabled</code></td>
 <td>If set to <code>false</code>, no JobExecutor bean is created at all. Maybe used for testing.</td>
 <td><code>true</code></td>
@@ -378,7 +378,7 @@ The available properties are as follows:
 <tr><td colspan="4"><b>Datasource</b></td></tr>
 
 <tr>
-<td rowspan="5"><code>kramaxx.bpm.database</code></td>
+<td rowspan="5"><code>kramax.bpm.database</code></td>
 <td><code>.schema-update</code></td>
 <td>If automatic schema update should be applied, use one of [true, false, create, create-drop, drop-create]</td>
 <td><code>true</code></td>
@@ -392,7 +392,7 @@ The available properties are as follows:
 
 <tr>
 <td><code>.table-prefix</code></td>
-<td>Prefix of the kramaxx database tables. Attention: The table prefix will <b>not</b> be applied if you  are using <code>schema-update</code>!</td>
+<td>Prefix of the kramax database tables. Attention: The table prefix will <b>not</b> be applied if you  are using <code>schema-update</code>!</td>
 <td><i>Kramax default value</i></td>
 </tr>
 
@@ -412,7 +412,7 @@ See the <a href="{{<relref "/user-guide/process-engine/database/database-configu
 
 <tr><td colspan="4"><b>Eventing</b></td></tr>
 <tr>
-<td rowspan="4"><code>kramaxx.bpm.eventing</code></td>
+<td rowspan="4"><code>kramax.bpm.eventing</code></td>
 <td><code>.execution</code></td>
 <td>Enables eventing of delegate execution events.
 See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event-bridge.md" >}}">user guide</a> for further details.</td>
@@ -443,15 +443,15 @@ See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event
 
 <tr><td colspan="4"><b>Management</b></td></tr>
 <tr>
-<td><code>kramaxx.bpm.management</code></td>
-<td><code>.health.kramaxx.enabled</code></td>
-<td>Enables default kramaxx health indicators</td>
+<td><code>kramax.bpm.management</code></td>
+<td><code>.health.kramax.enabled</code></td>
+<td>Enables default kramax health indicators</td>
 <td><code>true</code></td>
 </tr>
 
 <tr><td colspan="4"><b>Metrics</b></td></tr>
 <tr>
-<td rowspan="2"><code>kramaxx.bpm.metrics</code></td>
+<td rowspan="2"><code>kramax.bpm.metrics</code></td>
 <td><code>.enabled</code></td>
 <td>Enables metrics reporting</td>
 <td><i>Kramax default value</i></td>
@@ -465,7 +465,7 @@ See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event
 
 <tr><td colspan="4"><b>Webapp</b></td></tr>
 <tr>
-<td rowspan="3"><code>kramaxx.bpm.webapp</code></td>
+<td rowspan="3"><code>kramax.bpm.webapp</code></td>
 <td><code>.enabled</code></td>
 <td>Switch to disable the Kramax Webapp auto-configuration.</td>
 <td><code>true</code></td>
@@ -473,7 +473,7 @@ See the <a href="{{<relref "/user-guide/spring-boot-integration/the-spring-event
 
 <tr>
 <td><code>.index-redirect-enabled</code></td>
-<td>Registers a redirect from <code>/</code> to kramaxx's bundled <code>index.html</code>.
+<td>Registers a redirect from <code>/</code> to kramax's bundled <code>index.html</code>.
 <br/>
 If this property is set to <code>false</code>, the
 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-welcome-page">default</a>
@@ -487,11 +487,11 @@ Spring Boot behaviour is taken into account.</td>
 <br/>
 When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starter <= 3.4.x is restored.
 </td>
-<td><code>/kramaxx</code></td>
+<td><code>/kramax</code></td>
 </tr>
 
 <tr id="csrf">
-  <td rowspan="10"><code>kramaxx.bpm.webapp.csrf</code></td>
+  <td rowspan="10"><code>kramax.bpm.webapp.csrf</code></td>
 </tr>
 <tr>
 <td><code>.target-origin</code></td>
@@ -563,7 +563,7 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 </tr>
 
 <tr id="session-cookie">
-  <td rowspan="6"><code>kramaxx.bpm.webapp.session-cookie</code></td>
+  <td rowspan="6"><code>kramax.bpm.webapp.session-cookie</code></td>
 </tr>
 <tr>
   <td><code>.enable-secure-cookie</code></td>
@@ -617,7 +617,7 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 </tr>
 
 <tr id="header-security">
-  <td rowspan="12"><code>kramaxx.bpm.webapp.header-security</code></td>
+  <td rowspan="12"><code>kramax.bpm.webapp.header-security</code></td>
 </tr>
 <tr>
   <td><code>.xss-protection-disabled</code></td>
@@ -736,7 +736,7 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 </tr>
 
 <tr id="auth-cache">
-  <td rowspan="3"><code>kramaxx.bpm.webapp.auth.cache</code></td>
+  <td rowspan="3"><code>kramax.bpm.webapp.auth.cache</code></td>
 </tr>
 <tr>
   <td><code>.ttl-enabled</code></td>
@@ -762,9 +762,9 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 
 <tr><td colspan="4"><b>REST API</b></td></tr>
 <tr>
-<td><code>kramaxx.bpm.rest-api.fetch-and-lock</code></td>
+<td><code>kramax.bpm.rest-api.fetch-and-lock</code></td>
 <td><code>.queue-capacity</code></td>
-<td>Configure the blocking queue limit of long-polling ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“Fetch and LockÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ requests.</td>
+<td>Configure the blocking queue limit of long-polling ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã…â€œFetch and LockÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ requests.</td>
 <td><code>200</code></td>
 </tr>
 
@@ -777,7 +777,7 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 
 <tr><td colspan="5"><b>Authorization</b></td></tr>
 <tr>
-<td rowspan="5"><code>kramaxx.bpm.authorization</code></td>
+<td rowspan="5"><code>kramax.bpm.authorization</code></td>
 <td><code>.enabled</code></td>
 <td>Enables authorization</td>
 <td><i>Kramax default value</i></td>
@@ -813,7 +813,7 @@ This validation is performed independently of whether authorization checks are e
 
 <tr><td colspan="4"><b>Admin User</b></td></tr>
 <tr>
-<td rowspan="3"><code>kramaxx.bpm.admin-user</code></td>
+<td rowspan="3"><code>kramax.bpm.admin-user</code></td>
 <td><code>.id</code></td>
 <td>The username (e.g., 'admin')</td>
 <td>-</td>
@@ -833,7 +833,7 @@ This validation is performed independently of whether authorization checks are e
 
 <tr><td colspan="4"><b>Filter</b></td></tr>
 <tr>
-<td><code>kramaxx.bpm.filter</code></td>
+<td><code>kramax.bpm.filter</code></td>
 <td><code>.create</code></td>
 <td>Name of a "show all" filter. If set, a new filter is created on start that displays all tasks. Useful for testing on h2 db.</td>
 <td>-</td>
@@ -845,7 +845,7 @@ This validation is performed independently of whether authorization checks are e
   </td>
 </tr>
 <tr>
-  <td rowspan="3"><code>kramaxx.bpm.oauth2.identity-provider</code></td>
+  <td rowspan="3"><code>kramax.bpm.oauth2.identity-provider</code></td>
   <td><code>.enabled</code></td>
   <td>Enables the OAuth2 identity provider.</td>
   <td><code>true</code></td>
@@ -864,7 +864,7 @@ This validation is performed independently of whether authorization checks are e
   <td><code>,</code> (comma)</td>
 </tr>
 <tr>
-  <td rowspan="2"><code>kramaxx.bpm.oauth2.sso-logout</code></td>
+  <td rowspan="2"><code>kramax.bpm.oauth2.sso-logout</code></td>
   <td><code>.enabled</code></td>
   <td>Activates the client initiated OIDC logout feature.</td>
   <td><code>false</code></td>
@@ -884,7 +884,7 @@ The method of configuration described above does not cover all process engine pr
 property that is not exposed (i.e. listed above) you can use generic-properties.
 
 ```yaml
-kramaxx:
+kramax:
   bpm:
     generic-properties:
       properties:
@@ -901,7 +901,7 @@ kramaxx:
 Override configuration using exposed properties:
 
 ```yaml
-kramaxx.bpm:
+kramax.bpm:
   admin-user:
     id: kermit
     password: superSecret
@@ -914,7 +914,7 @@ kramaxx.bpm:
 Configure authorization validation via exposed properties:
 
 ```yaml
-kramaxx:
+kramax:
   bpm:
     authorization:
       enabled: true
@@ -924,7 +924,7 @@ kramaxx:
 Override configuration using generic properties:
 
 ```yaml
-kramaxx:
+kramax:
   bpm:
     generic-properties:
       properties:
@@ -947,14 +947,14 @@ server:
 ```
 
 Further details of the session cookie like the `SameSite` flag can be configured via
-[kramaxx.bpm.webapp.session-cookie]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
+[kramax.bpm.webapp.session-cookie]({{< relref "/user-guide/spring-boot-integration/configuration.md#session-cookie" >}}) in the `application.yaml`.
 
 # Configuring Spin DataFormats
 
 The Kramax Spring Boot Starter auto-configures the Spin Jackson Json DataFormat when the
-`kramaxx-spin-dataformat-json-jackson` dependency is detected on the classpath. To include a
+`kramax-spin-dataformat-json-jackson` dependency is detected on the classpath. To include a
 `DataFormatConfigurator` for the desired Jackson Java 8 module, the appropriate dependency needs
-to be included on the classpath as well. Note that `kramaxx-engine-plugin-spin`
+to be included on the classpath as well. Note that `kramax-engine-plugin-spin`
 needs to be included as a dependency as well for the auto-configurators to work.
 
 Auto-configuration is currently supported for the following [Jackson Java 8 modules](https://github.com/FasterXML/jackson-modules-java8):
@@ -965,9 +965,9 @@ Auto-configuration is currently supported for the following [Jackson Java 8 modu
 
 {{< note title="Heads Up!" class="warning" >}}
 The Spin Jackson Json DataFormat auto-configuration is disabled when using
-`kramaxx-spin-dataformat-all` as a dependency. The `kramaxx-spin-dataformat-all` artifact shades the
+`kramax-spin-dataformat-all` as a dependency. The `kramax-spin-dataformat-all` artifact shades the
 Jackson libraries, which breaks compatibility with the regular Jackson modules. If usage of
-`kramaxx-spin-dataformat-all` is necessary, please use the standard method for
+`kramax-spin-dataformat-all` is necessary, please use the standard method for
 [Spin Custom DataFormat configuration]({{< relref "/reference/spin/extending-spin.md#custom-dataformats" >}}).
 {{< /note >}}
 
@@ -978,12 +978,12 @@ appropriate version tags, will need to be added in the Spring Boot Application's
  ```xml
 <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaxx.bpm</groupId>
-      <artifactId>kramaxx-engine-plugin-spin</artifactId>
+      <groupId>org.vodafone.kramax.bpm</groupId>
+      <artifactId>kramax-engine-plugin-spin</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.vodafone.kramaxx.spin</groupId>
-      <artifactId>kramaxx-spin-dataformat-json-jackson</artifactId>
+      <groupId>org.vodafone.kramax.spin</groupId>
+      <artifactId>kramax-spin-dataformat-json-jackson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -997,7 +997,7 @@ configure the Jackson `ObjectMapper`. They can be found [here](https://docs.spri
 
 To provide additional configurations, the following actions need to be performed:
 
-1. Provide a custom implementation of `org.vodafone.kramaxx.spin.spi.DataFormatConfigurator`;
+1. Provide a custom implementation of `org.vodafone.kramax.spin.spi.DataFormatConfigurator`;
 1. Add the appropriate key-value pair of the fully qualified classnames of the interface and the
    implementation to the `META-INF/spring.factories` file;
-1. Ensure that the artifact containing the configurator is reachable from SpinÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s classloader.
+1. Ensure that the artifact containing the configurator is reachable from SpinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s classloader.

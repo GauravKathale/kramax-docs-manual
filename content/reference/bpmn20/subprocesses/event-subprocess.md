@@ -101,4 +101,4 @@ These two differences can help you decide whether a boundary event or an embedde
 
 # Additional Resources
 
-*   [Event subprocess](http://kramaxx.vodafone.org/bpmn/reference.html#activities-event-subprocess) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Event subprocess](http://kramax.vodafone.org/bpmn/reference.html#activities-event-subprocess) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)

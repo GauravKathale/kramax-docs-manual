@@ -19,12 +19,12 @@ To use the JNDI Bindings for Kramax Services on Apache Tomcat you have to add th
 ```xml
 <Context>
   <ResourceLink name="ProcessEngineService"
-    global="global/kramaxx-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaxx.bpm.ProcessEngineService"
-    type="org.vodafone.kramaxx.bpm.ProcessEngineService" />
+    global="global/kramax-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramax.bpm.ProcessEngineService"
+    type="org.vodafone.kramax.bpm.ProcessEngineService" />
 
   <ResourceLink name="ProcessApplicationService"
-    global="global/kramaxx-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaxx.bpm.ProcessApplicationService"
-    type="org.vodafone.kramaxx.bpm.ProcessApplicationService" />
+    global="global/kramax-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramax.bpm.ProcessApplicationService"
+    type="org.vodafone.kramax.bpm.ProcessApplicationService" />
 </Context>
 ```
 
@@ -37,13 +37,13 @@ Furthermore, declare the dependency on the JNDI binding inside the `WEB-INF/web.
   <resource-ref>
     <description>Process Engine Service</description>
     <res-ref-name>ProcessEngineService</res-ref-name>
-    <res-type>org.vodafone.kramaxx.bpm.ProcessEngineService</res-type>
+    <res-type>org.vodafone.kramax.bpm.ProcessEngineService</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
   <resource-ref>
     <description>Process Application Service</description>
     <res-ref-name>ProcessApplicationService</res-ref-name>
-    <res-type>org.vodafone.kramaxx.bpm.ProcessApplicationService</res-type>
+    <res-type>org.vodafone.kramax.bpm.ProcessApplicationService</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
   ...

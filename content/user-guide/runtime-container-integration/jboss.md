@@ -13,7 +13,7 @@ menu:
 {{< deprecated >}}
 
 {{< note title="Installation Guide" class="info" >}}
-  If you [download a full distribution](http://kramaxx.vodafone.org/download/), the Kramax Wildfly subsystem is readily installed into the application server.
+  If you [download a full distribution](http://kramax.vodafone.org/download/), the Kramax Wildfly subsystem is readily installed into the application server.
 
   [Read the installation guide]({{< relref "/installation/full/jboss/_index.md" >}}) to learn how to install the Kramax Wildfly subsystem into your Wildfly Server.
 {{< /note >}}
@@ -55,7 +55,7 @@ For a complete list of all configuration options, please refer to the [Job Execu
 Using the Kramax Wildfly subsystem, it is possible to configure and manage the process engine through the JBoss Management Model. The most straightforward way is to add the process engine configuration to the `standalone.xml` file of the Wildfly Server:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramax.bpm.jboss:1.1">
     <process-engines>
         <process-engine name="default" default="true">
             <datasource>java:jboss/datasources/ProcessEngine</datasource>
@@ -108,7 +108,7 @@ It is possible to provide a custom Process Engine Configuration class on a Wildf
 </process-engine>
 ```
 
-The class `org.my.custom.ProcessEngineConfiguration` must be a subclass of `org.vodafone.kramaxx.bpm.engine.impl.cfg.JtaProcessEngineConfiguration`.
+The class `org.my.custom.ProcessEngineConfiguration` must be a subclass of `org.vodafone.kramax.bpm.engine.impl.cfg.JtaProcessEngineConfiguration`.
 
 The properties map can be used for invoking primitive valued setters (Integer, String, Boolean) that follow the Java Bean conventions. In the case of the example above, the
 class would provide a method named
@@ -120,15 +120,15 @@ public void setMyCustomProperty(boolean boolean) {
 ```
 
 {{< note title="Module dependency of custom configuration class" class="warning" >}}
-  If you configure the process engine in `standalone.xml` and provide a custom configuration class packaged inside an own module, the kramaxx-wildfly-subsystem module needs to have a module dependency on the module providing the class.
+  If you configure the process engine in `standalone.xml` and provide a custom configuration class packaged inside an own module, the kramax-wildfly-subsystem module needs to have a module dependency on the module providing the class.
 
   If you fail to do this, you will see the following error log:
 
   ```console
-  Caused by: org.vodafone.kramaxx.bpm.engine.ProcessEngineException: Could not load 'foo.bar': the class must be visible from the kramaxx-wildfly-subsystem module.
-      at org.vodafone.kramaxx.bpm.container.impl.jboss.service.MscManagedProcessEngineController.createProcessEngineConfiguration(MscManagedProcessEngineController.java:187) [kramaxx-wildfly-subsystem-{{< minor-version >}}.0.jar:]
-      at org.vodafone.kramaxx.bpm.container.impl.jboss.service.MscManagedProcessEngineController.startProcessEngine(MscManagedProcessEngineController.java:138) [kramaxx-wildfly-subsystem-{{< minor-version >}}.0.jar:]
-      at org.vodafone.kramaxx.bpm.container.impl.jboss.service.MscManagedProcessEngineController$3.run(MscManagedProcessEngineController.java:126) [kramaxx-wildfly-subsystem-{{< minor-version >}}.0.jar:]
+  Caused by: org.vodafone.kramax.bpm.engine.ProcessEngineException: Could not load 'foo.bar': the class must be visible from the kramax-wildfly-subsystem module.
+      at org.vodafone.kramax.bpm.container.impl.jboss.service.MscManagedProcessEngineController.createProcessEngineConfiguration(MscManagedProcessEngineController.java:187) [kramax-wildfly-subsystem-{{< minor-version >}}.0.jar:]
+      at org.vodafone.kramax.bpm.container.impl.jboss.service.MscManagedProcessEngineController.startProcessEngine(MscManagedProcessEngineController.java:138) [kramax-wildfly-subsystem-{{< minor-version >}}.0.jar:]
+      at org.vodafone.kramax.bpm.container.impl.jboss.service.MscManagedProcessEngineController$3.run(MscManagedProcessEngineController.java:126) [kramax-wildfly-subsystem-{{< minor-version >}}.0.jar:]
   ```
 
 {{< /note >}}
@@ -140,7 +140,7 @@ It is possible to extend a process engine using the process engine plugins conce
 You specify the process engine plugins in `standalone.xml`/`domain.xml` for each process engine separately as shown below:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramax.bpm.jboss:1.1">
     <process-engines>
         <process-engine name="default" default="true">
             <datasource>java:jboss/datasources/ProcessEngine</datasource>
@@ -150,7 +150,7 @@ You specify the process engine plugins in `standalone.xml`/`domain.xml` for each
             </properties>
             <plugins>
                 <plugin>
-                    <class>org.vodafone.kramaxx.bpm.engine.MyCustomProcessEnginePlugin</class>
+                    <class>org.vodafone.kramax.bpm.engine.MyCustomProcessEnginePlugin</class>
                     <properties>
                         <property name="boost">10</property>
                         <property name="maxPerformance">true</property>
@@ -182,9 +182,9 @@ System properties may be set via command line (`-D`option). Read more on express
 ```xml
 <!-- ... -->
 <plugin>
-  <class>org.vodafone.kramaxx.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
+  <class>org.vodafone.kramax.bpm.engine.impl.plugin.AdministratorAuthorizationPlugin</class>
   <properties>
-    <property name="administratorUserName">${kramaxx.administratorUserName}</property>
+    <property name="administratorUserName">${kramax.administratorUserName}</property>
   </properties>
 </plugin>
 <!-- ... -->
@@ -198,20 +198,20 @@ The Kramax Wildfly subsystem provides the same [JNDI bindings for the ProcessApp
 The global JNDI bindings for process engines follow the pattern
 
 ```java
-java:global/kramaxx-bpm-platform/process-engine/$PROCESS_ENGINE_NAME
+java:global/kramax-bpm-platform/process-engine/$PROCESS_ENGINE_NAME
 ```
 
-If a process engine is named "engine1", it will be available using the name `java:global/kramaxx-bpm-platform/process-engine/engine1`.
+If a process engine is named "engine1", it will be available using the name `java:global/kramax-bpm-platform/process-engine/engine1`.
 
 Note that when looking up the process engine, using a declarative mechanism (like `@Resource` or referencing the resource in a deployment descriptor) is preferred over a programmatic way. The declarative mechanism makes the application server aware of our dependency on the Process Engine Service and allows it to manage that dependency for us. See also: [Managing Service Dependencies]({{< relref "#explicit-service-dependencies" >}}).
 A declarative mechanism like `@Resource` could be
 
 ```java
-@Resource(mappedName = "java:global/kramaxx-bpm-platform/process-engine/$PROCESS_ENGINE_NAME")
+@Resource(mappedName = "java:global/kramax-bpm-platform/process-engine/$PROCESS_ENGINE_NAME")
 ```
 
 {{< note title="Look Up a Process Engine From JNDI Using Spring" class="warning" >}}
-  On Wildfly, Spring users should always [create a resource-ref for the process engine in web.xml]({{< relref "#manage-service-dependencies" >}})</a> and then lookup the local name in the `java:comp/env/` namespace. [For an example, see this Quickstart](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/deployment/spring-wildfly-non-pa)</a>
+  On Wildfly, Spring users should always [create a resource-ref for the process engine in web.xml]({{< relref "#manage-service-dependencies" >}})</a> and then lookup the local name in the `java:comp/env/` namespace. [For an example, see this Quickstart](https://github.com/vodafone/kramax-bpm-examples/tree/master/deployment/spring-wildfly-non-pa)</a>
 {{< /note >}}
 
 
@@ -227,8 +227,8 @@ It is possible to inspect the configuration using the CLI (Command Line Interfac
 ```console
 You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
 [disconnected /] connect
-[standalone@localhost:9999 /] cd /subsystem=kramaxx-bpm-platform
-[standalone@localhost:9999 subsystem=kramaxx-bpm-platform] :read-resource(recursive=true)
+[standalone@localhost:9999 /] cd /subsystem=kramax-bpm-platform
+[standalone@localhost:9999 subsystem=kramax-bpm-platform] :read-resource(recursive=true)
 {
     "outcome" => "success",
     "result" => {
@@ -245,7 +245,7 @@ You are disconnected at the moment. Type 'connect' to connect to the server or '
             }}
         }},
         "process-engines" => {"default" => {
-            "configuration" => "org.vodafone.kramaxx.bpm.container.impl.jboss.config.ManagedJtaProcessEngineConfiguration",
+            "configuration" => "org.vodafone.kramax.bpm.container.impl.jboss.config.ManagedJtaProcessEngineConfiguration",
             "datasource" => "java:jboss/datasources/ProcessEngine",
             "default" => true,
             "history-level" => "full",
@@ -265,7 +265,7 @@ You are disconnected at the moment. Type 'connect' to connect to the server or '
 Once the process engine is registered in the JBoss Management Model, it is possible to control it through the management API. For example, you can stop it through the CLI:
 
 ```console
-[standalone@localhost:9999 subsystem=kramaxx-bpm-platform] cd process-engines=default
+[standalone@localhost:9999 subsystem=kramax-bpm-platform] cd process-engines=default
 [standalone@localhost:9999 process-engines=default] :remove
 {"outcome" => "success"}
 ```
@@ -282,7 +282,7 @@ This removes the process engine and all dependent services. This means that if y
 It is also possible to start a new process engine at runtime:
 
 ```console
-[standalone@localhost:9999 subsystem=kramaxx-bpm-platform] /subsystem=kramaxx-bpm-platform/process-engines=my-process-engine/:add(name=my-process-engine,datasource=java:jboss/datasources/ExampleDS)
+[standalone@localhost:9999 subsystem=kramax-bpm-platform] /subsystem=kramax-bpm-platform/process-engines=my-process-engine/:add(name=my-process-engine,datasource=java:jboss/datasources/ExampleDS)
 {"outcome" => "success"}
 ```
 
@@ -308,7 +308,7 @@ The JConsole plugin allows you to inspect the management model graphically and b
 {{< /note >}}
 
 When using the Kramax Wildfly subsystem, the process engine classes are deployed as WildFly module. The module is named
-`org.vodafone.kramaxx.bpm.kramaxx-engine` and is deployed in the folder `$WILDFLY_HOME/modules/org/vodafone/kramaxx/bpm/kramaxx-engine`.
+`org.vodafone.kramax.bpm.kramax-engine` and is deployed in the folder `$WILDFLY_HOME/modules/org/vodafone/kramax/bpm/kramax-engine`.
 
 By default, the application server will not add this module to the classpath of applications. If an application needs to interact with the process engine, we must declare a module dependency in the application. This can be achieved using either an implicit or an explicit module dependency.
 
@@ -333,7 +333,7 @@ Wildfly offers multiple [different mechanisms for achieving this](https://docs.w
        <configuration>
           <archive>
              <manifestEntries>
-                <Dependencies>org.vodafone.kramaxx.bpm.kramaxx-engine</Dependencies>
+                <Dependencies>org.vodafone.kramax.bpm.kramax-engine</Dependencies>
              </manifestEntries>
           </archive>
        </configuration>
@@ -375,12 +375,12 @@ The simplest way to add an explicit dependency on the process engine is to bind 
 ```xml
 <resource-ref>
   <res-ref-name>processEngine/default</res-ref-name>
-  <res-type>org.vodafone.kramaxx.bpm.engine.ProcessEngine</res-type>
-  <mapped-name>java:global/kramaxx-bpm-platform/process-engine/default</mapped-name>
+  <res-type>org.vodafone.kramax.bpm.engine.ProcessEngine</res-type>
+  <mapped-name>java:global/kramax-bpm-platform/process-engine/default</mapped-name>
 </resource-ref>
 ```
 
-This way, the global process engine resource `java:global/kramaxx-bpm-platform/process-engine/default` is available locally under the name `processEngine/default`. Since the application server is aware of this dependency, it will make sure the Process Engine Service exists before starting the application and it will stop the application if the process engine is removed.
+This way, the global process engine resource `java:global/kramax-bpm-platform/process-engine/default` is available locally under the name `processEngine/default`. Since the application server is aware of this dependency, it will make sure the Process Engine Service exists before starting the application and it will stop the application if the process engine is removed.
 
 The same effect can be achieved using the `@Resource` Annotation:
 
@@ -388,7 +388,7 @@ The same effect can be achieved using the `@Resource` Annotation:
 @Stateless
 public class PaComponent {
 
-  @Resource(mappedName="java:global/kramaxx-bpm-platform/process-engine/default")
+  @Resource(mappedName="java:global/kramax-bpm-platform/process-engine/default")
   private ProcessEngine processEngine;
 
   @Produces

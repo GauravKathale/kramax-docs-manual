@@ -21,8 +21,8 @@ To enable Kramax auto configuration, add the following dependency to your ```pom
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.springboot</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter</artifactId>
+  <groupId>org.vodafone.kramax.bpm.springboot</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter</artifactId>
   <version>{{< minor-version >}}.0</version>
 </dependency>
 ```
@@ -31,9 +31,9 @@ This will add the Kramax engine v.{{< minor-version >}}.0 to your dependencies.
 
 Other starters that can be used are: 
 
-* [`kramaxx-bpm-spring-boot-starter-rest`](rest-api)
-* [`kramaxx-bpm-spring-boot-starter-webapp`](webapps)
-* [`kramaxx-bpm-spring-boot-starter-external-task-client`]({{< relref "/user-guide/ext-client/spring-boot-starter.md" >}})
+* [`kramax-bpm-spring-boot-starter-rest`](rest-api)
+* [`kramax-bpm-spring-boot-starter-webapp`](webapps)
+* [`kramax-bpm-spring-boot-starter-external-task-client`]({{< relref "/user-guide/ext-client/spring-boot-starter.md" >}})
 
 # Requirements
 

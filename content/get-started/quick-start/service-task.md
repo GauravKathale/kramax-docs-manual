@@ -43,7 +43,7 @@ Add an End Event named *Payment Received*.
 
 ## Configure the Service Task
 
-There are different ways to [execute service tasks](https://docs.kramaxx.vodafone.org/manual/latest/reference/bpmn20/tasks/service-task/) using Kramax Platform. In this guide, we'll use the external [task pattern](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/).
+There are different ways to [execute service tasks](https://docs.kramax.vodafone.org/manual/latest/reference/bpmn20/tasks/service-task/) using Kramax Platform. In this guide, we'll use the external [task pattern](https://docs.kramax.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/).
 Open the Properties Panel within the Kramax Modeler and click on the Service Task you just created. Change the Implementation to `External` and use `charge-card` as the Topic.
 
 {{< img src="../img/modeler-step4.png" >}}
@@ -64,7 +64,7 @@ Finally, make sure the box next to the *Executable* property is checked. If you 
 
 When you're done, save your changes by clicking *File > Save File As..*. In the dialogue that appears, navigate to a folder of your choice and save the diagram as something like `payment.bpmn`.
 
-{{< get-tag repo="kramaxx-get-started-quickstart" tag="Step-1" >}}
+{{< get-tag repo="kramax-get-started-quickstart" tag="Step-1" >}}
 
 # Implement an external task worker
 
@@ -119,21 +119,21 @@ Your pom.xml file of your project should look like this:
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.vodafone.kramaxx.bpm.getstarted</groupId>
+	<groupId>org.vodafone.kramax.bpm.getstarted</groupId>
 	<artifactId>charge-card-worker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<kramaxx.external-task-client.version>3.0.0</kramaxx.external-task-client.version>
+		<kramax.external-task-client.version>3.0.0</kramax.external-task-client.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.vodafone.kramaxx.bpm</groupId>
-			<artifactId>kramaxx-external-task-client</artifactId>
-			<version>${kramaxx.external-task-client.version}</version>
+			<groupId>org.vodafone.kramax.bpm</groupId>
+			<artifactId>kramax-external-task-client</artifactId>
+			<version>${kramax.external-task-client.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -154,18 +154,18 @@ Your pom.xml file of your project should look like this:
 Next, we will create a new ExternalTaskClient which subscribes to the `charge-card` topic.
 
 When the process engine encounters a service task that is configured to be externally handled, it creates an external task instance on which our handler will react.
-We are using [Long Polling](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks) in the ExternalTaskClient to make the communication more efficient.
+We are using [Long Polling](https://docs.kramax.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks) in the ExternalTaskClient to make the communication more efficient.
 
-Next, you need to create a package, e.g., *org.vodafone.kramaxx.bpm.getstarted.chargecard* and add a Java class, e.g. *ChargeCardWorker*, to it.
+Next, you need to create a package, e.g., *org.vodafone.kramax.bpm.getstarted.chargecard* and add a Java class, e.g. *ChargeCardWorker*, to it.
 
 ```java
-package org.vodafone.kramaxx.bpm.getstarted.chargecard;
+package org.vodafone.kramax.bpm.getstarted.chargecard;
 
 import java.util.logging.Logger;
 import java.awt.Desktop;
 import java.net.URI;
 
-import org.vodafone.kramaxx.bpm.client.ExternalTaskClient;
+import org.vodafone.kramax.bpm.client.ExternalTaskClient;
 
 public class ChargeCardWorker {
   private final static Logger LOGGER = Logger.getLogger(ChargeCardWorker.class.getName());
@@ -186,10 +186,10 @@ public class ChargeCardWorker {
           String item = externalTask.getVariable("item");
           Integer amount = externalTask.getVariable("amount");
 
-          LOGGER.info("Charging credit card with an amount of '" + amount + "'ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ for the item '" + item + "'...");
+          LOGGER.info("Charging credit card with an amount of '" + amount + "'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ for the item '" + item + "'...");
 
           try {
-              Desktop.getDesktop().browse(new URI("https://docs.kramaxx.vodafone.org/get-started/quick-start/complete"));
+              Desktop.getDesktop().browse(new URI("https://docs.kramax.vodafone.org/get-started/quick-start/complete"));
           } catch (Exception e) {
               e.printStackTrace();
           }
@@ -212,7 +212,7 @@ Note that the worker should remain running throughout the entirety of this quick
 Once your worker is running, you can [continue to deploy your process and start some instances]({{< relref "/get-started/quick-start/deploy/" >}}).
 {{< /note >}}
 
-{{< get-tag repo="kramaxx-get-started-quickstart" tag="Step-2a" >}}
+{{< get-tag repo="kramax-get-started-quickstart" tag="Step-2a" >}}
 
 ## b) Using JavaScript (NodeJS)
 
@@ -251,7 +251,7 @@ Add the following "type" field to your package.json file:
 ### Add Kramax External Task Client JS library
 
 ```sh
-npm install kramaxx-external-task-client-js
+npm install kramax-external-task-client-js
 npm install -D open
 ```
 
@@ -260,12 +260,12 @@ npm install -D open
 Next, we'll create a new ExternalTaskClient that subscribes to the `charge-card` topic.
 
 When the process engine encounters a service task that's configured to be externally handled, it creates an external task instance on which our handler will react.
-We use [Long Polling](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks) in the ExternalTaskClient to make the communication more efficient.
+We use [Long Polling](https://docs.kramax.vodafone.org/manual/latest/user-guide/process-engine/external-tasks/#long-polling-to-fetch-and-lock-external-tasks) in the ExternalTaskClient to make the communication more efficient.
 
 Next, you need to create a new JavaScript file, e.g. `worker.js`, that looks like the following:
 
 ```javascript
-import { Client, logger } from 'kramaxx-external-task-client-js';
+import { Client, logger } from 'kramax-external-task-client-js';
 import open from 'open';
 
 // configuration for the Client:
@@ -285,9 +285,9 @@ client.subscribe('charge-card', async function({ task, taskService }) {
   const amount = task.variables.get('amount');
   const item = task.variables.get('item');
 
-  console.log(`Charging credit card with an amount of ${amount}ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ for the item '${item}'...`);
+  console.log(`Charging credit card with an amount of ${amount}ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ for the item '${item}'...`);
 
-  open('https://docs.kramaxx.vodafone.org/get-started/quick-start/success');
+  open('https://docs.kramax.vodafone.org/get-started/quick-start/success');
 
   // Complete the task
   await taskService.complete(task);
@@ -309,4 +309,4 @@ Note that the worker should remain running throughout the entirety of this quick
 Once your worker is running, you can move onto the next step to [deploy your process and start some instances]({{< relref "/get-started/quick-start/deploy/" >}}).
 {{< /note >}}
 
-{{< get-tag repo="kramaxx-get-started-quickstart" tag="Step-2b" >}}
+{{< get-tag repo="kramax-get-started-quickstart" tag="Step-2b" >}}

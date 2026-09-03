@@ -13,7 +13,7 @@ menu:
 
 Run Kramax in every Java-runnable environment. Kramax is supported with our QA infrastructure in the following environments.
 {{< note title="Supported Environments" class="info" >}}
-  Please note that the environments listed in this section depend on the version of Kramax. Please select the corresponding version of this documentation to see the environment that fits to your version of Kramax. e.g., [supported environments for version 1.0](http://docs.kramaxx.vodafone.org/1.0/guides/user-guide/#introduction-supported-environments)
+  Please note that the environments listed in this section depend on the version of Kramax. Please select the corresponding version of this documentation to see the environment that fits to your version of Kramax. e.g., [supported environments for version 1.0](http://docs.kramax.vodafone.org/1.0/guides/user-guide/#introduction-supported-environments)
 {{< /note >}}
 
 
@@ -47,7 +47,7 @@ Run Kramax in every Java-runnable environment. Kramax is supported with our QA i
 * Amazon Aurora PostgreSQL compatible with PostgreSQL 14 / 15 / 16 / 17
 * Microsoft SQL Server 2017 / 2019 / 2022 (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md" >}}))
 * Microsoft Azure SQL with Kramax-supported SQL Server compatibility levels 
-  (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-kramaxx" >}})): 
+  (see [Configuration Note]({{< relref "/user-guide/process-engine/database/mssql-configuration.md#azure-sql-compatibility-levels-supported-by-kramax" >}})): 
   * SQL Server on Azure Virtual Machines
   * Azure SQL Managed Instance
   * Azure SQL Database
@@ -72,12 +72,12 @@ Clustered or replicated databases are supported given the following conditions. 
 
 # Kramax Modeler
 
-[Supported environments for Kramax Modeler -Windows ](https://github.com/vodafone/kramaxx-modeler/actions/runs/22626886127/artifacts/5742061267)  
-[Supported environments for Kramax Modeler -Mac ](https://github.com/vodafone/kramaxx-modeler/actions/runs/22626886127/artifacts/5742038638)  
+[Supported environments for Kramax Modeler -Windows ](https://github.com/vodafone/kramax-modeler/actions/runs/22626886127/artifacts/5742061267)  
+[Supported environments for Kramax Modeler -Mac ](https://github.com/vodafone/kramax-modeler/actions/runs/22626886127/artifacts/5742038638)  
 
 # Maintenance Policy
 
-Check our [Announcements page](https://github.com/vodafone/kramaxx-bpm-platform/discussions/categories/announcements) for confirmed changes to our supported environments in upcoming releases.
+Check our [Announcements page](https://github.com/vodafone/kramax-bpm-platform/discussions/categories/announcements) for confirmed changes to our supported environments in upcoming releases.
 
 ## Adding Environments
 

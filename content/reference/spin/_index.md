@@ -32,11 +32,11 @@ dependency to your `pom.xml` file:
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaxx.spin</groupId>
-      <artifactId>kramaxx-spin-bom</artifactId>
+      <groupId>org.vodafone.kramax.spin</groupId>
+      <artifactId>kramax-spin-bom</artifactId>
       <scope>import</scope>
       <type>pom</type>
-      <version>${version.kramaxx}</version>
+      <version>${version.kramax}</version>
     </dependency>
   </dependencies>
 </dependencyManagement>
@@ -45,15 +45,15 @@ dependency to your `pom.xml` file:
 ```xml
 <dependencies>
   <dependency>
-    <groupId>org.vodafone.kramaxx.spin</groupId>
-    <artifactId>kramaxx-spin-core</artifactId>
+    <groupId>org.vodafone.kramax.spin</groupId>
+    <artifactId>kramax-spin-core</artifactId>
   </dependency>
 
   <dependency>
-    <groupId>org.vodafone.kramaxx.spin</groupId>
-    <artifactId>kramaxx-spin-dataformat-all</artifactId>
+    <groupId>org.vodafone.kramax.spin</groupId>
+    <artifactId>kramax-spin-dataformat-all</artifactId>
   </dependency>
 </dependencies>
 ```
 
-Kramax Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Ckramaxx-spin).
+Kramax Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Ckramax-spin).

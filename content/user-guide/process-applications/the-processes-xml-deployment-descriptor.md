@@ -95,7 +95,7 @@ xmlns="http://www.camunda.org/schema/1.0/ProcessApplication"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <process-engine name="my-engine">
-    <configuration>org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration</configuration>
+    <configuration>org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration</configuration>
   </process-engine>
 
   <process-archive name="loan-approval">

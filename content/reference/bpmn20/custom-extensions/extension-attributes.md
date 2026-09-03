@@ -12,7 +12,7 @@ menu:
 
 ---
 
-The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/bpmn`.
+The following attributes are extension attributes for the `kramax` namespace `http://camunda.org/schema/1.0/bpmn`.
 
 # assignee
 
@@ -25,7 +25,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -206,7 +206,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -238,7 +238,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -269,7 +269,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -300,7 +300,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -331,7 +331,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -362,7 +362,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -393,7 +393,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -517,7 +517,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -553,7 +553,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      Fully qualified Java class name of a class which implements a <a href="{{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}">Java Delegate</a> interface, e.g., <code>org.vodafone.kramaxx.bpm.MyJavaDelegate</code>
+      Fully qualified Java class name of a class which implements a <a href="{{< relref "/user-guide/process-engine/delegation-code.md#java-delegate" >}}">Java Delegate</a> interface, e.g., <code>org.vodafone.kramax.bpm.MyJavaDelegate</code>
     </td>
   </tr>
   <tr>
@@ -584,7 +584,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -618,7 +618,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -685,7 +685,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -717,7 +717,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -748,7 +748,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -779,7 +779,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -815,7 +815,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1063,7 +1063,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1099,7 +1099,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1135,8 +1135,8 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      Fully qualified Java class name of a class which implements the <code>org.vodafone.kramaxx.bpm.engine.impl.form.handler.StartFormHandler</code>
-      or <code>org.vodafone.kramaxx.bpm.engine.impl.form.handler.TaskFormHandler</code> interface, e.g., <code>org.vodafone.kramaxx.bpm.MyUserTaskFormHandler</code>
+      Fully qualified Java class name of a class which implements the <code>org.vodafone.kramax.bpm.engine.impl.form.handler.StartFormHandler</code>
+      or <code>org.vodafone.kramax.bpm.engine.impl.form.handler.TaskFormHandler</code> interface, e.g., <code>org.vodafone.kramax.bpm.MyUserTaskFormHandler</code>
     </td>
   </tr>
   <tr>
@@ -1195,12 +1195,12 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
     <td>
-      A <code>java.lang.String</code> or a <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code> which <a href="{{< relref "/webapps/tasklist/_index.md" >}}">Tasklist</a> can evaluate to display the referenced Kramax Form, e.g., myKramaxFormDefinitionKey or ${formKey}.
+      A <code>java.lang.String</code> or a <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code> which <a href="{{< relref "/webapps/tasklist/_index.md" >}}">Tasklist</a> can evaluate to display the referenced Kramax Form, e.g., myKramaxFormDefinitionKey or ${formKey}.
     </td>
   </tr>
   <tr>
@@ -1260,7 +1260,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.Integer</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1381,7 +1381,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td>A number in the range of a Java <code>long</code> value or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td>A number in the range of a Java <code>long</code> value or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1462,7 +1462,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1493,7 +1493,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td>A number in the range of a Java <code>long</code> value or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td>A number in the range of a Java <code>long</code> value or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1532,7 +1532,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1643,7 +1643,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>java.lang.String</code> or <code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>java.lang.String</code> or <code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>
@@ -1720,7 +1720,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   <tr>
     <th>Possible Values</th>
     <td>
-      Fully qualified Java class name of a class which implements the <a href="{{< relref "/user-guide/process-engine/delegation-code.md#delegate-variable-mapping" >}}">Delegate Variable Mapping</a> interface, e.g., <code>org.vodafone.kramaxx.bpm.MyVariableMappingDelegate</code>
+      Fully qualified Java class name of a class which implements the <a href="{{< relref "/user-guide/process-engine/delegation-code.md#delegate-variable-mapping" >}}">Delegate Variable Mapping</a> interface, e.g., <code>org.vodafone.kramax.bpm.MyVariableMappingDelegate</code>
     </td>
   </tr>
   <tr>
@@ -1747,7 +1747,7 @@ The following attributes are extension attributes for the `kramaxx` namespace `h
   </tr>
   <tr>
     <th>Type</th>
-    <td><code>org.vodafone.kramaxx.bpm.engine.delegate.Expression</code></td>
+    <td><code>org.vodafone.kramax.bpm.engine.delegate.Expression</code></td>
   </tr>
   <tr>
     <th>Possible Values</th>

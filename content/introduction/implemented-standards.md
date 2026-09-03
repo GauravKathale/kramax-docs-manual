@@ -50,14 +50,14 @@ Kramax supports the 1.1 version of DMN.
 
 [OMG]: http://www.omg.org/
 [modelers]: {{< relref "/modeler/_index.md" >}}
-[BPMN Modeling Tutorial]: https://kramaxx.vodafone.org/bpmn/tutorial/
-[BPMN Modeling Reference]: https://kramaxx.vodafone.org/bpmn/reference/
+[BPMN Modeling Tutorial]: https://kramax.vodafone.org/bpmn/tutorial/
+[BPMN Modeling Reference]: https://kramax.vodafone.org/bpmn/reference/
 [Quick Start (Java / JS)]: {{< relref "/get-started/quick-start/" >}}
 [BPMN Implementation Reference]: {{< relref "/reference/bpmn20/_index.md" >}}
 [CMMN Implementation Reference]: {{< relref "/reference/cmmn11/_index.md" >}}
 [DMN Getting Started]: {{< relref "/get-started/dmn/" >}}
 [DMN Editor]: {{< relref "/modeler/dmn.md" >}}
 [DMN Implementation Reference]: {{< relref "/reference/dmn/_index.md" >}}
-[DMN Modeling Tutorial]: https://kramaxx.vodafone.org/dmn/tutorial/
+[DMN Modeling Tutorial]: https://kramax.vodafone.org/dmn/tutorial/
 [Process Engine]: {{< relref "/user-guide/process-engine/_index.md" >}}
 [DMN Engine]: {{< relref "/user-guide/dmn-engine/_index.md" >}}

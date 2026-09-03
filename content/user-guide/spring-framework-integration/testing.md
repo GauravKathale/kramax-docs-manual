@@ -42,10 +42,10 @@ public class MyBusinessProcessTest {
 }
 ```
 
-Note that for this to work, you need to define a {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} bean in the Spring configuration (which is injected by auto-wiring in the example above).
+Note that for this to work, you need to define a {{< javadocref page="org/vodafone/kramax/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} bean in the Spring configuration (which is injected by auto-wiring in the example above).
 
 ```xml
-<bean id="processEngineRule" class="org.vodafone.kramaxx.bpm.engine.test.ProcessEngineRule">
+<bean id="processEngineRule" class="org.vodafone.kramax.bpm.engine.test.ProcessEngineRule">
   <property name="processEngine" ref="processEngine" />
 </bean>
 ```

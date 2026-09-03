@@ -45,9 +45,9 @@ Note that you do not need to install the Process Engine if you do not want to ex
 
 # Download
 
-Get the latest release from the [Kramax Modeler GitHub releases](https://github.com/vodafone/kramaxx-modeler/releases/latest).
+Get the latest release from the [Kramax Modeler GitHub releases](https://github.com/vodafone/kramax-modeler/releases/latest).
 
-Find all available versions on the [releases page](https://github.com/vodafone/kramaxx-modeler/releases).
+Find all available versions on the [releases page](https://github.com/vodafone/kramax-modeler/releases).
 
 # Install
 
@@ -55,7 +55,7 @@ Unpack the modeler into a location of your choice.
 
 # Run the Application
 
-Run the application via the executable `Kramax Modeler.exe` (Windows), `Kramax Modeler.app` (Mac) or `kramaxx-modeler` (Linux).
+Run the application via the executable `Kramax Modeler.exe` (Windows), `Kramax Modeler.app` (Mac) or `kramax-modeler` (Linux).
 
 # Wire File Associations
 

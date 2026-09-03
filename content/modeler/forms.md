@@ -6,7 +6,7 @@ weight: 25
 menu:
   main:
     name: "Forms"
-    identifier: "kramaxx-modeler-forms"
+    identifier: "kramax-modeler-forms"
     parent: "modeler"
     pre: "How to build Kramax Forms using the Kramax Modeler."
 
@@ -14,7 +14,7 @@ menu:
 
 # Overview
 
-The Kramax Forms feature allows you to easily design and configure forms. Once configured, they can be [connected to a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}) so to implement a task form in your application.
+The Kramax Forms feature allows you to easily design and configure forms. Once configured, they can be [connected to a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramax-forms" >}}) so to implement a task form in your application.
 
 # Quickstart
 
@@ -30,7 +30,7 @@ Now you can start to build your Kramax Form. Add the desired elements from the p
 
 {{< img src="img/build-form.png" title="Drag and drop elements to build a Kramax Form" >}}
 
-In the properties panel on the right hand side, you can view and edit attributes that apply to the currently selected form element. Please refer to the [Kramax Forms Reference]({{< relref "/reference/forms/kramaxx-forms/_index.md#configuration" >}}) to explore all configuration options for form elements.
+In the properties panel on the right hand side, you can view and edit attributes that apply to the currently selected form element. Please refer to the [Kramax Forms Reference]({{< relref "/reference/forms/kramax-forms/_index.md#configuration" >}}) to explore all configuration options for form elements.
 
 {{< img src="img/form-properties-panel.png" title="Kramax Form Properties Panel" >}}
 
@@ -40,4 +40,4 @@ To save your state of work, click the **File > Save File As...** button in the t
 
 ## Connect your Form to a BPMN diagram
 
-You can connect your Kramax Form to a User Task or Start Event, so to implement a task form in your application. Refer to the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}) to learn how.
+You can connect your Kramax Form to a User Task or Start Event, so to implement a task form in your application. Refer to the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramax-forms" >}}) to learn how.

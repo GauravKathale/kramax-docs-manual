@@ -18,7 +18,7 @@ menu:
 This guide uses a number of variables to denote common path names and constants:
 
 *`$DATABASE` expresses the target database platform, e.g., DB2, MySql, etc.
-*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged Kramax distribution, e.g., `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
+*`$DISTRIBUTION_PATH` represents the path of the downloaded pre-packaged Kramax distribution, e.g., `kramax-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramax-bpm-tomcat-$PLATFORM_VERSION.tar.gz` for Tomcat etc.
 *`$PLATFORM_VERSION` denotes the version of Kramax you want to install, e.g., `7.1.0`.
 
 {{< /note >}}
@@ -38,9 +38,9 @@ Regardless of the version you are migrating from, the main update script is `$DA
 
 To migrate your process application from Kramax.0 to Kramax.1, you need to follow these steps:
 
-* If you use `@Inject` with TaskForm, you have to add a `@Named("...")` annotation to the `@Inject` annotation due to backward-compatibility of `kramaxx.taskForm`.
-  There you have two choices: If you are using `kramaxx.taskForm` in your process application and don't want to update all your jsf pages and beans you should use `@Named("kramaxx.taskForm")`,
-  otherwise you should use `@Named("kramaxxTaskForm")`. Your application server should write an error or a warning if you use the wrong one. So be careful! However, we recommend that you use the annotation `@Named("kramaxxTaskForm")`.
+* If you use `@Inject` with TaskForm, you have to add a `@Named("...")` annotation to the `@Inject` annotation due to backward-compatibility of `kramax.taskForm`.
+  There you have two choices: If you are using `kramax.taskForm` in your process application and don't want to update all your jsf pages and beans you should use `@Named("kramax.taskForm")`,
+  otherwise you should use `@Named("kramaxTaskForm")`. Your application server should write an error or a warning if you use the wrong one. So be careful! However, we recommend that you use the annotation `@Named("kramaxTaskForm")`.
 
 
 # Migrate the Server

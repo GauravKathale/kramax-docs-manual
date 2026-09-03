@@ -47,12 +47,12 @@ you need to add the following lines to the Spring configuration to enable the
 `StrongUuidGenerator`:
 
 ```xml
-<bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+<bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
 
   [...]
 
   <property name="idGenerator">
-    <bean class="org.vodafone.kramaxx.bpm.engine.impl.persistence.StrongUuidGenerator" />
+    <bean class="org.vodafone.kramax.bpm.engine.impl.persistence.StrongUuidGenerator" />
   </property>
 
 </bean>
@@ -70,4 +70,4 @@ Additionally, you need the following maven dependency:
 ```
 
 [1]: https://mvnrepository.com/artifact/com.fasterxml.uuid/java-uuid-generator
-[2]: {{< relref "/introduction/downloading-kramaxx.md#full-distribution" >}}
+[2]: {{< relref "/introduction/downloading-kramax.md#full-distribution" >}}

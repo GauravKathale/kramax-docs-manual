@@ -58,7 +58,7 @@ A `QuarkusProcessEngineConfiguration` instance provides the following defaults:
   <tr>
     <td><code>idGenerator</code></td>
     <td>
-      An instance of {{< javadocref page="org/vodafone/kramaxx/bpm/engine/impl/persistence/StrongUuidGenerator.html" text="StrongUuidGenerator" >}}
+      An instance of {{< javadocref page="org/vodafone/kramax/bpm/engine/impl/persistence/StrongUuidGenerator.html" text="StrongUuidGenerator" >}}
       is used.
     </td>
     <td><code>StrongUuidGenerator</code></td>
@@ -94,14 +94,14 @@ Quarkus allows to configure a Quarkus application via a [MicroProfile Config][mp
 configuring a Quarkus application in the [Quarkus configuration][quarkus-config] page. The Kramax Quarkus extension 
 docs use the `application.properties` format in the examples, but you can use any supported Quarkus config source.
 
-You can set any process engine configuration properties under the `quarkus.kramaxx` prefix. The 
+You can set any process engine configuration properties under the `quarkus.kramax` prefix. The 
 [Process Engine Configuration Properties][engine-properties] page documents all the available properties. Please 
 convert any property names from `camelCase` to the `kebab-case` format, like in the following example:
 
 ```properties
-quarkus.kramaxx.generic-config.cmmn-enabled=false
-quarkus.kramaxx.generic-config.dmn-enabled=false
-quarkus.kramaxx.generic-config.history=none
+quarkus.kramax.generic-config.cmmn-enabled=false
+quarkus.kramax.generic-config.dmn-enabled=false
+quarkus.kramax.generic-config.history=none
 ```
 
 ### Programmatic Configuration
@@ -125,7 +125,7 @@ In the above example, a `QuarkusProcessEngineConfiguration` CDI bean defines "cu
 However, if you define the following in an `application.properties` file
 
 ```properties
-quarkus.kramaxx.generic-config.process-engine-name=quarkusEngine
+quarkus.kramax.generic-config.process-engine-name=quarkusEngine
 ```
 
 then "quarkusEngine" will be used as the process engine name since Quarkus config sources have a higher ordinal than a 
@@ -134,15 +134,15 @@ then "quarkusEngine" will be used as the process engine name since Quarkus confi
 ## Job Executor Configuration
 
 As with the process engine configuration properties [above](#process-engine-configuration), you can set any job executor 
-configuration properties under the `quarkus.kramaxx.job-executor` prefix. The [Job Executor Configuration Properties][executor-properties] 
+configuration properties under the `quarkus.kramax.job-executor` prefix. The [Job Executor Configuration Properties][executor-properties] 
 page documents all the available properties. Convert any property names you intend to use from `camelCase` to the 
 `kebab-case` format, like in the following example:
 
 ```properties
-quarkus.kramaxx.job-executor.generic-config.max-jobs-per-acquisition=5
-quarkus.kramaxx.job-executor.generic-config.lock-time-in-millis=500000
-quarkus.kramaxx.job-executor.generic-config.wait-time-in-millis=7000
-quarkus.kramaxx.job-executor.generic-config.max-wait=65000
+quarkus.kramax.job-executor.generic-config.max-jobs-per-acquisition=5
+quarkus.kramax.job-executor.generic-config.lock-time-in-millis=500000
+quarkus.kramax.job-executor.generic-config.wait-time-in-millis=7000
+quarkus.kramax.job-executor.generic-config.max-wait=65000
 ```
 
 ## Quarkus Extension Configuration
@@ -163,7 +163,7 @@ the Quarkus-specific properties in the following table:
   <tr><td colspan="4"><b>Data Source</b></td></tr>
   
   <tr>
-    <td rowspan="1"><code>quarkus.kramaxx</code></td>
+    <td rowspan="1"><code>quarkus.kramax</code></td>
     <td><code>.datasource</code></td>
     <td>
       Specifies which Quarkus datasource to use. If not defined, the primary Quarkus datasource will be used. 
@@ -176,7 +176,7 @@ the Quarkus-specific properties in the following table:
   <tr><td colspan="4"><b>Job Executor</b></td></tr>
 
   <tr>
-    <td rowspan="2"><code>quarkus.kramaxx.job-executor.thread-pool</code></td>
+    <td rowspan="2"><code>quarkus.kramax.job-executor.thread-pool</code></td>
     <td><code>.max-pool-size</code></td>
     <td>Sets the maximum number of threads that can be present in the thread pool.</td>
     <td><code>10</code></td>
@@ -199,7 +199,7 @@ A datasource is required to run the Kramax process engine.
 ### Choose from multiple datasources
 
 When multiple datasources are available in your application, you can choose the one the Engine Extension
-should use by its name via the `kramaxx.datasource` configuration property. Consider the example configuration below:
+should use by its name via the `kramax.datasource` configuration property. Consider the example configuration below:
 
 ```properties
 quarkus.datasource.engine-datasource.db-kind=oracle
@@ -207,7 +207,7 @@ quarkus.datasource.engine-datasource.username=my-username
 quarkus.datasource.engine-datasource.password=my-password
 quarkus.datasource.engine-datasource.jdbc.url=jdbc:oracle:thin:@localhost:1521:ORCL
 
-quarkus.kramaxx.datasource=engine-datasource
+quarkus.kramax.datasource=engine-datasource
 ```
 
 ## Example
@@ -217,25 +217,25 @@ engine configuration, job executor and data source:
 
 ```properties
 # process engine configuration
-quarkus.kramaxx.generic-config.cmmn-enabled=false
-quarkus.kramaxx.generic-config.dmn-enabled=false
-quarkus.kramaxx.generic-config.history=none
+quarkus.kramax.generic-config.cmmn-enabled=false
+quarkus.kramax.generic-config.dmn-enabled=false
+quarkus.kramax.generic-config.history=none
 
 # job executor configuration
-quarkus.kramaxx.job-executor.thread-pool.max-pool-size=12
-quarkus.kramaxx.job-executor.thread-pool.queue-size=5
-quarkus.kramaxx.job-executor.generic-config.max-jobs-per-acquisition=5
-quarkus.kramaxx.job-executor.generic-config.lock-time-in-millis=500000
-quarkus.kramaxx.job-executor.generic-config.wait-time-in-millis=7000
-quarkus.kramaxx.job-executor.generic-config.max-wait=65000
-quarkus.kramaxx.job-executor.generic-config.backoff-time-in-millis=5
+quarkus.kramax.job-executor.thread-pool.max-pool-size=12
+quarkus.kramax.job-executor.thread-pool.queue-size=5
+quarkus.kramax.job-executor.generic-config.max-jobs-per-acquisition=5
+quarkus.kramax.job-executor.generic-config.lock-time-in-millis=500000
+quarkus.kramax.job-executor.generic-config.wait-time-in-millis=7000
+quarkus.kramax.job-executor.generic-config.max-wait=65000
+quarkus.kramax.job-executor.generic-config.backoff-time-in-millis=5
 
 # custom data source configuration and selection
 quarkus.datasource.my-datasource.db-kind=h2
-quarkus.datasource.my-datasource.username=kramaxx
-quarkus.datasource.my-datasource.password=kramaxx
-quarkus.datasource.my-datasource.jdbc.url=jdbc:h2:mem:kramaxx;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE
-quarkus.kramaxx.datasource=my-datasource
+quarkus.datasource.my-datasource.username=kramax
+quarkus.datasource.my-datasource.password=kramax
+quarkus.datasource.my-datasource.jdbc.url=jdbc:h2:mem:kramax;TRACE_LEVEL_FILE=0;DB_CLOSE_ON_EXIT=FALSE
+quarkus.kramax.datasource=my-datasource
 ```
 
 [engine-properties]: {{< relref "/reference/deployment-descriptors/tags/process-engine.md#configuration-properties" >}}

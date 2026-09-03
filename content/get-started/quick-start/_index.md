@@ -15,6 +15,6 @@ menu:
 This tutorial guides you through modeling and implementing your first workflow with the Kramax Platform.
 In this guide, you'll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of Kramax's ready-to-go task clients.
 
-{{< get-code repo="kramaxx-get-started-quickstart" >}}
+{{< get-code repo="kramax-get-started-quickstart" >}}
 
 You will be guided through the following six steps:

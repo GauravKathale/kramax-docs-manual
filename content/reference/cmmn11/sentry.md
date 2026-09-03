@@ -56,7 +56,7 @@ OnParts are defined on lifecycle transitions for plan items or case file items. 
 ```
 
 
-A `planItemOnPart` must always reference a plan item by the attribute `sourceRef`. This plan item must be contained by the same stage the sentry is defined in. The child element `standardEvent` can the identifier of any lifecycle transition from that plan item's lifecycle and that is supported by the kramaxx engine. Note that different plan item definitions define different lifecycles. For details on valid lifecycle transitions, see the [Lifecycles]({{< relref "/reference/cmmn11/concepts/lifecycle.md" >}}) section.
+A `planItemOnPart` must always reference a plan item by the attribute `sourceRef`. This plan item must be contained by the same stage the sentry is defined in. The child element `standardEvent` can the identifier of any lifecycle transition from that plan item's lifecycle and that is supported by the kramax engine. Note that different plan item definitions define different lifecycles. For details on valid lifecycle transitions, see the [Lifecycles]({{< relref "/reference/cmmn11/concepts/lifecycle.md" >}}) section.
 
 As an alternative to `sourceRef`, the CMMN specification allows to define an attribute `sentryRef` responsible for referencing another sentry such that the onPart is fulfilled when the plan item that sentry references performs the *exit* state transition. This attribute is currently not supported by the Kramax engine.
 

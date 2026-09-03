@@ -70,7 +70,7 @@ A User Task can be directly assigned to a single user, a list of users or a list
 
 ## Assignment using BPMN Resource Assignments
 
-BPMN defines some native assignment concepts which can be used in kramaxx.
+BPMN defines some native assignment concepts which can be used in kramax.
 As a more powerful alternative, Kramax also defines a set of custom extension elements (see below).
 
 ### Human Performer
@@ -231,7 +231,7 @@ It is also possible to use [task listeners]({{< relref "/user-guide/process-engi
 ```xml
 <userTask id="task1" name="My task" >
   <extensionElements>
-    <camunda:taskListener event="create" class="org.vodafone.kramaxx.bpm.MyAssignmentHandler" />
+    <camunda:taskListener event="create" class="org.vodafone.kramax.bpm.MyAssignmentHandler" />
   </extensionElements>
 </userTask>
 ```

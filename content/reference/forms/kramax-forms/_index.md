@@ -7,7 +7,7 @@ layout: "single"
 menu:
   main:
     name: "Kramax Forms"
-    identifier: "kramaxx-forms-ref"
+    identifier: "kramax-forms-ref"
     parent: "forms-ref"
     pre: "Forms created with the Kramax Modeler embeddable in Tasklist"
 ---
@@ -15,7 +15,7 @@ menu:
 Kramax Forms allow you to easily design and configure forms and then embed them in the Kramax Tasklist.
 
 * Kramax Forms are created in the Kramax Modeler. You can find out how in the [Kramax Modeler documentation]({{< relref "/modeler/forms.md" >}}).
-* Kramax Forms can easily be embedded in the Kramax Tasklist. You can find out how in the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}).
+* Kramax Forms can easily be embedded in the Kramax Tasklist. You can find out how in the [User Task Forms guide]({{< relref "/user-guide/task-forms/_index.md#kramax-forms" >}}).
 * Kramax Forms are powered by the open source [bpmn-io form-js library](https://github.com/bpmn-io/form-js). Visit the [open source repository](https://github.com/bpmn-io/form-js) to find out how to render a form using plain JavaScript in a custom application (note that this also requires you to to fetch the form from the respective BPMN 2.0 element and provide data as needed to the form).
 
 
@@ -180,4 +180,4 @@ A button can be configured using the following configuration properties:
 
 Each Kramax Forms component which allows data manipulation has a **Key** attribute. This attribute is used as an identifier to map data of the respective field (1) during initial loading of the form, and (2) during submission of the form.
 
-When a form is [referenced by a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramaxx-forms" >}}) and viewed in the [Kramax Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< relref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.
+When a form is [referenced by a User Task or Start Event]({{< relref "/user-guide/task-forms/_index.md#kramax-forms" >}}) and viewed in the [Kramax Tasklist]({{< relref "/webapps/tasklist/_index.md" >}}), the key will be used to refer to a [Process Variable]({{< relref "/user-guide/process-engine/variables.md" >}}). This means that the value of the Process Variable will be used to populate the respective component initially and that the value of the component will be saved in the Process Variable during submission of the form.

@@ -23,8 +23,8 @@ To enable Kramax Engine autoconfiguration, add the following dependency to your 
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.quarkus</groupId>
-  <artifactId>kramaxx-bpm-quarkus-engine</artifactId>
+  <groupId>org.vodafone.kramax.bpm.quarkus</groupId>
+  <artifactId>kramax-bpm-quarkus-engine</artifactId>
   <version>{{< minor-version >}}.0</version>
 </dependency>
 ```

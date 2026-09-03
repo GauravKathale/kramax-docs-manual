@@ -201,7 +201,7 @@ or integrate with a platform transaction manager.
 If the process engine is configured to perform standalone transaction management, it always opens a
 new transaction for each command which is executed. To configure the process engine to use
 standalone transaction management, use the
-`org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration`:
+`org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration`:
 
 ```java
 ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration()

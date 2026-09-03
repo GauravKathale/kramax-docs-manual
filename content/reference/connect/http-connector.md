@@ -32,14 +32,14 @@ If you want to reconfigure the client going beyond the default configuration opt
 a new connector configurator.
 
 ```java
-package org.vodafone.kramaxx.connect.example;
+package org.vodafone.kramax.connect.example;
 
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
-import org.vodafone.kramaxx.connect.httpclient.HttpConnector;
-import org.vodafone.kramaxx.connect.httpclient.impl.AbstractHttpConnector;
-import org.vodafone.kramaxx.connect.spi.ConnectorConfigurator;
+import org.vodafone.kramax.connect.httpclient.HttpConnector;
+import org.vodafone.kramax.connect.httpclient.impl.AbstractHttpConnector;
+import org.vodafone.kramax.connect.spi.ConnectorConfigurator;
 
 public class HttpConnectorConfigurator implements ConnectorConfigurator<HttpConnector> {
 
@@ -62,12 +62,12 @@ public class HttpConnectorConfigurator implements ConnectorConfigurator<HttpConn
 ```
 
 To enable auto detection of your new configurator please add a file called
-`org.vodafone.kramaxx.connect.spi.ConnectorConfigurator` to your
+`org.vodafone.kramax.connect.spi.ConnectorConfigurator` to your
 `resources/META-INF/services` directory with class name as content. For more
 information see the [extending Connect]({{< relref "/reference/connect/extending-connect.md" >}}) section.
 
 ```
-org.vodafone.kramaxx.connect.example.HttpConnectorConfigurator
+org.vodafone.kramax.connect.example.HttpConnectorConfigurator
 ```
 
 {{< note title="Apache HTTP Client 5.x Migration" class="info" >}}
@@ -86,7 +86,7 @@ A simple GET request:
 ```java
 http.createRequest()
   .get()
-  .url("http://kramaxx.vodafone.org")
+  .url("http://kramax.vodafone.org")
   .execute();
 ```
 
@@ -95,7 +95,7 @@ A POST request with a content type and payload set:
 ```java
 http.createRequest()
   .post()
-  .url("http://kramaxx.vodafone.org")
+  .url("http://kramax.vodafone.org")
   .contentType("text/plain")
   .payload("Hello World!")
   .execute();
@@ -114,7 +114,7 @@ available.
 HttpResponse response = http.createRequest()
   .get()
   .header("Accept", "application/json")
-  .url("http://kramaxx.vodafone.org")
+  .url("http://kramax.vodafone.org")
   .execute();
 ```
 
@@ -127,7 +127,7 @@ To activate the handling of these errors without additional scripting, set the `
 HttpResponse response = http.createRequest()
   .get()
   .configOption("throw-http-error", "TRUE")
-  .url("http://kramaxx.vodafone.org")
+  .url("http://kramax.vodafone.org")
   .execute();
 ```
 
@@ -165,7 +165,7 @@ This can be used as follows:
 ```java
 HttpRequest request = http.createRequest();
 request.setRequestParameter("method", "GET");
-request.setRequestParameter("url", "http://kramaxx.vodafone.org");
+request.setRequestParameter("url", "http://kramax.vodafone.org");
 request.setRequestParameter("payload", "hello world!");
 ```
 

@@ -21,16 +21,16 @@ Kramax provides helper classes to write unit tests for JUnit versions 3, 4 and 5
 
 ## JUnit 5
 
-Kramax version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
+Kramax version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramax/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
 
-The extensions process engine is configured by the default configuration file called `kramaxx.cfg.xml`, which needs to be placed on the classpath. A custom configuration file can be passed to the extension when creating the `ProcessEngineExtension` object.
+The extensions process engine is configured by the default configuration file called `kramax.cfg.xml`, which needs to be placed on the classpath. A custom configuration file can be passed to the extension when creating the `ProcessEngineExtension` object.
 
 If you want to use the JUnit 5  `ProcessEngineExtension`, you need to add the following dependency to your `pom.xml` file:
 
 ```xml
     <dependency>
-      <groupId>org.vodafone.kramaxx.bpm</groupId>
-      <artifactId>kramaxx-bpm-junit5</artifactId>
+      <groupId>org.vodafone.kramax.bpm</groupId>
+      <artifactId>kramax-bpm-junit5</artifactId>
       <version>{{< minor-version >}}.0</version>
       <scope>test</scope>
     </dependency>
@@ -98,7 +98,7 @@ public class MyBusinessProcessTest {
 
   public ProcessEngine myProcessEngine = ProcessEngineConfiguration
       .createStandaloneInMemProcessEngineConfiguration()
-      .setJdbcUrl("jdbc:h2:mem:kramaxx;DB_CLOSE_DELAY=1000")
+      .setJdbcUrl("jdbc:h2:mem:kramax;DB_CLOSE_DELAY=1000")
       .buildProcessEngine();
   
   @RegisterExtension
@@ -112,9 +112,9 @@ public class MyBusinessProcessTest {
 
 ## JUnit 4
 
-Using the JUnit 4 style of writing unit tests, the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} must be used. Through this rule, the process engine and services are available through getters.
+Using the JUnit 4 style of writing unit tests, the {{< javadocref page="org/vodafone/kramax/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} must be used. Through this rule, the process engine and services are available through getters.
 
-This rule will look for the default configuration file on the classpath called `kramaxx.cfg.xml`. When constructing the ProcessEngineRule object you can pass a custom configuration file to the rule. Process engines are statically cached over multiple unit tests when using the same configuration resource.
+This rule will look for the default configuration file on the classpath called `kramax.cfg.xml`. When constructing the ProcessEngineRule object you can pass a custom configuration file to the rule. Process engines are statically cached over multiple unit tests when using the same configuration resource.
 
 The following code snippet shows an example of using the JUnit 4 style of testing and the usage of the ProcessEngineRule.
 
@@ -142,7 +142,7 @@ public class MyBusinessProcessTest {
 
 ## JUnit 3
 
-In the JUnit 3 style, the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/ProcessEngineTestCase.html" text="ProcessEngineTestCase" >}} must be extended. This will make the ProcessEngine and the services available through protected member fields. In the `setup()` of the test, the processEngine will be initialized by default with the `kramaxx.cfg.xml` resource on the classpath. To specify a different configuration file, override the getConfigurationResource() method. Process engines are cached statically over multiple unit tests when the configuration resource is the same.
+In the JUnit 3 style, the {{< javadocref page="org/vodafone/kramax/bpm/engine/test/ProcessEngineTestCase.html" text="ProcessEngineTestCase" >}} must be extended. This will make the ProcessEngine and the services available through protected member fields. In the `setup()` of the test, the processEngine will be initialized by default with the `kramax.cfg.xml` resource on the classpath. To specify a different configuration file, override the getConfigurationResource() method. Process engines are cached statically over multiple unit tests when the configuration resource is the same.
 
 A JUnit 3 style test can look as follows:
 
@@ -164,20 +164,20 @@ public class MyBusinessProcessTest extends ProcessEngineTestCase {
 
 ## Deploy Test Resources
 
-You can annotate test classes and methods with {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/Deployment.html" text="@Deployment" >}}. Before the test is run, a resource file named `TestClassName.bpmn20.xml` (for a class-level annotation) or `TestClassName.testMethod.bpmn20.xml` (for a method-level annotation), in the same package as the test class, will be deployed. At the end of the test the deployment will be deleted, including all related process instances, tasks, etc. The `@Deployment` annotation also supports setting the resource location explicitly.
+You can annotate test classes and methods with {{< javadocref page="org/vodafone/kramax/bpm/engine/test/Deployment.html" text="@Deployment" >}}. Before the test is run, a resource file named `TestClassName.bpmn20.xml` (for a class-level annotation) or `TestClassName.testMethod.bpmn20.xml` (for a method-level annotation), in the same package as the test class, will be deployed. At the end of the test the deployment will be deleted, including all related process instances, tasks, etc. The `@Deployment` annotation also supports setting the resource location explicitly.
 
 ```
 @Deployment(resources = {"myProcess.bpmn", "mySubprocess.bpmn"})
 ```
 will pick the files `myProcess.bpmn` and `mySubProcess.bpmn` directly from the top of the classpath.
 
-Method-level annotations override class-level annotations. See the Javadocs for {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/Deployment.html" text="@Deployment" >}}more details.
+Method-level annotations override class-level annotations. See the Javadocs for {{< javadocref page="org/vodafone/kramax/bpm/engine/test/Deployment.html" text="@Deployment" >}}more details.
 
 The annotation is supported for [JUnit 3]({{< relref "#junit-3" >}}) and [JUnit 4]({{< relref "#junit-4" >}}) style of testing.
 
 ## Specify the required History Level
 
-If a test requires a specific history level (e.g., because it uses the HistoryService) then you can annotate the test class or method with {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/RequiredHistoryLevel.html" text="@RequiredHistoryLevel" >}} and specify the required history level (e.g., "activity", "full"). Before the test is run, it checks the current history level of the process engine and skip the test if the history level is lower than the specified one.  
+If a test requires a specific history level (e.g., because it uses the HistoryService) then you can annotate the test class or method with {{< javadocref page="org/vodafone/kramax/bpm/engine/test/RequiredHistoryLevel.html" text="@RequiredHistoryLevel" >}} and specify the required history level (e.g., "activity", "full"). Before the test is run, it checks the current history level of the process engine and skip the test if the history level is lower than the specified one.  
 
 A JUnit 4 style test can look as follows:
 
@@ -227,7 +227,7 @@ Select the line you've just typed and right-click on it. Now select 'Display' (o
 
 {{< img src="img/api-test-debug-start-h2-server-2.png" title="API Test Debugging" >}}
 
-Now open up a browser and go to http://localhost:8082, and fill in the JDBC URL to the in-memory database (by default this is jdbc:h2:mem:kramaxx), and hit the connect button.
+Now open up a browser and go to http://localhost:8082, and fill in the JDBC URL to the in-memory database (by default this is jdbc:h2:mem:kramax), and hit the connect button.
 
 {{< img src="img/api-test-debug-h2-login.png" title="API Test Debugging" >}}
 
@@ -238,7 +238,7 @@ You can now see the engine database and use it to understand how and why your un
 
 # Kramax Assertions
 
-Additional to normal JUnit assertions, [Kramax Assert](https://github.com/vodafone/kramaxx-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
+Additional to normal JUnit assertions, [Kramax Assert](https://github.com/vodafone/kramax-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
 
 ```java
 assertThat(processInstance).isWaitingAt("UserTask_InformCustomer");
@@ -251,9 +251,9 @@ To use Kramax Assert, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-bpm-assert</artifactId>
-  <version>${version.kramaxx}</version> <!-- set correct version here -->
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-bpm-assert</artifactId>
+  <version>${version.kramax}</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
 ```
@@ -270,7 +270,7 @@ Also, you will have to add the AssertJ library to your dependencies. Make sure t
 ```
 
 If Kramax Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
-[Kramax Spring Boot Starter](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
+[Kramax Spring Boot Starter](https://docs.kramax.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
 the AssertJ dependency will be present in your project already.
 
 ## Assertions Version Compatibility
@@ -278,7 +278,7 @@ the AssertJ dependency will be present in your project already.
 Each version of Kramax Assert is bound to a specific version of Kramax and AssertJ. Only these default combinations are recommended (and supported) by Kramax.
 Nevertheless, each version of Kramax Assert can be combined with newer patch versions of the Kramax engine, though such combinations must be thoroughly tested before being used in production.
 
-Kramax Assert is part of [Kramax repository](https://github.com/vodafone/kramaxx-bpm-platform) and uses the same versioning as Kramax.
+Kramax Assert is part of [Kramax repository](https://github.com/vodafone/kramax-bpm-platform) and uses the same versioning as Kramax.
 
 <table class="table table-striped">
   <tr>
@@ -288,7 +288,7 @@ Kramax Assert is part of [Kramax repository](https://github.com/vodafone/kramaxx
     <th>Kramax version</th>
   </tr>
   <tr>
-    <td>kramaxx-bpm-assert</td>
+    <td>kramax-bpm-assert</td>
     <td>3.25.3</td>
     <td>1.0.0</td>
     <td>1.0.0</td>
@@ -299,8 +299,8 @@ Kramax Assert is part of [Kramax repository](https://github.com/vodafone/kramaxx
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension</groupId>
-  <artifactId>kramaxx-bpm-assert</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension</groupId>
+  <artifactId>kramax-bpm-assert</artifactId>
   <version>1.x</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
@@ -311,8 +311,8 @@ For these versions, use the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.extension</groupId>
-  <artifactId>kramaxx-bpm-assert</artifactId>
+  <groupId>org.vodafone.kramax.bpm.extension</groupId>
+  <artifactId>kramax-bpm-assert</artifactId>
   <version>2.x</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
@@ -322,9 +322,9 @@ For these versions, use the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.assert</groupId>
-  <artifactId>kramaxx-bpm-assert</artifactId>
-  <version>${version.kramaxx-assert}</version> <!-- set correct version here -->
+  <groupId>org.vodafone.kramax.bpm.assert</groupId>
+  <artifactId>kramax-bpm-assert</artifactId>
+  <version>${version.kramax-assert}</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
 ```
@@ -335,7 +335,7 @@ There are a couple of well documented and heavily used community extensions that
 
 ## Kramax Scenario Tests
 
-[Kramax-bpm-assert-scenario](https://github.com/vodafone/kramaxx-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
+[Kramax-bpm-assert-scenario](https://github.com/vodafone/kramax-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
 
 ```java
 @Test
@@ -353,7 +353,7 @@ public void testHappyPath() {
 
 ## Kramax Test Coverage
 
-[Kramax-bpm-process-test-coverage](https://github.com/vodafone/kramaxx-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
+[Kramax-bpm-process-test-coverage](https://github.com/vodafone/kramax-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
 
 
 # Resolving Beans Without Spring/CDI

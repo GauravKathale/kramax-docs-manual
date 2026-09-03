@@ -18,28 +18,28 @@ Note that you can also use a [Spring JavaConfig]({{< relref "#using-spring-javac
 
 # Configure an Application-Managed Process Engine
 
-The ProcessEngine can be configured as a regular Spring bean. The starting point of the integration is the class `org.vodafone.kramaxx.bpm.engine.spring.ProcessEngineFactoryBean`. That bean takes a process engine configuration and creates the process engine. This means that the creation and configuration of properties for Spring is the same as documented in the configuration section. For Spring integration the configuration and engine beans will look like this:
+The ProcessEngine can be configured as a regular Spring bean. The starting point of the integration is the class `org.vodafone.kramax.bpm.engine.spring.ProcessEngineFactoryBean`. That bean takes a process engine configuration and creates the process engine. This means that the creation and configuration of properties for Spring is the same as documented in the configuration section. For Spring integration the configuration and engine beans will look like this:
 
 ```xml
 <bean id="processEngineConfiguration"
-      class="org.vodafone.kramaxx.bpm.engine.spring.SpringProcessEngineConfiguration">
+      class="org.vodafone.kramax.bpm.engine.spring.SpringProcessEngineConfiguration">
     ...
 </bean>
 
 <bean id="processEngine"
-      class="org.vodafone.kramaxx.bpm.engine.spring.ProcessEngineFactoryBean">
+      class="org.vodafone.kramax.bpm.engine.spring.ProcessEngineFactoryBean">
   <property name="processEngineConfiguration" ref="processEngineConfiguration" />
 </bean>
 ```
 
-Note that the processEngineConfiguration bean uses the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/spring/SpringProcessEngineConfiguration.html" text="SpringProcessEngineConfiguration" >}} class.
+Note that the processEngineConfiguration bean uses the {{< javadocref page="org/vodafone/kramax/bpm/engine/spring/SpringProcessEngineConfiguration.html" text="SpringProcessEngineConfiguration" >}} class.
 
 
 # Configure a Container-Managed Process Engine as a Spring Bean
 
-If you want the process engine to be registered with the Kramax ProcessEngineService, you must use `org.vodafone.kramaxx.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` instead of the ProcessEngineFactoryBean shown in the example above. You will also need to ensure:
+If you want the process engine to be registered with the Kramax ProcessEngineService, you must use `org.vodafone.kramax.bpm.engine.spring.container.ManagedProcessEngineFactoryBean` instead of the ProcessEngineFactoryBean shown in the example above. You will also need to ensure:
 
-1. That none of your webapps include kramaxx-webapp\*.jar within their own lib folder, this should be at a shared level.
+1. That none of your webapps include kramax-webapp\*.jar within their own lib folder, this should be at a shared level.
 2. That your server.xml contains JNDI entries for the 'ProcessEngineService' and 'ProcessApplicationService' as below:
 
 ```xml
@@ -48,17 +48,17 @@ If you want the process engine to be registered with the Kramax ProcessEngineSer
 -->
   <GlobalNamingResources>
 
-    <Resource name="java:global/kramaxx-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaxx.bpm.ProcessEngineService"
+    <Resource name="java:global/kramax-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramax.bpm.ProcessEngineService"
               auth="Container"
-              type="org.vodafone.kramaxx.bpm.ProcessEngineService"
+              type="org.vodafone.kramax.bpm.ProcessEngineService"
               description="Kramax Platform Process Engine Service"
-              factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
+              factory="org.vodafone.kramax.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
 
-    <Resource name="java:global/kramaxx-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaxx.bpm.ProcessApplicationService"
+    <Resource name="java:global/kramax-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramax.bpm.ProcessApplicationService"
               auth="Container"
-              type="org.vodafone.kramaxx.bpm.ProcessApplicationService"
+              type="org.vodafone.kramax.bpm.ProcessApplicationService"
               description="Kramax Platform Process Application Service"
-              factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
+              factory="org.vodafone.kramax.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
        ...
   </GlobalNamingResources>
 ```
@@ -72,12 +72,12 @@ In Spring you can configure a process engine plugin by setting a list value to t
 `processEnginePlugins` property of the `processEngineConfiguration` bean:
 
 ```xml
-<bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.spring.SpringProcessEngineConfiguration">
+<bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.spring.SpringProcessEngineConfiguration">
   ...
   <property name="processEnginePlugins">
     <list>
       <bean id="spinPlugin"
-            class="org.vodafone.kramaxx.spin.plugin.impl.SpinProcessEnginePlugin" />
+            class="org.vodafone.kramax.spin.plugin.impl.SpinProcessEnginePlugin" />
     </list>
   </property>
 </bean>
@@ -100,7 +100,7 @@ public class ExampleProcessEngineConfiguration {
 
     SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
     dataSource.setDriverClass(org.h2.Driver.class);
-    dataSource.setUrl("jdbc:h2:mem:kramaxx;DB_CLOSE_DELAY=-1");
+    dataSource.setUrl("jdbc:h2:mem:kramax;DB_CLOSE_DELAY=-1");
     dataSource.setUsername("sa");
     dataSource.setPassword("");
     return dataSource;

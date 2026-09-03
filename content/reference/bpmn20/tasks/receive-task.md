@@ -97,6 +97,6 @@ runtimeService.signal(execution.getId());
 
 # Additional Resources
 
-* [Tasks](http://kramaxx.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+* [Tasks](http://kramax.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 * [Message Receive Events]({{< relref "/reference/bpmn20/events/message-events.md" >}})
 * {{< restref page="signalExecution" tag="Execution" text="Trigger a subscription via REST" >}}

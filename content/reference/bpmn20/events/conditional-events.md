@@ -266,4 +266,4 @@ If a variable is set in the context of the `SubProcess` instance, then only the 
 
 # Additional Resources
 
-* [Conditional Events](http://kramaxx.vodafone.org/bpmn/reference.html#events-conditional) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+* [Conditional Events](http://kramax.vodafone.org/bpmn/reference.html#events-conditional) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)

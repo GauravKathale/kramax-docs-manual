@@ -18,7 +18,7 @@ The Send Task has the same behavior as a Service Task.
 {{< bpmn-symbol type="send-task" >}}
 
 ```xml
-<sendTask id="sendTask" camunda:class="org.vodafone.kramaxx.bpm.MySendTaskDelegate" />
+<sendTask id="sendTask" camunda:class="org.vodafone.kramax.bpm.MySendTaskDelegate" />
 ```
 
 

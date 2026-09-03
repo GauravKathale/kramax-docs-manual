@@ -16,9 +16,9 @@ aliases: [/dmn11/]
 This tutorial guides you through modeling your first DMN 1.3 decision table and executing it with the Kramax Platform.
 
 {{< note title="Standalone DMN engine" class="info" >}}
-Note that it is also possible to use the DMN engine independently from the Kramax Platform. Please refer to the [User Guide]({{< relref "/user-guide/dmn-engine/embed/" >}}) and the [Example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method) for more details.
+Note that it is also possible to use the DMN engine independently from the Kramax Platform. Please refer to the [User Guide]({{< relref "/user-guide/dmn-engine/embed/" >}}) and the [Example](https://github.com/vodafone/kramax-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method) for more details.
 {{< /note >}}
 
-{{< get-code repo="kramaxx-get-started-dmn" >}}
+{{< get-code repo="kramax-get-started-dmn" >}}
 
 You will be guided through the following steps:

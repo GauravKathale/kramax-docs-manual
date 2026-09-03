@@ -213,7 +213,7 @@ The first one is to set the Kramax extension property `variableMappingClass` and
 
     <sequenceFlow id="flow1" sourceRef="theStart" targetRef="callSubProcess" />
 
-    <callActivity id="callSubProcess" calledElement="simpleSubProcess" camunda:variableMappingClass="org.vodafone.kramaxx.bpm.example.bpm.callactivity.DelegatedVarMapping"/>
+    <callActivity id="callSubProcess" calledElement="simpleSubProcess" camunda:variableMappingClass="org.vodafone.kramax.bpm.example.bpm.callactivity.DelegatedVarMapping"/>
 
     <sequenceFlow id="flow3" sourceRef="callSubProcess" targetRef="taskAfterSubProcess" />
 
@@ -402,5 +402,5 @@ An expression also allows using the tenant id of the calling process instance in
 
 # Additional Resources
 
-*   [Call Activity](http://kramaxx.vodafone.org/bpmn/reference.html#activities-call-activity) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Call Activity](http://kramax.vodafone.org/bpmn/reference.html#activities-call-activity) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 

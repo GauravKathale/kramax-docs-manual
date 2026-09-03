@@ -18,6 +18,6 @@ This tutorial guides you through your first steps of using Kramax Platform in a 
 In this tutorial we assume that you are familiar with the basics of Java web application development and [Spring Boot](https://spring.io/projects/spring-boot/).
 We also assume that you have installed an Eclipse distribution and the Kramax Modeler.
 
-{{< get-code repo="kramaxx-get-started-spring-boot" >}}
+{{< get-code repo="kramax-get-started-spring-boot" >}}
 
 You will be guided through the following steps:

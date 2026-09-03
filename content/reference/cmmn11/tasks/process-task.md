@@ -198,18 +198,18 @@ If the business key of the called process instance should be different than the 
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processbinding" >}}">camunda:processBinding</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processtenantid" >}}">camunda:processTenantId</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processversion" >}}">camunda:processVersion</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#processbinding" >}}">camunda:processBinding</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#processtenantid" >}}">camunda:processTenantId</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#processversion" >}}">camunda:processVersion</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#in" >}}">camunda:in</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#out" >}}">camunda:out</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#in" >}}">camunda:in</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#out" >}}">camunda:out</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>
     </td>
   </tr>
   <tr>

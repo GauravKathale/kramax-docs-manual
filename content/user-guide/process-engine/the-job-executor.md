@@ -262,7 +262,7 @@ To optimize the acquisition of jobs that need to be executed immediately, the `D
 
 In case each job must have a `DUEDATE_` set, the optimization can be disabled. This can be done by setting the `ensureJobDueDateNotNull` [process engine configuration flag]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#ensureJobDueDateNotNull" >}}) to `true`.
 
-However, any jobs created with a `null` value for `DUEDATE_` before disabling the optimization will not be picked up by the Job Acquisition phase, unless the jobs are explicitly updated with a due date through the **Set Due Date** {{< javadocref page="org/vodafone/kramaxx/bpm/engine/ManagementService.html#setJobDuedate(java.lang.String,java.util.Date)" text="Java" >}}/{{< restref page="setJobDuedate" text="REST" tag="Job" >}} or **Set Retries** {{< javadocref page="org/vodafone/kramaxx/bpm/engine/ManagementService.html#setJobRetries(int)" text="Java" >}}/{{< restref page="setJobRetries" text="REST" tag="Job" >}} APIs.
+However, any jobs created with a `null` value for `DUEDATE_` before disabling the optimization will not be picked up by the Job Acquisition phase, unless the jobs are explicitly updated with a due date through the **Set Due Date** {{< javadocref page="org/vodafone/kramax/bpm/engine/ManagementService.html#setJobDuedate(java.lang.String,java.util.Date)" text="Java" >}}/{{< restref page="setJobDuedate" text="REST" tag="Job" >}} or **Set Retries** {{< javadocref page="org/vodafone/kramax/bpm/engine/ManagementService.html#setJobRetries(int)" text="Java" >}}/{{< restref page="setJobRetries" text="REST" tag="Job" >}} APIs.
 
 ## The Two Phases of Job Acquisition
 
@@ -539,7 +539,7 @@ If the user decides to increase the retry number during retries, the last interv
 You can configure an custom retry configuration by adding the `customPostBPMNParseListeners` property and specify your custom `FailedJobParseListener` to the process engine configuration:
 
 ```xml
-<bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+<bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
   <!-- Your defined properties! -->
   ...
   <property name="customPostBPMNParseListeners">

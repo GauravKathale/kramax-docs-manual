@@ -117,7 +117,7 @@ List<Task> tasks = taskService.createTaskQuery().taskAssignee("kermit").list();
 When strictly following the CMMN standard, user and group assignments can be quite cumbersome for use cases where the assignment is more complicated. To avoid these complexities, custom extensions on the human task element can be set.
 
 The CMMN Human task supports the same assignment extensions and concepts as the BPMN User Task.
-You can read up on these extensions in the [BPMN User Task Section]({{< relref "/reference/bpmn20/tasks/user-task.md#user-assignment-using-kramaxx-extensions" >}}). Same as for the BPMN User task, [assignment based on data and service logic]({{< relref "/reference/bpmn20/tasks/user-task.md#assignment-based-on-data-and-service-logic" >}}) is supported for the CMMN Human Task as well.
+You can read up on these extensions in the [BPMN User Task Section]({{< relref "/reference/bpmn20/tasks/user-task.md#user-assignment-using-kramax-extensions" >}}). Same as for the BPMN User task, [assignment based on data and service logic]({{< relref "/reference/bpmn20/tasks/user-task.md#assignment-based-on-data-and-service-logic" >}}) is supported for the CMMN Human Task as well.
 
 # Forms
 
@@ -171,22 +171,22 @@ make sure the form keys are initialized.
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#assignee" >}}">camunda:assignee</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#candidategroups" >}}">camunda:candidateGroups</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#candidateusers" >}}">camunda:candidateUsers</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#duedate" >}}">camunda:dueDate</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#formkey" >}}">camunda:formKey</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#priority" >}}">camunda:priority</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#assignee" >}}">camunda:assignee</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#candidategroups" >}}">camunda:candidateGroups</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#candidateusers" >}}">camunda:candidateUsers</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#duedate" >}}">camunda:dueDate</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#formkey" >}}">camunda:formKey</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-attributes.md#priority" >}}">camunda:priority</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#in" >}}">camunda:in</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#out" >}}">camunda:out</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#tasklistener" >}}">camunda:taskListener</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#in" >}}">camunda:in</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#out" >}}">camunda:out</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#tasklistener" >}}">camunda:taskListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramax-elements.md#variablelistener" >}}">camunda:variableListener</a>
     </td>
   </tr>
   <tr>

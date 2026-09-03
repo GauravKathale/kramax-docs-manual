@@ -20,7 +20,7 @@ box:
 * [FreeMarker][freemarker]
 
 The script engine Freemarker wrapper implementation can be found in the
-[kramaxx-bpmn-platform](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/freemarker-template-engine) repository.
+[kramax-bpmn-platform](https://github.com/vodafone/kramax-bpm-platform/tree/master/freemarker-template-engine) repository.
 
 The following template engines are provided as optional community extensions:
 
@@ -29,7 +29,7 @@ The following template engines are provided as optional community extensions:
 * [Saxon XSLT](https://www.saxonica.com/html/documentation12/using-xsl/)
 
 The script engine wrapper implementations can be found in the
-[kramaxx-7-template-engines-jsr223][kramaxx-7-template-engines-jsr223] community hub repository.
+[kramax-7-template-engines-jsr223][kramax-7-template-engines-jsr223] community hub repository.
 
 # Install a Template Engine
 
@@ -52,8 +52,8 @@ dependencies must be added as dependencies to the maven `pom.xml` file:
 
   <!-- freemarker -->
   <dependency>
-    <groupId>org.vodafone.kramaxx.template-engines</groupId>
-    <artifactId>kramaxx-template-engines-freemarker</artifactId>
+    <groupId>org.vodafone.kramax.template-engines</groupId>
+    <artifactId>kramax-template-engines-freemarker</artifactId>
   </dependency>
 
 </dependencies>
@@ -66,20 +66,20 @@ Here are the Maven coordinates of the community extensions:
 
   <!-- saxon xquery -->
   <dependency>
-    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
-    <artifactId>kramaxx-7-template-engine-xquery</artifactId>
+    <groupId>org.vodafone.kramax.community.template.engine</groupId>
+    <artifactId>kramax-7-template-engine-xquery</artifactId>
   </dependency>
 
   <!-- saxon xslt -->
   <dependency>
-    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
-    <artifactId>kramaxx-7-template-engine-xslt</artifactId>
+    <groupId>org.vodafone.kramax.community.template.engine</groupId>
+    <artifactId>kramax-7-template-engine-xslt</artifactId>
   </dependency>
 
   <!-- apache velocity -->
   <dependency>
-    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
-    <artifactId>kramaxx-7-template-engine-velocity</artifactId>
+    <groupId>org.vodafone.kramax.community.template.engine</groupId>
+    <artifactId>kramax-7-template-engine-velocity</artifactId>
   </dependency>
 
 </dependencies>
@@ -158,8 +158,8 @@ dependency must be added as dependencies to the maven `pom.xml` file:
 
   <!-- XSLT -->
   <dependency>
-    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
-    <artifactId>kramaxx-7-template-engine-xslt</artifactId>
+    <groupId>org.vodafone.kramax.community.template.engine</groupId>
+    <artifactId>kramax-7-template-engine-xslt</artifactId>
   </dependency>
 
 </dependencies>
@@ -172,7 +172,7 @@ The following is an example of a BPMN ScriptTask used to execute an XSLT Templat
 ```xml
 <bpmn2:scriptTask id="ScriptTask_1" name="convert input"
                   scriptFormat="xslt"
-                  camunda:resource="org/vodafone/kramaxx/bpm/example/xsltexample/example.xsl"
+                  camunda:resource="org/vodafone/kramax/bpm/example/xsltexample/example.xsl"
                   camunda:resultVariable="xmlOutput">
 
   <bpmn2:extensionElements>
@@ -191,7 +191,7 @@ described for [script tasks][script-source].
 The result of the transformation can be mapped to a variable using the `camunda:resultVariable`
 attribute.
 
-Finally, the input of the transformation must be mapped using the special variable `kramaxx_source`
+Finally, the input of the transformation must be mapped using the special variable `kramax_source`
 using a `<camunda:inputParameter ... />` mapping.
 
 A [full example of the XSLT Template Engine][xslt-example] in Kramax can be found in the
@@ -200,7 +200,7 @@ examples' repository.
 
 [freemarker]: http://freemarker.org/
 [velocity]: http://velocity.apache.org/
-[kramaxx-7-template-engines-jsr223]: https://github.com/kramaxx-community-hub/kramaxx-7-template-engines-jsr223
+[kramax-7-template-engines-jsr223]: https://github.com/kramax-community-hub/kramax-7-template-engines-jsr223
 [use-scripts]: {{< relref "/user-guide/process-engine/scripting.md" >}}
 [script-source]: {{< relref "/user-guide/process-engine/scripting.md#script-source" >}}
-[xslt-example]: https://github.com/vodafone/kramaxx-bpm-examples/tree/master/scripttask/xslt-scripttask
+[xslt-example]: https://github.com/vodafone/kramax-bpm-examples/tree/master/scripttask/xslt-scripttask

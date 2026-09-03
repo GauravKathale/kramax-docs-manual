@@ -10,7 +10,7 @@ menu:
 
 ---
 
-Full examples of how to integrate the Forms SDK in a custom application can be found in the [Kramax Platform Examples Repository](https://github.com/kramaxx/kramaxx-bpm-examples) in Github.
+Full examples of how to integrate the Forms SDK in a custom application can be found in the [Kramax Platform Examples Repository](https://github.com/kramax/kramax-bpm-examples) in Github.
 
-* [Example for standalone usage of the SDK](https://github.com/kramaxx/kramaxx-bpm-examples/tree/master/sdk-js/browser-forms)
-* [Example for standalone usage of the SDK with AngularJS Integration](https://github.com/kramaxx/kramaxx-bpm-examples/tree/master/sdk-js/browser-forms-angular)
+* [Example for standalone usage of the SDK](https://github.com/kramax/kramax-bpm-examples/tree/master/sdk-js/browser-forms)
+* [Example for standalone usage of the SDK with AngularJS Integration](https://github.com/kramax/kramax-bpm-examples/tree/master/sdk-js/browser-forms-angular)

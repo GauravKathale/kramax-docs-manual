@@ -24,7 +24,7 @@ There are different ways of using Kramax and different components are provided: 
 * Web applications (Cockpit, Tasklist, ...): similar considerations to the REST API apply.
 
 
-Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.kramaxx.vodafone.org/manual/latest/installation/full/tomcat/manual/)).
+Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.kramax.vodafone.org/manual/latest/installation/full/tomcat/manual/)).
 
 {{< note title="Security Consideration" class="warning" >}}
   The pre-packaged distribution is intended for users who want a getting started experience. In case
@@ -82,7 +82,7 @@ Note that changing the time to live to a lower value can harm the performance of
 #### Enable authentication logging in the Kramax web apps
 
 It is generally recommended to enable logging of log in attempts (successful and failed) as well as log out events.
-In Kramax, you can enable authentication logging in the Kramax web apps by setting the `webappsAuthenticationLoggingEnabled` process engine [configuration flag]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#webappsAuthenticationLoggingEnabled" >}}) to true. All user-initiated log in and log out events will then be logged to the application log using the `org.vodafone.kramaxx.bpm.webapp` [logger]({{< relref "/user-guide/logging.md#process-engine">}}).
+In Kramax, you can enable authentication logging in the Kramax web apps by setting the `webappsAuthenticationLoggingEnabled` process engine [configuration flag]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#webappsAuthenticationLoggingEnabled" >}}) to true. All user-initiated log in and log out events will then be logged to the application log using the `org.vodafone.kramax.bpm.webapp` [logger]({{< relref "/user-guide/logging.md#process-engine">}}).
 
 The following events produce log statements:
 
@@ -156,7 +156,7 @@ You don't centrally manage user accounts (e.g., with the help of LDAP or a custo
 *  ... use an account "self-service" approach: Unauthenticated users are allowed to create accounts; 
        i.e., you have implemented a custom REST endpoint which can create users without authentication
 *  ... an authenticated user has `CREATE` permission on `ANY` `USER` resource to create new user accounts
-       and an untrusted person has access to this account (please see the [Authorization Service]Ãƒâ€šÃ‚Â docs 
+       and an untrusted person has access to this account (please see the [Authorization Service]ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â docs 
        to learn how permissions are granted to resources)
 
 [Authorization Service]: {{< relref "/user-guide/process-engine/authorization-service.md" >}}
@@ -327,8 +327,8 @@ However, please bear in mind that enabling the java serialization format might m
 Therefore, we recommend enabling the whitelisting of allowed Java classes by enabling the property [deserializationTypeValidationEnabled]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#deserializationTypeValidationEnabled" >}}) in the process engine configuration. With this, the process engine validates the class names of submitted variables against a whitelist of allowed Java class and package names. Any non-whitelisted content is rejected. The default values are safe, but may be too restrictive for your use case. You can use the engine properties `deserializationAllowedPackages` and `deserializationAllowedClasses` to extend the default whitelist with package and class names of Java types that you consider save to deserialize in your environment.
 
 In case this default behavior needs further adjustment, a custom validator can be implemented and registered in the engine with the engine property `deserializationTypeValidator`.
-The provided object needs to be a subtype of `org.vodafone.kramaxx.bpm.engine.runtime.DeserializationTypeValidator` and offer an implementation of the `#validate` method.
-In case you want to rely on allowed package and class names from the engine configuration as well, you can provide a subtype of `org.vodafone.kramaxx.bpm.engine.runtime.WhitelistingDeserializationTypeValidator`.
+The provided object needs to be a subtype of `org.vodafone.kramax.bpm.engine.runtime.DeserializationTypeValidator` and offer an implementation of the `#validate` method.
+In case you want to rely on allowed package and class names from the engine configuration as well, you can provide a subtype of `org.vodafone.kramax.bpm.engine.runtime.WhitelistingDeserializationTypeValidator`.
 An implementation of this interface registered as validator will be provided with the defined packages and classes from the engine configuration upon initialization of the engine via `#setAllowedClasses` and `#setAllowedPackages`.
 
 {{< note title="Jackson Type Whitelisting" class="info" >}}

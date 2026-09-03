@@ -17,9 +17,9 @@ Once done with the migration, the [minor version update guides]({{< relref "/upd
 
 The changes in short are:
 
-*   Maven **Dependencies**, e.g., `activiti.jar` changed to `kramaxx-engine.jar`.
-*   **Package Names** changed from `org.activiti` to `org.vodafone.kramaxx.bpm` for all modules (including engine, CDI and spring).
-*   The **configuration file** changed from `activiti.cfg.xml` to `kramaxx.cfg.xml`.
+*   Maven **Dependencies**, e.g., `activiti.jar` changed to `kramax-engine.jar`.
+*   **Package Names** changed from `org.activiti` to `org.vodafone.kramax.bpm` for all modules (including engine, CDI and spring).
+*   The **configuration file** changed from `activiti.cfg.xml` to `kramax.cfg.xml`.
 *   Several (internal) classes are renamed - see the lists below.
 
 There are some things which have not changed yet:
@@ -47,8 +47,8 @@ to
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine</artifactId>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine</artifactId>
   <version>7.0.0-Final</version>
 </dependency>
 ```
@@ -57,8 +57,8 @@ Make sure that you have the Kramax Maven Repository set correctly:
 
 ```xml
 <repository>
-  <id>kramaxx-bpm-nexus</id>
-  <name>kramaxx Maven Repository</name>
+  <id>kramax-bpm-nexus</id>
+  <name>kramax Maven Repository</name>
   <url>https://artifacts.camunda.com/artifactory/public/</url>
 </repository>
 ```

@@ -22,20 +22,20 @@ Java API:
 
 All non-implementation Java packages (package name does not contain `impl`) of the following modules.
 
-* `kramaxx-engine`
-* `kramaxx-engine-spring`
-* `kramaxx-engine-cdi`
-* `kramaxx-engine-dmn`
-* `kramaxx-bpmn-model`
-* `kramaxx-cmmn-model`
-* `kramaxx-dmn-model`
-* `kramaxx-spin-core`
-* `kramaxx-connect-core`
-* `kramaxx-commons-typed-values`
+* `kramax-engine`
+* `kramax-engine-spring`
+* `kramax-engine-cdi`
+* `kramax-engine-dmn`
+* `kramax-bpmn-model`
+* `kramax-cmmn-model`
+* `kramax-dmn-model`
+* `kramax-spin-core`
+* `kramax-connect-core`
+* `kramax-commons-typed-values`
 
 HTTP API (REST API):
 
-* `kramaxx-engine-rest`: HTTP interface (set of HTTP requests accepted by the REST API as documented in [REST API reference]({{< relref "/reference/rest/_index.md" >}}). Java classes are not part of the public API.
+* `kramax-engine-rest`: HTTP interface (set of HTTP requests accepted by the REST API as documented in [REST API reference]({{< relref "/reference/rest/_index.md" >}}). Java classes are not part of the public API.
 
 
 # Backwards Compatibility for Public API

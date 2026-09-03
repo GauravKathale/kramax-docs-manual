@@ -178,7 +178,7 @@ Client receives **400 Bad Request**.
 
 ## Client behavior
 
-* Treat bulk operations as ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œsome may failÃƒÂ¢Ã¢â€šÂ¬Ã‚Â; use smaller batches if needed.
+* Treat bulk operations as ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“some may failÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â; use smaller batches if needed.
 * When receiving a failure response, correct the request and retry rather than blindly retrying.
 
 ## Permissions and auditing
@@ -187,4 +187,4 @@ Bulk activate/suspend operations should apply the same authorization rules as th
 If your environment requires auditing, ensure both successful and failed items are traceable (for example, by capturing the request context and correlating client logs with server logs).
 
 ## Reference
-Kramax issue: `vodafone/kramaxx-bpm-platform#46`
+Kramax issue: `vodafone/kramax-bpm-platform#46`

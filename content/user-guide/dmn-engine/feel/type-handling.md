@@ -45,8 +45,8 @@ The variable value types listed in this section can be handled by the FEEL Engin
 
 ### Spin Types
 
-* `org.vodafone.kramaxx.spin.json.SpinJsonNode`
-* `org.vodafone.kramaxx.spin.xml.SpinXmlElement`
+* `org.vodafone.kramax.spin.json.SpinJsonNode`
+* `org.vodafone.kramax.spin.xml.SpinXmlElement`
 
 For more information about the Kramax Spin integration, please see the documentation about 
 [FEEL Engine Spin Integration].
@@ -99,7 +99,7 @@ The table displays:
         <code>time("11:45:30+02:00")</code><br>
         <code>time("10:31:10@Europe/Paris")</code>
     </td>
-    <td><code>org.vodafone.kramaxx.feel.syntaxtree.ZonedTime</code></td>
+    <td><code>org.vodafone.kramax.feel.syntaxtree.ZonedTime</code></td>
     <td>object</td>
   </tr>
   <tr>

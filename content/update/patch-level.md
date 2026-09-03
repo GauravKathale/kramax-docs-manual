@@ -28,7 +28,7 @@ TBD
 
 # Full Distribution
 
-This section is applicable if you installed the [Full Distribution]({{< relref "/introduction/downloading-kramaxx.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
+This section is applicable if you installed the [Full Distribution]({{< relref "/introduction/downloading-kramax.md#full-distribution" >}}) with a **shared process engine**. In this case you need to update the libraries and applications installed inside the application server.
 
 Please note that the following procedure may differ for cluster scenarios. 
 

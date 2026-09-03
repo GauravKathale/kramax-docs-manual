@@ -33,7 +33,7 @@ object must be strings representing date formats in accordance with
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "dateFormat": {
     "monthName": "MMM",
     "long":   "LLLL"
@@ -45,7 +45,7 @@ export default {
 # Localization
 
 Tasklist can be localized. Kramax maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/vodafone/kramax-webapp-translations).
 
 The localization of Tasklist is contained in the `app/tasklist/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -61,7 +61,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -83,14 +83,14 @@ Add your files to the `customScripts` property of the `app/tasklist/scripts/conf
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   customScripts: 
     ['custom-module/module.js']
 }
 ```
 This includes a `custom-module/module.js` file. The path is relative to the `app/tasklist` folder in the Kramax webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Kramax examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/tasklist/cats-plugin).
+You can find a complete example about how to use `customScripts` to develop a Tasklist Plugin in the [Kramax examples repository](https://github.com/vodafone/kramax-bpm-examples/tree/master/tasklist/cats-plugin).
 
 
 
@@ -130,7 +130,7 @@ by changing the `app/tasklist/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Todos',
     vendor: 'Company'
@@ -145,7 +145,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -154,11 +154,11 @@ export default {
 
 # Disable Welcome Message for new Users
 
-First-time visitors are shown a message directing them to the kramaxx welcome page. If you do
+First-time visitors are shown a message directing them to the kramax welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 }
 ```
@@ -175,7 +175,7 @@ process instance id and by task id.
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   assignProcessInstanceIdToTaskComment: true
 }
 ```
@@ -188,14 +188,14 @@ using [less](http://lesscss.org/) to change the overall appearance of Tasklist.
 If you want to customize the interface with `less`, you should probably start by having a look
 at the variables defined in the following files:
 
- - `node_modules/kramaxx-commons-ui/node_modules/bootstrap/less/variables.less`
+ - `node_modules/kramax-commons-ui/node_modules/bootstrap/less/variables.less`
    defines the original Bootstrap variables
- - `node_modules/kramaxx-commons-ui/resources/less/cam-variables.less`
+ - `node_modules/kramax-commons-ui/resources/less/cam-variables.less`
    overrides some Bootstrap variables (above) and add some custom ones
 
 ## Compiling with Grunt
 
-From within the `kramaxx-bpm-webapp` directory:
+From within the `kramax-bpm-webapp` directory:
 
 ```sh
 grunt build:tasklist

@@ -29,13 +29,13 @@ Make sure you have the following set of tools installed:
 
 # Kramax Platform
 
-First, download a distribution of the Kramax Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from [the download page](https://kramaxx.vodafone.org/download/platform).
+First, download a distribution of the Kramax Platform. You can choose from different distributions for various application servers. In this tutorial, we will use the Apache Tomcat based distribution. Download it from [the download page](https://kramax.vodafone.org/download/platform).
 
 After having downloaded the distribution, unpack it inside a directory of your choice. We will call that directory `$CAMUNDA_HOME`.
 
-After you have successfully unpacked your distribution of the Kramax Platform, execute the script named `start-kramaxx.bat` (for Windows users), respectively `start-kramaxx.sh` (for Unix users).
+After you have successfully unpacked your distribution of the Kramax Platform, execute the script named `start-kramax.bat` (for Windows users), respectively `start-kramax.sh` (for Unix users).
 
-This script will start the application server and open a welcome screen in your web browser. If the page does not open, go to [http://localhost:8080/kramaxx-welcome/index.html](http://localhost:8080/kramaxx-welcome/index.html).
+This script will start the application server and open a welcome screen in your web browser. If the page does not open, go to [http://localhost:8080/kramax-welcome/index.html](http://localhost:8080/kramax-welcome/index.html).
 
 {{< note title="Getting Help" class="info" >}}
 If you have trouble setting up the Kramax Platform, you can ask for assistance in the {{< forumref >}}.
@@ -43,4 +43,4 @@ If you have trouble setting up the Kramax Platform, you can ask for assistance i
 
 # Kramax Modeler
 
-Follow the instructions in the [Kramax Modeler]({{< relref "/installation/kramaxx-modeler" >}}) section.
+Follow the instructions in the [Kramax Modeler]({{< relref "/installation/kramax-modeler" >}}) section.

@@ -16,8 +16,8 @@ The XML datatype supports writing XML to Strings, output streams or writers.
 # Writing to a String:
 
 ```java
-import static org.vodafone.kramaxx.spin.Spin.XML;
-import org.vodafone.kramaxx.spin.xml.SpinXmlElement;
+import static org.vodafone.kramax.spin.Spin.XML;
+import org.vodafone.kramax.spin.xml.SpinXmlElement;
 
 // Create XML element
 SpinXmlElement element = XML("<root id=\"test\"/>");
@@ -30,9 +30,9 @@ String value = element.attr("id").value();
 # Writing to an Output Stream:
 
 ```java
-import static org.vodafone.kramaxx.spin.Spin.XML;
-import org.vodafone.kramaxx.spin.xml.SpinXmlElement;
-import org.vodafone.kramaxx.spin.xml.SpinXmlAttribute;
+import static org.vodafone.kramax.spin.Spin.XML;
+import org.vodafone.kramax.spin.xml.SpinXmlElement;
+import org.vodafone.kramax.spin.xml.SpinXmlAttribute;
 
 // Create XML element
 SpinXmlElement element = XML("<root id=\"test\"/>");
@@ -68,9 +68,9 @@ try {
 # Write to Writer
 
 ```java
-import static org.vodafone.kramaxx.spin.Spin.XML;
-import org.vodafone.kramaxx.spin.xml.SpinXmlElement;
-import org.vodafone.kramaxx.spin.xml.SpinXmlAttribute;
+import static org.vodafone.kramax.spin.Spin.XML;
+import org.vodafone.kramax.spin.xml.SpinXmlElement;
+import org.vodafone.kramax.spin.xml.SpinXmlAttribute;
 
 // Create XML element
 SpinXmlElement element = XML("<root id=\"test\"/>");

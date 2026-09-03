@@ -45,12 +45,12 @@ We also use `spring-boot-maven-plugin`, which does all the magic for packaging S
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.vodafone.kramaxx.bpm.getstarted</groupId>
+  <groupId>org.vodafone.kramax.bpm.getstarted</groupId>
   <artifactId>loan-approval-spring-boot</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
-    <kramaxx.spring-boot.version>3.0.0</kramaxx.spring-boot.version>
+    <kramax.spring-boot.version>3.0.0</kramax.spring-boot.version>
     <spring-boot.version>4.0.5</spring-boot.version>
     <maven.compiler.release>21</maven.compiler.release>
   </properties>
@@ -69,9 +69,9 @@ We also use `spring-boot-maven-plugin`, which does all the magic for packaging S
   
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaxx.bpm.springboot</groupId>
-      <artifactId>kramaxx-bpm-spring-boot-starter-webapp</artifactId>
-      <version>${kramaxx.spring-boot.version}</version>
+      <groupId>org.vodafone.kramax.bpm.springboot</groupId>
+      <artifactId>kramax-bpm-spring-boot-starter-webapp</artifactId>
+      <version>${kramax.spring-boot.version}</version>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
@@ -116,10 +116,10 @@ We also use `spring-boot-maven-plugin`, which does all the magic for packaging S
 
 Next, we add an application class with a main method that will be the entry point for launching the Spring Boot application. The class has the annotation `@SpringBootApplication` on it,
 which implicitly adds several convenient features (autoconfiguration, component scan, etc. - see Spring Boot docs).
-The class is added in the `src/main/java` folder in the `org.vodafone.kramaxx.bpm.getstarted.loanapproval` package.
+The class is added in the `src/main/java` folder in the `org.vodafone.kramax.bpm.getstarted.loanapproval` package.
 
 ```java
-package org.vodafone.kramaxx.bpm.getstarted.loanapproval;
+package org.vodafone.kramax.bpm.getstarted.loanapproval;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -149,4 +149,4 @@ Then go to [http://localhost:8080/](http://localhost:8080/) in your browser and 
 
 Another way to run the app is to simply run the JAR-file with a `java -jar` command.
 
-{{< get-tag repo="kramaxx-get-started-spring-boot" tag="Step-1" >}}
+{{< get-tag repo="kramax-get-started-spring-boot" tag="Step-1" >}}

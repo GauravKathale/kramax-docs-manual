@@ -287,7 +287,7 @@ Whenever a variable is set in its Java representation, the process engine automa
 
 In cases in which it is important to access a variable's serialized representation or in which the engine has to be hinted to serialize a value in a certain format, the typed-value-based API can be used. In comparison to the Java-Object-based API, it wraps a variable value in a so-called *Typed Value*. Such a typed value allows richer representation of variable values.
 
-In order to easily construct typed values, Kramax offers the class `org.vodafone.kramaxx.bpm.engine.variable.Variables`. This class contains static methods that allow creation of single typed values as well as creation of a map of typed values in a fluent way.
+In order to easily construct typed values, Kramax offers the class `org.vodafone.kramax.bpm.engine.variable.Variables`. This class contains static methods that allow creation of single typed values as well as creation of a map of typed values in a fluent way.
 
 
 ## Primitive Values
@@ -522,13 +522,13 @@ An input mapping is used to map the different process variables to
 the required input parameters of the complex calculation activity. Accordingly, an output mapping allows to utilize the
 calculation result in the further process execution.
 
-In more detail, let us assume such a calculation is implemented by a Java Delegate class `org.vodafone.kramaxx.bpm.example.ComplexCalculation`.
+In more detail, let us assume such a calculation is implemented by a Java Delegate class `org.vodafone.kramax.bpm.example.ComplexCalculation`.
 This delegate requires a `userId` and a `costSum` variable as input
 parameters. It then calculates three values, `pessimisticForecast`, `realisticForecast` and `optimisticForecast`,
 which are different forecasts of the future costs a customer faces. In a first process, both input variables are available as process variables but with different names (`id`, `sum`). From the three results, the process only uses `realisticForecast` which it depends on by the name `forecast` in follow-up activities. A corresponding input/output mapping looks as follows:
 
 ```xml
-<serviceTask camunda:class="org.vodafone.kramaxx.bpm.example.ComplexCalculation">
+<serviceTask camunda:class="org.vodafone.kramax.bpm.example.ComplexCalculation">
   <extensionElements>
     <camunda:inputOutput>
       <camunda:inputParameter name="userId">${id}</camunda:inputParameter>
@@ -543,7 +543,7 @@ In a second process, let us assume the `costSum` variable has to be calculated f
 depends on a variable `avgForecast` as the average value of the three forecasts. In this case, the mapping looks as follows:
 
 ```xml
-<serviceTask camunda:class="org.vodafone.kramaxx.bpm.example.ComplexCalculation">
+<serviceTask camunda:class="org.vodafone.kramax.bpm.example.ComplexCalculation">
   <extensionElements>
     <camunda:inputOutput>
       <camunda:inputParameter name="userId">${id}</camunda:inputParameter>
@@ -573,9 +573,9 @@ If an Activity is canceled (e.g. due to throwing a BPMN error), IO mapping is st
 
 The default behavior is that the engine still tries to execute output mappings on canceled activities and fails with an exception if a variable is not found. By enabling the [skipOutputMappingOnCanceledActivities]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#skipOutputMappingOnCanceledActivities" >}}) engine configuration flag (i.e. setting it to `true`) the engine will not perform output mappings on any canceled activity.
 
-[inputOutput]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaxx-inputoutput" >}}
+[inputOutput]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramax-inputoutput" >}}
 [inputParameter]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#inputparameter" >}}
 [outputParameter]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#outputparameter" >}}
-[list]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaxx-list" >}}
-[map]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaxx-map" >}}
+[list]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramax-list" >}}
+[map]: {{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramax-map" >}}
 [script-io]: {{< relref "/user-guide/process-engine/scripting.md#use-scripts-as-inputoutput-parameters" >}}

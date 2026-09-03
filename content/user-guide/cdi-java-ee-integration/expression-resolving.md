@@ -10,7 +10,7 @@ menu:
 
 ---
 
-The `kramaxx-engine-cdi` and `kramaxx-engine-cdi-jakarta` libraries expose CDI beans via Expression Language, 
+The `kramax-engine-cdi` and `kramax-engine-cdi-jakarta` libraries expose CDI beans via Expression Language, 
 using a custom resolver. This makes it possible to reference beans from the process:
 
 ```xml

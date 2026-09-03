@@ -31,7 +31,7 @@ The `cam-variable-name` directive allows providing the name of a process / task 
 
 # The `cam-business-key` Directive
 
-The `cam-business-key` is aimed to be used on a free text input field in order to define a businessKey at the [start of a process](https://docs.kramaxx.vodafone.org/rest/kramaxx-bpm-platform/{{< minor-version >}}/process-definition/post-submit-form.md" ).  
+The `cam-business-key` is aimed to be used on a free text input field in order to define a businessKey at the [start of a process](https://docs.kramax.vodafone.org/rest/kramax-bpm-platform/{{< minor-version >}}/process-definition/post-submit-form.md" ).  
 This attribute is only relevant when the form is aimed to start a process.
 
 ```html

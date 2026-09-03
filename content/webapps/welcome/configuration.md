@@ -24,11 +24,11 @@ Can be used to add some useful links for the user, such as other applications or
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   links: [
     {
       label: 'Kramax Project',
-      href: 'https://kramaxx.vodafone.org/',
+      href: 'https://kramax.vodafone.org/',
       description: 'VODAFONE powered open-source project.'
     },
     // ...
@@ -63,7 +63,7 @@ by changing the `app/welcome/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Welcome',
     vendor: 'Company'
@@ -74,7 +74,7 @@ export default {
 # Localization
 
 Welcome can be localized. Kramax maintains English and German translation files. 
-You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/kramaxx-community-hub/kramaxx-7-webapp-translations).
+You can find and download community maintained translation files at the [Kramax webapp translations repository](https://github.com/kramax-community-hub/kramax-7-webapp-translations).
 
 The localization of the Welcome application is contained in the `app/welcome/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -90,7 +90,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -109,7 +109,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -118,11 +118,11 @@ export default {
 
 # Disable Welcome Message for new Users
 
-First-time visitors are shown a message directing them to the kramaxx welcome page. If you do
+First-time visitors are shown a message directing them to the kramax welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦
+  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 };
 ```

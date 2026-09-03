@@ -79,7 +79,7 @@ The following process is a simple example with a Groovy script task that sums up
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-                   targetNamespace="http://kramaxx.vodafone.org/example">
+                   targetNamespace="http://kramax.vodafone.org/example">
   <process id="process" isExecutable="true">
     <startEvent id="start"/>
     <sequenceFlow id="sequenceFlow1" sourceRef="start" targetRef="task"/>
@@ -145,7 +145,7 @@ The following example shows usage of scripts as execution listeners.
   <sequenceFlow id="flow1" startRef="start" targetRef="task">
     <extensionElements>
       <camunda:executionListener>
-        <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/transition.groovy" />
+        <camunda:script scriptFormat="groovy" resource="org/vodafone/kramax/bpm/transition.groovy" />
       </camunda:executionListener>
     </extensionElements>
   </sequenceFlow>
@@ -176,7 +176,7 @@ The following example shows usage of scripts as task listeners.
       <camunda:script scriptFormat="groovy">println task.eventName</camunda:script>
     </camunda:taskListener>
     <camunda:taskListener event="assignment">
-      <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/assignemnt.groovy" />
+      <camunda:script scriptFormat="groovy" resource="org/vodafone/kramax/bpm/assignemnt.groovy" />
     </camunda:taskListener>
   </extensionElements>
 </userTask>
@@ -202,7 +202,7 @@ process variable which is available inside the script.
 
 <sequenceFlow>
   <conditionExpression xsi:type="tFormalExpression" language="groovy"
-      camunda:resource="org/vodafone/kramaxx/bpm/condition.groovy" />
+      camunda:resource="org/vodafone/kramax/bpm/condition.groovy" />
 </sequenceFlow>
 ```
 
@@ -223,11 +223,11 @@ the Groovy variable `sum` to the process variable `x` for a Java delegate.
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
                    xmlns:camunda="http://activiti.org/bpmn"
-                   targetNamespace="http://kramaxx.vodafone.org/example">
+                   targetNamespace="http://kramax.vodafone.org/example">
   <process id="process" isExecutable="true">
     <startEvent id="start"/>
     <sequenceFlow id="sequenceFlow1" sourceRef="start" targetRef="task"/>
-    <serviceTask id="task" camunda:class="org.vodafone.kramaxx.bpm.example.SumDelegate">
+    <serviceTask id="task" camunda:class="org.vodafone.kramax.bpm.example.SumDelegate">
       <extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="x">
@@ -274,7 +274,7 @@ for [script tasks]({{< relref "#script-source" >}}).
 ```xml
 <camunda:inputOutput>
   <camunda:inputParameter name="x">
-     <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/example/sum.groovy"/>
+     <camunda:script scriptFormat="groovy" resource="org/vodafone/kramax/bpm/example/sum.groovy"/>
   </camunda:inputParameter>
 </camunda:inputOutput>
 ```
@@ -375,7 +375,7 @@ You can provide a custom `ScriptEngineResolver` implementation to configure scri
 you can gain more configuration options with this approach. You can add your custom script engine resolver to the engine configuration 
 with the `#setScriptEngineResolver(ScriptEngineResolver)` method.
 
-You can inherit from the `org.vodafone.kramaxx.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver` for starters in case configuring an existing 
+You can inherit from the `org.vodafone.kramax.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver` for starters in case configuring an existing 
 script engine instance is sufficient for you. By overriding the `#configureScriptEngines(String, ScriptEngine)` method of the `DefaultScriptEngineResolver`, 
 you can change settings on the script engine instance provided to that method as shown in the following example:
 
@@ -501,9 +501,9 @@ i.e., `$sum`)
 
 There are also special variables:
 
-1. `execution`, which is always available if the script is executed in an execution scope (e.g., in a script task) ({{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}).
-1. `task`, which is available if the script is executed in a task scope (e.g., a task listener) ({{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}).
-1. `connector`, which is available if the script is executed in a connector variable scope (e.g., outputParameter of a camunda:connector) ({{< javadocref page="org/vodafone/kramaxx/connect/plugin/impl/ConnectorVariableScope.html" text="ConnectorVariableScope" >}}).
+1. `execution`, which is always available if the script is executed in an execution scope (e.g., in a script task) ({{< javadocref page="org/vodafone/kramax/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}).
+1. `task`, which is available if the script is executed in a task scope (e.g., a task listener) ({{< javadocref page="org/vodafone/kramax/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}).
+1. `connector`, which is available if the script is executed in a connector variable scope (e.g., outputParameter of a camunda:connector) ({{< javadocref page="org/vodafone/kramax/connect/plugin/impl/ConnectorVariableScope.html" text="ConnectorVariableScope" >}}).
 
 These variables correspond to the `DelegateExecution`, `DelegateTask` or resp. `ConnectorVariableScope`
 interface which means that it can be used to get and set variables or access process engine services.
@@ -526,9 +526,9 @@ task = execution.getProcessEngineServices().getTaskService()
 
 Kramax's Java API provides access to Kramax's process engine services; these services can be accessed using Scripts:
 
-{{< javadocref page="org/vodafone/kramaxx/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
+{{< javadocref page="org/vodafone/kramax/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
 
-{{< javadocref page="org/vodafone/kramaxx/bpm/engine/package-summary.html" text="Public Java API of Kramax Engine" >}}
+{{< javadocref page="org/vodafone/kramax/bpm/engine/package-summary.html" text="Public Java API of Kramax Engine" >}}
 
 Example of creating a BPMN Message that correlates with the message key "work":
 
@@ -604,22 +604,22 @@ classpath. This means that the first two script task elements in the following e
 
 ```xml
 <!-- on a script task -->
-<scriptTask scriptFormat="groovy" camunda:resource="org/vodafone/kramaxx/bpm/task.groovy"/>
-<scriptTask scriptFormat="groovy" camunda:resource="classpath://org/vodafone/kramaxx/bpm/task.groovy"/>
-<scriptTask scriptFormat="groovy" camunda:resource="deployment://org/vodafone/kramaxx/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="org/vodafone/kramax/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="classpath://org/vodafone/kramax/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="deployment://org/vodafone/kramax/bpm/task.groovy"/>
 
 <!-- in an execution listener -->
 <camunda:executionListener>
-  <camunda:script scriptFormat="groovy" resource="deployment://org/vodafone/kramaxx/bpm/listener.groovy"/>
+  <camunda:script scriptFormat="groovy" resource="deployment://org/vodafone/kramax/bpm/listener.groovy"/>
 </camunda:executionListener>
 
 <!-- on a conditionExpression -->
 <conditionExpression xsi:type="tFormalExpression" language="groovy"
-    camunda:resource="org/vodafone/kramaxx/bpm/condition.groovy" />
+    camunda:resource="org/vodafone/kramax/bpm/condition.groovy" />
 
 <!-- in an inputParameter -->
 <camunda:inputParameter name="x">
-  <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/mapX.groovy" />
+  <camunda:script scriptFormat="groovy" resource="org/vodafone/kramax/bpm/mapX.groovy" />
 </camunda:inputParameter>
 ```
 

@@ -31,7 +31,7 @@ More details regarding the deployment from Kramax Modeler you can find [here](ht
 
 # Verify the Deployment with Cockpit
 
-Next, use Cockpit to see if the process was successfully deployed. Go to [http://localhost:8080/kramaxx/app/cockpit/](http://localhost:8080/kramaxx/app/cockpit/) and log in with the credentials demo / demo. Your process *Payment Retrieval* should be visible on the dashboard.
+Next, use Cockpit to see if the process was successfully deployed. Go to [http://localhost:8080/kramax/app/cockpit/](http://localhost:8080/kramax/app/cockpit/) and log in with the credentials demo / demo. Your process *Payment Retrieval* should be visible on the dashboard.
 
 {{< img src="../img/cockpit-payment-retrieval.png" >}}
 

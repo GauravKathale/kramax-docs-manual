@@ -6,7 +6,7 @@ weight: 70
 menu:
   main:
     name: "BPMN"
-    identifier: "kramaxx-modeler-bpmn"
+    identifier: "kramax-modeler-bpmn"
     parent: "modeler"
     pre: "How to model executable BPMN 2.0 process diagrams."
 

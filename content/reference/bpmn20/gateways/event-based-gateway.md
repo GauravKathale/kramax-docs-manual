@@ -95,4 +95,4 @@ The corresponding xml looks like this:
 
 # Additional Resources
 
-*   [Event-based Gateways](http://kramaxx.vodafone.org/bpmn/reference.html#gateways-event-based-gateways) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Event-based Gateways](http://kramax.vodafone.org/bpmn/reference.html#gateways-event-based-gateways) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)

@@ -52,19 +52,19 @@ in your `@SpringBootTest` annotation:
 @SpringBootTest(
   // ...other parameters...
   properties = {
-    "kramaxx.bpm.generate-unique-process-engine-name=true",
+    "kramax.bpm.generate-unique-process-engine-name=true",
     // this is only needed if a SpringBootProcessApplication 
     // is used for the test
-    "kramaxx.bpm.generate-unique-process-application-name=true",
+    "kramax.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
     // additional properties...
   }
 )
 ```
 
-* The `kramaxx.bpm.generate-unique-process-engine-name=true` property will generate
+* The `kramax.bpm.generate-unique-process-engine-name=true` property will generate
 a unique name for the Process Engine (ex. 'processEngine2Sc4bg2s1g').
-* The `kramaxx.bpm.generate-unique-process-application-name=true` property will generate
+* The `kramax.bpm.generate-unique-process-application-name=true` property will generate
 a unique name for the Process Application (ex. 'processApplication2Sc4bg2s1g'). This is useful
 if you want to deploy and test a Process Application multiple times with multiple configurations.
 * The `spring.datasource.generate-unique-name=true` property will generate a new datasource for
@@ -80,20 +80,20 @@ If a static accessor needs to be used (e.g. processEngines.getProcessEngine(name
 @SpringBootTest(
   // other parameters
   properties = {
-    "kramaxx.bpm.process-engine-name=foo",
+    "kramax.bpm.process-engine-name=foo",
     // this is only needed if a SpringBootProcessApplication 
     // is used for the test
-    "kramaxx.bpm.generate-unique-process-application-name=true",
+    "kramax.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
     // additional properties
   }
 )
 ```
-Here, the `kramaxx.bpm.process-engine-name=foo` will set (a unique name) "foo" as the Process Engine name.
+Here, the `kramax.bpm.process-engine-name=foo` will set (a unique name) "foo" as the Process Engine name.
 
 ## Kramax Assertions
 
-The [Kramax Assertions]({{< relref "/user-guide/testing/_index.md#kramaxx-assertions" >}}) library is 
+The [Kramax Assertions]({{< relref "/user-guide/testing/_index.md#kramax-assertions" >}}) library is 
 integrated with the Kramax Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 

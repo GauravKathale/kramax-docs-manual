@@ -9,10 +9,10 @@ menu:
     parent: "dmn-ref-extensions"
     pre: "Reference of Kramax Extension Attributes for DMN."
 
-aliases: [reference/dmn11/custom-extensions/kramaxx-attributes/]
+aliases: [reference/dmn11/custom-extensions/kramax-attributes/]
 ---
 
-The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/dmn`.
+The following attributes are extension attributes for the `kramax` namespace `http://camunda.org/schema/1.0/dmn`.
 
 # historyTimeToLive
 

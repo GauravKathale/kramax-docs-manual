@@ -66,7 +66,7 @@ This is what the `web.xml`-based configuration looks like:
 <!-- Authentication filter -->
 <filter>
   <filter-name>Authentication Filter</filter-name>
-  <filter-class>org.vodafone.kramaxx.bpm.webapp.impl.security.auth.AuthenticationFilter</filter-class>
+  <filter-class>org.vodafone.kramax.bpm.webapp.impl.security.auth.AuthenticationFilter</filter-class>
   <init-param>
     <param-name>cacheTimeToLive</param-name>
     <param-value>0</param-value> <!-- cache disabled -->
@@ -95,10 +95,10 @@ The Container-Based Authentication implementation for the Web Applications is sw
   <!-- Container Based Authentication filter -->
   <filter>
     <filter-name>Container Based Authentication Filter</filter-name>
-    <filter-class>org.vodafone.kramaxx.bpm.webapp.impl.security.auth.ContainerBasedAuthenticationFilter</filter-class>
+    <filter-class>org.vodafone.kramax.bpm.webapp.impl.security.auth.ContainerBasedAuthenticationFilter</filter-class>
     <init-param>
       <param-name>authentication-provider</param-name>
-      <param-value>org.vodafone.kramaxx.bpm.engine.rest.security.auth.impl.ContainerBasedAuthenticationProvider</param-value>
+      <param-value>org.vodafone.kramax.bpm.engine.rest.security.auth.impl.ContainerBasedAuthenticationProvider</param-value>
     </init-param>
   </filter>
   <filter-mapping>

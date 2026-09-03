@@ -5,7 +5,7 @@ weight: 10
 
 menu:
   main:
-    identifier: "user-guide-introduction-downloading-kramaxx"
+    identifier: "user-guide-introduction-downloading-kramax"
     parent: "user-guide-introduction"
 
 ---
@@ -48,7 +48,7 @@ The full distribution bundles
 {{< /note >}}
 
 {{< note title="Wildfly Application Server" class="info" >}}
-  Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.kramaxx.vodafone.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright Ãƒâ€šÃ‚Â© JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
+  Wildfly Application Server is provided as part of the archives as a convenience. For a copy of the source code, the full set of attribution notices, and other relevant information please see https://github.com/wildfly/wildfly. We will also provide you with a copy of the source code if you [contact our Open-Source Compliance Team](https://docs.kramax.vodafone.org/manual/latest/introduction/licenses/#contact) at any time within three years of you downloading an archive (for which we may charge a nominal sum). Wildfly Application Server is copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© JBoss, Home of Professional Open Source, 2010, Red Hat Middleware LLC [..and contributors].
 {{< /note >}}
 
 See the [Installation Guide][installation-guide-full] for additional details.
@@ -57,12 +57,12 @@ See the [Installation Guide][installation-guide-full] for additional details.
 # Download Kramax Modeler
 
 Kramax Modeler is a modeling Tool for BPMN 2.0 and DMN 1.3. Kramax Modeler can be downloaded
-from the [GitHub releases](https://github.com/vodafone/kramaxx-modeler/releases/latest).
+from the [GitHub releases](https://github.com/vodafone/kramax-modeler/releases/latest).
 
 
 
 [get-jdk]: https://www.oracle.com/technetwork/java/javase/downloads/index.html
-[community-download-page]: https://kramaxx.vodafone.org/download/
+[community-download-page]: https://kramax.vodafone.org/download/
 [enterprise-download-page]: /enterprise/download
 [shared-engine]: {{< relref "/introduction/architecture.md#shared-container-managed-process-engine" >}}
 [installation-guide-full]: {{< relref "/installation/_index.md" >}}

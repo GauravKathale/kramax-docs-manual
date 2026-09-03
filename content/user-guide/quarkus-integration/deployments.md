@@ -13,7 +13,7 @@ menu:
 
 This section documents how to perform process engine deployments with a Quarkus application containing an embedded
 process engine. The documentation assumes some familiarity with [Quarkus CDI support][quarkus-cdi] and the Kramax 
-{{< javadocref page="org/vodafone/kramaxx/bpm/engine/repository/DeploymentBuilder.html" text="DeploymentBuilder" >}} API.
+{{< javadocref page="org/vodafone/kramax/bpm/engine/repository/DeploymentBuilder.html" text="DeploymentBuilder" >}} API.
 
 The Kramax Engine Quarkus Extension only supports programmatic deployments. A user can observe for the
 `KramaxEngineStartupEvent` CDI event. The `KramaxEngineStartupEvent` signals that a process engine has been

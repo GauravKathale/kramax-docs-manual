@@ -98,6 +98,6 @@ Return to Eclipse. Right-click the project folder and click *Refresh*. This sync
 
 For Eclipse to automatically synchronize the workspace with the filesystem, consider [configuring auto-sync in eclipse][auto-sync].
 
-{{< get-tag repo="kramaxx-get-started-dmn" tag="Step-3" >}}
+{{< get-tag repo="kramax-get-started-dmn" tag="Step-3" >}}
 
 [auto-sync]: /manual/latest/modeler/tips/#eclipse-project-synchronization

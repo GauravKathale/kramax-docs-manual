@@ -22,7 +22,7 @@ to the newly created empty model instance.
 
 ```java
 Definitions definitions = modelInstance.newInstance(Definitions.class);
-definitions.setTargetNamespace("http://kramaxx.vodafone.org/examples");
+definitions.setTargetNamespace("http://kramax.vodafone.org/examples");
 modelInstance.setDefinitions(definitions);
 ```
 

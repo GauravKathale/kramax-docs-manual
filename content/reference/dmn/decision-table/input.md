@@ -178,5 +178,5 @@ FEEL expression `currentSeason != "Fall"` checks if the season input is not
 [supported EL]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md#supported-expression-languages" >}}
 [default EL]: {{< relref "/user-guide/dmn-engine/expressions-and-scripts.md#default-expression-languages" >}}
 [supported DT]: {{< relref "/user-guide/dmn-engine/data-types.md#supported-data-types" >}}
-[inputVariable]: {{< relref "/reference/dmn/custom-extensions/kramaxx-attributes.md#inputvariable" >}}
+[inputVariable]: {{< relref "/reference/dmn/custom-extensions/kramax-attributes.md#inputvariable" >}}
 [input entry]: {{< relref "/reference/dmn/decision-table/rule.md#input-entry-condition" >}}

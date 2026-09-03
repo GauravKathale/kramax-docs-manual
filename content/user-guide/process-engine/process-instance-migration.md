@@ -69,9 +69,9 @@ Let us assume that we have a process instance in the following activity instance
 
 ```
 ProcessInstance
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Archive Application
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Validate Address
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
 ```
 
 In order to migrate this process instance according to the defined migration plan, the API method
@@ -90,10 +90,10 @@ The resulting activity instance state is:
 
 ```
 ProcessInstance
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Handle Application Receipt
-Ã¢â€â€š   Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Archive Application
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Validate Postal Address
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Handle Application Receipt
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Postal Address
 ```
 
 The following things have happened:
@@ -427,7 +427,7 @@ Depending on the type of the activities a process model contains, migration has 
 
 ### User Task
 
-When a user task is migrated, all properties of the task instance (i.e., `org.vodafone.kramaxx.bpm.engine.task.Task`) are preserved apart
+When a user task is migrated, all properties of the task instance (i.e., `org.vodafone.kramax.bpm.engine.task.Task`) are preserved apart
 from the process definition id and task definition key. The task is not reinitialized: Attributes like assignee or name do not change.
 
 #### Timeout Task Listeners
@@ -448,7 +448,7 @@ The considerations for [intermediate catch events]({{< relref "#events" >}}) app
 
 ### External Task
 
-When an active [external task]({{< relref "external-tasks.md" >}}) is migrated, all properties of the external task instance (i.e., `org.vodafone.kramaxx.bpm.engine.externaltask.ExternalTask`) are preserved
+When an active [external task]({{< relref "external-tasks.md" >}}) is migrated, all properties of the external task instance (i.e., `org.vodafone.kramax.bpm.engine.externaltask.ExternalTask`) are preserved
 apart from activity id, process definition key, and process definition id. In particular, this means that attributes like topic and lock state do not change.
 
 It is possible to map activities that are implemented as external tasks to each other even if they have different types. For example, an external send task can be mapped to an external service task.
@@ -558,7 +558,7 @@ Assume a process instance in the following state:
 
 ```
 ProcessInstance
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
 ```
 
 The process instance has a compensation subscription for *Archive Application*. A valid migration plan must
@@ -606,7 +606,7 @@ Furthermore, assume that before migration a process instance is in the following
 
 ```
 ProcessInstance
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
 ```
 
 If this process instance is migrated (with *Assess Credit Worthiness* being mapped to its equivalent), then triggering compensation
@@ -772,8 +772,8 @@ And a process instance in the following state:
 
 ```
 ProcessInstance
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Validate Address
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
 ```
 
 The migration plan cannot be applied, because the
@@ -812,7 +812,7 @@ Now consider a process instance in the following activity instance state:
 
 ```
 ProcessInstance
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Archive Application
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
 ```
 
 The plan is complete with respect to this process instance because there is a migration instruction for the activity *Archive Application*.
@@ -821,9 +821,9 @@ Now consider another process instance:
 
 ```
 ProcessInstance
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ Archive Application
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Assess Credit Worthiness
-    Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ Validate Address
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
 ```
 
 The migration plan is not valid with respect to this instance because there is no instruction that applies to the instance of *Validate Address*.

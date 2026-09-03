@@ -162,5 +162,5 @@ The following examples show under which conditions an inclusive gateway will tri
 
 # Additional Resources
 
-*   [Inclusive Gateways](http://kramaxx.vodafone.org/bpmn/reference.html#gateways-data-based-inclusive-gateways) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Inclusive Gateways](http://kramax.vodafone.org/bpmn/reference.html#gateways-data-based-inclusive-gateways) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 *   [Conditional and Default Sequence Flows]({{< relref "/reference/bpmn20/gateways/sequence-flow.md" >}})

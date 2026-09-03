@@ -20,7 +20,7 @@ It deletes:
 * Historic case instances plus all related historic data (e.g., historic variable instances, historic task instances, etc.)
 * Historic batches plus all related historic data (historic incidents and job logs)
 
-History cleanup can be triggered manually or scheduled on a regular basis. Only [kramaxx-admins]({{< relref "/user-guide/process-engine/authorization-service.md#the-kramaxx-admin-group">}}) have permissions to execute history cleanup manually.
+History cleanup can be triggered manually or scheduled on a regular basis. Only [kramax-admins]({{< relref "/user-guide/process-engine/authorization-service.md#the-kramax-admin-group">}}) have permissions to execute history cleanup manually.
 
 ## Use case example
 

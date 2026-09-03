@@ -23,8 +23,8 @@ Most Kramax artifacts are pushed to [maven central](https://central.sonatype.com
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaxx.bpm</groupId>
-      <artifactId>kramaxx-bom</artifactId>
+      <groupId>org.vodafone.kramax.bpm</groupId>
+      <artifactId>kramax-bom</artifactId>
       <version>1.0.0</version>
       <scope>import</scope>
       <type>pom</type>
@@ -42,20 +42,20 @@ Most Kramax artifacts are pushed to [maven central](https://central.sonatype.com
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine</artifactId>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine</artifactId>
 </dependency>
 ```
 
 
 # Kramax Engine Spring Integration
 
-The `kramaxx-engine` Spring integration for Spring Framework 7:
+The `kramax-engine` Spring integration for Spring Framework 7:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine-spring</artifactId>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine-spring</artifactId>
 </dependency>
 ```
 
@@ -63,8 +63,8 @@ The `kramaxx-engine` Spring integration for Spring Framework 7:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine-cdi</artifactId>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine-cdi</artifactId>
 </dependency>
 ```
 
@@ -74,8 +74,8 @@ This BOM allows to use the DMN engine standalone without the BPMN engine and the
 ```xml
 <dependencyManagement>
   <dependency>
-    <groupId>org.vodafone.kramaxx.bpm.dmn</groupId>
-    <artifactId>kramaxx-engine-dmn-bom</artifactId>
+    <groupId>org.vodafone.kramax.bpm.dmn</groupId>
+    <artifactId>kramax-engine-dmn-bom</artifactId>
     <version>1.0.0</version>
     <type>pom</type>
     <scope>import</scope>
@@ -85,12 +85,12 @@ This BOM allows to use the DMN engine standalone without the BPMN engine and the
 
 # Kramax DMN
 This dependency allows to use DMN engine standalone without the BPMN engine and the rest of the Kramax Platform.
-It is not needed when using `kramaxx-engine` because that already contains the DMN engine.
+It is not needed when using `kramax-engine` because that already contains the DMN engine.
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.dmn</groupId>
-  <artifactId>kramaxx-engine-dmn</artifactId>
+  <groupId>org.vodafone.kramax.bpm.dmn</groupId>
+  <artifactId>kramax-engine-dmn</artifactId>
 </dependency>
 ```
 
@@ -98,8 +98,8 @@ It is not needed when using `kramaxx-engine` because that already contains the D
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.javaee</groupId>
-  <artifactId>kramaxx-ejb-client</artifactId>
+  <groupId>org.vodafone.kramax.bpm.javaee</groupId>
+  <artifactId>kramax-ejb-client</artifactId>
 </dependency>
 ```
 
@@ -112,8 +112,8 @@ Kramax relies on JFrog Artifactory to provide Kramax artifacts to users at [arti
 ```xml
 <repositories>
   <repository>
-    <id>kramaxx-bpm-nexus</id>
-    <name>kramaxx-bpm-nexus</name>
+    <id>kramax-bpm-nexus</id>
+    <name>kramax-bpm-nexus</name>
     <url>
       https://artifacts.camunda.com/artifactory/public/
     </url>
@@ -133,7 +133,7 @@ The files are hosted in AWS S3, therefore, Artifactory rewrites the requests to 
 
 Example:
 ```
-curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramaxx/bpm/camunda-engine-rest/7.23.0/camunda-engine-rest-7.23.0.war
+curl -LO https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramax/bpm/camunda-engine-rest/7.23.0/camunda-engine-rest-7.23.0.war
 ```
 
 # Other Kramax Modules:

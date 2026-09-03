@@ -12,7 +12,7 @@ menu:
 
 
 [Custom extensions]({{< relref "/reference/dmn/custom-extensions/_index.md" >}}) are a standardized way to extend the DMN model.
-The [Kramax extension attributes]({{< relref "/reference/dmn/custom-extensions/kramaxx-attributes.md" >}}) are fully implemented in the DMN model API.
+The [Kramax extension attributes]({{< relref "/reference/dmn/custom-extensions/kramax-attributes.md" >}}) are fully implemented in the DMN model API.
 
 Every DMN `Decision` element can have the attributes `historyTimeToLive` and `versionTag`.
 To access the extension attributes, you have to call the `Decision#getKramaxHistoryTimeToLiveString()` and 
@@ -33,6 +33,6 @@ This attribute specifies the variable name which can be used to access the resul
 It can be set and fetched similarly, calling `Input#setKramaxInputVariable()` and `Input#getKramaxInputVariable()`:
 
 ```java
-input.setKramaxInputVariable("kramaxxInput");
-String kramaxxInput = input.getKramaxInputVariable();
+input.setKramaxInputVariable("kramaxInput");
+String kramaxInput = input.getKramaxInputVariable();
 ```

@@ -2,7 +2,7 @@
 baseURL: "/"
 locale: "en-us"
 title: "Kramax documentation"
-theme: "kramaxx"
+theme: "kramax"
 
 markup:
   goldmark:
@@ -23,21 +23,21 @@ params:
   version: "3.0"
 #  versionAlias: "develop"
   forum:
-    url: "https://github.com/vodafone/kramaxx-modeler/discussions"
+    url: "https://github.com/vodafone/kramax-modeler/discussions"
     name: "Kramax Forum"
 
   # base URLs with optional version number in path using placeholder %s
-  openApiBaseURL: "https://docs.kramaxx.vodafone.org/rest/kramaxx-bpm-platform/%s"
-  javadocsBaseURL: "https://docs.kramaxx.vodafone.org/javadocs/%s"
+  openApiBaseURL: "https://docs.kramax.vodafone.org/rest/kramax-bpm-platform/%s"
+  javadocsBaseURL: "https://docs.kramax.vodafone.org/javadocs/%s"
   
   github:
-    repositoryName: "vodafone/kramaxx-docs-manual"
+    repositoryName: "vodafone/kramax-docs-manual"
     branch: "main"    
 
   algolia:
     appId: "PV6E60X9LQ"
     apiKey: "c8ee829e838a908d2aa9b1a6c1f786e3"
-    indexName: "kramaxx-vodafone-docs"
+    indexName: "kramax-vodafone-docs"
 
 outputs:
   home:

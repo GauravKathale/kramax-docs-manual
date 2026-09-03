@@ -59,14 +59,14 @@ Then, fill the table with the rules.
 
 Save your changes and replace the existing DMN file in the `src/main/resources` folder.
 
-{{< get-tag repo="kramaxx-get-started-dmn" tag="Step-5" >}}
+{{< get-tag repo="kramax-get-started-dmn" tag="Step-5" >}}
 
 # Evaluate the Decision
 
 To evaluate the *Beverages* decision, we extend the existing method in your Application class and add a new variable "guestsWithChildren".
 
 ```java
-package org.vodafone.kramaxx.bpm.getstarted.dmn;
+package org.vodafone.kramax.bpm.getstarted.dmn;
 
 @ProcessApplication("Dinner App DMN")
 public class DinnerApplication extends ServletProcessApplication
@@ -98,7 +98,7 @@ public class DinnerApplication extends ServletProcessApplication
 }
 ```
 
-{{< get-tag repo="kramaxx-get-started-dmn" tag="Step-6" >}}
+{{< get-tag repo="kramax-get-started-dmn" tag="Step-6" >}}
 
 # Build and Deploy the Web Application
 
@@ -107,30 +107,30 @@ Build the web application with Maven and replace the `dinner-dmn-0.1.0-SNAPSHOT.
 Check the log file of the Apache Tomcat server. If you see the following log message, the deployment was successful:
 
 <pre class="console">
-INFO org.vodafone.kramaxx.commons.logging.BaseLogger.logInfo
-ENGINE-07015 Detected @ProcessApplication class 'org.vodafone.kramaxx.bpm.getstarted.dish.DishApplication'
-INFO org.vodafone.kramaxx.commons.logging.BaseLogger.logInfo
+INFO org.vodafone.kramax.commons.logging.BaseLogger.logInfo
+ENGINE-07015 Detected @ProcessApplication class 'org.vodafone.kramax.bpm.getstarted.dish.DishApplication'
+INFO org.vodafone.kramax.commons.logging.BaseLogger.logInfo
 ENGINE-08024 Found processes.xml file at ../webapps/dinner-dmn-0.1.0-SNAPSHOT/WEB-INF/classes/META-INF/processes.xml
-INFO org.vodafone.kramaxx.commons.logging.BaseLogger.logInfo
+INFO org.vodafone.kramax.commons.logging.BaseLogger.logInfo
 ENGINE-08023 Deployment summary for process archive 'dinner-dmn':
 
         dinnerDecisions.dmn
 
-INFO org.vodafone.kramaxx.bpm.getstarted.dmn.DinnerApplication.evaluateDecisionTable 
+INFO org.vodafone.kramax.bpm.getstarted.dmn.DinnerApplication.evaluateDecisionTable 
 
 Desired dish: Stew
 
-INFO org.vodafone.kramaxx.bpm.getstarted.dmn.DinnerApplication.evaluateDecisionTable 
+INFO org.vodafone.kramax.bpm.getstarted.dmn.DinnerApplication.evaluateDecisionTable 
 
 Desired beverages: [Guiness, Water]
 
-INFO org.vodafone.kramaxx.commons.logging.BaseLogger.logInfo
+INFO org.vodafone.kramax.commons.logging.BaseLogger.logInfo
 ENGINE-08050 Process application Dinner App DMN successfully deployed
 </pre>
 
 # Verify the Evaluation with Cockpit
 
-Now, open [Cockpit](http://localhost:8080/kramaxx/app/cockpit) and go to the "Decisions" section.
+Now, open [Cockpit](http://localhost:8080/kramax/app/cockpit) and go to the "Decisions" section.
 
 {{< img src="../img/cockpit-decision-overview-beverages-dmn.png" >}}
 
@@ -147,4 +147,4 @@ Note that the *Dish* decision is evaluated as part of the evaluation of the *Bev
 Next,
 
 * learn more about DRG by reading the [DMN Reference]({{< relref "/reference/dmn/drg" >}}),
-* learn more about [DMN in Cockpit](https://docs.kramaxx.vodafone.org/manual/webapps/cockpit/dmn/) and specialized views for DRGs (Enterprise Feature)
+* learn more about [DMN in Cockpit](https://docs.kramax.vodafone.org/manual/webapps/cockpit/dmn/) and specialized views for DRGs (Enterprise Feature)

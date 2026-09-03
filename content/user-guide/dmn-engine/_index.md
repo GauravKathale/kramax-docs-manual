@@ -26,4 +26,4 @@ decisions can be found on [GitHub].
 
 [platform]: {{< relref "/user-guide/process-engine/decisions/_index.md" >}}
 [DMN reference]: {{< relref "/reference/dmn/_index.md" >}}
-[GitHub]: https://github.com/vodafone/kramaxx-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method
+[GitHub]: https://github.com/vodafone/kramax-bpm-examples/tree/master/dmn-engine/dmn-engine-java-main-method

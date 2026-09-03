@@ -30,8 +30,8 @@ To implement a Custom Function, create a sub-class of `FeelCustomFunctionProvide
 The following code example shows how to implement a Custom Function:
 
 ```java
-import org.vodafone.kramaxx.bpm.dmn.feel.impl.scala.function.CustomFunction;
-import org.vodafone.kramaxx.bpm.dmn.feel.impl.scala.function.FeelCustomFunctionProvider;
+import org.vodafone.kramax.bpm.dmn.feel.impl.scala.function.CustomFunction;
+import org.vodafone.kramax.bpm.dmn.feel.impl.scala.function.FeelCustomFunctionProvider;
 
 import java.util.Collection;
 import java.util.HashMap;

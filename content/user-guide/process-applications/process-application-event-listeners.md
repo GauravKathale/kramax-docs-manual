@@ -46,7 +46,7 @@ To use the global process application Event Listeners, you need to activate the 
       ...
       <plugins>
         <plugin>
-          <class>org.vodafone.kramaxx.bpm.application.impl.event.ProcessApplicationEventListenerPlugin</class>
+          <class>org.vodafone.kramax.bpm.application.impl.event.ProcessApplicationEventListenerPlugin</class>
         </plugin>
       </plugins>
     </process-engine>

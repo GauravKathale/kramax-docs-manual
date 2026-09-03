@@ -205,5 +205,5 @@ In addition to the above, a Business Rule Task can be implemented via the [Exter
 
 * [Decisions]({{< relref "/user-guide/process-engine/decisions/_index.md" >}})
 * [Service Tasks]({{< relref "/reference/bpmn20/tasks/service-task.md" >}})
-* [Tasks](http://kramaxx.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
-* [Demo using Drools on the Business Rule Task](https://github.com/vodafone/kramaxx-consulting/tree/master/one-time-examples/order-confirmation-rules)
+* [Tasks](http://kramax.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
+* [Demo using Drools on the Business Rule Task](https://github.com/vodafone/kramax-consulting/tree/master/one-time-examples/order-confirmation-rules)

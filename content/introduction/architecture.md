@@ -116,6 +116,6 @@ Frameworks used:
 
 Additional custom frameworks developed by Kramax hackers:
 
-* [kramaxx-bpmn.js](https://github.com/vodafone/kramaxx-bpmn.js): Kramax BPMN 2.0 JavaScript libraries
+* [kramax-bpmn.js](https://github.com/vodafone/kramax-bpmn.js): Kramax BPMN 2.0 JavaScript libraries
 * [ngDefine](https://github.com/Nikku/requirejs-angular-define): integration of AngularJS into RequireJS powered applications
 * [angular-data-depend](https://github.com/Nikku/angular-data-depend): toolkit for implementing complex, data heavy AngularJS applications

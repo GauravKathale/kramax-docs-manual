@@ -204,5 +204,5 @@ To declare an activity to be a compensation handler, we need to set the attribut
 
 # Additional Resources
 
-* [Tasks](http://kramaxx.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+* [Tasks](http://kramax.vodafone.org/bpmn/reference.html#activities-task) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 * [Transaction Subprocess]({{< relref "/reference/bpmn20/subprocesses/transaction-subprocess.md" >}})

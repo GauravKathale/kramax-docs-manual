@@ -101,9 +101,9 @@ The counts are collected from the start of the engine or the last reported time 
           "executed-decision-elements": { "count": 732 }
         },
         "data-collection-start-date": "2022-11-320T15:53:20.386+0100",
-        "kramaxx-integration": [
+        "kramax-integration": [
           "spring-boot-starter",
-          "kramaxx-bpm-run"
+          "kramax-bpm-run"
         ],
         "webapps": [
           "cockpit",
@@ -116,5 +116,5 @@ The counts are collected from the start of the engine or the last reported time 
 
 ## Source code 
 
-In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/vodafone/kramaxx-bpm-platform/blob/master/engine/src/main/java/org/vodafone/kramaxx/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `master` version of the feature.
+In case you want further details, you can have a look at the implementation of the diagnostics topic in [our codebase](https://github.com/vodafone/kramax-bpm-platform/blob/master/engine/src/main/java/org/vodafone/kramax/bpm/engine/impl/diagnostics/DiagnosticsCollector.java). The link leads you to the current `master` version of the feature.
 

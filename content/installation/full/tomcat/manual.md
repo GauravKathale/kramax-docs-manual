@@ -13,7 +13,7 @@ menu:
 ---
 
 
-This section describes how you can install Kramax and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.tomcat/kramaxx-tomcat) to fetch the required Kramax modules.
+This section describes how you can install Kramax and its components on a vanilla [Apache Tomcat](http://tomcat.apache.org/), if you are not able to use the pre-packaged Tomcat distribution. In addition, download a [Tomcat distribution](https://mvnrepository.com/artifact/org.vodafone.kramax.bpm.tomcat/kramax-tomcat) to fetch the required Kramax modules.
 
 {{< note title="Reading the Guide" class="info" >}}
 Throughout this guide we will use a number of variables to denote common path names and constants:
@@ -21,7 +21,7 @@ Throughout this guide we will use a number of variables to denote common path na
 * `$TOMCAT_HOME` points to the main directory of the tomcat server.
 * `$TOMCAT_VERSION` denotes the version of Tomcat server.
 * `$PLATFORM_VERSION` denotes the version of Kramax you want to install or already have installed, e.g. `1.0.0`.
-* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Kramax distribution for Tomcat, e.g. `kramaxx-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramaxx-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
+* `$TOMCAT_DISTRIBUTION` represents the downloaded pre-packaged Kramax distribution for Tomcat, e.g. `kramax-bpm-tomcat-$PLATFORM_VERSION.zip` or `kramax-bpm-tomcat-$PLATFORM_VERSION.tar.gz`.
 
 {{< /note >}}
 
@@ -36,8 +36,8 @@ The above workaround is not guaranteed to work for cases with bean references be
 
 The following test scenarios fail on Tomcat 11:
 
-* [CallActivityContextSwitchTest](https://github.com/vodafone/kramaxx-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramaxx/bpm/integrationtest/functional/context/CallActivityContextSwitchTest.java)
-* [CdiBeanCallActivityResolutionTest](https://github.com/vodafone/kramaxx-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramaxx/bpm/integrationtest/functional/cdi/CdiBeanCallActivityResolutionTest.java)
+* [CallActivityContextSwitchTest](https://github.com/vodafone/kramax-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramax/bpm/integrationtest/functional/context/CallActivityContextSwitchTest.java)
+* [CdiBeanCallActivityResolutionTest](https://github.com/vodafone/kramax-bpm-platform/blob/main/qa/integration-tests-engine/src/test/java/org/vodafone/kramax/bpm/integrationtest/functional/cdi/CdiBeanCallActivityResolutionTest.java)
 {{< /note >}}
 
 
@@ -58,12 +58,12 @@ When you create the tables manually, then you have to configure the engine to **
 
 ## Add BPM Bootstrap Server Listener
 
-Add the entry `org.vodafone.kramaxx.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping Kramax as Tomcat is started and stopped.
+Add the entry `org.vodafone.kramax.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap` as Listener before the `GlobalResourcesLifecycleListener` in your `$TOMCAT_HOME/conf/server.xml`. This class is responsible for starting and stopping Kramax as Tomcat is started and stopped.
 
 ```xml
 <Server port="8005" shutdown="SHUTDOWN">
   ...
-  <Listener className="org.vodafone.kramaxx.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap" />
+  <Listener className="org.vodafone.kramax.bpm.container.impl.tomcat.TomcatBpmPlatformBootstrap" />
   ...
 ```
 
@@ -83,7 +83,7 @@ To configure a JDBC Resource you have to edit the file `$TOMCAT_HOME/conf/server
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               uniqueResourceName="process-engine"
               driverClassName="org.h2.Driver"
-              url="jdbc:h2:./kramaxx-h2-dbs/process-engine;TRACE_LEVEL_FILE=0"
+              url="jdbc:h2:./kramax-h2-dbs/process-engine;TRACE_LEVEL_FILE=0"
               defaultTransactionIsolation="READ_COMMITTED"
               defaultAutoCommit="false"
               username="sa"
@@ -105,15 +105,15 @@ Copy the following blocks from `${TOMCAT_DISTRIBUTION}/server/apache-tomcat-${TO
   into `${TOMCAT_HOME}/conf/server.xml`:
 
 ```xml
-     <Resource name="global/kramaxx-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramaxx.bpm.ProcessEngineService" auth="Container"
-              type="org.vodafone.kramaxx.bpm.ProcessEngineService"
+     <Resource name="global/kramax-bpm-platform/process-engine/ProcessEngineService!org.vodafone.kramax.bpm.ProcessEngineService" auth="Container"
+              type="org.vodafone.kramax.bpm.ProcessEngineService"
               description="Kramax Platform Process Engine Service"
-              factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
+              factory="org.vodafone.kramax.bpm.container.impl.jndi.ProcessEngineServiceObjectFactory" />
 
-    <Resource name="global/kramaxx-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramaxx.bpm.ProcessApplicationService" auth="Container"
-              type="org.vodafone.kramaxx.bpm.ProcessApplicationService"
+    <Resource name="global/kramax-bpm-platform/process-engine/ProcessApplicationService!org.vodafone.kramax.bpm.ProcessApplicationService" auth="Container"
+              type="org.vodafone.kramax.bpm.ProcessApplicationService"
               description="Kramax Platform Process Application Service"
-              factory="org.vodafone.kramaxx.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
+              factory="org.vodafone.kramax.bpm.container.impl.jndi.ProcessApplicationServiceObjectFactory" />
 ```
 
 
@@ -130,9 +130,9 @@ You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<bpm-platform xmlns="http://kramaxx.vodafone.org/schema/1.0/BpmPlatform"
+<bpm-platform xmlns="http://kramax.vodafone.org/schema/1.0/BpmPlatform"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://kramaxx.vodafone.org/schema/1.0/BpmPlatform http://kramaxx.vodafone.org/schema/1.0/BpmPlatform ">
+  xsi:schemaLocation="http://kramax.vodafone.org/schema/1.0/BpmPlatform http://kramax.vodafone.org/schema/1.0/BpmPlatform ">
 
   <job-executor>
     <job-acquisition name="default" />
@@ -140,7 +140,7 @@ You have to add the file `bpm-platform.xml` to the folder `$TOMCAT_HOME/conf` or
 
   <process-engine name="default">
     <job-acquisition>default</job-acquisition>
-    <configuration>org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
+    <configuration>org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
     <datasource>java:jdbc/ProcessEngine</datasource>
 
     <properties>
@@ -174,20 +174,20 @@ This section describes how to install optional Kramax dependencies onto a Tomcat
 
 The following steps are required to deploy the applications:
 
-1. Download the Kramax web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.webapp/kramaxx-webapp-tomcat).
-    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm.webapp/kramaxx-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/kramaxx-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
-2. Copy the war file to `$TOMCAT_HOME/webapps/kramaxx.war`.
+1. Download the Kramax web application that contains both applications from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramax.bpm.webapp/kramax-webapp-tomcat).
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramax.bpm.webapp/kramax-webapp-tomcat-jakarta), the name of the artifact is `$PLATFORM_VERSION/kramax-webapp-tomcat-jakarta-$PLATFORM_VERSION.war`.
+2. Copy the war file to `$TOMCAT_HOME/webapps/kramax.war`.
    Optionally you may name it differently or extract it to a folder to deploy it to a different context path.
 3. Startup Tomcat.
-4. Access Cockpit and Tasklist via `/kramaxx/app/cockpit` and `/kramaxx/app/tasklist` or under the context path you configured.
+4. Access Cockpit and Tasklist via `/kramax/app/cockpit` and `/kramax/app/tasklist` or under the context path you configured.
 
 
 ## REST API
 
 The following steps are required to deploy the REST API:
 
-1. Download the REST API web application archive from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm/kramaxx-engine-rest).
-    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm/kramaxx-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/kramaxx-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
+1. Download the REST API web application archive from our [Artifact Repository](https://mvnrepository.com/artifact/org.vodafone.kramax.bpm/kramax-engine-rest).
+    * For [Tomcat 11](https://mvnrepository.com/artifact/org.vodafone.kramax.bpm/kramax-engine-rest-jakarta/), the name of the artifact is `$PLATFORM_VERSION/kramax-engine-rest-jakarta-$PLATFORM_VERSION-tomcat.war`.
 2. Copy the war file to `$TOMCAT_HOME/webapps`.
    Optionally you may rename it or extract it to a folder to deploy it to a specific context like `/engine-rest`.
 3. Startup Tomcat.
@@ -200,8 +200,8 @@ The following steps are required to deploy the REST API:
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `kramaxx-engine-plugin-connect-$PLATFORM_VERSION.jar`
-* `kramaxx-commons-utils-$PLATFORM_VERSION.jar`
+* `kramax-engine-plugin-connect-$PLATFORM_VERSION.jar`
+* `kramax-commons-utils-$PLATFORM_VERSION.jar`
 
 In order to activate Kramax Connect functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
@@ -213,7 +213,7 @@ In order to activate Kramax Connect functionality for a process engine, a proces
     <plugins>
       ... existing plugins ...
       <plugin>
-        <class>org.vodafone.kramaxx.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+        <class>org.vodafone.kramax.connect.plugin.impl.ConnectProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -227,10 +227,10 @@ In order to activate Kramax Connect functionality for a process engine, a proces
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `kramaxx-spin-dataformat-all-$PLATFORM_VERSION.jar`
-* `kramaxx-spin-core-$PLATFORM_VERSION.jar`
-* `kramaxx-engine-plugin-spin-$PLATFORM_VERSION.jar`
-* `kramaxx-commons-utils-$PLATFORM_VERSION.jar`
+* `kramax-spin-dataformat-all-$PLATFORM_VERSION.jar`
+* `kramax-spin-core-$PLATFORM_VERSION.jar`
+* `kramax-engine-plugin-spin-$PLATFORM_VERSION.jar`
+* `kramax-commons-utils-$PLATFORM_VERSION.jar`
 
 In order to activate Kramax Spin functionality for a process engine, a process engine plugin has to be registered in `$TOMCAT_HOME/conf/bpm-platform.xml` as follows:
 
@@ -243,7 +243,7 @@ In order to activate Kramax Spin functionality for a process engine, a process e
     <plugins>
       ... existing plugins ...
       <plugin>
-        <class>org.vodafone.kramaxx.spin.plugin.impl.SpinProcessEnginePlugin</class>
+        <class>org.vodafone.kramax.spin.plugin.impl.SpinProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -270,9 +270,9 @@ Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUT
 
 Add the following artifacts (if not existing) from the folder `$TOMCAT_DISTRIBUTION/lib/` to the folder `$TOMCAT_HOME/lib/`:
 
-* `kramaxx-template-engines-freemarker-$PLATFORM_VERSION.jar`
+* `kramax-template-engines-freemarker-$PLATFORM_VERSION.jar`
 * `freemarker-2.3.31.jar`
-* `kramaxx-commons-utils-$PLATFORM_VERSION.jar`
+* `kramax-commons-utils-$PLATFORM_VERSION.jar`
 
 ## GraalVM JavaScript Integration
 

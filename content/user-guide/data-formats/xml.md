@@ -10,13 +10,13 @@ menu:
 
 ---
 
-For working with XML, the Spin functions `org.vodafone.kramaxx.spin.Spin.S` and `org.vodafone.kramaxx.spin.Spin.XML` can be used as entry points. The latter offers strongly-typed access to Spin's XML API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing XML as well as mapping XML to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary XML format.
+For working with XML, the Spin functions `org.vodafone.kramax.spin.Spin.S` and `org.vodafone.kramax.spin.Spin.XML` can be used as entry points. The latter offers strongly-typed access to Spin's XML API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing XML as well as mapping XML to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary XML format.
 
 The following provides examples on how Kramax Spin can be used in the process engine to work with XML data. For illustration purposes, let us assume that a String process variable `customer` containing XML exists. It has the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<customer xmlns="http://kramaxx.vodafone.org/example" name="Jonny">
+<customer xmlns="http://kramax.vodafone.org/example" name="Jonny">
   <address>
     <street>12 High Street</street>
     <postCode>1234</postCode>
@@ -83,7 +83,7 @@ public class MyDelegate implements JavaDelegate {
 
   @Override
   public void execute(DelegateExecution execution) throws Exception {
-    String xml = "<customer xmlns=\"http:\\/\\/kramaxx.org/example\" name=\"Jonny\">"
+    String xml = "<customer xmlns=\"http:\\/\\/kramax.org/example\" name=\"Jonny\">"
           + "<address>"
             + "<street>12 High Street</street>"
             + "<postCode>1234</postCode>"
@@ -107,7 +107,7 @@ public class AddDataDelegate implements JavaDelegate {
     SpinXmlElement xmlElement = customer.getValue().append(Spin.XML("<creditLimit>1000.00</creditLimit>"));
     customer = SpinValues.xmlValue(xmlElement).create();
     execution.setVariable("customerJonny", customer);
-    //<?xml version="1.0" encoding="UTF-8"?><customer xmlns="http:\/\/kramaxx.org/example" name="Jonny"><address><street>12 High Street</street><postCode>1234</postCode></address><creditLimit xmlns="">1000.00</creditLimit></customer>
+    //<?xml version="1.0" encoding="UTF-8"?><customer xmlns="http:\/\/kramax.org/example" name="Jonny"><address><street>12 High Street</street><postCode>1234</postCode></address><creditLimit xmlns="">1000.00</creditLimit></customer>
   }
 }
 ```
@@ -121,7 +121,7 @@ Retrieving the variable deserialized by calling either `getVariableTyped("name")
 A Java object can be serialized using Spin's built-in XML data format. Let us assume that there are two Java classes, `com.example.Customer` and `com.example.Address`. Spin's default XML format relies on JAXB which is why JAXB annotations like `@XmlRootElement`, `@XmlAttribute`, and `@XmlElement` can be used to configure the serialization process. Note though that these annotations are not required. The classes look as follows:
 
 ```java
-@XmlRootElement(namespace = "http://kramaxx.vodafone.org/example")
+@XmlRootElement(namespace = "http://kramax.vodafone.org/example")
 public class Customer {
   protected String name;
   protected Address address;
@@ -129,7 +129,7 @@ public class Customer {
   @XmlAttribute
   public String getName() { .. }
 
-  @XmlElement(namespace = "http://kramaxx.vodafone.org/example")
+  @XmlElement(namespace = "http://kramax.vodafone.org/example")
   public Address getAddress() { .. }
 
   /* constructor and setters omitted for brevity */
@@ -139,10 +139,10 @@ public class Address {
   protected String street;
   protected int postCode;
 
-  @XmlElement(namespace = "http://kramaxx.vodafone.org/example")
+  @XmlElement(namespace = "http://kramax.vodafone.org/example")
   public String getStreet() { .. }
 
-  @XmlElement(namespace = "http://kramaxx.vodafone.org/example")
+  @XmlElement(namespace = "http://kramax.vodafone.org/example")
   public int getPostCode() { .. }
 
   /* constructor and setters omitted for brevity */
@@ -181,7 +181,7 @@ String customerXml = customer.getValueSerialized();
 /*
 customerXml matches:
 <?xml version="1.0" encoding="UTF-8"?>
-<customer xmlns="http://kramaxx.vodafone.org/example" name="Jonny">
+<customer xmlns="http://kramax.vodafone.org/example" name="Jonny">
   <address>
     <street>12 High Street</street>
     <postCode>1234</postCode>

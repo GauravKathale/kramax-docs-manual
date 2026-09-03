@@ -6,7 +6,7 @@ weight: 28
 menu:
   main:
     name: "Element Templates"
-    identifier: "kramaxx-modeler-element-templates"
+    identifier: "kramax-modeler-element-templates"
     parent: "modeler"
     pre: "Extend the modeler with custom elements."
 
@@ -20,7 +20,7 @@ Element Templates can be used with Kramax Modeler version 1.0 and higher. They a
 
 # Overview
 
-Element templates are a way to extend the [Kramax Modeler](https://kramaxx.org/bpmn/tool/) with domain specific diagram elements such as service and user tasks.
+Element templates are a way to extend the [Kramax Modeler](https://kramax.org/bpmn/tool/) with domain specific diagram elements such as service and user tasks.
 
 {{< img src="img/overview.png" title="Custom fields in the Kramax Modeler" >}}
 

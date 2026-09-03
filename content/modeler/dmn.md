@@ -6,7 +6,7 @@ weight: 20
 menu:
   main:
     name: "DMN"
-    identifier: "kramaxx-modeler-dmn"
+    identifier: "kramax-modeler-dmn"
     parent: "modeler"
     pre: "How to model executable DMN 1.3 decision diagrams (DRD) and tables."
 

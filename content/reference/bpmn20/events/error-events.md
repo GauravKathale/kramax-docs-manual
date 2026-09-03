@@ -230,5 +230,5 @@ An error can be handled by the error start event in the event sub process and th
 
 ## Additional Resources
 
-*   [Error Events](http://kramaxx.vodafone.org/bpmn/reference.html#events-error) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)
+*   [Error Events](http://kramax.vodafone.org/bpmn/reference.html#events-error) in the [BPMN 2.0 Modeling Reference](http://kramax.vodafone.org/bpmn/reference.html)
 *   [Incidents]({{< relref "/user-guide/process-engine/incidents.md" >}}) in the [User Guide]({{< relref "/user-guide/_index.md" >}})

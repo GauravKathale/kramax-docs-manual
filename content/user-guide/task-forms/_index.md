@@ -17,7 +17,7 @@ There are different types of forms which are primarily used in Tasklist. To impl
 Forms are referenced using Form Keys or Form References and can either be embedded in Kramax Tasklist or handled by a custom application. Depending on your use-case, different Form Types can be used:
 
 1. [Embedded Task Forms](#embedded-task-forms) allow you to embed custom HTML and JavaScript forms into Tasklist.
-2. [Kramax Forms](#kramaxx-forms) offer visual editing of forms in the Kramax Modeler and can be used for less complex forms. Kramax Forms are the only form type that can be referenced either by Form Key or by Form Reference.
+2. [Kramax Forms](#kramax-forms) offer visual editing of forms in the Kramax Modeler and can be used for less complex forms. Kramax Forms are the only form type that can be referenced either by Form Key or by Form Reference.
 3. [External Task Forms](#external-task-forms) can be used to link to custom applications. The Form will not be embedded in Tasklist.
 
 If no form key is present, a [Generic Task Form](#generic-task-forms) will be shown.
@@ -33,13 +33,13 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
   </tr>
   <tr>
     <td>FORM-TYPE</td>
-    <td>Can be <code>embedded</code> or <code>kramaxx-forms</code> depending on the form type. If no type is set, the form will be shown as an <a href="#external-task-forms">External Task Form</a>.</td>
+    <td>Can be <code>embedded</code> or <code>kramax-forms</code> depending on the form type. If no type is set, the form will be shown as an <a href="#external-task-forms">External Task Form</a>.</td>
   </tr>
   <tr>
     <td>LOCATION</td>
     <td>Can be either <code>deployment</code> or <code>app</code>:
     <ul>
-      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< relref "/get-started/quick-start/deploy/#use-the-kramaxx-modeler-to-deploy-the-process">}}"by deploying from the Kramax Modeler</a>), which means that it is stored in the Kramax database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
+      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< relref "/get-started/quick-start/deploy/#use-the-kramax-modeler-to-deploy-the-process">}}"by deploying from the Kramax Modeler</a>), which means that it is stored in the Kramax database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
       <li><em>app</em>: Add the file to your development project in a folder <code>src/main/webapp/forms</code>. The form file will be packaged into your deployment artifact (typically a WAR archive). During runtime it will be loaded from there.</li>
     </ul>
   </td>
@@ -51,10 +51,10 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
 </table>
 
 
-To configure the form in your process, open the process with the [Kramax Modeler](http://kramaxx.vodafone.org/bpmn/tool/) and select the desired [UserTask][user-tasks] or [StartEvent][start-event]. Open the properties panel and enter the Form Key. The relevant XML tag looks like this:
+To configure the form in your process, open the process with the [Kramax Modeler](http://kramax.vodafone.org/bpmn/tool/) and select the desired [UserTask][user-tasks] or [StartEvent][start-event]. Open the properties panel and enter the Form Key. The relevant XML tag looks like this:
 
 ```xml
-<userTask id="theTask" camunda:formKey="kramaxx-forms:deployment:forms/userTask.form"
+<userTask id="theTask" camunda:formKey="kramax-forms:deployment:forms/userTask.form"
           camunda:candidateUsers="John, Mary"
           name="my Task">
 ```
@@ -128,14 +128,14 @@ The attributes `camunda:formRef` and `camunda:formRefVersion` can be specified a
 </bpmn:userTask>
 ```
 
-{{< img src="img/reference-kramaxx-form.png" title="Provide Form Key for Kramax Forms" >}}
+{{< img src="img/reference-kramax-form.png" title="Provide Form Key for Kramax Forms" >}}
 
 ## Form Key
 
 Aa an alternative to `formRef` you can reference a Kramax Form file with a `deployment` or `app` [form key]({{< relref "/user-guide/task-forms/_index.md#form-key-details" >}}):
 
-* `kramaxx-forms:deployment:FORM_NAME.form`
-* `kramaxx-forms:app:forms/FORM_NAME.form`
+* `kramax-forms:deployment:FORM_NAME.form`
+* `kramax-forms:app:forms/FORM_NAME.form`
 
 To enter the `formKey` in the Modeler,  you have to select `Embedded or External Task Forms` as Type in the dropdown. 
 
@@ -145,7 +145,7 @@ From the form developers point of view, `formRef` offers more flexibility than `
 
 To define a default value for a form field, a process variable with the same name as the form field key needs to be defined. Local variables (e.g. created by defining an [Input Parameter](../process-engine/variables/#input-output-variable-mapping) for the User Task) take precedence over process variables.
 
-{{< img src="img/variable-mapping-kramaxx-form.png" title="User Input/Output Mappings for default values for form fields" >}}
+{{< img src="img/variable-mapping-kramax-form.png" title="User Input/Output Mappings for default values for form fields" >}}
 
 The submitted values of a form are returned as variables to the process engine:
 
@@ -195,7 +195,7 @@ If you want to include your Kramax Form as part of the `deployment`, then you ne
 {{< note title="Automatic deployment" class="warning" >}}
 Kramax Forms are not automatically deployed as part of a [process archive]({{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}) by default. 
 You need to configure it accordingly by adding it as a resource directly or by adding `form` to the list of `additionalResourceSuffixes`.
-Using [Kramax Run]({{< relref "/user-guide/kramaxx-bpm-run.md#starting-with-kramaxx-platform-run" >}}), all additional resources - including Kramax Forms - 
+Using [Kramax Run]({{< relref "/user-guide/kramax-bpm-run.md#starting-with-kramax-platform-run" >}}), all additional resources - including Kramax Forms - 
 placed inside the `configuration/resources/` directory are automatically deployed.
 {{< /note >}}
 
@@ -283,7 +283,7 @@ The Kramax process engine supports generating HTML task forms based on Form Data
 </userTask>
 ```
 
-Form metadata can be graphically edited using the [Kramax Modeler](https://kramaxx.vodafone.org/products/kramaxx-platform/modeler/).
+Form metadata can be graphically edited using the [Kramax Modeler](https://kramax.vodafone.org/products/kramax-platform/modeler/).
 
 This form would look like this in Tasklist:
 
@@ -465,7 +465,7 @@ Kramax supports custom validators. Custom validators are referenced using their 
   The name attribute must be set to "validator" in order to use custom form field validator.
 {{< /note >}}
 
-A custom validator implements the `org.vodafone.kramaxx.bpm.engine.impl.form.validator.FormFieldValidator` interface:
+A custom validator implements the `org.vodafone.kramax.bpm.engine.impl.form.validator.FormFieldValidator` interface:
 
 ```java
 public class CustomValidator implements FormFieldValidator {

@@ -32,12 +32,12 @@ Kramax distinguishes between read-only and writable user repositories. A read-on
 
 To provide a custom identity provider implementation, the following interfaces can be implemented:
 
-* {{< javadocref page="org/vodafone/kramaxx/bpm/engine/impl/identity/ReadOnlyIdentityProvider.html" text="org.vodafone.kramaxx.bpm.engine.impl.identity.ReadOnlyIdentityProvider" >}}
-* {{< javadocref page="org/vodafone/kramaxx/bpm/engine/impl/identity/WritableIdentityProvider.html" text="org.vodafone.kramaxx.bpm.engine.impl.identity.WritableIdentityProvider" >}}
+* {{< javadocref page="org/vodafone/kramax/bpm/engine/impl/identity/ReadOnlyIdentityProvider.html" text="org.vodafone.kramax.bpm.engine.impl.identity.ReadOnlyIdentityProvider" >}}
+* {{< javadocref page="org/vodafone/kramax/bpm/engine/impl/identity/WritableIdentityProvider.html" text="org.vodafone.kramax.bpm.engine.impl.identity.WritableIdentityProvider" >}}
 
 # Custom Whitelist for User, Group and Tenant IDs
 
-User, Group and Tenant IDs can be matched against a Whitelist Pattern to determine if the provided ID is acceptable or not. The default (global) Regular Expression pattern to match against is **"[a-zA-Z0-9]+|kramaxx-admin"** i.e. any combination of alphanumeric values or _'kramaxx-admin'_.
+User, Group and Tenant IDs can be matched against a Whitelist Pattern to determine if the provided ID is acceptable or not. The default (global) Regular Expression pattern to match against is **"[a-zA-Z0-9]+|kramax-admin"** i.e. any combination of alphanumeric values or _'kramax-admin'_.
 
 If your organisation allows the usage of additional characters (ex.: special characters), the ProcessEngineConfiguration propery `generalResourceWhitelistPattern` should be set with the appropriate pattern in the engine's configuration file. Standard [Java Regular Expression](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html) syntax can be used. For example, to accept any character, the following property value can be used:
 
@@ -53,7 +53,7 @@ The definition of different patterns for User, Group and Tenant IDs is possible 
 <property name="tenantResourceWhitelistPattern" value=".+" />
 ```
 
-Note that if a certain pattern isn't defined (ex. the tenant whitelist pattern), the general pattern will be used, either the default one (`"[a-zA-Z0-9]+|kramaxx-admin"`) or one defined in the configuration file.    
+Note that if a certain pattern isn't defined (ex. the tenant whitelist pattern), the general pattern will be used, either the default one (`"[a-zA-Z0-9]+|kramax-admin"`) or one defined in the configuration file.    
 
 # The Database Identity Service
 
@@ -66,7 +66,7 @@ The database identity service implements both `ReadOnlyIdentityProvider` and `Wr
 
 The LDAP identity service provides read-only access to an LDAP-based user/group repository. The identity service provider is implemented as a [Process Engine Plugin]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}) and can be added to the process engine configuration. In that case it replaces the default database identity service.
 
-To use the LDAP identity service, the `kramaxx-identity-ldap.jar` library has to be added to the classloader of the process engine.
+To use the LDAP identity service, the `kramax-identity-ldap.jar` library has to be added to the classloader of the process engine.
 
 {{< note title="" class="info" >}}
   Please import the [Kramax BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramax project.
@@ -74,8 +74,8 @@ To use the LDAP identity service, the `kramaxx-identity-ldap.jar` library has to
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.identity</groupId>
-  <artifactId>kramaxx-identity-ldap</artifactId>
+  <groupId>org.vodafone.kramax.bpm.identity</groupId>
+  <artifactId>kramax-identity-ldap</artifactId>
 </dependency>
 ```
 
@@ -87,7 +87,7 @@ The following is an example of how to configure the LDAP Identity Provider Plugi
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <bean id="processEngineConfiguration" class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+  <bean id="processEngineConfiguration" class="org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
     ...
     <property name="processEnginePlugins">
       <list>
@@ -95,11 +95,11 @@ The following is an example of how to configure the LDAP Identity Provider Plugi
       </list>
     </property>
   </bean>
-  <bean id="ldapIdentityProviderPlugin" class="org.vodafone.kramaxx.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin">
+  <bean id="ldapIdentityProviderPlugin" class="org.vodafone.kramax.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin">
     <property name="serverUrl" value="ldap://localhost:3433/" />
-    <property name="managerDn" value="uid=daniel,ou=office-berlin,o=kramaxx,c=org" />
+    <property name="managerDn" value="uid=daniel,ou=office-berlin,o=kramax,c=org" />
     <property name="managerPassword" value="daniel" />
-    <property name="baseDn" value="o=kramaxx,c=org" />
+    <property name="baseDn" value="o=kramax,c=org" />
 
     <property name="userSearchBase" value="" />
     <property name="userSearchFilter" value="(objectclass=person)" />
@@ -125,21 +125,21 @@ The following is an example of how to configure the LDAP Identity Provider Plugi
 ```xml
 <process-engine name="default">
   <job-acquisition>default</job-acquisition>
-  <configuration>org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
+  <configuration>org.vodafone.kramax.bpm.engine.impl.cfg.StandaloneProcessEngineConfiguration</configuration>
   <datasource>java:jdbc/ProcessEngine</datasource>
 
   <properties>...</properties>
 
   <plugins>
     <plugin>
-      <class>org.vodafone.kramaxx.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin</class>
+      <class>org.vodafone.kramax.bpm.identity.impl.ldap.plugin.LdapIdentityProviderPlugin</class>
       <properties>
 
         <property name="serverUrl">ldap://localhost:4334/</property>
-        <property name="managerDn">uid=jonny,ou=office-berlin,o=kramaxx,c=org</property>
+        <property name="managerDn">uid=jonny,ou=office-berlin,o=kramax,c=org</property>
         <property name="managerPassword">s3cr3t</property>
 
-        <property name="baseDn">o=kramaxx,c=org</property>
+        <property name="baseDn">o=kramax,c=org</property>
 
         <property name="userSearchBase"></property>
         <property name="userSearchFilter">(objectclass=person)</property>
@@ -199,7 +199,7 @@ The LDAP Identity Provider provides the following configuration properties:
     <td><code>baseDn</code></td>
     <td>
       <p>The base DN: Identifies the root of the LDAP directory. Is appended to all DN names composed for searching for users or groups.</p>
-      <p><em>Example:</em> <code>o=kramaxx,c=org</code></p>
+      <p><em>Example:</em> <code>o=kramax,c=org</code></p>
     </td>
   </tr>
   <tr>

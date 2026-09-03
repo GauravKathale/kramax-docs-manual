@@ -11,7 +11,7 @@ menu:
 ---
 
 
-Kramax provides Spring Security OAuth2 integration with the `kramaxx-bpm-spring-boot-starter-security` library.
+Kramax provides Spring Security OAuth2 integration with the `kramax-bpm-spring-boot-starter-security` library.
 This library contains the Spring Security and Spring Security OAuth2 dependencies along with
 configuration classes that integrate Spring Security with Kramax Webapp's authentication.
 
@@ -27,8 +27,8 @@ In order to enable the Spring Security OAuth2 integration in Spring Boot, add th
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm.springboot</groupId>
-  <artifactId>kramaxx-bpm-spring-boot-starter-security</artifactId>
+  <groupId>org.vodafone.kramax.bpm.springboot</groupId>
+  <artifactId>kramax-bpm-spring-boot-starter-security</artifactId>
 </dependency>
 ```
 
@@ -52,14 +52,14 @@ registration in the application properties (`spring.security.oauth2.client.regis
 Configuration activates if there is OAuth2 client registration configured. This class configures the Spring
 Security filter chain to secure the Kramax Webapps.
 
-Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxSpringSecurityOAuth2AutoConfiguration.html" text="KramaxSpringSecurityOAuth2AutoConfiguration" >}}
+Spring auto configuration class: {{< javadocref page="org/vodafone/kramax/bpm/spring/boot/starter/security/oauth2/impl/KramaxSpringSecurityOAuth2AutoConfiguration.html" text="KramaxSpringSecurityOAuth2AutoConfiguration" >}}
 
 ## Spring Security Disabled Auto Configuration
 
 Configuration activates if there is **no** OAuth2 client registration configured. This class configures the Spring
 Security filter chain to a permit all mode.
 
-Spring auto configuration class: {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/KramaxBpmSpringSecurityDisableAutoConfiguration.html" text="KramaxBpmSpringSecurityDisableAutoConfiguration" >}}
+Spring auto configuration class: {{< javadocref page="org/vodafone/kramax/bpm/spring/boot/starter/security/oauth2/impl/KramaxBpmSpringSecurityDisableAutoConfiguration.html" text="KramaxBpmSpringSecurityDisableAutoConfiguration" >}}
 
 # OAuth2 Client Registration
 
@@ -91,9 +91,9 @@ Make sure to correctly configure which token attribute should be used as the Use
 
 For creating initial authorizations in your application, you have the following options available:
 
-1. The `kramaxx.bpm.admin-user` property to create an administrator user with authorizations:
+1. The `kramax.bpm.admin-user` property to create an administrator user with authorizations:
    ```yaml
-   kramaxx.bpm:
+   kramax.bpm:
      admin-user:
        id: demo
        password: demo
@@ -101,21 +101,21 @@ For creating initial authorizations in your application, you have the following 
        lastName: Demo
    ```
 
-  - See [Kramax Engine Properties]({{< relref "/user-guide/spring-boot-integration/configuration#kramaxx-engine-properties" >}}) documentation for more details.
+  - See [Kramax Engine Properties]({{< relref "/user-guide/spring-boot-integration/configuration#kramax-engine-properties" >}}) documentation for more details.
 2. The [Administrator Authorization Plugin]({{< relref "/user-guide/process-engine/authorization-service.md#the-administrator-authorization-plugin" >}})
 to grant administrator authorizations for a particular OAuth2 user or group.
 
 # OAuth2 Identity Provider
 
 Additionally to the OAuth2 login, Kramax also provides support to use groups from OAuth2.
-This is achieved with a custom [identity service]({{< relref "/user-guide/process-engine/identity-service.md" >}}), called {{< javadocref page="org/vodafone/kramaxx/bpm/spring/boot/starter/security/oauth2/impl/OAuth2IdentityProvider.html" text="OAuth2IdentityProvider" >}}.
+This is achieved with a custom [identity service]({{< relref "/user-guide/process-engine/identity-service.md" >}}), called {{< javadocref page="org/vodafone/kramax/bpm/spring/boot/starter/security/oauth2/impl/OAuth2IdentityProvider.html" text="OAuth2IdentityProvider" >}}.
 
 This is a read-only identity provider that configures user's groups from the [Spring Security's granted authorities][Authorities].
 This identity provider also supports the default Kramax Database Identity Service as a fallback for authentications for the REST API.
 
 The identity provider is activated by default. You can override this with the following properties:
 ```yaml
-kramaxx.bpm.oauth2:
+kramax.bpm.oauth2:
   identity-provider:
     enabled: false
 ```
@@ -129,7 +129,7 @@ authorities, that are by default populated with the scope (`scp`) claim.
 
 This mapper can be enabled with the `group-name-attribute` property:
 ```yaml
-kramaxx.bpm.oauth2:
+kramax.bpm.oauth2:
   identity-provider:
     enabled: true
     group-name-attribute: cognito:groups
@@ -153,7 +153,7 @@ This needs to contain a [Spring auto configuration][AutoConfig] with the custom 
 
 ## Configuration
 
-All configuration properties of the identity provider start with the prefix `kramaxx.bpm.oauth2.identity-provider`.
+All configuration properties of the identity provider start with the prefix `kramax.bpm.oauth2.identity-provider`.
 The following properties are available:
 
 <table class="table table-striped">
@@ -217,15 +217,15 @@ Please refer Spring's [OpenID Connect 1.0 Client-Initiated Logout][SSOLogout] se
 In order to configure this feature, use the following properties:
 
 ```yaml
-kramaxx.bpm.oauth2:
+kramax.bpm.oauth2:
   sso-logout:
     enabled: true
-    postLogoutRedirectUri: https://kramaxx.vodafone.org/
+    postLogoutRedirectUri: https://kramax.vodafone.org/
 ```
 
 ## Configuration
 
-All configuration properties of the identity provider start with the prefix `kramaxx.bpm.oauth2.sso-logout`.
+All configuration properties of the identity provider start with the prefix `kramax.bpm.oauth2.sso-logout`.
 The following properties are available:
 
 <table class="table table-striped">
@@ -276,7 +276,7 @@ Logging can be enabled for the package via the following property:
 ```yaml
 logging:
   level:
-    org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2: DEBUG
+    org.vodafone.kramax.bpm.spring.boot.starter.security.oauth2: DEBUG
 ```
 
 # Example
@@ -285,10 +285,10 @@ In this section we provide an example configuration with OKTA as OIDC provider.
 Additionally, we also mark and explain a few lines:
 
 ```yaml
-kramaxx.bpm.oauth2:
+kramax.bpm.oauth2:
  sso-logout: # 1
    enabled: true
-   postLogoutRedirectUri: https://kramaxx.vodafone.org/
+   postLogoutRedirectUri: https://kramax.vodafone.org/
  identity-provider:
    group-name-attribute: okta-groups # 2
 
@@ -337,8 +337,8 @@ Or in the application properties:
 spring:
   autoconfigure:
     exclude:
-      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxSpringSecurityOAuth2AutoConfiguration
-      - org.vodafone.kramaxx.bpm.spring.boot.starter.security.oauth2.KramaxBpmSpringSecurityDisableAutoConfiguration
+      - org.vodafone.kramax.bpm.spring.boot.starter.security.oauth2.KramaxSpringSecurityOAuth2AutoConfiguration
+      - org.vodafone.kramax.bpm.spring.boot.starter.security.oauth2.KramaxBpmSpringSecurityDisableAutoConfiguration
 ```
 
 For more information, please refer to Spring's [Disabling Specific Auto-configuration Classes][DisableAutoConfig] documentation.

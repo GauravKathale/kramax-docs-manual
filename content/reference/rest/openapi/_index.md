@@ -28,15 +28,15 @@ The documentation is shipped as a single `openapi.json` file archived in a jar a
 Download the Kramax REST API artifact containing the OpenAPI documentation [here][artifact-link]. Choose the correct version and then download the `jar` file.
 
 [spec-3.0.2]: https://github.com/OAI/OpenAPI-Specification/blob/3.0.2/versions/3.0.2.md
-[artifact-link]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramaxx/bpm/camunda-engine-rest-openapi/
+[artifact-link]: https://artifacts.camunda.com/artifactory/camunda-bpm/org/vodafone/kramax/bpm/camunda-engine-rest-openapi/
 
 Alternatively, you can obtain this artifact with the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine-rest-openapi</artifactId>
-  <version>${version.kramaxx}</version>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine-rest-openapi</artifactId>
+  <version>${version.kramax}</version>
 </dependency>
 ```
 
@@ -76,7 +76,7 @@ Start a Process engine with enabled cross-origin requests, and you will be able 
 Some API Tools also support import of endpoints via upload of a OpenAPI document.
 For example, [Postman][postman-site] users can [import the OpenAPI documentation][postman-import] and work with the REST endpoints from a single place.
 
-[cam-platform-run]: {{< relref "/user-guide/kramaxx-bpm-run.md" >}}
+[cam-platform-run]: {{< relref "/user-guide/kramax-bpm-run.md" >}}
 [swagger-ui]: https://github.com/swagger-api/swagger-ui
 [swagger-editor]: https://editor.swagger.io/
 [postman-site]: https://www.postman.com/

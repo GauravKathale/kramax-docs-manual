@@ -31,9 +31,9 @@ The Maven coordinates for the Spin Process Engine Plugin can be found below:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine-plugin-spin</artifactId>
-  <version>${kramaxx.version}</version>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine-plugin-spin</artifactId>
+  <version>${kramax.version}</version>
 </dependency>
 ```
 
@@ -132,4 +132,4 @@ FEEL context:
 
  
 [type doc]: https://camunda.github.io/feel-scala/1.11/feel-data-types
-[spin plugin]: {{< relref "/user-guide/data-formats/configuring-spin-integration.md#kramaxx-engine-plugin-spin" >}}
+[spin plugin]: {{< relref "/user-guide/data-formats/configuring-spin-integration.md#kramax-engine-plugin-spin" >}}

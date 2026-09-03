@@ -46,11 +46,11 @@ to ensure correct versions for every Kramax project.
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaxx.connect</groupId>
-      <artifactId>kramaxx-connect-bom</artifactId>
+      <groupId>org.vodafone.kramax.connect</groupId>
+      <artifactId>kramax-connect-bom</artifactId>
       <scope>import</scope>
       <type>pom</type>
-      <version>${version.kramaxx}</version>
+      <version>${version.kramax}</version>
     </dependency>
   </dependencies>
 </dependencyManagement>
@@ -59,26 +59,26 @@ to ensure correct versions for every Kramax project.
 ```xml
 <dependencies>
   <dependency>
-    <groupId>org.vodafone.kramaxx.connect</groupId>
-    <artifactId>kramaxx-connect-core</artifactId>
+    <groupId>org.vodafone.kramax.connect</groupId>
+    <artifactId>kramax-connect-core</artifactId>
   </dependency>
 
   <dependency>
-    <groupId>org.vodafone.kramaxx.connect</groupId>
-    <artifactId>kramaxx-connect-connectors-all</artifactId>
+    <groupId>org.vodafone.kramax.connect</groupId>
+    <artifactId>kramax-connect-connectors-all</artifactId>
   </dependency>
 </dependencies>
 ```
 
-Kramax Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramaxx.connect).
+Kramax Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramax.connect).
 
 {{< note title="Process engine plugin" class="info" >}}
-If you are using Connect in the Kramax process engine, you also need the `kramaxx-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
+If you are using Connect in the Kramax process engine, you also need the `kramax-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
 {{< /note >}}
 
 # Logging
 
-Kramax Connect uses [kramaxx-commons-logging](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
+Kramax Connect uses [kramax-commons-logging](https://github.com/vodafone/kramax-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
 a logging backend. To enable logging a SLF4J implementation has to be part of
 your classpath. For example `slf4j-simple`, `log4j12` or `logback-classic`.
 

@@ -11,7 +11,7 @@ menu:
 ---
 
 
-With the dependency [kramaxx-connect](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/connect), the process engine supports simple
+With the dependency [kramax-connect](https://github.com/vodafone/kramax-bpm-platform/tree/master/connect), the process engine supports simple
 connectors. Currently the following connector implementations exist:
 
 <table class="table">
@@ -29,7 +29,7 @@ connectors. Currently the following connector implementations exist:
   </tr>
 </table>
 
-It is also possible to implement your own custom connector in kramaxx. For more information about extending connectors please visit the [Connector reference]({{< relref "/reference/connect/extending-connect.md" >}}). 
+It is also possible to implement your own custom connector in kramax. For more information about extending connectors please visit the [Connector reference]({{< relref "/reference/connect/extending-connect.md" >}}). 
 
 
 # Configure Kramax Connect
@@ -38,9 +38,9 @@ As Kramax Connect is available only partially when using the process engine (che
 
 The following `connect` artifacts exist:
 
-* `kramaxx-connect-core`: a jar that contains only the core Connect classes. The artifact already is available as dependency to the process engine. In addition to `kramaxx-connect-core`, single connector implementations like `kramaxx-connect-http-client` and `kramaxx-connect-soap-http-client` exist. These dependencies should be used when the default connectors have to be reconfigured or when custom connector implementations are used.
-* `kramaxx-connect-connectors-all`: a single jar without dependencies that contains the HTTP and SOAP connectors.
-* `kramaxx-engine-plugin-connect`: a process engine plugin to add Connect to Kramax.
+* `kramax-connect-core`: a jar that contains only the core Connect classes. The artifact already is available as dependency to the process engine. In addition to `kramax-connect-core`, single connector implementations like `kramax-connect-http-client` and `kramax-connect-soap-http-client` exist. These dependencies should be used when the default connectors have to be reconfigured or when custom connector implementations are used.
+* `kramax-connect-connectors-all`: a single jar without dependencies that contains the HTTP and SOAP connectors.
+* `kramax-engine-plugin-connect`: a process engine plugin to add Connect to Kramax.
 
 
 # Maven Coordinates
@@ -50,54 +50,54 @@ The following `connect` artifacts exist:
 {{< /note >}}
 
 
-## kramaxx-connect-core
+## kramax-connect-core
 
-`kramaxx-connect-core` contains the core classes of Connect. Additionally, the HTTP and SOAP connectors can be added with the dependencies `kramaxx-connect-http-client` and `kramaxx-connect-soap-http-client`. These artifacts will transitively pull in their dependencies, like Apache HTTP client. For integration with the engine, the artifact `kramaxx-engine-plugin-connect` is needed. Given that the BOM is imported, the Maven coordinates are as follows:
+`kramax-connect-core` contains the core classes of Connect. Additionally, the HTTP and SOAP connectors can be added with the dependencies `kramax-connect-http-client` and `kramax-connect-soap-http-client`. These artifacts will transitively pull in their dependencies, like Apache HTTP client. For integration with the engine, the artifact `kramax-engine-plugin-connect` is needed. Given that the BOM is imported, the Maven coordinates are as follows:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.connect</groupId>
-  <artifactId>kramaxx-connect-core</artifactId>
+  <groupId>org.vodafone.kramax.connect</groupId>
+  <artifactId>kramax-connect-core</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.connect</groupId>
-  <artifactId>kramaxx-connect-http-client</artifactId>
+  <groupId>org.vodafone.kramax.connect</groupId>
+  <artifactId>kramax-connect-http-client</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.connect</groupId>
-  <artifactId>kramaxx-connect-soap-http-client</artifactId>
+  <groupId>org.vodafone.kramax.connect</groupId>
+  <artifactId>kramax-connect-soap-http-client</artifactId>
 </dependency>
 ```
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.bpm</groupId>
-  <artifactId>kramaxx-engine-plugin-connect</artifactId>
+  <groupId>org.vodafone.kramax.bpm</groupId>
+  <artifactId>kramax-engine-plugin-connect</artifactId>
 </dependency>
 ```
 
 
-## kramaxx-connect-connectors-all
+## kramax-connect-connectors-all
 
-This artifact contains the HTTP and SOAP connectors as well as their dependencies. To avoid conflicts with other versions of these dependencies, the dependencies are relocated to different packages. `kramaxx-connect-connectors-all` has the following Maven coordinates:
+This artifact contains the HTTP and SOAP connectors as well as their dependencies. To avoid conflicts with other versions of these dependencies, the dependencies are relocated to different packages. `kramax-connect-connectors-all` has the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaxx.connect</groupId>
-  <artifactId>kramaxx-connect-connectors-all</artifactId>
+  <groupId>org.vodafone.kramax.connect</groupId>
+  <artifactId>kramax-connect-connectors-all</artifactId>
 </dependency>
 ```
 
 
 ## Configure the Process Engine Plugin
 
-`kramaxx-engine-plugin-connect` contains a class called `org.vodafone.kramaxx.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
+`kramax-engine-plugin-connect` contains a class called `org.vodafone.kramax.connect.plugin.impl.ConnectProcessEnginePlugin` that can be registered with a process engine using the [plugin mechanism]({{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}). For example, a `bpm-platform.xml` file with the plugin enabled would look as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -109,7 +109,7 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
     ...
     <plugins>
       <plugin>
-        <class>org.vodafone.kramaxx.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+        <class>org.vodafone.kramax.connect.plugin.impl.ConnectProcessEnginePlugin</class>
       </plugin>
     </plugins>
     ...
@@ -124,9 +124,9 @@ This artifact contains the HTTP and SOAP connectors as well as their dependencie
 
 # Use Connectors
 
-To use a connector, you have to add the Kramax extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaxx-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramaxx-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
+To use a connector, you have to add the Kramax extension element [connector]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramax-connector" >}}). The connector is configured by a unique [connectorId]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#kramax-connectorid" >}}), which specifies the used connector implementation. The ids of the currently supported connectors can be found at the beginning of this section. Additionally, an [input/output mapping]({{< relref "/user-guide/process-engine/variables.md#input-output-variable-mapping" >}}) is used to configure the connector. The required input parameters and the available output parameters depend on the connector implementation. Additional input parameters can also be provided to be used within the connector.
 
-As an example, a shortened configuration of the Kramax SOAP connector implementation is shown. A complete [example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Kramax examples repository](https://github.com/vodafone/kramaxx-bpm-examples) on GitHub.
+As an example, a shortened configuration of the Kramax SOAP connector implementation is shown. A complete [example](https://github.com/vodafone/kramax-bpm-examples/tree/master/servicetask/soap-service) can be found in the [Kramax examples repository](https://github.com/vodafone/kramax-bpm-examples) on GitHub.
 
 ```xml
 <serviceTask id="soapRequest" name="Simple SOAP Request">
@@ -155,4 +155,4 @@ As an example, a shortened configuration of the Kramax SOAP connector implementa
 </serviceTask>
 ```
 
-A full [example](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/servicetask/rest-service) of the REST connector can also be found in the [Kramax examples repository](https://github.com/vodafone/kramaxx-bpm-examples) on GitHub.
+A full [example](https://github.com/vodafone/kramax-bpm-examples/tree/master/servicetask/rest-service) of the REST connector can also be found in the [Kramax examples repository](https://github.com/vodafone/kramax-bpm-examples) on GitHub.

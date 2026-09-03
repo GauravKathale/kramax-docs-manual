@@ -14,13 +14,13 @@ menu:
 
 The Kramax Spring Boot Application created in previous step uses the default and best practice configuration, embedded in a starter. 
 There are several ways to customize or override the configuration. The easiest is to provide a set of parameters in the `application.yaml` (or `application.properties`) file. 
-The full list of supported configuration parameters can be found [here]({{< relref "/user-guide/spring-boot-integration/configuration/#kramaxx-engine-properties" >}}).
+The full list of supported configuration parameters can be found [here]({{< relref "/user-guide/spring-boot-integration/configuration/#kramax-engine-properties" >}}).
 
 ## Customize Configuration
 
 Let's create an `application.yaml` file in the `src/main/resources` folder with the following content:
 ```yaml
-kramaxx.bpm:
+kramax.bpm:
   admin-user:
     id: demo
     password: demo
@@ -42,4 +42,4 @@ You can use "demo/demo", which we configured before, to access the Kramax web ap
   
 After you logged in, you can go to Tasklist and see that a filter named "All tasks" was created, though it does not contain any tasks so far.
 
-{{< get-tag repo="kramaxx-get-started-spring-boot" tag="Step-2" >}}
+{{< get-tag repo="kramax-get-started-spring-boot" tag="Step-2" >}}
