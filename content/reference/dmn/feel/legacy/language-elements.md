@@ -16,10 +16,10 @@ aliases: [reference/dmn11/feel/legacy/language-elements/]
 {{< note title="Heads Up!" class="info" >}}
 This page provides information on the legacy FEEL Engine, that was used before the 
 current <a href="{{< relref "/user-guide/dmn-engine/feel/_index.md" >}}">Scala-based FEEL Engine</a>
-was integrated into KramaX.
+was integrated into Kramaxx.
 {{< /note >}}
 
-The KramaX DMN engine supports FEEL for [input entries]. The FEEL term for
+The Kramaxx DMN engine supports FEEL for [input entries]. The FEEL term for
 expression in input entries are simple unary tests. These simple unary tests
 test an input value against an expression and return either `true` if the test
 is satisfied or `false` otherwise. The expression can contain different
@@ -169,7 +169,7 @@ Examples:
 
 # Date Functions
 
-FEEL simple unary tests provide functions to create [date types]. The KramaX
+FEEL simple unary tests provide functions to create [date types]. The Kramaxx
 DMN engine supports the following date functions:
 
 - `date and time("...")`: Creates a date and time value from a String with the

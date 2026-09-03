@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The DMN module in KramaX Control Center provides visibility into deployed decision definitions and their execution through decision instances. It allows users to explore decision logic and evaluate decision outcomes.
+The DMN module in Kramaxx Control Center provides visibility into deployed decision definitions and their execution through decision instances. It allows users to explore decision logic and evaluate decision outcomes.
 
 ## Overview
 
@@ -51,7 +51,7 @@ The left panel provides key information about the decision definition, including
 - Deployment details
 
 Additional functionality:
-- Version selection â€“ Users can switch between different versions of the decision definition
+- Version selection Ã¢â‚¬â€œ Users can switch between different versions of the decision definition
 
 ### 2. Canvas & Header
 
@@ -62,7 +62,7 @@ The top right header includes the Evaluate Decision option. This allows users to
 - Provide input data
 - View decision results
 
-### 3. Bottom Section â€“ Decision Instances
+### 3. Bottom Section Ã¢â‚¬â€œ Decision Instances
 
 The bottom section contains a Decision Instances list, showing all executions of the selected decision definition.
 

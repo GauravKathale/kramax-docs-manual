@@ -10,9 +10,9 @@ menu:
 
 ---
 
-For working with JSON, the Spin functions `org.vodafone.kramaX.spin.Spin.S` and `org.vodafone.kramaX.spin.Spin.JSON` can be used as entry points. The latter offers strongly-typed access to Spin's JSON API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing JSON as well as mapping JSON to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary JSON format.
+For working with JSON, the Spin functions `org.vodafone.kramaxx.spin.Spin.S` and `org.vodafone.kramaxx.spin.Spin.JSON` can be used as entry points. The latter offers strongly-typed access to Spin's JSON API and is preferable when writing Java code. In scripting environments, only the `S` function is available. The returned Spin wrapper offers methods for manipulating and writing JSON as well as mapping JSON to Java. Furthermore, the entry functions can be provided with Java objects that get implicitly converted to Spin's intermediary JSON format.
 
-The following provides examples on how KramaX Spin can be used in the process engine to work with JSON data. For illustration purposes, let us assume that a String process variable `customer` containing JSON exists. It has the following content:
+The following provides examples on how Kramaxx Spin can be used in the process engine to work with JSON data. For illustration purposes, let us assume that a String process variable `customer` containing JSON exists. It has the following content:
 
 ```json
 {
@@ -26,7 +26,7 @@ The following provides examples on how KramaX Spin can be used in the process en
 
 If you want to learn how to use JSON objects in an embedded form, please take a look at the [Embedded Forms Reference]({{< relref "/reference/forms/embedded-forms/json-data.md" >}}).
 
-Further documentation about the usage of Spin can be found in the [KramaX Spin Dataformat Reference]({{< relref "/reference/spin/_index.md" >}}).
+Further documentation about the usage of Spin can be found in the [Kramaxx Spin Dataformat Reference]({{< relref "/reference/spin/_index.md" >}}).
 
 # Expression Language Integration
 

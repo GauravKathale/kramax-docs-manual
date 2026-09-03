@@ -41,7 +41,7 @@ For general information about scripting in the process engine, please see the [S
 
 {{< note title="Supported Script Languages" class="info" >}}
 
-KramaX should work with most of the JSR-223 compatible script engine implementations. We test integration for Groovy, JavaScript, JRuby and Jython. See the <a href="{{< relref "/introduction/third-party-libraries/_index.md#process-engine" >}}">Third Party Dependencies</a> section of the <a href="{{< relref "/user-guide/_index.md" >}}">User Guide</a> for more details.
+Kramaxx should work with most of the JSR-223 compatible script engine implementations. We test integration for Groovy, JavaScript, JRuby and Jython. See the <a href="{{< relref "/introduction/third-party-libraries/_index.md#process-engine" >}}">Third Party Dependencies</a> section of the <a href="{{< relref "/user-guide/_index.md" >}}">User Guide</a> for more details.
 
 {{< /note >}}
 
@@ -107,7 +107,7 @@ Note that when you use <code>camunda:resultVariable</code> in a multi-instance c
 {{< /note >}}
 
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>

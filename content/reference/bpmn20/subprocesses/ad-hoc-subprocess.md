@@ -11,27 +11,27 @@ menu:
 
 ---
 
-An ad hoc subprocess is a subprocess in which the contained activities do not have to be executed in a predefined order. Activities can be activated dynamically at runtime in any order and multiple times. An ad hoc subprocess is useful for modeling case-like scenarios where the flow of work is determined at runtime rather than at design time. In KramaX, optional sequence flows between activities are permitted to route work through specific activity sequences.
+An ad hoc subprocess is a subprocess in which the contained activities do not have to be executed in a predefined order. Activities can be activated dynamically at runtime in any order and multiple times. An ad hoc subprocess is useful for modeling case-like scenarios where the flow of work is determined at runtime rather than at design time. In Kramaxx, optional sequence flows between activities are permitted to route work through specific activity sequences.
 
 An ad hoc subprocess has one ordering mode:
 
 *   **Parallel** (default and only supported mode): Multiple activities within the subprocess may be active simultaneously. This allows any activity to be started at any time, regardless of whether other activities have already been started or completed.
 
-The `ordering` attribute is optional and defaults to `"Parallel"`. The value `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine â€” runtime activation is always parallel.
+The `ordering` attribute is optional and defaults to `"Parallel"`. The value `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine Ã¢â‚¬â€ runtime activation is always parallel.
 
 To enforce sequential execution between activities, use optional sequence flows to connect them within the ad hoc subprocess.
 
 Completion of an ad hoc subprocess is controlled by three settings:
 
-*   `completionCondition` (optional child element) â€” an expression that is re-evaluated whenever a child activity ends or takes a sequence flow inside the subprocess. When it evaluates to `true`, the subprocess completes.
-*   `kramaX:autoComplete` (optional extension attribute, default: `true`) â€” applies when no `completionCondition` is defined. If `true`, the subprocess completes automatically once at least one contained activity has been started and no activities are active anymore. If `false`, the subprocess stays open even after all activities have finished and must be completed explicitly via the `completeAdHocSubProcess()` API.
-*   `cancelRemainingInstances` (optional attribute, default: `true`) â€” controls what happens to still-active activities when the completion condition is met. If `true`, they are cancelled and the subprocess completes immediately. If `false`, completion is deferred until all active activities have finished on their own.
+*   `completionCondition` (optional child element) Ã¢â‚¬â€ an expression that is re-evaluated whenever a child activity ends or takes a sequence flow inside the subprocess. When it evaluates to `true`, the subprocess completes.
+*   `kramaxx:autoComplete` (optional extension attribute, default: `true`) Ã¢â‚¬â€ applies when no `completionCondition` is defined. If `true`, the subprocess completes automatically once at least one contained activity has been started and no activities are active anymore. If `false`, the subprocess stays open even after all activities have finished and must be completed explicitly via the `completeAdHocSubProcess()` API.
+*   `cancelRemainingInstances` (optional attribute, default: `true`) Ã¢â‚¬â€ controls what happens to still-active activities when the completion condition is met. If `true`, they are cancelled and the subprocess completes immediately. If `false`, completion is deferred until all active activities have finished on their own.
 
 Constraints for an ad hoc subprocess:
 
 *   An ad hoc subprocess must not have start or end events (BPMN 2.0 standard).
 *   Boundary events on the ad hoc subprocess itself behave the same as for an embedded subprocess.
-*   Activities within an ad hoc subprocess may optionally be connected by sequence flows to define activity routing (KramaX extension).
+*   Activities within an ad hoc subprocess may optionally be connected by sequence flows to define activity routing (Kramaxx extension).
 
 An ad hoc subprocess is visualized as a subprocess with a tilde (~) marker at the bottom center:
 
@@ -41,18 +41,18 @@ When expanded, the internal activities are shown without connecting sequence flo
 
 <div data-bpmn-diagram="../bpmn/ad-hoc-subprocess-expanded"></div>
 
-An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. The optional `ordering` attribute defaults to `"Parallel"`; KramaX does not enforce sequential ordering at runtime. The optional `completionCondition` child element defines the expression that, when evaluated as `true`, causes the subprocess to complete:
+An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. The optional `ordering` attribute defaults to `"Parallel"`; Kramaxx does not enforce sequential ordering at runtime. The optional `completionCondition` child element defines the expression that, when evaluated as `true`, causes the subprocess to complete:
 
 ```xml
 <bpmn:adHocSubProcess id="Activity_11nc5qc" 
                       ordering="Parallel"
                       cancelRemainingInstances="false"
-                      kramaX:autoComplete="false"
+                      kramaxx:autoComplete="false"
                       camunda:asyncBefore="true">
   <bpmn:extensionElements>
-    <kramaX:properties>
-      <kramaX:property name="activeTasksCollection" value="Task_A,Task_B" />
-    </kramaX:properties>
+    <kramaxx:properties>
+      <kramaxx:property name="activeTasksCollection" value="Task_A,Task_B" />
+    </kramaxx:properties>
   </bpmn:extensionElements>
   <bpmn:completionCondition xsi:type="bpmn:tFormalExpression">${approved==true}</bpmn:completionCondition>
   
@@ -72,7 +72,7 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
 ```
 
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>
@@ -82,7 +82,7 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#asyncafter" >}}">camunda:asyncAfter</a>,
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#exclusive" >}}">camunda:exclusive</a>,
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-attributes.md#jobpriority" >}}">camunda:jobPriority</a>,
-      <code>kramaX:autoComplete</code> â€” Boolean (default: <code>true</code>). When no <code>completionCondition</code> is defined, controls whether the subprocess completes automatically once at least one activity has started and no activities are active anymore. Must be specified as an attribute on the <code>adHocSubProcess</code> element; the <code>camunda:autoComplete</code> alias is also accepted.
+      <code>kramaxx:autoComplete</code> Ã¢â‚¬â€ Boolean (default: <code>true</code>). When no <code>completionCondition</code> is defined, controls whether the subprocess completes automatically once at least one activity has started and no activities are active anymore. Must be specified as an attribute on the <code>adHocSubProcess</code> element; the <code>camunda:autoComplete</code> alias is also accepted.
     </td>
   </tr>
   <tr>
@@ -90,13 +90,13 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
     <td>
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#failedjobretrytimecycle" >}}">camunda:failedJobRetryTimeCycle</a>,
       <a href="{{< ref "/reference/bpmn20/custom-extensions/extension-elements.md#inputoutput" >}}">camunda:inputOutput</a>,
-      <code>kramaX:properties</code> â€” Custom property container supporting <code>activeTasksCollection</code> property
+      <code>kramaxx:properties</code> Ã¢â‚¬â€ Custom property container supporting <code>activeTasksCollection</code> property
     </td>
   </tr>
   <tr>
     <th>Extension Properties</th>
     <td>
-      <code>kramaX:property name="activeTasksCollection"</code> â€” Specifies the activities to auto-start when the ad hoc subprocess enters: a comma-separated list of activity IDs (e.g., <code>Task_A,Task_B</code>), or an expression or variable reference resolving to a <code>String</code> or <code>Collection</code> of activity IDs (e.g., <code>${taskList}</code>). Only starter activities may be listed â€” activities of a startable type with no incoming sequence flow inside the subprocess. If not specified or empty, the subprocess enters idle state awaiting manual activity triggering via the <code>triggerAdHocActivities()</code> API.
+      <code>kramaxx:property name="activeTasksCollection"</code> Ã¢â‚¬â€ Specifies the activities to auto-start when the ad hoc subprocess enters: a comma-separated list of activity IDs (e.g., <code>Task_A,Task_B</code>), or an expression or variable reference resolving to a <code>String</code> or <code>Collection</code> of activity IDs (e.g., <code>${taskList}</code>). Only starter activities may be listed Ã¢â‚¬â€ activities of a startable type with no incoming sequence flow inside the subprocess. If not specified or empty, the subprocess enters idle state awaiting manual activity triggering via the <code>triggerAdHocActivities()</code> API.
     </td>
   </tr>
   <tr>
@@ -107,7 +107,7 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
       <br/><br/>
       The <code>cancelRemainingInstances</code> attribute (default: <code>true</code>) controls whether active activities are cancelled when the <code>completionCondition</code> evaluates to true. If set to <code>false</code>, completion is deferred until all active activities have finished.
       <br/><br/>
-      The <code>kramaX:autoComplete</code> value must be a valid boolean; any other value fails deployment. Supplying <code>autoComplete</code> as an extension <em>property</em> inside <code>kramaX:properties</code> is not supported and also fails deployment â€” it must be an attribute on the <code>adHocSubProcess</code> element.
+      The <code>kramaxx:autoComplete</code> value must be a valid boolean; any other value fails deployment. Supplying <code>autoComplete</code> as an extension <em>property</em> inside <code>kramaxx:properties</code> is not supported and also fails deployment Ã¢â‚¬â€ it must be an attribute on the <code>adHocSubProcess</code> element.
       <br/><br/>
       Only startable activity types can be activated inside an ad hoc subprocess: tasks of any type, call activities, embedded subprocesses, and transactions. Events, gateways, and compensation handlers cannot be started directly.
     </td>
@@ -115,48 +115,48 @@ An ad hoc subprocess is represented in XML using the `adHocSubProcess` element. 
 </table>
 
 
-# KramaX Implementation Details
+# Kramaxx Implementation Details
 
 ## Core Components
 
-- **AdHocSubProcessActivityBehavior** â€” Main behavior implementation
+- **AdHocSubProcessActivityBehavior** Ã¢â‚¬â€ Main behavior implementation
   - Evaluates `completionCondition` after each child activity completes
-  - Auto-completes when no completion condition is set, `kramaX:autoComplete` is `true` (default), at least one activity has started, and no active children remain
+  - Auto-completes when no completion condition is set, `kramaxx:autoComplete` is `true` (default), at least one activity has started, and no active children remain
   - Re-evaluates condition on child completion, on sequence flow transitions inside the subprocess, and on final completion
   - If condition is false (or `autoComplete` is `false` with no condition), subprocess stays open indefinitely
-- **TriggerAdHocActivitiesCmd** & `RuntimeService.triggerAdHocActivities()` â€” Dynamic activity triggering
+- **TriggerAdHocActivitiesCmd** & `RuntimeService.triggerAdHocActivities()` Ã¢â‚¬â€ Dynamic activity triggering
   - Allows activating starter activities after subprocess entry (not BPMN 2.0 standard)
   - Supports per-activity variable mapping
   - Validates activities are startable and not already active
-- **CompleteAdHocSubProcessCmd** & `RuntimeService.completeAdHocSubProcess()` â€” Manual completion API
+- **CompleteAdHocSubProcessCmd** & `RuntimeService.completeAdHocSubProcess()` Ã¢â‚¬â€ Manual completion API
   - Bypasses completionCondition entirely (forced/manual override)
   - Supports optional variable setting at completion
   - Cancels still-active inner activities when `cancelRemainingInstances` is `true` (default); fails with an error if activities are active and `cancelRemainingInstances` is `false`
 
 ### REST Endpoints
-- `POST /engine-rest/execution/{id}/ad-hoc-activities/trigger` â€” trigger activities with per-activity variables
-- `POST /engine-rest/execution/{id}/ad-hoc-activities/complete` â€” complete with optional variables
+- `POST /engine-rest/execution/{id}/ad-hoc-activities/trigger` Ã¢â‚¬â€ trigger activities with per-activity variables
+- `POST /engine-rest/execution/{id}/ad-hoc-activities/complete` Ã¢â‚¬â€ complete with optional variables
 
-## KramaX-Specific Deviations from BPMN 2.0
+## Kramaxx-Specific Deviations from BPMN 2.0
 
-| Feature                   | BPMN 2.0 Standard                | KramaX Implementation                                      |
+| Feature                   | BPMN 2.0 Standard                | Kramaxx Implementation                                      |
 |--------------------------|-----------------------------------|--------------------------------------------------------------|
 | Initial activity selection| All startable activities auto-start| Uses `activeTasksCollection` extension property               |
 | Runtime activity triggering| No mechanism defined              | `triggerAdHocActivities()` API allows selective activation    |
 | Per-activity variables    | Not supported                     | Each triggered activity receives its own variable map         |
 | Manual completion         | No API                            | `completeAdHocSubProcess()` forcibly completes regardless     |
 | Completion variables      | Variables set via condition only   | Optional variables can be set at completion time              |
-| Automatic completion      | Driven by `completionCondition` only | `kramaX:autoComplete` attribute controls auto-completion when no condition is defined; `false` keeps the subprocess open until explicitly completed |
+| Automatic completion      | Driven by `completionCondition` only | `kramaxx:autoComplete` attribute controls auto-completion when no condition is defined; `false` keeps the subprocess open until explicitly completed |
 
 ## Key Behaviors
 
-- **Idle state possible** â€” If no `activeTasksCollection` defined or is empty, subprocess enters idle state awaiting `triggerAdHocActivities()`
-- **Condition holds open** â€” If `completionCondition` evaluates to false after any child finishes, subprocess remains open
-- **Automatic completion** â€” With no `completionCondition`, the subprocess completes automatically once at least one activity has started and none remain active, unless `kramaX:autoComplete="false"` is set
-- **Deferred completion** â€” With `cancelRemainingInstances="false"`, a met completion condition does not cancel active activities; the subprocess completes once they have all finished
-- **Manual override** â€” The complete API is a forced exit mechanism independent of condition evaluation
-- **Active tasks collection** â€” The `activeTasksCollection` property specifies which activities auto-start when the ad hoc subprocess enters: a comma-separated list (e.g., `Task_A,Task_B`) or an expression resolving to a `String` or `Collection` of activity IDs (e.g., `${taskList}`). Only starter activities (startable type, no incoming sequence flow inside the subprocess) can be listed
-- **Multi-instance support** â€” Ad hoc subprocesses support `multiInstanceLoopCharacteristics` for creating multiple instances of the entire ad hoc subprocess
+- **Idle state possible** Ã¢â‚¬â€ If no `activeTasksCollection` defined or is empty, subprocess enters idle state awaiting `triggerAdHocActivities()`
+- **Condition holds open** Ã¢â‚¬â€ If `completionCondition` evaluates to false after any child finishes, subprocess remains open
+- **Automatic completion** Ã¢â‚¬â€ With no `completionCondition`, the subprocess completes automatically once at least one activity has started and none remain active, unless `kramaxx:autoComplete="false"` is set
+- **Deferred completion** Ã¢â‚¬â€ With `cancelRemainingInstances="false"`, a met completion condition does not cancel active activities; the subprocess completes once they have all finished
+- **Manual override** Ã¢â‚¬â€ The complete API is a forced exit mechanism independent of condition evaluation
+- **Active tasks collection** Ã¢â‚¬â€ The `activeTasksCollection` property specifies which activities auto-start when the ad hoc subprocess enters: a comma-separated list (e.g., `Task_A,Task_B`) or an expression resolving to a `String` or `Collection` of activity IDs (e.g., `${taskList}`). Only starter activities (startable type, no incoming sequence flow inside the subprocess) can be listed
+- **Multi-instance support** Ã¢â‚¬â€ Ad hoc subprocesses support `multiInstanceLoopCharacteristics` for creating multiple instances of the entire ad hoc subprocess
 
 
 # Additional Resources

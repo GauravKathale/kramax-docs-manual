@@ -10,18 +10,18 @@ menu:
 
 ---
 
-The kramaX-engine Spring Framework integration is located inside a maven module and can be added to apache maven-based projects through the following dependency:
+The kramaxx-engine Spring Framework integration is located inside a maven module and can be added to apache maven-based projects through the following dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every KramaX project.
+  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
 {{< /note >}}
 
-* `kramaX-engine-spring` maven module for Spring Framework 7
+* `kramaxx-engine-spring` maven module for Spring Framework 7
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm</groupId>
-  <artifactId>kramaX-engine-spring</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm</groupId>
+  <artifactId>kramaxx-engine-spring</artifactId>
 </dependency>
 ```
 

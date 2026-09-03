@@ -6,23 +6,23 @@ weight: 28
 menu:
   main:
     name: "Element Templates"
-    identifier: "kramaX-modeler-element-templates"
+    identifier: "kramaxx-modeler-element-templates"
     parent: "modeler"
     pre: "Extend the modeler with custom elements."
 
 ---
 
 {{< note class="info" title="Using Element Templates" >}}
-Element Templates can be used with KramaX Modeler version 1.0 and higher. They are currently available in BPMN diagrams only.
+Element Templates can be used with Kramaxx Modeler version 1.0 and higher. They are currently available in BPMN diagrams only.
 {{< /note >}}
 
 
 
 # Overview
 
-Element templates are a way to extend the [KramaX Modeler](https://kramaX.org/bpmn/tool/) with domain specific diagram elements such as service and user tasks.
+Element templates are a way to extend the [Kramaxx Modeler](https://kramaxx.org/bpmn/tool/) with domain specific diagram elements such as service and user tasks.
 
-{{< img src="img/overview.png" title="Custom fields in the KramaX Modeler" >}}
+{{< img src="img/overview.png" title="Custom fields in the Kramaxx Modeler" >}}
 
 If applicable, element templates can be assigned to a diagram element via the properties panel.
 Once applied, they configure the diagram element with pre-defined values for BPMN properties, input/output mappings as well as extension properties.

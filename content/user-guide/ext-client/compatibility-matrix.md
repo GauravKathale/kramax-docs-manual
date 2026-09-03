@@ -11,13 +11,13 @@ menu:
 
 ---
 
-Each version of KramaX is bound to a specific version of the **External Task Clients**.
+Each version of Kramaxx is bound to a specific version of the **External Task Clients**.
 
-  KramaX and its compatible **Java** External Task Client always share the same version.
+  Kramaxx and its compatible **Java** External Task Client always share the same version.
 
 <table class="table table-striped">
   <tr>
-    <th>KramaX version</th>
+    <th>Kramaxx version</th>
     <th>NodeJS client</th>
   </tr>
   <tr>
@@ -30,5 +30,5 @@ Each version of KramaX is bound to a specific version of the **External Task Cli
   </tr>
 </table>
 
-Only these default combinations are recommended (and supported) by KramaX. Nevertheless, each version of the External
-Task Clients can be combined with newer patch versions of the KramaX Workflow Engine.
+Only these default combinations are recommended (and supported) by Kramaxx. Nevertheless, each version of the External
+Task Clients can be combined with newer patch versions of the Kramaxx Workflow Engine.

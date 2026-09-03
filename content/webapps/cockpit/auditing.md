@@ -13,10 +13,10 @@ menu:
 
 ---
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
 {{< /enterprise >}}
 
-Since Cockpit is a very powerful tool, it is often desired to inspect which user performed which operation for auditing purposes. Cockpit operations that change state are logged in KramaX's [user operation log]({{< relref "/user-guide/process-engine/history/user-operation-log.md" >}}) that is part of the process engine history. The log allows to understand
+Since Cockpit is a very powerful tool, it is often desired to inspect which user performed which operation for auditing purposes. Cockpit operations that change state are logged in Kramaxx's [user operation log]({{< relref "/user-guide/process-engine/history/user-operation-log.md" >}}) that is part of the process engine history. The log allows to understand
 
 * which user performed an operation
 * which operation was performed

@@ -10,7 +10,7 @@ menu:
     pre: "Get more insights on authentication"
 ---
 
-Authentication means verifying a user's identity against the KramaX web apps. 
+Authentication means verifying a user's identity against the Kramaxx web apps. 
 
 A user authenticates against the web apps on the login page by providing a username and password. If the 
 authentication is successful, the user gets access to the web apps and can work on tasks 
@@ -24,7 +24,7 @@ The authentication information consists of the following:
 * Tenant memberships 
 * Authorized applications (Tasklist, Cockpit, Admin) 
 
-The KramaX web apps correlate the authentication information against [authorizations]({{< relref "/user-guide/process-engine/authorization-service.md" >}}) to determine 
+The Kramaxx web apps correlate the authentication information against [authorizations]({{< relref "/user-guide/process-engine/authorization-service.md" >}}) to determine 
 what data the user can query for and which operations the user can perform.
 
 We implemented authentication with the help of a Java EE/Jakarta `ServletFilter`.
@@ -66,7 +66,7 @@ This is what the `web.xml`-based configuration looks like:
 <!-- Authentication filter -->
 <filter>
   <filter-name>Authentication Filter</filter-name>
-  <filter-class>org.vodafone.kramaX.bpm.webapp.impl.security.auth.AuthenticationFilter</filter-class>
+  <filter-class>org.vodafone.kramaxx.bpm.webapp.impl.security.auth.AuthenticationFilter</filter-class>
   <init-param>
     <param-name>cacheTimeToLive</param-name>
     <param-value>0</param-value> <!-- cache disabled -->
@@ -81,7 +81,7 @@ This is what the `web.xml`-based configuration looks like:
 
 ## Container-Based Authentication
 
-KramaX supports a broad range of containers, including Tomcat, Wildfly, IBM WebSphere and Oracle WebLogic. Using Container-Based Authentication, it is possible to move the authentication action to the container level, which will then make the authentication result available to the KramaX Web Applications.
+Kramaxx supports a broad range of containers, including Tomcat, Wildfly, IBM WebSphere and Oracle WebLogic. Using Container-Based Authentication, it is possible to move the authentication action to the container level, which will then make the authentication result available to the Kramaxx Web Applications.
 
 {{< note title="Heads-up!" class="info" >}}
 Please provide an implementation for the `ReadOnlyIdentityProvider` interface so that queries return the results of your identity provider to make **Container-Based Authentication** work.
@@ -95,10 +95,10 @@ The Container-Based Authentication implementation for the Web Applications is sw
   <!-- Container Based Authentication filter -->
   <filter>
     <filter-name>Container Based Authentication Filter</filter-name>
-    <filter-class>org.vodafone.kramaX.bpm.webapp.impl.security.auth.ContainerBasedAuthenticationFilter</filter-class>
+    <filter-class>org.vodafone.kramaxx.bpm.webapp.impl.security.auth.ContainerBasedAuthenticationFilter</filter-class>
     <init-param>
       <param-name>authentication-provider</param-name>
-      <param-value>org.vodafone.kramaX.bpm.engine.rest.security.auth.impl.ContainerBasedAuthenticationProvider</param-value>
+      <param-value>org.vodafone.kramaxx.bpm.engine.rest.security.auth.impl.ContainerBasedAuthenticationProvider</param-value>
     </init-param>
   </filter>
   <filter-mapping>
@@ -110,4 +110,4 @@ The Container-Based Authentication implementation for the Web Applications is sw
 
 ### Container-Based Authentication for Single Sign-On
 
-The KramaX Web Applications can also integrate with a [Single Sign-On implementation](https://en.wikipedia.org/wiki/List_of_single_sign-on_implementations) when the Container-Based Authentication servlet filter is enabled.
+The Kramaxx Web Applications can also integrate with a [Single Sign-On implementation](https://en.wikipedia.org/wiki/List_of_single_sign-on_implementations) when the Container-Based Authentication servlet filter is enabled.

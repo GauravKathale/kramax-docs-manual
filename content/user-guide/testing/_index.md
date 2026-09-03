@@ -12,25 +12,25 @@ menu:
 ---
 
 Testing BPMN processes, CMMN cases (and also DMN decisions) is just as important as testing code.
-This section explains how to write unit tests and integration tests with KramaX and explains some best practice and guidelines.
+This section explains how to write unit tests and integration tests with Kramaxx and explains some best practice and guidelines.
 
 
 # Unit Tests
 
-KramaX provides helper classes to write unit tests for JUnit versions 3, 4 and 5.
+Kramaxx provides helper classes to write unit tests for JUnit versions 3, 4 and 5.
 
 ## JUnit 5
 
-KramaX version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
+Kramaxx version 1.0.0+ ships with a {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/junit5/ProcessEngineExtension.html" text="JUnit 5 extension" >}} that provides access to the process engine and services through getter methods.
 
-The extensions process engine is configured by the default configuration file called `kramaX.cfg.xml`, which needs to be placed on the classpath. A custom configuration file can be passed to the extension when creating the `ProcessEngineExtension` object.
+The extensions process engine is configured by the default configuration file called `kramaxx.cfg.xml`, which needs to be placed on the classpath. A custom configuration file can be passed to the extension when creating the `ProcessEngineExtension` object.
 
 If you want to use the JUnit 5  `ProcessEngineExtension`, you need to add the following dependency to your `pom.xml` file:
 
 ```xml
     <dependency>
-      <groupId>org.vodafone.kramaX.bpm</groupId>
-      <artifactId>kramaX-bpm-junit5</artifactId>
+      <groupId>org.vodafone.kramaxx.bpm</groupId>
+      <artifactId>kramaxx-bpm-junit5</artifactId>
       <version>{{< minor-version >}}.0</version>
       <scope>test</scope>
     </dependency>
@@ -98,7 +98,7 @@ public class MyBusinessProcessTest {
 
   public ProcessEngine myProcessEngine = ProcessEngineConfiguration
       .createStandaloneInMemProcessEngineConfiguration()
-      .setJdbcUrl("jdbc:h2:mem:kramaX;DB_CLOSE_DELAY=1000")
+      .setJdbcUrl("jdbc:h2:mem:kramaxx;DB_CLOSE_DELAY=1000")
       .buildProcessEngine();
   
   @RegisterExtension
@@ -112,9 +112,9 @@ public class MyBusinessProcessTest {
 
 ## JUnit 4
 
-Using the JUnit 4 style of writing unit tests, the {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} must be used. Through this rule, the process engine and services are available through getters.
+Using the JUnit 4 style of writing unit tests, the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/ProcessEngineRule.html" text="ProcessEngineRule" >}} must be used. Through this rule, the process engine and services are available through getters.
 
-This rule will look for the default configuration file on the classpath called `kramaX.cfg.xml`. When constructing the ProcessEngineRule object you can pass a custom configuration file to the rule. Process engines are statically cached over multiple unit tests when using the same configuration resource.
+This rule will look for the default configuration file on the classpath called `kramaxx.cfg.xml`. When constructing the ProcessEngineRule object you can pass a custom configuration file to the rule. Process engines are statically cached over multiple unit tests when using the same configuration resource.
 
 The following code snippet shows an example of using the JUnit 4 style of testing and the usage of the ProcessEngineRule.
 
@@ -142,7 +142,7 @@ public class MyBusinessProcessTest {
 
 ## JUnit 3
 
-In the JUnit 3 style, the {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/ProcessEngineTestCase.html" text="ProcessEngineTestCase" >}} must be extended. This will make the ProcessEngine and the services available through protected member fields. In the `setup()` of the test, the processEngine will be initialized by default with the `kramaX.cfg.xml` resource on the classpath. To specify a different configuration file, override the getConfigurationResource() method. Process engines are cached statically over multiple unit tests when the configuration resource is the same.
+In the JUnit 3 style, the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/ProcessEngineTestCase.html" text="ProcessEngineTestCase" >}} must be extended. This will make the ProcessEngine and the services available through protected member fields. In the `setup()` of the test, the processEngine will be initialized by default with the `kramaxx.cfg.xml` resource on the classpath. To specify a different configuration file, override the getConfigurationResource() method. Process engines are cached statically over multiple unit tests when the configuration resource is the same.
 
 A JUnit 3 style test can look as follows:
 
@@ -164,20 +164,20 @@ public class MyBusinessProcessTest extends ProcessEngineTestCase {
 
 ## Deploy Test Resources
 
-You can annotate test classes and methods with {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/Deployment.html" text="@Deployment" >}}. Before the test is run, a resource file named `TestClassName.bpmn20.xml` (for a class-level annotation) or `TestClassName.testMethod.bpmn20.xml` (for a method-level annotation), in the same package as the test class, will be deployed. At the end of the test the deployment will be deleted, including all related process instances, tasks, etc. The `@Deployment` annotation also supports setting the resource location explicitly.
+You can annotate test classes and methods with {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/Deployment.html" text="@Deployment" >}}. Before the test is run, a resource file named `TestClassName.bpmn20.xml` (for a class-level annotation) or `TestClassName.testMethod.bpmn20.xml` (for a method-level annotation), in the same package as the test class, will be deployed. At the end of the test the deployment will be deleted, including all related process instances, tasks, etc. The `@Deployment` annotation also supports setting the resource location explicitly.
 
 ```
 @Deployment(resources = {"myProcess.bpmn", "mySubprocess.bpmn"})
 ```
 will pick the files `myProcess.bpmn` and `mySubProcess.bpmn` directly from the top of the classpath.
 
-Method-level annotations override class-level annotations. See the Javadocs for {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/Deployment.html" text="@Deployment" >}}more details.
+Method-level annotations override class-level annotations. See the Javadocs for {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/Deployment.html" text="@Deployment" >}}more details.
 
 The annotation is supported for [JUnit 3]({{< relref "#junit-3" >}}) and [JUnit 4]({{< relref "#junit-4" >}}) style of testing.
 
 ## Specify the required History Level
 
-If a test requires a specific history level (e.g., because it uses the HistoryService) then you can annotate the test class or method with {{< javadocref page="org/vodafone/kramaX/bpm/engine/test/RequiredHistoryLevel.html" text="@RequiredHistoryLevel" >}} and specify the required history level (e.g., "activity", "full"). Before the test is run, it checks the current history level of the process engine and skip the test if the history level is lower than the specified one.  
+If a test requires a specific history level (e.g., because it uses the HistoryService) then you can annotate the test class or method with {{< javadocref page="org/vodafone/kramaxx/bpm/engine/test/RequiredHistoryLevel.html" text="@RequiredHistoryLevel" >}} and specify the required history level (e.g., "activity", "full"). Before the test is run, it checks the current history level of the process engine and skip the test if the history level is lower than the specified one.  
 
 A JUnit 4 style test can look as follows:
 
@@ -227,7 +227,7 @@ Select the line you've just typed and right-click on it. Now select 'Display' (o
 
 {{< img src="img/api-test-debug-start-h2-server-2.png" title="API Test Debugging" >}}
 
-Now open up a browser and go to http://localhost:8082, and fill in the JDBC URL to the in-memory database (by default this is jdbc:h2:mem:kramaX), and hit the connect button.
+Now open up a browser and go to http://localhost:8082, and fill in the JDBC URL to the in-memory database (by default this is jdbc:h2:mem:kramaxx), and hit the connect button.
 
 {{< img src="img/api-test-debug-h2-login.png" title="API Test Debugging" >}}
 
@@ -236,9 +236,9 @@ You can now see the engine database and use it to understand how and why your un
 {{< img src="img/api-test-debug-h2-tables.png" title="API Test Debugging" >}}
 
 
-# KramaX Assertions
+# Kramaxx Assertions
 
-Additional to normal JUnit assertions, [KramaX Assert](https://github.com/vodafone/kramaX-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
+Additional to normal JUnit assertions, [Kramaxx Assert](https://github.com/vodafone/kramaxx-bpm-platform/tree/{{< minor-version >}}.0/test-utils/assert) adds a fluent API for asserting typical scenarios in a process integrating with [AssertJ](https://joel-costigliola.github.io/assertj/).
 
 ```java
 assertThat(processInstance).isWaitingAt("UserTask_InformCustomer");
@@ -247,13 +247,13 @@ assertThat(task()).hasCandidateGroup("Sales").isNotAssigned();
 
 You can find a more extensive guide with examples under [Assert Examples]({{< relref "/user-guide/testing/assert-examples.md" >}}).
 
-To use KramaX Assert, add the following dependency to your `pom.xml`:
+To use Kramaxx Assert, add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm</groupId>
-  <artifactId>kramaX-bpm-assert</artifactId>
-  <version>${version.kramaX}</version> <!-- set correct version here -->
+  <groupId>org.vodafone.kramaxx.bpm</groupId>
+  <artifactId>kramaxx-bpm-assert</artifactId>
+  <version>${version.kramaxx}</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
 ```
@@ -269,26 +269,26 @@ Also, you will have to add the AssertJ library to your dependencies. Make sure t
 </dependency>
 ```
 
-If KramaX Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
-[KramaX Spring Boot Starter](https://docs.kramaX.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
+If Kramaxx Assert is used in combination with [Spring Boot](https://spring.io/projects/spring-boot) or the 
+[Kramaxx Spring Boot Starter](https://docs.kramaxx.vodafone.org/manual/latest/user-guide/spring-boot-integration/), 
 the AssertJ dependency will be present in your project already.
 
 ## Assertions Version Compatibility
 
-Each version of KramaX Assert is bound to a specific version of KramaX and AssertJ. Only these default combinations are recommended (and supported) by KramaX.
-Nevertheless, each version of KramaX Assert can be combined with newer patch versions of the KramaX engine, though such combinations must be thoroughly tested before being used in production.
+Each version of Kramaxx Assert is bound to a specific version of Kramaxx and AssertJ. Only these default combinations are recommended (and supported) by Kramaxx.
+Nevertheless, each version of Kramaxx Assert can be combined with newer patch versions of the Kramaxx engine, though such combinations must be thoroughly tested before being used in production.
 
-KramaX Assert is part of [KramaX repository](https://github.com/vodafone/kramaX-bpm-platform) and uses the same versioning as KramaX.
+Kramaxx Assert is part of [Kramaxx repository](https://github.com/vodafone/kramaxx-bpm-platform) and uses the same versioning as Kramaxx.
 
 <table class="table table-striped">
   <tr>
-    <th>KramaX Assert artifact</th>
+    <th>Kramaxx Assert artifact</th>
     <th>AssertJ version</th>
-    <th>KramaX Assert version</th>
-    <th>KramaX version</th>
+    <th>Kramaxx Assert version</th>
+    <th>Kramaxx version</th>
   </tr>
   <tr>
-    <td>kramaX-bpm-assert</td>
+    <td>kramaxx-bpm-assert</td>
     <td>3.25.3</td>
     <td>1.0.0</td>
     <td>1.0.0</td>
@@ -299,8 +299,8 @@ KramaX Assert is part of [KramaX repository](https://github.com/vodafone/kramaX-
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm.extension</groupId>
-  <artifactId>kramaX-bpm-assert</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm.extension</groupId>
+  <artifactId>kramaxx-bpm-assert</artifactId>
   <version>1.x</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
@@ -311,8 +311,8 @@ For these versions, use the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm.extension</groupId>
-  <artifactId>kramaX-bpm-assert</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm.extension</groupId>
+  <artifactId>kramaxx-bpm-assert</artifactId>
   <version>2.x</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
@@ -322,9 +322,9 @@ For these versions, use the following Maven coordinates:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm.assert</groupId>
-  <artifactId>kramaX-bpm-assert</artifactId>
-  <version>${version.kramaX-assert}</version> <!-- set correct version here -->
+  <groupId>org.vodafone.kramaxx.bpm.assert</groupId>
+  <artifactId>kramaxx-bpm-assert</artifactId>
+  <version>${version.kramaxx-assert}</version> <!-- set correct version here -->
   <scope>test</scope>
 </dependency>
 ```
@@ -333,9 +333,9 @@ For these versions, use the following Maven coordinates:
 
 There are a couple of well documented and heavily used community extensions that can make testing much more productive and fun.
 
-## KramaX Scenario Tests
+## Kramaxx Scenario Tests
 
-[KramaX-bpm-assert-scenario](https://github.com/vodafone/kramaX-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
+[Kramaxx-bpm-assert-scenario](https://github.com/vodafone/kramaxx-bpm-assert-scenario/) enables you to write more robust test suites. The idea is, that you only have to adapt your tests if your process models changes in a way that affects the tested behavior. It concentrates much less on the concrete path through a given process model, but on the external effects the path through the model has.
 
 ```java
 @Test
@@ -351,9 +351,9 @@ public void testHappyPath() {
 }
 ```
 
-## KramaX Test Coverage
+## Kramaxx Test Coverage
 
-[KramaX-bpm-process-test-coverage](https://github.com/vodafone/kramaX-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
+[Kramaxx-bpm-process-test-coverage](https://github.com/vodafone/kramaxx-bpm-process-test-coverage/) visualises test process pathes and checks your process model coverage ratio. Running typical JUnit tests leaves html files in the build output.
 
 
 # Resolving Beans Without Spring/CDI
@@ -385,7 +385,7 @@ The feature to [start a process instance at a set of activities]({{< relref "/us
 
 ## Scoping Tests
 
-BPMN processes, CMMN cases and DMN decisions do not exist in isolation. Consider the example of a BPMN process: firstly, the process itself is executed by the KramaX engine which requires a database. Next, the process is "not just the process". It can contain expressions, scripts and often calls out to custom Java classes which may in turn again call out to services, either locally or remotely. To test the process, all these things need to be present, otherwise the test cannot work.
+BPMN processes, CMMN cases and DMN decisions do not exist in isolation. Consider the example of a BPMN process: firstly, the process itself is executed by the Kramaxx engine which requires a database. Next, the process is "not just the process". It can contain expressions, scripts and often calls out to custom Java classes which may in turn again call out to services, either locally or remotely. To test the process, all these things need to be present, otherwise the test cannot work.
 
 Setting all of this up just to run a unit test is expensive. This is why, in practice, it makes sense to apply a concept which we call test scoping. Scoping the test means limiting the amount of infrastructure required to run the test. Things outside of the scope of the test are mocked.
 
@@ -393,7 +393,7 @@ Setting all of this up just to run a unit test is expensive. This is why, in pra
 
 This is best explained using an example. Assume you are building a typical Java EE application containing a BPMN process. The process uses Java Expression Language (EL) for conditions, it invokes Java Delegate implementations as CDI beans, these beans may in turn call out to the actual business logic implemented as EJBs. The business logic uses JPA for maintaining additional business objects in a secondary database. It also sends out messages using JMS to interact with external systems and has a nice web UI. The application runs inside a Java EE application server like Wildfly.
 
-To test this application, all components, including the application server itself, need to be present and the external systems need to process the JMS messages. This makes it hard to write focused tests. However, by looking at the process itself, we find that there are many aspects of it that we can test without having the complete infrastructure in place. For example, if the process data is present, the Expression Language conditions can usually be tested without any additional infrastructure. This already allows asserting that the process "takes the right turn" at a gateway given a set of input data. Next, if the EJBs are mocked, the delegation logic can be included in such tests as well. This allows asserting that wiring of the delegation logic is correct, that it performs correct data transformation and mapping and that it invokes the business logic with the correct parameters. Given that the KramaX engine can work with an in-memory database, it now becomes possible to test the BPMN process "in isolation", as a unit test and assert its local functional correctness. The same principle can be applied to the next "outer layers" of the system, including the business logic and external systems.
+To test this application, all components, including the application server itself, need to be present and the external systems need to process the JMS messages. This makes it hard to write focused tests. However, by looking at the process itself, we find that there are many aspects of it that we can test without having the complete infrastructure in place. For example, if the process data is present, the Expression Language conditions can usually be tested without any additional infrastructure. This already allows asserting that the process "takes the right turn" at a gateway given a set of input data. Next, if the EJBs are mocked, the delegation logic can be included in such tests as well. This allows asserting that wiring of the delegation logic is correct, that it performs correct data transformation and mapping and that it invokes the business logic with the correct parameters. Given that the Kramaxx engine can work with an in-memory database, it now becomes possible to test the BPMN process "in isolation", as a unit test and assert its local functional correctness. The same principle can be applied to the next "outer layers" of the system, including the business logic and external systems.
 
 The following drawing shows a schematic representation of what this looks like for our example of a Java EE application:
 

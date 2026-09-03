@@ -59,7 +59,7 @@ In case the variable does not yet exist (for instance in a Start Form), you have
         // indicate that object is serialized as json
         serializationDataFormat: 'application/json',
         // provide classname of java object to map to
-        objectTypeName: 'org.kramaX.bpm.example.CustomerData'
+        objectTypeName: 'org.kramaxx.bpm.example.CustomerData'
       }
     });
 
@@ -71,4 +71,4 @@ In case the variable does not yet exist (for instance in a Start Form), you have
 
 # Full Example
 
-A full example of this feature can be found in the [KramaX Platform Examples Repository](https://github.com/kramaX/kramaX-bpm-examples/tree/master/usertask/task-form-embedded-serialized-java-object).
+A full example of this feature can be found in the [Kramaxx Platform Examples Repository](https://github.com/kramaxx/kramaxx-bpm-examples/tree/master/usertask/task-form-embedded-serialized-java-object).

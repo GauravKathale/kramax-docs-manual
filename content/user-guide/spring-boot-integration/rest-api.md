@@ -15,8 +15,8 @@ To enable the [REST API]({{< relref "/reference/rest/_index.md">}}) you can use 
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm.springboot</groupId>
-  <artifactId>kramaX-bpm-spring-boot-starter-rest</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm.springboot</groupId>
+  <artifactId>kramaxx-bpm-spring-boot-starter-rest</artifactId>
   <version>{project-version}</version>
 </dependency>
 ```
@@ -30,12 +30,12 @@ spring.jersey.application-path=myapplicationpath
 ```
 
 To modify the configuration or register additional resources, one can provide a bean which extends from 
-`org.vodafone.kramaX.bpm.spring.boot.starter.rest.KramaXJerseyResourceConfig`:
+`org.vodafone.kramaxx.bpm.spring.boot.starter.rest.KramaxxJerseyResourceConfig`:
 
 ```java
 @Component
 @ApplicationPath("/engine-rest")
-public class JerseyConfig extends KramaXJerseyResourceConfig {
+public class JerseyConfig extends KramaxxJerseyResourceConfig {
 
   @Override
   protected void registerAdditionalResources() {

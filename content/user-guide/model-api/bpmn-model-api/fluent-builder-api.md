@@ -11,7 +11,7 @@ menu:
 ---
 
 To create simple BPMN processes we provide a fluent builder API. With this API you can easily create basic
-processes in a few lines of code. In the [generate process fluent api](https://github.com/vodafone/kramaX-bpm-examples/tree/master/bpmn-model-api/generate-process-fluent-api) quickstart we
+processes in a few lines of code. In the [generate process fluent api](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/bpmn-model-api/generate-process-fluent-api) quickstart we
 demonstrate how to create a rather complex process with 5 tasks and 2 gateways within less than 50 lines of code.
 
 The fluent builder API is not nearly complete but provides you with the following basic elements:
@@ -155,7 +155,7 @@ process building or you can detach it and create flow elements of the subprocess
 BpmnModelInstance modelInstance = Bpmn.createProcess()
   .startEvent()
   .subProcess()
-    .kramaXAsync()
+    .kramaxxAsync()
     .embeddedSubProcess()
       .startEvent()
       .userTask()
@@ -175,24 +175,24 @@ modelInstance = Bpmn.createProcess()
 
 SubProcess subProcess = (SubProcess) modelInstance.getModelElementById("subProcess");
 subProcess.builder()
-  .kramaXAsync()
+  .kramaxxAsync()
   .embeddedSubProcess()
     .startEvent()
     .userTask()
     .endEvent();
 ```
 
-The example below shows how to create a throwing signal event definition and define the payload that this signal will contain. By using the `kramaXIn` methods, it is possible to define which process variables will be included in the signal payload, define an expression that will be resolved in the signal-catching process instances, or declare that all of the process variables in the signal-throwing process instance should be passed. It is also possible to define a business key that will be assigned to the signal-catching process instances.
+The example below shows how to create a throwing signal event definition and define the payload that this signal will contain. By using the `kramaxxIn` methods, it is possible to define which process variables will be included in the signal payload, define an expression that will be resolved in the signal-catching process instances, or declare that all of the process variables in the signal-throwing process instance should be passed. It is also possible to define a business key that will be assigned to the signal-catching process instances.
 
 ```java
 BpmnModelInstance modelInstance = Bpmn.createProcess()
   .startEvent()
   .intermediateThrowEvent("throw")
     .signalEventDefinition("signal")
-      .kramaXInSourceTarget("source", "target1")
-      .kramaXInSourceExpressionTarget("${'sourceExpression'}", "target2")
-      .kramaXInAllVariables("all", true)
-      .kramaXInBusinessKey("aBusinessKey")
+      .kramaxxInSourceTarget("source", "target1")
+      .kramaxxInSourceExpressionTarget("${'sourceExpression'}", "target2")
+      .kramaxxInAllVariables("all", true)
+      .kramaxxInBusinessKey("aBusinessKey")
       .throwEventDefinitionDone()
   .endEvent()
   .done();
@@ -236,29 +236,29 @@ userTask.builder()
 
 ## Controlling Transaction Boundaries
 
-The transaction boundaries of a process created with the fluent builder API can be controlled using the `kramaXAsyncBefore()` and `kramaXAsyncAfter()` methods offered for various process constructs.
+The transaction boundaries of a process created with the fluent builder API can be controlled using the `kramaxxAsyncBefore()` and `kramaxxAsyncAfter()` methods offered for various process constructs.
 
 ```java
 BpmnModelInstance modelInstance = Bpmn.createProcess()
   .startEvent()
   .serviceTask("servicetask")
-    .kramaXAsyncBefore()
+    .kramaxxAsyncBefore()
   .userTask("task")
-    .kramaXAsyncAfter()
+    .kramaxxAsyncAfter()
   .done();
 ```
 
 The service task in the example above will have a transaction boundary before its execution and the user task will have a transaction boundary after its completion.
 
-If an activity has [multi-instance characteristics][multi-instance], the  `kramaXAsyncBefore()` and `kramaXAsyncAfter()` methods apply to the multi-instance body as a whole. The transaction boundaries of the individual occurrences (instances) of the multi-instance can be controlled with similar methods, called from **within** the multi-instance builder.
+If an activity has [multi-instance characteristics][multi-instance], the  `kramaxxAsyncBefore()` and `kramaxxAsyncAfter()` methods apply to the multi-instance body as a whole. The transaction boundaries of the individual occurrences (instances) of the multi-instance can be controlled with similar methods, called from **within** the multi-instance builder.
 
 ```java
 BpmnModelInstance modelInstance = Bpmn.createProcess()
   .startEvent()
   .serviceTask("servicetask")
-    .kramaXAsyncBefore() // multi-instance body
+    .kramaxxAsyncBefore() // multi-instance body
     .multiInstance()
-      .kramaXAsyncBefore() // every instance
+      .kramaxxAsyncBefore() // every instance
       .parallel()
     .multiInstanceDone()
   .endEvent()

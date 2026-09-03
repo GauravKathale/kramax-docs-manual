@@ -1,13 +1,13 @@
 ---
 
-title: 'KramaX License Book'
+title: 'Kramaxx License Book'
 weight: 20
 
 menu:
   main:
     identifier: "user-guide-introduction-third-party-libraries-license-book-platform"
     parent: "user-guide-introduction-third-party-libraries"
-    pre: "All third-party dependencies distributed with KramaX artifacts"
+    pre: "All third-party dependencies distributed with Kramaxx artifacts"
 
 ---
 
@@ -134,7 +134,7 @@ It is currently developed by a community of developers</pre></details></div>
 <div><details><summary>gson@2.8.9(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright: 2008 Google Inc.</pre></details></div>
 <div><details><summary>h2@2.3.232(<a href="https://opensource.org/licenses/EPL-1.0">EPL 1.0</a>)</summary><pre>Copyright 2004-2024 H2 Group</pre></details></div>
 <div><details><summary>asyncutil@0.1.0(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) IBM Corporation 2017. All Rights Reserved</pre></details></div>
-<div><details><summary>icu4j@68.2(<a href="https://www.unicode.org/license.html">Unicode</a>)</summary><pre>Copyright Â© 2016 and later Unicode, Inc. and others.
+<div><details><summary>icu4j@68.2(<a href="https://www.unicode.org/license.html">Unicode</a>)</summary><pre>Copyright Ã‚Â© 2016 and later Unicode, Inc. and others.
 See this link for third-party software notices and/or additional
 terms for licensed third-party software components included within ICU
 libraries: https://github.com/unicode-org/icu/edit/main/icu4c/LICENSE</pre></details></div>
@@ -250,8 +250,8 @@ JUnit (4.12)
 * License: Eclipse Public License
 ====================================================================	
 Copyright (C) Oracle and/or its affiliates. All rights reserved.																							</pre></details></div>
-<div><details><summary>jakarta.annotation-api@2.1.1(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta Annotationsâ„¢</pre></details></div>
-<div><details><summary>jakarta.el-api@4.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta Annotationsâ„¢</pre></details></div>
+<div><details><summary>jakarta.annotation-api@2.1.1(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta AnnotationsÃ¢â€žÂ¢</pre></details></div>
+<div><details><summary>jakarta.el-api@4.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta AnnotationsÃ¢â€žÂ¢</pre></details></div>
 <div><details><summary>jakarta.inject-api@2.0.1(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) Eclipse Jakarta Dependency Injection project. All content is the property of the respective authors or their employers. For more information regarding authorship of content, please consult the listed source code repository logs</pre></details></div>
 <div><details><summary>jakarta.servlet-api@6.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.</pre></details></div>
 <div><details><summary>jakarta.validation-api@2.0.2(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright: various authors (https://github.com/eclipse-ee4j/beanvalidation-api/blob/master/copyright.txt)</pre></details></div>
@@ -658,54 +658,54 @@ This software includes projects with other licenses -- see `doc/LICENSE.md`.</pr
 <div><details><summary>slf4j-api@1.7.36(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2017 QOS.ch</pre></details></div>
 <div><details><summary>slf4j-api@2.0.16(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2023 QOS.ch</pre></details></div>
 <div><details><summary>slf4j-jdk14@1.7.26(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2017 QOS.ch</pre></details></div>
-<div><details><summary>spring-boot-autoconfigure@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-jdbc@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-jersey@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-json@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-logging@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-oauth2-client@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-security@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-tomcat@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-validation@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-web@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-config@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-crypto@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-client@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-jose@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-web@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-aop@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-aop@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-beans@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-beans@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-context@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-context@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-core@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-core@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-expression@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-expression@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jcl@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jcl@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jdbc@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jdbc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-orm@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-orm@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-tx@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-tx@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-web@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-webmvc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-autoconfigure@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-jdbc@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-jersey@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-json@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-logging@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-oauth2-client@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-security@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-tomcat@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-validation@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-web@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-config@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-crypto@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-client@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-jose@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-web@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-aop@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-aop@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-beans@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-beans@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-context@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-context@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-core@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-core@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-expression@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-expression@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jcl@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jcl@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jdbc@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jdbc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-orm@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-orm@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-tx@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-tx@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-web@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-webmvc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright Ã‚Â© 2015-2021 the original authors.</pre></details></div>
 <div><details><summary>wildfly-dist@33.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright The WildFly Authors</pre></details></div>
 <div><details><summary>wildfly-galleon-pack@33.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright The WildFly Authors</pre></details></div>
 <div><details><summary>snakeyaml@2.2(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) 2008, SnakeYAML</pre></details></div>
 
-# KramaX Web Applications Javascript Dependencies
+# Kramaxx Web Applications Javascript Dependencies
 
 <div><details><summary><a href="https://github.com/bpmn-io/align-to-origin">@bpmn-io/align-to-origin@0.7.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2019-present KramaX Services GmbH
+Copyright (c) 2019-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -724,7 +724,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="">@bpmn-io/cm-theme@0.1.0-alpha.2</a> (MIT)</summary><pre>Copyright (c) 2023-present KramaX Services GmbH
+<div><details><summary><a href="">@bpmn-io/cm-theme@0.1.0-alpha.2</a> (MIT)</summary><pre>Copyright (c) 2023-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -752,7 +752,7 @@ THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/diagram-js-ui">@bpmn-io/diagram-js-ui@0.2.2</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2022-present KramaX Services GmbH
+Copyright (c) 2022-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -773,7 +773,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/dmn-migrate">@bpmn-io/dmn-migrate@0.5.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2020-present KramaX Services GmbH
+Copyright (c) 2020-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -795,7 +795,7 @@ THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="">@bpmn-io/dmn-variable-resolver@0.4.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2023-present KramaX Services GmbH
+Copyright (c) 2023-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -816,8 +816,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/draggle.git">@bpmn-io/draggle@4.1.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright Â© 2015-2016 Nicolas Bevacqua
-Copyright Â© 2023 bpmn-io
+Copyright Ã‚Â© 2015-2016 Nicolas Bevacqua
+Copyright Ã‚Â© 2023 bpmn-io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -838,7 +838,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/feel-editor">@bpmn-io/feel-editor@1.4.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2015 kramaX Services GmbH
+Copyright (c) 2015 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -859,7 +859,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/feel-linter">@bpmn-io/feel-lint@1.2.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2022 kramaX Services GmbH
+Copyright (c) 2022 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -878,7 +878,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -911,7 +911,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-editor@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-editor@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -944,7 +944,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-playground@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-playground@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -977,7 +977,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-viewer@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/form-js">@bpmn-io/form-js-viewer@1.8.7</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2021-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -1012,7 +1012,7 @@ THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/properties-panel">@bpmn-io/properties-panel@3.18.2</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2021-present KramaX Services GmbH
+Copyright (c) 2021-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1207,7 +1207,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/ibm/plex.git">@ibm/plex@6.4.0</a> (OFL-1.1)</summary><pre>Copyright Â© 2017 IBM Corp. with Reserved Font Name "Plex"
+<div><details><summary><a href="https://github.com/ibm/plex.git">@ibm/plex@6.4.0</a> (OFL-1.1)</summary><pre>Copyright Ã‚Â© 2017 IBM Corp. with Reserved Font Name "Plex"
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 
@@ -1828,11 +1828,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <div><details><summary><a href="https://github.com/MikeMcl/big.js.git">big.js@6.2.1</a> (MIT)</summary><pre>The MIT License (MIT)
 =====================
 
-Copyright Â© `<2022>` `Michael Mclaughlin`
+Copyright Ã‚Â© `<2022>` `Michael Mclaughlin`
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
-files (the â€œSoftwareâ€), to deal in the Software without
+files (the Ã¢â‚¬Å“SoftwareÃ¢â‚¬Â), to deal in the Software without
 restriction, including without limitation the rights to use,
 copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the
@@ -1842,7 +1842,7 @@ conditions:
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED â€œAS ISâ€, WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED Ã¢â‚¬Å“AS ISÃ¢â‚¬Â, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
@@ -1874,7 +1874,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/bpmn-font">bpmn-font@0.12.1</a> (SIL)</summary><pre>Copyright (c) 2014-present, KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/bpmn-font">bpmn-font@0.12.1</a> (SIL)</summary><pre>Copyright (c) 2014-present, Kramaxx Services GmbH
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
@@ -1967,7 +1967,7 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/bpmn-js">bpmn-js@16.5.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/bpmn-js">bpmn-js@16.5.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2003,7 +2003,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/bpmn-moddle">bpmn-moddle@8.1.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014 kramaX Services GmbH
+Copyright (c) 2014 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2044,10 +2044,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="">kramaX-bpm-webapp@7.22.0-SNAPSHOT</a> ()</summary><pre>Copyright KramaX Services GmbH and/or licensed to KramaX Services GmbH
+<div><details><summary><a href="">kramaxx-bpm-webapp@7.22.0-SNAPSHOT</a> ()</summary><pre>Copyright Kramaxx Services GmbH and/or licensed to Kramaxx Services GmbH
 under one or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information regarding copyright
-ownership. KramaX licenses this file to you under the Apache License,
+ownership. Kramaxx licenses this file to you under the Apache License,
 Version 2.0; you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
@@ -2059,9 +2059,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/vodafone/kramaX-dmn-js">kramaX-dmn-js@1.8.0</a> (MIT)</summary><pre>The MIT License (MIT)
+<div><details><summary><a href="https://github.com/vodafone/kramaxx-dmn-js">kramaxx-dmn-js@1.8.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2022-present KramaX Services GmbH
+Copyright (c) 2022-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2080,9 +2080,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/vodafone/kramaX-dmn-moddle">kramaX-dmn-moddle@1.3.0</a> (MIT)</summary><pre>The MIT License (MIT)
+<div><details><summary><a href="https://github.com/vodafone/kramaxx-dmn-moddle">kramaxx-dmn-moddle@1.3.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014-2018 kramaX Services GmbH
+Copyright (c) 2014-2018 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2187,7 +2187,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/cmmn-js">cmmn-js@0.20.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/cmmn-js">cmmn-js@0.20.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2223,7 +2223,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/cmmn-moddle">cmmn-moddle@5.0.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014 kramaX Services GmbH
+Copyright (c) 2014 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2332,7 +2332,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/diagram-js">diagram-js@13.4.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014-present KramaX Services GmbH
+Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2353,7 +2353,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/diagram-js-direct-editing">diagram-js-direct-editing@2.1.2</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014-2017 kramaX Services GmbH
+Copyright (c) 2014-2017 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2374,7 +2374,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/diagram-js-grid">diagram-js-grid@0.2.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2023-present kramaX Services GmbH
+Copyright (c) 2023-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2417,7 +2417,7 @@ THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/nikku/didi">didi@4.0.0</a> (MIT)</summary><pre>The MIT License
 
-Copyright (C) 2013 Vojta JÃ­na.
+Copyright (C) 2013 Vojta JÃƒÂ­na.
 Copyright (C) 2015-present Nico Rehwaldt.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -2437,7 +2437,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-font">dmn-font@0.6.2</a> (SIL)</summary><pre>Copyright (c) 2014, kramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-font">dmn-font@0.6.2</a> (SIL)</summary><pre>Copyright (c) 2014, kramaxx Services GmbH
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
@@ -2530,7 +2530,7 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2563,7 +2563,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-decision-table@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-decision-table@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2596,7 +2596,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-drd@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-drd@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2629,7 +2629,7 @@ CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
 THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-literal-expression@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-literal-expression@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2664,7 +2664,7 @@ THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/dmn-js-properties-panel">dmn-js-properties-panel@3.2.1</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2015-2018 kramaX Services GmbH
+Copyright (c) 2015-2018 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2683,7 +2683,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
-<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-shared@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present KramaX Services GmbH
+<div><details><summary><a href="https://github.com/bpmn-io/dmn-js">dmn-js-shared@15.1.0</a> (SEE LICENSE IN LICENSE)</summary><pre>Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -2718,7 +2718,7 @@ THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/dmn-moddle">dmn-moddle@10.0.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2015-2017 kramaX Services GmbH
+Copyright (c) 2015-2017 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -2976,28 +2976,28 @@ Mozilla Public License, version 2.0
 
 1. Definitions
 
-1.1. â€œContributorâ€
+1.1. Ã¢â‚¬Å“ContributorÃ¢â‚¬Â
 
 means each individual or legal entity that creates, contributes to the
 creation of, or owns Covered Software.
 
-1.2. â€œContributor Versionâ€
+1.2. Ã¢â‚¬Å“Contributor VersionÃ¢â‚¬Â
 
 means the combination of the Contributions of others (if any) used by a
-Contributor and that particular Contributorâ€™s Contribution.
+Contributor and that particular ContributorÃ¢â‚¬â„¢s Contribution.
 
-1.3. â€œContributionâ€
+1.3. Ã¢â‚¬Å“ContributionÃ¢â‚¬Â
 
 means Covered Software of a particular Contributor.
 
-1.4. â€œCovered Softwareâ€
+1.4. Ã¢â‚¬Å“Covered SoftwareÃ¢â‚¬Â
 
 means Source Code Form to which the initial Contributor has attached the
 notice in Exhibit A, the Executable Form of such Source Code Form, and
 Modifications of such Source Code Form, in each case including portions
 thereof.
 
-1.5. â€œIncompatible With Secondary Licensesâ€
+1.5. Ã¢â‚¬Å“Incompatible With Secondary LicensesÃ¢â‚¬Â
 means
 
 a. that the initial Contributor has attached the notice described in
@@ -3007,26 +3007,26 @@ b. that the Covered Software was made available under the terms of version
 1.1 or earlier of the License, but not also under the terms of a
 Secondary License.
 
-1.6. â€œExecutable Formâ€
+1.6. Ã¢â‚¬Å“Executable FormÃ¢â‚¬Â
 
 means any form of the work other than Source Code Form.
 
-1.7. â€œLarger Workâ€
+1.7. Ã¢â‚¬Å“Larger WorkÃ¢â‚¬Â
 
 means a work that combines Covered Software with other material, in a separate
 file or files, that is not Covered Software.
 
-1.8. â€œLicenseâ€
+1.8. Ã¢â‚¬Å“LicenseÃ¢â‚¬Â
 
 means this document.
 
-1.9. â€œLicensableâ€
+1.9. Ã¢â‚¬Å“LicensableÃ¢â‚¬Â
 
 means having the right to grant, to the maximum extent possible, whether at the
 time of the initial grant or subsequently, any and all of the rights conveyed by
 this License.
 
-1.10. â€œModificationsâ€
+1.10. Ã¢â‚¬Å“ModificationsÃ¢â‚¬Â
 
 means any of the following:
 
@@ -3035,7 +3035,7 @@ from, or modification of the contents of Covered Software; or
 
 b. any new file in Source Code Form that contains any Covered Software.
 
-1.11. â€œPatent Claimsâ€ of a Contributor
+1.11. Ã¢â‚¬Å“Patent ClaimsÃ¢â‚¬Â of a Contributor
 
 means any patent claim(s), including without limitation, method, process,
 and apparatus claims, in any patent Licensable by such Contributor that
@@ -3043,22 +3043,22 @@ would be infringed, but for the grant of the License, by the making,
 using, selling, offering for sale, having made, import, or transfer of
 either its Contributions or its Contributor Version.
 
-1.12. â€œSecondary Licenseâ€
+1.12. Ã¢â‚¬Å“Secondary LicenseÃ¢â‚¬Â
 
 means either the GNU General Public License, Version 2.0, the GNU Lesser
 General Public License, Version 2.1, the GNU Affero General Public
 License, Version 3.0, or any later versions of those licenses.
 
-1.13. â€œSource Code Formâ€
+1.13. Ã¢â‚¬Å“Source Code FormÃ¢â‚¬Â
 
 means the form of the work preferred for making modifications.
 
-1.14. â€œYouâ€ (or â€œYourâ€)
+1.14. Ã¢â‚¬Å“YouÃ¢â‚¬Â (or Ã¢â‚¬Å“YourÃ¢â‚¬Â)
 
 means an individual or a legal entity exercising rights under this
-License. For legal entities, â€œYouâ€ includes any entity that controls, is
+License. For legal entities, Ã¢â‚¬Å“YouÃ¢â‚¬Â includes any entity that controls, is
 controlled by, or is under common control with You. For purposes of this
-definition, â€œcontrolâ€ means (a) the power, direct or indirect, to cause
+definition, Ã¢â‚¬Å“controlÃ¢â‚¬Â means (a) the power, direct or indirect, to cause
 the direction or management of such entity, whether by contract or
 otherwise, or (b) ownership of more than fifty percent (50%) of the
 outstanding shares or beneficial ownership of such entity.
@@ -3096,7 +3096,7 @@ or licensing of Covered Software under this License. Notwithstanding Section
 
 a. for any code that a Contributor has removed from Covered Software; or
 
-b. for infringements caused by: (i) Your and any other third partyâ€™s
+b. for infringements caused by: (i) Your and any other third partyÃ¢â‚¬â„¢s
 modifications of Covered Software, or (ii) the combination of its
 Contributions with other software (except as part of its Contributor
 Version); or
@@ -3141,7 +3141,7 @@ Modifications that You create or to which You contribute, must be under the
 terms of this License. You must inform recipients that the Source Code Form
 of the Covered Software is governed by the terms of this License, and how
 they can obtain a copy of this License. You may not attempt to alter or
-restrict the recipientsâ€™ rights in the Source Code Form.
+restrict the recipientsÃ¢â‚¬â„¢ rights in the Source Code Form.
 
 3.2. Distribution of Executable Form
 
@@ -3155,7 +3155,7 @@ of distribution to the recipient; and
 
 b. You may distribute such Executable Form under the terms of this License,
 or sublicense it under different terms, provided that the license for
-the Executable Form does not attempt to limit or alter the recipientsâ€™
+the Executable Form does not attempt to limit or alter the recipientsÃ¢â‚¬â„¢
 rights in the Source Code Form under this License.
 
 3.3. Distribution of a Larger Work
@@ -3232,7 +3232,7 @@ termination shall survive termination.
 
 6. Disclaimer of Warranty
 
-Covered Software is provided under this License on an â€œas isâ€ basis, without
+Covered Software is provided under this License on an Ã¢â‚¬Å“as isÃ¢â‚¬Â basis, without
 warranty of any kind, either expressed, implied, or statutory, including,
 without limitation, warranties that the Covered Software is free of defects,
 merchantable, fit for a particular purpose or non-infringing. The entire
@@ -3254,7 +3254,7 @@ goodwill, work stoppage, computer failure or malfunction, or any and all
 other commercial damages or losses, even if such party shall have been
 informed of the possibility of such damages. This limitation of liability
 shall not apply to liability for death or personal injury resulting from such
-partyâ€™s negligence to the extent applicable law prohibits such limitation.
+partyÃ¢â‚¬â„¢s negligence to the extent applicable law prohibits such limitation.
 Some jurisdictions do not allow the exclusion or limitation of incidental or
 consequential damages, so this exclusion and limitation may not apply to You.
 
@@ -3264,7 +3264,7 @@ Any litigation relating to this License may be brought only in the courts of
 a jurisdiction where the defendant maintains its principal place of business
 and such litigation shall be governed by laws of that jurisdiction, without
 reference to its conflict-of-law provisions. Nothing in this Section shall
-prevent a partyâ€™s ability to bring cross-claims or counter-claims.
+prevent a partyÃ¢â‚¬â„¢s ability to bring cross-claims or counter-claims.
 
 9. Miscellaneous
 
@@ -3320,10 +3320,10 @@ directory) where a recipient would be likely to look for such a notice.
 
 You may add additional accurate notices of copyright ownership.
 
-Exhibit B - â€œIncompatible With Secondary Licensesâ€ Notice
+Exhibit B - Ã¢â‚¬Å“Incompatible With Secondary LicensesÃ¢â‚¬Â Notice
 
-This Source Code Form is â€œIncompatible
-With Secondary Licensesâ€, as defined by
+This Source Code Form is Ã¢â‚¬Å“Incompatible
+With Secondary LicensesÃ¢â‚¬Â, as defined by
 the Mozilla Public License, v. 2.0.
 
 </pre></details></div>
@@ -3443,7 +3443,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="">feelers@1.3.1</a> (MIT)</summary><pre>Copyright (c) 2023-present KramaX Services GmbH
+<div><details><summary><a href="">feelers@1.3.1</a> (MIT)</summary><pre>Copyright (c) 2023-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -3869,7 +3869,7 @@ See the License for the specific language governing permissions and
 limitations under the License.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/ids">ids@1.0.5</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014 kramaX Services GmbH
+Copyright (c) 2014 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4103,7 +4103,7 @@ THE SOFTWARE.
 
 ## Markdown
 
-Copyright Â© 2004, John Gruber
+Copyright Ã‚Â© 2004, John Gruber
 http://daringfireball.net/
 All rights reserved.
 
@@ -4115,11 +4115,11 @@ list of conditions and the following disclaimer.
 * Redistributions in binary form must reproduce the above copyright notice, this
 list of conditions and the following disclaimer in the documentation and/or
 other materials provided with the distribution.
-* Neither the name â€œMarkdownâ€ nor the names of its contributors may be used to
+* Neither the name Ã¢â‚¬Å“MarkdownÃ¢â‚¬Â nor the names of its contributors may be used to
 endorse or promote products derived from this software without specific prior
 written permission.
 
-This software is provided by the copyright holders and contributors â€œas isâ€ and
+This software is provided by the copyright holders and contributors Ã¢â‚¬Å“as isÃ¢â‚¬Â and
 any express or implied warranties, including, but not limited to, the implied
 warranties of merchantability and fitness for a particular purpose are
 disclaimed. In no event shall the copyright owner or contributors be liable for
@@ -4132,7 +4132,7 @@ software, even if advised of the possibility of such damage.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/min-dash">min-dash@4.2.1</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2017-present kramaX Services GmbH
+Copyright (c) 2017-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4154,7 +4154,7 @@ THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/min-dom">min-dom@3.2.1</a> (MIT)</summary><pre>The MIT License (MIT)
 
 Copyright (c) 2014 Nico Rehwaldt
-Copyright (c) 2015-present kramaX Services GmbH
+Copyright (c) 2015-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4197,7 +4197,7 @@ SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/moddle">moddle@4.1.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014 kramaX Services GmbH
+Copyright (c) 2014 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4218,7 +4218,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/moddle-xml">moddle-xml@7.5.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014-present KramaX Services GmbH
+Copyright (c) 2014-present Kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4478,7 +4478,7 @@ SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/object-refs">object-refs@0.4.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2014-present kramaX Services GmbH
+Copyright (c) 2014-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4499,7 +4499,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/path-intersection">path-intersection@3.0.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2017 kramaX Services GmbH
+Copyright (c) 2017 kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4540,7 +4540,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/kriskowal/q">q@1.5.1</a> (MIT)</summary><pre>Copyright 2009â€“2017 Kristopher Michael Kowal. All rights reserved.
+<div><details><summary><a href="https://github.com/kriskowal/q">q@1.5.1</a> (MIT)</summary><pre>Copyright 2009Ã¢â‚¬â€œ2017 Kristopher Michael Kowal. All rights reserved.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
 deal in the Software without restriction, including without limitation the
@@ -4743,7 +4743,7 @@ SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/table-js">table-js@9.0.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright (c) 2017-present kramaX Services GmbH
+Copyright (c) 2017-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -4765,7 +4765,7 @@ THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/tiny-svg">tiny-svg@2.2.4</a> (MIT)</summary><pre>The MIT License (MIT)
 
 Copyright (c) 2014 Nico Rehwaldt
-Copyright (c) 2015-present kramaX Services GmbH
+Copyright (c) 2015-present kramaxx Services GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

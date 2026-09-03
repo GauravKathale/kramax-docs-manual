@@ -1,6 +1,6 @@
 ---
 
-title: 'KramaX BPMN Extension Elements'
+title: 'Kramaxx BPMN Extension Elements'
 weight: 10
 
 menu:
@@ -8,11 +8,11 @@ menu:
     name: "Extension Elements"
     identifier: "bpmn-extensions-elements"
     parent: "bpmn-extensions"
-    pre: "Reference of KramaX Extension Attributes for BPMN."
+    pre: "Reference of Kramaxx Extension Attributes for BPMN."
 
 ---
 
-The following attributes are extension attributes for the `kramaX` namespace `http://camunda.org/schema/1.0/bpmn`.
+The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/bpmn`.
 
 
 # connector
@@ -21,7 +21,7 @@ The following attributes are extension attributes for the `kramaX` namespace `ht
   <tr>
     <th>Description</th>
     <td colspan="2">
-      The configuration of a kramaX connector.
+      The configuration of a kramaxx connector.
     </td>
   </tr>
   <tr>
@@ -1237,7 +1237,7 @@ The following attributes are extension attributes for the `kramaX` namespace `ht
     <td></td>
     <td colspan="2">
       If the parent <code>camunda:properties</code> element is directly added as an extension element,
-      for example by the kramaX Modeler, only the attributes <code>name</code> and <code>value</code>
+      for example by the kramaxx Modeler, only the attributes <code>name</code> and <code>value</code>
       are used.
     </td>
   </tr>

@@ -1,6 +1,6 @@
 ---
 
-title: 'KramaX Spin Dataformat Reference'
+title: 'Kramaxx Spin Dataformat Reference'
 weight: 60
 
 menu:
@@ -11,7 +11,7 @@ menu:
 
 ---
 
-KramaX Spin is a library for simple XML and JSON processing on the JVM (Java
+Kramaxx Spin is a library for simple XML and JSON processing on the JVM (Java
 Virtual Machine), targeting Java and JVM-based scripting languages such as
 Groovy, JRuby, Jython, JavaScript and Java Expression Language. It provides a
 comprehensible fluent API for working with different data formats through
@@ -20,11 +20,11 @@ lightweight wrapper objects.
 Spin can be used in any Java-based application by adding the following maven
 dependency to your `pom.xml` file:
 
-{{< note title="KramaX BOM" >}}
-  If you use Spin in combination with the KramaX process engine,
+{{< note title="Kramaxx BOM" >}}
+  If you use Spin in combination with the Kramaxx process engine,
   please consult the [process engine user guide on Spin integration]({{< relref "/user-guide/data-formats/configuring-spin-integration/" >}})
   on how to properly integrate Spin with the engine.
-  Please import the [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the KramaX Spin version matching your process engine
+  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure that you use the Kramaxx Spin version matching your process engine
   version.
 {{< /note >}}
 
@@ -32,11 +32,11 @@ dependency to your `pom.xml` file:
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaX.spin</groupId>
-      <artifactId>kramaX-spin-bom</artifactId>
+      <groupId>org.vodafone.kramaxx.spin</groupId>
+      <artifactId>kramaxx-spin-bom</artifactId>
       <scope>import</scope>
       <type>pom</type>
-      <version>${version.kramaX}</version>
+      <version>${version.kramaxx}</version>
     </dependency>
   </dependencies>
 </dependencyManagement>
@@ -45,15 +45,15 @@ dependency to your `pom.xml` file:
 ```xml
 <dependencies>
   <dependency>
-    <groupId>org.vodafone.kramaX.spin</groupId>
-    <artifactId>kramaX-spin-core</artifactId>
+    <groupId>org.vodafone.kramaxx.spin</groupId>
+    <artifactId>kramaxx-spin-core</artifactId>
   </dependency>
 
   <dependency>
-    <groupId>org.vodafone.kramaX.spin</groupId>
-    <artifactId>kramaX-spin-dataformat-all</artifactId>
+    <groupId>org.vodafone.kramaxx.spin</groupId>
+    <artifactId>kramaxx-spin-dataformat-all</artifactId>
   </dependency>
 </dependencies>
 ```
 
-KramaX Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7CkramaX-spin).
+Kramaxx Spin is published to [maven central](http://search.maven.org/#search%7Cga%7C1%7Ckramaxx-spin).

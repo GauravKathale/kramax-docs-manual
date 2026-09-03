@@ -52,19 +52,19 @@ in your `@SpringBootTest` annotation:
 @SpringBootTest(
   // ...other parameters...
   properties = {
-    "kramaX.bpm.generate-unique-process-engine-name=true",
+    "kramaxx.bpm.generate-unique-process-engine-name=true",
     // this is only needed if a SpringBootProcessApplication 
     // is used for the test
-    "kramaX.bpm.generate-unique-process-application-name=true",
+    "kramaxx.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
     // additional properties...
   }
 )
 ```
 
-* The `kramaX.bpm.generate-unique-process-engine-name=true` property will generate
+* The `kramaxx.bpm.generate-unique-process-engine-name=true` property will generate
 a unique name for the Process Engine (ex. 'processEngine2Sc4bg2s1g').
-* The `kramaX.bpm.generate-unique-process-application-name=true` property will generate
+* The `kramaxx.bpm.generate-unique-process-application-name=true` property will generate
 a unique name for the Process Application (ex. 'processApplication2Sc4bg2s1g'). This is useful
 if you want to deploy and test a Process Application multiple times with multiple configurations.
 * The `spring.datasource.generate-unique-name=true` property will generate a new datasource for
@@ -80,29 +80,29 @@ If a static accessor needs to be used (e.g. processEngines.getProcessEngine(name
 @SpringBootTest(
   // other parameters
   properties = {
-    "kramaX.bpm.process-engine-name=foo",
+    "kramaxx.bpm.process-engine-name=foo",
     // this is only needed if a SpringBootProcessApplication 
     // is used for the test
-    "kramaX.bpm.generate-unique-process-application-name=true",
+    "kramaxx.bpm.generate-unique-process-application-name=true",
     "spring.datasource.generate-unique-name=true",
     // additional properties
   }
 )
 ```
-Here, the `kramaX.bpm.process-engine-name=foo` will set (a unique name) "foo" as the Process Engine name.
+Here, the `kramaxx.bpm.process-engine-name=foo` will set (a unique name) "foo" as the Process Engine name.
 
-## KramaX Assertions
+## Kramaxx Assertions
 
-The [KramaX Assertions]({{< relref "/user-guide/testing/_index.md#kramaX-assertions" >}}) library is 
-integrated with the KramaX Spring Boot Starter in
+The [Kramaxx Assertions]({{< relref "/user-guide/testing/_index.md#kramaxx-assertions" >}}) library is 
+integrated with the Kramaxx Spring Boot Starter in
 order to make testing processes in your Spring Boot application easier.
 
 ### Using Assertions with Context Caching
 
-Out of the box, the KramaX Assertions library tries to use the
+Out of the box, the Kramaxx Assertions library tries to use the
 default engine or the (single) one that is available. Since when using
 Context Caching multiple engines are used in different contexts, binding
-the correct Process Engine to the KramaX Assertions library is required
+the correct Process Engine to the Kramaxx Assertions library is required
 for both caching and assertions to work correctly. This can be done
 through the following initialization code in the test class:
 

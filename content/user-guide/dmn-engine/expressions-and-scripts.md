@@ -69,9 +69,9 @@ elements `inputExpression`, `inputEntry`, `outputEntry` and `literalExpression`:
 
 # Supported Expression Languages
 
-The KramaX DMN engine supports two expression languages out of the box:
+The Kramaxx DMN engine supports two expression languages out of the box:
 
-- `JUEL`: A KramaX-maintained [implementation][juel] of the Java [Unified Expression Language][EL]
+- `JUEL`: A Kramaxx-maintained [implementation][juel] of the Java [Unified Expression Language][EL]
 - `FEEL`: The Friendly Enough Expression Language of the [DMN 1.2] standard.
 
 Depending on the JDK you use, there may also be a `Javascript` implementation

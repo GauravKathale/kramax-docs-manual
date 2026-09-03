@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The Deployments section provides visibility into all artifacts deployed to the KramaX BPM Engine, including process models, decision definitions, and supporting resources. It enables users to view deployment details, explore associated resources, and perform lifecycle actions such as deletion and download.
+The Deployments section provides visibility into all artifacts deployed to the Kramaxx BPM Engine, including process models, decision definitions, and supporting resources. It enables users to view deployment details, explore associated resources, and perform lifecycle actions such as deletion and download.
 
 ## Overview
 
@@ -46,7 +46,7 @@ Selecting a deployment opens the Deployment Details View, which follows the stan
 
 {{< img src="../img/deployment-details-view.png" title="Deployment Details View" >}}
 
-### 1. Left Panel â€“ Deployment Metadata & Resources
+### 1. Left Panel Ã¢â‚¬â€œ Deployment Metadata & Resources
 
 The left panel provides:
 - Deployment-level metadata (ID, name, time, source)
@@ -60,7 +60,7 @@ Users can view various resource types, including:
 - Scripts (e.g., Groovy, JavaScript)
 - Unsupported file types can be downloaded 
 
-### 2. Canvas â€“ Resource Visualization
+### 2. Canvas Ã¢â‚¬â€œ Resource Visualization
 
 When a resource is selected from the left panel:
 - The selected resource is displayed in the canvas section
@@ -68,7 +68,7 @@ When a resource is selected from the left panel:
 
 This allows users to directly inspect deployed models and artifacts.
 
-### 3. Bottom Section â€“ Related Definitions
+### 3. Bottom Section Ã¢â‚¬â€œ Related Definitions
 
 The bottom section displays tabs containing:
 - Process Definitions associated with the deployment

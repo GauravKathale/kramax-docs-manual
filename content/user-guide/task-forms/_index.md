@@ -14,10 +14,10 @@ menu:
 
 There are different types of forms which are primarily used in Tasklist. To implement a task form in your application, you have to connect the form resource with the BPMN 2.0 element in your process diagram. Suitable BPMN 2.0 elements for calling tasks forms are the [StartEvent][start-event] and the [UserTask][user-tasks].
 
-Forms are referenced using Form Keys or Form References and can either be embedded in KramaX Tasklist or handled by a custom application. Depending on your use-case, different Form Types can be used:
+Forms are referenced using Form Keys or Form References and can either be embedded in Kramaxx Tasklist or handled by a custom application. Depending on your use-case, different Form Types can be used:
 
 1. [Embedded Task Forms](#embedded-task-forms) allow you to embed custom HTML and JavaScript forms into Tasklist.
-2. [KramaX Forms](#kramaX-forms) offer visual editing of forms in the KramaX Modeler and can be used for less complex forms. KramaX Forms are the only form type that can be referenced either by Form Key or by Form Reference.
+2. [Kramaxx Forms](#kramaxx-forms) offer visual editing of forms in the Kramaxx Modeler and can be used for less complex forms. Kramaxx Forms are the only form type that can be referenced either by Form Key or by Form Reference.
 3. [External Task Forms](#external-task-forms) can be used to link to custom applications. The Form will not be embedded in Tasklist.
 
 If no form key is present, a [Generic Task Form](#generic-task-forms) will be shown.
@@ -33,13 +33,13 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
   </tr>
   <tr>
     <td>FORM-TYPE</td>
-    <td>Can be <code>embedded</code> or <code>kramaX-forms</code> depending on the form type. If no type is set, the form will be shown as an <a href="#external-task-forms">External Task Form</a>.</td>
+    <td>Can be <code>embedded</code> or <code>kramaxx-forms</code> depending on the form type. If no type is set, the form will be shown as an <a href="#external-task-forms">External Task Form</a>.</td>
   </tr>
   <tr>
     <td>LOCATION</td>
     <td>Can be either <code>deployment</code> or <code>app</code>:
     <ul>
-      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< relref "/get-started/quick-start/deploy/#use-the-kramaX-modeler-to-deploy-the-process">}}"by deploying from the KramaX Modeler</a>), which means that it is stored in the KramaX database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
+      <li><em>deployment</em>: The file is part of your deployment (e.g., <a href="{{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}">by adding it to your process archive</a> or <a href="{{< relref "/get-started/quick-start/deploy/#use-the-kramaxx-modeler-to-deploy-the-process">}}"by deploying from the Kramaxx Modeler</a>), which means that it is stored in the Kramaxx database. It can then be loaded from there. Note that this allows versioning of your form alongside the process model.</li>
       <li><em>app</em>: Add the file to your development project in a folder <code>src/main/webapp/forms</code>. The form file will be packaged into your deployment artifact (typically a WAR archive). During runtime it will be loaded from there.</li>
     </ul>
   </td>
@@ -51,10 +51,10 @@ Form keys that are used in Tasklist have the structure `FORM-TYPE:LOCATION:FORM.
 </table>
 
 
-To configure the form in your process, open the process with the [KramaX Modeler](http://kramaX.vodafone.org/bpmn/tool/) and select the desired [UserTask][user-tasks] or [StartEvent][start-event]. Open the properties panel and enter the Form Key. The relevant XML tag looks like this:
+To configure the form in your process, open the process with the [Kramaxx Modeler](http://kramaxx.vodafone.org/bpmn/tool/) and select the desired [UserTask][user-tasks] or [StartEvent][start-event]. Open the properties panel and enter the Form Key. The relevant XML tag looks like this:
 
 ```xml
-<userTask id="theTask" camunda:formKey="kramaX-forms:deployment:forms/userTask.form"
+<userTask id="theTask" camunda:formKey="kramaxx-forms:deployment:forms/userTask.form"
           camunda:candidateUsers="John, Mary"
           name="my Task">
 ```
@@ -85,9 +85,9 @@ To add an embedded form to your application, simply create an HTML file and refe
 
 The form key for this file could be `embedded:deployment:FORM_NAME.html` or `embedded:app:forms/FORM_NAME.html`.
 
-# KramaX Forms
+# Kramaxx Forms
 
-KramaX Forms are created as separate files using the KramaX Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build KramaX Forms in the [KramaX Modeler documentation]({{< relref "/modeler/forms.md" >}}) or refer to the [KramaX Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
+Kramaxx Forms are created as separate files using the Kramaxx Modeler and can be deployed together with the process models. The form schema is stored in `.form` files.  You can find out how to build Kramaxx Forms in the [Kramaxx Modeler documentation]({{< relref "/modeler/forms.md" >}}) or refer to the [Kramaxx Forms Reference](https://docs.camunda.io/docs/guides/utilizing-forms/) to explore all configuration options for form elements.
 
 [Process variables]({{< relref "/user-guide/process-engine/variables.md" >}}) are mapped to form fields where the field's key matches the variable name.
 
@@ -100,12 +100,12 @@ Forms can be used on top of the task completion API to render form fields and va
 
 ## Form Reference
 
-With Form References, KramaX Forms provide a flexible way of linking an element in a BPMN diagram to a form. To link a BPMN element ([StartEvent][start-event] or [UserTask][user-tasks]) to a KramaX Form, you have to specify the Id of the KramaX Form as the `camunda:formRef` attribute. Additionally, the `camunda:formRefBinding` attribute specifies which version of the KramaX Form to reference.
+With Form References, Kramaxx Forms provide a flexible way of linking an element in a BPMN diagram to a form. To link a BPMN element ([StartEvent][start-event] or [UserTask][user-tasks]) to a Kramaxx Form, you have to specify the Id of the Kramaxx Form as the `camunda:formRef` attribute. Additionally, the `camunda:formRefBinding` attribute specifies which version of the Kramaxx Form to reference.
 
 Valid values are:
 
-* `deployment`, which references the KramaX Form with the given key that was deployed with the same deployment as the referencing process.
-* `latest`, which will refer to the latest deployed version of the KramaX Form.
+* `deployment`, which references the Kramaxx Form with the given key that was deployed with the same deployment as the referencing process.
+* `latest`, which will refer to the latest deployed version of the Kramaxx Form.
 *  `version`, which allows you to specify a specific version to be referenced from the BPMN element with the `camunda:formRefVersion` attribute.
 
 ```xml
@@ -128,14 +128,14 @@ The attributes `camunda:formRef` and `camunda:formRefVersion` can be specified a
 </bpmn:userTask>
 ```
 
-{{< img src="img/reference-kramaX-form.png" title="Provide Form Key for KramaX Forms" >}}
+{{< img src="img/reference-kramaxx-form.png" title="Provide Form Key for Kramaxx Forms" >}}
 
 ## Form Key
 
-Aa an alternative to `formRef` you can reference a KramaX Form file with a `deployment` or `app` [form key]({{< relref "/user-guide/task-forms/_index.md#form-key-details" >}}):
+Aa an alternative to `formRef` you can reference a Kramaxx Form file with a `deployment` or `app` [form key]({{< relref "/user-guide/task-forms/_index.md#form-key-details" >}}):
 
-* `kramaX-forms:deployment:FORM_NAME.form`
-* `kramaX-forms:app:forms/FORM_NAME.form`
+* `kramaxx-forms:deployment:FORM_NAME.form`
+* `kramaxx-forms:app:forms/FORM_NAME.form`
 
 To enter the `formKey` in the Modeler,  you have to select `Embedded or External Task Forms` as Type in the dropdown. 
 
@@ -145,7 +145,7 @@ From the form developers point of view, `formRef` offers more flexibility than `
 
 To define a default value for a form field, a process variable with the same name as the form field key needs to be defined. Local variables (e.g. created by defining an [Input Parameter](../process-engine/variables/#input-output-variable-mapping) for the User Task) take precedence over process variables.
 
-{{< img src="img/variable-mapping-kramaX-form.png" title="User Input/Output Mappings for default values for form fields" >}}
+{{< img src="img/variable-mapping-kramaxx-form.png" title="User Input/Output Mappings for default values for form fields" >}}
 
 The submitted values of a form are returned as variables to the process engine:
 
@@ -156,16 +156,16 @@ The submitted values of a form are returned as variables to the process engine:
 ## Dynamic Components
 
 You can bind the available options of some component types (Select, Radio Buttons, Checklist, and Taglist) to a variable.
-Like this, KramaX Forms show available options dynamically based on process data (variables).
+Like this, Kramaxx Forms show available options dynamically based on process data (variables).
 
-To bind a variable to a dynamic component, define its name in KramaX Modeler's form builder in the Properties Panel under **Options Source** -> **Type** -> **Input Data** -> **Dynamic options** -> **Input values key** for the respective component.
+To bind a variable to a dynamic component, define its name in Kramaxx Modeler's form builder in the Properties Panel under **Options Source** -> **Type** -> **Input Data** -> **Dynamic options** -> **Input values key** for the respective component.
 
-KramaX Forms support the following variable types that can represent JSON:
+Kramaxx Forms support the following variable types that can represent JSON:
 
 * `Json`
 * `Object` with the `serializationDataFormat: application/json`
 
-KramaX Forms store and retrieve user selections for each component in a variable whose name equals the component key.
+Kramaxx Forms store and retrieve user selections for each component in a variable whose name equals the component key.
 If a variable supposed to store the user selection for multi-select components (Checklist or Taglist) doesn't exist yet, a new one is created on form submission with the same type as the variable that defines the available options.
 
 The format to define available options looks as follows:
@@ -190,21 +190,21 @@ If you are about to prototype your application, you can also use the shortcut fo
 ```
 
 ## Deployment
-If you want to include your KramaX Form as part of the `deployment`, then you need to deploy the `.form` file in the same deployment as the respective `.bpmn` diagram - for example using the KramaX Modeler (since Modeler Version 5.0.0).
+If you want to include your Kramaxx Form as part of the `deployment`, then you need to deploy the `.form` file in the same deployment as the respective `.bpmn` diagram - for example using the Kramaxx Modeler (since Modeler Version 5.0.0).
 
 {{< note title="Automatic deployment" class="warning" >}}
-KramaX Forms are not automatically deployed as part of a [process archive]({{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}) by default. 
+Kramaxx Forms are not automatically deployed as part of a [process archive]({{< relref "/reference/deployment-descriptors/tags/process-archive.md" >}}) by default. 
 You need to configure it accordingly by adding it as a resource directly or by adding `form` to the list of `additionalResourceSuffixes`.
-Using [KramaX Run]({{< relref "/user-guide/kramaX-bpm-run.md#starting-with-kramaX-platform-run" >}}), all additional resources - including KramaX Forms - 
+Using [Kramaxx Run]({{< relref "/user-guide/kramaxx-bpm-run.md#starting-with-kramaxx-platform-run" >}}), all additional resources - including Kramaxx Forms - 
 placed inside the `configuration/resources/` directory are automatically deployed.
 {{< /note >}}
 
-{{< img src="img/deploy-form.png" title="Deploy your KramaX Form file" >}}
+{{< img src="img/deploy-form.png" title="Deploy your Kramaxx Form file" >}}
 
-You can also include KramaX Forms from other deployments by using [form references](#form-reference).
+You can also include Kramaxx Forms from other deployments by using [form references](#form-reference).
 
 # External Task Forms
-{{< note title="Using Task Forms outside of KramaX Tasklist" class="info" >}}
+{{< note title="Using Task Forms outside of Kramaxx Tasklist" class="info" >}}
   When embedding the process engine into a custom application, you can use any value in the form key property as a reference to your custom form. This way, your front-end can ensure to render the correct form for each user task.
 {{< /note >}}
 
@@ -251,12 +251,12 @@ You can also retrieve already existing variables of the process instance by clic
 
 ## Generated Task Forms
 
-{{< note title="KramaX Forms or Generated Task Forms?" class="info" >}}
-  The feature set of KramaX Forms and Generated Task Forms are similar. For new projects, we recommend to use KramaX Forms, as they offer more flexibility and are easier to create.
+{{< note title="Kramaxx Forms or Generated Task Forms?" class="info" >}}
+  The feature set of Kramaxx Forms and Generated Task Forms are similar. For new projects, we recommend to use Kramaxx Forms, as they offer more flexibility and are easier to create.
 {{< /note >}}
 
 
-The KramaX process engine supports generating HTML task forms based on Form Data Metadata provided in the BPMN 2.0 XML. Form Data Metadata is a set of BPMN 2.0 vendor extensions provided by KramaX, allowing you to define form fields directly in the BPMN 2.0 XML:
+The Kramaxx process engine supports generating HTML task forms based on Form Data Metadata provided in the BPMN 2.0 XML. Form Data Metadata is a set of BPMN 2.0 vendor extensions provided by Kramaxx, allowing you to define form fields directly in the BPMN 2.0 XML:
 
 ```xml
 <userTask id="usertask" name="Task">
@@ -283,7 +283,7 @@ The KramaX process engine supports generating HTML task forms based on Form Data
 </userTask>
 ```
 
-Form metadata can be graphically edited using the [KramaX Modeler](https://kramaX.vodafone.org/products/kramaX-platform/modeler/).
+Form metadata can be graphically edited using the [Kramaxx Modeler](https://kramaxx.vodafone.org/products/kramaxx-platform/modeler/).
 
 This form would look like this in Tasklist:
 
@@ -355,7 +355,7 @@ A form field can have the following attributes:
 
 ### Form Field Validation
 
-Validation can be used for specifying frontend and backend validation of form fields. KramaX provides a set of built-in form field validators and an extension point for plugging in custom validators.
+Validation can be used for specifying frontend and backend validation of form fields. Kramaxx provides a set of built-in form field validators and an extension point for plugging in custom validators.
 
 Validation can be configured for each form field in the BPMN 2.0 XML:
 
@@ -449,7 +449,7 @@ The following built-in validators are supported out of the box:
   </tbody>
 </table>
 
-KramaX supports custom validators. Custom validators are referenced using their fully qualified classname or an expression. Expressions can be used for resolving Spring or CDI @Named beans:
+Kramaxx supports custom validators. Custom validators are referenced using their fully qualified classname or an expression. Expressions can be used for resolving Spring or CDI @Named beans:
 
 ```xml
 <camunda:formField
@@ -465,7 +465,7 @@ KramaX supports custom validators. Custom validators are referenced using their 
   The name attribute must be set to "validator" in order to use custom form field validator.
 {{< /note >}}
 
-A custom validator implements the `org.vodafone.kramaX.bpm.engine.impl.form.validator.FormFieldValidator` interface:
+A custom validator implements the `org.vodafone.kramaxx.bpm.engine.impl.form.validator.FormFieldValidator` interface:
 
 ```java
 public class CustomValidator implements FormFieldValidator {

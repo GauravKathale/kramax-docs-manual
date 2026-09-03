@@ -11,9 +11,9 @@ menu:
 
 ---
 
-Completed the <a href="{{< relref "/get-started" >}}">Getting Started Guides</a>? Now discover what you can build with KramaX.
+Completed the <a href="{{< relref "/get-started" >}}">Getting Started Guides</a>? Now discover what you can build with Kramaxx.
 
-This page collects links to hands-on examples around KramaX.
+This page collects links to hands-on examples around Kramaxx.
 
-* [Examples](https://github.com/vodafone/kramaX-examples) (On Github)
+* [Examples](https://github.com/vodafone/kramaxx-examples) (On Github)
 * more to come.

@@ -12,7 +12,7 @@ menu:
 
 
 [Custom extension elements]({{< relref "/reference/bpmn20/custom-extensions/_index.md" >}}) are a standardized way to extend the BPMN model.
-The [KramaX extension elements]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md" >}}) are fully implemented in the BPMN model API, but unknown extension elements can also easily be accessed and added.
+The [Kramaxx extension elements]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md" >}}) are fully implemented in the BPMN model API, but unknown extension elements can also easily be accessed and added.
 
 Every BPMN `BaseElement` can have a child element of the type `extensionElements`.
 This element can contain all sorts of extension elements. To access the
@@ -32,7 +32,7 @@ Collection<ModelElementInstance> elements = extensionElements.getElements();
 After that you can add or remove extension elements to the collection.
 
 ```java
-KramaXFormData formData = modelInstance.newInstance(KramaXFormData.class);
+KramaxxFormData formData = modelInstance.newInstance(KramaxxFormData.class);
 extensionElements.getElements().add(formData);
 extensionElements.getElements().remove(formData);
 ```
@@ -43,25 +43,25 @@ You can also access a query-like interface to filter the extension elements.
 extensionElements.getElementsQuery().count();
 extensionElements.getElementsQuery().list();
 extensionElements.getElementsQuery().singleResult();
-extensionElements.getElementsQuery().filterByType(KramaXFormData.class).singleResult();
+extensionElements.getElementsQuery().filterByType(KramaxxFormData.class).singleResult();
 ```
 
 Additionally, there are some shortcuts to add new extension elements. You can use
 the `namespaceUri` and the `elementName` to add your own extension elements. Or
-you can use the `class` of a known extension element type, e.g., the kramaX
+you can use the `class` of a known extension element type, e.g., the kramaxx
 extension elements. The extension element is added to the BPMN element and returned
 so that you can set attributes or add child elements.
 
 ```java
 ModelElementInstance element = extensionElements.addExtensionElement("http://example.com/bpmn", "myExtensionElement");
-KramaXExecutionListener listener = extensionElements.addExtensionElement(KramaXExecutionListener.class);
+KramaxxExecutionListener listener = extensionElements.addExtensionElement(KramaxxExecutionListener.class);
 ```
 
 Another helper method exists for the fluent builder API which allows you to add prior defined extension elements.
 
 ```java
-KramaXExecutionListener kramaXExecutionListener = modelInstance.newInstance(KramaXExecutionListener.class);
-kramaXExecutionListener.setKramaXClass("org.vodafone.kramaX.bpm.MyJavaDelegte");
+KramaxxExecutionListener kramaxxExecutionListener = modelInstance.newInstance(KramaxxExecutionListener.class);
+kramaxxExecutionListener.setKramaxxClass("org.vodafone.kramaxx.bpm.MyJavaDelegte");
 startEvent.builder()
-  .addExtensionElement(kramaXExecutionListener);
+  .addExtensionElement(kramaxxExecutionListener);
 ```

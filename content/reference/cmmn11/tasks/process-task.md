@@ -47,7 +47,7 @@ The activation of the process task as well as the creation and execution of the 
 
 # Process Binding
 
-By default, the process task creates a new process instance of the latest process definition with the specified key. To specify a different version of a process, it is possible to define a binding with the KramaX custom attribute `processBinding`. The following values are allowed for the attribute `processBinding`:
+By default, the process task creates a new process instance of the latest process definition with the specified key. To specify a different version of a process, it is possible to define a binding with the Kramaxx custom attribute `processBinding`. The following values are allowed for the attribute `processBinding`:
 
 * `latest`: use the latest process definition version (which is also the default behavior if the attribute is not defined)
 * `deployment`: use the process definition version that is part of the calling case definition's deployment (note: this requires that a process with the specified key is deployed along with the case definition)
@@ -105,7 +105,7 @@ An expression also allows using the tenant id of the calling case instance inste
 
 # Exchange Variables
 
-The KramaX custom extensions elements `in` and `out` allow to exchange variables between the process task (in a case instance) and the process instance that it creates: `in` elements of a process task map case variables to input variables of the launched process instance and `out` mappings of a process task map output variables of the process instance to case variables, e.g.,:
+The Kramaxx custom extensions elements `in` and `out` allow to exchange variables between the process task (in a case instance) and the process instance that it creates: `in` elements of a process task map case variables to input variables of the launched process instance and `out` mappings of a process task map output variables of the process instance to case variables, e.g.,:
 
 ```xml
 <processTask id="checkCreditProcess" name="Check credit" processRef="checkCreditProcess">
@@ -192,24 +192,24 @@ If the business key of the called process instance should be different than the 
 </processTask>
 ```
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>
     <th>Attributes</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#processbinding" >}}">camunda:processBinding</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#processtenantid" >}}">camunda:processTenantId</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-attributes.md#processversion" >}}">camunda:processVersion</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processbinding" >}}">camunda:processBinding</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processtenantid" >}}">camunda:processTenantId</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-attributes.md#processversion" >}}">camunda:processVersion</a>
     </td>
   </tr>
   <tr>
     <th>Extension Elements</th>
     <td>
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#in" >}}">camunda:in</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#out" >}}">camunda:out</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
-      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaX-elements.md#variablelistener" >}}">camunda:variableListener</a>
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#in" >}}">camunda:in</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#out" >}}">camunda:out</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#caseexecutionlistener" >}}">camunda:caseExecutionListener</a>,
+      <a href="{{< relref "/reference/cmmn11/custom-extensions/kramaxx-elements.md#variablelistener" >}}">camunda:variableListener</a>
     </td>
   </tr>
   <tr>

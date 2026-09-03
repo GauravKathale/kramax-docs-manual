@@ -10,7 +10,7 @@ menu:
 
 ---
 
-Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In KramaX, [history cleanup](https://docs.kramaX.vodafone.org/user-guide/process-engine/history/) removes this historic data from the database based on a defined **history time to live (HTTL)**.
+Each execution of a model resource (BPMN, DMN, and CMMN) generates historic data during execution that is stored in the database. In Kramaxx, [history cleanup](https://docs.kramaxx.vodafone.org/user-guide/process-engine/history/) removes this historic data from the database based on a defined **history time to live (HTTL)**.
 
 Going forward, you must configure HTTL in one of the following ways:
 
@@ -22,13 +22,13 @@ Going forward, you must configure HTTL in one of the following ways:
 
 Process instances are only cleaned up if their corresponding definition has a valid time to live (TTL). Use the `historyTimeToLive` extension attribute of the process definition to define the TTL for all its instances:
 
-`<process id="oneTaskProcess" name="The One Task Process" isExecutable="true" kramaX:historyTimeToLive="5"></process>`
+`<process id="oneTaskProcess" name="The One Task Process" isExecutable="true" kramaxx:historyTimeToLive="5"></process>`
 
 TTL can also be defined in ISO-8601 date format. The function only accepts the notation to define the number of days.
 
-`<process id="oneTaskProcess" name="The One Task Process" isExecutable="true" kramaX:historyTimeToLive="P5D"></process>`
+`<process id="oneTaskProcess" name="The One Task Process" isExecutable="true" kramaxx:historyTimeToLive="P5D"></process>`
 
-Refer to the [KramaX documentation regarding case definitions](https://docs.kramaX.vodafone.org/user-guide/process-engine/history/history-cleanup/#process-decision-case-definitions) for additional details.
+Refer to the [Kramaxx documentation regarding case definitions](https://docs.kramaxx.vodafone.org/user-guide/process-engine/history/history-cleanup/#process-decision-case-definitions) for additional details.
 
 Time to live must be defined under **History cleanup** in the properties panel on the right side of the screen.
 
@@ -40,4 +40,4 @@ In the screenshot above, note that the time to live must be defined under **Hist
 
 ## References
 
-- [History documentation](https://docs.kramaX.vodafone.org/user-guide/process-engine/history)
+- [History documentation](https://docs.kramaxx.vodafone.org/user-guide/process-engine/history)

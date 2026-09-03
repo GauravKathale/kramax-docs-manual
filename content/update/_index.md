@@ -11,6 +11,6 @@ menu:
 
 ---
 
-These documents provide instructions to update a Java Project or a KramaX installation to a new version.
+These documents provide instructions to update a Java Project or a Kramaxx installation to a new version.
 
 Depending on which update you want to perform, choose one of the following guides:

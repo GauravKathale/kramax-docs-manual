@@ -10,45 +10,45 @@ menu:
 
 ---
 
-This page provides an overview of how to secure a KramaX installation. For KramaX's security policy, a list of security notices and a guide how to report vulnerabilities, please visit the [general security documentation]({{< relref "/security" >}}).
+This page provides an overview of how to secure a Kramaxx installation. For Kramaxx's security policy, a list of security notices and a guide how to report vulnerabilities, please visit the [general security documentation]({{< relref "/security" >}}).
 
-In order to secure a KramaX installation, KramaX itself must be configured correctly and it must be integrated correctly into its environment. This section also identifies areas where we consider security issues to be relevant for the specific KramaX product and listed those in the subsequent sections. Compliance for those areas is ensured based on common industry best practices and influenced by security requirements of standards like OWASP Top 10 and others
+In order to secure a Kramaxx installation, Kramaxx itself must be configured correctly and it must be integrated correctly into its environment. This section also identifies areas where we consider security issues to be relevant for the specific Kramaxx product and listed those in the subsequent sections. Compliance for those areas is ensured based on common industry best practices and influenced by security requirements of standards like OWASP Top 10 and others
 
 # Deployment Options and Components
 
-There are different ways of using KramaX and different components are provided: the process engine itself, the REST API, the web applications. Depending on how KramaX is deployed and which components are used, different security considerations apply. The following list gives a general overview over deployment options and components outlining the main differences from a security point of view. The remainder of this chapter elaborates on the different configuration options.
+There are different ways of using Kramaxx and different components are provided: the process engine itself, the REST API, the web applications. Depending on how Kramaxx is deployed and which components are used, different security considerations apply. The following list gives a general overview over deployment options and components outlining the main differences from a security point of view. The remainder of this chapter elaborates on the different configuration options.
 
-* Embedded Java library inside an application: in this case, the KramaX engine is embedded inside a custom Java Application. Usually the application takes care of securing access to KramaX's APIs and the APIs are not directly exposed to an end user. In this case, the application typically takes care of ensuring authentication and preventing access by unauthorized users.
+* Embedded Java library inside an application: in this case, the Kramaxx engine is embedded inside a custom Java Application. Usually the application takes care of securing access to Kramaxx's APIs and the APIs are not directly exposed to an end user. In this case, the application typically takes care of ensuring authentication and preventing access by unauthorized users.
 * Shared Process Engine: in this scenario, the Process Engine is deployed as a container service into an application server such that it can be used by the applications deployed into the same container / server. This case is similar to the embedded Java library case.
-* REST API: the REST API provides access to KramaX's core APIs through HTTP. In this case users can directly access KramaX's APIs. Usually, it is necessary to configure authentication, authorization and also secure the connection to the REST API using SSL (HTTPS).
+* REST API: the REST API provides access to Kramaxx's core APIs through HTTP. In this case users can directly access Kramaxx's APIs. Usually, it is necessary to configure authentication, authorization and also secure the connection to the REST API using SSL (HTTPS).
 * Web applications (Cockpit, Tasklist, ...): similar considerations to the REST API apply.
 
 
-Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.kramaX.vodafone.org/manual/latest/installation/full/tomcat/manual/)).
+Keep in mind that it is not recommended to use the pre-packaged distribution in production environment rather install the full distribution manually (for example [Tomcat manual installation](https://docs.kramaxx.vodafone.org/manual/latest/installation/full/tomcat/manual/)).
 
 {{< note title="Security Consideration" class="warning" >}}
   The pre-packaged distribution is intended for users who want a getting started experience. In case
   you still want to use it in production, consider un-deploying the invoice application and removing the demo user.
 {{</note>}}
 
-# Security Configuration inside KramaX
+# Security Configuration inside Kramaxx
 
-KramaX provides a number of configuration options which are relevant from a security perspective. Most prominently: authentication, authorization and the control of custom code (scripts) which can be executed on the server.
+Kramaxx provides a number of configuration options which are relevant from a security perspective. Most prominently: authentication, authorization and the control of custom code (scripts) which can be executed on the server.
 
 ## Authentication
 
-Authentication controls _who_ can access KramaX's APIs and Applications.
+Authentication controls _who_ can access Kramaxx's APIs and Applications.
 
 ### Do I need Authentication?
 
 Authentication is only needed in the following cases:
 
-* KramaX's REST API is used
-* KramaX's web applications are used
+* Kramaxx's REST API is used
+* Kramaxx's web applications are used
 
-In these cases, direct access to KramaX's core APIs is provided over HTTP and authentication must be enabled.
+In these cases, direct access to Kramaxx's core APIs is provided over HTTP and authentication must be enabled.
 
-By contrast, authentication is generally not done by KramaX when embedded as a library into an application. In this case the application takes care of authentication itself.
+By contrast, authentication is generally not done by Kramaxx when embedded as a library into an application. In this case the application takes care of authentication itself.
 
 ### Enabling Authentication for the REST API
 
@@ -79,10 +79,10 @@ to querying for the authentication information on each REST API request.
 Note that changing the time to live to a lower value can harm the performance of your database server.
 {{< /note >}}
 
-#### Enable authentication logging in the KramaX web apps
+#### Enable authentication logging in the Kramaxx web apps
 
 It is generally recommended to enable logging of log in attempts (successful and failed) as well as log out events.
-In KramaX, you can enable authentication logging in the KramaX web apps by setting the `webappsAuthenticationLoggingEnabled` process engine [configuration flag]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#webappsAuthenticationLoggingEnabled" >}}) to true. All user-initiated log in and log out events will then be logged to the application log using the `org.vodafone.kramaX.bpm.webapp` [logger]({{< relref "/user-guide/logging.md#process-engine">}}).
+In Kramaxx, you can enable authentication logging in the Kramaxx web apps by setting the `webappsAuthenticationLoggingEnabled` process engine [configuration flag]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#webappsAuthenticationLoggingEnabled" >}}) to true. All user-initiated log in and log out events will then be logged to the application log using the `org.vodafone.kramaxx.bpm.webapp` [logger]({{< relref "/user-guide/logging.md#process-engine">}}).
 
 The following events produce log statements:
 
@@ -93,25 +93,25 @@ The following events produce log statements:
 * Successful log out
 
 {{< note title="Heads-up!" class="warning" >}}
-Someone could use brute force to produce arbitrary amounts of log statements and potentially reduce disc space available for logging. This could theoretically lead to a denial of service if the logs are stored on the same partition as the application. KramaX does not handle such cases and the users are responsible to mitigate this risk, e.g. by [limiting log in attempts]({{< relref "/user-guide/process-engine/identity-service.md#throttle-login-attempts" >}}).
+Someone could use brute force to produce arbitrary amounts of log statements and potentially reduce disc space available for logging. This could theoretically lead to a denial of service if the logs are stored on the same partition as the application. Kramaxx does not handle such cases and the users are responsible to mitigate this risk, e.g. by [limiting log in attempts]({{< relref "/user-guide/process-engine/identity-service.md#throttle-login-attempts" >}}).
 {{< /note >}}
 
 ### Internal (database backed) User Management
 
-To perform authentication, KramaX can use two sources: a database or LDAP.
+To perform authentication, Kramaxx can use two sources: a database or LDAP.
 
-When using the database, usernames and passwords are stored inside the `ACT_ID_USER` table (see [documentation on database schema]({{< relref "/user-guide/process-engine/database/database-schema.md#identity" >}})). To protect the passwords stored in the database, KramaX uses two concepts:
+When using the database, usernames and passwords are stored inside the `ACT_ID_USER` table (see [documentation on database schema]({{< relref "/user-guide/process-engine/database/database-schema.md#identity" >}})). To protect the passwords stored in the database, Kramaxx uses two concepts:
 
-* **hashing**: instead of storing the password in plain text, a hash is stored. When authenticating, the same hash is generated from the user's input and compared against the hash in the database. If both hashes are equal the authentication attempt is successful. KramaX allows users to configure and customize the hash function used. Please refer the [documentation section on password hashing]({{< relref "/user-guide/process-engine/password-hashing.md" >}}) for details.
-* **salted hashes** to protect the database against rainbow table attacks, KramaX uses salted hashes. Similar to hashing itself, this function can be configured and extended to a user's needs. Please refer the [documentation section on password hashing]({{< relref "/user-guide/process-engine/password-hashing.md" >}}) for details.
+* **hashing**: instead of storing the password in plain text, a hash is stored. When authenticating, the same hash is generated from the user's input and compared against the hash in the database. If both hashes are equal the authentication attempt is successful. Kramaxx allows users to configure and customize the hash function used. Please refer the [documentation section on password hashing]({{< relref "/user-guide/process-engine/password-hashing.md" >}}) for details.
+* **salted hashes** to protect the database against rainbow table attacks, Kramaxx uses salted hashes. Similar to hashing itself, this function can be configured and extended to a user's needs. Please refer the [documentation section on password hashing]({{< relref "/user-guide/process-engine/password-hashing.md" >}}) for details.
 
 ### LDAP
 
-As an alternative to the database, KramaX can use LDAP for verifying user credentials on authentication. KramaX has read-only access to LDAP.
+As an alternative to the database, Kramaxx can use LDAP for verifying user credentials on authentication. Kramaxx has read-only access to LDAP.
 
 ## Authorization
 
-Authorization controls what data a user can access and change in KramaX once authenticated. Authentication is a pre-requisite to authorization.
+Authorization controls what data a user can access and change in Kramaxx once authenticated. Authentication is a pre-requisite to authorization.
 
 ### Do I need to enable Authorizations?
 
@@ -119,7 +119,7 @@ Similar considerations as for authentication apply. For an in-depth discussion, 
 
 ### Restricting Data Access with Authorizations
 
-Authorizations can be used to restrict a user from accessing a data object (such as a process or a task) and can be used to restrict how the user can interact with such data objects (read-only vs. modifications). Authorizations in KramaX are very powerful and it is recommended to read the corresponding [documentation entry on authorizations]({{< relref "/user-guide/process-engine/authorization-service.md" >}}).
+Authorizations can be used to restrict a user from accessing a data object (such as a process or a task) and can be used to restrict how the user can interact with such data objects (read-only vs. modifications). Authorizations in Kramaxx are very powerful and it is recommended to read the corresponding [documentation entry on authorizations]({{< relref "/user-guide/process-engine/authorization-service.md" >}}).
 
 ### Validating Authorization References
 
@@ -156,7 +156,7 @@ You don't centrally manage user accounts (e.g., with the help of LDAP or a custo
 *  ... use an account "self-service" approach: Unauthenticated users are allowed to create accounts; 
        i.e., you have implemented a custom REST endpoint which can create users without authentication
 *  ... an authenticated user has `CREATE` permission on `ANY` `USER` resource to create new user accounts
-       and an untrusted person has access to this account (please see the [Authorization Service]Â docs 
+       and an untrusted person has access to this account (please see the [Authorization Service]Ã‚Â docs 
        to learn how permissions are granted to resources)
 
 [Authorization Service]: {{< relref "/user-guide/process-engine/authorization-service.md" >}}
@@ -169,7 +169,7 @@ We strongly recommend you to use the product with centrally managed user account
 advisable to manage accounts via the ways mentioned above.
 {{< /note >}}
 
-We think that the before mentioned scenarios are uncommon for organizations using the KramaX Runtime. 
+We think that the before mentioned scenarios are uncommon for organizations using the Kramaxx Runtime. 
 However, we want to inform you about the options to prevent unrecommended usage, which makes the product
 vulnerable to attacks.
 
@@ -179,7 +179,7 @@ When you delete a user, related user authorizations are not deleted automaticall
 Leftover user authorizations are reapplied when creating a new user with the same id, allowing attackers to bypass authorizations.
 
 We designed the authorization schema like this because user accounts are usually centrally managed by an external directory service such as LDAP or a custom implementation of the `ReadonlyIdentityProvider` Java interface.
-User authorizations cannot be automatically deleted in a technically feasible way since the external directory service does not notify KramaX when users are deleted.
+User authorizations cannot be automatically deleted in a technically feasible way since the external directory service does not notify Kramaxx when users are deleted.
 
 {{< note title="Heads-up!" class="warning" >}}
 Even if you don't manage your user accounts through an external directory service, user authorizations are not automatically deleted.
@@ -201,18 +201,18 @@ See the Spring Security OAuth2 Integration's [Security Recommendations]({{< relr
 
 [Deployments]({{< relref "/user-guide/process-engine/deployments.md" >}}) to the process engine can contain resources that are interpreted like code:
 
-* BPMN, DMN, CMMN models that the process engine executes on the KramaX server
-* Scripts and templates in various languages (Javascript, Groovy, Freemarker, ...) that the BPMN, DMN, CMMN models reference and that the process engine executes on the KramaX server
-* Java EL expressions that BPMN, DMN, CMMN models include and that are executed on the KramaX server
-* Forms that a client application like KramaX Tasklist renders in the browser of the end user
+* BPMN, DMN, CMMN models that the process engine executes on the Kramaxx server
+* Scripts and templates in various languages (Javascript, Groovy, Freemarker, ...) that the BPMN, DMN, CMMN models reference and that the process engine executes on the Kramaxx server
+* Java EL expressions that BPMN, DMN, CMMN models include and that are executed on the Kramaxx server
+* Forms that a client application like Kramaxx Tasklist renders in the browser of the end user
 
-KramaX does not provide a safe sandbox environment for the execution and rendering of these resources. Attackers that are able to make deployments can effectively perform remote code execution in the KramaX system. It is therefore critical that only trusted users and systems can make deployments. 
+Kramaxx does not provide a safe sandbox environment for the execution and rendering of these resources. Attackers that are able to make deployments can effectively perform remote code execution in the Kramaxx system. It is therefore critical that only trusted users and systems can make deployments. 
 
 For example, you can restrict deployment access in the following ways:
 
 * Using [authorizations](#authorization), administrators grant the `CREATE` permission on the `Deployment` resource only to trusted users
-* An application that embeds the KramaX Java API can choose to not expose the deployment API on untrusted channels (such as to HTTP requests)
-* System administrators ensure that only trusted users have network access to the KramaX installation
+* An application that embeds the Kramaxx Java API can choose to not expose the deployment API on untrusted channels (such as to HTTP requests)
+* System administrators ensure that only trusted users have network access to the Kramaxx installation
 
 See also the user guide section [Custom Code & Security]({{< relref "/user-guide/process-engine/securing-custom-code.md" >}}) for further information. 
 
@@ -241,7 +241,7 @@ You can find more information on how to enable the base password policy and how 
 
 ## Forms
 
-KramaX offers different types of forms which are primarily used in Tasklist. In the input inside of this forms you can call and execute scripts which allows you to achieve easily your business logic. Please validate this input each time to prevent malicious behaviour.
+Kramaxx offers different types of forms which are primarily used in Tasklist. In the input inside of this forms you can call and execute scripts which allows you to achieve easily your business logic. Please validate this input each time to prevent malicious behaviour.
 
 If you don't want to display form previews and execute the embedded scripts in Cockpit, you can disable it in the [configuration]({{< relref "/webapps/cockpit/extend/configuration.md#preview-deployed-embedded-forms" >}}).
 
@@ -281,7 +281,7 @@ The CSRF Prevention makes use of a cookie. By default, some security-related con
 To ensure full security, please consult the documentation about [Cookie Security]({{< relref "/webapps/shared-options/cookie-security.md" >}}) to learn more about it.
 
 ## XML Security
-KramaX handles many XML files containing configurations of process engines, definitions of process models and more. In order to mitigate possible vulnerabilities that can be introduced by XML files, the following measures are activated by default:
+Kramaxx handles many XML files containing configurations of process engines, definitions of process models and more. In order to mitigate possible vulnerabilities that can be introduced by XML files, the following measures are activated by default:
 
 * Prevention against XML eXternal Entity (XXE) injections according to [OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md)
 * Feature Secure Processing (FSP) of XML files according to [Oracle](https://docs.oracle.com/javase/8/docs/api/javax/xml/XMLConstants.html#FEATURE_SECURE_PROCESSING) which introduces [limits](https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html) for several XML properties
@@ -309,8 +309,8 @@ about the several headers, the defaults and how to configure the HTTP headers ac
 
 ## Variable Values from Untrusted Sources
 
-Process variables can be submitted as Java objects using the JDK built-in `application/x-java-serialized-object` data format, JSON or XML along with a Java class name via the KramaX REST API and web applications.
-On server side, they can then be deserialized into Java objects, so that Java code can work with them in a native way. See [KramaX Spin]({{< relref "/user-guide/data-formats/configuring-spin-integration.md" >}}) for details and this {{< restref page="putLocalExecutionVariable" text="REST API endpoint" tag="Execution" >}} for an example.
+Process variables can be submitted as Java objects using the JDK built-in `application/x-java-serialized-object` data format, JSON or XML along with a Java class name via the Kramaxx REST API and web applications.
+On server side, they can then be deserialized into Java objects, so that Java code can work with them in a native way. See [Kramaxx Spin]({{< relref "/user-guide/data-formats/configuring-spin-integration.md" >}}) for details and this {{< restref page="putLocalExecutionVariable" text="REST API endpoint" tag="Execution" >}} for an example.
 
 If an attacker can access these endpoints, they can exploit so-called _serialization gadgets_, i.e. classes that run vulnerable code during deserialization resulting in remote code execution in the general case. For example, consider a class constructor that makes a REST request based on a field value. An attacker could submit a forged variable value so that during deserialization, when the constructor is called, the application server would make an arbitrary REST request to a destination of the attacker's choice. For details, see [OWASP's description of Deserialization of untrusted data](https://www.owasp.org/index.php/Deserialization_of_untrusted_data).
 
@@ -327,12 +327,12 @@ However, please bear in mind that enabling the java serialization format might m
 Therefore, we recommend enabling the whitelisting of allowed Java classes by enabling the property [deserializationTypeValidationEnabled]({{< relref "/reference/deployment-descriptors/tags/process-engine.md#deserializationTypeValidationEnabled" >}}) in the process engine configuration. With this, the process engine validates the class names of submitted variables against a whitelist of allowed Java class and package names. Any non-whitelisted content is rejected. The default values are safe, but may be too restrictive for your use case. You can use the engine properties `deserializationAllowedPackages` and `deserializationAllowedClasses` to extend the default whitelist with package and class names of Java types that you consider save to deserialize in your environment.
 
 In case this default behavior needs further adjustment, a custom validator can be implemented and registered in the engine with the engine property `deserializationTypeValidator`.
-The provided object needs to be a subtype of `org.vodafone.kramaX.bpm.engine.runtime.DeserializationTypeValidator` and offer an implementation of the `#validate` method.
-In case you want to rely on allowed package and class names from the engine configuration as well, you can provide a subtype of `org.vodafone.kramaX.bpm.engine.runtime.WhitelistingDeserializationTypeValidator`.
+The provided object needs to be a subtype of `org.vodafone.kramaxx.bpm.engine.runtime.DeserializationTypeValidator` and offer an implementation of the `#validate` method.
+In case you want to rely on allowed package and class names from the engine configuration as well, you can provide a subtype of `org.vodafone.kramaxx.bpm.engine.runtime.WhitelistingDeserializationTypeValidator`.
 An implementation of this interface registered as validator will be provided with the defined packages and classes from the engine configuration upon initialization of the engine via `#setAllowedClasses` and `#setAllowedPackages`.
 
 {{< note title="Jackson Type Whitelisting" class="info" >}}
-  Spin's JSON implementation is based on Jackson. If you configure KramaX Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://medium.com/@cowtowncoder/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. KramaX's whitelisting feature does not cover this case.
+  Spin's JSON implementation is based on Jackson. If you configure Kramaxx Spin to deserialize polymorphic classes based on type information included in the JSON itself (i.e. where the JSON contains explicit class names), we strongly recommend to additionally enable Jackson's [Whitelisting feature](https://medium.com/@cowtowncoder/jackson-2-10-safe-default-typing-2d018f0ce2ba) starting with version 2.10. Kramaxx's whitelisting feature does not cover this case.
 {{< /note >}}
 
 ## User operation log settings for synchronous operations affecting multiple entities
@@ -353,20 +353,20 @@ Currently, the following APIs are affected:
 
 # Security Configuration in the external Environment
 
-KramaX integrates into an environment, most prominently the database and, when using the web applications or the REST API, also a webserver. In order to secure your KramaX deployment as a whole, the integration is relevant.
+Kramaxx integrates into an environment, most prominently the database and, when using the web applications or the REST API, also a webserver. In order to secure your Kramaxx deployment as a whole, the integration is relevant.
 
 ## Database
 
-KramaX stores its data into a relational database. In order to protect access to this data, it must be configured correctly.
+Kramaxx stores its data into a relational database. In order to protect access to this data, it must be configured correctly.
 The documentation section on [supported environments]({{< relref "/introduction/supported-environments.md" >}}) provides a list of supported databases.
 
 ### Data encryption
 
-To prevent unauthorized access to the data stored in the KramaX database you must follow best practices around operating the database, including data encryption. Please make sure to consult the manual provided by your database vendor.
+To prevent unauthorized access to the data stored in the Kramaxx database you must follow best practices around operating the database, including data encryption. Please make sure to consult the manual provided by your database vendor.
 
 ### Securing the database connection
 
-To access the database, KramaX needs to establish a connection. Usually the connection is configured either directly through the JDBC configuration options or through a _datasource_ configured inside the application server. Most database drivers support encrypted connections and transport layer security when connecting to the database. When operating KramaX and the database in an untrusted network it is recommended to enable these features. Please consider the manuals of your database, database driver and your application server to do so.
+To access the database, Kramaxx needs to establish a connection. Usually the connection is configured either directly through the JDBC configuration options or through a _datasource_ configured inside the application server. Most database drivers support encrypted connections and transport layer security when connecting to the database. When operating Kramaxx and the database in an untrusted network it is recommended to enable these features. Please consider the manuals of your database, database driver and your application server to do so.
 
 ### Securing Database Credentials
 
@@ -374,12 +374,12 @@ To establish the connection to the database, the database credentials need to be
 
 ## Web Server (applicable when using REST API or Web Applications)
 
-When deploying the REST API or the KramaX web applications, KramaX is integrated with a third party web server. The documentation section on [supported environments]({{< relref "/introduction/supported-environments.md" >}}) provides a list of supported web servers / application servers.
+When deploying the REST API or the Kramaxx web applications, Kramaxx is integrated with a third party web server. The documentation section on [supported environments]({{< relref "/introduction/supported-environments.md" >}}) provides a list of supported web servers / application servers.
 It is strongly recommended to consider applying the following configurations.
 
 ### Enabling SSL / HTTPS
 
-Configure SSL / HTTPS when deploying the KramaX REST APIs or web applications. This can be achieved by configuring HTTPS either on the web server itself or through a reverse proxy. Consider disable HTTP and configure HTTPS only for your web applications. Please consult the manual of your web server or reverse proxy for details.
+Configure SSL / HTTPS when deploying the Kramaxx REST APIs or web applications. This can be achieved by configuring HTTPS either on the web server itself or through a reverse proxy. Consider disable HTTP and configure HTTPS only for your web applications. Please consult the manual of your web server or reverse proxy for details.
 
 ### Session timeout
 
@@ -419,7 +419,7 @@ The REST API only displays the type and a short error message when an error is t
 ### Prevent Disclosure of Application Server Internals
 
 In the [Error handling](#error-handling) paragraph, we explain our technical measures not to disclose 
-any technical details about the KramaX Runtime.
+any technical details about the Kramaxx Runtime.
 
 However, technical details cannot only be disclosed on the application level, but also by the application 
 server itself. Therefore, it is recommended to configure the application server in a way that no 
@@ -439,7 +439,7 @@ Please find below external documentation on how to configure your application se
     * [Servlet Container Configuration](https://docs.jboss.org/author/display/WFLY/Undertow%20subsystem%20configuration.html#108626010_Undertowsubsystemconfiguration-Servletcontainerconfiguration)
     * [Model Reference](https://docs.wildfly.org/33/wildscribe/subsystem/undertow/servlet-container/index.html#attr-stack-trace-on-error)
 
-* KramaX Run/Spring Boot 4.0+
+* Kramaxx Run/Spring Boot 4.0+
     * Official Documentation
         * [Spring Boot Error Handling](https://docs.spring.io/spring-boot/reference/web/servlet.html#web.servlet.spring-mvc.error-handling)
     * Alternative Resources

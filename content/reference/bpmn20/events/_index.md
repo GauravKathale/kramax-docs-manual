@@ -10,4 +10,4 @@ menu:
 
 ---
 
-BPMN defines different Event types. The following are supported by KramaX.
+BPMN defines different Event types. The following are supported by Kramaxx.

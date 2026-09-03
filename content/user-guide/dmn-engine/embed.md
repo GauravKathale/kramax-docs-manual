@@ -12,20 +12,20 @@ menu:
 
 ---
 
-The KramaX DMN engine can be used as a library in a custom application. To achieve this,
-add the `kramaX-engine-dmn` artifact to the classpath of the application and then
+The Kramaxx DMN engine can be used as a library in a custom application. To achieve this,
+add the `kramaxx-engine-dmn` artifact to the classpath of the application and then
 configure and build a decision engine instance. This section provides the
 required maven coordinates to add the DMN engine as a dependency to your
 project. It then shows how to configure and build a new DMN engine instance.
 
 # Maven Coordinates
 
-The KramaX DMN engine is released to Maven Central.
+The Kramaxx DMN engine is released to Maven Central.
 
-Start by importing the [`kramaX-engine-dmn` BOM]({{< relref "/get-started/apache-maven/#kramaX-dmn-engine-bom" >}})
+Start by importing the [`kramaxx-engine-dmn` BOM]({{< relref "/get-started/apache-maven/#kramaxx-dmn-engine-bom" >}})
 to ensure correct dependency management.
 
-Next, include the [`kramaX-engine-dmn`]({{< relref "/get-started/apache-maven/#kramaX-dmn" >}})
+Next, include the [`kramaxx-engine-dmn`]({{< relref "/get-started/apache-maven/#kramaxx-dmn" >}})
 artifact in the `dependencies` section.
 
 # Building a DMN Engine
@@ -51,7 +51,7 @@ This section gives more insights of embedded DMN engine configuration. In case y
 ## Decision Table Evaluation Listeners
 
 The DMN engine configuration allows you add a custom decision table {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html"
 text="evaluation listener" >}}. A decision table evaluation listener is
 notified after a decision table has been evaluated. It receives an evaluation event
 which contains the result of the evaluation. You can decide if the
@@ -75,7 +75,7 @@ configuration.getCustomPostDecisionTableEvaluationListeners()
 ```
 
 A specialized evaluation listener is the {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/spi/DmnEngineMetricCollector.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/spi/DmnEngineMetricCollector.html"
 text="metric collector" >}}, which records the number of executed decision
 elements. This metric can be used to monitor the workload of a decision engine.
 
@@ -93,7 +93,7 @@ configuration.setEngineMetricCollector(metricCollector);
 ## Decision Evaluation Listeners
 
 The DMN engine configuration allows you add a custom {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/delegate/DmnDecisionEvaluationListener.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/delegate/DmnDecisionEvaluationListener.html"
 text="decision evaluation listener" >}}. A decision evaluation listener is
 notified after a decision with all the required decisions has been evaluated. It receives an evaluation event
 which contains the result of the evaluation. You can decide if the
@@ -125,22 +125,22 @@ Please be aware that these APIs are **not** part of the [public API]({{< relref 
 {{< /note >}}
 
 The {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/impl/DefaultDmnEngineConfiguration.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/impl/DefaultDmnEngineConfiguration.html"
 text="default DMN engine configuration" >}} has further customization and
 extension points.
 
 ## Customize DMN Transformation
 
 It is possible to customize the transformation of DMN by providing a {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/impl/spi/transform/DmnTransformer.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/impl/spi/transform/DmnTransformer.html"
 text="DMN transformer" >}} or configuring the {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/impl/transform/DefaultDmnTransformer.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/impl/transform/DefaultDmnTransformer.html"
 text="default one" >}}.
 
 ### Register DMN Transform Listeners
 
 The simplest customization is to provide a {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/impl/spi/transform/DmnTransformListener.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/impl/spi/transform/DmnTransformListener.html"
 text="transform listener" >}}. The Listener is notified after a DMN element is
 transformed. The listener can modify the transformed object.
 
@@ -162,13 +162,13 @@ configuration.getTransformer()
 
 While the transform listener allows modifying of the transformed objects, it does not support instantiating custom subclasses.
 This can be achieved using a custom {{< javadocref
-page="?org/vodafone/kramaX/bpm/dmn/engine/impl/spi/transform/DmnElementTransformHandler.html"
+page="?org/vodafone/kramaxx/bpm/dmn/engine/impl/spi/transform/DmnElementTransformHandler.html"
 text="transform handler" >}}.
 
 A transform handler is registered for a given [DMN model API] type like a `DecisionTable`.
 
 First, implement a transform handler which can transform a {{<
-javadocref page="?org/vodafone/kramaX/bpm/model/dmn/instance/DecisionTable.html"
+javadocref page="?org/vodafone/kramaxx/bpm/model/dmn/instance/DecisionTable.html"
 text="decision table" >}}.
 
 ```java
@@ -308,7 +308,7 @@ Just make sure that the corresponding libraries are available on the classpath a
 The default DMN engine resolves the supported expression and script languages
 using different providers.
 
-To evaluate `JUEL` expressions, the DMN engine uses the {{< javadocref page="org/vodafone/kramaX/bpm/dmn/engine/impl/spi/el/ElProvider.html" text="ElProvider" >}} configured in the
+To evaluate `JUEL` expressions, the DMN engine uses the {{< javadocref page="org/vodafone/kramaxx/bpm/dmn/engine/impl/spi/el/ElProvider.html" text="ElProvider" >}} configured in the
 DMN engine configuration. To use another implementation of the Unified Expression Language, replace this implementation.
 
 ```java
@@ -320,7 +320,7 @@ DefaultDmnEngineConfiguration configuration = (DefaultDmnEngineConfiguration) Dm
 configuration.setElProvider(new MyElProvider());
 ```
 
-To configure the `FEEL` engine used you can provide a custom {{< javadocref page="org/vodafone/kramaX/bpm/dmn/feel/impl/FeelEngineFactory.html" text="FeelEngineFactory" >}}.
+To configure the `FEEL` engine used you can provide a custom {{< javadocref page="org/vodafone/kramaxx/bpm/dmn/feel/impl/FeelEngineFactory.html" text="FeelEngineFactory" >}}.
 
 ```java
 // with a default DMN engine configuration
@@ -331,7 +331,7 @@ DefaultDmnEngineConfiguration configuration = (DefaultDmnEngineConfiguration) Dm
 configuration.setFeelEngineFactory(new MyFeelEngineFactory());
 ```
 
-Script languages are resolved by the {{< javadocref page="org/vodafone/kramaX/bpm/dmn/engine/impl/spi/el/DmnScriptEngineResolver.html" text="DmnScriptEngineResolver" >}}. To customize the script engine resolving, provide an own implementation.
+Script languages are resolved by the {{< javadocref page="org/vodafone/kramaxx/bpm/dmn/engine/impl/spi/el/DmnScriptEngineResolver.html" text="DmnScriptEngineResolver" >}}. To customize the script engine resolving, provide an own implementation.
 
 ```java
 // with a default DMN engine configuration
@@ -344,7 +344,7 @@ configuration.setScriptEngineResolver(new MyScriptEngineResolver());
 
 # Logging
 
-The DMN engine uses [SLF4J] as logging API. The `kramaX-dmn-engine` artifact
+The DMN engine uses [SLF4J] as logging API. The `kramaxx-dmn-engine` artifact
 does not have a dependency to any of the existing [SLF4J] backends. This means that
 you can choose which backend you want to use. One example would be [LOGBack], or
 if you want to use Java util logging, you could use the `slf4j-jdk14` artifact.
@@ -352,8 +352,8 @@ For more information on how to configure and use SLF4J, please refer to the
 [user manual].
 
 
-[evaluation listener]: {{< javadocref page="org/vodafone/kramaX/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html" text="DmnDecisionTableEvaluationListener Interface" >}}
-[DMN model API]: https://github.com/vodafone/kramaX-dmn-model
+[evaluation listener]: {{< javadocref page="org/vodafone/kramaxx/bpm/dmn/engine/delegate/DmnDecisionTableEvaluationListener.html" text="DmnDecisionTableEvaluationListener Interface" >}}
+[DMN model API]: https://github.com/vodafone/kramaxx-dmn-model
 [data types]: {{< relref "/user-guide/dmn-engine/data-types.md" >}}
 [hit policies]: {{< relref "/reference/dmn/decision-table/hit-policy.md" >}}
 [SLF4J]: http://www.slf4j.org/

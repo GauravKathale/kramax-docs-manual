@@ -13,28 +13,28 @@ menu:
 ---
 
 
-This document describes the installation of KramaX and its components on a vanilla [WildFly Application Server](http://www.wildfly.org) or JBoss EAP 7 / 8.
+This document describes the installation of Kramaxx and its components on a vanilla [WildFly Application Server](http://www.wildfly.org) or JBoss EAP 7 / 8.
 
 {{< note title="Reading this Guide" class="info" >}}
 This guide uses a number of variables to denote common path names and constants:
 
 * `$WILDFLY_HOME` points to the JBoss EAP/WildFly application server main directory.
 * `$WILDFLY_VERSION` denotes the version of WildFly application server.
-* `$WILDFLY_DISTRIBUTION` represents the downloaded pre-packaged KramaX distribution for WildFly, e.g. `kramaX-bpm-wildfly-$PLATFORM_VERSION.zip` or `kramaX-bpm-wildfly-$PLATFORM_VERSION.tar.gz`.
-* `$PLATFORM_VERSION` denotes the version of KramaX you want to install or already have installed, e.g. `1.0.0`.
+* `$WILDFLY_DISTRIBUTION` represents the downloaded pre-packaged Kramaxx distribution for WildFly, e.g. `kramaxx-bpm-wildfly-$PLATFORM_VERSION.zip` or `kramaxx-bpm-wildfly-$PLATFORM_VERSION.tar.gz`.
+* `$PLATFORM_VERSION` denotes the version of Kramaxx you want to install or already have installed, e.g. `1.0.0`.
 {{< /note >}}
 
 ## Setup
 
-Download the KramaX WildFly distribution.
+Download the Kramaxx WildFly distribution.
 
 ### Copy Modules
 
-Copy the modules from the `modules/` folder of the KramaX distribution, or extract the `kramaX-wildfly-modules` archive, to the `$WILDFLY_HOME/modules/` of your WildFly application server.
+Copy the modules from the `modules/` folder of the Kramaxx distribution, or extract the `kramaxx-wildfly-modules` archive, to the `$WILDFLY_HOME/modules/` of your WildFly application server.
 
 {{< note title="Replace H2 Database" >}}
 The WildFly distribution ships a different version of the H2 database than the one that is shipped with WildFly itself.
-The version shipped with KramaX is the version that the process engine is tested on and it is strongly recommended to use KramaX's version.
+The version shipped with Kramaxx is the version that the process engine is tested on and it is strongly recommended to use Kramaxx's version.
 To do so, **make sure to delete the folder**
 
 ```
@@ -49,19 +49,19 @@ $WILDFLY_HOME/modules/system/layers/base/com/h2database
 Next, a number of changes need to be performed in the application server's configuration file.
 In most cases this is `$WILDFLY_HOME/standalone/configuration/standalone.xml`.
 
-Add the KramaX subsystem as extension:
+Add the Kramaxx subsystem as extension:
 
 ```xml
 <server xmlns="urn:jboss:domain:20.0">
   <extensions>
     ...
-    <extension module="org.vodafone.kramaX.bpm.wildfly.kramaX-wildfly-subsystem"/>
+    <extension module="org.vodafone.kramaxx.bpm.wildfly.kramaxx-wildfly-subsystem"/>
 ```
 
-Configure the thread pool for the KramaX Job Executor:
+Configure the thread pool for the Kramaxx Job Executor:
 
-Since KramaX, the configuration of the thread pool is done in the KramaX subsystem, not in the JBoss Threads subsystem anymore like it was done before.
-The thread pool creation and shutdown is now controlled through the KramaX subsystem.
+Since Kramaxx, the configuration of the thread pool is done in the Kramaxx subsystem, not in the JBoss Threads subsystem anymore like it was done before.
+The thread pool creation and shutdown is now controlled through the Kramaxx subsystem.
 You are able to configure it through the following new configuration elements in the `job-executor` element of the subsystem XML configuration.
 
 Mandatory configuration elements are:
@@ -80,7 +80,7 @@ Shown values are the default ones.
 The below example also configures the default process engine.
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaX.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
   <process-engines>
     <process-engine name="default" default="true">
       <datasource>java:jboss/datasources/ProcessEngine</datasource>
@@ -115,7 +115,7 @@ The below example also configures the default process engine.
 
 By default, the database schema is automatically created in an H2 database when the engine starts up for the first time. If you do not want to use the H2 database, you have to
 
-* Create a database schema for KramaX yourself.
+* Create a database schema for Kramaxx yourself.
 * Install the database schema to create all required tables and default indices using our [database schema installation guide]({{< relref "/installation/database-schema.md" >}}).
 
 When you create the tables manually, then you can also configure the engine to **not** create tables at startup by setting the `isAutoSchemaUpdate` property to `false` (or, in case you are using Oracle, to `noop`). In WildFly, this is done in the `standalone.xml`, located in the `$WILDFLY_DISTRIBUTION\server\wildfly-$WILDFLY_VERSION\standalone\configuration\` folder.
@@ -130,7 +130,7 @@ typically `bin`.
 <datasource jta="true" enabled="true" use-java-context="true" use-ccm="true"
             jndi-name="java:jboss/datasources/ProcessEngine"
             pool-name="ProcessEngine">
-  <connection-url>jdbc:h2:./kramaX-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+  <connection-url>jdbc:h2:./kramaxx-h2-dbs/process-engine;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
   <driver>h2</driver>
   <security user-name="sa" password="sa"/>
 </datasource>
@@ -143,21 +143,21 @@ These links point you to resources for other databases:
 
 ## Optional Components
 
-This section describes how to install optional dependencies. None of these are required to work with the core platform. Before continuing, make sure that KramaX is already installed according to [this step]({{< relref "#setup" >}}) for WildFly / JBoss EAP.
+This section describes how to install optional dependencies. None of these are required to work with the core platform. Before continuing, make sure that Kramaxx is already installed according to [this step]({{< relref "#setup" >}}) for WildFly / JBoss EAP.
 
 
 ### Cockpit, Tasklist, and Admin
 
 The following steps are required to deploy the web application:
 
-1. Download the KramaX web application that contains the web applications from our Maven Artifactory.
-    The name of the artifact is `$PLATFORM_VERSION/kramaX-webapp-wildfly-$PLATFORM_VERSION.war`.
+1. Download the Kramaxx web application that contains the web applications from our Maven Artifactory.
+    The name of the artifact is `$PLATFORM_VERSION/kramaxx-webapp-wildfly-$PLATFORM_VERSION.war`.
    
-2. Optionally, you may change the context path to which the application will be deployed (default is `/kramaX`).
+2. Optionally, you may change the context path to which the application will be deployed (default is `/kramaxx`).
     Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
 3. Copy the war file to `$WILDFLY_HOME/standalone/deployments`.
 4. Startup WildFly.
-5. Access Cockpit, Tasklist, and Admin via `/kramaX/app/cockpit`, `/kramaX/app/tasklist` and `/kramaX/app/admin`, or under the context path you configured.
+5. Access Cockpit, Tasklist, and Admin via `/kramaxx/app/cockpit`, `/kramaxx/app/tasklist` and `/kramaxx/app/admin`, or under the context path you configured.
 
 
 ### REST API
@@ -165,7 +165,7 @@ The following steps are required to deploy the web application:
 The following steps are required to deploy the REST API:
 
 1. Download the REST API web application archive from our Maven Artifactory.
-    * https://mvnrepository.com/artifact/org.vodafone.kramaX.bpm/kramaX-engine-rest-jakarta/, the name of the artifact is `$PLATFORM_VERSION/kramaX-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
+    * https://mvnrepository.com/artifact/org.vodafone.kramaxx.bpm/kramaxx-engine-rest-jakarta/, the name of the artifact is `$PLATFORM_VERSION/kramaxx-engine-rest-jakarta-$PLATFORM_VERSION-wildfly.war`.
    
 2. Optionally, you may change the context path to which the REST API will be deployed (default is `/engine-rest`).
    Edit the file `WEB-INF/jboss-web.xml` in the war file and update the `context-root` element accordingly.
@@ -176,17 +176,17 @@ The following steps are required to deploy the REST API:
    provided that you deployed the application in the context `/engine-rest`.
 
 
-### KramaX Connect Plugin
+### Kramaxx Connect Plugin
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaX/bpm/kramaX-engine-plugin-connect`
-* `org/vodafone/kramaX/commons/kramaX-commons-utils`
+* `org/vodafone/kramaxx/bpm/kramaxx-engine-plugin-connect`
+* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
 
-To activate KramaX Connect functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
+To activate Kramaxx Connect functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaX.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
   ...
   <process-engines>
     <process-engine name="default" default="true">
@@ -194,7 +194,7 @@ To activate KramaX Connect functionality for a process engine, a process engine 
       <plugins>
         ... existing plugins ...
         <plugin>
-          <class>org.vodafone.kramaX.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+          <class>org.vodafone.kramaxx.connect.plugin.impl.ConnectProcessEnginePlugin</class>
         </plugin>
       </plugins>
       ...
@@ -205,28 +205,28 @@ To activate KramaX Connect functionality for a process engine, a process engine 
 ```
 
 
-### KramaX Spin
+### Kramaxx Spin
 
-You can use the KramaX Spin plugin to extend the engine functionality to de-/serialize object variables from and to JSON and XML. For more information, see the [Spin Reference]({{< relref "/reference/spin/_index.md" >}}).
+You can use the Kramaxx Spin plugin to extend the engine functionality to de-/serialize object variables from and to JSON and XML. For more information, see the [Spin Reference]({{< relref "/reference/spin/_index.md" >}}).
 
 #### Setup Spin
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaX/spin/kramaX-spin-core`
-* `org/vodafone/kramaX/spin/kramaX-spin-dataformat-json-jackson`
-* `org/vodafone/kramaX/spin/kramaX-spin-dataformat-xml-dom-jakarta`
-* `org/vodafone/kramaX/bpm/kramaX-engine-plugin-spin`
-* `org/vodafone/kramaX/commons/kramaX-commons-utils`
+* `org/vodafone/kramaxx/spin/kramaxx-spin-core`
+* `org/vodafone/kramaxx/spin/kramaxx-spin-dataformat-json-jackson`
+* `org/vodafone/kramaxx/spin/kramaxx-spin-dataformat-xml-dom-jakarta`
+* `org/vodafone/kramaxx/bpm/kramaxx-engine-plugin-spin`
+* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
 * `com/fasterxml/jackson/core/jackson-core`
 * `com/fasterxml/jackson/core/jackson-databind`
 * `com/fasterxml/jackson/core/jackson-annotations`
 * `com/jayway/jsonpath/json-path`
 
-In order to activate KramaX Spin functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
+In order to activate Kramaxx Spin functionality for a process engine, a process engine plugin has to be registered in `$WILDFLY_HOME/standalone/configuration/standalone.xml` as follows:
 
 ```xml
-<subsystem xmlns="urn:org.vodafone.kramaX.bpm.jboss:1.1">
+<subsystem xmlns="urn:org.vodafone.kramaxx.bpm.jboss:1.1">
   ...
   <process-engines>
     <process-engine name="default" default="true">
@@ -234,7 +234,7 @@ In order to activate KramaX Spin functionality for a process engine, a process e
       <plugins>
         ... existing plugins ...
         <plugin>
-          <class>org.vodafone.kramaX.spin.plugin.impl.SpinProcessEnginePlugin</class>
+          <class>org.vodafone.kramaxx.spin.plugin.impl.SpinProcessEnginePlugin</class>
         </plugin>
       </plugins>
       ...
@@ -246,26 +246,26 @@ In order to activate KramaX Spin functionality for a process engine, a process e
 
 #### Problems with Jackson Annotations
 
-The usage of Jackson annotations on WildFly together with the KramaX Spin JSON serialization can lead to problems.
+The usage of Jackson annotations on WildFly together with the Kramaxx Spin JSON serialization can lead to problems.
 WildFly implicitly adds the JAX-RS subsystem to each new deployment, if JAX-RS annotations are present (see the WildFly [documentation](https://docs.wildfly.org/23/Developer_Guide.html#Implicit_module_dependencies_for_deployments) for more information).
-This JAX-RS subsystem includes the Jackson library, the version of which does not match with the version used by the KramaX SPIN Plugin.
+This JAX-RS subsystem includes the Jackson library, the version of which does not match with the version used by the Kramaxx SPIN Plugin.
 As a result, Jackson annotations will be ignored. Note that this problem does not necessarily have to emerge upon direct usage of Spin.
-The Spin plugin also comes into play when JSON variables are set or read by the KramaX Process Engine.
+The Spin plugin also comes into play when JSON variables are set or read by the Kramaxx Process Engine.
 
 See one of the following ways to fix this:
 
-1. Change the Jackson `main` slot to the version which is used by the KramaX Spin Plugin.
+1. Change the Jackson `main` slot to the version which is used by the Kramaxx Spin Plugin.
  * Make sure that Resteasy can work with this Jackson version, as we cannot give any guarantees on this.
 
 2. Exclude implicitly added JAX-RS dependencies.
  * Add a `jboss-deployment-structure.xml` file to you application in the WEB-INF folder.
- * Exclude the JAX-RS subsystem and add the Jackson dependencies, with the version which is used by the KramaX Spin Plugin.
- * This solution is also shown in the [Jackson Annotation Example for WildFly](https://github.com/vodafone/kramaX-bpm-examples/blob/master/wildfly/jackson-annotations) in the KramaX example repository.
+ * Exclude the JAX-RS subsystem and add the Jackson dependencies, with the version which is used by the Kramaxx Spin Plugin.
+ * This solution is also shown in the [Jackson Annotation Example for WildFly](https://github.com/vodafone/kramaxx-bpm-examples/blob/master/wildfly/jackson-annotations) in the Kramaxx example repository.
 
 
 #### Problem With Deployments Using the REST API
 
-KramaX Spin is not available in scripts if a process definition is deployed via REST API. Because WildFly handles dependencies using its module system and KramaX engine module has no module dependency on the spin module.
+Kramaxx Spin is not available in scripts if a process definition is deployed via REST API. Because WildFly handles dependencies using its module system and Kramaxx engine module has no module dependency on the spin module.
 
 ### Groovy Scripting
 
@@ -278,10 +278,10 @@ Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTI
 
 Add the following modules (if not existing) from the folder `$WILDFLY_DISTRIBUTION/modules/` to the folder `$WILDFLY_HOME/modules/`:
 
-* `org/vodafone/kramaX/template-engines/kramaX-template-engines-freemarker`
+* `org/vodafone/kramaxx/template-engines/kramaxx-template-engines-freemarker`
 * `org/freemarker/freemarker`
-* `org/vodafone/kramaX/commons/kramaX-commons-logging`
-* `org/vodafone/kramaX/commons/kramaX-commons-utils`
+* `org/vodafone/kramaxx/commons/kramaxx-commons-logging`
+* `org/vodafone/kramaxx/commons/kramaxx-commons-utils`
 
 ### GraalVM JavaScript Integration
 

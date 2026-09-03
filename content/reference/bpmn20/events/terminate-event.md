@@ -35,7 +35,7 @@ A terminate event is modeled as an end event with an additional definition eleme
 ```
 
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>
@@ -62,4 +62,4 @@ A terminate event is modeled as an end event with an additional definition eleme
 
 ## Additional Resources
 
-* [Terminate Events](http://kramaX.vodafone.org/bpmn/reference.html#events-termination) in the [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html)
+* [Terminate Events](http://kramaxx.vodafone.org/bpmn/reference.html#events-termination) in the [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html)

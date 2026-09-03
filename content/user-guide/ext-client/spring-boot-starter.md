@@ -11,18 +11,18 @@ menu:
 
 ---
 
-KramaX provides a Spring Boot Starter for the External Task Client. This allows you to easily add 
+Kramaxx provides a Spring Boot Starter for the External Task Client. This allows you to easily add 
 the External Task Client to your Spring Boot application by adding the following Maven dependency to 
 your `pom.xml` file:
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm.springboot</groupId>
-  <artifactId>kramaX-bpm-spring-boot-starter-external-task-client</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm.springboot</groupId>
+  <artifactId>kramaxx-bpm-spring-boot-starter-external-task-client</artifactId>
   <version>{{< minor-version >}}.0</version>
 </dependency>
 ```
 
-Please check out our [External Task Client Spring Boot Starter Examples](https://github.com/vodafone/kramaX-bpm-examples/tree/{{<minor-version>}}#external-task-client-spring-boot).
+Please check out our [External Task Client Spring Boot Starter Examples](https://github.com/vodafone/kramaxx-bpm-examples/tree/{{<minor-version>}}#external-task-client-spring-boot).
 
 The Client can subscribe to one or more topic names that are defined in your BPMN process model.
 When the execution waits in an External Task, the Client executes your custom business logic. 
@@ -50,7 +50,7 @@ The annotation requires at least the topic name. However, you can apply more con
 either referencing the topic name in your `application.yml` file:
 
 ```yaml
-kramaX.bpm.client:
+kramaxx.bpm.client:
   base-url: http://localhost:8080/engine-rest
   subscriptions:
     creditScoreChecker:
@@ -71,7 +71,7 @@ Or, by defining configuration attributes in the annotation:
 ```
 
 Please find the complete list of attributes in the 
-{{< javadocref page="org/vodafone/kramaX/bpm/client/spring/annotation/ExternalTaskSubscription.html" text="Javadocs" >}}.
+{{< javadocref page="org/vodafone/kramaxx/bpm/client/spring/annotation/ExternalTaskSubscription.html" text="Javadocs" >}}.
 
 **Please Note:** A property defined in the `application.yml` file always overrides the respective attribute defined programmatically via annotation.
 
@@ -172,12 +172,12 @@ The central configuration point is the `application.yml` file.
 
 #### Client Bootstrapping
 
-Please make sure to configure the properties together with the prefix: `kramaX.bpm.client`
+Please make sure to configure the properties together with the prefix: `kramaxx.bpm.client`
 
 An example configuration could look as follows:
 
 ```yaml
-kramaX.bpm.client:
+kramaxx.bpm.client:
   base-url: http://localhost:8080/engine-rest
   worker-id: spring-boot-worker
   basic-auth:
@@ -199,7 +199,7 @@ Available properties:
     <tr>
       <td><code>base-url</code></td>
       <td>
-        <strong>Mandatory:</strong> Base url of the KramaX Runtime
+        <strong>Mandatory:</strong> Base url of the Kramaxx Runtime
         REST API.
       </td>
       <td></td>
@@ -315,12 +315,12 @@ Available properties:
 
 #### Topic Subscription
 
-The properties for topic subscriptions go under: `kramaX.bpm.client.subscriptions`
+The properties for topic subscriptions go under: `kramaxx.bpm.client.subscriptions`
 
 The configuration properties can be applied for each topic name as follows:
 
 ```yaml
-kramaX.bpm.client:
+kramaxx.bpm.client:
   # ADD CLIENT CONFIGURATION HERE
   subscriptions:
     creditScoreChecker:
@@ -475,15 +475,15 @@ Available properties:
 
 #### Logging
 
-To log the Client's internal workings, you can set the level of the logger `org.vodafone.kramaX.bpm.client.spring` to `DEBUG`.
+To log the Client's internal workings, you can set the level of the logger `org.vodafone.kramaxx.bpm.client.spring` to `DEBUG`.
 
 You can set the log level in your `application.yml` file as follows:
 
 ```yaml
-logging.level.org.vodafone.kramaX.bpm.client.spring: DEBUG
+logging.level.org.vodafone.kramaxx.bpm.client.spring: DEBUG
 ```
 
-For debugging, it might be helpful to increase the level of the logger `org.vodafone.kramaX.bpm.client` as well.
+For debugging, it might be helpful to increase the level of the logger `org.vodafone.kramaxx.bpm.client` as well.
 
 ### Request Interceptor
 
@@ -543,7 +543,7 @@ client.serializationFormat=application/json
 Make sure to reference the respective placeholders defined above in your `application.yml` file:
 
 ```yaml
-kramaX.bpm.client:
+kramaxx.bpm.client:
   base-url: ${client.baseUrl}
   worker-id: ${client.workerId}
   date-format: ${client.dateFormat}
@@ -610,12 +610,12 @@ to your `pom.xml` file:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm</groupId>
-  <artifactId>kramaX-external-task-client-spring</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm</groupId>
+  <artifactId>kramaxx-external-task-client-spring</artifactId>
   <version>{{< minor-version >}}.0</version>
 </dependency>
 ```
 
 To bootstrap the Client, use the class annotation `@EnableExternalTaskClient`. You can find all
 configuration attributes in the 
-{{< javadocref page="org/vodafone/kramaX/bpm/client/spring/annotation/EnableExternalTaskClient.html" text="Javadocs" >}}.
+{{< javadocref page="org/vodafone/kramaxx/bpm/client/spring/annotation/EnableExternalTaskClient.html" text="Javadocs" >}}.

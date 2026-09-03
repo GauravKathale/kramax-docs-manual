@@ -10,10 +10,10 @@ menu:
 ---
 
 {{< note title="FEEL Support Limitation" class="warning" >}}
-Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in KramaX.
+Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Kramaxx.
 {{< /note >}}
 
-â€‹The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
+Ã¢â‚¬â€¹The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
 
 - Side-effect free
 - Simple data model with numbers, dates, strings, lists, and contexts
@@ -22,7 +22,7 @@ Please note that the WildFly and JBoss application servers do not support FEEL o
 
 See the [official specification](https://www.omg.org/spec/DMN/1.0/PDF).
 
-Within KramaX, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
+Within Kramaxx, FEEL can be used in many circumstances to evaluate small script-like expressions. The following table provides an overview of the BPMN elements which support usage of FEEL.
 
 <table class="table desc-table">
   <tr>
@@ -96,19 +96,19 @@ For usage of expression language on conditional events, see the following exampl
 
 ## inputOutput Parameters
 
-With the KramaX `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with expression language.
 
 For usage of expression language on `inputParameter` mapping, see the following example:
 
 ```xml
-  <serviceTask id="task" kramaX:class="org.vodafone.kramaX.bpm.example.SumDelegate">
+  <serviceTask id="task" kramaxx:class="org.vodafone.kramaxx.bpm.example.SumDelegate">
     <extensionElements>
-      <kramaX:inputOutput>
-        <kramaX:inputParameter name="x">
+      <kramaxx:inputOutput>
+        <kramaxx:inputParameter name="x">
           var1 + var2
-        </kramaX:inputParameter>
-      </kramaX:inputOutput>
+        </kramaxx:inputParameter>
+      </kramaxx:inputOutput>
     </extensionElements>
   </serviceTask>
 ```
@@ -136,19 +136,19 @@ A conditional sequence flow can directly check a variable value:
 The list of variable types that is supported by FEEL can be found in the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md" >}}">FEEL Engine Type Handling</a> page.
 
 ## Custom Functions
-KramaX provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
+Kramaxx provides a wrapper for the FEEL Scala Engine to implement Custom Functions, which can be 
 called in expressions and unary tests. 
 To learn more visit the <a href="{{< relref "/user-guide/dmn-engine/feel/custom-functions" >}}">FEEL Engine Custom Functions</a> page.
 
-## Built-In KramaX Spin Functions
-To learn how KramaX Spin can be used together with the Scala FEEL Engine visit the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
+## Built-In Kramaxx Spin Functions
+To learn how Kramaxx Spin can be used together with the Scala FEEL Engine visit the <a href="{{< relref "/user-guide/dmn-engine/feel/type-handling.md#spin-types" >}}">FEEL Engine Spin Integration</a> page.
 
 # Plugin Requirements
 
 ## Spin Plugin Requirement for Complex FEEL Mappings
 
 When using FEEL to define complex input parameters (such as nested objects or contexts in BPMN input/output mappings) the
-<a href="{{< relref "/user-guide/data-formats/configuring-spin-integration#kramaX-engine-plugin-spin" >}}">kramaX-engine-plugin-spin</a>
+<a href="{{< relref "/user-guide/data-formats/configuring-spin-integration#kramaxx-engine-plugin-spin" >}}">kramaxx-engine-plugin-spin</a>
  **must** be present on the classpath.
 
 Without the Spin plugin:
@@ -162,8 +162,8 @@ Without the Spin plugin:
 The following BPMN example defines a nested input parameter using a FEEL expression:
 
 ```xml
-<kramaX:inputParameter name="context">
-  <kramaX:script scriptFormat="feel">
+<kramaxx:inputParameter name="context">
+  <kramaxx:script scriptFormat="feel">
     {
       invoice: {
         id: "INV-2024-001",
@@ -176,10 +176,10 @@ The following BPMN example defines a nested input parameter using a FEEL express
         }
       }
    }
-  </kramaX:script>
-</kramaX:inputParameter>
+  </kramaxx:script>
+</kramaxx:inputParameter>
 ```
 
-To access this `context` as a `Map<String, Object>` in a Java delegate, the `kramaX-engine-plugin-spin` plugin must be available so that the nested structure is correctly mapped.
+To access this `context` as a `Map<String, Object>` in a Java delegate, the `kramaxx-engine-plugin-spin` plugin must be available so that the nested structure is correctly mapped.
 
 [BPMN]: {{< relref "/reference/bpmn20/_index.md" >}}

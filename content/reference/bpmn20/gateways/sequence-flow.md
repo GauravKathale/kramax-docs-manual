@@ -16,7 +16,7 @@ A sequence flow is the connector between two elements of a process. After an ele
 
 <div data-bpmn-diagram="../bpmn/sequence-flow-parallel"></div>
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>
@@ -84,7 +84,7 @@ on [script source]({{< relref "/user-guide/process-engine/scripting.md#script-so
 
 ```xml
 <conditionExpression xsi:type="tFormalExpression" language="groovy"
-  camunda:resource="org/vodafone/kramaX/bpm/exampe/condition.groovy" />
+  camunda:resource="org/vodafone/kramaxx/bpm/exampe/condition.groovy" />
 ```
 
 

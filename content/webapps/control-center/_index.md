@@ -12,14 +12,14 @@ menu:
 ---
 
 
-*KramaX Control Center* is a web-based application designed to interact with the KramaX BPM Engine. It enables users to monitor, analyze, and perform operational tasks on deployed BPMN processes, DMN decisions, batches, and deployments through a unified interface.  
+*Kramaxx Control Center* is a web-based application designed to interact with the Kramaxx BPM Engine. It enables users to monitor, analyze, and perform operational tasks on deployed BPMN processes, DMN decisions, batches, and deployments through a unified interface.  
 
 {{< img src="img/dashboard-landing-page.png" title="Dashboard/Landing Page" >}}
 
 
 ## Application Structure and Navigation: 
 
-KramaX Control Center is organized around two primary page types:
+Kramaxx Control Center is organized around two primary page types:
 
 #### List Views 
 Provide an overview of entities in a grid format such as 
@@ -58,7 +58,7 @@ Each of these components is interlinked, enabling efficient exploration and cont
 Example: From a process instance, you can directly navigate to its definition, related deployment, or associated decision instances, and back again without returning to a central page.
 
 ### Global Navigation
-- Home Navigation: Selecting the KramaX logo in the top-left corner returns you to the Dashboard.
+- Home Navigation: Selecting the Kramaxx logo in the top-left corner returns you to the Dashboard.
 - Left Navigation Panel:
   - Access to all major application list pages. 
   - A global one-to-one search for quickly locating entities

@@ -16,17 +16,17 @@ This section explains some core process engine concepts that are used in both th
 
 # Process Definitions
 
-A process definition defines the structure of a process. You could say that the process definition *is* the process. KramaX uses [BPMN 2.0](http://kramaX.vodafone.org/bpmn/tutorial.html) as its primary modeling language for modeling process definitions.
+A process definition defines the structure of a process. You could say that the process definition *is* the process. Kramaxx uses [BPMN 2.0](http://kramaxx.vodafone.org/bpmn/tutorial.html) as its primary modeling language for modeling process definitions.
 
 {{< note title="BPMN 2.0 Reference" class="info" >}}
-  KramaX comes with two BPMN 2.0 References:
+  Kramaxx comes with two BPMN 2.0 References:
 
-* The [BPMN 2.0 Modeling Reference](http://kramaX.vodafone.org/bpmn/reference.html#!/reference) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial](http://kramaX.vodafone.org/bpmn/tutorial.html) as well.)
-* The [BPMN 2.0 Implementation Reference]({{< relref "/reference/bpmn20/_index.md" >}}) covers the implementation of the individual BPMN 2.0 constructs KramaX. You should consult this reference if you want to implement and execute BPMN processes.
+* The [BPMN 2.0 Modeling Reference](http://kramaxx.vodafone.org/bpmn/reference.html#!/reference) introduces the fundamentals of BPMN 2.0 and helps you to get started modeling processes. (Make sure to read the [Tutorial](http://kramaxx.vodafone.org/bpmn/tutorial.html) as well.)
+* The [BPMN 2.0 Implementation Reference]({{< relref "/reference/bpmn20/_index.md" >}}) covers the implementation of the individual BPMN 2.0 constructs Kramaxx. You should consult this reference if you want to implement and execute BPMN processes.
 {{< /note >}}
 
 
-In KramaX you can deploy processes to the process engine in BPMN 2.0 XML format. The XML files are parsed and transformed into a process definition graph structure. This graph structure is executed by the process engine.
+In Kramaxx you can deploy processes to the process engine in BPMN 2.0 XML format. The XML files are parsed and transformed into a process definition graph structure. This graph structure is executed by the process engine.
 
 
 ## Query for Process Definitions
@@ -286,7 +286,7 @@ Note: If you need to interpret the state of a process instance in terms of a BPM
 
 # Jobs and Job Definitions
 
-The KramaX process engine includes a component named the *Job Executor*. The Job Executor is a scheduling component, responsible for performing asynchronous background work. Consider the example of a Timer Event: whenever the process engine reaches the timer event, it will stop execution, persist the current state to the database and create a job to resume execution in the future. A job has a due date which is calculated using the timer expression provided in the BPMN XML.
+The Kramaxx process engine includes a component named the *Job Executor*. The Job Executor is a scheduling component, responsible for performing asynchronous background work. Consider the example of a Timer Event: whenever the process engine reaches the timer event, it will stop execution, persist the current state to the database and create a job to resume execution in the future. A job has a due date which is calculated using the timer expression provided in the BPMN XML.
 
 When a process is deployed, the process engine creates a Job Definition for each activity in the process which will create jobs at runtime. This allows you to query information about timers and asynchronous continuations in your processes.
 

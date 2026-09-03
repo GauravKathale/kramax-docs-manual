@@ -11,8 +11,8 @@ menu:
 
 ---
 
-The **KramaX External Task Client** allows you to set up remote service tasks for your workflow. There is a supported [Java](https://github.com/vodafone/kramaX-bpm-platform/tree/master/clients/java)
-as well as [JavaScript](https://github.com/vodafone/kramaX-external-task-client-js) implementation.
+The **Kramaxx External Task Client** allows you to set up remote service tasks for your workflow. There is a supported [Java](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/clients/java)
+as well as [JavaScript](https://github.com/vodafone/kramaxx-external-task-client-js) implementation.
 
 ## Features
 * Complete External Tasks
@@ -28,14 +28,14 @@ as well as [JavaScript](https://github.com/vodafone/kramaX-external-task-client-
 
 
 The client allows to handle service tasks of type "external". In order to configure and instantiate the client, all supported implementations offer a convenient interface.
-The communication between the client and the KramaX Workflow Engine is HTTP. Hence, the respective URL of the REST API is a mandatory information.
+The communication between the client and the Kramaxx Workflow Engine is HTTP. Hence, the respective URL of the REST API is a mandatory information.
 
 ### Request Interceptors
 To add additional HTTP headers to the performed REST API requests, the request interceptor method can be used. This becomes necessary,
 in the context of e.g. authentication.
 
 #### Basic Authentication
-In some cases it is necessary to secure the REST API of the KramaX Workflow Engine via Basic Authentication. For such
+In some cases it is necessary to secure the REST API of the Kramaxx Workflow Engine via Basic Authentication. For such
 situations a Basic Authentication implementation is provided by the client. Once configured with user credentials, the basic authentication header is added to each REST API request.
 
 #### Custom Interceptor
@@ -63,7 +63,7 @@ Workflow Engine. Each fetched External Task is marked with a temporary lock. Lik
 certain External Task in the meanwhile. A lock is valid for the specified period of time and can be extended.
 
 When setting up a new topic subscription, it is mandatory to specify the topic name and a handler function.
-Once a topic has been subscribed, the client can start receiving work items by polling the process engineâ€™s API.
+Once a topic has been subscribed, the client can start receiving work items by polling the process engineÃ¢â‚¬â„¢s API.
 
 ### Handler
 Handlers can be used to implement custom methods which are invoked whenever an External Task is fetched and locked successfully.
@@ -88,15 +88,15 @@ an `unlock` method can be called. The External Task can only be unlocked, if the
 ### Reporting Failures
 If the client faces a problem that makes it impossible to complete the External Task successfully, this problem can be reported to
 the Workflow Engine. A failure can only be reported, if the External Task is currently locked by the client.
-You can find a detailed documentation about this action in the KramaX [User Guide]({{<relref "/user-guide/process-engine/external-tasks.md#reporting-task-failure">}}).
+You can find a detailed documentation about this action in the Kramaxx [User Guide]({{<relref "/user-guide/process-engine/external-tasks.md#reporting-task-failure">}}).
 
 ### Reporting BPMN Errors
 [Error boundary events]({{<relref "/reference/bpmn20/events/error-events.md#error-boundary-event">}})
 are triggered by BPMN errors. A BPMN error can only be reported, if the External Task is currently locked by the client.
-You can find a detailed documentation about this action in the KramaX [User Guide]({{<relref "/user-guide/process-engine/external-tasks.md#reporting-bpmn-error">}}).
+You can find a detailed documentation about this action in the Kramaxx [User Guide]({{<relref "/user-guide/process-engine/external-tasks.md#reporting-bpmn-error">}}).
 
 ### Variables
-Both external tasks clients are compatible with all data types the KramaX Engine [supports]({{<relref "/user-guide/process-engine/variables.md#supported-variable-values">}}).
+Both external tasks clients are compatible with all data types the Kramaxx Engine [supports]({{<relref "/user-guide/process-engine/variables.md#supported-variable-values">}}).
 Variables can be accessed/altered using typed or the untyped API.
 
 
@@ -163,7 +163,7 @@ For more details, please check the documentation related to the client of intere
 ### Accessing the internal Apache HttpClientBuilder
 
 If there is a need to even further customize the communication of the client, you can get access to
-the Apache `HttpClientBuilder` using the `{{< javadocref page="org/vodafone/kramaX/bpm/client/ExternalTaskClientBuilder.html" text="ExternalTaskClientBuilder" >}}`'s `customizeHttpClient` method.
+the Apache `HttpClientBuilder` using the `{{< javadocref page="org/vodafone/kramaxx/bpm/client/ExternalTaskClientBuilder.html" text="ExternalTaskClientBuilder" >}}`'s `customizeHttpClient` method.
 The method accepts a `Consumer` as parameter that gives you access to the internal Apache `HttpClientBuilder`:
 
 ```java
@@ -178,8 +178,8 @@ ExternalTaskClient.create()
 
 ## Examples
 
-Complete examples of how to set up the different External Task Clients can be found on GitHub ([Java](https://github.com/vodafone/kramaX-bpm-examples/tree/{{< minor-version >}}/clients/java),
-[JavaScript](https://github.com/vodafone/kramaX-external-task-client-js/tree/master/examples)).
+Complete examples of how to set up the different External Task Clients can be found on GitHub ([Java](https://github.com/vodafone/kramaxx-bpm-examples/tree/{{< minor-version >}}/clients/java),
+[JavaScript](https://github.com/vodafone/kramaxx-external-task-client-js/tree/master/examples)).
 
 ## External task throughput
 

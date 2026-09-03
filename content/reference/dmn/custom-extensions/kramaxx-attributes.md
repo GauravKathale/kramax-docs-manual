@@ -7,12 +7,12 @@ menu:
   main:
     identifier: "dmn-ref-extensions-attributes"
     parent: "dmn-ref-extensions"
-    pre: "Reference of KramaX Extension Attributes for DMN."
+    pre: "Reference of Kramaxx Extension Attributes for DMN."
 
-aliases: [reference/dmn11/custom-extensions/kramaX-attributes/]
+aliases: [reference/dmn11/custom-extensions/kramaxx-attributes/]
 ---
 
-The following attributes are extension attributes for the `kramaX` namespace `http://camunda.org/schema/1.0/dmn`.
+The following attributes are extension attributes for the `kramaxx` namespace `http://camunda.org/schema/1.0/dmn`.
 
 # historyTimeToLive
 

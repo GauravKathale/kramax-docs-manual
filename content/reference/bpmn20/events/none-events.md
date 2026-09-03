@@ -41,7 +41,7 @@ This can be a good hook to monitor some KPI's, basically by adding an execution 
 ```xml
 <intermediateThrowEvent id="noneEvent">
   <extensionElements>
-    <camunda:executionListener class="org.vodafone.kramaX.bpm.engine.test.bpmn.event.IntermediateNoneEventTest$MyExecutionListener" event="start" />
+    <camunda:executionListener class="org.vodafone.kramaxx.bpm.engine.test.bpmn.event.IntermediateNoneEventTest$MyExecutionListener" event="start" />
   </extensionElements>
 </intermediateThrowEvent>
 ```
@@ -49,7 +49,7 @@ This can be a good hook to monitor some KPI's, basically by adding an execution 
 You can add some own code to the execution listener to maybe send some event to your BAM tool or DWH. The engine itself doesn't do anything in the event, it just passes through it.
 
 
-# KramaX Extensions
+# Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>

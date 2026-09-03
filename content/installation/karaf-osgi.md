@@ -1,6 +1,6 @@
 ---
 
-title: "Run KramaX using Karaf / OSGi"
+title: "Run Kramaxx using Karaf / OSGi"
 weight: 39
 
 menu:
@@ -14,4 +14,4 @@ menu:
 
 # Community Edition
 
-If you want to run KramaX with Karaf / OSGi, you can find the corresponding distributions on [GitHub](https://github.com/vodafone/kramaX-bpm-platform-osgi/releases).
+If you want to run Kramaxx with Karaf / OSGi, you can find the corresponding distributions on [GitHub](https://github.com/vodafone/kramaxx-bpm-platform-osgi/releases).

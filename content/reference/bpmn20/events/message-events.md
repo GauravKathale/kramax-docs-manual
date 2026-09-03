@@ -55,7 +55,7 @@ By using expressions within the message name, you can influence the message name
 
 **Note:** It is not allowed to use expressions in the message name of a start event of the process definition. So using an expression in the message definition and then referencing this definition in a message start event of the process entry point will cause an error. However, it is allowed to use expressions in the message start event of a subprocess. Therefore, using an expression in the message definition and then referencing this definition in the message start event within a subprocess will work just fine.
 
-## KramaX Extensions
+## Kramaxx Extensions
 
 <table class="table table-striped">
   <tr>
@@ -81,7 +81,7 @@ By using expressions within the message name, you can influence the message name
 
 # Message Api
 
-As an embeddable process engine, the KramaX engine is not concerned with the receiving part of the message. This would be environment dependent and entails platform-specific activities such as connecting to a JMS (Java Messaging Service) Queue/Topic or processing a Webservice or REST request. The reception of messages is therefore something you have to implement as part of the application or infrastructure into which the process engine is embedded.
+As an embeddable process engine, the Kramaxx engine is not concerned with the receiving part of the message. This would be environment dependent and entails platform-specific activities such as connecting to a JMS (Java Messaging Service) Queue/Topic or processing a Webservice or REST request. The reception of messages is therefore something you have to implement as part of the application or infrastructure into which the process engine is embedded.
 
 After you have received a message, you can choose whether you employ the engine's built-in correlation or explicitly deliver the message to start a new process instance or trigger a waiting execution.
 
@@ -311,12 +311,12 @@ A Message Intermediate Throwing event sends a message to an external service. Th
 
 ```xml
 <intermediateThrowEvent id="message">
-  <messageEventDefinition camunda:class="org.vodafone.kramaX.bpm.MyMessageServiceDelegate" />
+  <messageEventDefinition camunda:class="org.vodafone.kramaxx.bpm.MyMessageServiceDelegate" />
 </intermediateThrowEvent>
 ```
 
 
-## KramaX Extensions for `messageEventDefinition`
+## Kramaxx Extensions for `messageEventDefinition`
 
 <table class="table table-striped">
   <tr>
@@ -377,12 +377,12 @@ When process execution arrives at a Message End Event, the current path of execu
 
 ```xml
 <endEvent id="end">
-  <messageEventDefinition camunda:class="org.vodafone.kramaX.bpm.MyMessageServiceDelegate" />
+  <messageEventDefinition camunda:class="org.vodafone.kramaxx.bpm.MyMessageServiceDelegate" />
 </endEvent>
 ```
 
 
-## KramaX Extensions for `messageEventDefinition`
+## Kramaxx Extensions for `messageEventDefinition`
 
 <table class="table table-striped">
   <tr>

@@ -9,9 +9,9 @@ menu:
 
 ---
 
-This page explains specific performance-related topics of database queries. It does not attempt to provide tools and guidance for general performance analysis and optimization of KramaX installations. 
+This page explains specific performance-related topics of database queries. It does not attempt to provide tools and guidance for general performance analysis and optimization of Kramaxx installations. 
 
-As the impact of the settings discussed here largely depends on the setup and workload of KramaX, the recommendations may or may not help in your case. Performance improvements are not guaranteed.
+As the impact of the settings discussed here largely depends on the setup and workload of Kramaxx, the recommendations may or may not help in your case. Performance improvements are not guaranteed.
 
 # Task Query
 

@@ -13,7 +13,7 @@ menu:
 
 {{< img src="../../img/dashboard-landing-page.png" title="Dashboard" >}}
 
-The Dashboard serves as the landing page of KramaX Control Center, providing a high-level overview of open incidents and active process instances within the system. It is designed to give users immediate visibility into system health and operational load, enabling quick identification of critical issues and high-volume processes.
+The Dashboard serves as the landing page of Kramaxx Control Center, providing a high-level overview of open incidents and active process instances within the system. It is designed to give users immediate visibility into system health and operational load, enabling quick identification of critical issues and high-volume processes.
 
 ## Overview
 

@@ -9,7 +9,7 @@ menu:
 
 ---
 
-KramaX supports the Unified Expression Language (EL), specified by the [Jakarta Expression
+Kramaxx supports the Unified Expression Language (EL), specified by the [Jakarta Expression
 Language 4.0 standard][JakartaEL]. To do so, it maintains a custom version of the open source [JUEL][] implementation.
 
 Note, compared to EL 4.0 this JUEL implementation has the following limitations: 
@@ -27,7 +27,7 @@ To get more general information about the usage of Expression Language,
 please read the [official documentation][]. It provides examples that give a good overview of 
 the syntax of expressions.
 
-Within KramaX, EL can be used in many circumstances to evaluate small script-like
+Within Kramaxx, EL can be used in many circumstances to evaluate small script-like
 expressions. The following table provides an overview of the BPMN elements which support
 usage of EL.
 
@@ -85,14 +85,14 @@ usage of EL.
 
 ## Delegation Code
 
-Besides Java code, KramaX also supports the evaluation of expressions as delegation code. For
+Besides Java code, Kramaxx also supports the evaluation of expressions as delegation code. For
 general information about delegation code, see the corresponding
 [section]({{< relref "/user-guide/process-engine/delegation-code.md" >}}).
 
-Two types of expressions are currently supported: `kramaX:expression` and
-`kramaX:delegateExpression`.
+Two types of expressions are currently supported: `kramaxx:expression` and
+`kramaxx:delegateExpression`.
 
-With `kramaX:expression` it is possible to evaluate a value expression or to invoke
+With `kramaxx:expression` it is possible to evaluate a value expression or to invoke
 a method expression. You can use special variables which are available inside an expression or
 Spring and CDI beans. For more information about [variables][] and [Spring][], respectively [CDI][] beans,
 please see the corresponding sections.
@@ -101,7 +101,7 @@ please see the corresponding sections.
   <process id="process">
     <extensionElements>
       <!-- execution listener which uses an expression to set a process variable -->
-      <kramaX:executionListener event="start" expression="${execution.setVariable('test', 'foo')}" />
+      <kramaxx:executionListener event="start" expression="${execution.setVariable('test', 'foo')}" />
     </extensionElements>
 
     <!-- ... -->
@@ -109,7 +109,7 @@ please see the corresponding sections.
     <userTask id="userTask">
       <extensionElements>
         <!-- task listener which calls a method of a bean with current task as parameter -->
-        <kramaX:taskListener event="complete" expression="${myBean.taskDone(task)}" />
+        <kramaxx:taskListener event="complete" expression="${myBean.taskDone(task)}" />
       </extensionElements>
     </userTask>
 
@@ -117,23 +117,23 @@ please see the corresponding sections.
 
     <!-- service task which evaluates an expression and saves it in a result variable -->
     <serviceTask id="serviceTask"
-        kramaX:expression="${myBean.ready}" kramaX:resultVariable="myVar" />
+        kramaxx:expression="${myBean.ready}" kramaxx:resultVariable="myVar" />
 
     <!-- ... -->
 
   </process>
 ```
 
-The attribute `kramaX:delegateExpression` is used for expressions which evaluate to a delegate
+The attribute `kramaxx:delegateExpression` is used for expressions which evaluate to a delegate
 object. This delegate object must implement either the `JavaDelegate` or `ActivityBehavior`
 interface.
 
 ```xml
   <!-- service task which calls a bean implementing the JavaDelegate interface -->
-  <serviceTask id="task1" kramaX:delegateExpression="${myBean}" />
+  <serviceTask id="task1" kramaxx:delegateExpression="${myBean}" />
 
   <!-- service task which calls a method which returns delegate object -->
-  <serviceTask id="task2" kramaX:delegateExpression="${myBean.createDelegate()}" />
+  <serviceTask id="task2" kramaxx:delegateExpression="${myBean.createDelegate()}" />
 ```
 
 
@@ -169,7 +169,7 @@ For usage of expression language on conditional events, see the following exampl
 
 ## inputOutput Parameters
 
-With the KramaX `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with expression language.
 
 Inside the expression some special variables are available which enable the access of the current
@@ -180,13 +180,13 @@ The following example shows an `inputParameter` which uses expression language t
 a bean.
 
 ```xml
-  <serviceTask id="task" kramaX:class="org.vodafone.kramaX.bpm.example.SumDelegate">
+  <serviceTask id="task" kramaxx:class="org.vodafone.kramaxx.bpm.example.SumDelegate">
     <extensionElements>
-      <kramaX:inputOutput>
-        <kramaX:inputParameter name="x">
+      <kramaxx:inputOutput>
+        <kramaxx:inputParameter name="x">
           ${myBean.calculateX()}
-        </kramaX:inputParameter>
-      </kramaX:inputOutput>
+        </kramaxx:inputParameter>
+      </kramaxx:inputOutput>
     </extensionElements>
   </serviceTask>
 ```
@@ -194,21 +194,21 @@ a bean.
 ## External Task Error Handling
 
 For External Tasks it is possible to define
-[kramaX:errorEventDefinition]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}})
+[kramaxx:errorEventDefinition]({{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}})
 elements which can be provided with a JUEL expression. The expression is evaluated on `ExternalTaskService#complete` and
 `ExternalTaskService#handleFailure`. If the expression evaluates to `true`, a BPMN error is thrown which can be caught by an
 [Error Boundary Event]({{< relref "/reference/bpmn20/events/error-events.md#error-boundary-event" >}}).
 
-In the scope of an External Task, expressions have access to the {{< javadocref page="org/vodafone/kramaX/bpm/engine/externaltask/ExternalTask.html" text="ExternalTaskEntity" >}} object via the key `externalTask` which provides getter methods for `errorMessage`, `errorDetails`, `workerId`, `retries` and more.
+In the scope of an External Task, expressions have access to the {{< javadocref page="org/vodafone/kramaxx/bpm/engine/externaltask/ExternalTask.html" text="ExternalTaskEntity" >}} object via the key `externalTask` which provides getter methods for `errorMessage`, `errorDetails`, `workerId`, `retries` and more.
 
 **Examples:**
 
 How to access the External Task object:
 
 ```xml
-<bpmn:serviceTask id="myExternalTaskId" name="myExternalTask" kramaX:type="external" kramaX:topic="myTopic">
+<bpmn:serviceTask id="myExternalTaskId" name="myExternalTask" kramaxx:type="external" kramaxx:topic="myTopic">
   <bpmn:extensionElements>
-    <kramaX:errorEventDefinition id="myErrorEventDefinition" errorRef="myError" expression="${externalTask.getWorkerId() == 'myWorkerId'}" />
+    <kramaxx:errorEventDefinition id="myErrorEventDefinition" errorRef="myError" expression="${externalTask.getWorkerId() == 'myWorkerId'}" />
   </bpmn:extensionElements>
 </bpmn:serviceTask>
 ```
@@ -216,9 +216,9 @@ How to access the External Task object:
 How to match an error message:
 
 ```xml
-<bpmn:serviceTask id="myExternalTaskId" name="myExternalTask" kramaX:type="external" kramaX:topic="myTopic">
+<bpmn:serviceTask id="myExternalTaskId" name="myExternalTask" kramaxx:type="external" kramaxx:topic="myTopic">
   <bpmn:extensionElements>
-    <kramaX:errorEventDefinition id="myErrorEventDefinition" errorRef="myError" expression="${externalTask.getErrorDetails().contains('myErrorMessage')}" />
+    <kramaxx:errorEventDefinition id="myErrorEventDefinition" errorRef="myError" expression="${externalTask.getErrorDetails().contains('myErrorMessage')}" />
   </bpmn:extensionElements>
 </bpmn:serviceTask>
 ```
@@ -263,7 +263,7 @@ evaluating expressions:
   <tbody>
     <tr>
       <td><code>execution</code></td>
-      <td><code>{{< javadocref page="org/vodafone/kramaX/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}</code></td>
+      <td><code>{{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}</code></td>
       <td>
         Available in a BPMN execution context like a service task, execution listener or sequence
         flow.
@@ -271,17 +271,17 @@ evaluating expressions:
     </tr>
     <tr>
       <td><code>task</code></td>
-      <td><code>{{< javadocref page="org/vodafone/kramaX/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}</code></td>
+      <td><code>{{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}</code></td>
       <td>Available in a task context like a task listener.</td>
     </tr>
     <tr>
       <td><code>externalTask</code></td>
-      <td><code>{{< javadocref page="org/vodafone/kramaX/bpm/engine/externaltask/ExternalTask.html" text="ExternalTask" >}}</code></td>
-      <td>Available during an external task context activity (e.g. in <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">kramaX:errorEventDefinition</a> expressions).</td>
+      <td><code>{{< javadocref page="org/vodafone/kramaxx/bpm/engine/externaltask/ExternalTask.html" text="ExternalTask" >}}</code></td>
+      <td>Available during an external task context activity (e.g. in <a href="{{< relref "/reference/bpmn20/custom-extensions/extension-elements.md#erroreventdefinition" >}}">kramaxx:errorEventDefinition</a> expressions).</td>
     </tr>
     <tr>
       <td><code>caseExecution</code></td>
-      <td><code>{{< javadocref page="org/vodafone/kramaX/bpm/engine/delegate/DelegateCaseExecution.html" text="DelegateCaseExecution" >}}</code></td>
+      <td><code>{{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateCaseExecution.html" text="DelegateCaseExecution" >}}</code></td>
       <td>Available in a CMMN execution context.</td>
     </tr>
     <tr>
@@ -300,7 +300,7 @@ The following example shows an expression which sets the variable `test` to the 
 event name of an execution listener.
 
 ```xml
-  <kramaX:executionListener event="start"
+  <kramaxx:executionListener event="start"
     expression="${execution.setVariable('test', execution.eventName)}" />
 ```
 
@@ -313,13 +313,13 @@ for more information. The following example shows the usage of a bean which impl
 `JavaDelegate` interface as delegateExecution.
 
 ```xml
-  <serviceTask id="task1" kramaX:delegateExpression="${myBean}" />
+  <serviceTask id="task1" kramaxx:delegateExpression="${myBean}" />
 ```
 
 With the expression attribute any method of a bean can be called.
 
 ```xml
-  <serviceTask id="task2" kramaX:expression="${myBean.myMethod(execution)}" />
+  <serviceTask id="task2" kramaxx:expression="${myBean.myMethod(execution)}" />
 ```
 
 
@@ -371,17 +371,17 @@ The following example sets the due date of a user task to the date 3 days after 
 of the task.
 
 ```xml
-<userTask id="theTask" name="Important task" kramaX:dueDate="${dateTime().plusDays(3).toDate()}"/>
+<userTask id="theTask" name="Important task" kramaxx:dueDate="${dateTime().plusDays(3).toDate()}"/>
 ```
 
 
-## Built-In KramaX Spin Functions
+## Built-In Kramaxx Spin Functions
 
-If the KramaX Spin process engine plugin is activated, the Spin functions `S`,
+If the Kramaxx Spin process engine plugin is activated, the Spin functions `S`,
 `XML` and `JSON` are also available inside of an expression. See the [Data Formats section][spin-section] for a detailed explanation.
 
 ```xml
-  <serviceTask id="task" kramaX:expression="${XML(xml).attr('test').value()}" resultVariable="test" />
+  <serviceTask id="task" kramaxx:expression="${XML(xml).attr('test').value()}" resultVariable="test" />
 ```
 
 

@@ -24,7 +24,7 @@ documentation about [Supported Data Types in DMN] to learn more about the `typeR
 The FEEL Engine might support more types than listed below. However, this page defines
 which of the types are known for being...
 
-* ...well integrable in KramaX
+* ...well integrable in Kramaxx
 * ...covered by automated tests
 
 ## Supported Variable Value Types
@@ -45,10 +45,10 @@ The variable value types listed in this section can be handled by the FEEL Engin
 
 ### Spin Types
 
-* `org.vodafone.kramaX.spin.json.SpinJsonNode`
-* `org.vodafone.kramaX.spin.xml.SpinXmlElement`
+* `org.vodafone.kramaxx.spin.json.SpinJsonNode`
+* `org.vodafone.kramaxx.spin.xml.SpinXmlElement`
 
-For more information about the KramaX Spin integration, please see the documentation about 
+For more information about the Kramaxx Spin integration, please see the documentation about 
 [FEEL Engine Spin Integration].
 
 ## Return Types
@@ -56,13 +56,13 @@ For more information about the KramaX Spin integration, please see the documenta
 The table displays:
 
 * Which return value of a FEEL Expression maps to which Java type
-* Which KramaX specific variable type is assigned for the respective Java type
+* Which Kramaxx specific variable type is assigned for the respective Java type
 
 <table class="table table-striped">
   <tr>
     <th>FEEL Expression Example</th>
     <th>FEEL Engine Return Type</th>
-    <th>KramaX Variable Type</th>
+    <th>Kramaxx Variable Type</th>
   </tr>
   <tr>
     <td><code>null</code></td>
@@ -99,7 +99,7 @@ The table displays:
         <code>time("11:45:30+02:00")</code><br>
         <code>time("10:31:10@Europe/Paris")</code>
     </td>
-    <td><code>org.vodafone.kramaX.feel.syntaxtree.ZonedTime</code></td>
+    <td><code>org.vodafone.kramaxx.feel.syntaxtree.ZonedTime</code></td>
     <td>object</td>
   </tr>
   <tr>

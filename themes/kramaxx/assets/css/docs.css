@@ -1691,7 +1691,7 @@ mark,
 /* line 5, node_modules\bootstrap\less\mixins\text-emphasis.less */
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #8d8f93;
+  color: #E60000;
 }
 /* line 110, node_modules\bootstrap\less\type.less */
 .text-success {
@@ -1737,7 +1737,7 @@ a.text-danger:focus {
 /* line 5, node_modules\bootstrap\less\mixins\background-variant.less */
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #8d8f93;
+  background-color: #E60000;
 }
 /* line 132, node_modules\bootstrap\less\type.less */
 .bg-success {
@@ -3873,13 +3873,13 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #8d8f93;
+  background-color: #E60000;
   border-color: #5a5c60;
 }
 /* line 17, node_modules\bootstrap\less\mixins\buttons.less */
 .btn-primary:hover {
   color: #fff;
-  background-color: #8d8f93;
+  background-color: #E60000;
   border-color: #7a7d82;
 }
 /* line 22, node_modules\bootstrap\less\mixins\buttons.less */
@@ -3887,7 +3887,7 @@ fieldset[disabled] .btn-default.focus {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #8d8f93;
+  background-color: #E60000;
   background-image: none;
   border-color: #7a7d82;
 }
@@ -4840,7 +4840,7 @@ tbody.collapse.in {
 /* line 401, node_modules\bootstrap\less\navbar.less */
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #8d8f93;
+  color: #E60000;
   background-color: transparent;
 }
 /* line 408, node_modules\bootstrap\less\navbar.less */
@@ -5117,7 +5117,7 @@ a.label:focus {
 /* line 7, node_modules\bootstrap\less\mixins\labels.less */
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #8d8f93;
+  background-color: #E60000;
 }
 /* line 50, node_modules\bootstrap\less\labels.less */
 .label-success {
@@ -6574,13 +6574,13 @@ body {
 }
 /* line 181, styles\_menu.less */
 .site-menu .meta {
-  background-color: #0075FF;
+  background-color: #E60000;
   color: #fff;
   z-index: 50;
 }
 /* line 185, styles\_menu.less */
 .site-menu .meta > .header {
-  border-bottom: 1px solid #8d8f93;
+  border-bottom: 1px solid #E60000;
   cursor: pointer;
   margin: 0;
   font-size: 14px;
@@ -6590,11 +6590,11 @@ body {
 }
 /* line 193, styles\_menu.less */
 .site-menu .meta > .header:hover {
-  background-color: #0069e6;
+  background-color: #E60000;
 }
 /* line 197, styles\_menu.less */
 .site-menu .meta .toggle {
-  background-color: #004699;
+  background-color: #B30000;
   line-height: 30px;
   text-align: center;
 }

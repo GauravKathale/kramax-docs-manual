@@ -1,6 +1,6 @@
 ---
 
-title: 'KramaX Connector Reference'
+title: 'Kramaxx Connector Reference'
 weight: 70
 layout: "single"
 
@@ -12,13 +12,13 @@ menu:
 
 ---
 
-KramaX Connect provides a simple API for connecting HTTP services and other
+Kramaxx Connect provides a simple API for connecting HTTP services and other
 things. It aims at two usage scenarios: usage in a generic system such as the
-KramaX process engine and standalone usage via API.
+Kramaxx process engine and standalone usage via API.
 
 # Connectors
 
-KramaX Connect provides a HTTP and a SOAP HTTP connector. If you want to
+Kramaxx Connect provides a HTTP and a SOAP HTTP connector. If you want to
 add an own connector to Connect please have a look at the [extending Connect]({{< relref "/reference/connect/extending-connect.md" >}})
 section. This section also describes the usage of a `ConnectorConfigurator` to
 configure the connector instances.
@@ -36,21 +36,21 @@ connector.addRequestInterceptor(interceptor).createRequest();
 Connect can be used in any Java-based application by adding the following maven
 dependency to your `pom.xml` file:
 
-{{< note title="KramaX BOM" class="info" >}}
-If you use other KramaX projects please import the
-[KramaX BOM]({{< relref "/get-started/apache-maven/" >}})
-to ensure correct versions for every KramaX project.
+{{< note title="Kramaxx BOM" class="info" >}}
+If you use other Kramaxx projects please import the
+[Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}})
+to ensure correct versions for every Kramaxx project.
 {{< /note >}}
 
 ```xml
 <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>org.vodafone.kramaX.connect</groupId>
-      <artifactId>kramaX-connect-bom</artifactId>
+      <groupId>org.vodafone.kramaxx.connect</groupId>
+      <artifactId>kramaxx-connect-bom</artifactId>
       <scope>import</scope>
       <type>pom</type>
-      <version>${version.kramaX}</version>
+      <version>${version.kramaxx}</version>
     </dependency>
   </dependencies>
 </dependencyManagement>
@@ -59,26 +59,26 @@ to ensure correct versions for every KramaX project.
 ```xml
 <dependencies>
   <dependency>
-    <groupId>org.vodafone.kramaX.connect</groupId>
-    <artifactId>kramaX-connect-core</artifactId>
+    <groupId>org.vodafone.kramaxx.connect</groupId>
+    <artifactId>kramaxx-connect-core</artifactId>
   </dependency>
 
   <dependency>
-    <groupId>org.vodafone.kramaX.connect</groupId>
-    <artifactId>kramaX-connect-connectors-all</artifactId>
+    <groupId>org.vodafone.kramaxx.connect</groupId>
+    <artifactId>kramaxx-connect-connectors-all</artifactId>
   </dependency>
 </dependencies>
 ```
 
-KramaX Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramaX.connect).
+Kramaxx Connect is published to [maven central](https://mvnrepository.com/artifact/org.vodafone.kramaxx.connect).
 
 {{< note title="Process engine plugin" class="info" >}}
-If you are using Connect in the KramaX process engine, you also need the `kramaX-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
+If you are using Connect in the Kramaxx process engine, you also need the `kramaxx-engine-plugin-connect` dependency. For more information, refer to the [Connectors guide]({{< relref "/user-guide/process-engine/connectors.md" >}}).
 {{< /note >}}
 
 # Logging
 
-KramaX Connect uses [kramaX-commons-logging](https://github.com/vodafone/kramaX-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
+Kramaxx Connect uses [kramaxx-commons-logging](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/commons/logging) which itself uses [SLF4J](http://slf4j.org) as
 a logging backend. To enable logging a SLF4J implementation has to be part of
 your classpath. For example `slf4j-simple`, `log4j12` or `logback-classic`.
 

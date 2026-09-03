@@ -46,7 +46,7 @@ You can also switch to the preview tab which displays the rendered process model
 # Process Instances Search
 
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../../img/cockpit-search.png" title="cockpit Search" >}}
@@ -95,7 +95,7 @@ Additionally, you can specify process variables by name to enrich the export res
 
 When clicking **Export CSV**, the backend crunches the requested data and creates a CSV file. This could take a while, depending on the amounts of process instances you want to export.
 
-{{< img outdated="true" src="../../img/cockpit-export-download-as-csv.png" title="CSV Export for Process Instances: Modal Dialog â€“ Download as CSV" >}}
+{{< img outdated="true" src="../../img/cockpit-export-download-as-csv.png" title="CSV Export for Process Instances: Modal Dialog Ã¢â‚¬â€œ Download as CSV" >}}
 
 As soon as the request succeeds, you should see a notification that the CSV creation was successful, and the button changes to **Download as CSV**. When you click the button, the download of the CSV file starts.
 
@@ -172,7 +172,7 @@ button to open a modal dialog.
 # Delete process definitions
 
 {{< enterprise >}}
-Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
+Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../../img/cockpit-delete-process-definition.png" title="Delete Process Definition" >}}

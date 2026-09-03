@@ -34,7 +34,7 @@ After clicking on **Retry**, the engine will re-trigger the jobs and increment t
 # Bulk Retry
 
 {{< enterprise >}}
-  Please note that this feature is only included in the enterprise edition of KramaX, it is not available in the community edition.
+  Please note that this feature is only included in the enterprise edition of Kramaxx, it is not available in the community edition.
 {{< /enterprise >}}
 
 {{< img outdated="true" src="../../img/cockpit-bulk-retry.png" title="Batch Retry" >}}

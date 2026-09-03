@@ -104,7 +104,7 @@ List<HistoricDecisionInstance> historicDecisions = processEngine
 # The Historic Decision Instance
 
 The {{< javadocref
-page="?org/vodafone/kramaX/bpm/engine/history/HistoricDecisionInstance"
+page="?org/vodafone/kramaxx/bpm/engine/history/HistoricDecisionInstance"
 text="HistoricDecisionInstance" >}} contains information about a single
 evaluation of a decision.
 
@@ -146,7 +146,7 @@ reference].
 ## Historic Decision Input Instance
 
 The {{< javadocref
-page="?org/vodafone/kramaX/bpm/engine/history/HistoricDecisionInputInstance"
+page="?org/vodafone/kramaxx/bpm/engine/history/HistoricDecisionInputInstance"
 text="HistoricDecisionInputInstance" >}} represents one input of an
 evaluated decision (e.g., an input clause of a decision table). 
 
@@ -173,7 +173,7 @@ input specifies a type.
 ## Historic Decision Output Instance
 
 The {{< javadocref
-page="?org/vodafone/kramaX/bpm/engine/history/HistoricDecisionOutputInstance"
+page="?org/vodafone/kramaxx/bpm/engine/history/HistoricDecisionOutputInstance"
 text="HistoricDecisionOutputInstance" >}} represents one output entry of an
 evaluated decision. If the decision is implemented as decision table, the 
 `HistoricDecisionInstance` contains one `HistoricDecisionOutputInstance` 
@@ -217,5 +217,5 @@ You can audit the evaluated decision definitions in the [Cockpit] webapp.
 [Cockpit]: {{< relref "/webapps/cockpit/dmn/_index.md" >}}
 [History and Audit Event Log]: {{< relref "/user-guide/process-engine/history/history-configuration.md" >}}
 [DMN 1.3 reference]: {{< relref "/reference/dmn/decision-table/hit-policy.md" >}}
-[BPMN business rule task]: {{< relref "/reference/bpmn20/tasks/business-rule-task.md#using-kramaX-dmn-engine" >}}
+[BPMN business rule task]: {{< relref "/reference/bpmn20/tasks/business-rule-task.md#using-kramaxx-dmn-engine" >}}
 [CMMN decision task]: {{< relref "/reference/cmmn11/tasks/decision-task.md" >}}

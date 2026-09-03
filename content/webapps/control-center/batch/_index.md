@@ -11,7 +11,7 @@ menu:
 
 ---
 
-The Batches section enables users to monitor and manage batch operations executed by the KramaX BPM Engine. Batch processing is commonly used for large-scale operations that affect multiple process instances, such as migrations, modifications, retries, or other bulk execution tasks.
+The Batches section enables users to monitor and manage batch operations executed by the Kramaxx BPM Engine. Batch processing is commonly used for large-scale operations that affect multiple process instances, such as migrations, modifications, retries, or other bulk execution tasks.
 The Batch module provides visibility into both running and completed batches, allowing users to track progress, investigate failures, and perform operational actions when needed. It allows displaying details of a batch such as the start and end-time or the number of remaining jobs. For failed jobs, it displays the error message and allows a retry or deletion of the job.
 
 ## Overview

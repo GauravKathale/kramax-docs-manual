@@ -11,16 +11,16 @@ menu:
 ---
 
 
-KramaX supports template engines which are implemented as script engines compatible with
+Kramaxx supports template engines which are implemented as script engines compatible with
 JSR-223. As a result, templates can be used everywhere where scripts can be used.
 
-In community distributions of KramaX, the following template engine is provided out of the
+In community distributions of Kramaxx, the following template engine is provided out of the
 box:
 
 * [FreeMarker][freemarker]
 
 The script engine Freemarker wrapper implementation can be found in the
-[kramaX-bpmn-platform](https://github.com/vodafone/kramaX-bpm-platform/tree/master/freemarker-template-engine) repository.
+[kramaxx-bpmn-platform](https://github.com/vodafone/kramaxx-bpm-platform/tree/master/freemarker-template-engine) repository.
 
 The following template engines are provided as optional community extensions:
 
@@ -29,7 +29,7 @@ The following template engines are provided as optional community extensions:
 * [Saxon XSLT](https://www.saxonica.com/html/documentation12/using-xsl/)
 
 The script engine wrapper implementations can be found in the
-[kramaX-7-template-engines-jsr223][kramaX-7-template-engines-jsr223] community hub repository.
+[kramaxx-7-template-engines-jsr223][kramaxx-7-template-engines-jsr223] community hub repository.
 
 # Install a Template Engine
 
@@ -43,7 +43,7 @@ application deployment. When using the process engine in a maven `war` project, 
 dependencies must be added as dependencies to the maven `pom.xml` file:
 
 {{< note title="" class="info" >}}
-  The [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
+  The [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) only contains the officially supported freemarker template engine.
   For the community-driven template engines, please check the Maven coordinates below. 
 {{< /note >}}
 
@@ -52,8 +52,8 @@ dependencies must be added as dependencies to the maven `pom.xml` file:
 
   <!-- freemarker -->
   <dependency>
-    <groupId>org.vodafone.kramaX.template-engines</groupId>
-    <artifactId>kramaX-template-engines-freemarker</artifactId>
+    <groupId>org.vodafone.kramaxx.template-engines</groupId>
+    <artifactId>kramaxx-template-engines-freemarker</artifactId>
   </dependency>
 
 </dependencies>
@@ -66,20 +66,20 @@ Here are the Maven coordinates of the community extensions:
 
   <!-- saxon xquery -->
   <dependency>
-    <groupId>org.vodafone.kramaX.community.template.engine</groupId>
-    <artifactId>kramaX-7-template-engine-xquery</artifactId>
+    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
+    <artifactId>kramaxx-7-template-engine-xquery</artifactId>
   </dependency>
 
   <!-- saxon xslt -->
   <dependency>
-    <groupId>org.vodafone.kramaX.community.template.engine</groupId>
-    <artifactId>kramaX-7-template-engine-xslt</artifactId>
+    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
+    <artifactId>kramaxx-7-template-engine-xslt</artifactId>
   </dependency>
 
   <!-- apache velocity -->
   <dependency>
-    <groupId>org.vodafone.kramaX.community.template.engine</groupId>
-    <artifactId>kramaX-7-template-engine-velocity</artifactId>
+    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
+    <artifactId>kramaxx-7-template-engine-velocity</artifactId>
   </dependency>
 
 </dependencies>
@@ -93,7 +93,7 @@ classpath. The procedure for this depends on the application server. In Apache T
 libraries have to be added to the shared `lib/` folder.
 
 {{< note title="" class="info" >}}
-  [FreeMarker](http://freemarker.org/) is pre-installed in the KramaX pre-packaged distribution.
+  [FreeMarker](http://freemarker.org/) is pre-installed in the Kramaxx pre-packaged distribution.
 {{< /note >}}
 
 
@@ -101,7 +101,7 @@ libraries have to be added to the shared `lib/` folder.
 
 If the template engine library is in the classpath, you can use templates everywhere in the BPMN
 process where you can [use scripts][use-scripts], for example as a script task or inputOutput mapping.
-The FreeMarker template engine is part of the KramaX distribution.
+The FreeMarker template engine is part of the Kramaxx distribution.
 
 Inside the template, all process variables of the BPMN element scope are available. The
 template can also be loaded from an external resource as described in the [script source
@@ -115,10 +115,10 @@ The following example shows a FreeMarker template, of which the result is saved 
   <script>
     Dear ${customer},
 
-    thank you for working with KramaX ${version}.
+    thank you for working with Kramaxx ${version}.
 
     Greetings,
-    KramaX Developers
+    Kramaxx Developers
   </script>
 </scriptTask>
 ```
@@ -158,8 +158,8 @@ dependency must be added as dependencies to the maven `pom.xml` file:
 
   <!-- XSLT -->
   <dependency>
-    <groupId>org.vodafone.kramaX.community.template.engine</groupId>
-    <artifactId>kramaX-7-template-engine-xslt</artifactId>
+    <groupId>org.vodafone.kramaxx.community.template.engine</groupId>
+    <artifactId>kramaxx-7-template-engine-xslt</artifactId>
   </dependency>
 
 </dependencies>
@@ -172,7 +172,7 @@ The following is an example of a BPMN ScriptTask used to execute an XSLT Templat
 ```xml
 <bpmn2:scriptTask id="ScriptTask_1" name="convert input"
                   scriptFormat="xslt"
-                  camunda:resource="org/vodafone/kramaX/bpm/example/xsltexample/example.xsl"
+                  camunda:resource="org/vodafone/kramaxx/bpm/example/xsltexample/example.xsl"
                   camunda:resultVariable="xmlOutput">
 
   <bpmn2:extensionElements>
@@ -191,16 +191,16 @@ described for [script tasks][script-source].
 The result of the transformation can be mapped to a variable using the `camunda:resultVariable`
 attribute.
 
-Finally, the input of the transformation must be mapped using the special variable `kramaX_source`
+Finally, the input of the transformation must be mapped using the special variable `kramaxx_source`
 using a `<camunda:inputParameter ... />` mapping.
 
-A [full example of the XSLT Template Engine][xslt-example] in KramaX can be found in the
+A [full example of the XSLT Template Engine][xslt-example] in Kramaxx can be found in the
 examples' repository.
 
 
 [freemarker]: http://freemarker.org/
 [velocity]: http://velocity.apache.org/
-[kramaX-7-template-engines-jsr223]: https://github.com/kramaX-community-hub/kramaX-7-template-engines-jsr223
+[kramaxx-7-template-engines-jsr223]: https://github.com/kramaxx-community-hub/kramaxx-7-template-engines-jsr223
 [use-scripts]: {{< relref "/user-guide/process-engine/scripting.md" >}}
 [script-source]: {{< relref "/user-guide/process-engine/scripting.md#script-source" >}}
-[xslt-example]: https://github.com/vodafone/kramaX-bpm-examples/tree/master/scripttask/xslt-scripttask
+[xslt-example]: https://github.com/vodafone/kramaxx-bpm-examples/tree/master/scripttask/xslt-scripttask

@@ -20,12 +20,12 @@ You can change the visual aspects of Cockpit. The user stylesheet file is locate
 and can override the standard styles.
 
 ```css
-/* hides the KramaX logo */
+/* hides the Kramaxx logo */
 .app-banner svg {
   display: none;
 }
 .app-banner {
-  /* hides the "KramaX Cockpit" text */
+  /* hides the "Kramaxx Cockpit" text */
   text-indent: 200vw;
   /* put your logo */
   background-image: url(./path/to/the/logo.png);
@@ -39,12 +39,12 @@ and can override the standard styles.
 }
 ```
 
-**Note:** you can also change the app name (*Cockpit*) and vendor (*KramaX*)
+**Note:** you can also change the app name (*Cockpit*) and vendor (*Kramaxx*)
 by changing the `app/cockpit/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   app: {
     name: 'Operations',
     vendor: 'Company'
@@ -54,8 +54,8 @@ export default {
 
 # Localization
 
-Cockpit can be localized. KramaX maintains English and German translation files. 
-You can find and download community maintained translation files at the [KramaX webapp translations repository](https://github.com/vodafone/kramaX-webapp-translations).
+Cockpit can be localized. Kramaxx maintains English and German translation files. 
+You can find and download community maintained translation files at the [Kramaxx webapp translations repository](https://github.com/vodafone/kramaxx-webapp-translations).
 
 The localization of Cockpit is contained in the `app/cockpit/locales/` directory. This
 directory contains a separate localization file for every available language. The file name
@@ -71,7 +71,7 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -92,22 +92,22 @@ Add your files to the `customScripts` property of the `app/cockpit/scripts/confi
 
 ```javascript
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   customScripts: 
     ['custom-module/module.js']
 };
 ```
-This includes a `custom-module/module.js` file. The path is relative to the `app/cockpit` folder in the KramaX webapp .war file.
+This includes a `custom-module/module.js` file. The path is relative to the `app/cockpit` folder in the Kramaxx webapp .war file.
 
-You can find a complete example about how to use `customScripts` to develop a Cockpit Plugin in the [KramaX examples repository](https://github.com/vodafone/kramaX-bpm-examples/tree/master/cockpit/cockpit-cats).
+You can find a complete example about how to use `customScripts` to develop a Cockpit Plugin in the [Kramaxx examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/cockpit/cockpit-cats).
 
 ## Legacy Custom Scripts
 
-Custom Scripts created for KramaX.13 or earlier can be included using the `requireJsConfig` property to the `app/cockpit/scripts/config.js`. You can include these custom scripts using the custom [requireJS configuration](https://requirejs.org/docs/api.html#config).
+Custom Scripts created for Kramaxx.13 or earlier can be included using the `requireJsConfig` property to the `app/cockpit/scripts/config.js`. You can include these custom scripts using the custom [requireJS configuration](https://requirejs.org/docs/api.html#config).
 
 ```Javascript
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   requireJsConfig: {
     // names of angular modules defined in your custom script files.
     // will be added to the 'cam.cockpit.custom' as dependencies
@@ -124,7 +124,7 @@ export default {
 }
 ```
 
-For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.kramaX.vodafone.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of KramaX **7.13** .
+For more details about legacy Plugins, check out the legacy [Plugin documentation](https://docs.kramaxx.vodafone.org/manual/7.13/webapps/cockpit/extend/plugins/). Please note that this link will take you to the documentation of Kramaxx **7.13** .
 
 # BPMN Diagram Viewer (bpmn.js)
 
@@ -133,11 +133,11 @@ The diagram viewer (bpmn.js) can be either customized by moddle extensions or
 of Cockpit, a `bpmnJs` property must be added to the `app/cockpit/scripts/config.js` file.
 
 ## Additional Modules
-To add modules, the `additionalModules` property needs to be specified, where each module is registered with its path. The path is relative to the `app/cockpit` folder in the .war file of the KramaX Webapp.
+To add modules, the `additionalModules` property needs to be specified, where each module is registered with its path. The path is relative to the `app/cockpit` folder in the .war file of the Kramaxx Webapp.
 
 ```javascript
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   bpmnJs: {
     additionalModules: [
       'my-custom-module/module'
@@ -146,18 +146,18 @@ export default {
 }
 ```
 
-You can find an example on how to add an additional bpmn.js module to Cockpit in the [KramaX examples repository](https://github.com/vodafone/kramaX-bpm-examples/tree/master/cockpit/cockpit-bpmn-js-module).
+You can find an example on how to add an additional bpmn.js module to Cockpit in the [Kramaxx examples repository](https://github.com/vodafone/kramaxx-bpm-examples/tree/master/cockpit/cockpit-bpmn-js-module).
 
 ## Moddle Extensions
 The BPMN moddle can be extended by adding a `moddleExtensions` property. Each moddle extension has a unique name (key)
 and a path (value) to the JSON file of the moddle extension. The path is relative to the `app/cockpit` folder in the
-.war file of the KramaX Webapp. The suffix `.json` of the file is added automatically and must not be specified.
+.war file of the Kramaxx Webapp. The suffix `.json` of the file is added automatically and must not be specified.
 ```json
 export default {
-  // â€¦
+  // Ã¢â‚¬Â¦
   bpmnJs: {
     moddleExtensions: {
-      camunda: 'my-custom-moddle/kramaX'
+      camunda: 'my-custom-moddle/kramaxx'
     }
   }
 }
@@ -244,7 +244,7 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default = {
-  // â€¦
+  // Ã¢â‚¬Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -253,11 +253,11 @@ export default = {
 
 # Disable Welcome Message for new Users
 
-First-time visitors are shown a message directing them to the kramaX welcome page. If you do
+First-time visitors are shown a message directing them to the kramaxx welcome page. If you do
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default = {
-  // â€¦
+  // Ã¢â‚¬Â¦
   disableWelcomeMessage: true
 };
 ```
@@ -269,7 +269,7 @@ The default maximum length of a User Operation Log annotation is 4000 characters
 
 ```javascript
 export default = {
-  // â€¦
+  // Ã¢â‚¬Â¦
   userOperationLogAnnotationLength: 4000
 };
 ```
@@ -281,7 +281,7 @@ You can view a preview of embedded forms and other HTML files in the Cockpit dep
 
 ```javascript
 export default = {
-  // â€¦
+  // Ã¢â‚¬Â¦
   previewHtml: false
 };
 ```

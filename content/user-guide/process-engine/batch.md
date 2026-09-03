@@ -293,7 +293,7 @@ You can configure the property in three ways:
 2.  In Spring-based environments via [Spring XML Configuration][spring-xml-config] 
     ```xml
     <bean id="processEngineConfiguration" 
-          class="org.vodafone.kramaX.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+          class="org.vodafone.kramaxx.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
     
       <!-- ... -->
     
@@ -310,7 +310,7 @@ You can configure the property in three ways:
     ```
 3.  In Spring Boot environment via the [`application.yaml`][spring-boot-config] file
     ```yaml
-    kramaX.bpm.generic-properties.properties:
+    kramaxx.bpm.generic-properties.properties:
       invocations-per-batch-job-by-batch-type:
         process-set-removal-time:     10
         historic-instance-deletion:   3
@@ -332,4 +332,4 @@ You can configure the property in three ways:
 [invoc-per-batch-job-batch-type]: {{< relref "/reference/deployment-descriptors/tags/process-engine.md#invocations-per-batch-job-by-batch-type" >}}
 [Process Engine Plugin]: {{< relref "/user-guide/process-engine/process-engine-plugins.md" >}}
 [spring-xml-config]: {{< relref "/user-guide/spring-framework-integration/configuration.md" >}}
-[spring-boot-config]: {{< relref "/user-guide/spring-boot-integration/configuration.md#kramaX-engine-properties" >}}
+[spring-boot-config]: {{< relref "/user-guide/spring-boot-integration/configuration.md#kramaxx-engine-properties" >}}

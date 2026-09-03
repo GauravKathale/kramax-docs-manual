@@ -11,7 +11,7 @@ menu:
 ---
 
 
-Along with the KramaX web applications we ship Admin, accessible via [http://localhost:8080/kramaX/app/admin/](http://localhost:8080/kramaX/app/admin/).
-Admin is an application that allows you to configure users and groups via the engine's [Identity Service]({{< relref "/user-guide/process-engine/identity-service.md" >}}) and authorizations via the engine's [Authorization Service]({{< relref "/user-guide/process-engine/authorization-service.md" >}}). Furthermore, you can connect KramaX Admin to your [LDAP system]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
+Along with the Kramaxx web applications we ship Admin, accessible via [http://localhost:8080/kramaxx/app/admin/](http://localhost:8080/kramaxx/app/admin/).
+Admin is an application that allows you to configure users and groups via the engine's [Identity Service]({{< relref "/user-guide/process-engine/identity-service.md" >}}) and authorizations via the engine's [Authorization Service]({{< relref "/user-guide/process-engine/authorization-service.md" >}}). Furthermore, you can connect Kramaxx Admin to your [LDAP system]({{< relref "/user-guide/process-engine/identity-service.md#the-ldap-identity-service" >}}).
 
 {{< img outdated="true" src="img/admin-start-page-view.png" title="Admin Start Page" >}}

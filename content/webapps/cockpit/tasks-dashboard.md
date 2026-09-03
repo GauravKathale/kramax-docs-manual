@@ -31,7 +31,7 @@ This category provides you an overview which shows how all open tasks which are 
 {{< comment >}}
 ## Search Tasks
 {{< enterprise >}}
-  Please note that this feature is only included in the enterprise edition of KramaX, it is not 
+  Please note that this feature is only included in the enterprise edition of Kramaxx, it is not 
   available in the community edition.
 {{< /enterprise >}}
 

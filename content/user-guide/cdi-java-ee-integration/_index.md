@@ -10,8 +10,8 @@ menu:
 
 ---
 
-The `kramaX-engine-cdi` and `kramaX-engine-cdi-jakarta` modules provide programming model integration with CDI (Context and Dependency Injection).
-CDI is the Jakarta EE/Java EE standard for Dependency Injection. The KramaX CDI integration leverages both the configuration of the KramaX engine
+The `kramaxx-engine-cdi` and `kramaxx-engine-cdi-jakarta` modules provide programming model integration with CDI (Context and Dependency Injection).
+CDI is the Jakarta EE/Java EE standard for Dependency Injection. The Kramaxx CDI integration leverages both the configuration of the Kramaxx engine
 and the extensibility of CDI. The most prominent features are:
 
  * A custom El-Resolver for resolving CDI beans (including EJBs) from the process.
@@ -22,22 +22,22 @@ and the extensibility of CDI. The most prominent features are:
  * Support for unit testing.
 
 {{< note title="Quarkus Engine Extension" class="info" >}}
-Since Quarkus ArC does not aim to fully implement CDI 2.0, you cannot use the full range of features the `kramaX-engine-cdi` module provides.
+Since Quarkus ArC does not aim to fully implement CDI 2.0, you cannot use the full range of features the `kramaxx-engine-cdi` module provides.
 Read about the limitations in the [Quarkus Integration]({{< relref "/user-guide/quarkus-integration/cdi-integration.md#limitations" >}}) guide.
 {{< /note >}}
 
 # Maven Dependency
 
-To use the `kramaX-engine-cdi` module inside your application, you must include the following Maven dependency:
+To use the `kramaxx-engine-cdi` module inside your application, you must include the following Maven dependency:
 
 {{< note title="" class="info" >}}
-  Please import the [KramaX BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every KramaX project.
+  Please import the [Kramaxx BOM]({{< relref "/get-started/apache-maven/" >}}) to ensure correct versions for every Kramaxx project.
 {{< /note >}}
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm</groupId>
-  <artifactId>kramaX-engine-cdi</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm</groupId>
+  <artifactId>kramaxx-engine-cdi</artifactId>
 </dependency>
 ```
 
@@ -45,7 +45,7 @@ For Jakarta EE 9+ containers, use the following dependency instead:
 
 ```xml
 <dependency>
-  <groupId>org.vodafone.kramaX.bpm</groupId>
-  <artifactId>kramaX-engine-cdi-jakarta</artifactId>
+  <groupId>org.vodafone.kramaxx.bpm</groupId>
+  <artifactId>kramaxx-engine-cdi-jakarta</artifactId>
 </dependency>
 ```

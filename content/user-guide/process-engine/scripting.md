@@ -11,15 +11,15 @@ menu:
 ---
 
 
-KramaX supports scripting with JSR-223 compatible script engine implementations. Currently we
+Kramaxx supports scripting with JSR-223 compatible script engine implementations. Currently we
 test the integration for Groovy, JavaScript, JRuby and Jython. To use a scripting engine
 it is necessary to add the corresponding jar to the classpath.
 
 {{< note title="" class="info" >}}
-  We include **GraalVM JavaScript** in the pre-packaged KramaX distributions. 
+  We include **GraalVM JavaScript** in the pre-packaged Kramaxx distributions. 
   Consult [JavaScript Considerations](#javascript-considerations) for further information.
   
-  We include **Groovy** in the pre-packaged KramaX distributions.
+  We include **Groovy** in the pre-packaged Kramaxx distributions.
 {{< /note >}}
 
 The following table provides an overview of the BPMN elements which support the execution of
@@ -79,7 +79,7 @@ The following process is a simple example with a Groovy script task that sums up
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-                   targetNamespace="http://kramaX.vodafone.org/example">
+                   targetNamespace="http://kramaxx.vodafone.org/example">
   <process id="process" isExecutable="true">
     <startEvent id="start"/>
     <sequenceFlow id="sequenceFlow1" sourceRef="start" targetRef="task"/>
@@ -113,7 +113,7 @@ runtimeService.startProcessInstanceByKey("process", variables);
 
 # Use Scripts as Execution Listeners
 
-Besides Java code and expression language, KramaX also supports the execution of a script
+Besides Java code and expression language, Kramaxx also supports the execution of a script
 as an execution listener. For general information about execution listeners see the corresponding
 [section]({{< relref "/user-guide/process-engine/delegation-code.md#execution-listener" >}}).
 
@@ -145,7 +145,7 @@ The following example shows usage of scripts as execution listeners.
   <sequenceFlow id="flow1" startRef="start" targetRef="task">
     <extensionElements>
       <camunda:executionListener>
-        <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaX/bpm/transition.groovy" />
+        <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/transition.groovy" />
       </camunda:executionListener>
     </extensionElements>
   </sequenceFlow>
@@ -176,7 +176,7 @@ The following example shows usage of scripts as task listeners.
       <camunda:script scriptFormat="groovy">println task.eventName</camunda:script>
     </camunda:taskListener>
     <camunda:taskListener event="assignment">
-      <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaX/bpm/assignemnt.groovy" />
+      <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/assignemnt.groovy" />
     </camunda:taskListener>
   </extensionElements>
 </userTask>
@@ -184,7 +184,7 @@ The following example shows usage of scripts as task listeners.
 
 # Use Scripts as Conditions
 
-As an alternative to expression language, KramaX allows you to use scripts as
+As an alternative to expression language, Kramaxx allows you to use scripts as
 `conditionExpression` of conditional sequence flows. To do that, the `language` attribute of the
 `conditionExpression` element has to be set to the desired scripting language. The script source code
 is the text content of the element, as with expression language. Another way to specify the script
@@ -202,13 +202,13 @@ process variable which is available inside the script.
 
 <sequenceFlow>
   <conditionExpression xsi:type="tFormalExpression" language="groovy"
-      camunda:resource="org/vodafone/kramaX/bpm/condition.groovy" />
+      camunda:resource="org/vodafone/kramaxx/bpm/condition.groovy" />
 </sequenceFlow>
 ```
 
 # Use Scripts as inputOutput Parameters
 
-With the KramaX `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
+With the Kramaxx `inputOutput` extension element you can map an `inputParameter` or `outputParameter`
 with a script. The following example process uses the Groovy script from the previous example to assign
 the Groovy variable `sum` to the process variable `x` for a Java delegate.
 
@@ -223,11 +223,11 @@ the Groovy variable `sum` to the process variable `x` for a Java delegate.
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
                    xmlns:camunda="http://activiti.org/bpmn"
-                   targetNamespace="http://kramaX.vodafone.org/example">
+                   targetNamespace="http://kramaxx.vodafone.org/example">
   <process id="process" isExecutable="true">
     <startEvent id="start"/>
     <sequenceFlow id="sequenceFlow1" sourceRef="start" targetRef="task"/>
-    <serviceTask id="task" camunda:class="org.vodafone.kramaX.bpm.example.SumDelegate">
+    <serviceTask id="task" camunda:class="org.vodafone.kramaxx.bpm.example.SumDelegate">
       <extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="x">
@@ -274,7 +274,7 @@ for [script tasks]({{< relref "#script-source" >}}).
 ```xml
 <camunda:inputOutput>
   <camunda:inputParameter name="x">
-     <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaX/bpm/example/sum.groovy"/>
+     <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/example/sum.groovy"/>
   </camunda:inputParameter>
 </camunda:inputOutput>
 ```
@@ -366,7 +366,7 @@ Note that the supported options can differ between versions of the script engine
 You can set system properties either programmatically through `System.setProperty(parameter, value)` or as JVM arguments, 
 for example upon application start on command line via `-Dparameter=value`. Most application servers like Wildfly, 
 Tomcat, Websphere, and Weblogic support providing JVM arguments via environment variables `JAVA_OPTS` or `JAVA_OPTIONS`. 
-Consult your application server's documentation to learn how to pass on JVM arguments. KramaX Run supports setting 
+Consult your application server's documentation to learn how to pass on JVM arguments. Kramaxx Run supports setting 
 JVM arguments via the `JAVA_OPTS` environment variable as well.
 
 ## Custom ScriptEngineResolver
@@ -375,7 +375,7 @@ You can provide a custom `ScriptEngineResolver` implementation to configure scri
 you can gain more configuration options with this approach. You can add your custom script engine resolver to the engine configuration 
 with the `#setScriptEngineResolver(ScriptEngineResolver)` method.
 
-You can inherit from the `org.vodafone.kramaX.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver` for starters in case configuring an existing 
+You can inherit from the `org.vodafone.kramaxx.bpm.engine.impl.scripting.engine.DefaultScriptEngineResolver` for starters in case configuring an existing 
 script engine instance is sufficient for you. By overriding the `#configureScriptEngines(String, ScriptEngine)` method of the `DefaultScriptEngineResolver`, 
 you can change settings on the script engine instance provided to that method as shown in the following example:
 
@@ -501,9 +501,9 @@ i.e., `$sum`)
 
 There are also special variables:
 
-1. `execution`, which is always available if the script is executed in an execution scope (e.g., in a script task) ({{< javadocref page="org/vodafone/kramaX/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}).
-1. `task`, which is available if the script is executed in a task scope (e.g., a task listener) ({{< javadocref page="org/vodafone/kramaX/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}).
-1. `connector`, which is available if the script is executed in a connector variable scope (e.g., outputParameter of a camunda:connector) ({{< javadocref page="org/vodafone/kramaX/connect/plugin/impl/ConnectorVariableScope.html" text="ConnectorVariableScope" >}}).
+1. `execution`, which is always available if the script is executed in an execution scope (e.g., in a script task) ({{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateExecution.html" text="DelegateExecution" >}}).
+1. `task`, which is available if the script is executed in a task scope (e.g., a task listener) ({{< javadocref page="org/vodafone/kramaxx/bpm/engine/delegate/DelegateTask.html" text="DelegateTask" >}}).
+1. `connector`, which is available if the script is executed in a connector variable scope (e.g., outputParameter of a camunda:connector) ({{< javadocref page="org/vodafone/kramaxx/connect/plugin/impl/ConnectorVariableScope.html" text="ConnectorVariableScope" >}}).
 
 These variables correspond to the `DelegateExecution`, `DelegateTask` or resp. `ConnectorVariableScope`
 interface which means that it can be used to get and set variables or access process engine services.
@@ -524,11 +524,11 @@ task = execution.getProcessEngineServices().getTaskService()
 
 # Accessing Process Engine Services using Scripts
 
-KramaX's Java API provides access to KramaX's process engine services; these services can be accessed using Scripts:
+Kramaxx's Java API provides access to Kramaxx's process engine services; these services can be accessed using Scripts:
 
-{{< javadocref page="org/vodafone/kramaX/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
+{{< javadocref page="org/vodafone/kramaxx/bpm/engine/ProcessEngineServices.html" text="Process Engine Services" >}} \
 
-{{< javadocref page="org/vodafone/kramaX/bpm/engine/package-summary.html" text="Public Java API of KramaX Engine" >}}
+{{< javadocref page="org/vodafone/kramaxx/bpm/engine/package-summary.html" text="Public Java API of Kramaxx Engine" >}}
 
 Example of creating a BPMN Message that correlates with the message key "work":
 
@@ -560,7 +560,7 @@ system.out.println('This prints to the console');
 # Script Source
 
 The standard way to specify the script source code in the BPMN XML model is to add it directly to
-the XML file. Nonetheless, KramaX provides additional ways to specify the script source.
+the XML file. Nonetheless, Kramaxx provides additional ways to specify the script source.
 
 If you use another scripting language than Expression Language, you can also specify the script
 source as an expression which returns the source code to be executed. This way, the source code can,
@@ -604,22 +604,22 @@ classpath. This means that the first two script task elements in the following e
 
 ```xml
 <!-- on a script task -->
-<scriptTask scriptFormat="groovy" camunda:resource="org/vodafone/kramaX/bpm/task.groovy"/>
-<scriptTask scriptFormat="groovy" camunda:resource="classpath://org/vodafone/kramaX/bpm/task.groovy"/>
-<scriptTask scriptFormat="groovy" camunda:resource="deployment://org/vodafone/kramaX/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="org/vodafone/kramaxx/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="classpath://org/vodafone/kramaxx/bpm/task.groovy"/>
+<scriptTask scriptFormat="groovy" camunda:resource="deployment://org/vodafone/kramaxx/bpm/task.groovy"/>
 
 <!-- in an execution listener -->
 <camunda:executionListener>
-  <camunda:script scriptFormat="groovy" resource="deployment://org/vodafone/kramaX/bpm/listener.groovy"/>
+  <camunda:script scriptFormat="groovy" resource="deployment://org/vodafone/kramaxx/bpm/listener.groovy"/>
 </camunda:executionListener>
 
 <!-- on a conditionExpression -->
 <conditionExpression xsi:type="tFormalExpression" language="groovy"
-    camunda:resource="org/vodafone/kramaX/bpm/condition.groovy" />
+    camunda:resource="org/vodafone/kramaxx/bpm/condition.groovy" />
 
 <!-- in an inputParameter -->
 <camunda:inputParameter name="x">
-  <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaX/bpm/mapX.groovy" />
+  <camunda:script scriptFormat="groovy" resource="org/vodafone/kramaxx/bpm/mapX.groovy" />
 </camunda:inputParameter>
 ```
 
@@ -637,7 +637,7 @@ section of the [Custom Extensions]({{< relref "/reference/bpmn20/custom-extensio
 # JavaScript Considerations
 
 JavaScript code execution is part of the Java Runtime (JRE) with the **Nashorn** script engine until Java 14 and thus only there available out of the box.
-We include **GraalVM JavaScript** in the pre-packaged KramaX distributions as a replacement regardless of the JRE version.
+We include **GraalVM JavaScript** in the pre-packaged Kramaxx distributions as a replacement regardless of the JRE version.
 JavaScript code executes on GraalVM JavaScript with preference in the process engine context if this script engine is available.
 If this script engine cannot be found, the process engine defaults to let the JVM select an appropriate script engine.
 

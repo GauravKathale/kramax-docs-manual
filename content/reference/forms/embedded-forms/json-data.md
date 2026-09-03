@@ -62,4 +62,4 @@ You can use JSON objects in your embedded forms. In order to persist this data i
 
 # Full Example
 
-A full example of this feature can be found in the [KramaX Platform Examples Repository](https://github.com/kramaX/kramaX-bpm-examples/tree/master/usertask/task-form-embedded-json-variables).
+A full example of this feature can be found in the [Kramaxx Platform Examples Repository](https://github.com/kramaxx/kramaxx-bpm-examples/tree/master/usertask/task-form-embedded-json-variables).
