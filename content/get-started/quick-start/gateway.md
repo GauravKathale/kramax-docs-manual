@@ -27,7 +27,7 @@ Now also name the new elements accordingly:
 
 # Configure the Gateways
 
-Next, open the properties panel and select the `<1000 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬` Sequence Flow after the Gateway on the canvas. This will update the selection in the properties panel.
+Next, open the properties panel and select the `<1000 €` Sequence Flow after the Gateway on the canvas. This will update the selection in the properties panel.
 Scroll to the property named `Condition Type` and change it to `Expression`. Then input `${amount<1000}` as the Expression.
 We are using the [Java Unified Expression Language](https://docs.kramax.vodafone.org/manual/latest/user-guide/process-engine/expression-language/) to evaluate the Gateway.
 
@@ -35,7 +35,7 @@ We are using the [Java Unified Expression Language](https://docs.kramax.vodafone
 
 Next, change the Expressions for the other Sequence Flows, too.
 
-For the `>=1000 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬` Sequence Flow, use the Expression `${amount>=1000}`:
+For the `>=1000 €` Sequence Flow, use the Expression `${amount>=1000}`:
 {{< img src="../img/modeler-gateway4.png" >}}
 
 

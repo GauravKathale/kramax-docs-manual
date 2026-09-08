@@ -63,7 +63,7 @@ Workflow Engine. Each fetched External Task is marked with a temporary lock. Lik
 certain External Task in the meanwhile. A lock is valid for the specified period of time and can be extended.
 
 When setting up a new topic subscription, it is mandatory to specify the topic name and a handler function.
-Once a topic has been subscribed, the client can start receiving work items by polling the process engineÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s API.
+Once a topic has been subscribed, the client can start receiving work items by polling the process engine’s API.
 
 ### Handler
 Handlers can be used to implement custom methods which are invoked whenever an External Task is fetched and locked successfully.

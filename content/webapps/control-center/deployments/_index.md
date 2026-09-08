@@ -46,7 +46,7 @@ Selecting a deployment opens the Deployment Details View, which follows the stan
 
 {{< img src="../img/deployment-details-view.png" title="Deployment Details View" >}}
 
-### 1. Left Panel ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Deployment Metadata & Resources
+### 1. Left Panel – Deployment Metadata & Resources
 
 The left panel provides:
 - Deployment-level metadata (ID, name, time, source)
@@ -60,7 +60,7 @@ Users can view various resource types, including:
 - Scripts (e.g., Groovy, JavaScript)
 - Unsupported file types can be downloaded 
 
-### 2. Canvas ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Resource Visualization
+### 2. Canvas – Resource Visualization
 
 When a resource is selected from the left panel:
 - The selected resource is displayed in the canvas section
@@ -68,7 +68,7 @@ When a resource is selected from the left panel:
 
 This allows users to directly inspect deployed models and artifacts.
 
-### 3. Bottom Section ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Related Definitions
+### 3. Bottom Section – Related Definitions
 
 The bottom section displays tabs containing:
 - Process Definitions associated with the deployment

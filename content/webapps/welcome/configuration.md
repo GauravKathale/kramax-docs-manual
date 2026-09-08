@@ -24,7 +24,6 @@ Can be used to add some useful links for the user, such as other applications or
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   links: [
     {
       label: 'Kramax Project',
@@ -63,7 +62,6 @@ by changing the `app/welcome/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Welcome',
     vendor: 'Company'
@@ -90,7 +88,6 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -109,7 +106,6 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -122,7 +118,6 @@ First-time visitors are shown a message directing them to the kramax welcome pag
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 };
 ```

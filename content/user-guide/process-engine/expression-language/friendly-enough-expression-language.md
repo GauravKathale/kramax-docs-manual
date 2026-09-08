@@ -13,7 +13,7 @@ menu:
 Please note that the WildFly and JBoss application servers do not support FEEL outside of DMN execution in Kramax.
 {{< /note >}}
 
-ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¹The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
+The Friendly Enough Expression Language (FEEL) is specified within the Decision Model and Notation (DMN) standard by the Object Management Group (OMG). FEEL has the following features:
 
 - Side-effect free
 - Simple data model with numbers, dates, strings, lists, and contexts

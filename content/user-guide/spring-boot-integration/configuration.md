@@ -764,7 +764,7 @@ When setting to <code>/</code>, the legacy behavior of Kramax Spring Boot Starte
 <tr>
 <td><code>kramax.bpm.rest-api.fetch-and-lock</code></td>
 <td><code>.queue-capacity</code></td>
-<td>Configure the blocking queue limit of long-polling ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã…â€œFetch and LockÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ requests.</td>
+<td>Configure the blocking queue limit of long-polling ‘Fetch and Lock’ requests.</td>
 <td><code>200</code></td>
 </tr>
 
@@ -1000,4 +1000,4 @@ To provide additional configurations, the following actions need to be performed
 1. Provide a custom implementation of `org.vodafone.kramax.spin.spi.DataFormatConfigurator`;
 1. Add the appropriate key-value pair of the fully qualified classnames of the interface and the
    implementation to the `META-INF/spring.factories` file;
-1. Ensure that the artifact containing the configurator is reachable from SpinÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s classloader.
+1. Ensure that the artifact containing the configurator is reachable from Spin’s classloader.

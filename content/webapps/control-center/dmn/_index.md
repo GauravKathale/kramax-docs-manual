@@ -51,7 +51,7 @@ The left panel provides key information about the decision definition, including
 - Deployment details
 
 Additional functionality:
-- Version selection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Users can switch between different versions of the decision definition
+- Version selection – Users can switch between different versions of the decision definition
 
 ### 2. Canvas & Header
 
@@ -62,7 +62,7 @@ The top right header includes the Evaluate Decision option. This allows users to
 - Provide input data
 - View decision results
 
-### 3. Bottom Section ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Decision Instances
+### 3. Bottom Section – Decision Instances
 
 The bottom section contains a Decision Instances list, showing all executions of the selected decision definition.
 

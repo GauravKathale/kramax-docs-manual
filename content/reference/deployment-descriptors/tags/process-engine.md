@@ -729,7 +729,7 @@ The following is a list with the most commonly used process engine configuration
     <td>Boolean</td>
     <td>
         Controls if the engine will throw <a href="{{< relref "/user-guide/process-engine/transactions-in-processes.md#optimistic-locking-in-kramax" >}}">OptimisticLockingException</a>s on UPDATE or DELETE operations for historical data or not.
-        The default is <code><strong>true</strong></code>. To preserve the previous behavior (ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°Ãƒâ€šÃ‚Â¤ 7.9), the flag must be set to <code><strong>false</strong></code>.<br><br>
+        The default is <code><strong>true</strong></code>. To preserve the previous behavior (≤ 7.9), the flag must be set to <code><strong>false</strong></code>.<br><br>
         <strong>Values:</strong> <code>true</code>, <code>false</code> (Boolean).
     </td>
   </tr>

@@ -20,7 +20,7 @@ This section briefly describes the purpose of the headers. You can find more inf
 [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy),
 [Content-Type Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options)  
 as well as [Strict Transport Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) 
-header in MozillaÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s Developer Guide.
+header in Mozilla’s Developer Guide.
 
 ### XSS Protection
 
@@ -68,7 +68,7 @@ This section describes what our default policy contains:
   * The URI of the HTML Base Tag must not point to a cross-origin
 * `script-src $NONCE 'strict-dynamic' 'unsafe-eval' https: 'self' 'unsafe-inline';`
   * The browser only executes inline scripts that are explicitly whitelisted by adding a backend generated `nonce` to each script tag included in the `index.html` asset.
-  * JavaScript's `eval(ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦)` calls must be allowed to execute `cam-script` in Tasklist.
+  * JavaScript's `eval(…)` calls must be allowed to execute `cam-script` in Tasklist.
      * If there are no embedded forms in your application, it's recommended to remove the `'unsafe-eval'` directive.
   * The second part (`https: 'self' 'unsafe-inline'`) is a fallback for browsers that don't support `strict-dynamic` yet (non CSP3 compliant browser).
      * Script resources must not point to a cross-origin.
@@ -108,7 +108,7 @@ header to render a resource and prevents trying to guess the mime type by inspec
 ### Strict Transport Security
 
 When enabled, the browser remembers that the Webapps must be accessed via HTTPS. After the initial
-HTTPS request, all subsequent requests will be redirected to HTTPS on the client-level ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â even though
+HTTPS request, all subsequent requests will be redirected to HTTPS on the client-level — even though
 the user tries to access the Webapps via HTTP.
 
 {{< note title="Heads-up!" class="info" >}}

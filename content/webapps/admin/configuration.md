@@ -45,7 +45,6 @@ by changing the `app/admin/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Admin',
     vendor: 'Company'
@@ -71,7 +70,6 @@ If the browser uses a language which is not available, Admin uses the locale def
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -92,7 +90,6 @@ Add your files to the `customScripts` property of the `app/admin/scripts/config.
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   customScripts: 
     ['custom-module/module.js']
 }
@@ -106,7 +103,6 @@ same origin, the CSRF mechanisms could interfere with each other. To avoid the n
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 }
 ```
@@ -120,7 +116,6 @@ not want this message to be shown, you can disable it by adjusting the `config.j
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 }
 ```
@@ -133,7 +128,6 @@ The default maximum length of a user operation log annotation is 4000 characters
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   userOperationLogAnnotationLength: 4000
 }
 ```
@@ -146,7 +140,6 @@ The task worker metrics (TW) on the metrics page are displayed by default. You c
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   alwaysShowUniqueTaskWorkerMetrics: false
 }
 ```

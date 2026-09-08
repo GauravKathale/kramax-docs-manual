@@ -186,7 +186,7 @@ public class ChargeCardWorker {
           String item = externalTask.getVariable("item");
           Integer amount = externalTask.getVariable("amount");
 
-          LOGGER.info("Charging credit card with an amount of '" + amount + "'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ for the item '" + item + "'...");
+          LOGGER.info("Charging credit card with an amount of '" + amount + "' for the item '" + item + "'...");
 
           try {
               Desktop.getDesktop().browse(new URI("https://docs.kramax.vodafone.org/get-started/quick-start/complete"));
@@ -285,7 +285,7 @@ client.subscribe('charge-card', async function({ task, taskService }) {
   const amount = task.variables.get('amount');
   const item = task.variables.get('item');
 
-  console.log(`Charging credit card with an amount of ${amount}ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ for the item '${item}'...`);
+  console.log(`Charging credit card with an amount of ${amount}€ for the item '${item}'...`);
 
   open('https://docs.kramax.vodafone.org/get-started/quick-start/success');
 

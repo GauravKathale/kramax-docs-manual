@@ -134,7 +134,7 @@ It is currently developed by a community of developers</pre></details></div>
 <div><details><summary>gson@2.8.9(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright: 2008 Google Inc.</pre></details></div>
 <div><details><summary>h2@2.3.232(<a href="https://opensource.org/licenses/EPL-1.0">EPL 1.0</a>)</summary><pre>Copyright 2004-2024 H2 Group</pre></details></div>
 <div><details><summary>asyncutil@0.1.0(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) IBM Corporation 2017. All Rights Reserved</pre></details></div>
-<div><details><summary>icu4j@68.2(<a href="https://www.unicode.org/license.html">Unicode</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2016 and later Unicode, Inc. and others.
+<div><details><summary>icu4j@68.2(<a href="https://www.unicode.org/license.html">Unicode</a>)</summary><pre>Copyright © 2016 and later Unicode, Inc. and others.
 See this link for third-party software notices and/or additional
 terms for licensed third-party software components included within ICU
 libraries: https://github.com/unicode-org/icu/edit/main/icu4c/LICENSE</pre></details></div>
@@ -250,8 +250,8 @@ JUnit (4.12)
 * License: Eclipse Public License
 ====================================================================	
 Copyright (C) Oracle and/or its affiliates. All rights reserved.																							</pre></details></div>
-<div><details><summary>jakarta.annotation-api@2.1.1(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta AnnotationsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢</pre></details></div>
-<div><details><summary>jakarta.el-api@4.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta AnnotationsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢</pre></details></div>
+<div><details><summary>jakarta.annotation-api@2.1.1(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta Annotations™</pre></details></div>
+<div><details><summary>jakarta.el-api@4.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) Jakarta Annotations™</pre></details></div>
 <div><details><summary>jakarta.inject-api@2.0.1(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) Eclipse Jakarta Dependency Injection project. All content is the property of the respective authors or their employers. For more information regarding authorship of content, please consult the listed source code repository logs</pre></details></div>
 <div><details><summary>jakarta.servlet-api@6.0.0(<a href="https://opensource.org/licenses/EPL-2.0">EPL 2.0</a>)</summary><pre>Copyright (c) 1997, 2021 Oracle and/or its affiliates. All rights reserved.</pre></details></div>
 <div><details><summary>jakarta.validation-api@2.0.2(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright: various authors (https://github.com/eclipse-ee4j/beanvalidation-api/blob/master/copyright.txt)</pre></details></div>
@@ -658,45 +658,45 @@ This software includes projects with other licenses -- see `doc/LICENSE.md`.</pr
 <div><details><summary>slf4j-api@1.7.36(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2017 QOS.ch</pre></details></div>
 <div><details><summary>slf4j-api@2.0.16(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2023 QOS.ch</pre></details></div>
 <div><details><summary>slf4j-jdk14@1.7.26(<a href="https://opensource.org/licenses/MIT">MIT</a>)</summary><pre>Copyright (c) 2004-2017 QOS.ch</pre></details></div>
-<div><details><summary>spring-boot-autoconfigure@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-jdbc@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-jersey@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-json@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-logging@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-oauth2-client@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-security@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-tomcat@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-validation@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter-web@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot-starter@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-boot@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-config@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-crypto@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-client@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-oauth2-jose@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-security-web@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-aop@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-aop@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-beans@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-beans@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-context@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-context@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-core@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-core@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-expression@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-expression@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jcl@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jcl@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jdbc@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-jdbc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-orm@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-orm@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-tx@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-tx@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-web@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
-<div><details><summary>spring-webmvc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-autoconfigure@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-jdbc@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-jersey@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-json@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-logging@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-oauth2-client@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-security@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-tomcat@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-validation@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter-web@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot-starter@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-boot@3.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-config@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-crypto@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-client@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-core@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-oauth2-jose@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-security-web@6.3.3(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-aop@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-aop@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-beans@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-beans@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-context@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-context@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-core@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-core@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-expression@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-expression@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jcl@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jcl@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jdbc@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-jdbc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-orm@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-orm@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-tx@5.3.36(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-tx@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-web@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
+<div><details><summary>spring-webmvc@6.1.12(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright © 2015-2021 the original authors.</pre></details></div>
 <div><details><summary>wildfly-dist@33.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright The WildFly Authors</pre></details></div>
 <div><details><summary>wildfly-galleon-pack@33.0.1.Final(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright The WildFly Authors</pre></details></div>
 <div><details><summary>snakeyaml@2.2(<a href="https://opensource.org/licenses/Apache-2.0">Apache 2.0</a>)</summary><pre>Copyright (c) 2008, SnakeYAML</pre></details></div>
@@ -816,8 +816,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</pre></details></div>
 <div><details><summary><a href="https://github.com/bpmn-io/draggle.git">@bpmn-io/draggle@4.1.0</a> (MIT)</summary><pre>The MIT License (MIT)
 
-Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2015-2016 Nicolas Bevacqua
-Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2023 bpmn-io
+Copyright © 2015-2016 Nicolas Bevacqua
+Copyright © 2023 bpmn-io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -1207,7 +1207,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/ibm/plex.git">@ibm/plex@6.4.0</a> (OFL-1.1)</summary><pre>Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2017 IBM Corp. with Reserved Font Name "Plex"
+<div><details><summary><a href="https://github.com/ibm/plex.git">@ibm/plex@6.4.0</a> (OFL-1.1)</summary><pre>Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 
@@ -1828,11 +1828,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 <div><details><summary><a href="https://github.com/MikeMcl/big.js.git">big.js@6.2.1</a> (MIT)</summary><pre>The MIT License (MIT)
 =====================
 
-Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© `<2022>` `Michael Mclaughlin`
+Copyright © `<2022>` `Michael Mclaughlin`
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
-files (the ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“SoftwareÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â), to deal in the Software without
+files (the “Software”), to deal in the Software without
 restriction, including without limitation the rights to use,
 copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the
@@ -1842,7 +1842,7 @@ conditions:
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“AS ISÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â, WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
@@ -2417,7 +2417,7 @@ THE SOFTWARE.
 </pre></details></div>
 <div><details><summary><a href="https://github.com/nikku/didi">didi@4.0.0</a> (MIT)</summary><pre>The MIT License
 
-Copyright (C) 2013 Vojta JÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­na.
+Copyright (C) 2013 Vojta Jína.
 Copyright (C) 2015-present Nico Rehwaldt.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -2976,28 +2976,28 @@ Mozilla Public License, version 2.0
 
 1. Definitions
 
-1.1. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ContributorÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.1. “Contributor”
 
 means each individual or legal entity that creates, contributes to the
 creation of, or owns Covered Software.
 
-1.2. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Contributor VersionÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.2. “Contributor Version”
 
 means the combination of the Contributions of others (if any) used by a
-Contributor and that particular ContributorÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s Contribution.
+Contributor and that particular Contributor’s Contribution.
 
-1.3. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ContributionÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.3. “Contribution”
 
 means Covered Software of a particular Contributor.
 
-1.4. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Covered SoftwareÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.4. “Covered Software”
 
 means Source Code Form to which the initial Contributor has attached the
 notice in Exhibit A, the Executable Form of such Source Code Form, and
 Modifications of such Source Code Form, in each case including portions
 thereof.
 
-1.5. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Incompatible With Secondary LicensesÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.5. “Incompatible With Secondary Licenses”
 means
 
 a. that the initial Contributor has attached the notice described in
@@ -3007,26 +3007,26 @@ b. that the Covered Software was made available under the terms of version
 1.1 or earlier of the License, but not also under the terms of a
 Secondary License.
 
-1.6. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Executable FormÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.6. “Executable Form”
 
 means any form of the work other than Source Code Form.
 
-1.7. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Larger WorkÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.7. “Larger Work”
 
 means a work that combines Covered Software with other material, in a separate
 file or files, that is not Covered Software.
 
-1.8. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“LicenseÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.8. “License”
 
 means this document.
 
-1.9. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“LicensableÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.9. “Licensable”
 
 means having the right to grant, to the maximum extent possible, whether at the
 time of the initial grant or subsequently, any and all of the rights conveyed by
 this License.
 
-1.10. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ModificationsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.10. “Modifications”
 
 means any of the following:
 
@@ -3035,7 +3035,7 @@ from, or modification of the contents of Covered Software; or
 
 b. any new file in Source Code Form that contains any Covered Software.
 
-1.11. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Patent ClaimsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â of a Contributor
+1.11. “Patent Claims” of a Contributor
 
 means any patent claim(s), including without limitation, method, process,
 and apparatus claims, in any patent Licensable by such Contributor that
@@ -3043,22 +3043,22 @@ would be infringed, but for the grant of the License, by the making,
 using, selling, offering for sale, having made, import, or transfer of
 either its Contributions or its Contributor Version.
 
-1.12. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Secondary LicenseÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.12. “Secondary License”
 
 means either the GNU General Public License, Version 2.0, the GNU Lesser
 General Public License, Version 2.1, the GNU Affero General Public
 License, Version 3.0, or any later versions of those licenses.
 
-1.13. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Source Code FormÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
+1.13. “Source Code Form”
 
 means the form of the work preferred for making modifications.
 
-1.14. ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“YouÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â (or ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“YourÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â)
+1.14. “You” (or “Your”)
 
 means an individual or a legal entity exercising rights under this
-License. For legal entities, ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“YouÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â includes any entity that controls, is
+License. For legal entities, “You” includes any entity that controls, is
 controlled by, or is under common control with You. For purposes of this
-definition, ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“controlÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â means (a) the power, direct or indirect, to cause
+definition, “control” means (a) the power, direct or indirect, to cause
 the direction or management of such entity, whether by contract or
 otherwise, or (b) ownership of more than fifty percent (50%) of the
 outstanding shares or beneficial ownership of such entity.
@@ -3096,7 +3096,7 @@ or licensing of Covered Software under this License. Notwithstanding Section
 
 a. for any code that a Contributor has removed from Covered Software; or
 
-b. for infringements caused by: (i) Your and any other third partyÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s
+b. for infringements caused by: (i) Your and any other third party’s
 modifications of Covered Software, or (ii) the combination of its
 Contributions with other software (except as part of its Contributor
 Version); or
@@ -3141,7 +3141,7 @@ Modifications that You create or to which You contribute, must be under the
 terms of this License. You must inform recipients that the Source Code Form
 of the Covered Software is governed by the terms of this License, and how
 they can obtain a copy of this License. You may not attempt to alter or
-restrict the recipientsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ rights in the Source Code Form.
+restrict the recipients’ rights in the Source Code Form.
 
 3.2. Distribution of Executable Form
 
@@ -3155,7 +3155,7 @@ of distribution to the recipient; and
 
 b. You may distribute such Executable Form under the terms of this License,
 or sublicense it under different terms, provided that the license for
-the Executable Form does not attempt to limit or alter the recipientsÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢
+the Executable Form does not attempt to limit or alter the recipients’
 rights in the Source Code Form under this License.
 
 3.3. Distribution of a Larger Work
@@ -3232,7 +3232,7 @@ termination shall survive termination.
 
 6. Disclaimer of Warranty
 
-Covered Software is provided under this License on an ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“as isÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â basis, without
+Covered Software is provided under this License on an “as is” basis, without
 warranty of any kind, either expressed, implied, or statutory, including,
 without limitation, warranties that the Covered Software is free of defects,
 merchantable, fit for a particular purpose or non-infringing. The entire
@@ -3254,7 +3254,7 @@ goodwill, work stoppage, computer failure or malfunction, or any and all
 other commercial damages or losses, even if such party shall have been
 informed of the possibility of such damages. This limitation of liability
 shall not apply to liability for death or personal injury resulting from such
-partyÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s negligence to the extent applicable law prohibits such limitation.
+party’s negligence to the extent applicable law prohibits such limitation.
 Some jurisdictions do not allow the exclusion or limitation of incidental or
 consequential damages, so this exclusion and limitation may not apply to You.
 
@@ -3264,7 +3264,7 @@ Any litigation relating to this License may be brought only in the courts of
 a jurisdiction where the defendant maintains its principal place of business
 and such litigation shall be governed by laws of that jurisdiction, without
 reference to its conflict-of-law provisions. Nothing in this Section shall
-prevent a partyÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢s ability to bring cross-claims or counter-claims.
+prevent a party’s ability to bring cross-claims or counter-claims.
 
 9. Miscellaneous
 
@@ -3320,10 +3320,10 @@ directory) where a recipient would be likely to look for such a notice.
 
 You may add additional accurate notices of copyright ownership.
 
-Exhibit B - ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Incompatible With Secondary LicensesÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Notice
+Exhibit B - “Incompatible With Secondary Licenses” Notice
 
-This Source Code Form is ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Incompatible
-With Secondary LicensesÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â, as defined by
+This Source Code Form is “Incompatible
+With Secondary Licenses”, as defined by
 the Mozilla Public License, v. 2.0.
 
 </pre></details></div>
@@ -4103,7 +4103,7 @@ THE SOFTWARE.
 
 ## Markdown
 
-Copyright ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2004, John Gruber
+Copyright © 2004, John Gruber
 http://daringfireball.net/
 All rights reserved.
 
@@ -4115,11 +4115,11 @@ list of conditions and the following disclaimer.
 * Redistributions in binary form must reproduce the above copyright notice, this
 list of conditions and the following disclaimer in the documentation and/or
 other materials provided with the distribution.
-* Neither the name ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“MarkdownÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â nor the names of its contributors may be used to
+* Neither the name “Markdown” nor the names of its contributors may be used to
 endorse or promote products derived from this software without specific prior
 written permission.
 
-This software is provided by the copyright holders and contributors ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“as isÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â and
+This software is provided by the copyright holders and contributors “as is” and
 any express or implied warranties, including, but not limited to, the implied
 warranties of merchantability and fitness for a particular purpose are
 disclaimed. In no event shall the copyright owner or contributors be liable for
@@ -4540,7 +4540,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </pre></details></div>
-<div><details><summary><a href="https://github.com/kriskowal/q">q@1.5.1</a> (MIT)</summary><pre>Copyright 2009ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œ2017 Kristopher Michael Kowal. All rights reserved.
+<div><details><summary><a href="https://github.com/kriskowal/q">q@1.5.1</a> (MIT)</summary><pre>Copyright 2009–2017 Kristopher Michael Kowal. All rights reserved.
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to
 deal in the Software without restriction, including without limitation the

@@ -91,18 +91,18 @@ After finishing defining the flow-node mapping, click on the **Set Variables** b
 
 {{< img outdated="true" src="../../img/migration/step2.png" title="Set variables for migration" >}}
 
-The next step allows you to set variables into the process instancesÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ scope.
+The next step allows you to set variables into the process instances’ scope.
 
-{{< img outdated="true" src="../../img/migration/step2_modal.png" title="Set variables for migration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ add variable" >}}
+{{< img outdated="true" src="../../img/migration/step2_modal.png" title="Set variables for migration – add variable" >}}
 
 When you click on the **Add Variable** button, a modal dialog opens where you can define the variable name, type, and value.
 
-{{< img outdated="true" src="../../img/migration/step2_validation.png" title="Set variables for migration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ variable validation" >}}
+{{< img outdated="true" src="../../img/migration/step2_validation.png" title="Set variables for migration – variable validation" >}}
 
 The Engine validates the variable against the migration plan validation rules and Cockpit displays the result for each variable in the **Valid** column of the table. 
 If a variable invalidates the migration plan, Cockpit opens a popover with the respective validation errors.
 
-{{< img outdated="true" src="../../img/migration/step2_edit.png" title="Set variables for migration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ edit variable" >}}
+{{< img outdated="true" src="../../img/migration/step2_edit.png" title="Set variables for migration – edit variable" >}}
 
 You can still edit the variables you have just added. For instance, if a variable invalidates the migration plan, you can easily correct it to proceed with the process instance migration.
 

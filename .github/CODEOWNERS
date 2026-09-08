@@ -1,4 +1,4 @@
-* @finos/fluxnova-maintainers
+* @vodafone/kramax-maintainers
 
-# Any changes to this CODEOWNERS file should be reviewed by finos-admins
-/.github/CODEOWNERS @finos/finos-admins
+# Any changes to this CODEOWNERS file should be reviewed by vodafone-admins
+/.github/CODEOWNERS @vodafone/vodafone-admins

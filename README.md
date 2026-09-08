@@ -1,4 +1,3 @@
-[![VODAFONE - Incubating](https://cdn.jsdelivr.net/gh/vodafone/contrib-toolbox@master/images/badge-incubating.svg)](https://community.vodafone.org/docs/governance/Software-Projects/stages/incubating)
 
 # The Kramax Documentation Sources
 

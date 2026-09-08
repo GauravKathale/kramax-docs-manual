@@ -69,9 +69,9 @@ Let us assume that we have a process instance in the following activity instance
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
-    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
+├── Archive Application
+└── Assess Credit Worthiness
+    └── Validate Address
 ```
 
 In order to migrate this process instance according to the defined migration plan, the API method
@@ -90,10 +90,10 @@ The resulting activity instance state is:
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Handle Application Receipt
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
-    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Postal Address
+├── Handle Application Receipt
+│   └── Archive Application
+└── Assess Credit Worthiness
+    └── Validate Postal Address
 ```
 
 The following things have happened:
@@ -558,7 +558,7 @@ Assume a process instance in the following state:
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+└── Assess Credit Worthiness
 ```
 
 The process instance has a compensation subscription for *Archive Application*. A valid migration plan must
@@ -606,7 +606,7 @@ Furthermore, assume that before migration a process instance is in the following
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
+└── Assess Credit Worthiness
 ```
 
 If this process instance is migrated (with *Assess Credit Worthiness* being mapped to its equivalent), then triggering compensation
@@ -772,8 +772,8 @@ And a process instance in the following state:
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
-    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
+└── Assess Credit Worthiness
+    └── Validate Address
 ```
 
 The migration plan cannot be applied, because the
@@ -812,7 +812,7 @@ Now consider a process instance in the following activity instance state:
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
+└── Archive Application
 ```
 
 The plan is complete with respect to this process instance because there is a migration instruction for the activity *Archive Application*.
@@ -821,9 +821,9 @@ Now consider another process instance:
 
 ```
 ProcessInstance
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Archive Application
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Assess Credit Worthiness
-    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Validate Address
+├── Archive Application
+└── Assess Credit Worthiness
+    └── Validate Address
 ```
 
 The migration plan is not valid with respect to this instance because there is no instruction that applies to the instance of *Validate Address*.

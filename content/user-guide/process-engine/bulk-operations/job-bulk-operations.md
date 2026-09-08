@@ -175,10 +175,9 @@ Client receives **400 Bad Request**.
 * If processed per-item, the corresponding result indicates `failure` with an input validation message
 
 # Operational considerations
-
 ## Client behavior
 
-* Treat bulk operations as ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“some may failÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â; use smaller batches if needed.
+* Treat bulk operations as “some may fail”; use smaller batches if needed.
 * When receiving a failure response, correct the request and retry rather than blindly retrying.
 
 ## Permissions and auditing

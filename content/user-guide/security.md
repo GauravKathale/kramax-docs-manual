@@ -156,7 +156,7 @@ You don't centrally manage user accounts (e.g., with the help of LDAP or a custo
 *  ... use an account "self-service" approach: Unauthenticated users are allowed to create accounts; 
        i.e., you have implemented a custom REST endpoint which can create users without authentication
 *  ... an authenticated user has `CREATE` permission on `ANY` `USER` resource to create new user accounts
-       and an untrusted person has access to this account (please see the [Authorization Service]ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â docs 
+       and an untrusted person has access to this account (please see the [Authorization Service] docs 
        to learn how permissions are granted to resources)
 
 [Authorization Service]: {{< relref "/user-guide/process-engine/authorization-service.md" >}}

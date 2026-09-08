@@ -43,7 +43,7 @@ The `adHocSubProcess` activity ID refers to the `id` attribute of the `<bpmn:adH
 
 Kramax ad hoc subprocesses support **parallel ordering only**. When an ad hoc subprocess is active, multiple child activities can execute concurrently.
 
-The `ordering` attribute is optional and defaults to `"Parallel"`. A value of `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â runtime activation is always parallel.
+The `ordering` attribute is optional and defaults to `"Parallel"`. A value of `"Sequential"` is accepted and stored in the model, but it is not enforced by the engine — runtime activation is always parallel.
 
 To enforce sequential execution between specific activities, use optional sequence flows to connect them within the ad hoc subprocess. For example:
 
@@ -53,7 +53,7 @@ To enforce sequential execution between specific activities, use optional sequen
   <bpmn:userTask id="Task_B" name="Task B" />
   <bpmn:userTask id="Task_C" name="Task C" />
   
-  <!-- Enforce Task_A ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ Task_C sequence -->
+  <!-- Enforce Task_A → Task_C sequence -->
   <bpmn:sequenceFlow id="Flow_1" sourceRef="Task_A" targetRef="Task_C" />
 </bpmn:adHocSubProcess>
 ```
@@ -117,7 +117,7 @@ POST /engine-rest/execution/{id}/ad-hoc-activities/trigger
 
 Returns `204 No Content` on successful trigger.
 
-Validation is all-or-nothing: if any entry is invalid ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â a duplicate or unknown activity ID, an activity that is not startable or is already active, or variables supplied for an activity not listed in the request ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â the whole request fails with `400 Bad Request` and no activities are started. The same response is returned if the execution is not currently waiting in an ad hoc subprocess.
+Validation is all-or-nothing: if any entry is invalid  — a duplicate or unknown activity ID, an activity that is not startable or is already active, or variables supplied for an activity not listed in the request  — the whole request fails with `400 Bad Request` and no activities are started. The same response is returned if the execution is not currently waiting in an ad hoc subprocess.
 
 # Manual Completion
 
@@ -227,8 +227,8 @@ If the `completionCondition` evaluates to `false`, the ad hoc subprocess remains
 
 When no `completionCondition` is defined, the optional `kramax:autoComplete` extension attribute (default: `true`) controls whether the ad hoc subprocess completes automatically:
 
-- **`true`** (default) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â The subprocess completes automatically once at least one contained activity has been started and no activities are active anymore
-- **`false`** ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â The subprocess stays open even after all activities have finished; it must be completed explicitly via `completeAdHocSubProcess()` or the corresponding REST endpoint
+- **`true`** (default)  — The subprocess completes automatically once at least one contained activity has been started and no activities are active anymore
+- **`false`**  — The subprocess stays open even after all activities have finished; it must be completed explicitly via `completeAdHocSubProcess()` or the corresponding REST endpoint
 
 ```xml
 <bpmn:adHocSubProcess id="AdHocProc" kramax:autoComplete="false">
@@ -248,8 +248,8 @@ Note the following:
 
 The `cancelRemainingInstances` attribute (default: `true`) controls what happens to active child activities when the completion condition is met:
 
-- **`true`** (default) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â All still-active child activities are cancelled and the subprocess completes immediately
-- **`false`** ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Active child activities are not cancelled; the subprocess defers completion until all of them have finished
+- **`true`** (default)  — All still-active child activities are cancelled and the subprocess completes immediately
+- **`false`**  — Active child activities are not cancelled; the subprocess defers completion until all of them have finished
 
 The attribute also affects manual completion via `completeAdHocSubProcess()`: with `true`, active child activities are cancelled; with `false`, the call fails while child activities are still active.
 

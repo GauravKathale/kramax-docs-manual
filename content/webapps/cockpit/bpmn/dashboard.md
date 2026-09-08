@@ -95,7 +95,7 @@ Additionally, you can specify process variables by name to enrich the export res
 
 When clicking **Export CSV**, the backend crunches the requested data and creates a CSV file. This could take a while, depending on the amounts of process instances you want to export.
 
-{{< img outdated="true" src="../../img/cockpit-export-download-as-csv.png" title="CSV Export for Process Instances: Modal Dialog ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Download as CSV" >}}
+{{< img outdated="true" src="../../img/cockpit-export-download-as-csv.png" title="CSV Export for Process Instances: Modal Dialog – Download as CSV" >}}
 
 As soon as the request succeeds, you should see a notification that the CSV creation was successful, and the button changes to **Download as CSV**. When you click the button, the download of the CSV file starts.
 

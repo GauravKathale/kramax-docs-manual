@@ -44,7 +44,6 @@ by changing the `app/cockpit/scripts/config.js` configuration file as follow:
 
 ```js
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   app: {
     name: 'Operations',
     vendor: 'Company'
@@ -71,7 +70,6 @@ defined via the `fallbackLocale` property in the configuration file:
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   "locales": {
     "availableLocales": ["en", "de"],
     "fallbackLocale": "en"
@@ -92,7 +90,6 @@ Add your files to the `customScripts` property of the `app/cockpit/scripts/confi
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   customScripts: 
     ['custom-module/module.js']
 };
@@ -107,7 +104,6 @@ Custom Scripts created for Kramax.13 or earlier can be included using the `requi
 
 ```Javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   requireJsConfig: {
     // names of angular modules defined in your custom script files.
     // will be added to the 'cam.cockpit.custom' as dependencies
@@ -137,7 +133,6 @@ To add modules, the `additionalModules` property needs to be specified, where ea
 
 ```javascript
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   bpmnJs: {
     additionalModules: [
       'my-custom-module/module'
@@ -154,7 +149,6 @@ and a path (value) to the JSON file of the moddle extension. The path is relativ
 .war file of the Kramax Webapp. The suffix `.json` of the file is added automatically and must not be specified.
 ```json
 export default {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   bpmnJs: {
     moddleExtensions: {
       camunda: 'my-custom-moddle/kramax'
@@ -244,7 +238,6 @@ same-origin, the CSRF mechanisms could interfere with each other. To avoid the n
 can change the name of the CSRF cookie in the `config.js` file as follows:
 ```javascript
 export default = {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   csrfCookieName: 'MY-XSRF-TOKEN'
 };
 ```
@@ -257,7 +250,6 @@ First-time visitors are shown a message directing them to the kramax welcome pag
 not want this message to be shown, you can disable it by adjusting the `config.js` as follows:
 ```javascript
 export default = {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   disableWelcomeMessage: true
 };
 ```
@@ -269,7 +261,6 @@ The default maximum length of a User Operation Log annotation is 4000 characters
 
 ```javascript
 export default = {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   userOperationLogAnnotationLength: 4000
 };
 ```
@@ -281,7 +272,6 @@ You can view a preview of embedded forms and other HTML files in the Cockpit dep
 
 ```javascript
 export default = {
-  // ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â¦
   previewHtml: false
 };
 ```
