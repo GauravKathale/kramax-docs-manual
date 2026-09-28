@@ -109,8 +109,7 @@ The Kramax web applications are based on a RESTful architecture.
 Frameworks used:
 
 * [JAX-RS](https://jax-rs-spec.java.net) based Rest API
-* [AngularJS](http://angularjs.org)
-* [RequireJS](http://requirejs.org)
+* [React](https://react.dev/)
 * [jQuery](http://jquery.com)
 * [Twitter Bootstrap](http://getbootstrap.com)
 

@@ -22,6 +22,8 @@ After you have installed Hugo, you can build the docs by running the following c
 
 ```bash
 hugo
+hugo --baseURL "/public/"
+
 ```
 
 A static build of the documentation will be placed in the `public/` folder.
