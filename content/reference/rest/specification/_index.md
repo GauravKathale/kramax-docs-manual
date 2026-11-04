@@ -1,16 +1,16 @@
 ---
-
 title: "REST API specification"
 weight: 20
-layout: "single"
+layout: fullpage
 
 menu:
   main:
     name: "Specification ↗"
-    identifier: "rest-api-specification"
+    identifier: "rest-api-spec"
     parent: "rest-api"
-
 ---
+{{< redoc "openapi.json" >}}
 
-For the REST API specification.Please visit: [Kramax REST API Specification](https://kramax.vodafone.org/docs/category//api-spec)
+
+
 
