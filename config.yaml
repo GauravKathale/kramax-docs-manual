@@ -20,7 +20,7 @@ blackfriday:
   plainIDAnchors: true
 
 params:
-  version: "3.0"
+  version: "1.0"
 #  versionAlias: "develop"
   forum:
     url: "https://github.com/vodafone/kramax-modeler/discussions"
