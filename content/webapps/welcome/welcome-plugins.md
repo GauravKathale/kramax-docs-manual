@@ -20,6 +20,7 @@ In addition to the [configurable custom links]({{< relref "/webapps/welcome/conf
 
 {{< img outdated="true" src="../img/welcome-dashboard-plugin.png" title="Plugin Point" >}}
 
-**Name:** `welcome.profile`.
+[//]: # (**Name:** `welcome.profile`.)
 
-{{< img outdated="true" src="../img/welcome-profile-plugin.png" title="Plugin Point" >}}
+[//]: # ()
+[//]: # ({{< img outdated="true" src="../img/welcome-profile-plugin.png" title="Plugin Point" >}})

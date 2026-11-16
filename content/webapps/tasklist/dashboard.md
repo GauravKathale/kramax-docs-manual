@@ -15,12 +15,15 @@ menu:
 On the dashboard of Tasklist you see an overview of pending tasks. On the left side of the screen, an overview of the [filters][tasklist-filters] is displayed. On the upper right side of the screen, you can set a follow-up or due date, you can claim, unclaim and reassign tasks and you can add comments. Underneath that section, the embedded form is displayed (please note that external task forms cannot be displayed here), you can switch to the task history, you can see the diagram view or you can view the description of the user task.
 
 
-# Toggle view
+[//]: # (# Toggle view)
 
-{{< img outdated="true" src="../img/tasklist-toggle-view.png" title="Tasklist View" >}}
+[//]: # ()
+[//]: # ({{< img outdated="true" src="../img/tasklist-toggle-view.png" title="Tasklist View" >}})
 
-Tasklist offers you the option of toggling the view options on the dashboard. You can select to have a focus on the [filters][tasklist-filters], the [filter results][filter-results], the [task view][task-view] or to display the full dashboard. To do so, hit the respective *toggle view* button. At any time, you can choose to instantly set full focus on the task view by hitting the *expand* button.
+[//]: # ()
+[//]: # (Tasklist offers you the option of toggling the view options on the dashboard. You can select to have a focus on the [filters][tasklist-filters], the [filter results][filter-results], the [task view][task-view] or to display the full dashboard. To do so, hit the respective *toggle view* button. At any time, you can choose to instantly set full focus on the task view by hitting the *expand* button.)
 
+[//]: # ()
 
 # Start a process
 
@@ -63,14 +66,14 @@ If you are searching for a variable of type string, which has a numeric, boolean
 
 Furthermore, you can copy a link to the current search query to your clipboard by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-link"></i></button> button and you can save search queries to your local browser storage by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and inserting a name in the drop down menu that appears. You can then retrieve the search query by clicking on the <button class="btn btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i></button> button and selecting the chosen name in the drop down menu.
 
-### Case insensitive search
+### Case insensitive search (TO BE IMPLEMENTED)
 {{< img outdated="true" src="../img/tasklist-case-insensitive.png" title="Task Search" >}}
 
 Sometimes it is not relevant for your search whether the value is capitalized or not. For search queries for Process-, Task- and Case Variables, you can configure if the search should be performed case sensitive or case insensitive. A case insensitive search for `'Fruits Inc.'` will also return matches for values like `'fruits inc.'` or `'FRUITS Inc.'`.
 
 When your search contains one of the Variables mentioned above, two checkboxes appear. You can choose the case handling for the variable name and variable value independently. The option applies to all variable queries within the same search.
 
-### `IN` operator
+### `IN` operator (TO BE IMPLEMENTED)
 
 {{< img src="../img/tasklist-in-operator.png" title="IN Operator" >}}
 
