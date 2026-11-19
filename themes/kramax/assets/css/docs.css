@@ -8165,3 +8165,26 @@ svg circle {
 .cam-downloads .links {
   text-align: right;
 }
+
+/* Markdown tables (no class): readable column spacing */
+.content-text table:not([class]) {
+  width: 100%;
+  max-width: 100%;
+  margin: 15px 0 25px;
+  border-collapse: collapse;
+}
+.content-text table:not([class]) th,
+.content-text table:not([class]) td {
+  padding: 8px 24px 8px 12px;
+  line-height: 1.6;
+  vertical-align: top;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.content-text table:not([class]) th {
+  border-bottom: 2px solid #ccc;
+  white-space: nowrap;
+}
+.content-text table:not([class]) td:first-child {
+  min-width: 160px;
+}
